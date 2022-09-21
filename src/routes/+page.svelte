@@ -1,55 +1,15 @@
 <script>
+	import Carousel from '$lib/Carousel.svelte';
+	import Navbar from '$lib/Navbar.svelte';
+	import Sponsors from '$lib/Sponsors.svelte';
+
 	let showSponsors = true;
-	let sponsors = [
-		{
-			name: 'IO Associates',
-			href: 'https://www.ioassociates.co.uk',
-			src: '../images/sponsors/io_associates.png'
-		},
-		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' },
-		{ name: 'Elastic', href: 'https://www.elastic.co/', src: '../images/sponsors/elastic.png' },
-		{ name: 'NDC London', href: 'https://ndclondon.com/', src: '../images/sponsors/ndc_london.png' }
-	];
-
-	let carouselImages = [
-		{ id: 1, src: '../images/carousel/carousel-1.jpg' },
-		{ id: 2, src: '../images/carousel/carousel-2.jpg' },
-		{ id: 3, src: '../images/carousel/carousel-3.jpg' },
-		{ id: 4, src: '../images/carousel/carousel-4.png' },
-		{ id: 5, src: '../images/carousel/carousel-5.png' },
-		{ id: 6, src: '../images/carousel/carousel-6.jpg' }
-	];
-
-	$: carouselImage = carouselImages[0];
-
-	setInterval(() => {
-		const currentId = carouselImage.id;
-		if (currentId === carouselImages.length) {
-			carouselImage = carouselImages[0];
-		} else {
-			carouselImage = carouselImages[currentId];
-		}
-	}, 5000);
 </script>
 
 <div class="home-container">
-	{#key carouselImage}
-		<div class="header" style="background-image: url({carouselImage.src});">
-			<nav>
-				<span class="shadow">
-					<a href="/">Home</a>
-				</span>
-				<span class="shadow">
-					<a href="/about">About</a>
-				</span>
-
-				<span class="shadow">
-					<a href="/sponsors">DDDSW 2023</a>
-				</span>
-			</nav>
-			<div class="name"><span class="shadow">DDD South West</span></div>
-		</div>
-	{/key}
+	<Carousel>
+		<Navbar/>
+	</Carousel>
 
 	<div class="introduction primary-bg">
 		<p>
@@ -59,16 +19,7 @@
 	</div>
 
 	{#if showSponsors}
-		<div class="sponsors">
-			<h2>With thanks to our 2023 sponsors:</h2>
-			<div class="sponsor-logos">
-				{#each sponsors as sponsor}
-					<a href={sponsor.href} target="_blank">
-						<img src={sponsor.src} alt={sponsor.name} />
-					</a>
-				{/each}
-			</div>
-		</div>
+		<Sponsors />
 	{/if}
 
 	<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
@@ -126,43 +77,6 @@
 		flex-direction: column;
 	}
 
-	.header {
-		/* background-image: url('../images/header.jpg'); */
-		background-size: cover;
-		/* background-position-x: right; */
-		background-position: center;
-		min-height: 800px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
-	nav {
-		display: flex;
-		justify-content: flex-end;
-		gap: 50px;
-		margin: 50px;
-	}
-
-	nav a {
-		color: white;
-		text-decoration: none;
-		font-size: x-large;
-	}
-
-	.name {
-		color: white;
-		font-size: 100px;
-		font-weight: bold;
-		margin-left: 100px;
-		margin-bottom: 50px;
-	}
-
-	.shadow {
-		box-shadow: 0px 0px 50px 43px rgb(0 0 0 / 50%);
-		background-color: rgb(0 0 0 / 50%);
-	}
-
 	.introduction {
 		font-size: 1.75em;
 	}
@@ -210,23 +124,6 @@
 
 	.key-point-right p {
 		text-align: right;
-	}
-
-	.sponsors {
-		width: 70%;
-		margin: auto;
-		padding-bottom: 30px;
-	}
-
-	.sponsor-logos {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-
-	.sponsor-logos img {
-		max-height: 150px;
-		max-width: 150px;
 	}
 
 	.footer {
