@@ -22,7 +22,7 @@
 
 {#key carouselImage}
 	<div class="header" style="background-image: url({carouselImage.src});">
-        <slot></slot>
+		<slot />
 		<div class="name"><span class="shadow">DDD South West</span></div>
 	</div>
 {/key}
@@ -31,18 +31,44 @@
 	.header {
 		background-size: cover;
 		background-position: center;
-		min-height: 800px;
+		min-height: 400px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 	}
 
+	@media (min-width: 992px) {
+		.header {
+			min-height: 600px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.header {
+			min-height: 800px;
+		}
+	}
+
 	.name {
 		color: white;
-		font-size: 100px;
+		font-size: 2rem;
 		font-weight: bold;
-		margin-left: 100px;
-		margin-bottom: 50px;
+		margin-left: 30px;
+		margin-bottom: 10px;
+	}
+
+	@media (min-width: 768px) {
+		.name {
+			font-size: 3rem;
+			margin-left: 100px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.name {
+			font-size: 5rem;
+		}
 	}
 
 	.shadow {

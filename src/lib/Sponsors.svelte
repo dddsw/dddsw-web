@@ -33,6 +33,8 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
 	}
 
 	.sponsor-logos img {
