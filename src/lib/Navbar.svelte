@@ -2,13 +2,13 @@
 	<span class="shadow">
 		<a href="/">Home</a>
 	</span>
-	<span class="shadow">
+	<!-- <span class="shadow">
 		<a href="/about">About</a>
 	</span>
 
 	<span class="shadow">
 		<a href="/sponsors">DDDSW 2023</a>
-	</span>
+	</span> -->
 </nav>
 
 <style>

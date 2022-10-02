@@ -5,7 +5,7 @@
 			<p>
 				Developers are at the heart of DDD South West. We love to learn and share their ideas with
 				others. You'll meet likeminded peers, make new friends and connections, and feel part of our
-				friendly community where everyone is welcome. (Link to about?)
+				friendly community where everyone is welcome. 
 			</p>
 		</div>
 		<span class="material-symbols-outlined icon">code</span>
@@ -16,8 +16,7 @@
 			<h1>For speakers</h1>
 			<p>
 				Our events are a fantastic place to get your name out there as a speaker. Whether you're a
-				professional or a first-timer, you will be made to feel welcome and supported. (Link to
-				submit talk)
+				professional or a first-timer, you will be made to feel welcome and supported. 
 			</p>
 		</div>
 	</div>
@@ -27,7 +26,7 @@
 			<p>
 				Our events would not be possible without the help from our generous sponsors. If you're
 				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please consider sponsoring our event (link to sponsors page).
+				need for your technical roles please <a href="mailto:sponsorship@dddsouthwest.com">get in touch.</a> 
 			</p>
 		</div>
 		<span class="material-symbols-outlined icon">storefront</span>
@@ -38,6 +37,13 @@
 	.icon {
 		font-size: 125px;
 	}
+
+	@media (max-width: 350px){
+		h1 {
+			font-size: 1.5rem;
+		}
+	}
+
 	.key-points-container {
 		width: 90%;
 		margin: auto;

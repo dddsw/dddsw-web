@@ -31,30 +31,36 @@
 	.header {
 		background-size: cover;
 		background-position: center;
-		min-height: 400px;
+		min-height: 250px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 	}
 
-	@media (min-width: 992px) {
+	@media (min-width: 768px) {
 		.header {
-			min-height: 600px;
+			min-height: 400px;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		.header {
-			min-height: 800px;
+			min-height: 500px;
 		}
 	}
 
 	.name {
 		color: white;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 		margin-left: 30px;
 		margin-bottom: 10px;
+	}
+
+	@media (min-width: 350px) {
+		.name {
+			font-size: 2rem;
+		}
 	}
 
 	@media (min-width: 768px) {

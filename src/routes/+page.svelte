@@ -4,7 +4,7 @@
 	import Navbar from '$lib/Navbar.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 
-	let showSponsors = true;
+	let showSponsors = false;
 </script>
 
 <div class="home-container">
@@ -27,6 +27,10 @@
 		<CallToActions />
 	</div>
 
+	<div class="tertiary-bg holding-message">
+		More information coming soon...
+	</div>
+
 	<div class="footer primary-bg">
 		<a href="https://twitter.com/dddsouthwest"
 			><i class="fa-brands fa-twitter fa-3x" style="color: black;" /></a
@@ -44,15 +48,15 @@
 	}
 
 	.introduction p {
-		padding: 30px;
+		padding: 30px 70px;
 		margin: 0;
 		text-align: center;
 	}
 
 	@media (min-width: 768px) {
 		.introduction p {
-			font-size: 1.75em;
-			padding: 50px;
+			font-size: 1.75rem;
+			padding: 50px 90px;
 		}
 	}
 
@@ -66,6 +70,11 @@
 
 	.tertiary-bg {
 		background-color: #eaeaea;
+	}
+
+	.holding-message {
+		padding: 50px;
+		text-align: center;
 	}
 
 	.footer {
