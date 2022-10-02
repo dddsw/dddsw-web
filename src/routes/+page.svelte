@@ -48,9 +48,15 @@
 	}
 
 	.introduction p {
-		padding: 30px 70px;
+		padding: 20px;
 		margin: 0;
 		text-align: center;
+	}
+
+	@media (min-width: 400px) {
+		.introduction p {
+		padding: 30px 70px;
+		}
 	}
 
 	@media (min-width: 768px) {
