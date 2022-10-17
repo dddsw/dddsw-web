@@ -1,22 +1,31 @@
 <nav>
-	<span class="shadow">
+	<div class="nav-buttons">
 		<a href="/">Home</a>
-	</span>
-	<!-- <span class="shadow">
+	</div>
+	<!-- <div class="nav-buttons">
 		<a href="/about">About</a>
-	</span>
-
-	<span class="shadow">
+	</div>
+	<div class="nav-buttons">
 		<a href="/sponsors">DDDSW 2023</a>
-	</span> -->
+	</div> -->
 </nav>
 
 <style>
 	nav {
 		display: flex;
-		justify-content: flex-end;
-		gap: 50px;
-		margin: 50px;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 5px;
+		margin: 20px;
+	}
+
+	@media (min-width: 400px) {
+		nav {
+			flex-direction: row;
+			justify-content: flex-end;
+			gap: 20px;
+			margin: 50px;
+		}
 	}
 
 	nav a {
@@ -24,8 +33,10 @@
 		text-decoration: none;
 	}
 
-	.shadow {
-		box-shadow: 0px 0px 50px 43px rgb(0 0 0 / 40%);
-		background-color: rgb(0 0 0 / 40%);
+	.nav-buttons {
+		background-color: rgb(0 0 0 / 70%);
+		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
+		border-radius: 20px;
+		padding: 5px 10px;
 	}
 </style>
