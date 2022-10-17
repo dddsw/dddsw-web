@@ -2,3 +2,15 @@ body {
     margin: 0;
     font-family: 'Poppins', serif;
 }
+
+.primary-bg {
+    background-color: #ff9930;
+}
+
+.secondary-bg {
+    background-color: white;
+}
+
+.tertiary-bg {
+    background-color: #eaeaea;
+}
