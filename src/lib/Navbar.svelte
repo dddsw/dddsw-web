@@ -1,13 +1,10 @@
 <nav>
 	<div class="nav-buttons">
-		<a href="/">Home</a>
-	</div>
-	<!-- <div class="nav-buttons">
 		<a href="/about">About</a>
 	</div>
-	<div class="nav-buttons">
+	<!-- <div class="nav-buttons">
 		<a href="/sponsors">DDDSW 2023</a>
-	</div> -->
+	</div>  -->
 </nav>
 
 <style>
