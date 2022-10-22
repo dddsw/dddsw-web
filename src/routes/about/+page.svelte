@@ -37,7 +37,7 @@
 
 		<div class="team-container">
 			<div class="member-container">
-				<img src="../images/team/lorraine.jpg" alt="Photo of Lorraine Pearce" />
+				<img src="../images/team/lorraine.jpg" alt="Lorraine Pearce" />
 				<span>Lorraine Pearce</span>
 				<span>
 					<a href="https://twitter.com/LorrainePearce"
@@ -49,7 +49,7 @@
 				</span>
 			</div>
 			<div class="member-container">
-				<img src="../images/team/russ.jpg" alt="Photo of Russ Day" />
+				<img src="../images/team/russ.jpg" alt="Russ Day" />
 				<span>Russell Day</span>
 				<span>
 					<a href="mailto:russell.day@dddsouthwest.com">
@@ -58,7 +58,7 @@
 				</span>
 			</div>
 			<div class="member-container">
-				<img src="../images/team/stu.jpg" alt="Photo of Stuart Lang" />
+				<img src="../images/team/stu.jpg" alt="Stuart Lang" />
 				<span>Stuart Lang</span>
 				<span>
 					<a href="https://twitter.com/stuartblang"
@@ -69,7 +69,7 @@
 				</span>
 			</div>
 			<div class="member-container">
-				<img src="../images/team/hannah.jpg" alt="Photo of Hannah Price" />
+				<img src="../images/team/hannah.jpg" alt="Hannah Price" />
 				<span>Hannah Price</span>
 				<span>
 					<a href="https://twitter.com/Handalf1994"
@@ -80,7 +80,7 @@
 				</span>
 			</div>
 			<div class="member-container">
-				<img src="../images/team/profile_default.png" alt="Default photo" />
+				<img src="../images/team/profile_default.png" alt="Default profile" />
 				<span>Joseph Woodward</span>
 				<span>
 					<a href="mailto:josephwoodward@dddsouthwest.com">
@@ -89,7 +89,7 @@
 				</span>
 			</div>
 			<div class="member-container">
-				<img src="../images/team/profile_default.png" alt="Default photo" />
+				<img src="../images/team/profile_default.png" alt="Default profile" />
 				<span>Martyn Fewtrell</span>
 				<span>
 					<a href="mailto:martynfewtrell@dddsouthwest.com">
