@@ -10,14 +10,14 @@
 
 	$: carouselImage = carouselImages[0];
 
-	// setInterval(() => {
-	// 	const currentId = carouselImage.id;
-	// 	if (currentId === carouselImages.length) {
-	// 		carouselImage = carouselImages[0];
-	// 	} else {
-	// 		carouselImage = carouselImages[currentId];
-	// 	}
-	// }, 5000);
+	setInterval(() => {
+		const currentId = carouselImage.id;
+		if (currentId === carouselImages.length) {
+			carouselImage = carouselImages[0];
+		} else {
+			carouselImage = carouselImages[currentId];
+		}
+	}, 5000);
 </script>
 
 {#key carouselImage}

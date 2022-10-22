@@ -1,5 +1,5 @@
 <nav>
-	<div class="nav-buttons">
+	<div class="nav-button">
 		<a href="/about">About</a>
 	</div>
 	<!-- <div class="nav-buttons">
@@ -30,10 +30,24 @@
 		text-decoration: none;
 	}
 
-	.nav-buttons {
+	@media (min-width: 768px) {
+		nav a {
+			font-size: 1.5rem;
+		}
+	}
+
+	.nav-button {
 		background-color: rgb(0 0 0 / 70%);
 		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
 		border-radius: 20px;
 		padding: 5px 10px;
+	}
+
+	.nav-button:hover {
+		background-color: white;
+	}
+
+	.nav-button:hover a {
+		color: black;
 	}
 </style>
