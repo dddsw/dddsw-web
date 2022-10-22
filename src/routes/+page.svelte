@@ -28,11 +28,9 @@
 		<CallToActions />
 	</div>
 
-	<div class="tertiary-bg holding-message">
-		More information coming soon...
-	</div>
+	<div class="tertiary-bg holding-message">More information coming soon...</div>
 
-	<Footer/>
+	<Footer />
 </div>
 
 <style>
@@ -49,7 +47,7 @@
 
 	@media (min-width: 400px) {
 		.introduction p {
-		padding: 30px 70px;
+			padding: 30px 70px;
 		}
 	}
 
@@ -60,8 +58,20 @@
 		}
 	}
 
+	@media (min-width: 1800px) {
+		.introduction p {
+			padding: 50px 25%;
+		}
+	}
+
 	.holding-message {
 		padding: 50px;
 		text-align: center;
+	}
+
+	@media (min-width: 1400px) {
+		.holding-message {
+			font-size: 1.5rem;
+		}
 	}
 </style>

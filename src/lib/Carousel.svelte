@@ -10,14 +10,14 @@
 
 	$: carouselImage = carouselImages[0];
 
-	setInterval(() => {
-		const currentId = carouselImage.id;
-		if (currentId === carouselImages.length) {
-			carouselImage = carouselImages[0];
-		} else {
-			carouselImage = carouselImages[currentId];
-		}
-	}, 5000);
+	// setInterval(() => {
+	// 	const currentId = carouselImage.id;
+	// 	if (currentId === carouselImages.length) {
+	// 		carouselImage = carouselImages[0];
+	// 	} else {
+	// 		carouselImage = carouselImages[currentId];
+	// 	}
+	// }, 5000);
 </script>
 
 {#key carouselImage}
@@ -49,6 +49,12 @@
 		}
 	}
 
+	@media (min-width: 1800px) {
+		.header {
+			min-height: 700px;
+		}
+	}
+
 	.name {
 		color: white;
 		font-size: 1.5rem;
@@ -74,6 +80,12 @@
 	@media (min-width: 992px) {
 		.name {
 			font-size: 5rem;
+		}
+	}
+
+	@media (min-width: 1800px) {
+		.name {
+			margin-left: 25%;
 		}
 	}
 
