@@ -131,8 +131,7 @@
 	}
 
 	.logo {
-		max-width: 200px;
-		padding: 20px;
+		max-width: 300px;
 	}
 
 	.section {
