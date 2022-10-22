@@ -149,6 +149,10 @@
 		.section {
 			padding: 20px 25%;
 		}
+
+		p {
+			font-size: 1.5rem;
+		}
 	}
 
 	.team-container {
