@@ -31,7 +31,7 @@
 		</ul>
 	</div>
 
-	<div class="secondary-bg section">
+	<div class="secondary-bg section team-section">
 		<h2>Meet the team</h2>
 		<p>
 			DDD South West is brought to you by a small team of volunteers. Please feel free to get in
@@ -103,7 +103,7 @@
 		</div>
 	</div>
 
-	<div class="quaternary-bg section">
+	<div class="quaternary-bg section tagline">
 		<h2>By the community, for the community</h2>
 	</div>
 
@@ -114,6 +114,7 @@
 	.container {
 		display: flex;
 		flex-direction: column;
+		height: 100%;
 	}
 
 	.header {
@@ -144,6 +145,12 @@
 		}
 	}
 
+	@media (min-width: 1400px) {
+		.section {
+			padding: 20px 25%;
+		}
+	}
+
 	.team-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -169,5 +176,13 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 5px;
+	}
+
+	.tagline {
+		text-align: center;
+	}
+
+	.team-section {
+		flex-grow: 1;
 	}
 </style>
