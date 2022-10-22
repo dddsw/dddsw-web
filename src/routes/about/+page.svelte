@@ -1,11 +1,14 @@
 <script>
 	import Footer from '$lib/Footer.svelte';
+	import Navbar from '$lib/Navbar.svelte';
 </script>
 
 <div class="container">
-	<div class="header primary-bg">
+	<div class="header primary-bg section">
 		<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
 		<h1>About DDD South West</h1>
+		<Navbar currentRoute={'/about'} />
+		<!-- <i class="fa-solid fa-bars fa-2x" /> -->
 	</div>
 
 	<div class="secondary-bg section">
@@ -121,7 +124,7 @@
 
 	@media (min-width: 576px) {
 		.header {
-			justify-content: initial;
+			justify-content: space-between;
 			flex-direction: row;
 		}
 	}

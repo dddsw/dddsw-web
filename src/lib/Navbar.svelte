@@ -1,10 +1,21 @@
+<script>
+	export let shadow = false;
+	export let currentRoute = '';
+
+	let navItems = [
+		{ text: 'About', href: '/about' }
+		// { text: 'DDDSW 2023', href: '/todo' }
+	];
+</script>
+
 <nav>
-	<div class="nav-button">
-		<a href="/about">About</a>
-	</div>
-	<!-- <div class="nav-buttons">
-		<a href="/sponsors">DDDSW 2023</a>
-	</div>  -->
+	{#each navItems as navItem}
+		{#if currentRoute !== navItem.href}
+			<div class="nav-button" class:shadow={shadow === true}>
+				<a href={navItem.href}>{navItem.text}</a>
+			</div>
+		{/if}
+	{/each}
 </nav>
 
 <style>
@@ -26,7 +37,7 @@
 	}
 
 	nav a {
-		color: white;
+		color: black;
 		text-decoration: none;
 	}
 
@@ -37,17 +48,32 @@
 	}
 
 	.nav-button {
-		background-color: rgb(0 0 0 / 70%);
-		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
 		border-radius: 20px;
 		padding: 5px 10px;
 	}
 
 	.nav-button:hover {
-		background-color: white;
+		background-color: unset;
 	}
 
 	.nav-button:hover a {
+		color: white;
+	}
+
+	.shadow {
+		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
+		background-color: rgb(0 0 0 / 70%);
+	}
+
+	.shadow a {
+		color: white;
+	}
+
+	.shadow:hover {
+		background-color: white;
+	}
+
+	.shadow:hover a {
 		color: black;
 	}
 </style>

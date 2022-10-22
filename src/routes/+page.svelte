@@ -10,7 +10,7 @@
 
 <div class="container">
 	<Carousel>
-		<Navbar />
+		<Navbar shadow={true} />
 	</Carousel>
 
 	<div class="introduction primary-bg">
