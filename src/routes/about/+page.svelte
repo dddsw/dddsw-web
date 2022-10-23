@@ -45,15 +45,6 @@
 	</div>
 
 	<div class="tertiary-bg">
-		<div class="section">
-			<h1>Get involved</h1>
-			<p>DDD South West is a community event and there are several ways you can get involved:</p>
-		</div>
-
-		<CallToActions {keyPoints} />
-	</div>
-
-	<div class="secondary-bg">
 		<div class="section team-section">
 			<h1>Meet the team</h1>
 			<p>
@@ -106,7 +97,7 @@
 					</span>
 				</div>
 				<div class="member-container">
-					<img src="../images/team/profile_default.png" alt="Default profile" />
+					<img src="../images/team/joe.jpg" alt="Joseph Woodward" />
 					<span>Joseph Woodward</span>
 					<span>
 						<a href="mailto:josephwoodward@dddsouthwest.com">
@@ -115,7 +106,7 @@
 					</span>
 				</div>
 				<div class="member-container">
-					<img src="../images/team/profile_default.png" alt="Default profile" />
+					<img src="../images/team/martyn.jpg" alt="Martyn Fewtrell" />
 					<span>Martyn Fewtrell</span>
 					<span>
 						<a href="mailto:martynfewtrell@dddsouthwest.com">
@@ -125,6 +116,15 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="secondary-bg">
+		<div class="section">
+			<h1>Get involved</h1>
+			<p>DDD South West is a community event and there are several ways you can get involved:</p>
+		</div>
+
+		<CallToActions {keyPoints} />
 	</div>
 
 	<div class="quaternary-bg">
