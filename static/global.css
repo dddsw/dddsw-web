@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	font-family: 'Poppins', serif;
+	height: 100%;
+}
+
+html {
+	height: 100%;
+}
+
+.primary-bg {
+	background-color: #ff9930;
+}
+
+.secondary-bg {
+	background-color: white;
+}
+
+.tertiary-bg {
+	background-color: #eaeaea;
+}
+
+.quaternary-bg {
+	background-color: #96c6ca;
+}

@@ -1,0 +1,44 @@
+<script>
+	let sponsors = [
+		{
+			name: 'IO Associates',
+			href: 'https://www.ioassociates.co.uk',
+			src: '../images/sponsors/io_associates.png'
+		},
+		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' },
+		{ name: 'Elastic', href: 'https://www.elastic.co/', src: '../images/sponsors/elastic.png' },
+		{ name: 'NDC London', href: 'https://ndclondon.com/', src: '../images/sponsors/ndc_london.png' }
+	];
+</script>
+
+<div class="sponsors">
+	<h2>With thanks to our 2023 sponsors:</h2>
+	<div class="sponsor-logos">
+		{#each sponsors as sponsor}
+			<a href={sponsor.href} target="_blank">
+				<img src={sponsor.src} alt={sponsor.name} />
+			</a>
+		{/each}
+	</div>
+</div>
+
+<style>
+	.sponsors {
+		width: 70%;
+		margin: auto;
+		padding-bottom: 30px;
+	}
+
+	.sponsor-logos {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.sponsor-logos img {
+		max-height: 150px;
+		max-width: 150px;
+	}
+</style>
