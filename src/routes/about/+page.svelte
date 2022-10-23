@@ -147,12 +147,14 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		text-align: center;
 	}
 
 	@media (min-width: 576px) {
 		.header {
 			justify-content: space-between;
 			flex-direction: row;
+			text-align: left;
 		}
 	}
 
@@ -177,21 +179,7 @@
 		}
 	}
 
-	/* .section {
-		padding: 0px 20px;
-	}
-
-	@media (min-width: 768px) {
-		.section {
-			padding: 20px 150px;
-		}
-	} */
-
 	@media (min-width: 1400px) {
-		/* .section {
-			padding: 20px 25%;
-		} */
-
 		p {
 			font-size: 1.5rem;
 		}
