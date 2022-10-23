@@ -1,37 +1,35 @@
+<script lang="ts">
+	import type { KeyPoint } from '../types/KeyPoint.type';
+	export let keyPoints: KeyPoint[];
+</script>
+
 <div class="key-points-container">
 	<div class="key-point">
 		<div>
-			<h1>For developers</h1>
+			<h1>{keyPoints[0].title}</h1>
 			<p>
-				Developers are at the heart of DDD South West. We love to learn and share their ideas with
-				others. You'll meet likeminded peers, make new friends and connections, and feel part of our
-				friendly community where everyone is welcome.
+				{@html keyPoints[0].paragraph}
 			</p>
 		</div>
-		<span class="material-symbols-outlined icon">code</span>
+		<span class="material-symbols-outlined icon">{keyPoints[0].icon}</span>
 	</div>
 	<div class="key-point">
-		<span class="material-symbols-outlined icon">diversity_1</span>
+		<span class="material-symbols-outlined icon">{keyPoints[1].icon}</span>
 		<div class="key-point-right">
-			<h1>For speakers</h1>
+			<h1>{keyPoints[1].title}</h1>
 			<p>
-				Our events are a fantastic place to get your name out there as a speaker. Whether you're a
-				professional or a first-timer, you will be made to feel welcome and supported.
+				{@html keyPoints[1].paragraph}
 			</p>
 		</div>
 	</div>
 	<div class="key-point">
 		<div>
-			<h1>For sponsors</h1>
+			<h1>{keyPoints[2].title}</h1>
 			<p>
-				Our events would not be possible without the help from our generous sponsors. If you're
-				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please <a href="mailto:sponsorship@dddsouthwest.com"
-					>get in touch.</a
-				>
+				{@html keyPoints[2].paragraph}
 			</p>
 		</div>
-		<span class="material-symbols-outlined icon">storefront</span>
+		<span class="material-symbols-outlined icon">{keyPoints[2].icon}</span>
 	</div>
 </div>
 
@@ -49,6 +47,7 @@
 	.key-points-container {
 		width: 90%;
 		margin: auto;
+		padding-bottom: 50px;
 	}
 
 	@media (min-width: 768px) {
@@ -84,12 +83,6 @@
 
 		.key-point:nth-child(even) {
 			flex-direction: row;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.key-point {
-			padding: 30px 100px;
 		}
 	}
 
