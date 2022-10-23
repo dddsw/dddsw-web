@@ -1,5 +1,5 @@
 export type KeyPoint = {
-    title: string
-    icon: string
-    paragraph: string
-}
+	title: string;
+	icon: string;
+	paragraph: string;
+};
