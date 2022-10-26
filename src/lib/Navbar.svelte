@@ -3,7 +3,8 @@
 	export let currentRoute = '';
 
 	let navItems = [
-		{ text: 'About', href: '/about' }
+		{ text: 'About', href: '/about' },
+		{ text: 'Sponsorship', href: '/sponsorship' }
 		// { text: 'DDDSW 2023', href: '/todo' }
 	];
 </script>

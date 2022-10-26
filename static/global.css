@@ -8,6 +8,29 @@ html {
 	height: 100%;
 }
 
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.section {
+	width: 90%;
+	margin: auto;
+}
+
+@media (min-width: 768px) {
+	.section {
+		width: 70%;
+	}
+}
+
+@media (min-width: 1800px) {
+	.section {
+		width: 50%;
+	}
+}
+
 .primary-bg {
 	background-color: #ff9930;
 }

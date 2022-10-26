@@ -137,12 +137,6 @@
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
-
 	.header {
 		display: flex;
 		align-items: center;
@@ -160,23 +154,6 @@
 
 	.logo {
 		max-width: 300px;
-	}
-
-	.section {
-		width: 90%;
-		margin: auto;
-	}
-
-	@media (min-width: 768px) {
-		.section {
-			width: 70%;
-		}
-	}
-
-	@media (min-width: 1800px) {
-		.section {
-			width: 50%;
-		}
 	}
 
 	@media (min-width: 1400px) {

@@ -58,11 +58,6 @@
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-	}
-
 	.introduction p {
 		padding: 20px;
 		margin: 0;
