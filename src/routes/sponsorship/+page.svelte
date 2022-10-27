@@ -61,7 +61,7 @@
 			<div class="options-container options-container-small">
 				<div class="primary-bg option-small claimed">
 					Breakfast and morning snacks <span class="price">£300</span>
-					(This item has been sponsored)
+					<!-- (This item has been sponsored) -->
 				</div>
 				<div class="primary-bg option-small">
 					Lunch <span class="price">£2000</span>
@@ -141,7 +141,11 @@
 		padding: 20px;
 		min-height: 250px;
 		max-width: 300px;
-		border-radius: 50px;
+		border-radius: 30px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.option-small {
@@ -149,6 +153,16 @@
 		max-width: 300px;
 		border-radius: 50px;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.option ul {
+		flex-grow: 1;
+	}
+
+	.option li {
+		text-align: left;
 	}
 
 	h2 {
@@ -161,7 +175,7 @@
 	}
 
 	.price {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.claimed {
