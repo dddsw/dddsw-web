@@ -17,6 +17,7 @@ html {
 .section {
 	width: 90%;
 	margin: auto;
+	padding-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -28,6 +29,7 @@ html {
 @media (min-width: 1800px) {
 	.section {
 		width: 50%;
+		padding-bottom: 20px;
 	}
 }
 
@@ -45,4 +47,14 @@ html {
 
 .quaternary-bg {
 	background-color: #96c6ca;
+}
+
+@media (min-width: 1400px) {
+	p {
+		font-size: 1.25rem;
+	}
+}
+
+.text-center {
+	text-align: center;
 }

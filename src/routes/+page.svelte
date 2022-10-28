@@ -52,7 +52,7 @@
 		<CallToActions {keyPoints} />
 	</div>
 
-	<div class="tertiary-bg holding-message">More information coming soon...</div>
+	<div class="tertiary-bg holding-message"><p>More information coming soon...</p></div>
 
 	<Footer />
 </div>
@@ -84,13 +84,6 @@
 	}
 
 	.holding-message {
-		padding: 50px;
 		text-align: center;
-	}
-
-	@media (min-width: 1400px) {
-		.holding-message {
-			font-size: 1.5rem;
-		}
 	}
 </style>

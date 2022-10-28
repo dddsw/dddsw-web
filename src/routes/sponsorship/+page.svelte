@@ -1,6 +1,13 @@
 <script lang="ts">
 	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
+
+	let refreshmentPackages = [
+		{ title: 'Breakfast', price: '£300', claimed: false },
+		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
+		{ title: 'Lunch', price: '£2000', claimed: false },
+		{ title: 'Hot/cold beverages', price: '£1000', claimed: false }
+	];
 </script>
 
 <div class="container">
@@ -34,7 +41,6 @@
 					</ul>
 					<span class="price">£600</span>
 				</div>
-				<span class="material-symbols-outlined icon"> arrow_forward_ios </span>
 				<div class="primary-bg option">
 					<h2>Silver</h2>
 					Everything in Bronze, plus:
@@ -44,7 +50,6 @@
 					</ul>
 					<span class="price">£1000</span>
 				</div>
-				<span class="material-symbols-outlined icon"> arrow_forward_ios </span>
 				<div class="primary-bg option">
 					<h2>Gold</h2>
 					Everything in Bronzer and Silver, plus:
@@ -59,19 +64,14 @@
 			<h1>Refreshments</h1>
 			<p>With your company name and logo displayed alongside.</p>
 			<div class="options-container options-container-small">
-				<div class="primary-bg option-small claimed">
-					Breakfast and morning snacks <span class="price">£300</span>
-					<!-- (This item has been sponsored) -->
-				</div>
-				<div class="primary-bg option-small">
-					Lunch <span class="price">£2000</span>
-				</div>
-				<div class="primary-bg option-small">
-					Afternoon snacks <span class="price">£300</span>
-				</div>
-				<div class="primary-bg option-small">
-					Hot and cold beverages <span class="price">£1000</span>
-				</div>
+				{#each refreshmentPackages as refreshmentPackage}
+					<div class="primary-bg option-small" class:claimed={refreshmentPackage.claimed}>
+						{refreshmentPackage.title} <span class="price">{refreshmentPackage.price}</span>
+						{#if refreshmentPackage.claimed}
+							<sub>This item has been sponsored</sub>
+						{/if}
+					</div>
+				{/each}
 			</div>
 
 			All of the above include:
@@ -89,7 +89,7 @@
 	</div>
 
 	<div class="quaternary-bg">
-		<div class="section tagline">
+		<div class="text-center">
 			<h2>By the community, for the community</h2>
 		</div>
 	</div>
@@ -103,6 +103,7 @@
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
+		width: 100%;
 	}
 
 	@media (min-width: 576px) {
@@ -120,15 +121,17 @@
 
 	.options-container {
 		display: flex;
-		align-items: stretch;
 		flex-direction: column;
 		justify-content: space-evenly;
+		align-items: center;
 		margin: 50px 0;
+		gap: 20px;
 	}
 
 	@media (min-width: 992px) {
 		.options-container {
 			flex-direction: row;
+			align-items: stretch;
 		}
 	}
 
@@ -146,15 +149,18 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		background-color: #ffcb00;
 	}
 
 	.option-small {
 		padding: 20px;
+		min-width: 150px;
 		max-width: 300px;
 		border-radius: 50px;
 		text-align: center;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 	}
 
 	.option ul {
@@ -165,20 +171,16 @@
 		text-align: left;
 	}
 
-	h2 {
-		text-align: center;
-	}
-
-	.icon {
-		font-size: 50px;
-		align-self: center;
-	}
-
 	.price {
 		font-size: 1.5rem;
+		font-weight: bold;
 	}
 
 	.claimed {
 		background-color: lightgrey;
+	}
+
+	sub {
+		font-style: italic;
 	}
 </style>

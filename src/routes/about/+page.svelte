@@ -128,7 +128,7 @@
 	</div>
 
 	<div class="quaternary-bg">
-		<div class="section tagline">
+		<div class="text-center">
 			<h2>By the community, for the community</h2>
 		</div>
 	</div>
@@ -142,6 +142,7 @@
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
+		width: 100%;
 	}
 
 	@media (min-width: 576px) {
@@ -154,12 +155,6 @@
 
 	.logo {
 		max-width: 300px;
-	}
-
-	@media (min-width: 1400px) {
-		p {
-			font-size: 1.5rem;
-		}
 	}
 
 	.team-container {
@@ -187,10 +182,6 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 5px;
-	}
-
-	.tagline {
-		text-align: center;
 	}
 
 	.team-section {

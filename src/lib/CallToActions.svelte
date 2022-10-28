@@ -108,7 +108,7 @@
 
 	@media (min-width: 1400px) {
 		.key-point p {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 		}
 	}
 </style>
