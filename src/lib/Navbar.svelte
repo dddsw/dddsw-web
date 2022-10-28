@@ -1,21 +1,17 @@
 <script>
 	export let shadow = false;
-	export let currentRoute = '';
 
 	let navItems = [
 		{ text: 'About', href: '/about' },
 		{ text: 'Sponsorship', href: '/sponsorship' }
-		// { text: 'DDDSW 2023', href: '/todo' }
 	];
 </script>
 
 <nav>
 	{#each navItems as navItem}
-		{#if currentRoute !== navItem.href}
-			<div class="nav-button" class:shadow={shadow === true}>
-				<a href={navItem.href}>{navItem.text}</a>
-			</div>
-		{/if}
+		<div class="nav-button" class:shadow={shadow === true}>
+			<a href={navItem.href}>{navItem.text}</a>
+		</div>
 	{/each}
 </nav>
 

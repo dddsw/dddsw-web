@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Footer from '$lib/Footer.svelte';
-	import Navbar from '$lib/Navbar.svelte';
-
 	let refreshmentPackages = [
 		{ title: 'Breakfast', price: '£300', claimed: false },
 		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
@@ -10,115 +7,77 @@
 	];
 </script>
 
-<div class="container">
-	<div class="primary-bg">
-		<div class="section header">
-			<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
-			<h1>Sponsorship</h1>
-			<Navbar currentRoute={'/sponsorship'} />
-		</div>
+<div class="secondary-bg">
+	<div class="section">
+		<h1>Sponsorship opportunities</h1>
+		<p>
+			We are looking for sponsors for DDD South West 2023. If you or your company would like to
+			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
+			We have various options available, or we can arrange a custom package for you. Our event is entirely
+			funded by sponsorship and would not be possible without our wonderful sponsors.
+		</p>
 	</div>
-	<div class="secondary-bg">
-		<div class="section">
-			<h1>Sponsorship opportunities</h1>
-			<p>
-				We are looking for sponsors for DDD South West 2023. If you or your company would like to
-				become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
-				We have various options available, or we can arrange a custom package for you. Our event is entirely
-				funded by sponsorship and would not be possible without our wonderful sponsors.
-			</p>
-		</div>
-	</div>
-	<div class="tertiary-bg">
-		<div class="section">
-			<h1>Packages</h1>
-			<div class="options-container">
-				<div class="primary-bg option">
-					<h2>Bronze</h2>
-					<ul>
-						<li>Your logo on our website</li>
-						<li>Your logo on the opening & closing slides</li>
-					</ul>
-					<span class="price">£600</span>
-				</div>
-				<div class="primary-bg option">
-					<h2>Silver</h2>
-					Everything in Bronze, plus:
-					<ul>
-						<li>A sponsor stand</li>
-						<li>Promotional tweets from our account</li>
-					</ul>
-					<span class="price">£1000</span>
-				</div>
-				<div class="primary-bg option">
-					<h2>Gold</h2>
-					Everything in Bronzer and Silver, plus:
-					<ul>
-						<li>Opportunity to make a short announcement at the beginning or end of the day.</li>
-						<li>We can create a tailored package to you</li>
-					</ul>
-					<span class="price">£1500+</span>
-				</div>
+</div>
+<div class="tertiary-bg">
+	<div class="section">
+		<h1>Packages</h1>
+		<div class="options-container">
+			<div class="primary-bg option boop-effect">
+				<h2>Bronze</h2>
+				<ul>
+					<li>Your logo on our website</li>
+					<li>Your logo on the opening & closing slides</li>
+				</ul>
+				<span class="price">£600</span>
 			</div>
-
-			<h1>Refreshments</h1>
-			<p>With your company name and logo displayed alongside.</p>
-			<div class="options-container options-container-small">
-				{#each refreshmentPackages as refreshmentPackage}
-					<div class="primary-bg option-small" class:claimed={refreshmentPackage.claimed}>
-						{refreshmentPackage.title} <span class="price">{refreshmentPackage.price}</span>
-						{#if refreshmentPackage.claimed}
-							<sub>This item has been sponsored</sub>
-						{/if}
-					</div>
-				{/each}
+			<div class="primary-bg option boop-effect">
+				<h2>Silver</h2>
+				Everything in Bronze, plus:
+				<ul>
+					<li>A sponsor stand</li>
+					<li>Promotional tweets from our account</li>
+				</ul>
+				<span class="price">£1000</span>
 			</div>
-
-			All of the above include:
-			<ul>
-				<li>The opportunity to talk to the exact people you want to recruit or sell to.</li>
-				<li>
-					Love from the attendees! Everyone appreciates that without sponsors, these events can't
-					happen.
-				</li>
-				<li>
-					Love from the team! We will go out of our way to priase you before, on, and after the day.
-				</li>
-			</ul>
+			<div class="primary-bg option boop-effect">
+				<h2>Gold</h2>
+				Everything in Bronzer and Silver, plus:
+				<ul>
+					<li>Opportunity to make a short announcement at the beginning or end of the day.</li>
+					<li>We can create a tailored package to you</li>
+				</ul>
+				<span class="price">£1500+</span>
+			</div>
 		</div>
-	</div>
 
-	<div class="quaternary-bg">
-		<div class="text-center">
-			<h2>By the community, for the community</h2>
+		<h1>Refreshments</h1>
+		<p>With your company name and logo displayed alongside.</p>
+		<div class="options-container options-container-small">
+			{#each refreshmentPackages as refreshmentPackage}
+				<div class="primary-bg option-small boop-effect" class:claimed={refreshmentPackage.claimed}>
+					{refreshmentPackage.title} <span class="price">{refreshmentPackage.price}</span>
+					{#if refreshmentPackage.claimed}
+						<sub>This item has been sponsored</sub>
+					{/if}
+				</div>
+			{/each}
 		</div>
+
+		As well as supporting the community, sponsorship offers:
+		<ul>
+			<li>The opportunity to talk to the exact people you want to recruit or sell to.</li>
+			<li>
+				Love from the attendees! Everyone appreciates that without sponsors, these events can't
+				happen.
+			</li>
+			<li>
+				Love from the team! We will go out of our way to priase you before, on, and after the day.
+			</li>
+		</ul>
 	</div>
-	<Footer />
 </div>
 
 <style>
-	/* repeating  with about*/
-	.header {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		width: 100%;
-	}
-
-	@media (min-width: 576px) {
-		.header {
-			justify-content: space-between;
-			flex-direction: row;
-			text-align: left;
-		}
-	}
-
-	.logo {
-		max-width: 300px;
-	}
-	/* repeating */
-
 	.options-container {
 		display: flex;
 		flex-direction: column;
@@ -149,7 +108,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background-color: #ffcb00;
+		background-color: #ffc13a;
 	}
 
 	.option-small {

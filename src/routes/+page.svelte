@@ -1,7 +1,6 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
 	import Carousel from '$lib/Carousel.svelte';
-	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
@@ -32,58 +31,35 @@
 	];
 </script>
 
-<div class="container">
-	<Carousel>
-		<Navbar shadow={true} />
-	</Carousel>
+<Carousel>
+	<Navbar shadow={true} />
+</Carousel>
 
-	<div class="introduction primary-bg">
-		<p>
+<div class="introduction primary-bg">
+	<div class="section">
+		<p class="text-center">
 			DDD South West is an inclusive, non-profit developer conference organised by the community,
 			for the community.
 		</p>
 	</div>
+</div>
 
-	{#if showSponsors}
-		<Sponsors />
-	{/if}
+{#if showSponsors}
+	<Sponsors />
+{/if}
 
-	<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
-		<CallToActions {keyPoints} />
-	</div>
+<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
+	<CallToActions {keyPoints} />
+</div>
 
-	<div class="tertiary-bg holding-message"><p>More information coming soon...</p></div>
-
-	<Footer />
+<div class="tertiary-bg">
+	<p class="text-center">More information coming soon...</p>
 </div>
 
 <style>
-	.introduction p {
-		padding: 20px;
-		margin: 0;
-		text-align: center;
-	}
-
-	@media (min-width: 400px) {
-		.introduction p {
-			padding: 30px 70px;
-		}
-	}
-
 	@media (min-width: 768px) {
 		.introduction p {
 			font-size: 1.75rem;
-			padding: 50px 90px;
 		}
-	}
-
-	@media (min-width: 1800px) {
-		.introduction p {
-			padding: 50px 25%;
-		}
-	}
-
-	.holding-message {
-		text-align: center;
 	}
 </style>
