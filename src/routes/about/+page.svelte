@@ -19,6 +19,35 @@
 			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our Twitter feed for volunteering opportunities.`
 		}
 	];
+
+	let teamMembers = [
+		{
+			name: 'Lorraine Pearce',
+			imageName: 'lorraine.jpg',
+			email: 'lorrainepearce@dddsouthwest.com',
+			twitter: 'LorrainePearce'
+		},
+		{ name: 'Russell Day', imageName: 'russ.jpg', email: 'russell.day@dddsouthwest.com' },
+		{
+			name: 'Stuart Lang',
+			imageName: 'stu.jpg',
+			email: 'stuartlang@dddsouthwest.com',
+			twitter: 'stuartblang'
+		},
+		{
+			name: 'Hannah Price',
+			imageName: 'hannah.jpg',
+			email: 'hannahprice@dddsouthwest.com',
+			twitter: 'Handalf1994'
+		},
+		{
+			name: 'Joseph Woodward',
+			imageName: 'joe.jpg',
+			email: 'josephwoodward@dddsouthwest.com',
+			twitter: '_josephwoodward'
+		},
+		{ name: 'Martyn Fewtrell', imageName: 'martyn.jpg', email: 'martynfewtrell@dddsouthwest.com' }
+	];
 </script>
 
 <div class="secondary-bg">
@@ -42,67 +71,22 @@
 		</p>
 
 		<div class="team-container">
-			<div class="member-container">
-				<img src="../images/team/lorraine.jpg" alt="Lorraine Pearce" />
-				<span>Lorraine Pearce</span>
-				<span>
-					<a href="https://twitter.com/LorrainePearce"
-						><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-					>
-					<a href="mailto:lorrainepearce@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
-			<div class="member-container">
-				<img src="../images/team/russ.jpg" alt="Russ Day" />
-				<span>Russell Day</span>
-				<span>
-					<a href="mailto:russell.day@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
-			<div class="member-container">
-				<img src="../images/team/stu.jpg" alt="Stuart Lang" />
-				<span>Stuart Lang</span>
-				<span>
-					<a href="https://twitter.com/stuartblang"
-						><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-					><a href="mailto:stuartlang@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
-			<div class="member-container">
-				<img src="../images/team/hannah.jpg" alt="Hannah Price" />
-				<span>Hannah Price</span>
-				<span>
-					<a href="https://twitter.com/Handalf1994"
-						><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-					><a href="mailto:hannahprice@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
-			<div class="member-container">
-				<img src="../images/team/joe.jpg" alt="Joseph Woodward" />
-				<span>Joseph Woodward</span>
-				<span>
-					<a href="mailto:josephwoodward@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
-			<div class="member-container">
-				<img src="../images/team/martyn.jpg" alt="Martyn Fewtrell" />
-				<span>Martyn Fewtrell</span>
-				<span>
-					<a href="mailto:martynfewtrell@dddsouthwest.com">
-						<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-					</a>
-				</span>
-			</div>
+			{#each teamMembers as member}
+				<div class="member-container">
+					<img src="../images/team/{member.imageName}" alt={member.name} class="boop-effect" />
+					<span>{member.name}</span>
+					<span>
+						{#if member.twitter}
+							<a href="https://twitter.com/{member.twitter}"
+								><i class="fa-brands fa-twitter fa-2x icon" /></a
+							>
+						{/if}
+						<a href="mailto:{member.email}">
+							<i class="fa-regular fa-envelope fa-2x icon" />
+						</a>
+					</span>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
@@ -146,5 +130,13 @@
 
 	.team-section {
 		flex-grow: 1;
+	}
+
+	.icon {
+		color: black;
+	}
+
+	.icon:hover {
+		color: #ff9930;
 	}
 </style>
