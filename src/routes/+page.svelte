@@ -32,7 +32,7 @@
 </script>
 
 <Carousel>
-	<Navbar shadow={true} />
+	<Navbar />
 </Carousel>
 
 <div class="introduction primary-bg">

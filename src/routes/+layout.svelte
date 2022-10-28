@@ -9,7 +9,7 @@
 <div class="container">
 	{#if !homepage}
 		<div class="primary-bg">
-			<div class="section header">
+			<div class="header">
 				<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
 				<h1>About DDD South West</h1>
 				<Navbar />
@@ -34,9 +34,6 @@
 	.header {
 		display: flex;
 		align-items: center;
-		flex-direction: column;
-		text-align: center;
-		width: 100%;
 	}
 
 	@media (min-width: 576px) {
@@ -48,12 +45,31 @@
 	}
 
 	.logo {
-		max-width: 150px;
+		display: none;
 	}
 
 	@media (min-width: 768px) {
 		.logo {
+			display: inline;
+			max-width: 150px;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.logo {
 			max-width: 300px;
 		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+	}
+
+	h1 {
+		padding-left: 20px;
+	}
+
+	h2 {
+		padding: 0 10px;
 	}
 </style>
