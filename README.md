@@ -45,6 +45,7 @@ Make sure to run the lint/format commands, and the Playwright tests! :)
 - Any shared app state lives in the `stores.js` file.
 - Static assets (global css and images) live under the `static` folder.
 - The Svelte components contain the Typescript (`<script>`), CSS (`<style>`), and Markup (`<div> etc.`).
+- For the content pages, the page title is set via a store. Just import the pageTitle store and call `pageTitle.set('Sponsorship');`.
 
 ### CSS classes
 

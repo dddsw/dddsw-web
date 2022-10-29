@@ -28,7 +28,7 @@
 		<div>
 			<div class="nav-link-container" on:click={toggleNav}>
 				{#each navItems as navItem}
-					{#if navItem.href !== currentPage}
+					{#if navItem.href !== currentPage && !navItem.hidden}
 						<a href={navItem.href}><div class="nav-link">{navItem.text}</div></a>
 					{/if}
 				{/each}
