@@ -91,13 +91,6 @@
 		gap: 20px;
 	}
 
-	@media (min-width: 992px) {
-		.options-container {
-			flex-direction: row;
-			align-items: stretch;
-		}
-	}
-
 	.options-container-small {
 		justify-content: space-evenly;
 		gap: 10px;
@@ -145,5 +138,12 @@
 
 	sub {
 		font-style: italic;
+	}
+
+	@media (min-width: 992px) {
+		.options-container {
+			flex-direction: row;
+			align-items: stretch;
+		}
 	}
 </style>

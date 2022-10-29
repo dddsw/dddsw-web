@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { navExpanded } from '../stores.js';
 
@@ -45,13 +45,6 @@
 		margin: 20px;
 	}
 
-	@media (min-width: 400px) {
-		nav {
-			justify-content: flex-end;
-			margin: 50px;
-		}
-	}
-
 	nav a {
 		color: black;
 		text-decoration: none;
@@ -75,11 +68,6 @@
 	.nav-link-container {
 		position: absolute;
 		right: 20px;
-	}
-	@media (min-width: 400px) {
-		.nav-link-container {
-			right: 50px;
-		}
 	}
 
 	.nav-link {
@@ -106,6 +94,21 @@
 		font-size: 3rem;
 	}
 
+	.shadow {
+		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
+	}
+
+	@media (min-width: 400px) {
+		nav {
+			justify-content: flex-end;
+			margin: 50px;
+		}
+
+		.nav-link-container {
+			right: 50px;
+		}
+	}
+
 	@media (min-width: 768px) {
 		.nav-button-text {
 			display: inline;
@@ -114,9 +117,5 @@
 		.icon {
 			font-size: 2rem;
 		}
-	}
-
-	.shadow {
-		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
 	}
 </style>

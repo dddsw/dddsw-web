@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import { page } from '$app/stores';
@@ -37,16 +37,24 @@
 		align-items: center;
 	}
 
+	.logo {
+		display: none;
+	}
+
+	h1 {
+		padding-left: 20px;
+	}
+
+	h2 {
+		padding: 0 10px;
+	}
+
 	@media (min-width: 576px) {
 		.header {
 			justify-content: space-between;
 			flex-direction: row;
 			text-align: left;
 		}
-	}
-
-	.logo {
-		display: none;
 	}
 
 	@media (min-width: 768px) {
@@ -64,13 +72,5 @@
 		h1 {
 			font-size: 2.5rem;
 		}
-	}
-
-	h1 {
-		padding-left: 20px;
-	}
-
-	h2 {
-		padding: 0 10px;
 	}
 </style>

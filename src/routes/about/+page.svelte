@@ -113,12 +113,6 @@
 		padding: 20px 0px;
 	}
 
-	@media (min-width: 992px) {
-		.team-container {
-			width: 75%;
-		}
-	}
-
 	.team-container img {
 		border-radius: 50%;
 		max-width: 150px;
@@ -141,5 +135,11 @@
 
 	.icon:hover {
 		color: #ff9930;
+	}
+
+	@media (min-width: 992px) {
+		.team-container {
+			width: 75%;
+		}
 	}
 </style>
