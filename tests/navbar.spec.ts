@@ -49,6 +49,16 @@ test('Clicking logo closes nav links dropdown', async ({ page }) => {
 	await expect(page.locator('.nav-link-container')).toBeHidden();
 });
 
+test('Clicking logo does not open nav links dropdown', async ({ page }) => {
+	// Go to about page (to avoid carousel weirdness)
+	await page.goto('http://127.0.0.1:5173/about');
+
+	// Click logo
+	await page.locator('img[class~="logo"]').click();
+
+	await expect(page.locator('.nav-link-container')).toBeHidden();
+});
+
 test('Displays down arrow icon in unexpanded state', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
 	await page.goto('http://127.0.0.1:5173/about');

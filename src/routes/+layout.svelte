@@ -5,7 +5,9 @@
 	import { pageTitle, navExpanded } from '../stores.js';
 
 	function toggleNav() {
-		$navExpanded = !$navExpanded;
+		if ($navExpanded === true) {
+			$navExpanded = !$navExpanded;
+		}
 	}
 
 	$: homepage = $page.url.pathname === '/';
