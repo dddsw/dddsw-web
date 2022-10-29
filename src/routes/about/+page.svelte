@@ -38,7 +38,7 @@
 			name: 'Hannah Price',
 			imageName: 'hannah.jpg',
 			email: 'hannahprice@dddsouthwest.com',
-			twitter: 'Handalf1994'
+			twitter: 'han_10001'
 		},
 		{
 			name: 'Joseph Woodward',

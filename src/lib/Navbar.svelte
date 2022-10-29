@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { navExpanded } from '../stores.js';
 
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
@@ -7,24 +8,23 @@
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false }
 	];
 
-	$: expanded = false;
 	$: currentPage = $page.url.pathname;
 	$: homepage = currentPage === '/';
-
-	function toggleExpanded() {
-		expanded = !expanded;
-	}
 </script>
 
 <nav>
-	<div class="main-nav-button" class:shadow={homepage} on:click={toggleExpanded}>
+	<div
+		class="main-nav-button"
+		class:shadow={homepage}
+		on:click={() => ($navExpanded = !$navExpanded)}
+	>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
-			{#if expanded} expand_less {:else} expand_more {/if}</span
+			{#if $navExpanded} expand_less {:else} expand_more {/if}</span
 		>
 	</div>
-	{#if expanded}
+	{#if $navExpanded}
 		<div>
 			<div class="nav-link-container">
 				{#each navItems as navItem}
