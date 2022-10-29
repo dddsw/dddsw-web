@@ -10,14 +10,14 @@
 
 	$: currentPage = $page.url.pathname;
 	$: homepage = currentPage === '/';
+
+	function toggleNav() {
+		$navExpanded = !$navExpanded;
+	}
 </script>
 
 <nav>
-	<div
-		class="main-nav-button"
-		class:shadow={homepage}
-		on:click={() => ($navExpanded = !$navExpanded)}
-	>
+	<div class="main-nav-button" class:shadow={homepage} on:click={toggleNav}>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
@@ -26,7 +26,7 @@
 	</div>
 	{#if $navExpanded}
 		<div>
-			<div class="nav-link-container">
+			<div class="nav-link-container" on:click={toggleNav}>
 				{#each navItems as navItem}
 					{#if navItem.href !== currentPage}
 						<a href={navItem.href}><div class="nav-link">{navItem.text}</div></a>
