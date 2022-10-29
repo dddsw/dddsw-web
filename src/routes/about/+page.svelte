@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
 	import type { KeyPoint } from '../../types/KeyPoint.type';
+	import { pageTitle } from '../../stores.js';
 
 	let keyPoints: KeyPoint[] = [
 		{
@@ -48,6 +49,8 @@
 		},
 		{ name: 'Martyn Fewtrell', imageName: 'martyn.jpg', email: 'martynfewtrell@dddsouthwest.com' }
 	];
+
+	pageTitle.set('About DDD South West');
 </script>
 
 <div class="secondary-bg">

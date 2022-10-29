@@ -1,10 +1,14 @@
 <script lang="ts">
+	import { pageTitle } from '../../stores.js';
+
 	let refreshmentPackages = [
 		{ title: 'Breakfast', price: '£300', claimed: false },
 		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
 		{ title: 'Lunch', price: '£2000', claimed: false },
 		{ title: 'Hot/cold beverages', price: '£1000', claimed: false }
 	];
+
+	pageTitle.set('Sponsorship');
 </script>
 
 <div class="secondary-bg">
@@ -63,7 +67,7 @@
 			{/each}
 		</div>
 
-		As well as supporting the community, sponsorship offers:
+		<p>As well as supporting the community, sponsorship offers:</p>
 		<ul>
 			<li>The opportunity to talk to the exact people you want to recruit or sell to.</li>
 			<li>

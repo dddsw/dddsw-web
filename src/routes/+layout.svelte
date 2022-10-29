@@ -2,6 +2,7 @@
 	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import { page } from '$app/stores';
+	import { pageTitle } from '../stores.js';
 
 	$: homepage = $page.url.pathname === '/';
 </script>
@@ -11,7 +12,7 @@
 		<div class="primary-bg">
 			<div class="header">
 				<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
-				<h1>About DDD South West</h1>
+				<h1>{$pageTitle}</h1>
 				<Navbar />
 			</div>
 		</div>
