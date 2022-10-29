@@ -24,9 +24,9 @@
 		{
 			title: 'For sponsors',
 			icon: 'storefront',
-			paragraph: `Our events would not be possible without the help from our generous sponsors. If you're
+			paragraph: `DDD South West would not be possible without the help from our generous sponsors. If you're
 				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please <a href="mailto:sponsorship@dddsouthwest.com">get in touch.</a>`
+				need for your technical roles please <a href="/sponsorship">consider sponsoring us.</a>`
 		}
 	];
 </script>
@@ -52,8 +52,17 @@
 	<CallToActions {keyPoints} />
 </div>
 
-<div class="tertiary-bg">
-	<p class="text-center">More information coming soon...</p>
+<div class="quaternary-bg">
+	<div class="section">
+		<h1>Latest update</h1>
+		<p>
+			DDD South West is back for 2023! We're delighted to announce we'll be returning to <a
+				href="https://engine-shed.co.uk/"
+				target="_blank">Engine Shed</a
+			>
+			on the 29th April 2023.
+		</p>
+	</div>
 </div>
 
 <style>

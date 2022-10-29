@@ -2,7 +2,11 @@
 	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import { page } from '$app/stores';
-	import { pageTitle } from '../stores.js';
+	import { pageTitle, navExpanded } from '../stores.js';
+
+	function toggleNav() {
+		$navExpanded = !$navExpanded;
+	}
 
 	$: homepage = $page.url.pathname === '/';
 </script>
@@ -11,7 +15,14 @@
 	{#if !homepage}
 		<div class="primary-bg">
 			<div class="header">
-				<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
+				<a href="/"
+					><img
+						src="../images/logo.png"
+						alt="The DDD South West logo"
+						class="logo"
+						on:click={toggleNav}
+					/></a
+				>
 				<h1>{$pageTitle}</h1>
 				<Navbar />
 			</div>
