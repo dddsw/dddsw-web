@@ -5,7 +5,7 @@
 		{ title: 'Breakfast', price: '£300', claimed: false },
 		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
 		{ title: 'Lunch', price: '£2000', claimed: false },
-		{ title: 'Hot/cold beverages', price: '£1000', claimed: false }
+		{ title: 'Hot & cold beverages', price: '£1000', claimed: false }
 	];
 
 	pageTitle.set('Sponsorship');
@@ -105,7 +105,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background-color: #ffc13a;
+		background-color: var(--quinary-color);
 	}
 
 	.option-small {

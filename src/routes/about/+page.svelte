@@ -134,7 +134,7 @@
 	}
 
 	.icon:hover {
-		color: #ff9930;
+		color: var(--primary-color);
 	}
 
 	@media (min-width: 992px) {

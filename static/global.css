@@ -8,6 +8,15 @@ html {
 	height: 100%;
 }
 
+/* GLOBAL COLOUR PALETTE */
+:root {
+	--primary-color: #ff9930;
+	--secondary-color: white;
+	--tertiary-color: #eaeaea;
+	--quaternary-color: #96c6ca;
+	--quinary-color: #ffc13a;
+}
+
 /* BUILDING BLOCKS */
 
 .container {
@@ -35,22 +44,22 @@ html {
 	}
 }
 
-/* BG COLOUR PALETTE */
+/* BG COLOUR  */
 
 .primary-bg {
-	background-color: #ff9930;
+	background-color: var(--primary-color);
 }
 
 .secondary-bg {
-	background-color: white;
+	background-color: var(--secondary-color);
 }
 
 .tertiary-bg {
-	background-color: #eaeaea;
+	background-color: var(--tertiary-color);
 }
 
 .quaternary-bg {
-	background-color: #96c6ca;
+	background-color: var(--quaternary-color);
 }
 
 /* TYPOGRAPHY */

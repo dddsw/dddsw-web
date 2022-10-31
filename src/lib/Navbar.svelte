@@ -76,7 +76,7 @@
 
 	.nav-link,
 	.main-nav-button {
-		background-color: #ff9930;
+		background-color: var(--primary-color);
 		color: black;
 	}
 
