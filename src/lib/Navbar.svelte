@@ -5,7 +5,8 @@
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
-		{ text: 'Sponsorship', href: '/sponsorship', hidden: false }
+		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
+		{ text: '2023', href: '/2023', hidden: false }
 	];
 
 	$: currentPage = $page.url.pathname;
@@ -17,7 +18,12 @@
 </script>
 
 <nav>
-	<div class="main-nav-button" class:shadow={homepage} on:click={toggleNav}>
+	<div
+		class="main-nav-button"
+		class:shadow={homepage}
+		class:inverted-colours={homepage}
+		on:click={toggleNav}
+	>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
@@ -72,17 +78,20 @@
 
 	.nav-link {
 		padding: 10px;
+		border: 1px solid lightgrey;
 	}
 
 	.nav-link,
-	.main-nav-button {
-		background-color: var(--primary-color);
+	.main-nav-button,
+	.inverted-colours:hover {
+		background-color: white;
 		color: black;
 	}
 
 	.nav-link:hover,
-	.main-nav-button:hover {
-		background-color: white;
+	.main-nav-button:hover,
+	.inverted-colours {
+		background-color: var(--primary-color);
 		color: black;
 	}
 

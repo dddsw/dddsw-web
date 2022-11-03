@@ -15,7 +15,7 @@
 
 <div class="container">
 	{#if !homepage}
-		<div class="primary-bg">
+		<div class="gradient-bg">
 			<div class="header">
 				<a href="/"
 					><img
@@ -45,6 +45,16 @@
 </div>
 
 <style>
+	.gradient-bg {
+		background: rgb(255, 153, 48);
+		background: linear-gradient(
+			90deg,
+			rgba(255, 153, 48, 1) 0%,
+			rgba(255, 193, 48, 1) 50%,
+			rgba(150, 198, 202, 1) 100%
+		);
+	}
+
 	.header {
 		display: flex;
 		align-items: center;
@@ -52,6 +62,7 @@
 
 	.logo {
 		display: none;
+		padding: 10px;
 	}
 
 	h1 {
@@ -74,6 +85,7 @@
 		.logo {
 			display: inline;
 			max-width: 150px;
+			padding: 30px;
 		}
 	}
 
