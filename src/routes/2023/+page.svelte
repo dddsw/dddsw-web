@@ -75,7 +75,7 @@
 
 <style>
 	iframe {
-		width: 300px;
+		width: 250px;
 		height: 250px;
 		padding: 10px;
 	}
@@ -87,7 +87,7 @@
 		}
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		iframe {
 			width: 700px;
 			height: 550px;

@@ -6,7 +6,8 @@
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
-		{ text: '2023', href: '/2023', hidden: false }
+		{ text: '2023', href: '/2023', hidden: false },
+		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 
 	$: currentPage = $page.url.pathname;
