@@ -62,7 +62,7 @@
 			DDD South West is a free one day technical event organised by developers for developers. It is
 			a day of learning, discussing, contributing and being part of the developer community in the
 			South West. Our goal is to provide free technical education, the opportunity to mix with peers
-			and to make and develop relationships in the .NET community.
+			and to make and develop relationships in the developer community.
 		</p>
 	</div>
 </div>
