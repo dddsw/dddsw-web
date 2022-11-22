@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	let sponsors = [
 		{
 			name: 'IO Associates',

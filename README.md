@@ -1,22 +1,16 @@
-# create-svelte
+# DDD South West website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is currently a WIP. Please feel free to raise any issues that you come across.
 
-## Creating a project
+## Running locally
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Install dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+2. Start the app:
 
 ```bash
 npm run dev
@@ -25,14 +19,52 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## Running the tests
 
-To create a production version of your app:
+You can run the Playwright tests via a command prompt with:
 
 ```bash
-npm run build
+npm run test
 ```
 
-You can preview the production build with `npm run preview`.
+You can also run them via the Playwright VS Code extension.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The tests generate page previews in different device sizes. The screenshots are saved under `tests\page-previews`.
+
+## Contributing
+
+Make sure to run the lint/format commands, and the Playwright tests! :)
+
+### Structure of the app
+
+- Pages live under `src\routes`.
+- Components live under `src\lib`.
+- The app uses a shared layout, found in `src\routes\+layout.svelte`. The shared layout consists of the header, footer, and a `<slot />` in the middle which projects the content from the pages.
+- Pages/routes are signified by creating a file called `+page.svelte`, and the route is taken from it's folder path. For example the homepage (route '/') is the first `+page.svelte` child under the `routes` folder, the about page (route '/about') is the `+page.svelte` under the `routes\about` folder.
+- Typescript types live under `src\types`.
+- Any shared app state lives in the `stores.js` file.
+- Static assets (global css and images) live under the `static` folder.
+- The Svelte components contain the Typescript (`<script>`), CSS (`<style>`), and Markup (`<div> etc.`).
+- For the content pages, the page title is set via a store. Just import the pageTitle store and call `pageTitle.set('Sponsorship');`.
+
+### CSS classes
+
+Global styles live under `static\global.css`. All other styles live in the Svelte component in the `<style>` tag.
+
+There are some shared classes which can be reused across the content pages:
+
+Background colour classes to set the sections to the predefined colours:
+
+```html
+<div class="primary-bg">...</div>
+```
+
+`.section` to provide a basic responsive section:
+
+```html
+<div class="secondary-bg">
+	<div class="section">
+		<!-- add content here -->
+	</div>
+</div>
+```

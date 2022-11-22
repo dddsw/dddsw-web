@@ -1,14 +1,13 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	import Footer from '$lib/Footer.svelte';
-	import Navbar from '$lib/Navbar.svelte';
 	import type { KeyPoint } from '../../types/KeyPoint.type';
+	import { pageTitle } from '../../stores.js';
 
 	let keyPoints: KeyPoint[] = [
 		{
 			title: 'Spread the word',
 			icon: 'campaign',
-			paragraph: `Sharing our tweets and LinkedIn posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
+			paragraph: `Sharing our social media posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
 		},
 		{
 			title: 'Speak at our event',
@@ -21,170 +20,97 @@
 			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our Twitter feed for volunteering opportunities.`
 		}
 	];
+
+	let teamMembers = [
+		{
+			name: 'Lorraine Pearce',
+			imageName: 'lorraine.jpg',
+			email: 'lorrainepearce@dddsouthwest.com',
+			twitter: 'LorrainePearce',
+			linkedIn: 'lorraine-pearce-688aba8'
+		},
+		{ name: 'Russell Day', imageName: 'russ.jpg', email: 'russell.day@dddsouthwest.com' },
+		{
+			name: 'Stuart Lang',
+			imageName: 'stu.jpg',
+			email: 'stuartlang@dddsouthwest.com',
+			twitter: 'stuartblang'
+		},
+		{
+			name: 'Hannah Price',
+			imageName: 'hannah.jpg',
+			email: 'hannahprice@dddsouthwest.com',
+			twitter: 'han_10001',
+			linkedIn: 'hannah-price-a09728b1'
+		},
+		{
+			name: 'Joseph Woodward',
+			imageName: 'joe.jpg',
+			email: 'josephwoodward@dddsouthwest.com',
+			twitter: '_josephwoodward'
+		},
+		{ name: 'Martyn Fewtrell', imageName: 'martyn.jpg', email: 'martynfewtrell@dddsouthwest.com' }
+	];
+
+	pageTitle.set('About DDD South West');
 </script>
 
-<div class="container">
-	<div class="primary-bg">
-		<div class="section header">
-			<a href="/"><img src="../images/logo.png" alt="The DDD South West logo" class="logo" /></a>
-			<h1>About DDD South West</h1>
-			<Navbar currentRoute={'/about'} />
+<div class="secondary-bg">
+	<div class="section">
+		<h1>What to expect</h1>
+		<p>
+			DDD South West is a free one day technical event organised by developers for developers. It is
+			a day of learning, discussing, contributing and being part of the developer community in the
+			South West. Our goal is to provide free technical education, the opportunity to mix with peers
+			and to make and develop relationships in the developer community.
+		</p>
+	</div>
+</div>
+
+<div class="tertiary-bg">
+	<div class="section team-section">
+		<h1>Meet the team</h1>
+		<p>
+			DDD South West is brought to you by a small team of volunteers. Please feel free to get in
+			touch with us if you have any questions or ideas.
+		</p>
+
+		<div class="team-container">
+			{#each teamMembers as member}
+				<div class="member-container">
+					<img src="../images/team/{member.imageName}" alt={member.name} class="boop-effect" />
+					<span>{member.name}</span>
+					<span>
+						{#if member.twitter}
+							<a href="https://twitter.com/{member.twitter}" target="_blank"
+								><i class="fa-brands fa-twitter fa-2x icon" /></a
+							>
+						{/if}
+						{#if member.linkedIn}
+							<a href="https://www.linkedin.com/in/{member.linkedIn}" target="_blank"
+								><i class="fa-brands fa-linkedin fa-2x icon" /></a
+							>
+						{/if}
+						<a href="mailto:{member.email}">
+							<i class="fa-regular fa-envelope fa-2x icon" />
+						</a>
+					</span>
+				</div>
+			{/each}
 		</div>
 	</div>
+</div>
 
-	<div class="secondary-bg">
-		<div class="section">
-			<h1>What to expect</h1>
-			<p>
-				DDD South West is a free one day technical event organised by developers for developers. It
-				is a day of learning, discussing, contributing and being part of the developer community in
-				the South West. Our goal is to provide free technical education, the opportunity to mix with
-				peers and to make and develop relationships in the .NET community.
-			</p>
-		</div>
+<div class="secondary-bg">
+	<div class="section">
+		<h1>Get involved</h1>
+		<p>DDD South West is a community event and there are several ways you can get involved:</p>
 	</div>
 
-	<div class="tertiary-bg">
-		<div class="section team-section">
-			<h1>Meet the team</h1>
-			<p>
-				DDD South West is brought to you by a small team of volunteers. Please feel free to get in
-				touch with us if you have any questions or ideas.
-			</p>
-
-			<div class="team-container">
-				<div class="member-container">
-					<img src="../images/team/lorraine.jpg" alt="Lorraine Pearce" />
-					<span>Lorraine Pearce</span>
-					<span>
-						<a href="https://twitter.com/LorrainePearce"
-							><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-						>
-						<a href="mailto:lorrainepearce@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-				<div class="member-container">
-					<img src="../images/team/russ.jpg" alt="Russ Day" />
-					<span>Russell Day</span>
-					<span>
-						<a href="mailto:russell.day@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-				<div class="member-container">
-					<img src="../images/team/stu.jpg" alt="Stuart Lang" />
-					<span>Stuart Lang</span>
-					<span>
-						<a href="https://twitter.com/stuartblang"
-							><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-						><a href="mailto:stuartlang@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-				<div class="member-container">
-					<img src="../images/team/hannah.jpg" alt="Hannah Price" />
-					<span>Hannah Price</span>
-					<span>
-						<a href="https://twitter.com/Handalf1994"
-							><i class="fa-brands fa-twitter fa-2x" style="color: black;" /></a
-						><a href="mailto:hannahprice@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-				<div class="member-container">
-					<img src="../images/team/joe.jpg" alt="Joseph Woodward" />
-					<span>Joseph Woodward</span>
-					<span>
-						<a href="mailto:josephwoodward@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-				<div class="member-container">
-					<img src="../images/team/martyn.jpg" alt="Martyn Fewtrell" />
-					<span>Martyn Fewtrell</span>
-					<span>
-						<a href="mailto:martynfewtrell@dddsouthwest.com">
-							<i class="fa-regular fa-envelope fa-2x" style="color: black;" />
-						</a>
-					</span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="secondary-bg">
-		<div class="section">
-			<h1>Get involved</h1>
-			<p>DDD South West is a community event and there are several ways you can get involved:</p>
-		</div>
-
-		<CallToActions {keyPoints} />
-	</div>
-
-	<div class="quaternary-bg">
-		<div class="section tagline">
-			<h2>By the community, for the community</h2>
-		</div>
-	</div>
-
-	<Footer />
+	<CallToActions {keyPoints} />
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-	}
-
-	.header {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		text-align: center;
-	}
-
-	@media (min-width: 576px) {
-		.header {
-			justify-content: space-between;
-			flex-direction: row;
-			text-align: left;
-		}
-	}
-
-	.logo {
-		max-width: 300px;
-	}
-
-	.section {
-		width: 90%;
-		margin: auto;
-	}
-
-	@media (min-width: 768px) {
-		.section {
-			width: 70%;
-		}
-	}
-
-	@media (min-width: 1800px) {
-		.section {
-			width: 50%;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		p {
-			font-size: 1.5rem;
-		}
-	}
-
 	.team-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -192,12 +118,6 @@
 		justify-content: center;
 		margin: auto;
 		padding: 20px 0px;
-	}
-
-	@media (min-width: 992px) {
-		.team-container {
-			width: 75%;
-		}
 	}
 
 	.team-container img {
@@ -212,11 +132,21 @@
 		gap: 5px;
 	}
 
-	.tagline {
-		text-align: center;
-	}
-
 	.team-section {
 		flex-grow: 1;
+	}
+
+	.icon {
+		color: black;
+	}
+
+	.icon:hover {
+		color: var(--primary-color);
+	}
+
+	@media (min-width: 992px) {
+		.team-container {
+			width: 75%;
+		}
 	}
 </style>

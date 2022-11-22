@@ -38,28 +38,10 @@
 		font-size: 125px;
 	}
 
-	@media (max-width: 350px) {
-		h1 {
-			font-size: 1.5rem;
-		}
-	}
-
 	.key-points-container {
 		width: 90%;
 		margin: auto;
 		padding-bottom: 50px;
-	}
-
-	@media (min-width: 768px) {
-		.key-points-container {
-			width: 70%;
-		}
-	}
-
-	@media (min-width: 1800px) {
-		.key-points-container {
-			width: 50%;
-		}
 	}
 
 	.key-point {
@@ -74,18 +56,6 @@
 		flex-direction: column-reverse;
 	}
 
-	@media (min-width: 576px) {
-		.key-point {
-			gap: 50px;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-		}
-
-		.key-point:nth-child(even) {
-			flex-direction: row;
-		}
-	}
-
 	.key-point-right {
 		display: flex;
 		flex-direction: column;
@@ -96,7 +66,23 @@
 		text-align: left;
 	}
 
+	@media (max-width: 350px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+	}
+
 	@media (min-width: 576px) {
+		.key-point {
+			gap: 50px;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+		}
+
+		.key-point:nth-child(even) {
+			flex-direction: row;
+		}
+
 		.key-point-right p {
 			text-align: right;
 		}
@@ -106,9 +92,21 @@
 		}
 	}
 
+	@media (min-width: 768px) {
+		.key-points-container {
+			width: 70%;
+		}
+	}
+
 	@media (min-width: 1400px) {
 		.key-point p {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
+		}
+	}
+
+	@media (min-width: 1800px) {
+		.key-points-container {
+			width: 50%;
 		}
 	}
 </style>

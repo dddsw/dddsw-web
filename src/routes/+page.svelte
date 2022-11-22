@@ -1,7 +1,6 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
 	import Carousel from '$lib/Carousel.svelte';
-	import Footer from '$lib/Footer.svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
@@ -25,77 +24,51 @@
 		{
 			title: 'For sponsors',
 			icon: 'storefront',
-			paragraph: `Our events would not be possible without the help from our generous sponsors. If you're
+			paragraph: `DDD South West would not be possible without the help from our generous sponsors. If you're
 				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please <a href="mailto:sponsorship@dddsouthwest.com">get in touch.</a>`
+				need for your technical roles please <a href="/sponsorship">consider sponsoring us.</a>`
 		}
 	];
 </script>
 
-<div class="container">
-	<Carousel>
-		<Navbar shadow={true} />
-	</Carousel>
+<Carousel>
+	<Navbar />
+</Carousel>
 
-	<div class="introduction primary-bg">
-		<p>
+<div class="introduction primary-bg">
+	<div class="section">
+		<p class="text-center">
 			DDD South West is an inclusive, non-profit developer conference organised by the community,
 			for the community.
 		</p>
 	</div>
+</div>
 
-	{#if showSponsors}
-		<Sponsors />
-	{/if}
+{#if showSponsors}
+	<Sponsors />
+{/if}
 
-	<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
-		<CallToActions {keyPoints} />
+<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
+	<CallToActions {keyPoints} />
+</div>
+
+<div class="quaternary-bg">
+	<div class="section">
+		<h1>Latest update</h1>
+		<p>
+			DDD South West is back for 2023! We're delighted to announce we'll be returning to <a
+				href="https://engine-shed.co.uk/"
+				target="_blank">Engine Shed</a
+			>
+			on the 29th April 2023.
+		</p>
 	</div>
-
-	<div class="tertiary-bg holding-message">More information coming soon...</div>
-
-	<Footer />
 </div>
 
 <style>
-	.container {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.introduction p {
-		padding: 20px;
-		margin: 0;
-		text-align: center;
-	}
-
-	@media (min-width: 400px) {
-		.introduction p {
-			padding: 30px 70px;
-		}
-	}
-
 	@media (min-width: 768px) {
 		.introduction p {
 			font-size: 1.75rem;
-			padding: 50px 90px;
-		}
-	}
-
-	@media (min-width: 1800px) {
-		.introduction p {
-			padding: 50px 25%;
-		}
-	}
-
-	.holding-message {
-		padding: 50px;
-		text-align: center;
-	}
-
-	@media (min-width: 1400px) {
-		.holding-message {
-			font-size: 1.5rem;
 		}
 	}
 </style>
