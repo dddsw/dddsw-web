@@ -8,6 +8,15 @@
 		{ title: 'Hot & cold beverages', price: '£1000', claimed: false }
 	];
 
+	let extraOptions = [
+		{
+			title: 'T-shirts',
+			price: '£500+',
+			claimed: false,
+			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
+		}
+	];
+
 	pageTitle.set('Sponsorship');
 </script>
 
@@ -39,7 +48,7 @@
 				Everything in Bronze, plus:
 				<ul>
 					<li>A sponsor stand</li>
-					<li>Promotional tweets from our account</li>
+					<li>Promotional posts from our social media accounts</li>
 				</ul>
 				<span class="price">£1000</span>
 			</div>
@@ -61,6 +70,20 @@
 				<div class="primary-bg option-small boop-effect" class:claimed={refreshmentPackage.claimed}>
 					{refreshmentPackage.title} <span class="price">{refreshmentPackage.price}</span>
 					{#if refreshmentPackage.claimed}
+						<sub>This item has been sponsored</sub>
+					{/if}
+				</div>
+			{/each}
+		</div>
+
+		<h1>Extras</h1>
+		<div class="options-container extra-options">
+			{#each extraOptions as extraOption}
+				<div class="primary-bg option-small boop-effect" class:claimed={extraOption.claimed}>
+					{extraOption.title}
+					<sub>{extraOption.description} </sub>
+					<span class="price">{extraOption.price}</span>
+					{#if extraOption.claimed}
 						<sub>This item has been sponsored</sub>
 					{/if}
 				</div>
@@ -145,5 +168,9 @@
 			flex-direction: row;
 			align-items: stretch;
 		}
+	}
+
+	.extra-options {
+		justify-content: flex-start;
 	}
 </style>

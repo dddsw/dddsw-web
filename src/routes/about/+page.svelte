@@ -7,7 +7,7 @@
 		{
 			title: 'Spread the word',
 			icon: 'campaign',
-			paragraph: `Sharing our tweets and LinkedIn posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
+			paragraph: `Sharing our social media posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
 		},
 		{
 			title: 'Speak at our event',
@@ -26,7 +26,8 @@
 			name: 'Lorraine Pearce',
 			imageName: 'lorraine.jpg',
 			email: 'lorrainepearce@dddsouthwest.com',
-			twitter: 'LorrainePearce'
+			twitter: 'LorrainePearce',
+			linkedIn: 'lorraine-pearce-688aba8'
 		},
 		{ name: 'Russell Day', imageName: 'russ.jpg', email: 'russell.day@dddsouthwest.com' },
 		{
@@ -39,7 +40,8 @@
 			name: 'Hannah Price',
 			imageName: 'hannah.jpg',
 			email: 'hannahprice@dddsouthwest.com',
-			twitter: 'han_10001'
+			twitter: 'han_10001',
+			linkedIn: 'hannah-price-a09728b1'
 		},
 		{
 			name: 'Joseph Woodward',
@@ -80,8 +82,13 @@
 					<span>{member.name}</span>
 					<span>
 						{#if member.twitter}
-							<a href="https://twitter.com/{member.twitter}"
+							<a href="https://twitter.com/{member.twitter}" target="_blank"
 								><i class="fa-brands fa-twitter fa-2x icon" /></a
+							>
+						{/if}
+						{#if member.linkedIn}
+							<a href="https://www.linkedin.com/in/{member.linkedIn}" target="_blank"
+								><i class="fa-brands fa-linkedin fa-2x icon" /></a
 							>
 						{/if}
 						<a href="mailto:{member.email}">
