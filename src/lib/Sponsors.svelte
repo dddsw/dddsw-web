@@ -1,13 +1,6 @@
 <script lang="ts">
 	let sponsors = [
-		{
-			name: 'IO Associates',
-			href: 'https://www.ioassociates.co.uk',
-			src: '../images/sponsors/io_associates.png'
-		},
-		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' },
-		{ name: 'Elastic', href: 'https://www.elastic.co/', src: '../images/sponsors/elastic.png' },
-		{ name: 'NDC London', href: 'https://ndclondon.com/', src: '../images/sponsors/ndc_london.png' }
+		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' }
 	];
 </script>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Sponsors from '$lib/Sponsors.svelte';
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
@@ -16,6 +17,8 @@
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
+
+	let showSponsors = true;
 
 	pageTitle.set('Sponsorship');
 </script>
@@ -103,6 +106,9 @@
 		</ul>
 	</div>
 </div>
+{#if showSponsors}
+	<Sponsors />
+{/if}
 
 <style>
 	.options-container {
