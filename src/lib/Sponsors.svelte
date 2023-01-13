@@ -1,6 +1,16 @@
 <script lang="ts">
 	let sponsors = [
-		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' }
+		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' },
+		{
+			name: 'UK Hydrographics Office',
+			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
+			src: '../images/sponsors/UKHO.png'
+		},
+		{
+			name: 'Rock Solid Knowledge',
+			href: 'https://www.rocksolidknowledge.com/',
+			src: '../images/sponsors/RSK.png'
+		}
 	];
 </script>
 
