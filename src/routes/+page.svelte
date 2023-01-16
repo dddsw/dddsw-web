@@ -19,7 +19,7 @@
 			title: 'For speakers',
 			icon: 'diversity_1',
 			paragraph: `Our events are a fantastic place to get your name out there as a speaker. Whether you're a
-				professional or a first-timer, you will be made to feel welcome and supported.`
+				professional or a first-timer, you will be made to feel welcome and supported. Submit your talk <a href="https://sessionize.com/ddd-south-west-2023-cfs/" target="_blank">here!</a>`
 		},
 		{
 			title: 'For sponsors',
@@ -61,6 +61,11 @@
 				target="_blank">Engine Shed</a
 			>
 			on the 29th April 2023.
+		</p>
+		<p>
+			<a href="https://sessionize.com/ddd-south-west-2023-cfs/" target="_blank"
+				>Call for speakers is now open!</a
+			>
 		</p>
 	</div>
 </div>
