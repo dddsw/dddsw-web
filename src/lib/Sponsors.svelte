@@ -1,6 +1,23 @@
 <script lang="ts">
 	let sponsors = [
-		{ name: 'SECCL', href: 'https://seccl.tech/', src: '../images/sponsors/seccl.svg' }
+		{
+			name: 'SECCL',
+			href: 'https://seccl.tech/',
+			src: '../images/sponsors/seccl.svg',
+			confirmed: true
+		},
+		{
+			name: 'UK Hydrographics Office',
+			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
+			src: '../images/sponsors/UKHO.png',
+			confirmed: false
+		},
+		{
+			name: 'Rock Solid Knowledge',
+			href: 'https://www.rocksolidknowledge.com/',
+			src: '../images/sponsors/RSK.png',
+			confirmed: false
+		}
 	];
 </script>
 
@@ -8,9 +25,11 @@
 	<h2>With thanks to our 2023 sponsors:</h2>
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
-			<a href={sponsor.href} target="_blank">
-				<img src={sponsor.src} alt={sponsor.name} />
-			</a>
+			{#if sponsor.confirmed}
+				<a href={sponsor.href} target="_blank">
+					<img src={sponsor.src} alt={sponsor.name} />
+				</a>
+			{/if}
 		{/each}
 	</div>
 </div>
