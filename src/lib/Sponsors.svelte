@@ -17,7 +17,13 @@
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/RSK.png',
 			confirmed: false
-		}
+		},
+		{
+			name: 'iO Associates',
+			href: 'https://www.ioassociates.co.uk/',
+			src: '../images/sponsors/io.png',
+			confirmed: true
+		},
 	];
 </script>
 
