@@ -10,7 +10,7 @@
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Rock Solid Knowledge',
