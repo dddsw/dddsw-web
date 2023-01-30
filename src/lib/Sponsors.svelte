@@ -23,7 +23,7 @@
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
 			confirmed: true
-		},
+		}
 	];
 </script>
 

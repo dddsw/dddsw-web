@@ -70,7 +70,81 @@
 	</div>
 </div>
 
+<div class="secondary-bg">
+	<div class="section">
+		<h2>Timeline</h2>
+		<div class="timeline text-center">
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> check_circle </span>
+				<p>16th January</p>
+				<p>Call for speakers opens</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>11th March</p>
+				<p>Call for speakers closes</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>13th March</p>
+				<p>Session voting opens</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>25th March</p>
+				<p>Session voting closes</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>8th April</p>
+				<p>Schedule announced</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>10th April</p>
+				<p>Ticket registration opens</p>
+			</span>
+			<span class="timeline-item">
+				<span class="material-symbols-outlined"> circle </span>
+				<p>29th April</p>
+				<p>Day of the event!</p>
+			</span>
+		</div>
+		<sub>We'll try our best to keep to these dates but please be patient if we're late!</sub>
+	</div>
+</div>
+
 <style>
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.timeline p {
+		font-size: 0.75rem;
+		margin: 0;
+		font-weight: bold;
+	}
+
+	.timeline-item p:first-of-type {
+		border-bottom: #cdcdcd 2px dotted;
+		margin-bottom: 5px;
+		font-weight: normal;
+	}
+
+	.timeline-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (min-width: 576px) {
+		.timeline {
+			flex-direction: row;
+		}
+	}
+
 	@media (min-width: 768px) {
 		.introduction p {
 			font-size: 1.75rem;
