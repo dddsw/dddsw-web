@@ -43,6 +43,7 @@
 				<ul>
 					<li>Your logo on our website</li>
 					<li>Your logo on the opening & closing slides</li>
+					<li>We'll thank you on our social media</li>
 				</ul>
 				<span class="price">£600</span>
 			</div>
@@ -50,8 +51,8 @@
 				<h2>Silver</h2>
 				Everything in Bronze, plus:
 				<ul>
-					<li>A sponsor stand</li>
-					<li>Promotional posts from our social media accounts</li>
+					<li>A sponsor stand on the day</li>
+					<li>Custom promotional posts from our social media accounts</li>
 				</ul>
 				<span class="price">£1000</span>
 			</div>
