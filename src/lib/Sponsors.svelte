@@ -23,6 +23,12 @@
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
 			confirmed: true
+		},
+		{
+			name: 'Avanade',
+			href: 'https://www.avanade.com/en-gb',
+			src: '../images/sponsors/avanade.png',
+			confirmed: true
 		}
 	];
 </script>
