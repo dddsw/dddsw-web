@@ -44,13 +44,9 @@
 <div class="modal-background" on:click={close} />
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
-	<slot name="header" />
-	<hr />
 	<slot />
-	<hr />
-
 	<!-- svelte-ignore a11y-autofocus -->
-	<button autofocus on:click={close}>Close</button>
+	<button autofocus on:click={close} class="modal-button">Close</button>
 </div>
 
 <style>
@@ -75,5 +71,18 @@
 		padding: 1em;
 		border-radius: 0.2em;
 		background: white;
+	}
+
+	.modal-button {
+		background-color: var(--primary-color);
+		color: black;
+		padding: 10px;
+		border: none;
+		font-size: 1.5rem;
+	}
+
+	.modal-button:hover {
+		color: white;
+		cursor: pointer;
 	}
 </style>

@@ -23,8 +23,7 @@
 	});
 
 	function showSpeakerInfo(id: string) {
-		const speaker = speakers.find((x) => x.id === id);
-		modalSpeaker = speaker;
+		modalSpeaker = speakers.find((x) => x.id === id);
 		if (modalSpeaker) {
 			showModal = true;
 		}
@@ -54,7 +53,6 @@
 
 {#if showModal}
 	<SpeakerModal on:close={() => (showModal = false)}>
-		<h2 slot="header">{modalSpeaker?.fullName}</h2>
 		<div>
 			{#if modalSpeaker?.profilePicture}
 				<img
@@ -63,10 +61,13 @@
 					class="speaker-image"
 				/>
 			{/if}
-			{#if modalSpeaker?.tagline}
-				<p>{modalSpeaker?.tagline}</p>
+			<h2>{modalSpeaker?.fullName}</h2>
+
+			{#if modalSpeaker?.tagLine}
+				<p>{modalSpeaker?.tagLine}</p>
 			{/if}
 			{#if modalSpeaker?.bio}
+				<hr />
 				<p>{modalSpeaker?.bio}</p>
 			{/if}
 		</div>
@@ -86,6 +87,11 @@
 		margin-right: 5px;
 		color: black;
 		background-color: var(--primary-color);
+	}
+
+	.speaker-name:hover {
+		color: white;
+		cursor: pointer;
 	}
 
 	.speaker-image {

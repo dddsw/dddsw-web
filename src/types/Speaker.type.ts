@@ -3,5 +3,5 @@ export type Speaker = {
     fullName: string
     bio: string
     profilePicture: string
-    tagline: string
+    tagLine: string
 }
