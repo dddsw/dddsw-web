@@ -98,7 +98,7 @@
 		max-width: 200px;
 	}
 
-.session-container p {
-	white-space: pre-wrap;
-}
+	.session-container p {
+		white-space: pre-wrap;
+	}
 </style>
