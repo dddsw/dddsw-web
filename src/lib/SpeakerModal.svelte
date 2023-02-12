@@ -72,6 +72,10 @@
 		border-radius: 0.2em;
 		background: white;
 	}
+	
+	.modal p {
+		white-space: pre-wrap;
+	}
 
 	.modal-button {
 		background-color: var(--primary-color);
