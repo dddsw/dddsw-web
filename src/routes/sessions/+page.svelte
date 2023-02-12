@@ -97,4 +97,8 @@
 	.speaker-image {
 		max-width: 200px;
 	}
+
+.session-container p {
+	white-space: pre-wrap;
+}
 </style>
