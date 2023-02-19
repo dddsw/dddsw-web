@@ -26,6 +26,7 @@
 		modalSpeaker = speakers.find((x) => x.id === id);
 		if (modalSpeaker) {
 			showModal = true;
+			document.body.scrollIntoView();
 		}
 	}
 </script>
