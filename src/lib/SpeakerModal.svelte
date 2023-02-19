@@ -45,8 +45,7 @@
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
 	<slot />
-	<!-- svelte-ignore a11y-autofocus -->
-	<button autofocus on:click={close} class="modal-button">Close</button>
+	<button on:click={close} class="modal-button">Close</button>
 </div>
 
 <style>
@@ -72,7 +71,7 @@
 		border-radius: 0.2em;
 		background: white;
 	}
-	
+
 	.modal p {
 		white-space: pre-wrap;
 	}
