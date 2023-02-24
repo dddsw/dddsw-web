@@ -5,7 +5,7 @@
 	let refreshmentPackages = [
 		{ title: 'Breakfast', price: '£300', claimed: false },
 		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
-		{ title: 'Lunch', price: '£2000', claimed: false },
+		{ title: 'Lunch', price: 'Gold + £500', claimed: false },
 		{ title: 'Hot & cold beverages', price: '£1000', claimed: false }
 	];
 
