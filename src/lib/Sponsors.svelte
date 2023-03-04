@@ -16,7 +16,7 @@
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/RSK.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'iO Associates',
