@@ -29,6 +29,12 @@
 			href: 'https://www.avanade.com/en-gb',
 			src: '../images/sponsors/avanade.png',
 			confirmed: true
+		},
+		{
+			name: 'Elastic Mint',
+			href: 'https://www.elasticmint.com/',
+			src: '../images/sponsors/elasticmint.png',
+			confirmed: true
 		}
 	];
 </script>

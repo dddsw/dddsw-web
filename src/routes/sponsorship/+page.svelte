@@ -3,10 +3,10 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: '£300', claimed: false },
+		{ title: 'Breakfast', price: '£300', claimed: true },
 		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
 		{ title: 'Lunch', price: 'Gold + £500', claimed: false },
-		{ title: 'Hot & cold beverages', price: '£1000', claimed: false }
+		{ title: 'Hot & cold beverages', price: '£200', claimed: false }
 	];
 
 	let extraOptions = [
