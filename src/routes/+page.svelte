@@ -19,7 +19,7 @@
 			title: 'For speakers',
 			icon: 'diversity_1',
 			paragraph: `Our events are a fantastic place to get your name out there as a speaker. Whether you're a
-				professional or a first-timer, you will be made to feel welcome and supported. Submit your talk <a href="https://sessionize.com/ddd-south-west-2023-cfs/" target="_blank">here!</a>`
+				professional or a first-timer, you will be made to feel welcome and supported.`
 		},
 		{
 			title: 'For sponsors',
@@ -62,11 +62,6 @@
 			>
 			on the 29th April 2023.
 		</p>
-		<p>
-			<a href="https://sessionize.com/ddd-south-west-2023-cfs/" target="_blank"
-				>Call for speakers is now open!</a
-			>
-		</p>
 	</div>
 </div>
 
@@ -80,12 +75,12 @@
 				<p>Call for speakers opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>11th March</p>
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>13th March</p>
 				<p>Session voting opens</p>
 			</span>
