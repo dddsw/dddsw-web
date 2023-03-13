@@ -3,17 +3,17 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: '£300', claimed: false },
-		{ title: 'Snacks throughout the day', price: '£300', claimed: false },
-		{ title: 'Lunch', price: 'Gold + £500', claimed: false },
-		{ title: 'Hot & cold beverages', price: '£1000', claimed: false }
+		{ title: 'Breakfast', price: '£300', claimed: true },
+		{ title: 'Snacks throughout the day', price: '£300', claimed: true },
+		{ title: 'Lunch', price: 'Gold + £500', claimed: true },
+		{ title: 'Hot & cold beverages', price: '£150', claimed: false }
 	];
 
 	let extraOptions = [
 		{
 			title: 'T-shirts',
 			price: '£500+',
-			claimed: false,
+			claimed: true,
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
