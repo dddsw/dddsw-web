@@ -29,6 +29,12 @@
 			href: 'https://www.avanade.com/en-gb',
 			src: '../images/sponsors/avanade.png',
 			confirmed: true
+		},
+		{
+			name: 'ALD Automotive',
+			href: 'https://www.aldautomotive.com/',
+			src: '../images/sponsors/ald.png',
+			confirmed: true
 		}
 	];
 </script>
