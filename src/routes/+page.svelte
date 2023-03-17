@@ -62,6 +62,11 @@
 			>
 			on the 29th April 2023.
 		</p>
+		<p>
+			<a href="https://www.surveymonkey.co.uk/r/25GRBFQ" target="_blank"
+				>Voting for sessions is open!</a
+			>
+		</p>
 	</div>
 </div>
 
