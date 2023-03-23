@@ -35,6 +35,12 @@
 			href: 'https://www.aldautomotive.com/',
 			src: '../images/sponsors/ald.png',
 			confirmed: true
+		},
+		{
+			name: 'BJSS',
+			href: 'https://www.bjss.com/',
+			src: '../images/sponsors/bjss.jpg',
+			confirmed: true
 		}
 	];
 </script>
