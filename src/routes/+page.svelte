@@ -54,7 +54,7 @@
 
 <div class="quaternary-bg">
 	<div class="section">
-		<h1>Latest update</h1>
+		<h1>Latest update:</h1>
 		<p>
 			DDD South West is back for 2023! We're delighted to announce we'll be returning to <a
 				href="https://engine-shed.co.uk/"
