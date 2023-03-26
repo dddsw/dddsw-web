@@ -54,18 +54,13 @@
 
 <div class="quaternary-bg">
 	<div class="section">
-		<h1>Latest update:</h1>
+		<h1>Latest update</h1>
 		<p>
 			DDD South West is back for 2023! We're delighted to announce we'll be returning to <a
 				href="https://engine-shed.co.uk/"
 				target="_blank">Engine Shed</a
 			>
 			on the 29th April 2023.
-		</p>
-		<p>
-			<a href="https://www.surveymonkey.co.uk/r/25GRBFQ" target="_blank"
-				>Voting for sessions is open!</a
-			>
 		</p>
 	</div>
 </div>
@@ -90,7 +85,7 @@
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>25th March</p>
 				<p>Session voting closes</p>
 			</span>
