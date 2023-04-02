@@ -4,6 +4,7 @@
 	import type { Speaker } from 'src/types/Speaker.type.js';
 	import { onMount } from 'svelte';
 	import { pageTitle } from '../../stores.js';
+	import { page } from '$app/stores';
 
 	pageTitle.set('Sessions');
 
@@ -20,6 +21,17 @@
 
 		const speakersRsp = await fetch('https://sessionize.com/api/v2/h3krav8h/view/Speakers');
 		speakers = await speakersRsp.json();
+
+		const hasId = $page.url.searchParams.has('id');
+		if (hasId) {
+			const sessionId = $page.url.searchParams.get('id');
+			if (sessionId != undefined && sessionId != '') {
+				const sessionExists = sessions.find((x) => x.id === sessionId);
+				if (sessionExists) {
+					scrollIntoView(sessionId);
+				}
+			}
+		}
 	});
 
 	function showSpeakerInfo(id: string) {
@@ -29,6 +41,14 @@
 			document.body.scrollIntoView();
 		}
 	}
+
+	function scrollIntoView(id: string) {
+		const el = document.getElementById(id);
+		if (!el) return;
+		el.scrollIntoView({
+			behavior: 'auto'
+		});
+	}
 </script>
 
 <div class="secondary-bg">
@@ -36,7 +56,7 @@
 		<h1>All submitted sessions</h1>
 		{#if sessions}
 			{#each sessions as session}
-				<div class="session-container">
+				<div class="session-container" id={session.id}>
 					<p>
 						{#each session.speakers as speaker}
 							<span class="speaker-name" on:click={() => showSpeakerInfo(speaker.id)}
