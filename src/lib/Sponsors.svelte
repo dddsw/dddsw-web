@@ -35,6 +35,12 @@
 			href: 'https://www.aldautomotive.com/',
 			src: '../images/sponsors/ald.png',
 			confirmed: true
+		},
+		{
+			name: 'Elastic Mint',
+			href: 'https://www.elasticmint.com/',
+			src: '../images/sponsors/elasticmint.png',
+			confirmed: true
 		}
 	];
 </script>
