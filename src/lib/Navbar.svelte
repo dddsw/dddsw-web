@@ -8,7 +8,7 @@
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
 		{ text: '2023', href: '/2023', hidden: false },
 		{ text: 'Sessions', href: '/sessions', hidden: false },
-		{ text: 'Schedule', href: '/schedule', hidden: true },
+		{ text: 'Schedule', href: '/schedule', hidden: false },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 
@@ -77,6 +77,7 @@
 	.nav-link-container {
 		position: absolute;
 		right: 20px;
+		z-index: 5000;
 	}
 
 	.nav-link {
