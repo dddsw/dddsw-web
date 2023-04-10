@@ -37,6 +37,12 @@
 			confirmed: true
 		},
 		{
+			name: 'Elastic Mint',
+			href: 'https://www.elasticmint.com/',
+			src: '../images/sponsors/elasticmint.png',
+			confirmed: true
+		},
+		{
 			name: 'BJSS',
 			href: 'https://www.bjss.com/',
 			src: '../images/sponsors/bjss.jpg',
