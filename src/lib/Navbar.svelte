@@ -77,6 +77,7 @@
 	.nav-link-container {
 		position: absolute;
 		right: 20px;
+		z-index: 5000;
 	}
 
 	.nav-link {
