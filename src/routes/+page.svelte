@@ -13,7 +13,7 @@
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
 		We love to learn and share their ideas with others. You'll meet likeminded peers, 
-		make new friends and connections, and feel part of our friendly community where everyone is welcome. `
+		make new friends and connections, and feel part of our friendly community where everyone is welcome. Get your ticket <a href="https://www.eventbrite.co.uk/e/ddd-southwest-2023-registration-614084903477" target="_blank">here</a>`
 		},
 		{
 			title: 'For speakers',
@@ -62,6 +62,12 @@
 			>
 			on the 29th April 2023.
 		</p>
+		<p>
+			Tickets are now available! Get yours <a
+				href="https://www.eventbrite.co.uk/e/ddd-southwest-2023-registration-614084903477"
+				target="_blank">here</a
+			>
+		</p>
 	</div>
 </div>
 
@@ -90,12 +96,12 @@
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>8th April</p>
 				<p>Schedule announced</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>10th April</p>
 				<p>Ticket registration opens</p>
 			</span>

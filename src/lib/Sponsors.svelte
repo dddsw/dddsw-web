@@ -47,6 +47,12 @@
 			href: 'https://www.bjss.com/',
 			src: '../images/sponsors/bjss.jpg',
 			confirmed: true
+		},
+		{
+			name: 'Just Eat Takeaway.com',
+			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
+			src: '../images/sponsors/justeat.png',
+			confirmed: true
 		}
 	];
 </script>
