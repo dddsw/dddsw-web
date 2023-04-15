@@ -15,7 +15,7 @@
 		{
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
-			src: '../images/sponsors/RSK.png',
+			src: '../images/sponsors/rsk.png',
 			confirmed: true
 		},
 		{
