@@ -29,7 +29,6 @@
 	<p>During lunch we also have some fantastic lightning talks in The Junction:</p>
 	<ul>
 		<li>Ben Madley: How To Get Nothing Done</li>
-		<li>Carl Sargunar: TBC</li>
 		<li>John Kilmister: The Benefits of Load Testing Your Application</li>
 	</ul>
 </div>
