@@ -36,5 +36,6 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"cookie": "^0.4.1"
-	}
+	},
+	"prepare": "svelte-kit sync"
 }
