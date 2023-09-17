@@ -1,4 +1,4 @@
 export type SessionSpeaker = {
-    name: string
-    id: string
-}
+	name: string;
+	id: string;
+};
