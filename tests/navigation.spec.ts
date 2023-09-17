@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 const routes = ['about', 'sponsorship', '2023', 'code-of-conduct'];
 for (const route of routes) {
 	test(`Can navigate to ${route} page from Home via the nav bar`, async ({ page }) => {
-		// Go to Home
-		await page.goto('http://127.0.0.1:5173/');
+		// Go to Home page
+		await page.goto('/');
 
 		// Click nav drop down
 		await page.locator('.main-nav-button').click();
@@ -18,7 +18,7 @@ for (const route of routes) {
 
 test('Can navigate to Home from content page by clicking logo', async ({ page }) => {
 	// Go to about page
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click logo
 	await page.locator('img[class~="logo"]').click();

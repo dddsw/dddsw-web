@@ -2,7 +2,7 @@ import { test, expect, devices } from '@playwright/test';
 
 test('Clicking nav button displays nav links dropdown', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -12,7 +12,7 @@ test('Clicking nav button displays nav links dropdown', async ({ page }) => {
 
 test('Clicking nav button closes nav links dropdown', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -25,7 +25,7 @@ test('Clicking nav button closes nav links dropdown', async ({ page }) => {
 
 test('Clicking nav link closes nav links dropdown', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -38,7 +38,7 @@ test('Clicking nav link closes nav links dropdown', async ({ page }) => {
 
 test('Clicking logo closes nav links dropdown', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -51,7 +51,7 @@ test('Clicking logo closes nav links dropdown', async ({ page }) => {
 
 test('Clicking logo does not open nav links dropdown', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click logo
 	await page.locator('img[class~="logo"]').click();
@@ -61,14 +61,14 @@ test('Clicking logo does not open nav links dropdown', async ({ page }) => {
 
 test('Displays down arrow icon in unexpanded state', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	await expect(page.locator('.main-nav-button span.icon')).toContainText('expand_more');
 });
 
 test('Displays up arrow icon in expanded state', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -78,7 +78,7 @@ test('Displays up arrow icon in expanded state', async ({ page }) => {
 
 test('Does not show current route in nav links drop down', async ({ page }) => {
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	// Click nav drop down
 	await page.locator('.main-nav-button').click();
@@ -90,7 +90,7 @@ test('Does not show button text in smaller screens', async ({ page }) => {
 	await page.setViewportSize(devices['iPhone SE'].viewport);
 
 	// Go to about page (to avoid carousel weirdness)
-	await page.goto('http://127.0.0.1:5173/about');
+	await page.goto('/about');
 
 	await expect(page.locator('.nav-button-text')).toBeHidden();
 });
