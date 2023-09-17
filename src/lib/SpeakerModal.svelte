@@ -1,14 +1,12 @@
-<script>
-	// @ts-nocheck
-
+<script lang="ts">
 	import { createEventDispatcher, onDestroy } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 	const close = () => dispatch('close');
 
-	let modal;
+	let modal : HTMLElement;
 
-	const handle_keydown = (e) => {
+	const handle_keydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
 			close();
 			return;
@@ -17,9 +15,9 @@
 		if (e.key === 'Tab') {
 			// trap focus
 			const nodes = modal.querySelectorAll('*');
-			const tabbable = Array.from(nodes).filter((n) => n.tabIndex >= 0);
+			const tabbable = Array.from(nodes).filter((n: Node) => n instanceof HTMLElement && n.tabIndex >= 0) as HTMLElement[];;
 
-			let index = tabbable.indexOf(document.activeElement);
+			let index = tabbable.indexOf(document.activeElement as HTMLElement);
 			if (index === -1 && e.shiftKey) index = 0;
 
 			index += tabbable.length + (e.shiftKey ? -1 : 1);
@@ -34,7 +32,7 @@
 
 	if (previously_focused) {
 		onDestroy(() => {
-			previously_focused.focus();
+			(previously_focused as HTMLElement).focus();
 		});
 	}
 </script>

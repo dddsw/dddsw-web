@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SpeakerModal from '$lib/SpeakerModal.svelte';
-	import type { Session } from 'src/types/Session.type.js';
-	import type { Speaker } from 'src/types/Speaker.type.js';
+	import type { Session } from '../../types/Session.type.js';
+	import type { Speaker } from '../../types/Speaker.type.js';
 	import { onMount } from 'svelte';
 	import { pageTitle } from '../../stores.js';
 	import { page } from '$app/stores';
