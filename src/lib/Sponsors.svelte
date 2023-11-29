@@ -58,7 +58,7 @@
 </script>
 
 <div class="sponsors">
-	<h2>With thanks to our 2023 sponsors:</h2>
+	<h2>With thanks to our 2024 sponsors:</h2>
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
 			{#if sponsor.confirmed}

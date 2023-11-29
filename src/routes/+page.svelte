@@ -5,7 +5,7 @@
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 
-	let showSponsors = true;
+	let showSponsors = false;
 
 	let keyPoints: KeyPoint[] = [
 		{
@@ -13,7 +13,7 @@
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
 		We love to learn and share their ideas with others. You'll meet likeminded peers, 
-		make new friends and connections, and feel part of our friendly community where everyone is welcome. Get your ticket <a href="https://www.eventbrite.co.uk/e/ddd-southwest-2023-registration-614084903477" target="_blank">here</a>`
+		make new friends and connections, and feel part of our friendly community where everyone is welcome. Get your ticket <a href="https://www.eventbrite.co.uk/e/ddd-southwest-2024-registration-614084903477" target="_blank">here</a>`
 		},
 		{
 			title: 'For speakers',
@@ -56,17 +56,11 @@
 	<div class="section">
 		<h1>Latest update</h1>
 		<p>
-			DDD South West is back for 2023! We're delighted to announce we'll be returning to <a
+			DDD South West is back for 2024! We're delighted to announce we'll be returning to <a
 				href="https://engine-shed.co.uk/"
 				target="_blank">Engine Shed</a
 			>
-			on the 29th April 2023.
-		</p>
-		<p>
-			Tickets are now available! Get yours <a
-				href="https://www.eventbrite.co.uk/e/ddd-southwest-2023-registration-614084903477"
-				target="_blank">here</a
-			>
+			on the 27th April 2024.
 		</p>
 	</div>
 </div>
@@ -77,37 +71,37 @@
 		<div class="timeline text-center">
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>16th January</p>
+				<p>5th February</p>
 				<p>Call for speakers opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>11th March</p>
+				<p>2nd March</p>
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>13th March</p>
+				<p>9th March</p>
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>25th March</p>
+				<p>23rd March</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>8th April</p>
+				<p>6th April</p>
 				<p>Schedule announced</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
-				<p>10th April</p>
+				<p>8th April</p>
 				<p>Ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
-				<p>29th April</p>
+				<p>27th April</p>
 				<p>Day of the event!</p>
 			</span>
 		</div>

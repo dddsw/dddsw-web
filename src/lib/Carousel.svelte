@@ -25,7 +25,7 @@
 		<slot />
 		<div class="details-container shadow">
 			<span class="name">DDD South West</span><br />
-			<span class="details">29th April 2023 @ Engine Shed</span>
+			<span class="details">27th April 2024 @ Engine Shed</span>
 		</div>
 	</div>
 {/key}

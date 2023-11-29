@@ -3,22 +3,21 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: '£300', claimed: true },
-		{ title: 'Snacks throughout the day', price: '£300', claimed: true },
-		{ title: 'Lunch', price: 'Gold + £500', claimed: true },
-		{ title: 'Hot & cold beverages', price: '£150', claimed: false }
+		{ title: 'Breakfast', price: '£250', claimed: false },
+		{ title: 'Morning break', price: '£250', claimed: false },
+		{ title: 'Afternoon break', price: '£250', claimed: false }
 	];
 
 	let extraOptions = [
 		{
 			title: 'T-shirts',
 			price: '£500+',
-			claimed: true,
+			claimed: false,
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
 
-	let showSponsors = true;
+	let showSponsors = false;
 
 	pageTitle.set('Sponsorship');
 </script>
@@ -27,7 +26,7 @@
 	<div class="section">
 		<h1>Sponsorship opportunities</h1>
 		<p>
-			We are looking for sponsors for DDD South West 2023. If you or your company would like to
+			We are looking for sponsors for DDD South West 2024. If you or your company would like to
 			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
 			We have various options available, or we can arrange a custom package for you. Our event is entirely
 			funded by sponsorship and would not be possible without our wonderful sponsors.
@@ -39,7 +38,7 @@
 		<h1>Packages</h1>
 		<div class="options-container">
 			<div class="primary-bg option boop-effect">
-				<h2>Bronze</h2>
+				<h2>Supporter</h2>
 				<ul>
 					<li>Your logo on our website</li>
 					<li>Your logo on the opening & closing slides</li>
@@ -48,22 +47,14 @@
 				<span class="price">£600</span>
 			</div>
 			<div class="primary-bg option boop-effect">
-				<h2>Silver</h2>
-				Everything in Bronze, plus:
+				<h2>Exhibitor</h2>
+				Everything in Supporter tier, plus:
 				<ul>
 					<li>A sponsor stand on the day</li>
 					<li>Custom promotional posts from our social media accounts</li>
+					<li>Anything else we can do.. chat to us!</li>
 				</ul>
-				<span class="price">£1000</span>
-			</div>
-			<div class="primary-bg option boop-effect">
-				<h2>Gold</h2>
-				Everything in Bronzer and Silver, plus:
-				<ul>
-					<li>Opportunity to make a short announcement at the beginning or end of the day.</li>
-					<li>We can create a tailored package to you</li>
-				</ul>
-				<span class="price">£1500+</span>
+				<span class="price">£1500</span>
 			</div>
 		</div>
 

@@ -29,7 +29,7 @@ test('Captures Home preview - desktop', async ({ page }) => {
 });
 
 // Content pages
-const routes = ['about', 'sponsorship', '2023', 'code-of-conduct'];
+const routes = ['about', 'sponsorship', '2024', 'code-of-conduct'];
 for (const route of routes) {
 	test(`Captures ${route} preview - mobile`, async ({ page }) => {
 		await page.setViewportSize(devices['iPhone SE'].viewport);
