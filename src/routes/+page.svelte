@@ -13,7 +13,7 @@
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
 		We love to learn and share their ideas with others. You'll meet likeminded peers, 
-		make new friends and connections, and feel part of our friendly community where everyone is welcome. Get your ticket <a href="https://www.eventbrite.co.uk/e/ddd-southwest-2024-registration-614084903477" target="_blank">here</a>`
+		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
 		},
 		{
 			title: 'For speakers',
@@ -70,32 +70,32 @@
 		<h2>Timeline</h2>
 		<div class="timeline text-center">
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>5th February</p>
 				<p>Call for speakers opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>2nd March</p>
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>9th March</p>
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>23rd March</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>6th April</p>
 				<p>Schedule announced</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>8th April</p>
 				<p>Ticket registration opens</p>
 			</span>
