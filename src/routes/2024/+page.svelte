@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { pageTitle } from '../../stores.js';
-	pageTitle.set('The 2023 Event');
+	pageTitle.set('The 2024 Event');
 </script>
 
 <div class="secondary-bg">
 	<div class="section">
 		<h1>Venue</h1>
 		<p>
-			DDD South West 2023 will be held at <a href="https://engine-shed.co.uk/" target="_blank"
+			DDD South West 2024 will be held at <a href="https://engine-shed.co.uk/" target="_blank"
 				>Engine Shed</a
 			>
 			located at the following address: <br />
@@ -66,7 +66,7 @@
 	<div class="section">
 		<h1>Covid policy</h1>
 		<p>
-			We will not be operating a mask or distancing policy at DDD South West 2023, but attendees are
+			We will not be operating a mask or distancing policy at DDD South West 2024, but attendees are
 			welcome to wear a mask if desired. Please respect others who choose to wear masks as they may
 			be vulnerable. Hand sanitiser will be available around the venue.
 		</p>

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const routes = ['about', 'sponsorship', '2023', 'code-of-conduct'];
+const routes = ['about', 'sponsorship', '2024', 'code-of-conduct'];
 for (const route of routes) {
 	test(`Can navigate to ${route} page from Home via the nav bar`, async ({ page }) => {
 		// Go to Home page

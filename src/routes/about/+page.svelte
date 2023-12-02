@@ -42,14 +42,7 @@
 			email: 'hannahprice@dddsouthwest.com',
 			twitter: 'han_10001',
 			linkedIn: 'hannah-price-a09728b1'
-		},
-		{
-			name: 'Joseph Woodward',
-			imageName: 'joe.jpg',
-			email: 'josephwoodward@dddsouthwest.com',
-			twitter: '_josephwoodward'
-		},
-		{ name: 'Martyn Fewtrell', imageName: 'martyn.jpg', email: 'martynfewtrell@dddsouthwest.com' }
+		}
 	];
 
 	pageTitle.set('About DDD South West');
