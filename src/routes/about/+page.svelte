@@ -28,10 +28,12 @@
 			email: 'lorrainepearce@dddsouthwest.com',
 			twitter: 'LorrainePearce',
 			linkedIn: 'lorraine-pearce-688aba8'
-		},{ 
-			name: 'Russell Day', 
-			imageName: 'russ.jpg', 
-			email: 'russell.day@dddsouthwest.com' },
+		},
+		{
+			name: 'Russell Day',
+			imageName: 'russ.jpg',
+			email: 'russell.day@dddsouthwest.com'
+		},
 		{
 			name: 'Stuart Lang',
 			imageName: 'stu.jpg',
@@ -51,6 +53,12 @@
 			email: 'carlsargunar@dddsouthwest.com',
 			twitter: 'carlcod_es',
 			linkedIn: 'carl-sargunar-63b5814'
+		},
+		{
+			name: 'Sara Gowen',
+			imageName: 'sara.jpg',
+			email: 'saragowen@dddsouthwest.com',
+			linkedIn: 'sara-gowen-27404734'
 		}
 	];
 
