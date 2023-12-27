@@ -93,7 +93,7 @@
 				happen.
 			</li>
 			<li>
-				Love from the team! We will go out of our way to priase you before, on, and after the day.
+				Love from the team! We will go out of our way to praise you before, on, and after the day.
 			</li>
 		</ul>
 	</div>
