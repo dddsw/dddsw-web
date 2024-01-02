@@ -7,8 +7,9 @@ const config: PlaywrightTestConfig = {
 		reuseExistingServer: !process.env.CI
 	},
 	use: {
-		baseURL: 'http://127.0.0.1:5173/',
+		baseURL: 'http://127.0.0.1:5173/'
 	},
+	fullyParallel: true
 };
 
 export default config;

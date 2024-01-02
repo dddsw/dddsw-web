@@ -21,10 +21,19 @@ npm run dev -- --open
 
 ## Running the tests
 
+Before running the tests for the first time (or after a Playwright version update), ensure you update the browsers with:
+
+```bash
+npx playwright install
+```
+
 You can run the Playwright tests via a command prompt with:
 
 ```bash
 npm run test
+
+# or launch the interactive Playwright test runner
+npm run test:ui
 ```
 
 You can also run them via the Playwright VS Code extension.
