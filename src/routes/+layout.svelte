@@ -13,18 +13,22 @@
 	$: homepage = $page.url.pathname === '/';
 </script>
 
+<svelte:head>
+	<title>{$pageTitle}</title>
+</svelte:head>
+
 <div class="container">
 	{#if !homepage}
 		<div class="gradient-bg">
 			<div class="header">
-				<a href="/"
-					><img
+				<a href="/">
+					<img
 						src="../images/logo.png"
 						alt="The DDD South West logo"
 						class="logo"
 						on:click={toggleNav}
-					/></a
-				>
+					/>
+				</a>
 				<h1>{$pageTitle}</h1>
 				<Navbar />
 			</div>
