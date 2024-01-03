@@ -13,18 +13,17 @@
 	$: homepage = $page.url.pathname === '/';
 </script>
 
+<svelte:head>
+	<title>{$pageTitle}</title>
+</svelte:head>
+
 <div class="container">
 	{#if !homepage}
 		<div class="gradient-bg">
 			<div class="header">
-				<a href="/"
-					><img
-						src="../images/logo.png"
-						alt="The DDD South West logo"
-						class="logo"
-						on:click={toggleNav}
-					/></a
-				>
+				<a href="/" class="logo-link" on:click={toggleNav}>
+					<img src="../images/logo.png" alt="The DDD South West logo" class="logo" />
+				</a>
 				<h1>{$pageTitle}</h1>
 				<Navbar />
 			</div>
@@ -61,8 +60,11 @@
 	}
 
 	.logo {
-		display: none;
 		padding: 10px;
+	}
+
+	.logo-link {
+		display: none;
 	}
 
 	h1 {
@@ -83,9 +85,12 @@
 
 	@media (min-width: 768px) {
 		.logo {
-			display: inline;
 			max-width: 150px;
 			padding: 30px;
+		}
+
+		.logo-link {
+			display: inline;
 		}
 	}
 
