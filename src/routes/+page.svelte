@@ -1,7 +1,5 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	import Carousel from '$lib/Carousel.svelte';
-	import Navbar from '$lib/Navbar.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 
@@ -30,10 +28,6 @@
 		}
 	];
 </script>
-
-<Carousel>
-	<Navbar />
-</Carousel>
 
 <div class="introduction primary-bg">
 	<div class="section">
