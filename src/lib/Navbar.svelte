@@ -22,8 +22,8 @@
 </script>
 
 <nav>
-	<div
-		class="main-nav-button"
+	<button
+		class="unset main-nav-button"
 		class:shadow={homepage}
 		class:inverted-colours={homepage}
 		on:click={toggleNav}
@@ -35,15 +35,15 @@
 				expand_less
 			{:else}
 				expand_more
-			{/if}</span
-		>
-	</div>
+			{/if}
+		</span>
+	</button>
 	{#if $navExpanded}
 		<div>
-			<div class="nav-link-container" on:click={toggleNav}>
+			<div class="nav-link-container">
 				{#each navItems as navItem}
 					{#if navItem.href !== currentPage && !navItem.hidden}
-						<a href={navItem.href}><div class="nav-link">{navItem.text}</div></a>
+						<a href={navItem.href} on:click={toggleNav} class="nav-link">{navItem.text}</a>
 					{/if}
 				{/each}
 			</div>
@@ -88,6 +88,7 @@
 	.nav-link {
 		padding: 10px;
 		border: 1px solid lightgrey;
+		display: block;
 	}
 
 	.nav-link,

@@ -15,6 +15,7 @@ html {
 	--tertiary-color: #eaeaea;
 	--quaternary-color: #96c6ca;
 	--quinary-color: #ffc13a;
+	--contrast-color: #3096ff;
 }
 
 /* BUILDING BLOCKS */
@@ -75,6 +76,20 @@ html {
 
 .emphasis {
 	font-weight: bold;
+}
+
+/* OVERRIDES */
+
+.unset {
+	all: unset;
+}
+
+/* A11Y FOCUS */
+
+.unset:focus-visible,
+:focus-visible {
+	outline: 3px solid var(--contrast-color);
+	box-shadow: 0 0 0 6px var(--secondary-color);
 }
 
 /* ANIMATIONS */
