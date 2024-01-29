@@ -46,10 +46,6 @@
 		align-items: center;
 	}
 
-	.logo {
-		padding: 10px;
-	}
-
 	.logo-link {
 		display: none;
 	}
@@ -69,11 +65,12 @@
 	@media (min-width: 768px) {
 		.logo {
 			max-width: 150px;
-			padding: 30px;
+			padding: 20px;
 		}
 
 		.logo-link {
 			display: inline;
+			margin: 10px;
 		}
 	}
 
