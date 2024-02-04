@@ -10,7 +10,7 @@
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Rock Solid Knowledge',
@@ -22,19 +22,19 @@
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Avanade',
 			href: 'https://www.avanade.com/en-gb',
 			src: '../images/sponsors/avanade.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'ALD Automotive',
 			href: 'https://www.aldautomotive.com/',
 			src: '../images/sponsors/ald.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Elastic Mint',
@@ -46,13 +46,13 @@
 			name: 'BJSS',
 			href: 'https://www.bjss.com/',
 			src: '../images/sponsors/bjss.jpg',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Just Eat Takeaway.com',
 			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
 			src: '../images/sponsors/justeat.png',
-			confirmed: true
+			confirmed: false
 		}
 	];
 </script>
