@@ -11,7 +11,7 @@
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
 		We love to learn and share their ideas with others. You'll meet likeminded peers, 
-		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
+		make new friends and connections, and feel part of our friendly community where everyone is welcome. Call for speakers is <a href="https://sessionize.com/ddd-south-west-2024" target="_blank">now open</a>!`
 		},
 		{
 			title: 'For speakers',
@@ -50,11 +50,9 @@
 	<div class="section">
 		<h1>Latest update</h1>
 		<p>
-			DDD South West is back for 2024! We're delighted to announce we'll be returning to <a
-				href="https://engine-shed.co.uk/"
-				target="_blank">Engine Shed</a
-			>
-			on the 27th April 2024.
+			Call for speakers is <a href="https://sessionize.com/ddd-south-west-2024" target="_blank"
+				>now open</a
+			>!
 		</p>
 	</div>
 </div>
@@ -64,7 +62,7 @@
 		<h2>Timeline</h2>
 		<div class="timeline text-center">
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>5th February</p>
 				<p>Call for speakers opens</p>
 			</span>

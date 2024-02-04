@@ -15,11 +15,11 @@
 	let modalSpeaker: Speaker | undefined;
 
 	onMount(async () => {
-		const sessionsRsp = await fetch('https://sessionize.com/api/v2/h3krav8h/view/Sessions');
+		const sessionsRsp = await fetch('https://sessionize.com/api/v2/kn91wz1x/view/Sessions');
 		let sessionsJson = await sessionsRsp.json();
 		sessions = sessionsJson[0].sessions;
 
-		const speakersRsp = await fetch('https://sessionize.com/api/v2/h3krav8h/view/Speakers');
+		const speakersRsp = await fetch('https://sessionize.com/api/v2/kn91wz1x/view/Speakers');
 		speakers = await speakersRsp.json();
 
 		const hasId = $page.url.searchParams.has('id');
