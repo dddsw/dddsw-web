@@ -3,7 +3,7 @@
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 
-	let showSponsors = false;
+	let showSponsors = true;
 
 	let keyPoints: KeyPoint[] = [
 		{

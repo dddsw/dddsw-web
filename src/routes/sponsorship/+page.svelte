@@ -17,7 +17,7 @@
 		}
 	];
 
-	let showSponsors = false;
+	let showSponsors = true;
 
 	pageTitle.set('Sponsorship');
 </script>
