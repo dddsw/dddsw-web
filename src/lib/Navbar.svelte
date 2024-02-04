@@ -7,7 +7,7 @@
 		{ text: 'About', href: '/about', hidden: false },
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
 		{ text: '2024', href: '/2024', hidden: false },
-		{ text: 'Sessions', href: '/sessions', hidden: true },
+		{ text: 'Sessions', href: '/sessions', hidden: false },
 		{ text: 'Schedule', href: '/schedule', hidden: true },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
@@ -30,7 +30,11 @@
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
-			{#if $navExpanded} expand_less {:else} expand_more {/if}</span
+			{#if $navExpanded}
+				expand_less
+			{:else}
+				expand_more
+			{/if}</span
 		>
 	</div>
 	{#if $navExpanded}

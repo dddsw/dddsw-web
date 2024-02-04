@@ -44,7 +44,6 @@
 			name: 'Hannah Price',
 			imageName: 'hannah.jpg',
 			email: 'hannahprice@dddsouthwest.com',
-			twitter: 'han_10001',
 			linkedIn: 'hannah-price-a09728b1'
 		},
 		{
