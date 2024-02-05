@@ -14,9 +14,10 @@
 
 <header>
 	{#if isHomepage}
-		<Carousel>
-			<Navbar />
-		</Carousel>
+		<div class="nav-absolute-container">
+			<Carousel />
+			<Navbar isAbsolute />
+		</div>
 	{:else}
 		<div class="gradient-bg">
 			<div class="header">
@@ -31,6 +32,10 @@
 </header>
 
 <style>
+	.nav-absolute-container {
+		position: relative;
+	}
+
 	.gradient-bg {
 		background: rgb(255, 153, 48);
 		background: linear-gradient(

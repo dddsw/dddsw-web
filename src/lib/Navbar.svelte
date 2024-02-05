@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { navExpanded } from '../stores.js';
 
+	export let isAbsolute = false;
+
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
@@ -16,12 +18,15 @@
 	$: currentPage = $page.url.pathname;
 	$: homepage = currentPage === '/';
 
+	let navClass = isAbsolute ? 'nav-absolute' : '';
+	let navLinkContainerClass = isAbsolute ? '' : 'nav-link-container';
+
 	function toggleNav() {
 		$navExpanded = !$navExpanded;
 	}
 </script>
 
-<nav>
+<nav class={navClass}>
 	<button
 		class="unset main-nav-button"
 		class:shadow={homepage}
@@ -40,7 +45,7 @@
 	</button>
 	{#if $navExpanded}
 		<div>
-			<div class="nav-link-container">
+			<div class={navLinkContainerClass}>
 				{#each navItems as navItem}
 					{#if navItem.href !== currentPage && !navItem.hidden}
 						<a href={navItem.href} on:click={toggleNav} class="nav-link">{navItem.text}</a>
@@ -57,6 +62,11 @@
 		flex-direction: column;
 		align-items: flex-end;
 		margin: 20px;
+	}
+	.nav-absolute {
+		position: absolute;
+		right: 0px;
+		top: 0px;
 	}
 
 	nav a {

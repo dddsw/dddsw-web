@@ -22,7 +22,6 @@
 
 {#key carouselImage}
 	<div class="header" style="background-image: url({carouselImage.src});">
-		<slot />
 		<div class="details-container shadow">
 			<span class="name">DDD South West</span><br />
 			<span class="details">27th April 2024 @ Engine Shed</span>
@@ -36,8 +35,10 @@
 		background-position: center;
 		min-height: 250px;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		align-items: flex-end;
 		justify-content: space-between;
+		clip-path: inset(0px 0px 0px 0px); /* Stops the shadow spilling over outside the header */
 	}
 
 	.details-container {
