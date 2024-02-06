@@ -53,6 +53,12 @@
 			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
 			src: '../images/sponsors/justeat.png',
 			confirmed: false
+		},
+		{
+			name: 'dxw',
+			href: 'https://www.dxw.com/',
+			src: '../images/sponsors/dxw.png',
+			confirmed: true
 		}
 	];
 </script>
