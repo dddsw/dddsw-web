@@ -3,7 +3,7 @@
 		{
 			name: 'SECCL',
 			href: 'https://seccl.tech/',
-			src: '../images/sponsors/seccl.svg',
+			src: '../images/sponsors/seccl.png',
 			confirmed: true
 		},
 		{
