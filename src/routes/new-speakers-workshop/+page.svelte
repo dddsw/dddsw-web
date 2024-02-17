@@ -27,15 +27,16 @@
         <h3>By bus</h3>
         <p>
             The nearest bus stops to Watershed are on 'The Centre', no more than a 2 minute walk away.<br/>
-            Plan your journey by bus at <a href="https://journeyplanner.travelwest.info/" target="_blank">travelwest.info</a>
+            Plan your journey by bus at <a href="https://journeyplanner.travelwest.info/" target="_blank">travelwest.info</a>.
         </p>
 
 		<h3>By train</h3>
 		<p>
-			Engine Shed is conveniently located right next to Temple Meads train station. Follow Approach
-			Road to the end and Engine Shed is on the corner.
+			Bristol Temple Meads is the nearest train station and is 
+            <a href="https://maps.app.goo.gl/S24zEgWSAtxChJtA9" target="_blank">10 minutes by public transport</a> links or a 
+            <a href="https://maps.app.goo.gl/mkTZJavUbFUrynvZ8" target="_blank">20 minute walk</a> to Watershed.
 		</p>
-        
+
 		<h3>By car</h3>
 		<p>
             The closest car parks are <a href="https://www.millenniumsquarecarpark.co.uk/" target="_blank">Millennium Square Car Park</a> 
@@ -49,20 +50,18 @@
             You can find many more parking locations across The Centre nearby.
         </p>
 
-		<h2>Hotels</h2>
+        <h2>Hotels</h2>
 		<p>The nearest hotels are:</p>
 		<ul>
-			<li>Holiday Inn Express: Bristol City Centre South End, Temple Gate, Redcliffe, BS1 6PL</li>
-			<li>
-				DoubleTree by Hilton Hotel: Bristol City Centre Redcliffe Way, Redcliffe, Bristol, BS1 6NJ
-			</li>
-			<li>Novotel Bristol Centre: Victoria St, Redcliffe, Bristol, BS1 6HY</li>
+			<li><a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-bristol" target="_blank">Radisson Blue Hotel</a>: Broad Quay, Bristol BS1 4BY</li>
+			<li><a href="https://www.doylecollection.com/hotels/the-bristol-hotel" target="_blank">The Bristol Hotel</a>: Prince St, Bristol BS1 4QF</li>
+			<li><a href="https://www.marriott.com/en-us/hotels/brsry-bristol-marriott-royal-hotel/overview" target="_blank">Bristol Marriott Royal</a>: College Green, Bristol BS1 5TA</li>
 		</ul>
 
 		<sub
 			>Disclaimer: These instructions are provided for your convenience. We have tried to ensure
 			that they are accurate but can take no responsibility for errors. This is not an exhaustive
-			list of how to get to the venue, other routes (and hotels) are available.</sub
+			list of how to get to the venue, other routes are available.</sub
 		>
 	</div>
 </div>
@@ -71,7 +70,7 @@
 	<div class="section">
 		<h1>Covid policy</h1>
 		<p>
-			We will not be operating a mask or distancing policy at DDD South West 2024, but attendees are
+			We will not be operating a mask or distancing policy at DDD South West 2024 New Speakers Workshop, but attendees are
 			welcome to wear a mask if desired. Please respect others who choose to wear masks as they may
 			be vulnerable. Hand sanitiser will be available around the venue.
 		</p>
