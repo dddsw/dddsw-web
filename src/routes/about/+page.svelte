@@ -32,7 +32,8 @@
 		{
 			name: 'Russell Day',
 			imageName: 'russ.jpg',
-			email: 'russell.day@dddsouthwest.com'
+			email: 'russell.day@dddsouthwest.com',
+			linkedIn: 'russellday'
 		},
 		{
 			name: 'Stuart Lang',
