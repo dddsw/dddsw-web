@@ -2,6 +2,8 @@
 	import { page } from '$app/stores';
 	import { navExpanded } from '../stores.js';
 
+	export let isAbsolute = false;
+
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
@@ -16,14 +18,17 @@
 	$: currentPage = $page.url.pathname;
 	$: homepage = currentPage === '/';
 
+	let navClass = isAbsolute ? 'nav-absolute' : '';
+	let navLinkContainerClass = isAbsolute ? '' : 'nav-link-container';
+
 	function toggleNav() {
 		$navExpanded = !$navExpanded;
 	}
 </script>
 
-<nav>
-	<div
-		class="main-nav-button"
+<nav class={navClass}>
+	<button
+		class="unset main-nav-button"
 		class:shadow={homepage}
 		class:inverted-colours={homepage}
 		on:click={toggleNav}
@@ -35,15 +40,15 @@
 				expand_less
 			{:else}
 				expand_more
-			{/if}</span
-		>
-	</div>
+			{/if}
+		</span>
+	</button>
 	{#if $navExpanded}
 		<div>
-			<div class="nav-link-container" on:click={toggleNav}>
+			<div class={navLinkContainerClass}>
 				{#each navItems as navItem}
 					{#if navItem.href !== currentPage && !navItem.hidden}
-						<a href={navItem.href}><div class="nav-link">{navItem.text}</div></a>
+						<a href={navItem.href} on:click={toggleNav} class="nav-link">{navItem.text}</a>
 					{/if}
 				{/each}
 			</div>
@@ -57,6 +62,11 @@
 		flex-direction: column;
 		align-items: flex-end;
 		margin: 20px;
+	}
+	.nav-absolute {
+		position: absolute;
+		right: 0px;
+		top: 0px;
 	}
 
 	nav a {
@@ -88,6 +98,7 @@
 	.nav-link {
 		padding: 10px;
 		border: 1px solid lightgrey;
+		display: block;
 	}
 
 	.nav-link,
