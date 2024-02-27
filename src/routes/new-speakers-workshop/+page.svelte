@@ -7,14 +7,22 @@
 	<div class="section">
 		<h1>About</h1>
 		<p>
-			As an inclusive, and community-driven conference we want to encourage everyone to share their experiences and knowledge.<br/>
-			If you are a new or inexperienced speakers submit your talk and register interest in attending here: <a href="https://sessionize.com/ddd-south-west-2024" target="_blank">Call for Speakers</a><br/>
-			<br/>
-			Community stalwart <a href="https://dylanbeattie.net/" target="_blank">Dylan Beattie</a> will be presenting
-			<a href="https://ursatile.com/workshops/from-keyboard-to-keynote.html" target="_blank">Public Speaking: From Keyboard to Keynote</a> in a 1-day format.
+			As an inclusive, and community-driven conference we want to encourage everyone to share their experiences and knowledge. By running a new speakers workshop we hope to encourage those voices we haven't heard form yet.<br/><br/>
+			If you are a new or inexperienced speakers submit your talk and register interest in attending here: <a href="https://sessionize.com/ddd-south-west-2024" target="_blank">Call for Speakers</a>
 		</p>
-		<h2>Time and Date</h2>
-		<p>Saturday 23rd March - 9am - 4pm</p>
+		<p><b>Time and Date: </b>Saturday 23rd March - 9.30am - 4.30pm</p>
+		<div class="workshop-thumbnail">
+			<img src="../images/workshop/thumbnail_from-keyboard-to-keynote-2024.jpg" alt="From Keyboard to Keynote: Creating Great technical Talks. A presentation workshop with Dylan Beattie."/>
+		</div>
+		<p>
+			Speaking in front of an audience can be daunting - but it doesn't have to be. This workshop will show you how to create and deliver great technical talks, whether you're speaking at industry conferences, doing a talk at your local meetup group, or just sharing ideas with your own team.<br/><br/>
+			
+			During the first part of the workshop, you'll learn how to design a talk; how to gather ideas, create a structure, and develop your material to suit a particular format or time limit. You'll learn how to use humour and storytelling to connect with your audience, and tips to help you use rehearsal effectively.<br/><br/>
+			
+			The afternoon session will focus on visual material - slides, multimedia, and live demos. We'll look at techniques you can use to make your presentations clear, accessible and engaging, and how to use images, animation and photography to support and reinforce the points you're making in your presentation. We'll look at tips for presenting code, the challenges of doing live demos, and how to use screen recording and video editing to take your live code presentations to the next level.<br/><br/>
+
+			<b>Dylan Beattie</b> created his first web page in 1992. With nearly 25 years' experience as a professional developer, he's worked on everything from static websites to distributed microservice architectures. Dylan is a Microsoft MVP and the creator of the Rockstar esoteric programming language. He's presented talks about technology and software development at conferences and events all over the world, and online videos of his presentations have been viewed more than five million times. Dylan is online at <a href="https://dylanbeattie.net/" target="_blank">https://dylanbeattie.net/</a> and on Twitter as <a href="https://twitter.com/dylanbeattie" target="_blank">@dylanbeattie</a>.
+		</p>
 		<h2>Requirements</h2>
 		<p>
 			<ul>
@@ -113,5 +121,10 @@
 			width: 700px;
 			height: 550px;
 		}
+	}
+
+	.workshop-thumbnail > img {
+		max-height: 100%;
+		max-width: 100%;	
 	}
 </style>
