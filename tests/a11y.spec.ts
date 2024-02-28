@@ -28,7 +28,7 @@ for (const [viewportName, viewportDevice] of viewPorts) {
 	});
 
 	// Content pages
-	const routes = ['about', 'sponsorship', '2024', 'code-of-conduct'];
+	const routes = ['about', 'sponsorship', '2024', 'code-of-conduct', 'new-speakers-workshop'];
 	for (const route of routes) {
 		test(`${route} page a11y checks - ${viewportName}`, async ({ page }) => {
 			await page.setViewportSize(devices[viewportDevice].viewport);

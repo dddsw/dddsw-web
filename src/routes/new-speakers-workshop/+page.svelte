@@ -5,23 +5,48 @@
 
 <div class="secondary-bg">
 	<div class="section">
+		<h1>About</h1>
+		<p>
+			As an inclusive, and community-driven conference we want to encourage everyone to share their experiences and knowledge. By running a new speakers workshop we hope to encourage those voices we haven't heard form yet.<br/><br/>
+			If you are a new or inexperienced speakers submit your talk and register interest in attending here: <a href="https://sessionize.com/ddd-south-west-2024" target="_blank">Call for Speakers</a>
+		</p>
+		<p><b>Time and Date: </b>Saturday 23rd March - 9.30am - 4.30pm</p>
+		<div class="workshop-thumbnail">
+			<img src="../images/workshop/thumbnail_from-keyboard-to-keynote-2024.jpg" alt="From Keyboard to Keynote: Creating Great technical Talks. A presentation workshop with Dylan Beattie."/>
+		</div>
+		<p>
+			Speaking in front of an audience can be daunting - but it doesn't have to be. This workshop will show you how to create and deliver great technical talks, whether you're speaking at industry conferences, doing a talk at your local meetup group, or just sharing ideas with your own team.<br/><br/>
+			
+			During the first part of the workshop, you'll learn how to design a talk; how to gather ideas, create a structure, and develop your material to suit a particular format or time limit. You'll learn how to use humour and storytelling to connect with your audience, and tips to help you use rehearsal effectively.<br/><br/>
+			
+			The afternoon session will focus on visual material - slides, multimedia, and live demos. We'll look at techniques you can use to make your presentations clear, accessible and engaging, and how to use images, animation and photography to support and reinforce the points you're making in your presentation. We'll look at tips for presenting code, the challenges of doing live demos, and how to use screen recording and video editing to take your live code presentations to the next level.<br/><br/>
+
+			<b>Dylan Beattie</b> created his first web page in 1992. With nearly 25 years' experience as a professional developer, he's worked on everything from static websites to distributed microservice architectures. Dylan is a Microsoft MVP and the creator of the Rockstar esoteric programming language. He's presented talks about technology and software development at conferences and events all over the world, and online videos of his presentations have been viewed more than five million times. Dylan is online at <a href="https://dylanbeattie.net/" target="_blank">https://dylanbeattie.net/</a> and on Twitter as <a href="https://twitter.com/dylanbeattie" target="_blank">@dylanbeattie</a>.
+		</p>
+		<h2>Requirements</h2>
+		<p>
+			<ul>
+				<li>A laptop</li>
+				<li>Presentation software e.g. Microsoft Powerpoint, Google Slides</li>
+			</ul>
+	</div>
+</div>
+<div class="tertiary-bg">
+	<div class="section">
 		<h1>Venue</h1>
 		<p>
-			DDD South West 2024 New Speakers Workshop will be held at <a href="https://www.watershed.co.uk/" target="_blank"
-				>Watershed</a
-			>
-			located at the following address: <br />
+			DDD South West 2024 New Speakers Workshop will be held at <a href="https://www.watershed.co.uk/" target="_blank">Watershed</a> located at the following address: <br />
             1 Canons Road<br />
             Harbourside<br />
             Bristol<br />
             BS1 5TX
 		</p>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.368127790757!2d-2.6008288223885514!3d51.4513972147917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718dd658d5706f%3A0x78607ce02ba4510!2sWatershed!5e0!3m2!1sen!2suk!4v1708108164734!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Map of Watershed venue location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.368127790757!2d-2.6008288223885514!3d51.4513972147917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718dd658d5706f%3A0x78607ce02ba4510!2sWatershed!5e0!3m2!1sen!2suk!4v1708108164734!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
 </div>
 
-<div class="tertiary-bg">
+<div class="secondary-bg">
 	<div class="section">
 		<h2>Travel</h2>
         <h3>By bus</h3>
@@ -66,7 +91,7 @@
 	</div>
 </div>
 
-<div class="secondary-bg">
+<div class="tertiary-bg">
 	<div class="section">
 		<h1>Covid policy</h1>
 		<p>
@@ -96,5 +121,10 @@
 			width: 700px;
 			height: 550px;
 		}
+	}
+
+	.workshop-thumbnail > img {
+		max-height: 100%;
+		max-width: 100%;	
 	}
 </style>
