@@ -10,7 +10,7 @@
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Rock Solid Knowledge',
@@ -22,7 +22,7 @@
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Avanade',
