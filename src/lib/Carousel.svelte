@@ -3,11 +3,10 @@
 		{ id: 1, src: '../images/carousel/carousel-1.jpg' },
 		{ id: 2, src: '../images/carousel/carousel-2.jpg' },
 		{ id: 3, src: '../images/carousel/carousel-3.jpg' },
-		{ id: 4, src: '../images/carousel/carousel-4.png' },
-		{ id: 5, src: '../images/carousel/carousel-5.png' },
-		{ id: 6, src: '../images/carousel/carousel-6.jpg' }
+		{ id: 4, src: '../images/carousel/carousel-4.jpg' },
+		{ id: 5, src: '../images/carousel/carousel-5.jpg' }
 	];
-
+	
 	$: carouselImage = carouselImages[0];
 
 	setInterval(() => {
