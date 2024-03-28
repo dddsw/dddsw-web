@@ -49,12 +49,7 @@
 <div class="quaternary-bg">
 	<div class="section">
 		<h1>Latest update</h1>
-		<p>
-			Vote <a
-				href="https://docs.google.com/forms/d/e/1FAIpQLSdCi8Dy5p7gLselTTeHLcYsFp0j4xu4gD-YjaaBt8j7q8macg/viewform?usp=sf_link"
-				target="_blank">here</a
-			> for which sessions you'd like to see at this year's event!
-		</p>
+		<p>We'll be announcing the schedule shortly!</p>
 	</div>
 </div>
 
@@ -78,7 +73,7 @@
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>23rd March</p>
 				<p>Session voting closes</p>
 			</span>
