@@ -46,7 +46,7 @@
 			name: 'BJSS',
 			href: 'https://www.bjss.com/',
 			src: '../images/sponsors/bjss.jpg',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Just Eat Takeaway.com',
