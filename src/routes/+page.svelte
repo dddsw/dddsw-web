@@ -93,7 +93,7 @@
 				<p>Day of the event!</p>
 			</span>
 		</div>
-		<sub>We'll try our best to keep to these dates but please be patient if we're late!</sub>
+		<sub class="sub-highlight">We'll try our best to keep to these dates but please be patient - DDDSw is entirely volunteer driven ❤️</sub>
 	</div>
 </div>
 
@@ -120,6 +120,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.sub-highlight {
+		font-style: italic
 	}
 
 	@media (min-width: 576px) {
