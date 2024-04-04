@@ -49,7 +49,7 @@
 <div class="quaternary-bg">
 	<div class="section">
 		<h1>Latest update</h1>
-		<p>We'll be announcing the schedule shortly!</p>
+		<p><a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test your demos and get ready for the big day!!</p>
 	</div>
 </div>
 
@@ -78,7 +78,7 @@
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>6th April</p>
 				<p>Schedule announced</p>
 			</span>
