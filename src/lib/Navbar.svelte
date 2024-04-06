@@ -8,7 +8,7 @@
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
-		{ text: '2024', href: '/2024', hidden: false },
+		{ text: 'Event Details', href: '/2024', hidden: false },
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
 		{ text: 'Sessions', href: '/sessions', hidden: true },
 		{ text: 'Schedule', href: '/schedule', hidden: false },
