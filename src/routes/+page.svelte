@@ -29,18 +29,18 @@
 	];
 </script>
 
-<div class="introduction primary-bg">
-	<div class="section">
-		<p class="text-center">
-			DDD South West is an inclusive, non-profit developer conference organised by the community,
-			for the community.
-		</p>
-	</div>
-</div>
 
 {#if showSponsors}
 	<Sponsors />
 {/if}
+
+<div class="introduction primary-bg">
+	<div class="section">
+		<h1>Latest update</h1>
+		<p><a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test your demos and get ready for the big day!!</p>
+	</div>
+</div>
+
 
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
@@ -48,8 +48,10 @@
 
 <div class="quaternary-bg">
 	<div class="section">
-		<h1>Latest update</h1>
-		<p><a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test your demos and get ready for the big day!!</p>
+		<p class="text-center">
+			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by the community,
+			for the community. We are dedicated to providing a safe and welcoming conference experience for everyone. Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
+		</p>
 	</div>
 </div>
 
@@ -93,7 +95,7 @@
 				<p>Day of the event!</p>
 			</span>
 		</div>
-		<sub class="sub-highlight">We'll try our best to keep to these dates but please be patient - DDDSw is entirely volunteer driven ❤️</sub>
+		<sub class="sub-highlight text-center">We'll try our best to keep to these dates but please be patient - DDDSw is entirely volunteer driven ❤️</sub>
 	</div>
 </div>
 
