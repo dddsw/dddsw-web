@@ -11,7 +11,7 @@
 		{ text: '2024', href: '/2024', hidden: false },
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: false },
 		{ text: 'Sessions', href: '/sessions', hidden: false },
-		{ text: 'Schedule', href: '/schedule', hidden: true },
+		{ text: 'Schedule', href: '/schedule', hidden: false },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 

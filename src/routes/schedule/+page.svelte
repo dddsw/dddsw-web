@@ -6,7 +6,8 @@
 	pageTitle.set('Schedule');
 
 	onMount(async () => {
-		const scheduleRsp = await fetch('https://sessionize.com/api/v2/vphtt01b/view/GridSmart');
+		// Will need to be published!
+		const scheduleRsp = await fetch('https://sessionize.com/api/v2/kr5jkssf/view/GridSmart');
 		let pageContent = await scheduleRsp.text();
 		let targetDiv = document.getElementById('schedule');
 		if (targetDiv) {
@@ -23,16 +24,7 @@
 	});
 </script>
 
-<p class="text-center">Please note the schedule is subject to change.</p>
-<div class="section">
-	<h3>Lightning talks</h3>
-	<p>During lunch we also have some fantastic lightning talks in The Junction:</p>
-	<ul>
-		<li>Ben Madley: How To Get Nothing Done</li>
-		<li>John Kilmister: The Benefits of Load Testing Your Application</li>
-	</ul>
-</div>
-
+<p class="text-center">Please note the schedule is subject to change. Please bookmark this page for reference.</p>
 <div id="schedule" />
 
 <style>
