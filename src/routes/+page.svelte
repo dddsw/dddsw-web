@@ -98,10 +98,10 @@
 				<p>Day of the event!</p>
 			</span>
 		</div>
-		<sub class="sub-highlight"
-			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
-			driven ❤️</sub
-		>
+		<sub class="sub-highlight">
+			We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
+			driven ❤️
+		</sub>
 	</div>
 </div>
 
