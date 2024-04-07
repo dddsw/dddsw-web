@@ -17,7 +17,26 @@
 			Bristol <br />
 			BS1 6QH
 		</p>
-
+		<p>Engine Shed is wheelchair accessible and has an accessible toilet.</p>
+		<p>
+			All conference areas are located on the first floor at the Engine Shed. Just walk in the main
+			entrance by Bristol Temple Meads railway station and go upstairs by using the flight of stairs
+			or the lift. There will be a banner outside and volunteer crew members to greet you as you
+			enter the first floor.
+			<a href="https://engine-shed.co.uk/engine-shed-virtual-tour/" target="_blank">
+				You can take a virtual tour of the Engine Shed here</a
+			>.
+		</p>
+		<p>
+			During sessions the communal areas (<a
+				href="https://engine-shed.co.uk/spaces/the-lounge/"
+				target="_blank">Members Lounge</a
+			>
+			and <a href="https://engine-shed.co.uk/spaces/platform-14/" target="_blank">Platform 14</a>)
+			have some places to sit and relax though they can be noisy as sound carries from the sessions.
+			During breaks and lunch these areas will get busy but the session rooms are still open if you
+			need a quieter place to sit.
+		</p>
 		<iframe
 			title="Google Maps"
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.505708479013!2d-2.5857436836869034!3d51.44887092280099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718e7cb133a5e9%3A0xad45f23e4147453c!2sEngine%20Shed!5e0!3m2!1sen!2suk!4v1667485180686!5m2!1sen!2suk"
