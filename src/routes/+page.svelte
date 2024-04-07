@@ -35,7 +35,7 @@
 
 <div class="introduction primary-bg">
 	<div class="section">
-		<h1>Latest update</h1>
+		<h2>Latest updates</h2>
 		<p>
 			<a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test
 			your demos and get ready for the big day!!

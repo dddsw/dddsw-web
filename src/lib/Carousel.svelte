@@ -22,7 +22,8 @@
 {#key carouselImage}
 	<div class="header" style="background-image: url({carouselImage.src});">
 		<div class="details-container shadow">
-			<span class="name">DDD South West Conference</span><br />
+			
+			<h1 class="name">DDD South West Conference</h1><br />
 			<span class="details">27th April 2024 @ Engine Shed</span>
 		</div>
 	</div>
