@@ -31,8 +31,7 @@
 		class="unset main-nav-button"
 		class:shadow={homepage}
 		class:inverted-colours={homepage}
-		on:click={toggleNav}
-	>
+		on:click={toggleNav}>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">

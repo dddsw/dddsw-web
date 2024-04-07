@@ -48,9 +48,11 @@
 
 <div class="quaternary-bg">
 	<div class="section">
-		<p class="text-center">
-			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by the community,
-			for the community. We are dedicated to providing a safe and welcoming conference experience for everyone. Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
+		<p>
+			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by the community, for the community. We are dedicated to providing a safe and welcoming conference experience for everyone. 
+		</p>
+		<p>	
+			Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
 		</p>
 	</div>
 </div>
