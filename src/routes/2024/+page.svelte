@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { pageTitle } from '../../stores.js';
-	pageTitle.set('The 2024 Event');
+	pageTitle.set('The 2024 Venue');
 </script>
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Venue</h1>
+		<h2>Address</h2>
 		<p>
 			DDD South West 2024 will be held at <a href="https://engine-shed.co.uk/" target="_blank"
 				>Engine Shed</a
@@ -17,6 +17,7 @@
 			Bristol <br />
 			BS1 6QH
 		</p>
+		<h2>Accessibility</h2>
 		<p>Engine Shed is wheelchair accessible and has an accessible toilet.</p>
 		<p>
 			All conference areas are located on the first floor at the Engine Shed. Just walk in the main
@@ -37,6 +38,7 @@
 			During breaks and lunch these areas will get busy but the session rooms are still open if you
 			need a quieter place to sit.
 		</p>
+		<h2>Map</h2>
 		<iframe
 			title="Google Maps"
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.505708479013!2d-2.5857436836869034!3d51.44887092280099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48718e7cb133a5e9%3A0xad45f23e4147453c!2sEngine%20Shed!5e0!3m2!1sen!2suk!4v1667485180686!5m2!1sen!2suk"
@@ -83,7 +85,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Covid policy</h1>
+		<h2>Covid policy</h2>
 		<p>
 			We will not be operating a mask or distancing policy at DDD South West 2024, but attendees are
 			welcome to wear a mask if desired. Please respect others who choose to wear masks as they may
