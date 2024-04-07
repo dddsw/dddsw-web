@@ -48,11 +48,10 @@
 
 <div class="quaternary-bg">
 	<div class="section">
+		<h1>Latest update</h1>
 		<p>
-			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by the community, for the community. We are dedicated to providing a safe and welcoming conference experience for everyone. 
-		</p>
-		<p>	
-			Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
+			<a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test
+			your demos and get ready for the big day!!
 		</p>
 	</div>
 </div>
@@ -88,7 +87,7 @@
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
-				<p>8th April</p>
+				<p>10th April</p>
 				<p>Ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
@@ -97,7 +96,10 @@
 				<p>Day of the event!</p>
 			</span>
 		</div>
-		<sub class="sub-highlight text-center">We'll try our best to keep to these dates but please be patient - DDDSw is entirely volunteer driven ❤️</sub>
+		<sub class="sub-highlight"
+			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
+			driven ❤️</sub
+		>
 	</div>
 </div>
 
@@ -127,7 +129,7 @@
 	}
 
 	.sub-highlight {
-		font-style: italic
+		font-style: italic;
 	}
 
 	@media (min-width: 576px) {
