@@ -44,5 +44,9 @@
 
             In general, consult with other staff members when possible but act when necessary.
         </p>
+        <h3>Credit</h3>
+        <p>
+            This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers.
+        </p>
     </div>
 </div>

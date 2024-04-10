@@ -69,5 +69,9 @@
 		
 			Our team will be happy to help you contact hotel/venue security, local law enforcement, local support services, provide escorts, or otherwise assist you to feel safe for the duration of the event. We value your attendance.
 		</p>
+		<h3>Credit</h3>
+        <p>
+            This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers.
+        </p>
 	</div>
 </div>
