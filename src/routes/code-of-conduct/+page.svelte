@@ -27,16 +27,13 @@
 			<li>Advocating for, or encouraging, any of the above behaviour</li>
 		</ul>
 		<p>
-			Sponsors are also subject to the anti-harassment policy. In particular, sponsors should not
-			use sexualised images, activities, or other material. Booth staff (including volunteers)
-			should not use sexualised clothing/uniforms/costumes, or otherwise create a sexualised
-			environment.
+			In this document the term 'participant' refers to any person at the event including, but not limited to; ticketed attendees, sponsor staff, volunteers.
+
+			Reporting, enforcement, and feedback policies apply to all participants.
 		</p>
 		<h2>Enforcement</h2>
 		<p>
-			Participants asked to stop any harassing behaviour are expected to comply immediately
-
-			Exhibitors in the expo hall, sponsor or vendor booths, or similar activities are also subject to the anti-harassment policy. In particular, exhibitors should not use sexualized images, activities, or other material. Booth staff (including volunteers) should not use sexualized clothing/uniforms/costumes, or otherwise create a sexualized environment.
+			Participants asked to stop any harassing behaviour are expected to comply immediately.
 		
 			If a participant engages in harassing behaviour, event organisers retain the right to take any actions to keep the event a welcoming environment for all participants. This includes warning the offender or expulsion from the conference.
 		
