@@ -50,8 +50,10 @@
 	<div class="section">
 		<h1>Latest update</h1>
 		<p>
-			<a href="/schedule">Schedule is announced!!</a> Time for last second tweaks to your talks, test
-			your demos and get ready for the big day!!
+			Registration is now open,
+			<a href="https://www.eventbrite.co.uk/e/ddd-southwest-2024-registration-798955125287">
+				get your tickets here</a
+			> and see you on the 27th!
 		</p>
 	</div>
 </div>
@@ -86,7 +88,7 @@
 				<p>Schedule announced</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>10th April</p>
 				<p>Ticket registration opens</p>
 			</span>
