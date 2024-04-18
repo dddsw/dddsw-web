@@ -52,12 +52,12 @@
 
 		<p>You can make a report either personally or anonymously.</p>
 
-		<h2>Anonymous Report</h2>
+		<h3>Anonymous Report</h3>
 		<p>You can make an anonymous report <a href="https://forms.office.com/e/ZDSiDR6Tyg" target="_blank">here</a>.</p>
 
 		<p>We can't follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.</p>
 
-		<h2>Personal Report</h2>
+		<h3>Personal Report</h3>
 		<p>
 			You can make a personal report by:
 		</p>
@@ -80,7 +80,7 @@
 
 		<p>We value your attendance.</p>
 
-		<h3>Credit</h3>
+		<h2>Credit</h2>
         <p>
             This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers.
 			<a href="https://geekfeminism.fandom.com/wiki/Conference_anti-harassment" target="_blank">https://geekfeminism.fandom.com/wiki/Conference_anti-harassment</a>
