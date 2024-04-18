@@ -8,13 +8,13 @@
 		<h1>Internal Code of Conduct Policy</h1>
 		<h2>Warnings</h2>
         <p>
-            Any member of conference staff can issue a verbal warning to a participant that their behavior violates the conference's anti-harassment policy. Warnings should be reported to conference committee members as soon as practical. The report should include: 
+            Any member of conference staff can issue a verbal warning to a participant that their behaviour violates the conference's anti-harassment policy. Warnings should be reported to conference committee members as soon as practical. The report should include: 
         </p>
         <ul>
             <li>Identifying information (name/badge number) of the participant</li>
             <li>The time you issued the warning</li>
-            <li>The behavior that was in violation</li>
-            <li>The approximate time of the behavior (if different than the time of warning)</li>
+            <li>The behaviour that was in violation</li>
+            <li>The approximate time of the behaviour (if different than the time of warning)</li>
             <li>The circumstances surrounding the incident</li>
             <li>Your identity</li>
             <li>Other people involved in the incident</li>
@@ -32,15 +32,15 @@
             A participant may be expelled by the decision of any of the above listed entities for whatever reasons they deem sufficient. However, here are some general guidelines for when a participant should be expelled:
         </p>
         <ul>
-            <li>A second offense resulting in a warning from staff</li>
+            <li>A second offence resulting in a warning from staff</li>
             <li>Continuing to harass after any "No" or "Stop" instruction</li>
-            <li>A pattern of harassing behavior, with or without warnings</li>
-            <li>A single serious offense (e.g., punching or groping someone)</li>
-            <li>A single obviously intentional offense (e.g., taking up-skirt photos)</li>
+            <li>A pattern of harassing behaviour, with or without warnings</li>
+            <li>A single serious offence (e.g., punching or groping someone)</li>
+            <li>A single obviously intentional offence (e.g., taking up-skirt photos)</li>
         </ul>
         <h2>Public statements</h2>
         <p>
-            As a general rule, conference staff should not make any public statements about the behavior of individual people during or after the conference.
+            As a general rule, conference staff should not make any public statements about the behaviour of individual people during or after the conference.
 
             In general, consult with other staff members when possible but act when necessary.
         </p>
