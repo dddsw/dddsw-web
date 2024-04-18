@@ -5,7 +5,6 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Internal Code of Conduct Policy</h1>
 		<h2>Warnings</h2>
         <p>
             Any member of conference staff can issue a verbal warning to a participant that their behaviour violates the conference's anti-harassment policy. Warnings should be reported to conference committee members as soon as practical. The report should include: 
@@ -44,7 +43,7 @@
 
             In general, consult with other staff members when possible but act when necessary.
         </p>
-        <h3>Credit</h3>
+        <h2>Credit</h2>
         <p>
             This anti-harassment policy is based on the example policy from the Geek Feminism wiki, created by the Ada Initiative and other volunteers.
             <a href="https://geekfeminism.fandom.com/wiki/Conference_anti-harassment" target="_blank">https://geekfeminism.fandom.com/wiki/Conference_anti-harassment</a>
