@@ -34,8 +34,7 @@
             <li>A second offence resulting in a warning from staff</li>
             <li>Continuing to harass after any "No" or "Stop" instruction</li>
             <li>A pattern of harassing behaviour, with or without warnings</li>
-            <li>A single serious offence (e.g., punching or groping someone)</li>
-            <li>A single obviously intentional offence (e.g., taking up-skirt photos)</li>
+            <li>A single serious offence (e.g., punching or groping someone, taking up-skirt photos)</li>
         </ul>
         <h2>Public statements</h2>
         <p>
