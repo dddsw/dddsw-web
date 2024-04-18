@@ -34,7 +34,7 @@
 		</p>
 		<h2>Enforcement</h2>
 		<p>
-			Participants asked to stop any harassing behavior are expected to comply immediately
+			Participants asked to stop any harassing behaviour are expected to comply immediately
 
 			Exhibitors in the expo hall, sponsor or vendor booths, or similar activities are also subject to the anti-harassment policy. In particular, exhibitors should not use sexualized images, activities, or other material. Booth staff (including volunteers) should not use sexualized clothing/uniforms/costumes, or otherwise create a sexualized environment.
 		
