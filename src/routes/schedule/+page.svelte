@@ -24,8 +24,18 @@
 	});
 </script>
 
-<p class="text-center">Please note the schedule is subject to change. Please bookmark this page for reference.</p>
-<div id="schedule" />
+<div class="tertiary-bg">
+	<div class="section">
+		<p>
+			To bookmark sessions, submit feedback and enter the prize draw,
+			<a href="https://pocket2024.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
+		</p>
+	</div>
+</div>
+<div class="secondary-bg">
+	<div id="schedule" />
+	<p class="text-center">Please note the schedule is subject to change.</p>
+</div>
 
 <style>
 	#schedule {
