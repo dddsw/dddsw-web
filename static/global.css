@@ -68,6 +68,10 @@ html {
 	p {
 		font-size: 1.25rem;
 	}
+
+	ul {
+		font-size: 1.25rem;
+	}
 }
 
 .text-center {
