@@ -28,7 +28,7 @@
 	<div class="section">
 		<p>
 			To bookmark sessions, submit feedback and enter the prize draw,
-			<a href="https://pocket.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
+			<a href="https://pocket2024.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
 		</p>
 	</div>
 </div>
