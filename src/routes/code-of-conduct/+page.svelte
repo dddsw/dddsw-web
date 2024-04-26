@@ -58,13 +58,7 @@
 		<p>We can't follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.</p>
 
 		<h3>Personal Report</h3>
-		<p>
-			You can make a personal report by:
-		</p>
-		<ul>
-			<li>Calling or messaging this phone number: <a href="tel:+447984465333">+447984465333</a>. This phone number will be continuously monitored for the duration of the event.</li>
-			<li>Contacting a staff member, identified by DDD South West 2024 t-shirts or lanyards.</li>
-		</ul>
+		<p>You can make a personal report by contacting a staff member, identified by DDD South West 2024 t-shirts or lanyards.</p>
 
 		<p>When taking a personal report, our staff will ensure you are safe and cannot be overheard.</p>
 
