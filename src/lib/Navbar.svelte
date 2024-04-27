@@ -9,6 +9,7 @@
 		{ text: 'About', href: '/about', hidden: false },
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
 		{ text: 'Event Venue', href: '/venue', hidden: false },
+		{ text: 'Room map', href: '/venue-layout', hidden: false },
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
 		{ text: 'Sessions', href: '/sessions', hidden: true },
 		{ text: 'Schedule', href: '/schedule', hidden: false },

@@ -26,7 +26,8 @@
 			enter the first floor.
 			<a href="https://engine-shed.co.uk/engine-shed-virtual-tour/" target="_blank">
 				You can take a virtual tour of the Engine Shed here</a
-			>.
+			>
+			or <a href="/venue-layout">see the room layout here</a>.
 		</p>
 		<p>
 			During sessions the communal areas (<a
