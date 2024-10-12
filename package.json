@@ -16,8 +16,8 @@
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
-		"@axe-core/playwright": "^4.8.2",
-		"@playwright/test": "^1.38.0",
+		"@axe-core/playwright": "^4.10.0",
+		"@playwright/test": "^1.48.0",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/kit": "^1.25.0",
 		"@types/cookie": "^0.5.2",
