@@ -2,25 +2,11 @@
 // This is useful to ensure CSS changes haven't changed unexpected things
 // If a visual change is intentional then run `npm run test:update-screenshots`
 import { test, devices, expect } from '@playwright/test';
+import { pagesToTest } from './all-pages-to-test';
+import { devicesToTest } from './all-devices-to-test';
 
-const pages: [pageName: string, path: string][] = [
-	['Home', '/'],
-	['About', 'about'],
-	['Sponsorship', 'sponsorship'],
-	['Venue', 'venue'],
-	['Code of conduct', 'code-of-conduct'],
-	['Code of conduct (internal)', 'code-of-conduct/internal'],
-	['New speakers workshop', 'new-speakers-workshop']
-];
-
-const devicestoTest: [deviceName: string, deviceViewport: string][] = [
-	['desktop', 'Desktop Chrome'],
-	['tablet', 'iPad Mini'],
-	['mobile', 'iPhone SE']
-];
-
-for (const [pageName, path] of pages) {
-	for (const [deviceName, deviceViewport] of devicestoTest) {
+for (const [pageName, path] of pagesToTest) {
+	for (const [deviceName, deviceViewport] of devicesToTest) {
 		test(`${pageName} page has no visual changes on ${deviceName}}`, async ({ page }) => {
 			//Set viewport
 			page.setViewportSize(devices[deviceViewport].viewport);
