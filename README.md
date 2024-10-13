@@ -6,18 +6,18 @@ This is currently a WIP. Please feel free to raise any issues that you come acro
 
 1. Install dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 2. Start the app:
 
-```bash
-npm run dev
+   ```bash
+   npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+   # or start the server and open the app in a new browser tab
+   npm run dev -- --open
+   ```
 
 ## Running the tests
 
@@ -38,7 +38,11 @@ npm run test:ui
 
 You can also run them via the Playwright VS Code extension.
 
-The tests generate page previews in different device sizes. The screenshots are saved under `tests\page-previews`.
+### Visual comparison tests
+
+The tests generate page previews in different device sizes and test to ensure that they haven't changed. The screenshots are saved under `tests\__screenshots__`. and can be regenerated with `npm run test:update-screenshots`.
+
+If a visual test fails, look under the attachments in the report for a visual diff.
 
 ## Contributing
 
