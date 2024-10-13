@@ -11,8 +11,9 @@
 		"test:page-previews": "playwright test tests/page-previews.spec.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "npx lint-staged",
+		"lint": "prettier --check . & eslint .",
+		"lint:fix:all": "eslint --fix . & prettier --write .",
+		"lint:fix:staged": "npx lint-staged",
 		"prepare": "husky && svelte-kit sync"
 	},
 	"devDependencies": {
