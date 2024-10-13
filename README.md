@@ -81,3 +81,9 @@ Background colour classes to set the sections to the predefined colours:
 	</div>
 </div>
 ```
+
+### Tests
+
+When adding a new page, add the name and route to `tests\all-pages-to-test.ts` to enable automated accessibility and visual comparison tests.
+
+If adding or changing a link in the nav, ensure it is add/changed in `tests\navigation.spec.ts`.
