@@ -14,4 +14,8 @@ export class Header {
 		this.navDropDown = this.navMenu.locator('.nav-link-container');
 		this.logo = page.getByRole('link', { name: 'The DDD South West logo' });
 	}
+
+	getNavLinkTo(route: string): Locator {
+		return this.navMenu.locator(`a[href="/${route}"]`);
+	}
 }
