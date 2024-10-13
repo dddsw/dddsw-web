@@ -36,7 +36,7 @@ test.describe('Navbar', () => {
 		await header.navDropDownButton.click();
 
 		// Click a nav link
-		await header.navDropDown.locator('a[href="/sponsorship"]').click();
+		await header.getNavLinkTo('sponsorship').click();
 
 		await expect(header.navDropDown).toBeHidden();
 	});
@@ -73,7 +73,7 @@ test.describe('Navbar', () => {
 		// Click nav drop down
 		await header.navDropDownButton.click();
 
-		await expect(header.navDropDown.locator('a[href="/about"]')).toBeHidden();
+		await expect(header.getNavLinkTo('about')).toBeHidden();
 	});
 
 	test('Does not show button text in smaller screens', async ({ page }) => {
