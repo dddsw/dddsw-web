@@ -87,3 +87,14 @@ Background colour classes to set the sections to the predefined colours:
 When adding a new page, add the name and route to `tests\all-pages-to-test.ts` to enable automated accessibility and visual comparison tests.
 
 If adding or changing a link in the nav, ensure it is add/changed in `tests\navigation.spec.ts`.
+
+### Pre-commit hooks
+
+> [!IMPORTANT]
+> Playwright tests are run on pre-commit hooks and will fail if Playwright is not installed. See [running the tests](#running-the-tests) for info on how to set up Playwright
+
+Pre-commit hooks are managed by [Husky](https://typicode.github.io/husky/get-started.html) and will be run whenever you make a commit. If they fail then the commit will be aborted and you will see an error.
+
+To run pre-commit hooks without committing, stage all your changes and then execute the `.husky/pre-commit` file.
+
+To commit but skip pre-commit hooks, run `git commit -m "my amazing commit message" --no-verify`
