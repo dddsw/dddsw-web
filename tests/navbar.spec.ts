@@ -1,96 +1,85 @@
 import { test, expect, devices } from '@playwright/test';
+import { Header } from './page-object/header';
 
-test('Clicking nav button displays nav links dropdown', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+test.describe('Navbar', () => {
+	let header: Header;
 
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
+	test.beforeEach(async ({ page }) => {
+		// Go to about page (to avoid carousel weirdness)
+		await page.goto('/about');
 
-	await expect(page.locator('.nav-link-container')).toBeVisible();
-});
+		//Ensure everything has loaded to prevent flakiness
+		await page.waitForLoadState('networkidle');
 
-test('Clicking nav button closes nav links dropdown', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+		header = new Header(page);
+	});
 
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
+	test('Clicking nav button displays nav links dropdown', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-	// Click nav drop down again
-	await page.locator('.main-nav-button').click();
+		await expect(header.navDropDown).toBeVisible();
+	});
 
-	await expect(page.locator('.nav-link-container')).toBeHidden();
-});
+	test('Clicking nav button closes nav links dropdown', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-test('Clicking nav link closes nav links dropdown', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+		// Click nav drop down again
+		await header.navDropDownButton.click();
 
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
+		await expect(header.navDropDown).toBeHidden();
+	});
 
-	// Click a nav link
-	await page.locator('.nav-link-container a[href="/sponsorship"]').click();
+	test('Clicking nav link closes nav links dropdown', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-	await expect(page.locator('.nav-link-container')).toBeHidden();
-});
+		// Click a nav link
+		await header.navDropDown.locator('a[href="/sponsorship"]').click();
 
-test('Clicking logo closes nav links dropdown', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+		await expect(header.navDropDown).toBeHidden();
+	});
 
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
+	test('Clicking logo closes nav links dropdown', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-	// Click logo
-	await page.locator('img[class~="logo"]').click();
+		// Click logo
+		await header.logo.click();
 
-	await expect(page.locator('.nav-link-container')).toBeHidden();
-});
+		await expect(header.navDropDown).toBeHidden();
+	});
 
-test('Clicking logo does not open nav links dropdown', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+	test('Clicking logo does not open nav links dropdown', async () => {
+		// Click logo
+		await header.logo.click();
 
-	// Click logo
-	await page.locator('img[class~="logo"]').click();
+		await expect(header.navDropDown).toBeHidden();
+	});
 
-	await expect(page.locator('.nav-link-container')).toBeHidden();
-});
+	test('Displays down arrow icon in unexpanded state', async () => {
+		await expect(header.navDropDownButton).toContainText('expand_more');
+	});
 
-test('Displays down arrow icon in unexpanded state', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+	test('Displays up arrow icon in expanded state', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-	await expect(page.locator('.main-nav-button span.icon')).toContainText('expand_more');
-});
+		await expect(header.navDropDownButton).toContainText('expand_less');
+	});
 
-test('Displays up arrow icon in expanded state', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
+	test('Does not show current route in nav links drop down', async () => {
+		// Click nav drop down
+		await header.navDropDownButton.click();
 
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
+		await expect(header.navDropDown.locator('a[href="/about"]')).toBeHidden();
+	});
 
-	await expect(page.locator('.main-nav-button span.icon')).toContainText('expand_less');
-});
+	test('Does not show button text in smaller screens', async ({ page }) => {
+		// Set to mobile view
+		await page.setViewportSize(devices['iPhone SE'].viewport);
 
-test('Does not show current route in nav links drop down', async ({ page }) => {
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
-
-	// Click nav drop down
-	await page.locator('.main-nav-button').click();
-
-	await expect(page.locator('.nav-link-container a[href="/about"]')).toBeHidden();
-});
-
-test('Does not show button text in smaller screens', async ({ page }) => {
-	await page.setViewportSize(devices['iPhone SE'].viewport);
-
-	// Go to about page (to avoid carousel weirdness)
-	await page.goto('/about');
-
-	await expect(page.locator('.nav-button-text')).toBeHidden();
+		await expect(page.locator('.nav-button-text')).toBeHidden();
+	});
 });
