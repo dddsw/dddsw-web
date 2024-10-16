@@ -1,5 +1,7 @@
 import { test, devices, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { devicesToTest } from './all-devices-to-test';
+import { pagesToTest } from './all-pages-to-test';
 
 let accessibilityScanner: AxeBuilder;
 
@@ -12,28 +14,12 @@ test.beforeEach(({ page }) => {
 	]);
 });
 
-const viewPorts = new Map([
-	['mobile', 'iPhone SE'],
-	['tablet', 'iPad Mini'],
-	['desktop', 'Desktop Chrome']
-]);
-for (const [viewportName, viewportDevice] of viewPorts) {
-	//Home page
-	test(`Home page a11y checks - ${viewportName}`, async ({ page }) => {
-		await page.setViewportSize(devices[viewportDevice].viewport);
+for (const [pageName, path] of pagesToTest) {
+	for (const [deviceName, deviceViewport] of devicesToTest) {
+		test(`${pageName} page a11y checks on ${deviceName}}`, async ({ page }) => {
+			await page.setViewportSize(devices[deviceViewport].viewport);
 
-		await page.goto('/');
-
-		await reportAccessibilityViolations();
-	});
-
-	// Content pages
-	const routes = ['about', 'sponsorship', '2024', 'code-of-conduct', 'new-speakers-workshop'];
-	for (const route of routes) {
-		test(`${route} page a11y checks - ${viewportName}`, async ({ page }) => {
-			await page.setViewportSize(devices[viewportDevice].viewport);
-
-			await page.goto(route);
+			await page.goto(path);
 
 			await reportAccessibilityViolations();
 		});
@@ -42,7 +28,7 @@ for (const [viewportName, viewportDevice] of viewPorts) {
 
 async function reportAccessibilityViolations() {
 	// Scan the page with axe to look for a11y violations
-	let violations = (await accessibilityScanner.analyze()).violations;
+	const violations = (await accessibilityScanner.analyze()).violations;
 
 	// Make Playwright output the key information as a (more) human readable string
 	let violationDescription = '';
@@ -50,14 +36,14 @@ async function reportAccessibilityViolations() {
 		violationDescription = `Warning - ${violations.length} a11y rule violations found\n\n`;
 
 		for (let i = 0; i < violations.length; i++) {
-			let violation = violations[i];
+			const violation = violations[i];
 			violationDescription += `########################################################\n`;
 			violationDescription += `Rule Violation ${i + 1}\n`;
 			violationDescription += `${violation.impact?.toUpperCase()} - ${violation.help}\n`;
 			violationDescription += `${violation.helpUrl}\n`;
 
 			for (let j = 0; j < violation.nodes.length; j++) {
-				let instance = violation.nodes[j];
+				const instance = violation.nodes[j];
 
 				violationDescription += `--------------------------------------------------------\n`;
 				violationDescription += `Instance ${j + 1}/${violation.nodes.length}\n\n`;
