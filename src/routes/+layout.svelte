@@ -3,6 +3,7 @@
 	import Footer from '$lib/Footer.svelte';
 
 	import { page } from '$app/stores';
+	import '../app.css';
 </script>
 
 <svelte:head>
