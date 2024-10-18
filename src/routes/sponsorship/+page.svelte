@@ -3,21 +3,21 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: '£250', claimed: true },
+		{ title: 'Breakfast', price: '£250', claimed: false },
 		{ title: 'Morning break', price: '£250', claimed: false },
-		{ title: 'Afternoon break', price: '£250', claimed: true }
+		{ title: 'Afternoon break', price: '£250', claimed: false }
 	];
 
 	let extraOptions = [
 		{
 			title: 'T-shirts',
 			price: '£500',
-			claimed: true,
+			claimed: false,
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
 
-	let showSponsors = true;
+	let showSponsors = false;
 
 	pageTitle.set('Sponsorship');
 </script>
@@ -26,7 +26,7 @@
 	<div class="section">
 		<h1>Sponsorship opportunities</h1>
 		<p>
-			We are looking for sponsors for DDD South West 2024. If you or your company would like to
+			We are looking for sponsors for DDD South West 2025. If you or your company would like to
 			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
 			We have various options available, or we can arrange a custom package for you. Our event is entirely
 			funded by sponsorship and would not be possible without our wonderful sponsors.

@@ -17,7 +17,7 @@
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
 		{ text: 'Sessions', href: '/sessions', hidden: true },
 		{ text: 'Schedule', href: '/schedule', hidden: true },
-		{ text: 'Pocket DDD', href: 'https://pocket2024.dddsouthwest.com/', hidden: true },
+		{ text: 'Pocket DDD', href: 'https://pocket2025.dddsouthwest.com/', hidden: true },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 

@@ -4,25 +4,25 @@
 			name: 'SECCL',
 			href: 'https://seccl.tech/',
 			src: '../images/sponsors/seccl.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Avanade',
@@ -40,31 +40,31 @@
 			name: 'Elastic Mint',
 			href: 'https://www.elasticmint.com/',
 			src: '../images/sponsors/elasticmint.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'BJSS',
 			href: 'https://www.bjss.com/',
 			src: '../images/sponsors/bjss.jpg',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'Just Eat Takeaway.com',
 			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
 			src: '../images/sponsors/justeat.png',
-			confirmed: true
+			confirmed: false
 		},
 		{
 			name: 'dxw',
 			href: 'https://www.dxw.com/',
 			src: '../images/sponsors/dxw.png',
-			confirmed: true
+			confirmed: false
 		}
 	];
 </script>
 
 <div class="sponsors">
-	<h2>With thanks to our 2024 sponsors:</h2>
+	<h2>With thanks to our 2025 sponsors:</h2>
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
 			{#if sponsor.confirmed}
