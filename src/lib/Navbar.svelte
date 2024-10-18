@@ -12,12 +12,12 @@
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
 		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
-		{ text: 'Event Venue', href: '/venue', hidden: false },
-		{ text: 'Room map', href: '/venue-layout', hidden: false },
+		{ text: 'Event Venue', href: '/venue', hidden: true },
+		{ text: 'Room map', href: '/venue-layout', hidden: true },
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
 		{ text: 'Sessions', href: '/sessions', hidden: true },
-		{ text: 'Schedule', href: '/schedule', hidden: false },
-		{ text: 'Pocket DDD', href: 'https://pocket2024.dddsouthwest.com/', hidden: false },
+		{ text: 'Schedule', href: '/schedule', hidden: true },
+		{ text: 'Pocket DDD', href: 'https://pocket2024.dddsouthwest.com/', hidden: true },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 
