@@ -10,3 +10,4 @@ node_modules
 .output
 .idea
 /test-results
+playwright-report

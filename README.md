@@ -6,18 +6,18 @@ This is currently a WIP. Please feel free to raise any issues that you come acro
 
 1. Install dependencies:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 2. Start the app:
 
-```bash
-npm run dev
+   ```bash
+   npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+   # or start the server and open the app in a new browser tab
+   npm run dev -- --open
+   ```
 
 ## Running the tests
 
@@ -38,7 +38,11 @@ npm run test:ui
 
 You can also run them via the Playwright VS Code extension.
 
-The tests generate page previews in different device sizes. The screenshots are saved under `tests\page-previews`.
+### Visual comparison tests
+
+The tests generate page previews in different device sizes and test to ensure that they haven't changed. The screenshots are saved under `tests\__screenshots__`. and can be regenerated with `npm run test:update-screenshots`.
+
+If a visual test fails, look under the attachments in the report for a visual diff.
 
 ## Contributing
 
@@ -77,3 +81,20 @@ Background colour classes to set the sections to the predefined colours:
 	</div>
 </div>
 ```
+
+### Tests
+
+When adding a new page, add the name and route to `tests\all-pages-to-test.ts` to enable automated accessibility and visual comparison tests.
+
+If adding or changing a link in the nav, ensure it is add/changed in `tests\navigation.spec.ts`.
+
+### Pre-commit hooks
+
+> [!IMPORTANT]
+> Playwright tests are run on pre-commit hooks and will fail if Playwright is not installed. See [running the tests](#running-the-tests) for info on how to set up Playwright
+
+Pre-commit hooks are managed by [Husky](https://typicode.github.io/husky/get-started.html) and will be run whenever you make a commit. If they fail then the commit will be aborted and you will see an error.
+
+To run pre-commit hooks without committing, stage all your changes and then execute the `.husky/pre-commit` file.
+
+To commit but skip pre-commit hooks, run `git commit -m "my amazing commit message" --no-verify`
