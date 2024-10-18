@@ -12,7 +12,7 @@
 
 <Header />
 
-<main>
+<main class="prose">
 	<slot />
 </main>
 
