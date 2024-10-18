@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Navbar from '$lib/Navbar.svelte';
-	import { pageTitle } from '../stores.js';
 </script>
 
 <header>
@@ -9,7 +9,7 @@
 			<a href="/">
 				<img src="../images/logo.png" alt="The DDD South West logo" />
 			</a>
-			<h1>{$pageTitle}</h1>
+			<h1>{$page.data.title}</h1>
 			<Navbar />
 		</div>
 	</div>

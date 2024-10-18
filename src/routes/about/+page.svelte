@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { pageTitle } from '../../stores.js';
-
 	let teamMembers = [
 		{
 			name: 'Lorraine Pearce',
@@ -35,8 +33,6 @@
 			linkedIn: 'sara-gowen-27404734'
 		}
 	];
-
-	pageTitle.set('About DDD South West');
 </script>
 
 <div>

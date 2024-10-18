@@ -1,8 +1,3 @@
-<script lang="ts">
-	import { pageTitle } from '../../../stores.js';
-	pageTitle.set('Internal Code of Conduct Policy');
-</script>
-
 <div class="secondary-bg">
 	<div class="section">
 		<h2>Warnings</h2>

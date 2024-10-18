@@ -1,8 +1,3 @@
-<script lang="ts">
-	import { pageTitle } from '../../stores.js';
-	pageTitle.set('Code of Conduct');
-</script>
-
 <div>
 	<div>
 		<p class="emphasis">

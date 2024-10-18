@@ -1,5 +1,5 @@
 export function load() {
 	return {
-		title: 'Home'
+		title: 'About DDD South West'
 	};
 }
