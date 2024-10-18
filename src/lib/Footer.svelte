@@ -1,16 +1,10 @@
-<script lang="ts">
-	export let isHomepage: boolean;
-</script>
-
-<footer class="container">
-	{#if !isHomepage}
-		<div class="quaternary-bg">
-			<div class="text-center">
-				<h2>By the community, for the community</h2>
-			</div>
+<footer>
+	<div>
+		<div>
+			<h2>By the community, for the community</h2>
 		</div>
-	{/if}
-	<div class="footer primary-bg">
+	</div>
+	<div>
 		<a href="https://twitter.com/dddsouthwest" target="_blank">
 			<i class="fa-brands fa-twitter fa-3x" title="DDD South West Twitter" />
 		</a>
@@ -21,22 +15,11 @@
 </footer>
 
 <style>
-	.footer {
-		padding: 30px;
-		display: flex;
-		justify-content: flex-end;
-		gap: 30px;
-	}
-
 	.fa-brands {
 		color: black;
 	}
 
 	.fa-brands:hover {
 		color: white;
-	}
-
-	h2 {
-		padding: 0 10px;
 	}
 </style>

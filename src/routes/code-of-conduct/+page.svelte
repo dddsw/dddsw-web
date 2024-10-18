@@ -3,9 +3,8 @@
 	pageTitle.set('Code of Conduct');
 </script>
 
-<div class="secondary-bg">
-	<div class="section">
-		<h1>Code of Conduct</h1>
+<div>
+	<div>
 		<p class="emphasis">
 			All attendees, speakers, sponsors and volunteers at our conference are required to agree with
 			the following code of conduct.
