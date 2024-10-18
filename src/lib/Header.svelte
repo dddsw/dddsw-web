@@ -9,7 +9,7 @@
 			<a href="/">
 				<img src="../images/logo.png" alt="The DDD South West logo" />
 			</a>
-			<h1>{$page.data.title}</h1>
+			<h1 class="text-3xl font-bold underline">{$page.data.title}</h1>
 			<Navbar />
 		</div>
 	</div>

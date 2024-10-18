@@ -11,13 +11,13 @@
 </script>
 
 <nav>
-	<div>
-		<div>
-			{#each navItems as navItem}
-				{#if navItem.href !== currentPage && !navItem.hidden}
-					<a href={navItem.href}>{navItem.text}</a>
-				{/if}
-			{/each}
-		</div>
-	</div>
+	<ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+		{#each navItems as navItem}
+			{#if !navItem.hidden}
+				<li>
+					<a class:active={navItem.href == currentPage} href={navItem.href}>{navItem.text}</a>
+				</li>
+			{/if}
+		{/each}
+	</ul>
 </nav>
