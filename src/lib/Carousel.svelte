@@ -6,7 +6,7 @@
 		{ id: 4, src: '../images/carousel/carousel-4.jpg' },
 		{ id: 5, src: '../images/carousel/carousel-5.jpg' }
 	];
-	
+
 	$: carouselImage = carouselImages[0];
 
 	setInterval(() => {
@@ -23,7 +23,7 @@
 	<div class="header" style="background-image: url({carouselImage.src});">
 		<div class="details-container shadow">
 			<span class="name">DDD South West</span><br />
-			<span class="details">27th April 2024 @ Engine Shed</span>
+			<span class="details">26th April 2025 @ Engine Shed</span>
 		</div>
 	</div>
 {/key}

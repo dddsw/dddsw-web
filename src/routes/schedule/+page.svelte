@@ -17,7 +17,7 @@
 		let sessions = document.querySelectorAll('div[data-sessionid]:not(.sz-session--plenum)');
 		for (let session of sessions) {
 			let sessionID = session.getAttribute('data-sessionid');
-			session.addEventListener('click', (e: any) => {
+			session.addEventListener('click', () => {
 				goto(`/sessions?id=${sessionID}`);
 			});
 		}
@@ -28,7 +28,7 @@
 	<div class="section">
 		<p>
 			To bookmark sessions, submit feedback and enter the prize draw,
-			<a href="https://pocket2024.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
+			<a href="https://pocket2025.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
 		</p>
 		<p>
 			Can't find a room? <a href="/venue-layout" class="emphasis"
