@@ -15,11 +15,13 @@
 	let modalSpeaker: Speaker | undefined;
 
 	onMount(async () => {
-		const sessionsRsp = await fetch('https://sessionize.com/api/v2/kn91wz1x/view/Sessions');
+		const sessionizeId = 'kn91wz1x';
+
+		const sessionsRsp = await fetch(`https://sessionize.com/api/v2/${sessionizeId}/view/Sessions`);
 		let sessionsJson = await sessionsRsp.json();
 		sessions = sessionsJson[0].sessions;
 
-		const speakersRsp = await fetch('https://sessionize.com/api/v2/kn91wz1x/view/Speakers');
+		const speakersRsp = await fetch(`https://sessionize.com/api/v2/${sessionizeId}/view/Speakers`);
 		speakers = await speakersRsp.json();
 
 		const hasId = $page.url.searchParams.has('id');
@@ -53,15 +55,14 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>2024 Sessions</h1>
+		<h1>2025 Sessions</h1>
 		{#if sessions}
 			{#each sessions as session}
 				<div class="session-container" id={session.id}>
 					<p>
 						{#each session.speakers as speaker}
 							<span class="speaker-name" on:click={() => showSpeakerInfo(speaker.id)}
-								>{speaker.name}</span
-							>
+								>{speaker.name}</span>
 						{/each}
 					</p>
 					<h2>{session.title}</h2>
@@ -79,8 +80,7 @@
 				<img
 					src={modalSpeaker?.profilePicture}
 					alt={modalSpeaker?.fullName}
-					class="speaker-image"
-				/>
+					class="speaker-image" />
 			{/if}
 			<h2>{modalSpeaker?.fullName}</h2>
 
