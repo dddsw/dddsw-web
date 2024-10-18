@@ -42,12 +42,6 @@
 			twitter: 'stuartblang'
 		},
 		{
-			name: 'Hannah Price',
-			imageName: 'hannah.jpg',
-			email: 'hannahprice@dddsouthwest.com',
-			linkedIn: 'hannah-price-a09728b1'
-		},
-		{
 			name: 'Carl Sargunar',
 			imageName: 'carl.jpg',
 			email: 'carlsargunar@dddsouthwest.com',
