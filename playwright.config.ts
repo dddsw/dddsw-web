@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
 	webServer: {
@@ -7,10 +7,23 @@ export default defineConfig({
 		reuseExistingServer: !process.env.CI
 	},
 	use: {
-		baseURL: 'http://127.0.0.1:5173/'
+		baseURL: 'http://127.0.0.1:5173/',
+		...devices['Desktop Chrome']
 	},
+
+	forbidOnly: !!process.env.CI,
 	fullyParallel: true,
 	reporter: [['list'], ['html']],
+	snapshotPathTemplate: '{testDir}/__screenshots__/{arg}{ext}',
 	testDir: './tests',
-	snapshotPathTemplate: '{testDir}/__screenshots__/{arg}{ext}'
+
+	projects: [
+		{
+			name: 'ci',
+			testIgnore: 'visual-comparison.spec.ts'
+		},
+		{
+			name: 'local'
+		}
+	]
 });
