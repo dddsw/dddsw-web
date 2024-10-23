@@ -1,3 +1,8 @@
+<script>
+	import Countdown from '../components/Countdown.svelte';
+</script>
+
+<Countdown />
 <div>
 	<div>
 		<p>
