@@ -10,10 +10,12 @@
 	<title>{$page.data.title}</title>
 </svelte:head>
 
-<Header />
+<div class="grid h-screen grid-rows-[auto_1fr_auto] gap-10">
+	<Header />
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<Footer />
+	<Footer />
+</div>

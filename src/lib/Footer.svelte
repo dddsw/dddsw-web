@@ -1,8 +1,6 @@
 <footer>
 	<div>
-		<div>
-			<h2>By the community, for the community</h2>
-		</div>
+		<h2>By the community, for the community</h2>
 	</div>
 	<div>
 		<a href="https://twitter.com/dddsouthwest" target="_blank">
