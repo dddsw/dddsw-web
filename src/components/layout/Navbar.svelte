@@ -3,7 +3,7 @@
 </script>
 
 <nav>
-	<div class="navbar bg-base-300 w-full">
+	<div class="navbar bg-base-300 w-full lg:relative">
 		<div class="flex-none lg:hidden">
 			<label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
 				<svg
@@ -20,7 +20,7 @@
 			</label>
 		</div>
 		<div class="mx-2 flex-1 px-2">DDD South West</div>
-		<div class="hidden flex-none lg:block">
+		<div class="hidden flex-none lg:block lg:absolute lg:top-1.5 lg:right-2">
 			<ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
 				<NavItems />
 			</ul>
