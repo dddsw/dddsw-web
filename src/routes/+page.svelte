@@ -29,18 +29,20 @@
 	];
 </script>
 
-<div class="introduction primary-bg">
-	<div class="section">
-		<p class="text-center">
-			DDD South West is an inclusive, non-profit developer conference organised by the community,
-			for the community.
-		</p>
-	</div>
-</div>
-
 {#if showSponsors}
 	<Sponsors />
 {/if}
+
+<div class="introduction primary-bg">
+	<div class="section">
+		<h2>Latest update</h2>
+		<p>
+			DDD South West is coming... save the date! See you on the
+			<span class="emphasis">26th April 2025</span>
+			at Engine Shed, Bristol
+		</p>
+	</div>
+</div>
 
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
@@ -48,11 +50,12 @@
 
 <div class="quaternary-bg">
 	<div class="section">
-		<h1>Latest update</h1>
 		<p>
-			DDD South West is coming... save the date! See you on the <span class="emphasis"
-				>26th April 2025</span> at Engine Shed, Bristol
+			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
+			the community, for the community. We are dedicated to providing a safe and welcoming
+			conference experience for everyone.
 		</p>
+		<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
 	</div>
 </div>
 
@@ -139,8 +142,11 @@
 	}
 
 	@media (min-width: 768px) {
+		.introduction h2 {
+			font-size: 2rem;
+		}
 		.introduction p {
-			font-size: 1.75rem;
+			font-size: 1.25rem;
 		}
 	}
 </style>

@@ -63,10 +63,10 @@
 	<div class="section">
 		<h1>What to expect</h1>
 		<p>
-			DDD South West is a free one day technical event organised by developers for developers. It is
-			a day of learning, discussing, contributing and being part of the developer community in the
-			South West. Our goal is to provide free technical education, the opportunity to mix with peers
-			and to make and develop relationships in the developer community.
+			DDD South West is an annual free one day technical conference organised by developers for
+			developers. It is a day of learning, discussing, contributing and being part of the developer
+			community in the South West. Our goal is to provide free technical education, the opportunity
+			to mix with peers and to make and develop relationships in the developer community.
 		</p>
 	</div>
 </div>
