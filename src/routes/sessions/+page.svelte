@@ -8,11 +8,11 @@
 
 	pageTitle.set('Sessions');
 
-	let sessions: Session[] = [];
+	let sessions: Session[] = $state([]);
 	let speakers: Speaker[] = [];
 
-	let showModal = false;
-	let modalSpeaker: Speaker | undefined;
+	let showModal = $state(false);
+	let modalSpeaker: Speaker | undefined = $state();
 
 	onMount(async () => {
 		const sessionsRsp = await fetch('https://sessionize.com/api/v2/kn91wz1x/view/Sessions');
@@ -59,9 +59,8 @@
 				<div class="session-container" id={session.id}>
 					<p>
 						{#each session.speakers as speaker}
-							<span class="speaker-name" on:click={() => showSpeakerInfo(speaker.id)}
-								>{speaker.name}</span
-							>
+							<span class="speaker-name" onclick={() => showSpeakerInfo(speaker.id)}
+								>{speaker.name}</span>
 						{/each}
 					</p>
 					<h2>{session.title}</h2>
@@ -79,8 +78,7 @@
 				<img
 					src={modalSpeaker?.profilePicture}
 					alt={modalSpeaker?.fullName}
-					class="speaker-image"
-				/>
+					class="speaker-image" />
 			{/if}
 			<h2>{modalSpeaker?.fullName}</h2>
 

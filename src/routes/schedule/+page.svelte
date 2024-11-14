@@ -17,7 +17,7 @@
 		let sessions = document.querySelectorAll('div[data-sessionid]:not(.sz-session--plenum)');
 		for (let session of sessions) {
 			let sessionID = session.getAttribute('data-sessionid');
-			session.addEventListener('click', (e: any) => {
+			session.addEventListener('click', () => {
 				goto(`/sessions?id=${sessionID}`);
 			});
 		}
@@ -38,7 +38,7 @@
 	</div>
 </div>
 <div class="secondary-bg">
-	<div id="schedule" />
+	<div id="schedule"></div>
 	<p class="text-center">Please note the schedule is subject to change.</p>
 </div>
 

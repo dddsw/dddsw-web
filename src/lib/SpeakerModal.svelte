@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { createEventDispatcher, onDestroy } from 'svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	const dispatch = createEventDispatcher();
 	const close = () => dispatch('close');
 
-	let modal : HTMLElement;
+	let modal: HTMLElement = $state();
 
 	const handle_keydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
@@ -15,7 +20,9 @@
 		if (e.key === 'Tab') {
 			// trap focus
 			const nodes = modal.querySelectorAll('*');
-			const tabbable = Array.from(nodes).filter((n: Node) => n instanceof HTMLElement && n.tabIndex >= 0) as HTMLElement[];;
+			const tabbable = Array.from(nodes).filter(
+				(n: Node) => n instanceof HTMLElement && n.tabIndex >= 0
+			) as HTMLElement[];
 
 			let index = tabbable.indexOf(document.activeElement as HTMLElement);
 			if (index === -1 && e.shiftKey) index = 0;
@@ -37,13 +44,13 @@
 	}
 </script>
 
-<svelte:window on:keydown={handle_keydown} />
+<svelte:window onkeydown={handle_keydown} />
 
-<div class="modal-background" on:click={close} />
+<div class="modal-background" onclick={close}></div>
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
-	<slot />
-	<button on:click={close} class="modal-button">Close</button>
+	{@render children?.()}
+	<button onclick={close} class="modal-button">Close</button>
 </div>
 
 <style>

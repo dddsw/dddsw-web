@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { KeyPoint } from '../types/KeyPoint.type';
-	export let keyPoints: KeyPoint[];
+	interface Props {
+		keyPoints: KeyPoint[];
+	}
+
+	let { keyPoints }: Props = $props();
 </script>
 
 <div class="key-points-container">

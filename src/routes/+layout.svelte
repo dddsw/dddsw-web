@@ -3,8 +3,13 @@
 	import Footer from '$lib/Footer.svelte';
 	import { page } from '$app/stores';
 	import { pageTitle } from '../stores.js';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	$: isHomepage = $page.url.pathname === '/';
+	let { children }: Props = $props();
+
+	let isHomepage = $derived($page.url.pathname === '/');
 </script>
 
 <svelte:head>
@@ -14,7 +19,7 @@
 <Header {isHomepage} />
 
 <main class="container">
-	<slot />
+	{@render children?.()}
 </main>
 
 <Footer {isHomepage} />

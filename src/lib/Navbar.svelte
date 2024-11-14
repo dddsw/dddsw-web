@@ -2,7 +2,11 @@
 	import { page } from '$app/stores';
 	import { navExpanded } from '../stores.js';
 
-	export let isAbsolute = false;
+	interface Props {
+		isAbsolute?: boolean;
+	}
+
+	let { isAbsolute = false }: Props = $props();
 
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
@@ -17,8 +21,8 @@
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 
-	$: currentPage = $page.url.pathname;
-	$: homepage = currentPage === '/';
+	let currentPage = $derived($page.url.pathname);
+	let homepage = $derived(currentPage === '/');
 
 	let navClass = isAbsolute ? 'nav-absolute' : '';
 	let navLinkContainerClass = isAbsolute ? '' : 'nav-link-container';
@@ -33,8 +37,7 @@
 		class="unset main-nav-button"
 		class:shadow={homepage}
 		class:inverted-colours={homepage}
-		on:click={toggleNav}
-	>
+		onclick={toggleNav}>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
@@ -50,7 +53,7 @@
 			<div class={navLinkContainerClass}>
 				{#each navItems as navItem}
 					{#if navItem.href !== currentPage && !navItem.hidden}
-						<a href={navItem.href} on:click={toggleNav} class="nav-link">{navItem.text}</a>
+						<a href={navItem.href} onclick={toggleNav} class="nav-link">{navItem.text}</a>
 					{/if}
 				{/each}
 			</div>
