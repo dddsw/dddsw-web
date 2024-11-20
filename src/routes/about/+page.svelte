@@ -93,16 +93,16 @@
 					<span>
 						{#if member.twitter}
 							<a href="https://twitter.com/{member.twitter}" target="_blank">
-								<i class="fa-brands fa-twitter fa-2x icon" title="{member.name} Twitter" />
+								<i class="fa-brands fa-twitter fa-2x icon" title="{member.name} Twitter"></i>
 							</a>
 						{/if}
 						{#if member.linkedIn}
 							<a href="https://www.linkedin.com/in/{member.linkedIn}" target="_blank">
-								<i class="fa-brands fa-linkedin fa-2x icon" title="{member.name} LinkedIn" />
+								<i class="fa-brands fa-linkedin fa-2x icon" title="{member.name} LinkedIn"></i>
 							</a>
 						{/if}
 						<a href="mailto:{member.email}">
-							<i class="fa-regular fa-envelope fa-2x icon" title="{member.name} email" />
+							<i class="fa-regular fa-envelope fa-2x icon" title="{member.name} email"></i>
 						</a>
 					</span>
 				</div>

@@ -16,7 +16,7 @@ test.beforeEach(({ page }) => {
 
 for (const [pageName, path] of pagesToTest) {
 	for (const [deviceName, deviceViewport] of devicesToTest) {
-		test(`${pageName} page a11y checks on ${deviceName}}`, async ({ page }) => {
+		test(`${pageName} page a11y checks on ${deviceName}`, async ({ page }) => {
 			await page.setViewportSize(devices[deviceViewport].viewport);
 
 			await page.goto(path);

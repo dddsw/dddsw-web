@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	let carouselImages = [
 		{ id: 1, src: '../images/carousel/carousel-1.jpg' },
 		{ id: 2, src: '../images/carousel/carousel-2.jpg' },
@@ -6,8 +8,11 @@
 		{ id: 4, src: '../images/carousel/carousel-4.jpg' },
 		{ id: 5, src: '../images/carousel/carousel-5.jpg' }
 	];
-	
-	$: carouselImage = carouselImages[0];
+
+	let carouselImage;
+	run(() => {
+		carouselImage = carouselImages[0];
+	});
 
 	setInterval(() => {
 		const currentId = carouselImage.id;

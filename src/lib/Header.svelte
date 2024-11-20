@@ -9,7 +9,11 @@
 		}
 	}
 
-	export let isHomepage: boolean;
+	interface Props {
+		isHomepage: boolean;
+	}
+
+	let { isHomepage }: Props = $props();
 </script>
 
 <header>
@@ -21,7 +25,7 @@
 	{:else}
 		<div class="gradient-bg">
 			<div class="header">
-				<a href="/" class="logo-link" on:click={toggleNav}>
+				<a href="/" class="logo-link" onclick={toggleNav}>
 					<img src="../images/logo.png" alt="The DDD South West logo" class="logo" />
 				</a>
 				<h1>{$pageTitle}</h1>
