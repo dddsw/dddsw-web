@@ -2,11 +2,41 @@
 	import { run } from 'svelte/legacy';
 
 	let carouselImages = [
-		{ id: 1, src: '../images/carousel/carousel-1.jpg' },
-		{ id: 2, src: '../images/carousel/carousel-2.jpg' },
-		{ id: 3, src: '../images/carousel/carousel-3.jpg' },
-		{ id: 4, src: '../images/carousel/carousel-4.jpg' },
-		{ id: 5, src: '../images/carousel/carousel-5.jpg' }
+		{
+			id: 1,
+			src: '../images/carousel/carousel-2024-1.jpg',
+			alt: 'Attendees and sponsors mingling in the communal area'
+		},
+		{
+			id: 2,
+			src: '../images/carousel/carousel-2024-2.jpg',
+			alt: 'A room full of attendees eager to start the day'
+		},
+		{
+			id: 3,
+			src: '../images/carousel/carousel-2024-3.jpg',
+			alt: 'Visitors all gathered for the end of day prize giving'
+		},
+		{
+			id: 4,
+			src: '../images/carousel/carousel-2024-4.jpg',
+			alt: 'Guests eagerly waiting for the speakers to start their session'
+		},
+		{
+			id: 5,
+			src: '../images/carousel/carousel-2024-5.jpg',
+			alt: 'Standing room only in one of our stages'
+		},
+		{
+			id: 6,
+			src: '../images/carousel/carousel-2024-6.jpg',
+			alt: 'The amazing food as provided by our sponsors'
+		},
+		{
+			id: 7,
+			src: '../images/carousel/carousel-2024-7.jpg',
+			alt: 'A live podcast recording with a guest panel of speakers'
+		}
 	];
 
 	let carouselImage;
@@ -21,14 +51,17 @@
 		} else {
 			carouselImage = carouselImages[currentId];
 		}
-	}, 5000);
+	}, 4000);
 </script>
 
 {#key carouselImage}
-	<div class="header" style="background-image: url({carouselImage.src});">
+	<div
+		class="header"
+		style="background-image: url({carouselImage.src});"
+		aria-label={carouselImage.alt}>
 		<div class="details-container shadow">
 			<span class="name">DDD South West</span><br />
-			<span class="details">27th April 2024 @ Engine Shed</span>
+			<span class="details">26th April 2025 @ Engine Shed</span>
 		</div>
 	</div>
 {/key}

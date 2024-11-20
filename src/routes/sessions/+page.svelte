@@ -53,7 +53,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>2024 Sessions</h1>
+		<h1>2025 Sessions</h1>
 		{#if sessions}
 			{#each sessions as session}
 				<div class="session-container" id={session.id}>
