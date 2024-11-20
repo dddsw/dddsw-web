@@ -20,6 +20,10 @@ export default defineConfig({
 	projects: [
 		{
 			name: 'ci',
+			retries: 1,
+			use: {
+				trace: 'on-first-retry'
+			},
 			testIgnore: 'visual-comparison.spec.ts'
 		},
 		{
