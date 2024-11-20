@@ -13,5 +13,6 @@ package-lock.json
 yarn.lock
 
 *.png
+*.jpg
 .*ignore
 .node-version
