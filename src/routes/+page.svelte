@@ -65,8 +65,9 @@
 		<div class="timeline text-center">
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
-				<p>1st January (New Years Day!)</p>
+				<p>1st January</p>
 				<p>Call for speakers opens</p>
+				<p>on New Years Day!</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
@@ -86,7 +87,8 @@
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
 				<p>31st March</p>
-				<p>Schedule announced and ticket registration opens</p>
+				<p>Schedule announced and</p>
+				<p>ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
