@@ -24,15 +24,12 @@
 	let currentPage = $derived($page.url.pathname);
 	let homepage = $derived(currentPage === '/');
 
-	let navClass = isAbsolute ? 'nav-absolute' : '';
-	let navLinkContainerClass = isAbsolute ? '' : 'nav-link-container';
-
 	function toggleNav() {
 		$navExpanded = !$navExpanded;
 	}
 </script>
 
-<nav class={navClass}>
+<nav class:nav-absolute={isAbsolute}>
 	<button
 		class="unset main-nav-button"
 		class:shadow={homepage}
@@ -50,14 +47,16 @@
 	</button>
 	{#if $navExpanded}
 		<div>
-			<div class={navLinkContainerClass}>
+			<div class="nav-link-container" class:nav-link-container-absolute={!isAbsolute}>
 				{#each navItems as navItem}
 					{#if !navItem.hidden}
 						<a
 							href={navItem.href}
 							onclick={toggleNav}
 							class="nav-link"
-							class:isActivePage={navItem.href === currentPage}>{navItem.text}</a>
+							class:isActivePage={navItem.href === currentPage}>
+							{navItem.text}
+						</a>
 					{/if}
 				{/each}
 			</div>
@@ -70,7 +69,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		margin: 20px;
+		margin: 30px;
 	}
 	.nav-absolute {
 		position: absolute;
@@ -99,10 +98,13 @@
 	}
 
 	.nav-link-container {
-		position: absolute;
-		right: 20px;
-		z-index: 5000;
 		background-color: white;
+	}
+
+	.nav-link-container-absolute {
+		position: absolute;
+		right: 30px;
+		z-index: 5000;
 	}
 
 	.nav-link {
@@ -142,18 +144,15 @@
 		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
 	}
 
-	@media (min-width: 400px) {
+	@media (min-width: 768px) {
 		nav {
-			justify-content: flex-end;
-			margin: 50px;
+			margin: 67px 50px;
 		}
 
 		.nav-link-container {
-			right: 50px;
+			right: 49px;
 		}
-	}
 
-	@media (min-width: 768px) {
 		.nav-button-text {
 			display: inline;
 		}

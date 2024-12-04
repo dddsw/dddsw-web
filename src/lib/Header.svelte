@@ -48,6 +48,7 @@
 	.header {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 	}
 
 	.logo-link {
@@ -55,7 +56,7 @@
 	}
 
 	h1 {
-		padding-left: 20px;
+		padding-left: 30px;
 	}
 
 	@media (min-width: 576px) {
