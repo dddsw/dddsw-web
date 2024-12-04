@@ -59,39 +59,34 @@
 	</div>
 </div>
 
-<!-- <div class="secondary-bg">
+<div class="secondary-bg">
 	<div class="section">
 		<h2>Timeline</h2>
 		<div class="timeline text-center">
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>5th February</p>
-				<p>Call for speakers opens</p>
+				<span class="material-symbols-outlined"> circle </span>
+				<p>1st January</p>
+				<p>Call for speakers opens on New Years Day!</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>2nd March</p>
+				<span class="material-symbols-outlined"> circle </span>
+				<p>31st January</p>
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>9th March</p>
+				<span class="material-symbols-outlined"> circle </span>
+				<p>3rd February</p>
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>23rd March</p>
+				<span class="material-symbols-outlined"> circle </span>
+				<p>14th February</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>6th April</p>
-				<p>Schedule announced</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>10th April</p>
-				<p>Ticket registration opens</p>
+				<span class="material-symbols-outlined"> circle </span>
+				<p>31st March</p>
+				<p>Schedule announced and ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
@@ -101,10 +96,9 @@
 		</div>
 		<sub class="sub-highlight"
 			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
-			driven ❤️</sub
-		>
+			driven ❤️</sub>
 	</div>
-</div> -->
+</div>
 
 <style>
 	.timeline {
@@ -129,6 +123,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		flex: 1 1 0;
 	}
 
 	.sub-highlight {

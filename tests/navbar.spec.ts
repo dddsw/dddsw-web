@@ -69,13 +69,6 @@ test.describe('Navbar', () => {
 		await expect(header.navDropDownButton).toContainText('expand_less');
 	});
 
-	test('Does not show current route in nav links drop down', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
-
-		await expect(header.getNavLinkTo('about')).toBeHidden();
-	});
-
 	test('Does not show button text in smaller screens', async ({ page }) => {
 		// Set to mobile view
 		await page.setViewportSize(devices['iPhone SE'].viewport);
