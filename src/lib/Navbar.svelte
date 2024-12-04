@@ -102,6 +102,7 @@
 		position: absolute;
 		right: 20px;
 		z-index: 5000;
+		background-color: white;
 	}
 
 	.nav-link {
@@ -117,9 +118,13 @@
 		color: black;
 	}
 
+	.isActivePage {
+		background-color: rgba(255, 153, 48, 0.8);
+		color: black;
+	}
+
 	.nav-link:hover,
 	.main-nav-button:hover,
-	.isActivePage,
 	.inverted-colours {
 		background-color: var(--primary-color);
 		color: black;
