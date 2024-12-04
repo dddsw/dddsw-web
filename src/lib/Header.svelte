@@ -23,7 +23,7 @@
 			<Navbar isAbsolute />
 		</div>
 	{:else}
-		<div class="gradient-bg">
+		<div class="bg">
 			<div class="header">
 				<a href="/" class="logo-link" onclick={toggleNav}>
 					<img src="../images/dddsw-logo-2025.png" alt="The DDD South West logo" class="logo" />
@@ -40,14 +40,9 @@
 		position: relative;
 	}
 
-	.gradient-bg {
+	.bg {
 		background: rgb(255, 153, 48);
-		background: linear-gradient(
-			90deg,
-			rgba(255, 153, 48, 1) 0%,
-			rgba(255, 193, 48, 1) 50%,
-			rgba(150, 198, 202, 1) 100%
-		);
+		background: linear-gradient(90deg, rgba(255, 153, 48, 1) 50%, var(--quinary-color) 100%);
 	}
 
 	.header {
