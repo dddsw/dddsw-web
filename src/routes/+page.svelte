@@ -66,8 +66,7 @@
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
 				<p>1st January</p>
-				<p>Call for speakers opens</p>
-				<p>on New Years Day!</p>
+				<p>Call for speakers opens on New Years Day!</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
@@ -87,8 +86,7 @@
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
 				<p>31st March</p>
-				<p>Schedule announced and</p>
-				<p>ticket registration opens</p>
+				<p>Schedule announced and ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
@@ -125,6 +123,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		flex: 1 1 0;
 	}
 
 	.sub-highlight {
