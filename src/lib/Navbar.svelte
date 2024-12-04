@@ -52,8 +52,12 @@
 		<div>
 			<div class={navLinkContainerClass}>
 				{#each navItems as navItem}
-					{#if navItem.href !== currentPage && !navItem.hidden}
-						<a href={navItem.href} onclick={toggleNav} class="nav-link">{navItem.text}</a>
+					{#if !navItem.hidden}
+						<a
+							href={navItem.href}
+							onclick={toggleNav}
+							class="nav-link"
+							class:isActivePage={navItem.href === currentPage}>{navItem.text}</a>
 					{/if}
 				{/each}
 			</div>
@@ -115,6 +119,7 @@
 
 	.nav-link:hover,
 	.main-nav-button:hover,
+	.isActivePage,
 	.inverted-colours {
 		background-color: var(--primary-color);
 		color: black;
