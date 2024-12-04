@@ -64,27 +64,27 @@
 		<h2>Timeline</h2>
 		<div class="timeline text-center">
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>1st January (New Years Day!)</p>
 				<p>Call for speakers opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>31st January</p>
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>3rd February</p>
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>14th February</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
+				<span class="material-symbols-outlined"> circle </span>
 				<p>31st March</p>
 				<p>Schedule announced and ticket registration opens</p>
 			</span>
