@@ -38,6 +38,10 @@
 		gap: 30px;
 	}
 
+	.footer a {
+		color: black;
+	}
+
 	.footer-left {
 		display: flex;
 		align-items: center;
