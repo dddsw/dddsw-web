@@ -8,7 +8,7 @@
 		<h1>Privacy Policy</h1>
 		<p class="emphasis">
 			This privacy notice tells you what to expect us to do with your personal information. We only
-			hold this information to support our events and for our newsletter. We do not sell, not do or
+			hold this information to support our events and for our newsletter. We do not sell or
 			share your information with third parties.
 		</p>
 
