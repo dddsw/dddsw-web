@@ -18,6 +18,7 @@
 		{ text: 'Sessions', href: '/sessions', hidden: true },
 		{ text: 'Schedule', href: '/schedule', hidden: true },
 		{ text: 'Pocket DDD', href: 'https://pocket2025.dddsouthwest.com/', hidden: true },
+		{ text: 'Privacy Policy', href: '/privacy-policy', hidden: false },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
 	];
 
