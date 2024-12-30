@@ -7,7 +7,9 @@
 	<div class="section">
 		<h1>Privacy Policy</h1>
 		<p class="emphasis">
-			This privacy notice tells you what to expect us to do with your personal information.
+			This privacy notice tells you what to expect us to do with your personal information. We only
+			hold this information to support our events and for our newsletter. We do not sell, not do or
+			share your information with third parties.
 		</p>
 
 		<ul>
@@ -29,6 +31,16 @@
 			<li>Email address</li>
 		</ul>
 
+		<p>
+			We addditionally collected the following information for anonymised metrics, to support and
+			for reporting on our community.
+		</p>
+		<ul>
+			<li>Gender</li>
+			<li>Accessibility Needs</li>
+			<li>Dietary Needs</li>
+		</ul>
+
 		<h2 id="lawful-bases">Lawful bases and data protection rights</h2>
 		<p>
 			Under UK data protection law, we must have a “lawful basis” for collecting and using your
@@ -40,7 +52,7 @@
 			top of this privacy notice.
 		</p>
 
-		<h2>Our lawful bases</h2>
+		<h3 class="h2">Our lawful bases</h3>
 		<p>
 			Our lawful basis for collecting or using personal information to provide updates and share
 			news is <strong>your consent</strong> by signing up to a newsletter, or submitting a session for
@@ -62,8 +74,9 @@
 
 		<h2 id="complaints">How to complain</h2>
 		<p>
-			If you have any concerns about our use of your personal data, you can make a complaint to us
-			using the contact details at the top of this privacy notice. If you remain unhappy with how
+			If you have any concerns about our use of your personal data please get in touch with the
+			email address at the top of this page. If you are still unhappy, you can make a complaint to
+			us using the contact details at the top of this privacy notice. If you remain unhappy with how
 			we’ve used your data after raising a complaint with us, you can also complain to the ICO.
 		</p>
 		<address>
