@@ -26,7 +26,7 @@
 	// The current update is the most recent one - take the latest one whose "dateFrom" is in the past
 	let currentUpdate = allUpdates
 		.filter((u) => u.dateFrom.valueOf() < Date.now())
-		.toSorted((a, b) => a.dateFrom.valueOf() - b.dateFrom.valueOf())
+		.sort((a, b) => a.dateFrom.valueOf() - b.dateFrom.valueOf())
 		.pop();
 </script>
 
