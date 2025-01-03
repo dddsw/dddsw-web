@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
+	import LatestUpdate from '$lib/LatestUpdate.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 
@@ -33,16 +34,7 @@
 	<Sponsors />
 {/if}
 
-<div class="introduction primary-bg">
-	<div class="section">
-		<h2>Latest update</h2>
-		<p>
-			DDD South West is coming... save the date! See you on the
-			<span class="emphasis">26th April 2025</span>
-			at Engine Shed, Bristol
-		</p>
-	</div>
-</div>
+<LatestUpdate />
 
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
@@ -133,15 +125,6 @@
 	@media (min-width: 576px) {
 		.timeline {
 			flex-direction: row;
-		}
-	}
-
-	@media (min-width: 768px) {
-		.introduction h2 {
-			font-size: 2rem;
-		}
-		.introduction p {
-			font-size: 1.25rem;
 		}
 	}
 </style>
