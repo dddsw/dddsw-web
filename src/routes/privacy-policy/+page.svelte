@@ -8,8 +8,8 @@
 		<h1>Privacy Policy</h1>
 		<p class="emphasis">
 			This privacy notice tells you what to expect us to do with your personal information. We only
-			hold this information to support our events and for our newsletter. We do not sell or
-			share your information with third parties.
+			hold this information to support our events and for our newsletter. We do not sell or share
+			your information with third parties.
 		</p>
 
 		<ul>
@@ -74,10 +74,9 @@
 
 		<h2 id="complaints">How to complain</h2>
 		<p>
-			If you have any concerns about our use of your personal data please get in touch with the
-			email address at the top of this page. If you are still unhappy, you can make a complaint to
-			us using the contact details at the top of this privacy notice. If you remain unhappy with how
-			we’ve used your data after raising a complaint with us, you can also complain to the ICO.
+			If you have any concerns about our use of your personal data, or wish to make a complaint
+			please get in touch with the email address at the top of this page. If you remain unhappy with
+			how we’ve used your data after raising a complaint with us, you can also complain to the ICO.
 		</p>
 		<address>
 			<strong>The ICO’s address:</strong><br /><br />

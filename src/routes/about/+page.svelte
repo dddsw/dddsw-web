@@ -46,6 +46,7 @@
 			imageName: 'carl.jpg',
 			email: 'carlsargunar@dddsouthwest.com',
 			twitter: 'carlcod_es',
+			bsky: 'carlcod.es',
 			linkedIn: 'carl-sargunar-63b5814'
 		},
 		{
@@ -85,6 +86,11 @@
 					<img src="../images/team/{member.imageName}" alt={member.name} class="boop-effect" />
 					<span>{member.name}</span>
 					<span>
+						{#if member.bsky}
+							<a href="https://bsky.app/profile/{member.bsky}" target="_blank">
+								<i class="fa-brands fa-bluesky fa-2x icon" title="{member.name} BlueSky"></i>
+							</a>
+						{/if}
 						{#if member.twitter}
 							<a href="https://twitter.com/{member.twitter}" target="_blank">
 								<i class="fa-brands fa-twitter fa-2x icon" title="{member.name} Twitter"></i>
