@@ -4,6 +4,11 @@
 		content: string;
 	};
 
+	let linkedInIcon = `<a href="https://www.linkedin.com/company/ddd-south-west/" target="_blank">
+							<i class="fa-brands fa-linkedin fa-lg" title="DDD South West LinkedIn" aria-hidden="true"></i>
+							<span class="fa-sr-only">DDD South West LinkedIn</span>
+						</a>`;
+
 	let allUpdates: Update[] = [
 		{
 			dateFrom: new Date('2024-12-20'),
@@ -20,6 +25,10 @@
             We are a friendly developers conference and welcome papers from speakers both old and new. 
             So whether you have an established talk you'd like to bring to Bristol or an idea you'd like help developing,
             <a href="https://sessionize.com/ddd-south-west-2025/">submit your talk now</a>.`
+		},
+		{
+			dateFrom: new Date('2025-02-01'),
+			content: `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`
 		}
 	];
 
@@ -64,6 +73,14 @@
 			 * https://webaim.org/resources/linkcontrastchecker/?fcolor=FF9930&bcolor=8AE8FF */
 			color: #0000e3;
 			text-decoration: underline;
+		}
+
+		& .fa-brands {
+			color: black;
+		}
+
+		& .fa-brands:hover {
+			color: white;
 		}
 	}
 </style>
