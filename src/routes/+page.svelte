@@ -56,12 +56,12 @@
 		<h2>Timeline</h2>
 		<div class="timeline text-center">
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>1st January</p>
 				<p>Call for speakers opens on New Years Day!</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>31st January</p>
 				<p>Call for speakers closes</p>
 			</span>
