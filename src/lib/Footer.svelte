@@ -16,7 +16,7 @@
 	{/if}
 	<div class="footer primary-bg">
 		<div class="footer-left">
-			<p>&copy; 2024 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
+			<p>&copy; 2025 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
 		</div>
 		<div class="footer-right">
 			<a href="https://twitter.com/dddsouthwest" target="_blank">
