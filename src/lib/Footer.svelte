@@ -37,6 +37,16 @@
 <style>
 	.footer {
 		padding: 30px;
+
+		& a:link,
+		& a:visited {
+			/* This isn't a normal link colour because the colour is inaccessible against the 
+			 * primary orange background. We have to use an underline to indicate that this
+			 * is a link because the contrast between the link text and the standard black text is poor
+			 * https://webaim.org/resources/linkcontrastchecker/?fcolor=FF9930&bcolor=8AE8FF */
+			color: #0000e3;
+			text-decoration: underline;
+		}
 	}
 
 	.footer-content {
