@@ -66,13 +66,13 @@
 				<p>Call for speakers closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
-				<p>3rd February</p>
+				<span class="material-symbols-outlined"> check_circle </span>
+				<p>12th February</p>
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> circle </span>
-				<p>14th February</p>
+				<p>21st February</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
