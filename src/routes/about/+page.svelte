@@ -17,7 +17,7 @@
 		{
 			title: 'Help us on the day',
 			icon: 'volunteer_activism',
-			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our Twitter feed for volunteering opportunities.`
+			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our LinkedIn feed for volunteering opportunities or email us at <a href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a>.`
 		}
 	];
 
@@ -26,7 +26,6 @@
 			name: 'Lorraine Pearce',
 			imageName: 'lorraine.jpg',
 			email: 'lorrainepearce@dddsouthwest.com',
-			twitter: 'LorrainePearce',
 			linkedIn: 'lorraine-pearce-688aba8'
 		},
 		{
@@ -38,14 +37,13 @@
 		{
 			name: 'Stuart Lang',
 			imageName: 'stu.jpg',
-			email: 'stuartlang@dddsouthwest.com',
-			twitter: 'stuartblang'
+			email: 'stuartlang@dddsouthwest.com'
 		},
 		{
 			name: 'Carl Sargunar',
 			imageName: 'carl.jpg',
 			email: 'carlsargunar@dddsouthwest.com',
-			twitter: 'carlcod_es',
+			bsky: 'carlcod.es',
 			linkedIn: 'carl-sargunar-63b5814'
 		},
 		{
@@ -85,9 +83,9 @@
 					<img src="../images/team/{member.imageName}" alt={member.name} class="boop-effect" />
 					<span>{member.name}</span>
 					<span>
-						{#if member.twitter}
-							<a href="https://twitter.com/{member.twitter}" target="_blank">
-								<i class="fa-brands fa-twitter fa-2x icon" title="{member.name} Twitter"></i>
+						{#if member.bsky}
+							<a href="https://bsky.app/profile/{member.bsky}" target="_blank">
+								<i class="fa-brands fa-bluesky fa-2x icon" title="{member.name} BlueSky"></i>
 							</a>
 						{/if}
 						{#if member.linkedIn}
