@@ -29,6 +29,14 @@
 		{
 			dateFrom: new Date('2025-02-01'),
 			content: `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`
+		},
+		{
+			dateFrom: new Date('2025-02-12'),
+			content: `Session voting is now open! Take a look and <a href="https://buff.ly/4hzncRk">vote for your favourites here</a>.<br>Voting will close on 21st February.`
+		},
+		{
+			dateFrom: new Date('2025-02-22'),
+			content: `Session voting has closed, hold tight - ticket registration will be opening at the end of March`
 		}
 	];
 
