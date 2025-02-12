@@ -85,19 +85,25 @@
 
 	/* Media query for mobile screens */
 	@media screen and (max-width: 768px) {
+		.footer {
+			padding: 15px;
+		}
+
 		.footer-content {
 			flex-direction: column; /* Stack the items vertically */
 			align-items: center;
+			gap: 10px;
 		}
 		.footer-left {
 			order: 2; /* Place below the social icons on mobile */
 			text-align: center;
-			margin-top: 20px;
+		}
+		.footer-left p {
+			margin: 0px;
 		}
 		.footer-right {
 			order: 1; /* Place above the message on mobile */
 			justify-content: center;
-			margin-bottom: 20px;
 		}
 	}
 </style>
