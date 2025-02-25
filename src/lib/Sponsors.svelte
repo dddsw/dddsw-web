@@ -10,7 +10,7 @@
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Rock Solid Knowledge',
@@ -64,7 +64,7 @@
 </script>
 
 <div class="sponsors">
-	<h2>With thanks to our 2025 sponsors:</h2>
+	<h2>With thanks to our confirmed 2025 sponsors:</h2>
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
 			{#if sponsor.confirmed}
