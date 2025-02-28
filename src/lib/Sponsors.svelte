@@ -22,7 +22,7 @@
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: false
+			confirmed: true
 		},
 		{
 			name: 'Avanade',
