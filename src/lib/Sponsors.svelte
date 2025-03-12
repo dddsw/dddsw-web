@@ -1,4 +1,8 @@
 <script lang="ts">
+	let ref_source = 'ddd-south-west'; // Change this to your actual site name
+	let utm_medium = 'sponsorship';
+	let utm_campaign = '2025';
+
 	let sponsors = [
 		{
 			name: 'SECCL',
@@ -10,6 +14,12 @@
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
+			confirmed: true
+		},
+		{
+			name: 'Umbraco CMS',
+			href: 'https://umbraco.com/',
+			src: '../images/sponsors/umbraco.png',
 			confirmed: true
 		},
 		{
@@ -61,6 +71,17 @@
 			confirmed: false
 		}
 	];
+
+	function addTrackingParams(url: string) {
+		const params = new URLSearchParams({
+			ref: ref_source,
+			utm_source: ref_source,
+			utm_medium: utm_medium,
+			utm_campaign: utm_campaign
+		}).toString();
+
+		return url.includes('?') ? `${url}&${params}` : `${url}?${params}`;
+	}
 </script>
 
 <div class="sponsors">
@@ -68,7 +89,7 @@
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
 			{#if sponsor.confirmed}
-				<a href={sponsor.href} target="_blank">
+				<a href={addTrackingParams(sponsor.href)} target="_blank">
 					<img src={sponsor.src} alt={sponsor.name} />
 				</a>
 			{/if}
