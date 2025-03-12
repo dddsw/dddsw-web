@@ -13,6 +13,12 @@
 			confirmed: true
 		},
 		{
+			name: 'Umbraco CMS',
+			href: 'https://umbraco.com/',
+			src: '../images/sponsors/umbraco.png',
+			confirmed: true
+		},
+		{
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
