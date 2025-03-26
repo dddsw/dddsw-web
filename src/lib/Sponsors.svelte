@@ -84,7 +84,7 @@
 	}
 </script>
 
-<div class="sponsors">
+<div class="section">
 	<h2>With thanks to our confirmed 2025 sponsors:</h2>
 	<div class="sponsor-logos">
 		{#each sponsors as sponsor}
@@ -98,12 +98,6 @@
 </div>
 
 <style>
-	.sponsors {
-		width: 70%;
-		margin: auto;
-		padding-bottom: 30px;
-	}
-
 	.sponsor-logos {
 		display: flex;
 		justify-content: space-evenly;
