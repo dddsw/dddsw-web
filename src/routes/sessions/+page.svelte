@@ -17,7 +17,9 @@
 	onMount(async () => {
 		const sessionsRsp = await fetch('https://sessionize.com/api/v2/wss7pwai/view/Sessions');
 		let sessionsJson = await sessionsRsp.json();
-		sessions = sessionsJson[0].sessions;
+		sessions = sessionsJson[0].sessions.sort((a: Session, b: Session) =>
+			a.title.localeCompare(b.title)
+		);
 
 		const speakersRsp = await fetch('https://sessionize.com/api/v2/wss7pwai/view/Speakers');
 		speakers = await speakersRsp.json();
@@ -55,6 +57,7 @@
 	<div class="section">
 		<h1>2025 Sessions</h1>
 		{#if sessions}
+			<p>The sessions below are presented in alphabetical order of the session title.</p>
 			{#each sessions as session}
 				<div class="session-container" id={session.id}>
 					<p>
@@ -67,6 +70,8 @@
 					<p>{session.description}</p>
 				</div>
 			{/each}
+		{:else}
+			<p>There are no sessions available at this time.</p>
 		{/if}
 	</div>
 </div>

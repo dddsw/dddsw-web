@@ -37,6 +37,10 @@
 		{
 			dateFrom: new Date('2025-02-22'),
 			content: `Session voting has closed, hold tight - ticket registration will be opening at the end of March`
+		},
+		{
+			dateFrom: new Date('2025-03-31'),
+			content: `Speakers have been announced and the schedule is live! <a href="/schedule">Check it out here</a>. Ticket registration will be opening soon.`
 		}
 	];
 
