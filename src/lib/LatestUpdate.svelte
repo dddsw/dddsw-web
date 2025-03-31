@@ -40,7 +40,7 @@
 		},
 		{
 			dateFrom: new Date('2025-03-31'),
-			content: `Speakers have been announced and the schedule is live! <a href="/schedule">Check it out here</a>. Ticket registration will be opening soon.`
+			content: `Speakers have been announced and the schedule is live! <a href="/schedule">Check full schedule details here</a>. Get your tickets from <a href="https://app.tickettailor.com/events/dddsouthwest/1643112/r/website">Ticket Tailor</a>.`
 		}
 	];
 
