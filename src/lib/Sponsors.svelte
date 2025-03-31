@@ -69,6 +69,12 @@
 			href: 'https://www.dxw.com/',
 			src: '../images/sponsors/dxw.png',
 			confirmed: false
+		},
+		{
+			name: 'Howdens',
+			href: 'https://www.howdengroup.com/uk-en',
+			src: '../images/sponsors/howden.png',
+			confirmed: true
 		}
 	];
 
