@@ -71,12 +71,12 @@
 				<p>Session voting opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>21st February</p>
 				<p>Session voting closes</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>31st March</p>
 				<p>Schedule announced and ticket registration opens</p>
 			</span>
