@@ -12,9 +12,7 @@
 		const svg = document.getElementById('svg1')!;
 		const view = svg.parentElement!;
 
-		const panzoom = Panzoom.default(svg, {
-			contain: 'outside'
-		});
+		const panzoom = Panzoom.default(svg);
 
 		view.addEventListener('wheel', panzoom.zoomWithWheel);
 	});
@@ -31,12 +29,13 @@
 		width: 100%;
 		height: 70vh;
 		border-color: black;
-		border-width: 2px;
+		border-width: 1px;
 		border-style: solid;
 		overflow: hidden;
-		margin: 20px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin: 20px 0px;
+		border-radius: 25px;
 	}
 </style>
