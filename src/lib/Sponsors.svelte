@@ -62,12 +62,20 @@
 			order: 4
 		},
 		{
-			name: 'Jetbrains',
+			name: 'Flagstone',
+			href: 'https://www.flagstoneim.com/',
+			src: '../images/sponsors/flagstone.png',
+			confirmed: true,
+			tier: 'silver',
+			order: 2
+		},
+		{
+			name: 'JetBrains',
 			href: 'https://www.jetbrains.com/',
 			src: '../images/sponsors/jetbrains.png',
 			confirmed: true,
 			tier: 'silver',
-			order: 2
+			order: 3
 		},
 		{
 			name: 'NDC Conferences',
@@ -96,7 +104,7 @@
 </script>
 
 <div class="section">
-	<h2>With thanks to our confirmed 2025 Gold Sponsors:</h2>
+	<h2>With thanks to our 2025 Gold Sponsors:</h2>
 	<div class="sponsor-logos gold">
 		{#each sponsorsByTier('gold') as sponsor}
 			<a href={addTrackingParams(sponsor.href)} target="_blank">
