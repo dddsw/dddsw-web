@@ -8,7 +8,7 @@
 		href: string;
 		src: string;
 		confirmed: boolean;
-		tier: 'gold' | 'silver' | 'bronze';
+		tier: 'exhibitor' | 'supporter' | 'food';
 		order: number;
 	};
 
@@ -18,7 +18,7 @@
 			href: 'https://seccl.tech/',
 			src: '../images/sponsors/seccl.png',
 			confirmed: false,
-			tier: 'gold',
+			tier: 'exhibitor',
 			order: 1
 		},
 		{
@@ -26,7 +26,7 @@
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
 			confirmed: true,
-			tier: 'gold',
+			tier: 'exhibitor',
 			order: 2
 		},
 		{
@@ -34,7 +34,7 @@
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
 			confirmed: true,
-			tier: 'gold',
+			tier: 'exhibitor',
 			order: 1
 		},
 		{
@@ -42,7 +42,7 @@
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
 			confirmed: false,
-			tier: 'silver',
+			tier: 'supporter',
 			order: 1
 		},
 		{
@@ -50,7 +50,7 @@
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
 			confirmed: true,
-			tier: 'gold',
+			tier: 'exhibitor',
 			order: 3
 		},
 		{
@@ -58,7 +58,7 @@
 			href: 'https://www.howdengroup.com/uk-en',
 			src: '../images/sponsors/howden.png',
 			confirmed: true,
-			tier: 'gold',
+			tier: 'exhibitor',
 			order: 4
 		},
 		{
@@ -66,7 +66,7 @@
 			href: 'https://www.flagstoneim.com/',
 			src: '../images/sponsors/flagstone.png',
 			confirmed: true,
-			tier: 'silver',
+			tier: 'supporter',
 			order: 2
 		},
 		{
@@ -74,7 +74,7 @@
 			href: 'https://www.jetbrains.com/',
 			src: '../images/sponsors/jetbrains.png',
 			confirmed: false,
-			tier: 'silver',
+			tier: 'supporter',
 			order: 3
 		},
 		{
@@ -82,10 +82,58 @@
 			href: 'https://ndcconferences.com/',
 			src: '../images/sponsors/ndc.png',
 			confirmed: true,
-			tier: 'silver',
+			tier: 'supporter',
 			order: 1
+		},
+		// ➕ Added from old array
+		{
+			name: 'Avanade',
+			href: 'https://www.avanade.com/en-gb',
+			src: '../images/sponsors/avanade.png',
+			confirmed: false,
+			tier: 'food',
+			order: 99
+		},
+		{
+			name: 'ALD Automotive',
+			href: 'https://www.aldautomotive.com/',
+			src: '../images/sponsors/ald.png',
+			confirmed: false,
+			tier: 'food',
+			order: 99
+		},
+		{
+			name: 'Elastic Mint',
+			href: 'https://www.elasticmint.com/',
+			src: '../images/sponsors/elasticmint.png',
+			confirmed: false,
+			tier: 'food',
+			order: 99
+		},
+		{
+			name: 'BJSS',
+			href: 'https://www.bjss.com/',
+			src: '../images/sponsors/bjss.jpg',
+			confirmed: false,
+			tier: 'food',
+			order: 99
+		},
+		{
+			name: 'Just Eat Takeaway.com',
+			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
+			src: '../images/sponsors/justeat.png',
+			confirmed: false,
+			tier: 'food',
+			order: 99
+		},
+		{
+			name: 'dxw',
+			href: 'https://www.dxw.com/',
+			src: '../images/sponsors/dxw.png',
+			confirmed: false,
+			tier: 'food',
+			order: 99
 		}
-		// Add more sponsors here
 	];
 
 	function addTrackingParams(url: string) {
@@ -106,7 +154,7 @@
 <div class="section">
 	<h2 id="gold-sponsors">With thanks to our 2025 Exhibitors:</h2>
 	<div class="sponsor-logos gold" aria-labelledby="gold-sponsors">
-		{#each sponsorsByTier('gold') as sponsor}
+		{#each sponsorsByTier('exhibitor') as sponsor}
 			<a
 				href={addTrackingParams(sponsor.href)}
 				target="_blank"
@@ -118,7 +166,7 @@
 
 	<h2 id="silver-sponsors">And our Supporters:</h2>
 	<div class="sponsor-logos silver" aria-labelledby="silver-sponsors">
-		{#each sponsorsByTier('silver') as sponsor}
+		{#each sponsorsByTier('supporter') as sponsor}
 			<a
 				href={addTrackingParams(sponsor.href)}
 				target="_blank"
@@ -132,7 +180,7 @@
 	<!--
 	<h2 id="bronze-sponsors">With thanks to our confirmed 2025 Bronze Sponsors:</h2>
 	<div class="sponsor-logos bronze" aria-labelledby="bronze-sponsors">
-		{#each sponsorsByTier('bronze') as sponsor}
+		{#each sponsorsByTier('food') as sponsor}
 			<a href={addTrackingParams(sponsor.href)} target="_blank" aria-label="Visit {sponsor.name} website">
 				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
 			</a>
