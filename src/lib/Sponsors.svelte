@@ -153,7 +153,7 @@
 
 <div class="section">
 	<h2 id="gold-sponsors">With thanks to our 2025 Exhibitors:</h2>
-	<div class="sponsor-logos gold" aria-labelledby="gold-sponsors">
+	<div class="sponsor-logos" aria-labelledby="gold-sponsors">
 		{#each sponsorsByTier('exhibitor') as sponsor}
 			<a
 				href={addTrackingParams(sponsor.href)}
@@ -165,7 +165,7 @@
 	</div>
 
 	<h2 id="silver-sponsors">And our Supporters:</h2>
-	<div class="sponsor-logos silver" aria-labelledby="silver-sponsors">
+	<div class="sponsor-logos" aria-labelledby="silver-sponsors">
 		{#each sponsorsByTier('supporter') as sponsor}
 			<a
 				href={addTrackingParams(sponsor.href)}
@@ -198,18 +198,8 @@
 		gap: 20px;
 	}
 
-	.sponsor-logos.gold img {
+	.sponsor-logos img {
 		max-height: 160px;
 		max-width: 160px;
-	}
-
-	.sponsor-logos.silver img {
-		max-height: 120px;
-		max-width: 120px;
-	}
-
-	.sponsor-logos.bronze img {
-		max-height: 90px;
-		max-width: 90px;
 	}
 </style>
