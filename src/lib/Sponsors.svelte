@@ -3,79 +3,81 @@
 	let utm_medium = 'sponsorship';
 	let utm_campaign = '2025';
 
-	let sponsors = [
+	type Sponsor = {
+		name: string;
+		href: string;
+		src: string;
+		confirmed: boolean;
+		tier: 'gold' | 'silver' | 'bronze';
+		order: number;
+	};
+
+	let sponsors: Sponsor[] = [
 		{
 			name: 'SECCL',
 			href: 'https://seccl.tech/',
 			src: '../images/sponsors/seccl.png',
-			confirmed: false
+			confirmed: false,
+			tier: 'gold',
+			order: 1
 		},
 		{
 			name: 'UK Hydrographics Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: true
+			confirmed: true,
+			tier: 'gold',
+			order: 2
 		},
 		{
 			name: 'Umbraco CMS',
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
-			confirmed: true
+			confirmed: true,
+			tier: 'gold',
+			order: 1
 		},
 		{
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
-			confirmed: false
+			confirmed: false,
+			tier: 'silver',
+			order: 1
 		},
 		{
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: true
-		},
-		{
-			name: 'Avanade',
-			href: 'https://www.avanade.com/en-gb',
-			src: '../images/sponsors/avanade.png',
-			confirmed: false
-		},
-		{
-			name: 'ALD Automotive',
-			href: 'https://www.aldautomotive.com/',
-			src: '../images/sponsors/ald.png',
-			confirmed: false
-		},
-		{
-			name: 'Elastic Mint',
-			href: 'https://www.elasticmint.com/',
-			src: '../images/sponsors/elasticmint.png',
-			confirmed: false
-		},
-		{
-			name: 'BJSS',
-			href: 'https://www.bjss.com/',
-			src: '../images/sponsors/bjss.jpg',
-			confirmed: false
-		},
-		{
-			name: 'Just Eat Takeaway.com',
-			href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
-			src: '../images/sponsors/justeat.png',
-			confirmed: false
-		},
-		{
-			name: 'dxw',
-			href: 'https://www.dxw.com/',
-			src: '../images/sponsors/dxw.png',
-			confirmed: false
+			confirmed: true,
+			tier: 'gold',
+			order: 3
 		},
 		{
 			name: 'Howdens',
 			href: 'https://www.howdengroup.com/uk-en',
 			src: '../images/sponsors/howden.png',
-			confirmed: true
+			confirmed: true,
+			tier: 'gold',
+			order: 4
+		},
+		{
+			name: 'Jetbrains',
+			href: 'https://www.jetbrains.com/',
+			src: '../images/sponsors/jetbrains.png',
+			confirmed: true,
+			tier: 'silver',
+			order: 2
+		},
+		{
+			name: 'NDC Conferences',
+			href: 'https://ndcconferences.com/',
+			src: '../images/sponsors/ndc.png',
+			confirmed: true,
+			tier: 'silver',
+			order: 1
 		}
+		// Add more sponsors here
 	];
 
 	function addTrackingParams(url: string) {
@@ -88,19 +90,41 @@
 
 		return url.includes('?') ? `${url}&${params}` : `${url}?${params}`;
 	}
+
+	const sponsorsByTier = (tier: string) =>
+		sponsors.filter((s) => s.confirmed && s.tier === tier).sort((a, b) => a.order - b.order);
 </script>
 
 <div class="section">
-	<h2>With thanks to our confirmed 2025 sponsors:</h2>
-	<div class="sponsor-logos">
-		{#each sponsors as sponsor}
-			{#if sponsor.confirmed}
-				<a href={addTrackingParams(sponsor.href)} target="_blank">
-					<img src={sponsor.src} alt={sponsor.name} />
-				</a>
-			{/if}
+	<h2>With thanks to our confirmed 2025 Gold Sponsors:</h2>
+	<div class="sponsor-logos gold">
+		{#each sponsorsByTier('gold') as sponsor}
+			<a href={addTrackingParams(sponsor.href)} target="_blank">
+				<img src={sponsor.src} alt={sponsor.name} />
+			</a>
 		{/each}
 	</div>
+
+	<h2>And our Silver Sponsors:</h2>
+	<div class="sponsor-logos silver">
+		{#each sponsorsByTier('silver') as sponsor}
+			<a href={addTrackingParams(sponsor.href)} target="_blank">
+				<img src={sponsor.src} alt={sponsor.name} />
+			</a>
+		{/each}
+	</div>
+
+	<!-- Uncomment when you have bronze sponsors -->
+	<!--
+	<h2>With thanks to our confirmed 2025 Bronze Sponsors:</h2>
+	<div class="sponsor-logos bronze">
+		{#each sponsorsByTier('bronze') as sponsor}
+			<a href={addTrackingParams(sponsor.href)} target="_blank">
+				<img src={sponsor.src} alt={sponsor.name} />
+			</a>
+		{/each}
+	</div>
+	-->
 </div>
 
 <style>
@@ -112,8 +136,18 @@
 		gap: 20px;
 	}
 
-	.sponsor-logos img {
-		max-height: 150px;
-		max-width: 150px;
+	.sponsor-logos.gold img {
+		max-height: 160px;
+		max-width: 160px;
+	}
+
+	.sponsor-logos.silver img {
+		max-height: 120px;
+		max-width: 120px;
+	}
+
+	.sponsor-logos.bronze img {
+		max-height: 90px;
+		max-width: 90px;
 	}
 </style>
