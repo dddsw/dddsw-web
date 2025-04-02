@@ -104,31 +104,37 @@
 </script>
 
 <div class="section">
-	<h2>With thanks to our 2025 Gold Sponsors:</h2>
-	<div class="sponsor-logos gold">
+	<h2 id="gold-sponsors">With thanks to our 2025 Exhibitors:</h2>
+	<div class="sponsor-logos gold" aria-labelledby="gold-sponsors">
 		{#each sponsorsByTier('gold') as sponsor}
-			<a href={addTrackingParams(sponsor.href)} target="_blank">
-				<img src={sponsor.src} alt={sponsor.name} />
+			<a
+				href={addTrackingParams(sponsor.href)}
+				target="_blank"
+				aria-label="Visit {sponsor.name} website">
+				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
 			</a>
 		{/each}
 	</div>
 
-	<h2>And our Silver Sponsors:</h2>
-	<div class="sponsor-logos silver">
+	<h2 id="silver-sponsors">And our Supporters:</h2>
+	<div class="sponsor-logos silver" aria-labelledby="silver-sponsors">
 		{#each sponsorsByTier('silver') as sponsor}
-			<a href={addTrackingParams(sponsor.href)} target="_blank">
-				<img src={sponsor.src} alt={sponsor.name} />
+			<a
+				href={addTrackingParams(sponsor.href)}
+				target="_blank"
+				aria-label="Visit {sponsor.name} website">
+				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
 			</a>
 		{/each}
 	</div>
 
 	<!-- Uncomment when you have bronze sponsors -->
 	<!--
-	<h2>With thanks to our confirmed 2025 Bronze Sponsors:</h2>
-	<div class="sponsor-logos bronze">
+	<h2 id="bronze-sponsors">With thanks to our confirmed 2025 Bronze Sponsors:</h2>
+	<div class="sponsor-logos bronze" aria-labelledby="bronze-sponsors">
 		{#each sponsorsByTier('bronze') as sponsor}
-			<a href={addTrackingParams(sponsor.href)} target="_blank">
-				<img src={sponsor.src} alt={sponsor.name} />
+			<a href={addTrackingParams(sponsor.href)} target="_blank" aria-label="Visit {sponsor.name} website">
+				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
 			</a>
 		{/each}
 	</div>
