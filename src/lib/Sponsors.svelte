@@ -73,7 +73,7 @@
 			name: 'JetBrains',
 			href: 'https://www.jetbrains.com/',
 			src: '../images/sponsors/jetbrains.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'silver',
 			order: 3
 		},
