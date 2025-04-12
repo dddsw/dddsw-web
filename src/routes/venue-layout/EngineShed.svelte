@@ -3,13 +3,12 @@
 2. Make changes to `InkscapeSvgEngineShed.svg` in Inkscape
 3. Export as plain svg to `PlainSvgEngineShed.svg`
 4. Copy everything in the file except the `<?xml>` tag at the top then paste it over the code in this file
+5. Remove the height and width from the svg element below (this fixes issues with zoom focal points)
 -->
 
 <svg
 	version="1.1"
 	id="floorplan"
-	width="2440.3508"
-	height="1446.9614"
 	viewBox="0 0 2440.3508 1446.9614"
 	xml:space="preserve"
 	xmlns:xlink="http://www.w3.org/1999/xlink"

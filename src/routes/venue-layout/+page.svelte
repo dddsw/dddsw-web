@@ -71,8 +71,12 @@
 		// Make map zoomable
 		const svg = document.getElementById('floorplan')!;
 		const view = svg.parentElement!;
-		const panzoom = Panzoom.default(svg);
+		const panzoom = Panzoom.default(svg, { overflow: 'visible', maxScale: 10 });
 		view.addEventListener('wheel', panzoom.zoomWithWheel);
+
+		//Hook up the zoom buttons
+		document.getElementById('zoom-in')!.addEventListener('click', panzoom.zoomIn);
+		document.getElementById('zoom-out')!.addEventListener('click', panzoom.zoomOut);
 
 		//Make rooms clickable
 		rooms.forEach((room) => {
@@ -107,6 +111,10 @@
 
 <div class="section">
 	<div class="map-wrapper">
+		<div class="zoom-button-container">
+			<button id="zoom-in" class="zoom-button">+</button>
+			<button id="zoom-out" class="zoom-button">-</button>
+		</div>
 		<div class="map">
 			<EngineShed />
 		</div>
@@ -132,11 +140,34 @@
 </div>
 
 <style>
+	.zoom-button-container {
+		display: flex;
+		justify-content: end;
+		width: 100%;
+		z-index: 100;
+	}
+	.zoom-button {
+		margin: 5px;
+		height: 40px;
+		width: 40px;
+		border-radius: 25px;
+		background-color: white;
+		border-color: var(--contrast-color);
+		border-style: solid;
+		border-width: 3px;
+		display: flex;
+		justify-content: center;
+		font-family: 'Poppins', serif;
+		font-size: 50px;
+		line-height: 35px;
+	}
+
 	.track-button-container {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
 		width: 100%;
+		z-index: 100;
 	}
 	.track-button {
 		padding: 5px;
@@ -149,10 +180,11 @@
 		border-width: 5px;
 		flex: 1;
 	}
+
 	.map-wrapper {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		margin: 20px 0px;
 		border-radius: 25px;
@@ -160,6 +192,7 @@
 		border-color: black;
 		border-width: 1px;
 		border-style: solid;
+		overflow: hidden;
 	}
 	.map {
 		width: 100%;
