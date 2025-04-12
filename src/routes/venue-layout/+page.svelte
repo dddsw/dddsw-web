@@ -68,13 +68,16 @@
 	];
 
 	onMount(() => {
+		const onMobile = navigator.maxTouchPoints > 1;
+
 		// Make map zoomable
 		const svg = document.getElementById('floorplan')!;
 		const view = svg.parentElement!;
 		const panzoom = Panzoom.default(svg, {
 			overflow: 'visible',
 			minScale: 1,
-			maxScale: 10
+			maxScale: 10,
+			step: onMobile ? 1 : 0.3
 		});
 		view.addEventListener('wheel', panzoom.zoomWithWheel);
 
