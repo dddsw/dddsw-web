@@ -71,7 +71,11 @@
 		// Make map zoomable
 		const svg = document.getElementById('floorplan')!;
 		const view = svg.parentElement!;
-		const panzoom = Panzoom.default(svg, { overflow: 'visible', maxScale: 10 });
+		const panzoom = Panzoom.default(svg, {
+			overflow: 'visible',
+			minScale: 1,
+			maxScale: 10
+		});
 		view.addEventListener('wheel', panzoom.zoomWithWheel);
 
 		//Hook up the zoom buttons
