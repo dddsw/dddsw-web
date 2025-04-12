@@ -141,76 +141,79 @@
 
 <style>
 	.zoom-button-container {
+		align-items: center;
 		display: flex;
 		justify-content: end;
 		width: 100%;
 		z-index: 100;
 	}
 	.zoom-button {
-		margin: 5px;
-		height: 40px;
-		width: 40px;
-		border-radius: 25px;
 		background-color: white;
 		border-color: var(--contrast-color);
+		border-radius: 25px;
 		border-style: solid;
 		border-width: 3px;
 		display: flex;
-		justify-content: center;
 		font-family: 'Poppins', serif;
 		font-size: 50px;
+		height: 40px;
+		justify-content: center;
 		line-height: 35px;
+		margin: 5px;
+		width: 40px;
 	}
 
 	.track-button-container {
+		align-items: center;
 		display: flex;
 		justify-content: space-evenly;
-		align-items: center;
 		width: 100%;
 		z-index: 100;
 	}
 	.track-button {
-		padding: 5px;
-		margin: 5px;
-		height: 50px;
-		border-radius: 25px;
 		background-color: white;
 		border-color: var(--primary-color);
+		border-radius: 25px;
 		border-style: solid;
 		border-width: 5px;
 		flex: 1;
+		font-family: 'Poppins', serif;
+		height: 50px;
+		line-height: 25px;
+		margin: 5px;
+		padding: 5px;
 	}
 
 	.map-wrapper {
+		align-items: center;
+		border-color: black;
+		border-radius: 25px;
+		border-style: solid;
+		border-width: 1px;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		margin: 20px 0px;
-		border-radius: 25px;
 		height: 70vh;
-		border-color: black;
-		border-width: 1px;
-		border-style: solid;
+		justify-content: space-between;
+		margin: 20px 0px;
 		overflow: hidden;
 	}
 	.map {
-		width: 100%;
-		overflow: hidden;
+		align-items: center;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		overflow: hidden;
+		width: 100%;
 	}
 
 	/* Using global because these classes are applied via JS and don't 
 	 * want these styles to be marked as unused and stripped out */
+	:global .display-path {
+		display: inline !important;
+	}
 	:global .selected-room {
 		fill: #fbffbe !important;
 	}
 	:global .track-button-selected {
 		background-color: #fbffbe !important;
-	}
-	:global .display-path {
-		display: inline !important;
 	}
 </style>
