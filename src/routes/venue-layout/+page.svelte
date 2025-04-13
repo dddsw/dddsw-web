@@ -205,10 +205,10 @@
 		overflow: hidden;
 	}
 	.map {
+		min-height: 0;
 		align-items: center;
 		display: flex;
 		justify-content: center;
-		overflow: hidden;
 		width: 100%;
 	}
 
