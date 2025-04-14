@@ -14,5 +14,6 @@ yarn.lock
 
 *.png
 *.jpg
+*.svg
 .*ignore
 .node-version
