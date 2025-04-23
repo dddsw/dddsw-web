@@ -41,6 +41,18 @@
 		{
 			dateFrom: new Date('2025-03-31'),
 			content: `Speakers have been announced and the schedule is live! <a href="/schedule">Check full schedule details here</a>. Get your tickets from <a href="https://app.tickettailor.com/events/dddsouthwest/1643112/r/website">Ticket Tailor</a>.`
+		},
+		{
+			dateFrom: new Date('2025-04-22'),
+			content: `The day is fast approaching, we're fully sold out but you can still join the waitlist on <a href="https://app.tickettailor.com/events/dddsouthwest/1643112/r/website">Ticket Tailor</a>.`
+		},
+		{
+			dateFrom: new Date('2025-04-26'),
+			content: `Today is the day! See you at Engine Shed and be sure to use <a href="https://pocket2025.dddsouthwest.com">Pocket DDD</a> to give feedback to our wonderful speakers`
+		},
+		{
+			dateFrom: new Date('2025-04-27'),
+			content: `Thank you to everyone for another great DDD South West. See you in 2026 😉`
 		}
 	];
 
