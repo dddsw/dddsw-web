@@ -20,7 +20,7 @@
 				<p>&copy; 2025 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
 			</div>
 			<div class="footer-right">
-				<a href="https://bsky.app/profile/dddsouthwest.bsky.social" target="_blank">
+				<a href="https://bsky.app/profile/dddsouthwest.com" target="_blank">
 					<i class="fa-brands fa-bluesky fa-3x" title="DDD South West BlueSky"></i>
 				</a>
 				<a href="mailto:management@dddsouthwest.com">
