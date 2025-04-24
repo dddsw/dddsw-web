@@ -26,15 +26,15 @@
 
 <div class="tertiary-bg">
 	<div class="section">
-		<!-- <p>
+		<p>
 			To bookmark sessions, submit feedback and enter the prize draw,
 			<a href="https://pocket2025.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
-		</p> -->
-		<!-- <p>
+		</p>
+		<p>
 			Can't find a room? <a href="/venue-layout" class="emphasis"
 				>See a room map of the Engine shed here</a
 			>.
-		</p> -->
+		</p>
 	</div>
 </div>
 <div class="secondary-bg">
