@@ -81,7 +81,7 @@
 				<p>Schedule announced and ticket registration opens</p>
 			</span>
 			<span class="timeline-item">
-				<span class="material-symbols-outlined"> circle </span>
+				<span class="material-symbols-outlined"> check_circle </span>
 				<p>26th April</p>
 				<p>Day of the event!</p>
 			</span>
