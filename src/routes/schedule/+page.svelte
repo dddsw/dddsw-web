@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	pageTitle.set('Schedule');
+	const showBanner = false;
 
 	onMount(async () => {
 		// Will need to be published!
@@ -24,19 +25,22 @@
 	});
 </script>
 
-<div class="tertiary-bg">
-	<div class="section">
-		<p>
-			To bookmark sessions, submit feedback and enter the prize draw,
-			<a href="https://pocket2025.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
-		</p>
-		<p>
-			Can't find a room? <a href="/venue-layout" class="emphasis"
-				>See a room map of the Engine shed here</a
-			>.
-		</p>
+{#if showBanner}
+	<div class="tertiary-bg">
+		<div class="section">
+			<p>
+				To bookmark sessions, submit feedback and enter the prize draw,
+				<a href="https://pocket2025.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
+			</p>
+			<p>
+				Can't find a room? <a href="/venue-layout" class="emphasis"
+					>See a room map of the Engine shed here
+				</a>.
+			</p>
+		</div>
 	</div>
-</div>
+{/if}
+
 <div class="secondary-bg">
 	<div id="schedule"></div>
 	<p class="text-center">Please note the schedule is subject to change.</p>
