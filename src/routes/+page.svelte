@@ -4,7 +4,7 @@
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 
-	let showSponsors = true;
+	let showSponsors = false;
 
 	let keyPoints: KeyPoint[] = [
 		{
@@ -54,7 +54,8 @@
 <div class="secondary-bg">
 	<div class="section">
 		<h2>Timeline</h2>
-		<div class="timeline text-center">
+		<div>Coming soon...</div>
+		<!-- <div class="timeline text-center">
 			<span class="timeline-item">
 				<span class="material-symbols-outlined"> check_circle </span>
 				<p>1st January</p>
@@ -88,7 +89,7 @@
 		</div>
 		<sub class="sub-highlight"
 			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
-			driven ❤️</sub>
+			driven ❤️</sub> -->
 	</div>
 </div>
 
