@@ -23,7 +23,7 @@
 	];
 
 	let currentPage = $derived($page.url.pathname);
-	let homepage = $derived(currentPage === '/');
+	let homepage = false; //$derived(currentPage === '/');
 
 	function toggleNav() {
 		$navExpanded = !$navExpanded;

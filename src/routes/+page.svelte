@@ -1,8 +1,11 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	import LatestUpdate from '$lib/LatestUpdate.svelte';
+	// import LatestUpdate from '$lib/LatestUpdate.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
+	import { pageTitle } from '../stores.js';
+
+	pageTitle.set('DDD South West');
 
 	let showSponsors = false;
 
@@ -34,7 +37,7 @@
 	<Sponsors />
 {/if}
 
-<LatestUpdate />
+<!-- <LatestUpdate /> -->
 
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
