@@ -11,12 +11,12 @@
 	let navItems = [
 		{ text: 'Home', href: '/', hidden: false },
 		{ text: 'About', href: '/about', hidden: false },
-		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
-		{ text: 'Event Venue', href: '/venue', hidden: false },
-		{ text: 'Room map', href: '/venue-layout', hidden: false },
+		{ text: 'Sponsorship', href: '/sponsorship', hidden: true },
+		{ text: 'Event Venue', href: '/venue', hidden: true },
+		{ text: 'Room map', href: '/venue-layout', hidden: true },
 		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
-		{ text: 'Sessions', href: '/sessions', hidden: false },
-		{ text: 'Schedule', href: '/schedule', hidden: false },
+		{ text: 'Sessions', href: '/sessions', hidden: true },
+		{ text: 'Schedule', href: '/schedule', hidden: true },
 		{ text: 'Pocket DDD', href: 'https://pocket2025.dddsouthwest.com/', hidden: true },
 		{ text: 'Privacy Policy', href: '/privacy-policy', hidden: false },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
