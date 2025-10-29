@@ -11,6 +11,10 @@
 
 	let allUpdates: Update[] = [
 		{
+			dateFrom: new Date('2025-10-29'),
+			content: `DDD South West 2026 planning has begun! More info coming soon 😎`
+		},
+		{
 			dateFrom: new Date('2024-12-20'),
 			content: `DDD South West is coming... save the date! See you on the
 			<strong class="emphasis">26th April 2025</strong> at Engine Shed, Bristol`
