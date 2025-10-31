@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navbar from '$lib/Navbar.svelte';
-	import Carousel from '$lib/Carousel.svelte';
+	// import Carousel from '$lib/Carousel.svelte';
 	import { pageTitle, navExpanded } from '../stores.js';
 
 	function toggleNav() {
@@ -18,9 +18,21 @@
 
 <header>
 	{#if isHomepage}
-		<div class="nav-absolute-container">
+		<!-- <div class="nav-absolute-container">
 			<Carousel />
 			<Navbar isAbsolute />
+		</div> -->
+		<div class="not-carousel">
+			<div class="header">
+				<a href="/" class="logo-link" onclick={toggleNav}>
+					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
+				</a>
+				<div>
+					<h1>DDD South West 2026</h1>
+					<p>Coming soon...</p>
+				</div>
+				<Navbar />
+			</div>
 		</div>
 	{:else}
 		<div class="bg">
@@ -36,6 +48,10 @@
 </header>
 
 <style>
+	.not-carousel {
+		background: rgb(255, 153, 48);
+	}
+
 	.nav-absolute-container {
 		position: relative;
 	}
@@ -55,7 +71,8 @@
 		display: none;
 	}
 
-	h1 {
+	h1,
+	p {
 		padding-left: 30px;
 	}
 

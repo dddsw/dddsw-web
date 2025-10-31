@@ -40,7 +40,7 @@
 	aria-label={carouselImage.alt}>
 	<div class="details-container shadow">
 		<span class="name">DDD South West</span><br />
-		<span class="details">26th April 2025 @ Engine Shed</span>
+		<!-- <span class="details">26th April 2025 @ Engine Shed</span> -->
 	</div>
 </div>
 
