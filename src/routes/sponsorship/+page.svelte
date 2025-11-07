@@ -3,9 +3,9 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: 'TBC', claimed: false },
-		{ title: 'Morning break', price: 'TBC', claimed: false },
-		{ title: 'Afternoon break', price: 'TBC', claimed: false }
+		{ title: 'Breakfast', price: '£250', claimed: false },
+		{ title: 'Morning break', price: '£250', claimed: false },
+		{ title: 'Afternoon break', price: '£250', claimed: false }
 	];
 
 	let extraOptions = [
@@ -44,7 +44,7 @@
 					<li>Your logo on the opening & closing slides</li>
 					<li>We'll thank you on our social media</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£600</span>
 			</div>
 			<div class="primary-bg option boop-effect">
 				<h2>Exhibitor</h2>
@@ -54,7 +54,7 @@
 					<li>Custom promotional posts from our social media accounts</li>
 					<li>Anything else we can do.. chat to us!</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£1700</span>
 			</div>
 		</div>
 
