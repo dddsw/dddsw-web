@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	// import LatestUpdate from '$lib/LatestUpdate.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
@@ -38,8 +37,6 @@
 	<Sponsors />
 {/if}
 
-<!-- <LatestUpdate /> -->
-
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
 </div>
@@ -60,3 +57,38 @@
 		<Timeline />
 	</div>
 </div>
+
+<style>
+	@media (min-width: 768px) {
+		.latest-update h2 {
+			font-size: 2rem;
+		}
+
+		.latest-update p {
+			font-size: 1.25rem;
+		}
+	}
+
+	/* Ensure any links are accessibly coloured.
+	 * Using global because we are rendering html via a string and don't 
+	 * want these styles to be marked as unused and stripped out */
+	:global .latest-update {
+		& a:link,
+		& a:visited {
+			/* This isn't a normal link colour because the colour is inaccessible against the 
+			 * primary orange background. We have to use an underline to indicate that this
+			 * is a link because the contrast between the link text and the standard black text is poor
+			 * https://webaim.org/resources/linkcontrastchecker/?fcolor=FF9930&bcolor=8AE8FF */
+			color: #0000e3;
+			text-decoration: underline;
+		}
+
+		& .fa-brands {
+			color: black;
+		}
+
+		& .fa-brands:hover {
+			color: white;
+		}
+	}
+</style>
