@@ -1,35 +1,39 @@
+<script lang="ts">
+	import { get, Milestone, MilestoneDetails } from './milestones';
+
+	type Item = {
+		description: string;
+		milestone: MilestoneDetails;
+	};
+
+	const timelineItems: Item[] = [
+		{ description: 'Call for speakers opens', milestone: get(Milestone.OpenCallForSpeakers)! },
+		{ description: 'Call for speakers closes', milestone: get(Milestone.CloseCallForSpeakers)! },
+		{ description: 'Session voting opens', milestone: get(Milestone.OpenSessionVoting)! },
+		{ description: 'Session voting closes', milestone: get(Milestone.CloseSessionVoting)! },
+		{
+			description: 'Schedule announced and ticket registration opens',
+			milestone: get(Milestone.AnnounceScheduleAndOpenTicketRegistration)!
+		},
+		{ description: 'Day of the event!', milestone: get(Milestone.TheActualEventDay)! }
+	];
+</script>
+
 <h2>Timeline</h2>
 <div class="timeline text-center">
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>31st January</p>
-		<p>Call for speakers opens</p>
-	</span>
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>7th March</p>
-		<p>Call for speakers closes</p>
-	</span>
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>14th March</p>
-		<p>Session voting opens</p>
-	</span>
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>28th March</p>
-		<p>Session voting closes</p>
-	</span>
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>18th April</p>
-		<p>Schedule announced and <br />ticket registration opens</p>
-	</span>
-	<span class="timeline-item">
-		<span class="material-symbols-outlined"> circle </span>
-		<p>16th May</p>
-		<p>Day of the event!</p>
-	</span>
+	{#each timelineItems as item}
+		<span class="timeline-item">
+			<span class="material-symbols-outlined">
+				{#if item.milestone.hasHappened}
+					check_circle
+				{:else}
+					circle
+				{/if}
+			</span>
+			<p>{item.milestone.formattedDate}</p>
+			<p>{item.description}</p>
+		</span>
+	{/each}
 </div>
 <sub class="sub-highlight"
 	>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
