@@ -26,10 +26,13 @@
 	<div class="section">
 		<h1>Sponsorship opportunities</h1>
 		<p>
+			Our event is entirely funded by sponsorship and would not be possible without our wonderful
+			sponsors.
+		</p>
+		<p>
 			We are looking for sponsors for DDD South West 2026. If you or your company would like to
 			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
-			We have various options available, or we can arrange a custom package for you. Our event is entirely
-			funded by sponsorship and would not be possible without our wonderful sponsors.
+			We have various options available, or we can arrange a custom package for you.
 		</p>
 	</div>
 </div>
