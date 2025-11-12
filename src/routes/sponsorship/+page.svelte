@@ -10,6 +10,12 @@
 
 	let extraOptions = [
 		{
+			title: 'Dedicated speaker slot',
+			price: '£300',
+			claimed: false,
+			description: `We'll allocate a dedicated slot for your speaker to present a relevant topic`
+		},
+		{
 			title: 'T-shirts',
 			price: 'TBC',
 			claimed: false,
