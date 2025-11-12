@@ -43,7 +43,7 @@
 		<div class="bg">
 			<div class="header">
 				<a href="/" class="logo-link" onclick={toggleNav}>
-					<img src="../images/dddsw-logo-2025.png" alt="The DDD South West logo" class="logo" />
+					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 				</a>
 				<h1>{$pageTitle}</h1>
 				<Navbar />
