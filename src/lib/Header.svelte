@@ -2,6 +2,7 @@
 	import Navbar from '$lib/Navbar.svelte';
 	// import Carousel from '$lib/Carousel.svelte';
 	import { pageTitle, navExpanded } from '../stores.js';
+	import { currentUpdate } from './latestUpdate.js';
 
 	function toggleNav() {
 		if ($navExpanded === true) {
@@ -29,7 +30,11 @@
 				</a>
 				<div>
 					<h1>DDD South West 2026</h1>
-					<p>Coming soon...</p>
+					{#if currentUpdate}
+						<p>
+							{@html currentUpdate}
+						</p>
+					{/if}
 				</div>
 				<Navbar />
 			</div>
@@ -38,7 +43,7 @@
 		<div class="bg">
 			<div class="header">
 				<a href="/" class="logo-link" onclick={toggleNav}>
-					<img src="../images/dddsw-logo-2025.png" alt="The DDD South West logo" class="logo" />
+					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 				</a>
 				<h1>{$pageTitle}</h1>
 				<Navbar />

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	// import LatestUpdate from '$lib/LatestUpdate.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
+	import Timeline from '$lib/Timeline.svelte';
 
 	pageTitle.set('DDD South West');
 
@@ -37,8 +37,6 @@
 	<Sponsors />
 {/if}
 
-<!-- <LatestUpdate /> -->
-
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
 </div>
@@ -56,79 +54,41 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h2>Timeline</h2>
-		<div>Coming soon...</div>
-		<!-- <div class="timeline text-center">
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>1st January</p>
-				<p>Call for speakers opens on New Years Day!</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>31st January</p>
-				<p>Call for speakers closes</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>12th February</p>
-				<p>Session voting opens</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>21st February</p>
-				<p>Session voting closes</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>31st March</p>
-				<p>Schedule announced and ticket registration opens</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>26th April</p>
-				<p>Day of the event!</p>
-			</span>
-		</div>
-		<sub class="sub-highlight"
-			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
-			driven ❤️</sub> -->
+		<Timeline />
 	</div>
 </div>
 
 <style>
-	.timeline {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
+	@media (min-width: 768px) {
+		.latest-update h2 {
+			font-size: 2rem;
+		}
+
+		.latest-update p {
+			font-size: 1.25rem;
+		}
 	}
 
-	.timeline p {
-		font-size: 0.75rem;
-		margin: 0;
-		font-weight: bold;
-	}
+	/* Ensure any links are accessibly coloured.
+	 * Using global because we are rendering html via a string and don't 
+	 * want these styles to be marked as unused and stripped out */
+	:global .latest-update {
+		& a:link,
+		& a:visited {
+			/* This isn't a normal link colour because the colour is inaccessible against the 
+			 * primary orange background. We have to use an underline to indicate that this
+			 * is a link because the contrast between the link text and the standard black text is poor
+			 * https://webaim.org/resources/linkcontrastchecker/?fcolor=FF9930&bcolor=8AE8FF */
+			color: #0000e3;
+			text-decoration: underline;
+		}
 
-	.timeline-item p:first-of-type {
-		border-bottom: #cdcdcd 2px dotted;
-		margin-bottom: 5px;
-		font-weight: normal;
-	}
+		& .fa-brands {
+			color: black;
+		}
 
-	.timeline-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		flex: 1 1 0;
-	}
-
-	.sub-highlight {
-		font-style: italic;
-	}
-
-	@media (min-width: 576px) {
-		.timeline {
-			flex-direction: row;
+		& .fa-brands:hover {
+			color: white;
 		}
 	}
 </style>

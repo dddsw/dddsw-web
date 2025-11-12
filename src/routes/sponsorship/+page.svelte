@@ -3,12 +3,18 @@
 	import { pageTitle } from '../../stores.js';
 
 	let refreshmentPackages = [
-		{ title: 'Breakfast', price: 'TBC', claimed: false },
-		{ title: 'Morning break', price: 'TBC', claimed: false },
-		{ title: 'Afternoon break', price: 'TBC', claimed: false }
+		{ title: 'Breakfast', price: '£250', claimed: false },
+		{ title: 'Morning break', price: '£250', claimed: false },
+		{ title: 'Afternoon break', price: '£250', claimed: false }
 	];
 
 	let extraOptions = [
+		{
+			title: 'Dedicated speaker slot',
+			price: '£300',
+			claimed: false,
+			description: `We'll allocate a dedicated slot for your speaker to present a relevant topic`
+		},
 		{
 			title: 'T-shirts',
 			price: 'TBC',
@@ -26,10 +32,13 @@
 	<div class="section">
 		<h1>Sponsorship opportunities</h1>
 		<p>
+			Our event is entirely funded by sponsorship and would not be possible without our wonderful
+			sponsors.
+		</p>
+		<p>
 			We are looking for sponsors for DDD South West 2026. If you or your company would like to
 			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
-			We have various options available, or we can arrange a custom package for you. Our event is entirely
-			funded by sponsorship and would not be possible without our wonderful sponsors.
+			We have various options available, or we can arrange a custom package for you.
 		</p>
 	</div>
 </div>
@@ -44,7 +53,7 @@
 					<li>Your logo on the opening & closing slides</li>
 					<li>We'll thank you on our social media</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£600</span>
 			</div>
 			<div class="primary-bg option boop-effect">
 				<h2>Exhibitor</h2>
@@ -54,7 +63,7 @@
 					<li>Custom promotional posts from our social media accounts</li>
 					<li>Anything else we can do.. chat to us!</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£1700</span>
 			</div>
 		</div>
 
