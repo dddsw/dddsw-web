@@ -10,9 +10,9 @@
 	}
 
 	let refreshmentPackages: Item[] = [
-		{ title: 'Breakfast', price: '£250', claimed: false },
+		{ title: 'Breakfast', price: '£250', claimed: true },
 		{ title: 'Morning break', price: '£250', claimed: false },
-		{ title: 'Afternoon break', price: '£250', claimed: false }
+		{ title: 'Afternoon break', price: '£250', claimed: true }
 	];
 
 	let extraOptions: Item[] = [
