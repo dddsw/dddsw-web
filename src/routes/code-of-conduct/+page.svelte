@@ -5,7 +5,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Code of Conduct</h1>
+		<h2>Code of Conduct</h2>
 		<p class="emphasis">
 			All attendees, speakers, sponsors and volunteers at our conference are required to agree with
 			the following code of conduct.
@@ -49,7 +49,7 @@
 
 		<p>Reporting, enforcement, and feedback policies apply to all participants.</p>
 
-		<h2>Enforcement</h2>
+		<h3>Enforcement</h3>
 		<p>Participants asked to stop any harassing behaviour are expected to comply immediately.</p>
 
 		<p>
@@ -68,7 +68,7 @@
 			activities. We think people should follow these rules outside event activities too!
 		</p>
 
-		<h2>Reporting</h2>
+		<h3>Reporting</h3>
 		<p>
 			If someone makes you or anyone else feel unsafe or unwelcome, please report it as soon as
 			possible.
@@ -84,7 +84,7 @@
 
 		<p>You can make a report either personally or anonymously.</p>
 
-		<h3>Anonymous Report</h3>
+		<h4>Anonymous Report</h4>
 		<p>
 			You can make an anonymous report <a
 				href="https://forms.office.com/e/ZDSiDR6Tyg"
@@ -97,7 +97,7 @@
 			take whatever action is necessary to prevent a recurrence.
 		</p>
 
-		<h3>Personal Report</h3>
+		<h4>Personal Report</h4>
 		<p>
 			You can make a personal report by contacting a staff member, identified by DDD South West 2025
 			crew t-shirts or lanyards.

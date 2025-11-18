@@ -5,7 +5,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Privacy Policy</h1>
+		<h2>Privacy Policy</h2>
 		<p class="emphasis">
 			This privacy notice tells you what to expect us to do with your personal information. We only
 			hold this information to support our events and for our newsletter. We do not sell or share
@@ -21,10 +21,10 @@
 			<li><a href="#complaints">How to complain</a></li>
 		</ul>
 
-		<h2 id="contact-details">Contact details</h2>
+		<h3 id="contact-details">Contact details</h3>
 		<p>Email: <a href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a></p>
 
-		<h2 id="what-information">What information we collect, use, and why</h2>
+		<h3 id="what-information">What information we collect, use, and why</h3>
 		<p>We collect or use the following personal information to provide updates and share news:</p>
 		<ul>
 			<li>Names</li>
@@ -41,7 +41,7 @@
 			<li>Dietary Needs</li>
 		</ul>
 
-		<h2 id="lawful-bases">Lawful bases and data protection rights</h2>
+		<h3 id="lawful-bases">Lawful bases and data protection rights</h3>
 		<p>
 			Under UK data protection law, we must have a “lawful basis” for collecting and using your
 			personal information. There is a list of possible lawful bases in the UK GDPR. You can find
@@ -52,27 +52,27 @@
 			top of this privacy notice.
 		</p>
 
-		<h3 class="h2">Our lawful bases</h3>
+		<h4 class="h2">Our lawful bases</h4>
 		<p>
 			Our lawful basis for collecting or using personal information to provide updates and share
 			news is <strong>your consent</strong> by signing up to a newsletter, or submitting a session for
 			consideration. You have the right to withdraw your consent at any time.
 		</p>
 
-		<h2 id="personal-information-source">Where we get personal information from</h2>
+		<h3 id="personal-information-source">Where we get personal information from</h3>
 		<p>
 			We collect information directly from you - either through speaker submission on sessionize, or
 			through newsletter signup.
 		</p>
 
-		<h2 id="retention">How long we keep information</h2>
+		<h3 id="retention">How long we keep information</h3>
 		<p>
 			Our primary use for your personal information is for our newsletter which is sent out for
 			informational purposes. Until you unsubscribe or request deletion, we will keep your personal
 			information.
 		</p>
 
-		<h2 id="complaints">How to complain</h2>
+		<h3 id="complaints">How to complain</h3>
 		<p>
 			If you have any concerns about our use of your personal data, or wish to make a complaint
 			please get in touch with the email address at the top of this page. If you remain unhappy with
