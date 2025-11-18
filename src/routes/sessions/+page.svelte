@@ -55,7 +55,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>2025 Sessions</h1>
+		<h2>2025 Sessions</h2>
 		{#if sessions}
 			<p>The sessions below are presented in alphabetical order of the session title.</p>
 			{#each sessions as session}
@@ -66,7 +66,7 @@
 								>{speaker.name}</span>
 						{/each}
 					</p>
-					<h2>{session.title}</h2>
+					<h3>{session.title}</h3>
 					<p>{session.description}</p>
 				</div>
 			{/each}
