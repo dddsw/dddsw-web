@@ -24,8 +24,8 @@
 		},
 		{
 			title: 'T-shirts',
-			price: 'TBC',
-			claimed: false,
+			price: '£400',
+			claimed: true,
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
