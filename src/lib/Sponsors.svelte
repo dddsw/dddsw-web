@@ -1,7 +1,7 @@
 <script lang="ts">
-	let ref_source = 'ddd-south-west'; // Change this to your actual site name
+	let ref_source = 'ddd-south-west';
 	let utm_medium = 'sponsorship';
-	let utm_campaign = '2025';
+	let utm_campaign = '2026';
 
 	type Sponsor = {
 		name: string;
@@ -17,15 +17,15 @@
 			name: 'SECCL',
 			href: 'https://seccl.tech/',
 			src: '../images/sponsors/seccl.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'exhibitor',
 			order: 1
 		},
 		{
-			name: 'UK Hydrographics Office',
+			name: 'UK Hydrographic Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 2
 		},
@@ -33,7 +33,7 @@
 			name: 'Umbraco CMS',
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 1
 		},
@@ -49,7 +49,7 @@
 			name: 'iO Associates',
 			href: 'https://www.ioassociates.co.uk/',
 			src: '../images/sponsors/io.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 3
 		},
@@ -57,7 +57,7 @@
 			name: 'Howdens',
 			href: 'https://www.howdengroup.com/uk-en',
 			src: '../images/sponsors/howden.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 4
 		},
@@ -65,7 +65,7 @@
 			name: 'Flagstone',
 			href: 'https://www.flagstoneim.com/',
 			src: '../images/sponsors/flagstone.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'supporter',
 			order: 2
 		},
@@ -81,7 +81,7 @@
 			name: 'NDC Conferences',
 			href: 'https://ndcconferences.com/',
 			src: '../images/sponsors/ndc.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'supporter',
 			order: 1
 		},
@@ -151,42 +151,29 @@
 		sponsors.filter((s) => s.confirmed && s.tier === tier).sort((a, b) => a.order - b.order);
 </script>
 
+{#snippet sponsorList(title: string, tier: string)}
+	{#if sponsorsByTier(tier).length > 0}
+		<section class={tier}>
+			<h2>{title}</h2>
+			<ul class="sponsor-logos">
+				{#each sponsorsByTier(tier) as sponsor}
+					<li>
+						<a
+							href={addTrackingParams(sponsor.href)}
+							target="_blank"
+							aria-label="Visit {sponsor.name} website">
+							<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
+{/snippet}
+
 <div class="section">
-	<h2 id="gold-sponsors">With thanks to our 2025 Exhibitors:</h2>
-	<div class="sponsor-logos" aria-labelledby="gold-sponsors">
-		{#each sponsorsByTier('exhibitor') as sponsor}
-			<a
-				href={addTrackingParams(sponsor.href)}
-				target="_blank"
-				aria-label="Visit {sponsor.name} website">
-				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
-			</a>
-		{/each}
-	</div>
-
-	<h2 id="silver-sponsors">And our Supporters:</h2>
-	<div class="sponsor-logos" aria-labelledby="silver-sponsors">
-		{#each sponsorsByTier('supporter') as sponsor}
-			<a
-				href={addTrackingParams(sponsor.href)}
-				target="_blank"
-				aria-label="Visit {sponsor.name} website">
-				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
-			</a>
-		{/each}
-	</div>
-
-	<!-- Uncomment when you have bronze sponsors -->
-	<!--
-	<h2 id="bronze-sponsors">With thanks to our confirmed 2025 Bronze Sponsors:</h2>
-	<div class="sponsor-logos bronze" aria-labelledby="bronze-sponsors">
-		{#each sponsorsByTier('food') as sponsor}
-			<a href={addTrackingParams(sponsor.href)} target="_blank" aria-label="Visit {sponsor.name} website">
-				<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
-			</a>
-		{/each}
-	</div>
-	-->
+	{@render sponsorList('With thanks to our 2026 Exhibitors:', 'exhibitor')}
+	{@render sponsorList('And our Supporters:', 'supporter')}
 </div>
 
 <style>
@@ -196,10 +183,14 @@
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 20px;
-	}
 
-	.sponsor-logos img {
-		max-height: 160px;
-		max-width: 160px;
+		li {
+			list-style-type: none;
+		}
+
+		img {
+			max-height: 160px;
+			max-width: 160px;
+		}
 	}
 </style>
