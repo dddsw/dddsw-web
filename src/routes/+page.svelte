@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CallToActions from '$lib/CallToActions.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
@@ -37,23 +36,22 @@
 	<Sponsors />
 {/if}
 
-<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
-	<CallToActions {keyPoints} />
+<div>
+	{#each keyPoints as point}
+		<dl>
+			<dt>{point.title}</dt>
+			<dd>{point.paragraph}</dd>
+		</dl>
+	{/each}
 </div>
 
-<div class="quaternary-bg">
-	<div class="section">
-		<p>
-			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
-			the community, for the community. We are dedicated to providing a safe and welcoming
-			conference experience for everyone.
-		</p>
-		<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
-	</div>
+<div class="bg-secondary-200">
+	<p>
+		DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
+		the community, for the community. We are dedicated to providing a safe and welcoming conference
+		experience for everyone.
+	</p>
+	<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
 </div>
 
-<div class="secondary-bg">
-	<div class="section">
-		<Timeline />
-	</div>
-</div>
+<Timeline />
