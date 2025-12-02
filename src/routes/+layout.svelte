@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { currentUpdate } from '$lib/latestUpdate.js';
+	import IconifyIcon from '@iconify/svelte';
 	import Navbar from '$lib/Navbar.svelte';
 	import { pageTitle } from '../stores.js';
 	import ThemeSwitcher from '$lib/ThemeSwitcher.svelte';
@@ -33,20 +34,37 @@
 		{@render children?.()}
 	</main>
 
-	<footer class="flex flex-col">
-		<div>
-			<p>&copy; 2026 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
+	<footer class="footer gap-0 bg-base-200">
+		<div class="footer sm:footer-horizontal">
+			<nav class="not-prose p-5 sm:justify-self-start">
+				<ul>
+					<li><a class="link link-hover" href="/code-of-conduct">Code of Conduct</a></li>
+					<li><a class="link link-hover" href="/privacy-policy">Privacy Policy</a></li>
+				</ul>
+			</nav>
+			<nav class="sm:justify-self-end">
+				<ul class="menu menu-horizontal menu-lg rounded-box">
+					<li>
+						<a href="https://bsky.app/profile/dddsouthwest.com" target="_blank">
+							<IconifyIcon icon="fa7-brands:bluesky" class="h-5 w-5"
+								>DDD South West BlueSky</IconifyIcon>
+						</a>
+					</li>
+					<li>
+						<a href="mailto:management@dddsouthwest.com">
+							<IconifyIcon icon="fa7-solid:envelope" class="h-5 w-5"
+								>DDD South West Email</IconifyIcon>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/company/ddd-south-west/" target="_blank">
+							<IconifyIcon icon="fa7-brands:linkedin" class="h-5 w-5"
+								>DDD South West LinkedIn</IconifyIcon>
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-		<div>
-			<a href="https://bsky.app/profile/dddsouthwest.com" target="_blank">
-				<i class="fa-brands fa-bluesky fa-3x" title="DDD South West BlueSky"></i>
-			</a>
-			<a href="mailto:management@dddsouthwest.com">
-				<i class="fa-solid fa-envelope fa-3x icon" title="DDD South West Email"></i>
-			</a>
-			<a href="https://www.linkedin.com/company/ddd-south-west/" target="_blank">
-				<i class="fa-brands fa-linkedin fa-3x" title="DDD South West LinkedIn"></i>
-			</a>
-		</div>
+		<span class="pb-5 pl-5">&copy; 2026 DDD South West</span>
 	</footer>
 </div>
