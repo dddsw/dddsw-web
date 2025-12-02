@@ -17,7 +17,7 @@
 {#snippet menuitems()}
 	{#each navItems as navItem}
 		{#if !navItem.hidden}
-			<li><a href={navItem.href}>{navItem.text}</a></li>
+			<li><a href={navItem.href} class="not-prose">{navItem.text}</a></li>
 		{/if}
 	{/each}
 {/snippet}
