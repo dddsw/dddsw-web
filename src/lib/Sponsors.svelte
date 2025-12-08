@@ -65,9 +65,9 @@
 			name: 'Flagstone',
 			href: 'https://www.flagstoneim.com/',
 			src: '../images/sponsors/flagstone.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'supporter',
-			order: 2
+			order: 1
 		},
 		{
 			name: 'JetBrains',
