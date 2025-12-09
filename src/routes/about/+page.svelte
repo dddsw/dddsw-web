@@ -54,7 +54,7 @@
 		}
 	];
 
-	pageTitle.set('About DDD South West');
+	pageTitle.set('About');
 </script>
 
 <div class="secondary-bg">
