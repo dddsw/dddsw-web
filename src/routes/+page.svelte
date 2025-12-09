@@ -14,7 +14,7 @@
 			title: 'For developers',
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
-		We love to learn and share their ideas with others. You'll meet likeminded peers, 
+		We love to learn and share their ideas with others. You'll meet like minded peers, 
 		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
 		},
 		{
