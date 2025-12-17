@@ -15,7 +15,7 @@
 
 <div class="prose flex w-screen max-w-full flex-col items-center">
 	<div class="flex flex-row items-center space-y-4 p-4">
-		<a href="/" class="lg:w-1/4">
+		<a href="/" class="lg:w-1/8">
 			<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 		</a>
 		<div class="mx-2 flex-1 px-2">DDD South West</div>
