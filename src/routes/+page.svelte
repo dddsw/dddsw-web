@@ -54,4 +54,5 @@
 	<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
 </div>
 
+<h2>Timeline</h2>
 <Timeline />
