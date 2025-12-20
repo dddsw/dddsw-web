@@ -18,35 +18,26 @@
 </script>
 
 <header>
-	{#if isHomepage}
-		<div class="bg">
-			<div class="header">
-				<a href="/" class="logo-link" onclick={toggleNav}>
-					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
-				</a>
-				<div>
-					<h1 class="long-name">DDD South West 2026</h1>
-					<h1 class="short-name">DDD SW '26</h1>
-					{#if currentUpdate}
-						<p>
-							{@html currentUpdate}
-						</p>
-					{/if}
-				</div>
-				<Navbar />
+	<div class="bg header">
+		<a href="/" class="logo-link" onclick={toggleNav}>
+			<!-- For a11y purposes, the alt text on the image is the destination of the link - see https://www.w3.org/WAI/tutorials/images/functional/-->
+			<img src="images/the_mighty_cow_white.svg" alt="DDD South West home" class="logo" />
+		</a>
+		{#if isHomepage}
+			<div>
+				<h1 class="long-name">DDD South West 2026</h1>
+				<h1 class="short-name">DDD SW '26</h1>
+				{#if currentUpdate}
+					<p>
+						{@html currentUpdate}
+					</p>
+				{/if}
 			</div>
-		</div>
-	{:else}
-		<div class="bg">
-			<div class="header">
-				<a href="/" class="logo-link" onclick={toggleNav}>
-					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
-				</a>
-				<h1>{$pageTitle}</h1>
-				<Navbar />
-			</div>
-		</div>
-	{/if}
+		{:else}
+			<h1>{$pageTitle}</h1>
+		{/if}
+		<Navbar />
+	</div>
 </header>
 
 <style>
