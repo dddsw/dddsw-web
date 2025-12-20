@@ -5,7 +5,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>About</h1>
+		<h2>About</h2>
 		<p>
 			As an inclusive, and community-driven conference we want to encourage everyone to share their
 			experiences and knowledge. By running a new speakers workshop we hope to encourage those
@@ -48,7 +48,7 @@
 			and on Twitter as
 			<a href="https://twitter.com/dylanbeattie" target="_blank">@dylanbeattie</a>.
 		</p>
-		<h2>Requirements</h2>
+		<h3>Requirements</h3>
 		<p></p>
 		<ul>
 			<li>A laptop</li>
@@ -58,7 +58,7 @@
 </div>
 <div class="tertiary-bg">
 	<div class="section">
-		<h1>Venue</h1>
+		<h2>Venue</h2>
 		<p>
 			DDD South West 2024 New Speakers Workshop will be held at <a
 				href="https://www.watershed.co.uk/"
@@ -148,7 +148,7 @@
 
 <div class="tertiary-bg">
 	<div class="section">
-		<h1>Covid policy</h1>
+		<h2>Covid policy</h2>
 		<p>
 			We will not be operating a mask or distancing policy at DDD South West 2024 New Speakers
 			Workshop, but attendees are welcome to wear a mask if desired. Please respect others who

@@ -1,20 +1,20 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	// import LatestUpdate from '$lib/LatestUpdate.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
+	import Timeline from '$lib/Timeline.svelte';
 
 	pageTitle.set('DDD South West');
 
-	let showSponsors = false;
+	let showSponsors = true;
 
 	let keyPoints: KeyPoint[] = [
 		{
 			title: 'For developers',
 			icon: 'code',
 			paragraph: `Developers are at the heart of DDD South West. 
-		We love to learn and share their ideas with others. You'll meet likeminded peers, 
+		We love to learn and share their ideas with others. You'll meet like minded peers, 
 		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
 		},
 		{
@@ -37,8 +37,6 @@
 	<Sponsors />
 {/if}
 
-<!-- <LatestUpdate /> -->
-
 <div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
 	<CallToActions {keyPoints} />
 </div>
@@ -56,79 +54,6 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h2>Timeline</h2>
-		<div>Coming soon...</div>
-		<!-- <div class="timeline text-center">
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>1st January</p>
-				<p>Call for speakers opens on New Years Day!</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>31st January</p>
-				<p>Call for speakers closes</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>12th February</p>
-				<p>Session voting opens</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>21st February</p>
-				<p>Session voting closes</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>31st March</p>
-				<p>Schedule announced and ticket registration opens</p>
-			</span>
-			<span class="timeline-item">
-				<span class="material-symbols-outlined"> check_circle </span>
-				<p>26th April</p>
-				<p>Day of the event!</p>
-			</span>
-		</div>
-		<sub class="sub-highlight"
-			>We'll try our best to keep to these dates but please be patient - DDDSW is entirely volunteer
-			driven ❤️</sub> -->
+		<Timeline />
 	</div>
 </div>
-
-<style>
-	.timeline {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	.timeline p {
-		font-size: 0.75rem;
-		margin: 0;
-		font-weight: bold;
-	}
-
-	.timeline-item p:first-of-type {
-		border-bottom: #cdcdcd 2px dotted;
-		margin-bottom: 5px;
-		font-weight: normal;
-	}
-
-	.timeline-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		flex: 1 1 0;
-	}
-
-	.sub-highlight {
-		font-style: italic;
-	}
-
-	@media (min-width: 576px) {
-		.timeline {
-			flex-direction: row;
-		}
-	}
-</style>

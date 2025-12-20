@@ -2,17 +2,30 @@
 	import Sponsors from '$lib/Sponsors.svelte';
 	import { pageTitle } from '../../stores.js';
 
-	let refreshmentPackages = [
-		{ title: 'Breakfast', price: 'TBC', claimed: false },
-		{ title: 'Morning break', price: 'TBC', claimed: false },
-		{ title: 'Afternoon break', price: 'TBC', claimed: false }
+	interface Item {
+		title: string;
+		price: string;
+		claimed: boolean;
+		description?: string;
+	}
+
+	let refreshmentPackages: Item[] = [
+		{ title: 'Breakfast', price: '£250', claimed: true },
+		{ title: 'Morning break', price: '£250', claimed: false },
+		{ title: 'Afternoon break', price: '£250', claimed: true }
 	];
 
-	let extraOptions = [
+	let extraOptions: Item[] = [
+		{
+			title: 'Dedicated speaker slot',
+			price: '£300',
+			claimed: false,
+			description: `We'll allocate a dedicated slot for your speaker to present a relevant topic`
+		},
 		{
 			title: 'T-shirts',
-			price: 'TBC',
-			claimed: false,
+			price: '£400',
+			claimed: true,
 			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
 		}
 	];
@@ -22,67 +35,70 @@
 	pageTitle.set('Sponsorship');
 </script>
 
+{#snippet displayItems(items: Item[])}
+	{#each items as item}
+		<div class="primary-bg option-small boop-effect" class:claimed={item.claimed}>
+			<h3>{item.title}</h3>
+			{#if item.description}
+				<span class="item-description">{item.description}</span>
+			{/if}
+			{#if item.claimed}
+				<strong>This item has been sponsored</strong>
+			{:else}
+				<span class="price">{item.price}</span>
+			{/if}
+		</div>
+	{/each}
+{/snippet}
+
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Sponsorship opportunities</h1>
+		<h2>Sponsorship opportunities</h2>
+		<p>
+			Our event is entirely funded by sponsorship and would not be possible without our wonderful
+			sponsors.
+		</p>
 		<p>
 			We are looking for sponsors for DDD South West 2026. If you or your company would like to
 			become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
-			We have various options available, or we can arrange a custom package for you. Our event is entirely
-			funded by sponsorship and would not be possible without our wonderful sponsors.
+			We have various options available, or we can arrange a custom package for you.
 		</p>
 	</div>
 </div>
 <div class="tertiary-bg">
 	<div class="section">
-		<h1>Packages</h1>
+		<h2>Packages</h2>
 		<div class="options-container">
 			<div class="primary-bg option boop-effect">
-				<h2>Supporter</h2>
+				<h3>Supporter</h3>
 				<ul>
 					<li>Your logo on our website</li>
 					<li>Your logo on the opening & closing slides</li>
 					<li>We'll thank you on our social media</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£600</span>
 			</div>
 			<div class="primary-bg option boop-effect">
-				<h2>Exhibitor</h2>
+				<h3>Exhibitor</h3>
 				Everything in Supporter tier, plus:
 				<ul>
 					<li>A sponsor stand on the day</li>
 					<li>Custom promotional posts from our social media accounts</li>
 					<li>Anything else we can do.. chat to us!</li>
 				</ul>
-				<span class="price">TBC</span>
+				<span class="price">£1700</span>
 			</div>
 		</div>
 
-		<h1>Refreshments</h1>
+		<h2>Refreshments</h2>
 		<p>With your company name and logo displayed alongside.</p>
 		<div class="options-container options-container-small">
-			{#each refreshmentPackages as refreshmentPackage}
-				<div class="primary-bg option-small boop-effect" class:claimed={refreshmentPackage.claimed}>
-					{refreshmentPackage.title} <span class="price">{refreshmentPackage.price}</span>
-					{#if refreshmentPackage.claimed}
-						<sub>This item has been sponsored</sub>
-					{/if}
-				</div>
-			{/each}
+			{@render displayItems(refreshmentPackages)}
 		</div>
 
-		<h1>Extras</h1>
+		<h2>Extras</h2>
 		<div class="options-container extra-options">
-			{#each extraOptions as extraOption}
-				<div class="primary-bg option-small boop-effect" class:claimed={extraOption.claimed}>
-					{extraOption.title}
-					<sub>{extraOption.description} </sub>
-					<span class="price">{extraOption.price}</span>
-					{#if extraOption.claimed}
-						<sub>This item has been sponsored</sub>
-					{/if}
-				</div>
-			{/each}
+			{@render displayItems(extraOptions)}
 		</div>
 
 		<p>As well as supporting the community, sponsorship offers:</p>
@@ -140,6 +156,10 @@
 		justify-content: center;
 	}
 
+	.option-small h3 {
+		margin: 5px;
+	}
+
 	.option ul {
 		flex-grow: 1;
 	}
@@ -151,14 +171,20 @@
 	.price {
 		font-size: 1.5rem;
 		font-weight: bold;
+		margin: 5px;
 	}
 
 	.claimed {
 		background-color: lightgrey;
 	}
 
-	sub {
+	.item-description {
 		font-style: italic;
+	}
+
+	strong {
+		font-weight: bold;
+		margin: 5px;
 	}
 
 	@media (min-width: 992px) {
