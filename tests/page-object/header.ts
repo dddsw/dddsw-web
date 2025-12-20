@@ -12,7 +12,7 @@ export class Header {
 		this.navDropDownButton = page.getByRole('button', { name: 'Find out more' });
 		this.navMenu = page.getByRole('navigation').filter({ has: this.navDropDownButton });
 		this.navDropDown = this.navMenu.locator('.nav-link-container');
-		this.logo = page.getByRole('link', { name: 'The DDD South West logo' });
+		this.logo = page.getByAltText('DDD South West home');
 	}
 
 	getNavLinkTo(route: string): Locator {

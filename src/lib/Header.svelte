@@ -20,7 +20,8 @@
 <header>
 	<div class="bg header">
 		<a href="/" class="logo-link" onclick={toggleNav}>
-			<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
+			<!-- For a11y purposes, the alt text on the image is the destination of the link - see https://www.w3.org/WAI/tutorials/images/functional/-->
+			<img src="images/the_mighty_cow_white.svg" alt="DDD South West home" class="logo" />
 		</a>
 		{#if isHomepage}
 			<div>
