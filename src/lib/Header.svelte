@@ -21,7 +21,7 @@
 </script>
 
 <header>
-	<div class="flex flex-row items-center space-y-4 p-4 bg">
+	<div class="bg header">
 		<a href="/" class="logo-link" onclick={toggleNav}>
 			<!-- For a11y purposes, the alt text on the image is the destination of the link - see https://www.w3.org/WAI/tutorials/images/functional/-->
 			<img src="images/the_mighty_cow_white.svg" alt="DDD South West home" class="logo" />
@@ -42,8 +42,8 @@
 		{:else}
 			<h1>{$pageTitle}</h1>
 		{/if}
+		<Navbar />
 	</div>
-	<Navbar />
 </header>
 
 <style>
