@@ -42,6 +42,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@panzoom/panzoom": "^4.6.0"
+		"@panzoom/panzoom": "^4.6.0",
+		"@tailwindcss/vite": "^4.1.18",
+		"tailwindcss": "^4.1.18"
 	}
 }

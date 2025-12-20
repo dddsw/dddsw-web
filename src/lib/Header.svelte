@@ -18,7 +18,7 @@
 </script>
 
 <header>
-	<div class="bg header">
+	<div class="flex flex-row items-center space-y-4 p-4 bg">
 		<a href="/" class="logo-link" onclick={toggleNav}>
 			<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 		</a>
@@ -35,8 +35,8 @@
 		{:else}
 			<h1>{$pageTitle}</h1>
 		{/if}
-		<Navbar />
 	</div>
+	<Navbar />
 </header>
 
 <style>
@@ -45,14 +45,7 @@
 		background: linear-gradient(90deg, rgba(255, 153, 48, 1) 50%, var(--quinary-color) 100%);
 	}
 
-	.header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		color: white;
-	}
-
-	.header h1 {
+	h1 {
 		font-family: 'Roboto';
 	}
 
@@ -70,12 +63,6 @@
 	}
 
 	@media (min-width: 576px) {
-		.header {
-			justify-content: space-between;
-			flex-direction: row;
-			text-align: center;
-		}
-
 		.short-name {
 			display: none;
 		}
