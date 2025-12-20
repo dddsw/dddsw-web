@@ -18,26 +18,24 @@
 </script>
 
 <header>
-	<div class="bg">
-		<div class="header">
-			<a href="/" class="logo-link" onclick={toggleNav}>
-				<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
-			</a>
-			{#if isHomepage}
-				<div>
-					<h1 class="long-name">DDD South West 2026</h1>
-					<h1 class="short-name">DDD SW '26</h1>
-					{#if currentUpdate}
-						<p>
-							{@html currentUpdate}
-						</p>
-					{/if}
-				</div>
-			{:else}
-				<h1>{$pageTitle}</h1>
-			{/if}
-			<Navbar />
-		</div>
+	<div class="bg header">
+		<a href="/" class="logo-link" onclick={toggleNav}>
+			<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
+		</a>
+		{#if isHomepage}
+			<div>
+				<h1 class="long-name">DDD South West 2026</h1>
+				<h1 class="short-name">DDD SW '26</h1>
+				{#if currentUpdate}
+					<p>
+						{@html currentUpdate}
+					</p>
+				{/if}
+			</div>
+		{:else}
+			<h1>{$pageTitle}</h1>
+		{/if}
+		<Navbar />
 	</div>
 </header>
 
