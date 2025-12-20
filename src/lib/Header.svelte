@@ -18,7 +18,7 @@
 </script>
 
 <header>
-	<div class="flex flex-row items-center space-y-4 p-4 bg">
+	<div class="bg header">
 		<a href="/" class="logo-link" onclick={toggleNav}>
 			<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 		</a>
@@ -35,8 +35,8 @@
 		{:else}
 			<h1>{$pageTitle}</h1>
 		{/if}
+		<Navbar />
 	</div>
-	<Navbar />
 </header>
 
 <style>

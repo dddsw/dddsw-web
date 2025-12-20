@@ -6,7 +6,7 @@
 	let { isHomepage }: Props = $props();
 </script>
 
-<footer class="container">
+<footer>
 	{#if !isHomepage}
 		<div class="quaternary-bg">
 			<div class="text-center">
