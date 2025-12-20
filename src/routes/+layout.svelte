@@ -18,9 +18,7 @@
 </svelte:head>
 
 <Header {isHomepage} />
-
 <main class="container">
 	{@render children?.()}
 </main>
-
 <Footer {isHomepage} />
