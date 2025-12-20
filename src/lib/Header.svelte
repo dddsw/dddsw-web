@@ -19,17 +19,14 @@
 
 <header>
 	{#if isHomepage}
-		<!-- <div class="nav-absolute-container">
-			<Carousel />
-			<Navbar isAbsolute />
-		</div> -->
-		<div class="not-carousel">
+		<div class="bg">
 			<div class="header">
 				<a href="/" class="logo-link" onclick={toggleNav}>
 					<img src="images/the_mighty_cow_white.svg" alt="The DDD South West cow" class="logo" />
 				</a>
 				<div>
-					<h1>DDD South West 2026</h1>
+					<h1 class="long-name">DDD South West 2026</h1>
+					<h1 class="short-name">DDD SW '26</h1>
 					{#if currentUpdate}
 						<p>
 							{@html currentUpdate}
@@ -53,14 +50,6 @@
 </header>
 
 <style>
-	.not-carousel {
-		background: rgb(255, 153, 48);
-	}
-
-	.nav-absolute-container {
-		position: relative;
-	}
-
 	.bg {
 		background: rgb(255, 153, 48);
 		background: linear-gradient(90deg, rgba(255, 153, 48, 1) 50%, var(--quinary-color) 100%);
@@ -70,6 +59,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		color: white;
+	}
+
+	.header h1 {
+		font-family: 'Roboto';
+	}
+
+	.long-name {
+		display: none;
 	}
 
 	.logo-link {
@@ -85,7 +83,15 @@
 		.header {
 			justify-content: space-between;
 			flex-direction: row;
-			text-align: left;
+			text-align: center;
+		}
+
+		.short-name {
+			display: none;
+		}
+
+		.long-name {
+			display: inline;
 		}
 	}
 

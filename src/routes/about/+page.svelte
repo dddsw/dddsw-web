@@ -54,12 +54,12 @@
 		}
 	];
 
-	pageTitle.set('About DDD South West');
+	pageTitle.set('About');
 </script>
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>What to expect</h1>
+		<h2>What to expect</h2>
 		<p>
 			DDD South West is an annual free one day technical conference organised by developers for
 			developers. It is a day of learning, discussing, contributing and being part of the developer
@@ -71,7 +71,7 @@
 
 <div class="tertiary-bg">
 	<div class="section team-section">
-		<h1>Meet the team</h1>
+		<h2>Meet the team</h2>
 		<p>
 			DDD South West is brought to you by a small team of volunteers. Please feel free to get in
 			touch with us if you have any questions or ideas.
@@ -105,7 +105,7 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h1>Get involved</h1>
+		<h2>Get involved</h2>
 		<p>DDD South West is a community event and there are several ways you can get involved:</p>
 	</div>
 

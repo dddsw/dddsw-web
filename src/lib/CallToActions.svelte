@@ -10,7 +10,7 @@
 <div class="key-points-container">
 	<div class="key-point">
 		<div>
-			<h1>{keyPoints[0].title}</h1>
+			<h2>{keyPoints[0].title}</h2>
 			<p>
 				{@html keyPoints[0].paragraph}
 			</p>
@@ -20,7 +20,7 @@
 	<div class="key-point">
 		<span class="material-symbols-outlined icon">{keyPoints[1].icon}</span>
 		<div class="key-point-right">
-			<h1>{keyPoints[1].title}</h1>
+			<h2>{keyPoints[1].title}</h2>
 			<p>
 				{@html keyPoints[1].paragraph}
 			</p>
@@ -28,7 +28,7 @@
 	</div>
 	<div class="key-point">
 		<div>
-			<h1>{keyPoints[2].title}</h1>
+			<h2>{keyPoints[2].title}</h2>
 			<p>
 				{@html keyPoints[2].paragraph}
 			</p>
@@ -71,7 +71,7 @@
 	}
 
 	@media (max-width: 350px) {
-		h1 {
+		h2 {
 			font-size: 1.5rem;
 		}
 	}
