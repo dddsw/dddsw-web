@@ -20,13 +20,19 @@
 				<p>&copy; 2026 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
 			</div>
 			<div class="footer-right">
-				<a href="https://bsky.app/profile/dddsouthwest.com" target="_blank">
+				<a
+					href="https://bsky.app/profile/dddsouthwest.com"
+					target="_blank"
+					aria-label="DDD South West BlueSky">
 					<i class="fa-brands fa-bluesky fa-3x" title="DDD South West BlueSky"></i>
 				</a>
-				<a href="mailto:management@dddsouthwest.com">
+				<a href="mailto:management@dddsouthwest.com" aria-label="DDD South West Email">
 					<i class="fa-solid fa-envelope fa-3x icon" title="DDD South West Email"></i>
 				</a>
-				<a href="https://www.linkedin.com/company/ddd-south-west/" target="_blank">
+				<a
+					href="https://www.linkedin.com/company/ddd-south-west/"
+					target="_blank"
+					aria-label="DDD South West LinkedIn">
 					<i class="fa-brands fa-linkedin fa-3x" title="DDD South West LinkedIn"></i>
 				</a>
 			</div>
