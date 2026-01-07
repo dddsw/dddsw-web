@@ -2,6 +2,11 @@
 
 This is currently a WIP. Please feel free to raise any issues that you come across.
 
+## Pre-reqs
+
+- Node 24
+- npm v11+
+
 ## Running locally
 
 1. Install dependencies:
