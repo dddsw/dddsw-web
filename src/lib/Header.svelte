@@ -31,7 +31,7 @@
 				<h1 class="long-name">DDD South West 2026</h1>
 				<h1 class="short-name">DDD SW '26</h1>
 				{#if eventDate}
-					<h2 class="event-date">{eventDate}</h2>
+					<h2 class="event-date">{eventDate} @ The Engine Shed, Bristol</h2>
 				{/if}
 				{#if currentUpdate}
 					<p>
