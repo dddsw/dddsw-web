@@ -3,6 +3,7 @@
 	// import Carousel from '$lib/Carousel.svelte';
 	import { pageTitle, navExpanded } from '../stores.js';
 	import { currentUpdate } from './latestUpdate.js';
+	import { Milestone, get } from '$lib/milestones';
 
 	function toggleNav() {
 		if ($navExpanded === true) {
@@ -15,6 +16,8 @@
 	}
 
 	let { isHomepage }: Props = $props();
+
+	const eventDate = get(Milestone.TheActualEventDay)?.formattedDate;
 </script>
 
 <header>
@@ -27,6 +30,9 @@
 			<div>
 				<h1 class="long-name">DDD South West 2026</h1>
 				<h1 class="short-name">DDD SW '26</h1>
+				{#if eventDate}
+					<h2 class="event-date">{eventDate}</h2>
+				{/if}
 				{#if currentUpdate}
 					<p>
 						{@html currentUpdate}
@@ -66,8 +72,15 @@
 	}
 
 	h1,
+	h2,
 	p {
 		padding-left: 30px;
+	}
+
+	.event-date {
+		margin: 0;
+		font-family: 'Roboto';
+		font-size: 1.25rem;
 	}
 
 	@media (min-width: 576px) {
@@ -105,6 +118,10 @@
 
 		h1 {
 			font-size: 2.5rem;
+		}
+
+		.event-date {
+			font-size: 1.5rem;
 		}
 	}
 </style>
