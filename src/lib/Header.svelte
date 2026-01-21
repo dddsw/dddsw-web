@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Navbar from '$lib/Navbar.svelte';
-	// import Carousel from '$lib/Carousel.svelte';
 	import { pageTitle, navExpanded } from '../stores.js';
 	import { currentUpdate } from './latestUpdate.js';
 	import { Milestone, get } from '$lib/milestones';
+	import { eventYear, eventYearTwoDigit } from '$lib/eventDetails';
 
 	function toggleNav() {
 		if ($navExpanded === true) {
@@ -28,8 +28,8 @@
 		</a>
 		{#if isHomepage}
 			<div>
-				<h1 class="long-name">DDD South West 2026</h1>
-				<h1 class="short-name">DDD SW '26</h1>
+				<h1 class="long-name">DDD South West {eventYear}</h1>
+				<h1 class="short-name">DDD SW '{eventYearTwoDigit}</h1>
 				{#if eventDate}
 					<h2 class="event-date">{eventDate} @ The Engine Shed, Bristol</h2>
 				{/if}
