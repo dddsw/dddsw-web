@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import { pageTitle } from '../../stores.js';
 	import { page } from '$app/stores';
+	import { eventYear, sessionizeApiUrl } from '$lib/eventDetails.js';
 
 	pageTitle.set('Sessions');
 
@@ -15,13 +16,13 @@
 	let modalSpeaker: Speaker | undefined = $state();
 
 	onMount(async () => {
-		const sessionsRsp = await fetch('https://sessionize.com/api/v2/wss7pwai/view/Sessions');
+		const sessionsRsp = await fetch(`${sessionizeApiUrl}/view/Sessions`);
 		let sessionsJson = await sessionsRsp.json();
 		sessions = sessionsJson[0].sessions.sort((a: Session, b: Session) =>
 			a.title.localeCompare(b.title)
 		);
 
-		const speakersRsp = await fetch('https://sessionize.com/api/v2/wss7pwai/view/Speakers');
+		const speakersRsp = await fetch(`${sessionizeApiUrl}/view/Speakers`);
 		speakers = await speakersRsp.json();
 
 		const hasId = $page.url.searchParams.has('id');
@@ -55,7 +56,9 @@
 
 <div class="secondary-bg">
 	<div class="section">
-		<h2>2025 Sessions</h2>
+		<h2>
+			{eventYear} Sessions
+		</h2>
 		{#if sessions}
 			<p>The sessions below are presented in alphabetical order of the session title.</p>
 			{#each sessions as session}
