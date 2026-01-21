@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { navExpanded } from '../stores.js';
+	import { Milestone, get } from '$lib/milestones';
+	import { pocketdddUrl } from '$lib/eventDetails';
 
 	interface Props {
 		isAbsolute?: boolean;
@@ -9,21 +11,31 @@
 	let { isAbsolute = false }: Props = $props();
 
 	let navItems = [
-		{ text: 'Home', href: '/', hidden: false },
-		{ text: 'About', href: '/about', hidden: false },
-		{ text: 'Sponsorship', href: '/sponsorship', hidden: false },
-		{ text: 'Event Venue', href: '/venue', hidden: true },
-		{ text: 'Room map', href: '/venue-layout', hidden: true },
-		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', hidden: true },
-		{ text: 'Sessions', href: '/sessions', hidden: true },
-		{ text: 'Schedule', href: '/schedule', hidden: true },
-		{ text: 'Pocket DDD', href: 'https://pocket2025.dddsouthwest.com/', hidden: true },
-		{ text: 'Privacy Policy', href: '/privacy-policy', hidden: false },
-		{ text: 'Code of Conduct', href: '/code-of-conduct', hidden: false }
+		{ text: 'Home', href: '/', show: true },
+		{ text: 'About', href: '/about', show: true },
+		{ text: 'Sponsorship', href: '/sponsorship', show: true },
+		{ text: 'Event Venue', href: '/venue', show: true },
+		{ text: 'Room map', href: '/venue-layout', show: true },
+		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', show: false },
+		{
+			text: 'Sessions',
+			href: '/sessions',
+			show:
+				(get(Milestone.OpenSessionVoting)?.hasHappened &&
+					get(Milestone.CloseSessionVoting)?.hasNotHappened) ||
+				get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened
+		},
+		{
+			text: 'Schedule',
+			href: '/schedule',
+			show: get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened
+		},
+		{ text: 'Pocket DDD', href: pocketdddUrl, show: get(Milestone.TheActualEventDay)?.hasHappened },
+		{ text: 'Privacy Policy', href: '/privacy-policy', show: true },
+		{ text: 'Code of Conduct', href: '/code-of-conduct', show: true }
 	];
 
 	let currentPage = $derived($page.url.pathname);
-	let homepage = false; //$derived(currentPage === '/');
 
 	function toggleNav() {
 		$navExpanded = !$navExpanded;
@@ -31,11 +43,7 @@
 </script>
 
 <nav class:nav-absolute={isAbsolute}>
-	<button
-		class="unset main-nav-button"
-		class:shadow={homepage}
-		class:inverted-colours={homepage}
-		onclick={toggleNav}>
+	<button class="unset main-nav-button" onclick={toggleNav}>
 		<span class="nav-button-text">Find out more</span>
 
 		<span class="material-symbols-outlined icon">
@@ -50,7 +58,7 @@
 		<div>
 			<div class="nav-link-container" class:nav-link-container-absolute={!isAbsolute}>
 				{#each navItems as navItem}
-					{#if !navItem.hidden}
+					{#if navItem.show}
 						<a
 							href={navItem.href}
 							onclick={toggleNav}
@@ -115,8 +123,7 @@
 	}
 
 	.nav-link,
-	.main-nav-button,
-	.inverted-colours:hover {
+	.main-nav-button {
 		background-color: white;
 		color: black;
 	}
@@ -127,8 +134,7 @@
 	}
 
 	.nav-link:hover,
-	.main-nav-button:hover,
-	.inverted-colours {
+	.main-nav-button:hover {
 		background-color: var(--primary-color);
 		color: black;
 	}
@@ -139,10 +145,6 @@
 
 	.icon {
 		font-size: 3rem;
-	}
-
-	.shadow {
-		box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 70%);
 	}
 
 	@media (min-width: 768px) {
