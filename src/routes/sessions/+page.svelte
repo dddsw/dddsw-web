@@ -5,7 +5,8 @@
 	import { onMount } from 'svelte';
 	import { pageTitle } from '../../stores.js';
 	import { page } from '$app/stores';
-	import { eventYear, sessionizeApiUrl } from '$lib/eventDetails.js';
+	import { Milestone, get } from '$lib/milestones';
+	import { eventYear, sessionizeApiUrl, votingUrl } from '$lib/eventDetails.js';
 
 	pageTitle.set('Sessions');
 
@@ -14,6 +15,8 @@
 
 	let showModal = $state(false);
 	let modalSpeaker: Speaker | undefined = $state();
+
+	const isProposedSessions = true; //true = these are the submissions to be voted upon, false = these are definitely the speakers for this year
 
 	onMount(async () => {
 		const sessionsRsp = await fetch(`${sessionizeApiUrl}/view/Sessions`);
@@ -57,9 +60,14 @@
 <div class="secondary-bg">
 	<div class="section">
 		<h2>
+			{isProposedSessions ? 'Proposed' : ''}
 			{eventYear} Sessions
 		</h2>
 		{#if sessions}
+			{#if isProposedSessions && get(Milestone.OpenSessionVoting)?.hasHappened && get(Milestone.CloseSessionVoting)?.hasNotHappened}
+				Voting is open now, take a look and <a href="${votingUrl}">vote for your favourites here</a
+				>. Voting will close on {get(Milestone.CloseSessionVoting)!.formattedDate}.
+			{/if}
 			<p>The sessions below are presented in alphabetical order of the session title.</p>
 			{#each sessions as session}
 				<div class="session-container" id={session.id}>
