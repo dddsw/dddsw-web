@@ -20,6 +20,7 @@ export enum Milestone {
 
 export class MilestoneDetails {
 	hasHappened: boolean;
+	hasNotHappened: boolean;
 	formattedDate?: string;
 	targetDate?: Date;
 
@@ -34,6 +35,8 @@ export class MilestoneDetails {
 		}
 		if (status === Status.JustYouWait) this.hasHappened = this.targetDate!.valueOf() < Date.now();
 		else this.hasHappened = status === Status.Done;
+
+		this.hasNotHappened = !this.hasHappened;
 	}
 
 	willBeHappeningSoon(): boolean {
