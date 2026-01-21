@@ -17,7 +17,10 @@
 	<div class="footer primary-bg">
 		<div class="footer-content">
 			<div class="footer-left">
-				<p>&copy; 2026 DDD South West | <a href="/privacy-policy">Privacy Policy</a></p>
+				<p>
+					&copy; {new Date().getFullYear()} DDD South West |
+					<a href="/privacy-policy">Privacy Policy</a>
+				</p>
 			</div>
 			<div class="footer-right">
 				<a href="https://bsky.app/profile/dddsouthwest.com" target="_blank">
