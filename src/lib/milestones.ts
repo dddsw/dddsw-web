@@ -53,7 +53,7 @@ export function get(doneThing: Milestone): MilestoneDetails | undefined {
 const milestones = new Map([
 	[Milestone.StartPlanning, new MilestoneDetails(Status.Done)],
 	[Milestone.SetADate, new MilestoneDetails(Status.Done)],
-	[Milestone.OpenCallForSpeakers, new MilestoneDetails(Status.NotYet, '2026-01-31')],
+	[Milestone.OpenCallForSpeakers, new MilestoneDetails(Status.Done, '2026-01-31')],
 	[Milestone.CloseCallForSpeakers, new MilestoneDetails(Status.JustYouWait, '2026-03-07')],
 	[Milestone.OpenSessionVoting, new MilestoneDetails(Status.NotYet, '2026-03-14')],
 	[Milestone.CloseSessionVoting, new MilestoneDetails(Status.JustYouWait, '2026-03-28')],
