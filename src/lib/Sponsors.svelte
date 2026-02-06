@@ -25,7 +25,7 @@
 			name: 'UK Hydrographic Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'exhibitor',
 			order: 2
 		},
