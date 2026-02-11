@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { eventYear } from '$lib/eventDetails';
+
 	let ref_source = 'ddd-south-west';
 	let utm_medium = 'sponsorship';
-	let utm_campaign = '2026';
+	let utm_campaign = `${eventYear}`;
 
 	type Sponsor = {
 		name: string;
@@ -172,7 +174,7 @@
 {/snippet}
 
 <div class="section">
-	{@render sponsorList('With thanks to our 2026 Exhibitors:', 'exhibitor')}
+	{@render sponsorList(`With thanks to our ${eventYear} Exhibitors:`, 'exhibitor')}
 	{@render sponsorList('And our Supporters:', 'supporter')}
 </div>
 
