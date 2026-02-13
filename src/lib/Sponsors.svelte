@@ -33,7 +33,7 @@
 			name: 'Umbraco CMS',
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'exhibitor',
 			order: 1
 		},
