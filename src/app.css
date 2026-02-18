@@ -3,7 +3,7 @@
 
 @font-face {
 	font-family: Roboto;
-	src: url(./Good\ Times\ Rg.otf);
+	src: url('/Good Times Rg.otf');
 }
 
 body {
