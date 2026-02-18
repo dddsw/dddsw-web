@@ -52,14 +52,7 @@
 		background: linear-gradient(90deg, rgba(255, 153, 48, 1) 50%, var(--quinary-color) 100%);
 	}
 
-	.header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		color: white;
-	}
-
-	.header h1 {
+	h1 {
 		font-family: 'Roboto';
 	}
 
@@ -84,12 +77,6 @@
 	}
 
 	@media (min-width: 576px) {
-		.header {
-			justify-content: space-between;
-			flex-direction: row;
-			text-align: center;
-		}
-
 		.short-name {
 			display: none;
 		}

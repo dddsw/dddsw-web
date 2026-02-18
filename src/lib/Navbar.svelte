@@ -1,14 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { navExpanded } from '../stores.js';
 	import { Milestone, get } from '$lib/milestones';
 	import { pocketdddUrl } from '$lib/eventDetails';
-
-	interface Props {
-		isAbsolute?: boolean;
-	}
-
-	let { isAbsolute = false }: Props = $props();
 
 	let navItems = [
 		{ text: 'Home', href: '/', show: true },
@@ -34,134 +26,47 @@
 		{ text: 'Privacy Policy', href: '/privacy-policy', show: true },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', show: true }
 	];
-
-	let currentPage = $derived($page.url.pathname);
-
-	function toggleNav() {
-		$navExpanded = !$navExpanded;
-	}
 </script>
 
-<nav class:nav-absolute={isAbsolute}>
-	<button class="unset main-nav-button" onclick={toggleNav}>
-		<span class="nav-button-text">Find out more</span>
+{#snippet menuitems()}
+	{#each navItems as navItem}
+		{#if navItem.show}
+			<li><a href={navItem.href} class="not-prose">{navItem.text}</a></li>
+		{/if}
+	{/each}
+{/snippet}
 
-		<span class="material-symbols-outlined icon">
-			{#if $navExpanded}
-				expand_less
-			{:else}
-				expand_more
-			{/if}
-		</span>
-	</button>
-	{#if $navExpanded}
-		<div>
-			<div class="nav-link-container" class:nav-link-container-absolute={!isAbsolute}>
-				{#each navItems as navItem}
-					{#if navItem.show}
-						<a
-							href={navItem.href}
-							onclick={toggleNav}
-							class="nav-link"
-							class:isActivePage={navItem.href === currentPage}>
-							{navItem.text}
-						</a>
-					{/if}
-				{/each}
+<div class="daisyui drawer sticky top-0">
+	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+	<div class="drawer-content flex flex-col">
+		<!-- Navbar -->
+		<div class="navbar w-full bg-base-300">
+			<div class="flex-none lg:hidden">
+				<label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						class="inline-block h-6 w-6 stroke-current">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</label>
+			</div>
+			<div class="hidden flex-none lg:block">
+				<ul class="menu menu-horizontal">
+					{@render menuitems()}
+				</ul>
 			</div>
 		</div>
-	{/if}
-</nav>
-
-<style>
-	nav {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		margin: 30px;
-	}
-	.nav-absolute {
-		position: absolute;
-		right: 0px;
-		top: 0px;
-	}
-
-	nav a {
-		color: black;
-		text-decoration: none;
-	}
-
-	nav a,
-	.main-nav-button {
-		font-size: 1.5rem;
-	}
-
-	.main-nav-button {
-		padding: 10px;
-		display: flex;
-		align-items: center;
-	}
-
-	.main-nav-button:hover {
-		cursor: pointer;
-	}
-
-	.nav-link-container {
-		background-color: white;
-	}
-
-	.nav-link-container-absolute {
-		position: absolute;
-		right: 30px;
-		z-index: 5000;
-	}
-
-	.nav-link {
-		padding: 10px;
-		border: 1px solid lightgrey;
-		display: block;
-	}
-
-	.nav-link,
-	.main-nav-button {
-		background-color: white;
-		color: black;
-	}
-
-	.isActivePage {
-		background-color: rgba(255, 153, 48, 0.8);
-		color: black;
-	}
-
-	.nav-link:hover,
-	.main-nav-button:hover {
-		background-color: var(--primary-color);
-		color: black;
-	}
-
-	.nav-button-text {
-		display: none;
-	}
-
-	.icon {
-		font-size: 3rem;
-	}
-
-	@media (min-width: 768px) {
-		nav {
-			margin: 67px 50px;
-		}
-
-		.nav-link-container {
-			right: 49px;
-		}
-
-		.nav-button-text {
-			display: inline;
-		}
-
-		.icon {
-			font-size: 2rem;
-		}
-	}
-</style>
+	</div>
+	<div class="drawer-side">
+		<label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+		<ul class="menu min-h-full w-80 bg-base-200 p-4">
+			{@render menuitems()}
+		</ul>
+	</div>
+</div>

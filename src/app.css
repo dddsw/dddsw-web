@@ -1,6 +1,48 @@
 @layer theme, base, components, utilities;
 @import 'tailwindcss/utilities.css' layer(utilities);
 
+@plugin "daisyui" {
+	root: '.daisyui';
+	include: button, menu, navbar, drawer;
+	themes: false;
+}
+
+@plugin "daisyui/theme" {
+	root: '.daisyui';
+	name: 'light';
+	prefersdark: false;
+	color-scheme: 'light';
+
+	--color-base-100: oklch(98% 0.016 73.684);
+	--color-base-200: oklch(95% 0.038 75.164);
+	--color-base-300: oklch(90% 0.076 70.697);
+
+	--color-primary: #ff9930;
+	--color-primary-content: oklch(27% 0.077 45.635);
+	--color-secondary: #30ff99;
+	--color-secondary-content: oklch(26% 0.051 172.552);
+	--color-accent: #9930ff;
+	--color-accent-content: oklch(97% 0.014 308.299);
+}
+
+@plugin "daisyui/theme" {
+	root: '.daisyui';
+	name: 'dark';
+	prefersdark: true;
+	color-scheme: 'dark';
+
+	--color-base-100: oklch(14% 0.005 285.823);
+	--color-base-200: oklch(14% 0.004 49.25);
+	--color-base-300: oklch(26% 0.079 36.259);
+
+	--color-primary: #ff9930;
+	--color-primary-content: oklch(27% 0.077 45.635);
+	--color-secondary: #30ff99;
+	--color-secondary-content: oklch(26% 0.051 172.552);
+	--color-accent: #9930ff;
+	--color-accent-content: oklch(97% 0.014 308.299);
+}
+
 @font-face {
 	font-family: Roboto;
 	src: url('/Good Times Rg.otf');
@@ -27,11 +69,6 @@ html {
 }
 
 /* BUILDING BLOCKS */
-
-.container {
-	display: flex;
-	flex-direction: column;
-}
 
 .section {
 	width: 90%;
