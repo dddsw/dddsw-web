@@ -17,7 +17,7 @@
 		{
 			title: 'Help us on the day',
 			icon: 'volunteer_activism',
-			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our LinkedIn feed for volunteering opportunities or email us at <a href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a>.`
+			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our LinkedIn feed for volunteering opportunities or email us at <a class="link" href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a>.`
 		}
 	];
 

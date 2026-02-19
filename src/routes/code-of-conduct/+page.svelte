@@ -130,8 +130,10 @@
 		<p>
 			This anti-harassment policy is based on the example policy from the Geek Feminism wiki,
 			created by the Ada Initiative and other volunteers.
-			<a href="https://geekfeminism.fandom.com/wiki/Conference_anti-harassment" target="_blank"
-				>Geek Feminism Conference Anti-Harassment Policy</a>
+			<a
+				class="link"
+				href="https://geekfeminism.fandom.com/wiki/Conference_anti-harassment"
+				target="_blank">Geek Feminism Conference Anti-Harassment Policy</a>
 		</p>
 	</div>
 </div>

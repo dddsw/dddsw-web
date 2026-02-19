@@ -23,18 +23,21 @@
 			entrance by Bristol Temple Meads railway station and go upstairs by using the flight of stairs
 			or the lift. There will be a banner outside and volunteer crew members to greet you as you
 			enter the first floor.
-			<a href="https://engine-shed.co.uk/engine-shed-virtual-tour/" target="_blank">
+			<a class="link" href="https://engine-shed.co.uk/engine-shed-virtual-tour/" target="_blank">
 				You can take a virtual tour of the Engine Shed here</a>
-			or <a href="/venue-layout">see the room layout here</a>.
+			or <a class="link" href="/venue-layout">see the room layout here</a>.
 		</p>
 		<p>
 			During sessions the communal areas (<a
+				class="link"
 				href="https://engine-shed.co.uk/spaces/the-lounge/"
 				target="_blank">Members Lounge</a>
-			and <a href="https://engine-shed.co.uk/spaces/platform-14/" target="_blank">Platform 14</a>)
-			have some places to sit and relax though they can be noisy as sound carries from the sessions.
-			During breaks and lunch these areas will get busy but the session rooms are still open if you
-			need a quieter place to sit.
+			and
+			<a class="link" href="https://engine-shed.co.uk/spaces/platform-14/" target="_blank"
+				>Platform 14</a
+			>) have some places to sit and relax though they can be noisy as sound carries from the
+			sessions. During breaks and lunch these areas will get busy but the session rooms are still
+			open if you need a quieter place to sit.
 		</p>
 		<h2>Map</h2>
 		<iframe

@@ -28,7 +28,7 @@
 			icon: 'storefront',
 			paragraph: `DDD South West would not be possible without the help from our generous sponsors. If you're
 				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please <a href="/sponsorship">consider sponsoring us.</a>`
+				need for your technical roles please <a class= "link" href="/sponsorship">consider sponsoring us.</a>`
 		}
 	];
 </script>
@@ -48,7 +48,9 @@
 			the community, for the community. We are dedicated to providing a safe and welcoming
 			conference experience for everyone.
 		</p>
-		<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
+		<p>
+			Please refer to our <a class="link" href="/code-of-conduct">Code of Conduct</a> for more information.
+		</p>
 	</div>
 </div>
 

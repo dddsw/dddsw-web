@@ -10,9 +10,9 @@
 			As an inclusive, and community-driven conference we want to encourage everyone to share their
 			experiences and knowledge. By running a new speakers workshop we hope to encourage those
 			voices we haven't heard form yet.<br /><br />
-			If you are a new or inexperienced speakers submit your talk and register interest in attending
-			here:
-			<a href="https://sessionize.com/ddd-south-west-2025/" target="_blank">Call for Speakers</a>
+			If you are a new or inexperienced speakers submit your talk and register interest in attending here:
+			<a class="link" href="https://sessionize.com/ddd-south-west-2025/" target="_blank"
+				>Call for Speakers</a>
 		</p>
 		<p><b>Time and Date: </b>Saturday 23rd March - 9.30am - 4.30pm</p>
 		<div class="workshop-thumbnail">
@@ -44,9 +44,9 @@
 			programming language. He's presented talks about technology and software development at
 			conferences and events all over the world, and online videos of his presentations have been
 			viewed more than five million times. Dylan is online at
-			<a href="https://dylanbeattie.net/" target="_blank">https://dylanbeattie.net/</a>
+			<a class="link" href="https://dylanbeattie.net/" target="_blank">https://dylanbeattie.net/</a>
 			and on Twitter as
-			<a href="https://twitter.com/dylanbeattie" target="_blank">@dylanbeattie</a>.
+			<a class="link" href="https://twitter.com/dylanbeattie" target="_blank">@dylanbeattie</a>.
 		</p>
 		<h3>Requirements</h3>
 		<p></p>
@@ -61,6 +61,7 @@
 		<h2>Venue</h2>
 		<p>
 			DDD South West 2024 New Speakers Workshop will be held at <a
+				class="link"
 				href="https://www.watershed.co.uk/"
 				target="_blank">Watershed</a>
 			located at the following address: <br />
@@ -89,25 +90,32 @@
 		<p>
 			The nearest bus stops to Watershed are on 'The Centre', no more than a 2 minute walk away.<br />
 			Plan your journey by bus at
-			<a href="https://journeyplanner.travelwest.info/" target="_blank">travelwest.info</a>.
+			<a class="link" href="https://journeyplanner.travelwest.info/" target="_blank"
+				>travelwest.info</a
+			>.
 		</p>
 
 		<h3>By train</h3>
 		<p>
 			Bristol Temple Meads is the nearest train station and is
-			<a href="https://maps.app.goo.gl/S24zEgWSAtxChJtA9" target="_blank"
+			<a class="link" href="https://maps.app.goo.gl/S24zEgWSAtxChJtA9" target="_blank"
 				>10 minutes by public transport</a>
 			links or a
-			<a href="https://maps.app.goo.gl/mkTZJavUbFUrynvZ8" target="_blank">20 minute walk</a> to Watershed.
+			<a class="link" href="https://maps.app.goo.gl/mkTZJavUbFUrynvZ8" target="_blank"
+				>20 minute walk</a> to Watershed.
 		</p>
 
 		<h3>By car</h3>
 		<p>
-			The closest car parks are <a href="https://www.millenniumsquarecarpark.co.uk/" target="_blank"
-				>Millennium Square Car Park</a>
+			The closest car parks are <a
+				class="link"
+				href="https://www.millenniumsquarecarpark.co.uk/"
+				target="_blank">Millennium Square Car Park</a>
 			and
-			<a href="http://en.parkopedia.co.uk/parking/trenchard_st_bristol/" target="_blank"
-				>Trenchard Street NCP parking</a
+			<a
+				class="link"
+				href="http://en.parkopedia.co.uk/parking/trenchard_st_bristol/"
+				target="_blank">Trenchard Street NCP parking</a
 			>.<br />
 			There are two Blue Badge parking spaces to the rear of Watershed on Canons Road.
 		</p>
@@ -122,17 +130,22 @@
 		<p>The nearest hotels are:</p>
 		<ul>
 			<li>
-				<a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-bristol" target="_blank"
-					>Radisson Blue Hotel</a
+				<a
+					class="link"
+					href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-bristol"
+					target="_blank">Radisson Blue Hotel</a
 				>: Broad Quay, Bristol BS1 4BY
 			</li>
 			<li>
-				<a href="https://www.doylecollection.com/hotels/the-bristol-hotel" target="_blank"
-					>The Bristol Hotel</a
+				<a
+					class="link"
+					href="https://www.doylecollection.com/hotels/the-bristol-hotel"
+					target="_blank">The Bristol Hotel</a
 				>: Prince St, Bristol BS1 4QF
 			</li>
 			<li>
 				<a
+					class="link"
 					href="https://www.marriott.com/en-us/hotels/brsry-bristol-marriott-royal-hotel/overview"
 					target="_blank">Bristol Marriott Royal</a
 				>: College Green, Bristol BS1 5TA

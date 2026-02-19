@@ -27,28 +27,28 @@ if (get(Milestone.OpenCallForSpeakers)?.hasHappened)
 	currentUpdate = `Call for speakers is <strong class="emphasis">open until ${get(Milestone.CloseCallForSpeakers)!.formattedDate}</strong>.
 		    We are a friendly developers conference and welcome papers from speakers both old and new.
 		    So whether you have an established talk you'd like to bring to Bristol or an idea you'd like help developing,
-		    <a href="${sessionizePublicUiUrl}">submit your talk now</a>.`;
+		    <a class="link" href="${sessionizePublicUiUrl}">submit your talk now</a>.`;
 
 if (get(Milestone.CloseCallForSpeakers)?.hasHappened)
 	currentUpdate = `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`;
 
 if (get(Milestone.OpenSessionVoting)?.hasHappened)
-	currentUpdate = `Session voting is now open! Take a look and <a href="${votingUrl}">vote for your favourites here</a>.<br>Voting will close on ${get(Milestone.CloseSessionVoting)!.formattedDate}.`;
+	currentUpdate = `Session voting is now open! Take a look and <a class="link" href="${votingUrl}">vote for your favourites here</a>.<br>Voting will close on ${get(Milestone.CloseSessionVoting)!.formattedDate}.`;
 
 if (get(Milestone.CloseSessionVoting)?.hasHappened)
 	currentUpdate = `Session voting has closed, hold tight - ticket registration will be opening on ${get(Milestone.AnnounceScheduleAndOpenTicketRegistration)!.formattedDate}`;
 
 if (get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened)
-	currentUpdate = `Speakers have been announced and the schedule is live! <a href="/schedule">Check full schedule details here</a>. Get your tickets from <a href="${ticketTailorUrl}">Ticket Tailor</a>.`;
+	currentUpdate = `Speakers have been announced and the schedule is live! <a class="link" href="/schedule">Check full schedule details here</a>. Get your tickets from <a class="link" href="${ticketTailorUrl}">Ticket Tailor</a>.`;
 
 if (get(Milestone.SoldOut)?.hasHappened)
-	currentUpdate = `The day is fast approaching, we're fully sold out but you can still join the waitlist on <a href="${ticketTailorUrl}">Ticket Tailor</a>.`;
+	currentUpdate = `The day is fast approaching, we're fully sold out but you can still join the waitlist on <a class="link" href="${ticketTailorUrl}">Ticket Tailor</a>.`;
 
 if (get(Milestone.FoundMoreTickets)?.hasHappened)
-	currentUpdate = `Good news - some tickets have become available! Go to <a href="${ticketTailorUrl}">Ticket Tailor</a> to grab one before they go.`;
+	currentUpdate = `Good news - some tickets have become available! Go to <a class="link" href="${ticketTailorUrl}">Ticket Tailor</a> to grab one before they go.`;
 
 if (get(Milestone.TheActualEventDay)?.hasHappened)
-	currentUpdate = `Today is the day! See you at Engine Shed and be sure to use <a href="${pocketdddUrl}">Pocket DDD</a> to give feedback to our wonderful speakers`;
+	currentUpdate = `Today is the day! See you at Engine Shed and be sure to use <a class="link" href="${pocketdddUrl}">Pocket DDD</a> to give feedback to our wonderful speakers`;
 
 if (get(Milestone.ConkedOut)?.hasHappened)
 	currentUpdate = `Thank you to everyone for another great DDD South West. See you in ${eventYear + 1} 😉`;

@@ -66,7 +66,8 @@
 		</p>
 		<p>
 			We are looking for sponsors for DDD South West {eventYear}. If you or your company would like
-			to become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
+			to become a sponsor please
+			<a class="link" href="mailto:sponsorship@dddsouthwest.com">email us.</a>
 			We have various options available, or we can arrange a custom package for you.
 		</p>
 	</div>

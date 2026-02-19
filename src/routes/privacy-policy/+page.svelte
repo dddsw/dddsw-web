@@ -13,16 +13,24 @@
 		</p>
 
 		<ul>
-			<li><a href="#contact-details">Contact details</a></li>
-			<li><a href="#what-information">What information we collect, use, and why</a></li>
-			<li><a href="#lawful-bases">Lawful bases and data protection rights</a></li>
-			<li><a href="#personal-information-source">Where we get personal information from</a></li>
-			<li><a href="#retention">How long we keep information</a></li>
-			<li><a href="#complaints">How to complain</a></li>
+			<li><a class="link" href="#contact-details">Contact details</a></li>
+			<li>
+				<a class="link" href="#what-information">What information we collect, use, and why</a>
+			</li>
+			<li><a class="link" href="#lawful-bases">Lawful bases and data protection rights</a></li>
+			<li>
+				<a class="link" href="#personal-information-source"
+					>Where we get personal information from</a>
+			</li>
+			<li><a class="link" href="#retention">How long we keep information</a></li>
+			<li><a class="link" href="#complaints">How to complain</a></li>
 		</ul>
 
 		<h3 id="contact-details">Contact details</h3>
-		<p>Email: <a href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a></p>
+		<p>
+			Email: <a class="link" href="mailto:management@dddsouthwest.com"
+				>management@dddsouthwest.com</a>
+		</p>
 
 		<h3 id="what-information">What information we collect, use, and why</h3>
 		<p>We collect or use the following personal information to provide updates and share news:</p>
@@ -45,7 +53,8 @@
 		<p>
 			Under UK data protection law, we must have a “lawful basis” for collecting and using your
 			personal information. There is a list of possible lawful bases in the UK GDPR. You can find
-			out more about lawful bases on the <a href="https://ico.org.uk">ICO’s website</a>.
+			out more about lawful bases on the <a class="link" href="https://ico.org.uk">ICO’s website</a
+			>.
 		</p>
 		<p>
 			To make a data protection rights request, please contact us using the contact details at the
@@ -88,7 +97,7 @@
 			Cheshire<br />
 			SK9 5AF<br />
 			Helpline number: 0303 123 1113<br />
-			Website: <a href="https://www.ico.org.uk/make-a-complaint">ICO Complaints</a>
+			Website: <a class="link" href="https://www.ico.org.uk/make-a-complaint">ICO Complaints</a>
 		</address>
 
 		<p>Last updated: 29 December 2024</p>
