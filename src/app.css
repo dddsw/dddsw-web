@@ -1,5 +1,4 @@
-@layer theme, base, components, utilities;
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import 'tailwindcss';
 
 @plugin "daisyui" {
 	/* include: button, menu, navbar, drawer;
@@ -34,6 +33,15 @@
 	--color-warning-content: oklch(41% 0.112 45.904);
 	--color-error: oklch(70% 0.191 22.216);
 	--color-error-content: oklch(39% 0.141 25.723);
+
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
 }
 
 @plugin "daisyui/theme" {
@@ -63,6 +71,15 @@
 	--color-warning-content: oklch(13.316% 0.031 58.318);
 	--color-error: oklch(65.72% 0.199 27.33);
 	--color-error-content: oklch(13.144% 0.039 27.33);
+
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
 }
 
 @font-face {

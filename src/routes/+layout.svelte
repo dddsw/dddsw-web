@@ -19,7 +19,7 @@
 
 <Header {isHomepage} />
 
-<main class="container">
+<main>
 	{@render children?.()}
 </main>
 
