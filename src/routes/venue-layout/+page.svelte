@@ -155,8 +155,6 @@
 		z-index: 100;
 	}
 	.zoom-button {
-		background-color: white;
-		border-color: var(--contrast-color);
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 3px;
@@ -178,8 +176,6 @@
 		z-index: 100;
 	}
 	.track-button {
-		background-color: white;
-		border-color: var(--primary-color);
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 5px;
@@ -193,7 +189,6 @@
 
 	.map-wrapper {
 		align-items: center;
-		border-color: black;
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 1px;
@@ -216,11 +211,5 @@
 	 * want these styles to be marked as unused and stripped out */
 	:global .display-path {
 		display: inline !important;
-	}
-	:global .selected-room {
-		fill: #fbffbe !important;
-	}
-	:global .track-button-selected {
-		background-color: #fbffbe !important;
 	}
 </style>

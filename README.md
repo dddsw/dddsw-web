@@ -65,27 +65,9 @@ Make sure to run the lint/format commands, and the Playwright tests! :)
 - The Svelte components contain the Typescript (`<script>`), CSS (`<style>`), and Markup (`<div> etc.`).
 - For the content pages, the page title is set via a store. Just import the pageTitle store and call `pageTitle.set('Sponsorship');`.
 
-### CSS classes
+### CSS
 
-Global styles live under `static\global.css`. All other styles live in the Svelte component in the `<style>` tag.
-
-There are some shared classes which can be reused across the content pages:
-
-Background colour classes to set the sections to the predefined colours:
-
-```html
-<div class="primary-bg">...</div>
-```
-
-`.section` to provide a basic responsive section:
-
-```html
-<div class="secondary-bg">
-	<div class="section">
-		<!-- add content here -->
-	</div>
-</div>
-```
+Use Tailwind and DaisyUI.
 
 ### Tests
 

@@ -37,11 +37,11 @@
 	<Sponsors />
 {/if}
 
-<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
+<div>
 	<CallToActions {keyPoints} />
 </div>
 
-<div class="quaternary-bg">
+<div>
 	<div class="section">
 		<p>
 			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
@@ -52,7 +52,7 @@
 	</div>
 </div>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<Timeline />
 	</div>

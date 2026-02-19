@@ -43,27 +43,20 @@
 </script>
 
 <nav class:nav-absolute={isAbsolute}>
-	<button class="unset main-nav-button" onclick={toggleNav}>
-		<span class="nav-button-text">Find out more</span>
-
-		<span class="material-symbols-outlined icon">
-			{#if $navExpanded}
-				expand_less
-			{:else}
-				expand_more
-			{/if}
-		</span>
-	</button>
+	<button class="btn btn-outline btn-primary btn-xl" onclick={toggleNav}>Menu</button>
 	{#if $navExpanded}
 		<div>
-			<div class="nav-link-container" class:nav-link-container-absolute={!isAbsolute}>
+			<div
+				class="bg-neutral text-neutral-content nav-link-container"
+				class:nav-link-container-absolute={!isAbsolute}>
 				{#each navItems as navItem}
 					{#if navItem.show}
 						<a
 							href={navItem.href}
 							onclick={toggleNav}
 							class="nav-link"
-							class:isActivePage={navItem.href === currentPage}>
+							class:bg-secondary={navItem.href === currentPage}
+							class:text-secondary-content={navItem.href === currentPage}>
 							{navItem.text}
 						</a>
 					{/if}
@@ -87,7 +80,6 @@
 	}
 
 	nav a {
-		color: black;
 		text-decoration: none;
 	}
 
@@ -106,10 +98,6 @@
 		cursor: pointer;
 	}
 
-	.nav-link-container {
-		background-color: white;
-	}
-
 	.nav-link-container-absolute {
 		position: absolute;
 		right: 30px;
@@ -120,23 +108,6 @@
 		padding: 10px;
 		border: 1px solid lightgrey;
 		display: block;
-	}
-
-	.nav-link,
-	.main-nav-button {
-		background-color: white;
-		color: black;
-	}
-
-	.isActivePage {
-		background-color: rgba(255, 153, 48, 0.8);
-		color: black;
-	}
-
-	.nav-link:hover,
-	.main-nav-button:hover {
-		background-color: var(--primary-color);
-		color: black;
 	}
 
 	.nav-button-text {

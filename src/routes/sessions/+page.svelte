@@ -57,7 +57,7 @@
 	}
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>
 			{isProposedSessions ? 'Proposed' : ''}
@@ -120,12 +120,9 @@
 	.speaker-name {
 		padding: 5px;
 		margin-right: 5px;
-		color: black;
-		background-color: var(--primary-color);
 	}
 
 	.speaker-name:hover {
-		color: white;
 		cursor: pointer;
 	}
 

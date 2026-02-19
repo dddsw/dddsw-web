@@ -3,7 +3,7 @@
 	pageTitle.set('The 2025 Venue');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Address</h2>
 		<p>
@@ -46,7 +46,7 @@
 	</div>
 </div>
 
-<div class="tertiary-bg">
+<div>
 	<div class="section">
 		<h2>Travel</h2>
 		<h3>By train</h3>
@@ -77,17 +77,6 @@
 			list of how to get to the venue, other routes (and hotels) are available.</sub>
 	</div>
 </div>
-
-<!-- <div class="secondary-bg">
-	<div class="section">
-		<h2>Covid policy</h2>
-		<p>
-			We will not be operating a mask or distancing policy at DDD South West 2025, but attendees are
-			welcome to wear a mask if desired. Please respect others who choose to wear masks as they may
-			be vulnerable. Hand sanitiser will be available around the venue.
-		</p>
-	</div>
-</div> -->
 
 <style>
 	iframe {

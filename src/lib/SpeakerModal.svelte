@@ -82,15 +82,12 @@
 	}
 
 	.modal-button {
-		background-color: var(--primary-color);
-		color: black;
 		padding: 10px;
 		border: none;
 		font-size: 1.5rem;
 	}
 
 	.modal-button:hover {
-		color: white;
 		cursor: pointer;
 	}
 </style>

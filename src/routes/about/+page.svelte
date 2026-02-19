@@ -57,7 +57,7 @@
 	pageTitle.set('About');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>What to expect</h2>
 		<p>
@@ -69,7 +69,7 @@
 	</div>
 </div>
 
-<div class="tertiary-bg">
+<div>
 	<div class="section team-section">
 		<h2>Meet the team</h2>
 		<p>
@@ -85,16 +85,16 @@
 					<span>
 						{#if member.bsky}
 							<a href="https://bsky.app/profile/{member.bsky}" target="_blank">
-								<i class="fa-brands fa-bluesky fa-2x icon" title="{member.name} BlueSky"></i>
+								<i class="fa-brands fa-bluesky fa-2x" title="{member.name} BlueSky"></i>
 							</a>
 						{/if}
 						{#if member.linkedIn}
 							<a href="https://www.linkedin.com/in/{member.linkedIn}" target="_blank">
-								<i class="fa-brands fa-linkedin fa-2x icon" title="{member.name} LinkedIn"></i>
+								<i class="fa-brands fa-linkedin fa-2x" title="{member.name} LinkedIn"></i>
 							</a>
 						{/if}
 						<a href="mailto:{member.email}">
-							<i class="fa-regular fa-envelope fa-2x icon" title="{member.name} email"></i>
+							<i class="fa-regular fa-envelope fa-2x" title="{member.name} email"></i>
 						</a>
 					</span>
 				</div>
@@ -103,7 +103,7 @@
 	</div>
 </div>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Get involved</h2>
 		<p>DDD South West is a community event and there are several ways you can get involved:</p>
@@ -136,14 +136,6 @@
 
 	.team-section {
 		flex-grow: 1;
-	}
-
-	.icon {
-		color: black;
-	}
-
-	.icon:hover {
-		color: var(--primary-color);
 	}
 
 	@media (min-width: 992px) {

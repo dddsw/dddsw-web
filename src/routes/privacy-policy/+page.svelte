@@ -3,7 +3,7 @@
 	pageTitle.set('Privacy Policy');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Privacy Policy</h2>
 		<p class="emphasis">

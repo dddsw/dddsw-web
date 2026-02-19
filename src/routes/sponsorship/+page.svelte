@@ -38,7 +38,12 @@
 
 {#snippet displayItems(items: Item[])}
 	{#each items as item}
-		<div class="primary-bg option-small boop-effect" class:claimed={item.claimed}>
+		<div
+			class="text-primary-content option-small boop-effect"
+			class:bg-primary={!item.claimed}
+			class:text-primary-content={!item.claimed}
+			class:bg-neutral={item.claimed}
+			class:text-neutral-content={item.claimed}>
 			<h3>{item.title}</h3>
 			{#if item.description}
 				<span class="item-description">{item.description}</span>
@@ -52,7 +57,7 @@
 	{/each}
 {/snippet}
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Sponsorship opportunities</h2>
 		<p>
@@ -66,11 +71,11 @@
 		</p>
 	</div>
 </div>
-<div class="tertiary-bg">
+<div>
 	<div class="section">
 		<h2>Packages</h2>
 		<div class="options-container">
-			<div class="primary-bg option boop-effect">
+			<div class="bg-primary text-primary-content option boop-effect">
 				<h3>Supporter</h3>
 				<ul>
 					<li>Your logo on our website</li>
@@ -79,7 +84,7 @@
 				</ul>
 				<span class="price">£600</span>
 			</div>
-			<div class="primary-bg option boop-effect">
+			<div class="bg-primary text-primary-content option boop-effect">
 				<h3>Exhibitor</h3>
 				Everything in Supporter tier, plus:
 				<ul>
@@ -143,7 +148,6 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		background-color: var(--quinary-color);
 	}
 
 	.option-small {
@@ -173,10 +177,6 @@
 		font-size: 1.5rem;
 		font-weight: bold;
 		margin: 5px;
-	}
-
-	.claimed {
-		background-color: lightgrey;
 	}
 
 	.item-description {

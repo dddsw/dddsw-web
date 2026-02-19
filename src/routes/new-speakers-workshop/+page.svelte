@@ -3,7 +3,7 @@
 	pageTitle.set('New Speakers Workshop');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>About</h2>
 		<p>
@@ -56,7 +56,7 @@
 		</ul>
 	</div>
 </div>
-<div class="tertiary-bg">
+<div>
 	<div class="section">
 		<h2>Venue</h2>
 		<p>
@@ -82,7 +82,7 @@
 	</div>
 </div>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Travel</h2>
 		<h3>By bus</h3>
@@ -146,7 +146,7 @@
 	</div>
 </div>
 
-<div class="tertiary-bg">
+<div>
 	<div class="section">
 		<h2>Covid policy</h2>
 		<p>

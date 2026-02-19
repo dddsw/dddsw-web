@@ -21,7 +21,7 @@
 </script>
 
 <header>
-	<div class="bg header">
+	<div class="header">
 		<a href="/" class="logo-link" onclick={toggleNav}>
 			<!-- For a11y purposes, the alt text on the image is the destination of the link - see https://www.w3.org/WAI/tutorials/images/functional/-->
 			<img src="images/the_mighty_cow_white.svg" alt="DDD South West home" class="logo" />
@@ -47,16 +47,10 @@
 </header>
 
 <style>
-	.bg {
-		background: rgb(255, 153, 48);
-		background: linear-gradient(90deg, rgba(255, 153, 48, 1) 50%, var(--quinary-color) 100%);
-	}
-
 	.header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		color: white;
 	}
 
 	.header h1 {

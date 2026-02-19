@@ -26,7 +26,7 @@
 </script>
 
 {#if showBanner}
-	<div class="tertiary-bg">
+	<div>
 		<div class="section">
 			<p>
 				To bookmark sessions, submit feedback and enter the prize draw,
@@ -41,7 +41,7 @@
 	</div>
 {/if}
 
-<div class="secondary-bg">
+<div>
 	<div id="schedule"></div>
 	<p class="text-center">Please note the schedule is subject to change.</p>
 </div>

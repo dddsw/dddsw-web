@@ -3,7 +3,7 @@
 	pageTitle.set('Code of Conduct');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Code of Conduct</h2>
 		<p class="emphasis">

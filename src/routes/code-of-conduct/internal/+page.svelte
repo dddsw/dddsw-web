@@ -3,7 +3,7 @@
 	pageTitle.set('Internal Code of Conduct Policy');
 </script>
 
-<div class="secondary-bg">
+<div>
 	<div class="section">
 		<h2>Warnings</h2>
         <p>

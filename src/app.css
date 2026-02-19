@@ -1,6 +1,59 @@
 @layer theme, base, components, utilities;
 @import 'tailwindcss/utilities.css' layer(utilities);
 
+@plugin "daisyui" {
+	/* include: button, menu, navbar, drawer;
+	themes: false; */
+	themes: 'light-dddsw', 'dark-dddsw';
+}
+
+@plugin "daisyui/theme" {
+	name: 'light-dddsw';
+	default: true;
+	prefersdark: false;
+	color-scheme: 'light';
+
+	--color-base-100: oklch(98% 0.016 73.684);
+	--color-base-200: oklch(95% 0.038 75.164);
+	--color-base-300: oklch(90% 0.076 70.697);
+
+	--color-primary: #ff9930;
+	--color-primary-content: oklch(27% 0.077 45.635);
+	--color-secondary: #30ff99;
+	--color-secondary-content: oklch(26% 0.051 172.552);
+	--color-accent: #9930ff;
+	--color-accent-content: oklch(97% 0.014 308.299);
+}
+
+@plugin "daisyui/theme" {
+	name: 'dark-dddsw';
+	default: false;
+	prefersdark: true;
+	color-scheme: 'dark';
+
+	--color-base-100: oklch(21% 0.006 56.043);
+	--color-base-200: oklch(14% 0.004 49.25);
+	--color-base-300: oklch(0% 0 0);
+
+	--color-base-content: oklch(84.955% 0 0);
+	--color-primary: oklch(77.48% 0.204 60.62);
+	--color-primary-content: oklch(19.693% 0.004 196.779);
+	--color-secondary: oklch(45.98% 0.248 305.03);
+	--color-secondary-content: oklch(89.196% 0.049 305.03);
+	--color-accent: oklch(64.8% 0.223 136.073);
+	--color-accent-content: oklch(0% 0 0);
+	--color-neutral: oklch(24.371% 0.046 65.681);
+	--color-neutral-content: oklch(84.874% 0.009 65.681);
+	--color-info: oklch(54.615% 0.215 262.88);
+	--color-info-content: oklch(90.923% 0.043 262.88);
+	--color-success: oklch(62.705% 0.169 149.213);
+	--color-success-content: oklch(12.541% 0.033 149.213);
+	--color-warning: oklch(66.584% 0.157 58.318);
+	--color-warning-content: oklch(13.316% 0.031 58.318);
+	--color-error: oklch(65.72% 0.199 27.33);
+	--color-error-content: oklch(13.144% 0.039 27.33);
+}
+
 @font-face {
 	font-family: Roboto;
 	src: url('/Good Times Rg.otf');
@@ -14,16 +67,6 @@ body {
 
 html {
 	height: 100%;
-}
-
-/* GLOBAL COLOUR PALETTE */
-:root {
-	--primary-color: #ff9930;
-	--secondary-color: white;
-	--tertiary-color: #eaeaea;
-	--quaternary-color: #96c6ca;
-	--quinary-color: #ffc13a;
-	--contrast-color: #3096ff;
 }
 
 /* BUILDING BLOCKS */
@@ -52,24 +95,6 @@ html {
 	}
 }
 
-/* BG COLOUR  */
-
-.primary-bg {
-	background-color: var(--primary-color);
-}
-
-.secondary-bg {
-	background-color: var(--secondary-color);
-}
-
-.tertiary-bg {
-	background-color: var(--tertiary-color);
-}
-
-.quaternary-bg {
-	background-color: var(--quaternary-color);
-}
-
 /* TYPOGRAPHY */
 
 @media (min-width: 1400px) {
@@ -94,14 +119,6 @@ html {
 
 .unset {
 	all: unset;
-}
-
-/* A11Y FOCUS */
-
-.unset:focus-visible,
-:focus-visible {
-	outline: 3px solid var(--contrast-color);
-	box-shadow: 0 0 0 6px var(--secondary-color);
 }
 
 /* ANIMATIONS */
