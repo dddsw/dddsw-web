@@ -23,4 +23,4 @@
 	{@render children?.()}
 </main>
 
-<Footer {isHomepage} />
+<Footer />
