@@ -19,7 +19,7 @@
 
 <Header {isHomepage} />
 
-<main>
+<main class="px:4 md:w-3/4 max-w-4xl place-self-center">
 	{@render children?.()}
 </main>
 

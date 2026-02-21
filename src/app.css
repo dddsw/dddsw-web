@@ -97,32 +97,6 @@ html {
 	height: 100%;
 }
 
-/* BUILDING BLOCKS */
-
-.container {
-	display: flex;
-	flex-direction: column;
-}
-
-.section {
-	width: 90%;
-	margin: auto;
-	padding-bottom: 10px;
-}
-
-@media (min-width: 768px) {
-	.section {
-		width: 70%;
-	}
-}
-
-@media (min-width: 1800px) {
-	.section {
-		width: 50%;
-		padding-bottom: 20px;
-	}
-}
-
 /* TYPOGRAPHY */
 
 @media (min-width: 1400px) {
