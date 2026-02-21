@@ -1,25 +1,8 @@
 <script lang="ts">
 	import CallToActions from '$lib/CallToActions.svelte';
-	import type { KeyPoint } from '../../types/KeyPoint.type';
+	import KeyPoint from '$lib/KeyPoint.svelte';
+	import MaterialIcon from '$lib/MaterialIcon.svelte';
 	import { pageTitle } from '../../stores.js';
-
-	let keyPoints: KeyPoint[] = [
-		{
-			title: 'Spread the word',
-			icon: 'campaign',
-			paragraph: `Sharing our social media posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
-		},
-		{
-			title: 'Speak at our event',
-			icon: 'record_voice_over',
-			paragraph: `We're looking for people to speak at our event! We aim to offer a broad range of talks in our schedule and we'd love to include topics such as mental health, neurodiversity, and inclusivity in tech. Lightning talk submissions are also very welcome.`
-		},
-		{
-			title: 'Help us on the day',
-			icon: 'volunteer_activism',
-			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our LinkedIn feed for volunteering opportunities or email us at <a class="link" href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a>.`
-		}
-	];
 
 	let teamMembers = [
 		{
@@ -109,7 +92,42 @@
 		<p>DDD South West is a community event and there are several ways you can get involved:</p>
 	</div>
 
-	<CallToActions {keyPoints} />
+	<CallToActions>
+		<KeyPoint title="Spread the word">
+			{#snippet icon()}
+				<MaterialIcon iconName="campaign" />
+			{/snippet}
+			{#snippet paragraph()}
+				Sharing our social media posts will help us reach new attendees, speakers, and potential
+				sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the
+				team.
+			{/snippet}
+		</KeyPoint>
+
+		<KeyPoint title="Speak at our event" iconOnRight="true">
+			{#snippet icon()}
+				<MaterialIcon iconName="record_voice_over" />
+			{/snippet}
+			{#snippet paragraph()}
+				We're looking for people to speak at our event! We aim to offer a broad range of talks in
+				our schedule and we'd love to include topics such as mental health, neurodiversity, and
+				inclusivity in tech. Lightning talk submissions are also very welcome.
+			{/snippet}
+		</KeyPoint>
+
+		<KeyPoint title="Help us on the day">
+			{#snippet icon()}
+				<MaterialIcon iconName="volunteer_activism" />
+			{/snippet}
+			{#snippet paragraph()}
+				With the increasing popularity of our event we may need extra help on the day. Keep an eye
+				on our LinkedIn feed for volunteering opportunities or email us at <a
+					class="link"
+					href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a
+				>.
+			{/snippet}
+		</KeyPoint>
+	</CallToActions>
 </div>
 
 <style>
