@@ -43,8 +43,8 @@
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
-			confirmed: false,
-			tier: 'supporter',
+			confirmed: true,
+			tier: 'exhibitor',
 			order: 1
 		},
 		{
