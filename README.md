@@ -103,3 +103,10 @@ Pre-commit hooks are managed by [Husky](https://typicode.github.io/husky/get-sta
 To run pre-commit hooks without committing, stage all your changes and then execute the `.husky/pre-commit` file.
 
 To commit but skip pre-commit hooks, run `git commit -m "my amazing commit message" --no-verify`
+
+### Common issues
+
+#### It works fine locally but doesn't deploy
+
+- Check that the `@sveltejs/adapter-auto` package is up to date
+- Check that the Node version is LTS
