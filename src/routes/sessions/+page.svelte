@@ -65,8 +65,9 @@
 		</h2>
 		{#if sessions}
 			{#if isProposedSessions && get(Milestone.OpenSessionVoting)?.hasHappened && get(Milestone.CloseSessionVoting)?.hasNotHappened}
-				Voting is open now, take a look and <a href={votingUrl}>vote for your favourites here</a>.
-				Voting will close on {get(Milestone.CloseSessionVoting)!.formattedDate}.
+				Voting is open now, take a look and <a href={votingUrl} target="_blank"
+					>vote for your favourites here</a
+				>. Voting will close on {get(Milestone.CloseSessionVoting)!.formattedDate}.
 			{/if}
 			<p>The sessions below are presented in alphabetical order of the session title.</p>
 			{#each sessions as session}

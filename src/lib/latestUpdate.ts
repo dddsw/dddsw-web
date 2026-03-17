@@ -33,7 +33,7 @@ if (get(Milestone.CloseCallForSpeakers)?.hasHappened)
 	currentUpdate = `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`;
 
 if (get(Milestone.OpenSessionVoting)?.hasHappened)
-	currentUpdate = `Session voting is now open! Take a look and <a href="${votingUrl}">vote for your favourites here</a>.<br>Voting will close on ${get(Milestone.CloseSessionVoting)!.formattedDate}.`;
+	currentUpdate = `Session voting is now open! Take a look and <a href="${votingUrl}" target="_blank">vote for your favourites here</a>.<br>Voting will close on ${get(Milestone.CloseSessionVoting)!.formattedDate}.`;
 
 if (get(Milestone.CloseSessionVoting)?.hasHappened)
 	currentUpdate = `Session voting has closed, hold tight - ticket registration will be opening on ${get(Milestone.AnnounceScheduleAndOpenTicketRegistration)!.formattedDate}`;
