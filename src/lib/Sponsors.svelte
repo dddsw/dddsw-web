@@ -69,7 +69,7 @@
 			src: '../images/sponsors/flagstone.png',
 			confirmed: true,
 			tier: 'supporter',
-			order: 1
+			order: 2
 		},
 		{
 			name: 'JetBrains',
@@ -83,7 +83,7 @@
 			name: 'NDC Conferences',
 			href: 'https://ndcconferences.com/',
 			src: '../images/sponsors/ndc.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'supporter',
 			order: 1
 		},
