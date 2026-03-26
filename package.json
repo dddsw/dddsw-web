@@ -14,7 +14,8 @@
 		"lint": "prettier --check . & eslint .",
 		"lint:fix:all": "eslint --fix . & prettier --write .",
 		"lint:fix:staged": "npx lint-staged",
-		"prepare": "husky && svelte-kit sync"
+		"prepare": "husky && svelte-kit sync",
+		"test:unit": "vitest run"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "4.11.1",
@@ -41,6 +42,7 @@
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.58.1",
 		"vite": "8.0.7",
+		"vitest": "^4.1.1",
 		"wrangler": "4.81.0"
 	},
 	"type": "module",
