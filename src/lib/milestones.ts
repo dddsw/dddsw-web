@@ -1,4 +1,4 @@
-enum Status {
+export enum Status {
 	Done,
 	NotYet,
 	JustYouWait
@@ -18,25 +18,34 @@ export enum Milestone {
 	ConkedOut
 }
 
+const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
+
 export class MilestoneDetails {
-	hasHappened: boolean;
-	hasNotHappened: boolean;
-	formattedDate?: string;
-	targetDate?: Date;
+	private status: Status;
+	private targetDate?: Date;
+
+	get hasHappened(): boolean {
+		if (this.status === Status.JustYouWait)
+			return this.targetDate!.getTime() < new Date().getTime();
+		return this.status === Status.Done;
+	}
+
+	get hasNotHappened(): boolean {
+		return !this.hasHappened;
+	}
+
+	get formattedDate(): string | undefined {
+		if (!this.targetDate) return undefined;
+		return dateFormatter.format(this.targetDate);
+	}
 
 	constructor(status: Status.Done | Status.NotYet);
 	constructor(status: Status, date: string);
 	constructor(status: Status, date?: string) {
+		this.status = status;
 		if (date) {
-			this.targetDate = new Date(date);
-
-			const formatter = new Intl.DateTimeFormat(undefined, { dateStyle: 'long' });
-			this.formattedDate = formatter.format(this.targetDate);
+			this.targetDate = new Date(`${date}T00:00:00Z`);
 		}
-		if (status === Status.JustYouWait) this.hasHappened = this.targetDate!.valueOf() < Date.now();
-		else this.hasHappened = status === Status.Done;
-
-		this.hasNotHappened = !this.hasHappened;
 	}
 
 	willBeHappeningSoon(): boolean {
