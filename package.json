@@ -21,7 +21,7 @@
 		"@eslint/compat": "2.0.5",
 		"@eslint/js": "10.0.1",
 		"@playwright/test": "1.59.1",
-		"@sveltejs/adapter-cloudflare": "^7.2.8",
+		"@sveltejs/adapter-cloudflare": "7.2.8",
 		"@sveltejs/kit": "2.57.0",
 		"@tailwindcss/vite": "4.2.2",
 		"@types/node": "25.5.2",
@@ -41,7 +41,7 @@
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.58.1",
 		"vite": "8.0.7",
-		"wrangler": "^4.81.0"
+		"wrangler": "4.81.0"
 	},
 	"type": "module",
 	"dependencies": {
