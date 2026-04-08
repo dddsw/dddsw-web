@@ -85,24 +85,30 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-
-      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
-        with:
-          node-version-file: '.node-version'
-
-      - name: Install dependencies
-        run: npm ci
-
       - name: Delete preview deployment
-        run: |
-          DEPLOYMENTS=$(npx wrangler pages deployment list --project-name=dddsw-web 2>&1)
-          echo "$DEPLOYMENTS"
-          DEPLOYMENT_IDS=$(echo "$DEPLOYMENTS" | grep "pr-${{ github.event.pull_request.number }}" | grep -oP '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
-          for ID in $DEPLOYMENT_IDS; do
-            echo "Deleting deployment $ID"
-            npx wrangler pages deployment delete --project-name=dddsw-web "$ID" --yes
-          done
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          BRANCH="pr-${{ github.event.pull_request.number }}"
+          echo "Cleaning up deployments for branch: $BRANCH"
+
+          RESPONSE=$(curl -sf \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/dddsw-web/deployments")
+
+          DEPLOYMENT_IDS=$(echo "$RESPONSE" | jq -r --arg branch "$BRANCH" \
+            '.result[] | select(.deployment_trigger.metadata.branch == $branch) | .id')
+
+          if [ -z "$DEPLOYMENT_IDS" ]; then
+            echo "No deployments found for branch $BRANCH"
+            exit 0
+          fi
+
+          for ID in $DEPLOYMENT_IDS; do
+            echo "Deleting deployment $ID"
+            curl -sf -X DELETE \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/dddsw-web/deployments/$ID"
+            echo " Done"
+          done
