@@ -101,7 +101,7 @@ jobs:
           DEPLOYMENT_IDS=$(echo "$DEPLOYMENTS" | grep "pr-${{ github.event.pull_request.number }}" | grep -oP '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
           for ID in $DEPLOYMENT_IDS; do
             echo "Deleting deployment $ID"
-            npx wrangler pages deployment delete --project-name=dddsw-web "$ID" --yes
+            npx wrangler pages deployment delete --project-name=dddsw-web "$ID" --force
           done
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
