@@ -109,6 +109,6 @@ jobs:
             echo "Deleting deployment $ID"
             curl -sf -X DELETE \
               -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/dddsw-web/deployments/$ID"
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/dddsw-web/deployments/$ID?force=true"
             echo " Done"
           done
