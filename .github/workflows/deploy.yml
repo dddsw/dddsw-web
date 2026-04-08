@@ -40,6 +40,12 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
+      - name: Block search indexing on preview
+        if: github.event_name == 'pull_request'
+        run: |
+          echo -e "/*\n  X-Robots-Tag: noindex" >> .svelte-kit/cloudflare/_headers
+          echo -e "User-agent: *\nDisallow: /" > .svelte-kit/cloudflare/robots.txt
+
       - name: Deploy to Cloudflare Pages (Preview)
         if: github.event_name == 'pull_request'
         id: deploy-preview
