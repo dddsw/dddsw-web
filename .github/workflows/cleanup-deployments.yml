@@ -1,0 +1,65 @@
+name: Cleanup old preview deployments
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Every Monday at 6am UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete non-production deployments older than 7 days
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          PROJECT="dddsw-web"
+          MAX_AGE_DAYS=7
+          CUTOFF=$(date -u -d "$MAX_AGE_DAYS days ago" +%Y-%m-%dT%H:%M:%SZ)
+          echo "Deleting non-production deployments older than $CUTOFF"
+
+          PAGE=1
+          DELETED=0
+          SKIPPED=0
+
+          while true; do
+            RESPONSE=$(curl -sf \
+              -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+              "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT/deployments?page=$PAGE&per_page=25")
+
+            DEPLOYMENTS=$(echo "$RESPONSE" | jq -c --arg cutoff "$CUTOFF" \
+              '[.result[] | select(.deployment_trigger.metadata.branch != "main" and .created_on < $cutoff)]')
+
+            COUNT=$(echo "$DEPLOYMENTS" | jq 'length')
+            TOTAL=$(echo "$RESPONSE" | jq '.result | length')
+
+            if [ "$TOTAL" -eq 0 ]; then
+              break
+            fi
+
+            echo "$DEPLOYMENTS" | jq -c '.[]' | while read -r DEPLOY; do
+              ID=$(echo "$DEPLOY" | jq -r '.id')
+              BRANCH=$(echo "$DEPLOY" | jq -r '.deployment_trigger.metadata.branch')
+              CREATED=$(echo "$DEPLOY" | jq -r '.created_on')
+              echo "Deleting $ID (branch: $BRANCH, created: $CREATED)"
+
+              HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' -X DELETE \
+                -H "Content-Type: application/json;charset=UTF-8" \
+                -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PROJECT/deployments/$ID")
+
+              if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+                echo "  Deleted"
+              else
+                echo "  Skipped (HTTP $HTTP_CODE) — likely the latest deployment on its branch"
+              fi
+            done
+
+            if [ "$TOTAL" -lt 25 ]; then
+              break
+            fi
+            PAGE=$((PAGE + 1))
+          done
+
+          echo "Cleanup complete"
