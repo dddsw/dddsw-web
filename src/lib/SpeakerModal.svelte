@@ -9,7 +9,7 @@
 	const dispatch = createEventDispatcher();
 	const close = () => dispatch('close');
 
-	let modal: HTMLElement = $state();
+	let modal: HTMLElement | undefined = $state();
 
 	const handle_keydown = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
@@ -19,7 +19,7 @@
 
 		if (e.key === 'Tab') {
 			// trap focus
-			const nodes = modal.querySelectorAll('*');
+			const nodes = modal?.querySelectorAll('*') ?? [];
 			const tabbable = Array.from(nodes).filter(
 				(n: Node) => n instanceof HTMLElement && n.tabIndex >= 0
 			) as HTMLElement[];

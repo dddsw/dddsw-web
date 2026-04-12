@@ -13,7 +13,6 @@
 	xml:space="preserve"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns="http://www.w3.org/2000/svg"
-	xmlns:svg="http://www.w3.org/2000/svg"
 	><defs id="defs1"
 		><pattern
 			xlink:href="#Hexagons"
