@@ -7,5 +7,5 @@ export const sessionizePublicUiUrl = `https://sessionize.com/ddd-south-west-${ev
 
 export const votingUrl =
 	'https://docs.google.com/forms/d/e/1FAIpQLSdI__OzLl1DEsJ3vzIfRadW4mkyv1XJz-so5H85Shcni5Gd_A/viewform';
-export const ticketTailorUrl = '...';
+export const ticketTailorUrl = 'https://buytickets.at/dddsouthwest/2148747/r/dddsw-website';
 export const pocketdddUrl = `https://pocket${eventYear}.dddsouthwest.com`;
