@@ -4,14 +4,13 @@
 	import type { Speaker } from '../../types/Speaker.type.js';
 	import { onMount } from 'svelte';
 	import { pageTitle } from '../../stores.js';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { Milestone, get } from '$lib/milestones';
 	import { eventYear, votingUrl } from '$lib/eventDetails.js';
-
 	pageTitle.set('Sessions');
 
-	let sessions: Session[] = $page.data.sessions;
-	let speakers: Speaker[] = $page.data.speakers;
+	let sessions: Session[] = page.data.sessions;
+	let speakers: Speaker[] = page.data.speakers;
 
 	let showModal = $state(false);
 	let modalSpeaker: Speaker | undefined = $state();
@@ -21,9 +20,9 @@
 	)?.hasNotHappened; //true = these are the submissions to be voted upon, false = these are definitely the speakers for this year
 
 	onMount(() => {
-		const hasId = $page.url.searchParams.has('id');
+		const hasId = page.url.searchParams.has('id');
 		if (hasId) {
-			const sessionId = $page.url.searchParams.get('id');
+			const sessionId = page.url.searchParams.get('id');
 			if (sessionId != undefined && sessionId != '') {
 				const sessionExists = sessions.find((x) => x.id === sessionId);
 				if (sessionExists) {
