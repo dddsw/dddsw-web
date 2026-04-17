@@ -8,7 +8,7 @@
 
 	onMount(async () => {
 		// Will need to be published!
-		const scheduleRsp = await fetch('https://sessionize.com/api/v2/s3662dhm/view/GridSmart');
+		const scheduleRsp = await fetch('https://sessionize.com/api/v2/rp6vdsbs/view/GridSmart');
 		let pageContent = await scheduleRsp.text();
 		let targetDiv = document.getElementById('schedule');
 		if (targetDiv) {
