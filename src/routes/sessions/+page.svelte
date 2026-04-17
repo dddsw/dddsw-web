@@ -6,12 +6,12 @@
 	import { pageTitle } from '../../stores.js';
 	import { page } from '$app/stores';
 	import { Milestone, get } from '$lib/milestones';
-	import { eventYear, sessionizeApiUrl, votingUrl } from '$lib/eventDetails.js';
+	import { eventYear, votingUrl } from '$lib/eventDetails.js';
 
 	pageTitle.set('Sessions');
 
-	let sessions: Session[] = $state([]);
-	let speakers: Speaker[] = [];
+	let sessions: Session[] = $page.data.sessions;
+	let speakers: Speaker[] = $page.data.speakers;
 
 	let showModal = $state(false);
 	let modalSpeaker: Speaker | undefined = $state();
@@ -20,20 +20,7 @@
 		Milestone.AnnounceScheduleAndOpenTicketRegistration
 	)?.hasNotHappened; //true = these are the submissions to be voted upon, false = these are definitely the speakers for this year
 
-	onMount(async () => {
-		const sessionsRsp = await fetch(`${sessionizeApiUrl}/view/Sessions`);
-		let sessionsJson = await sessionsRsp.json();
-		sessions = sessionsJson[0].sessions
-			.filter(
-				(session: Session) =>
-					showAllProposedSessions ||
-					(session.status === 'Accepted' && session.isInformed && session.isConfirmed)
-			)
-			.sort((a: Session, b: Session) => a.title.localeCompare(b.title));
-
-		const speakersRsp = await fetch(`${sessionizeApiUrl}/view/Speakers`);
-		speakers = await speakersRsp.json();
-
+	onMount(() => {
 		const hasId = $page.url.searchParams.has('id');
 		if (hasId) {
 			const sessionId = $page.url.searchParams.get('id');
