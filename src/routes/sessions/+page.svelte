@@ -16,7 +16,9 @@
 	let showModal = $state(false);
 	let modalSpeaker: Speaker | undefined = $state();
 
-	const showAllProposedSessions = true; //true = these are the submissions to be voted upon, false = these are definitely the speakers for this year
+	const showAllProposedSessions = get(
+		Milestone.AnnounceScheduleAndOpenTicketRegistration
+	)?.hasNotHappened; //true = these are the submissions to be voted upon, false = these are definitely the speakers for this year
 
 	onMount(async () => {
 		const sessionsRsp = await fetch(`${sessionizeApiUrl}/view/Sessions`);
