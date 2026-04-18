@@ -2,7 +2,7 @@ import { Milestone, get } from '$lib/milestones';
 import {
 	eventYear,
 	pocketdddUrl,
-	sessionizePublicUiUrl,
+	sessionizePublicCallForPapersUrl,
 	ticketTailorUrl,
 	votingUrl
 } from '$lib/eventDetails';
@@ -27,7 +27,7 @@ if (get(Milestone.OpenCallForSpeakers)?.hasHappened)
 	currentUpdate = `Call for speakers is <strong class="emphasis">open until ${get(Milestone.CloseCallForSpeakers)!.formattedDate}</strong>.
 		    We are a friendly developers conference and welcome papers from speakers both old and new.
 		    So whether you have an established talk you'd like to bring to Bristol or an idea you'd like help developing,
-		    <a href="${sessionizePublicUiUrl}">submit your talk now</a>.`;
+		    <a href="${sessionizePublicCallForPapersUrl}">submit your talk now</a>.`;
 
 if (get(Milestone.CloseCallForSpeakers)?.hasHappened)
 	currentUpdate = `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`;

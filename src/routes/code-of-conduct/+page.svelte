@@ -99,8 +99,8 @@
 
 		<h4>Personal Report</h4>
 		<p>
-			You can make a personal report by contacting a staff member, identified by DDD South West 2025
-			crew t-shirts or lanyards.
+			You can make a personal report by contacting a staff member, identified by DDD South West crew
+			t-shirts or lanyards.
 		</p>
 
 		<p>

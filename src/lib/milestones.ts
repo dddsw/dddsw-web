@@ -71,7 +71,7 @@ const milestones = new Map([
 	[Milestone.CloseSessionVoting, new MilestoneDetails(Status.JustYouWait, '2026-03-28')],
 	[
 		Milestone.AnnounceScheduleAndOpenTicketRegistration,
-		new MilestoneDetails(Status.NotYet, '2026-04-18')
+		new MilestoneDetails(Status.Done, '2026-04-18')
 	],
 	[Milestone.SoldOut, new MilestoneDetails(Status.NotYet)],
 	[Milestone.FoundMoreTickets, new MilestoneDetails(Status.NotYet)],
