@@ -10,9 +10,8 @@
 			As an inclusive, and community-driven conference we want to encourage everyone to share their
 			experiences and knowledge. By running a new speakers workshop we hope to encourage those
 			voices we haven't heard form yet.<br /><br />
-			If you are a new or inexperienced speakers submit your talk and register interest in attending
-			here:
-			<a href="https://sessionize.com/ddd-south-west-2025/" target="_blank">Call for Speakers</a>
+			If you are a new or inexperienced speakers submit your talk and register interest in attending here:
+			<a href="https://sessionize.com/ddd-south-west-2026/" target="_blank">Call for Speakers</a>
 		</p>
 		<p><b>Time and Date: </b>Saturday 23rd March - 9.30am - 4.30pm</p>
 		<div class="workshop-thumbnail">

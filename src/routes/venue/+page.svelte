@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { pageTitle } from '../../stores.js';
-	pageTitle.set('The 2025 Venue');
+	pageTitle.set('The 2026 Venue');
 </script>
 
 <div class="secondary-bg">
 	<div class="section">
 		<h2>Address</h2>
 		<p>
-			DDD South West 2025 will be held at <a href="https://engine-shed.co.uk/" target="_blank"
+			DDD South West 2026 will be held at <a href="https://engine-shed.co.uk/" target="_blank"
 				>Engine Shed</a>
 			located at the following address: <br />
 			Engine Shed <br />
@@ -77,17 +77,6 @@
 			list of how to get to the venue, other routes (and hotels) are available.</sub>
 	</div>
 </div>
-
-<!-- <div class="secondary-bg">
-	<div class="section">
-		<h2>Covid policy</h2>
-		<p>
-			We will not be operating a mask or distancing policy at DDD South West 2025, but attendees are
-			welcome to wear a mask if desired. Please respect others who choose to wear masks as they may
-			be vulnerable. Hand sanitiser will be available around the venue.
-		</p>
-	</div>
-</div> -->
 
 <style>
 	iframe {
