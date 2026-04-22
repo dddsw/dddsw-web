@@ -1,8 +1,8 @@
 export const eventYear = 2026;
 export const eventYearTwoDigit = eventYear - 2000;
 
-const sessionizeApiId = '5mpx9tl7';
-export const sessionizeApiUrl = `https://sessionize.com/api/v2/${sessionizeApiId}`;
+export const sessionizeJsonApiUrl = 'https://sessionize.com/api/v2/5mpx9tl7';
+export const sessionizeEmbeddedCodeApiUrl = 'https://sessionize.com/api/v2/rp6vdsbs';
 export const sessionizePublicCallForPapersUrl = `https://sessionize.com/ddd-south-west-${eventYear}/`;
 
 export const votingUrl =
