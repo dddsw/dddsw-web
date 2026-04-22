@@ -16,7 +16,6 @@
 		{ text: 'Sponsorship', href: '/sponsorship', show: true },
 		{ text: 'Event Venue', href: '/venue', show: true },
 		{ text: 'Room map', href: '/venue-layout', show: true },
-		{ text: 'New Speakers Workshop', href: '/new-speakers-workshop', show: false },
 		{
 			text: 'Sessions',
 			href: '/sessions',
