@@ -1,5 +1,4 @@
-@layer theme, base, components, utilities;
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import 'tailwindcss';
 
 @font-face {
 	font-family: Roboto;
@@ -27,11 +26,6 @@ html {
 }
 
 /* BUILDING BLOCKS */
-
-.container {
-	display: flex;
-	flex-direction: column;
-}
 
 .section {
 	width: 90%;
