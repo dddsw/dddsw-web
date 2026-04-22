@@ -4,7 +4,7 @@
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
 	import Timeline from '$lib/Timeline.svelte';
-	import { showSponsors } from '$lib/eventDetails';
+	import { eventYear, showSponsors } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -35,22 +35,7 @@
 	];
 </script>
 
-<div class="tertiary-bg">
-	<div class="section">
-		<h2>Our 2026 Speakers</h2>
-		<div>{@html data.sessionizeSpeakerWallCode}</div>
-	</div>
-</div>
-
-{#if showSponsors}
-	<Sponsors />
-{/if}
-
-<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
-	<CallToActions {keyPoints} />
-</div>
-
-<div class="quaternary-bg">
+<div class="secondary-bg">
 	<div class="section">
 		<p>
 			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
@@ -61,7 +46,24 @@
 	</div>
 </div>
 
-<div class="secondary-bg">
+<div class="tertiary-bg">
+	<CallToActions {keyPoints} />
+</div>
+
+<div class="tertiary-bg">
+	<div class="section">
+		<h2>Our {eventYear} Speakers</h2>
+		<div>{@html data.sessionizeSpeakerWallCode}</div>
+	</div>
+</div>
+
+{#if showSponsors}
+	<div class="secondary-bg">
+		<Sponsors />
+	</div>
+{/if}
+
+<div class="tertiary-bg">
 	<div class="section">
 		<Timeline />
 	</div>
