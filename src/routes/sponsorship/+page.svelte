@@ -2,51 +2,99 @@
 	import { eventYear } from '$lib/eventDetails.js';
 	import { pageTitle } from '../../stores.js';
 
-	interface Item {
+	interface SponsorOption {
 		title: string;
 		price: string;
-		claimed: boolean;
+		claimed?: boolean;
 		description?: string;
+		preamble?: string;
+		features?: string[];
 	}
 
-	let refreshmentPackages: Item[] = [
-		{ title: 'Breakfast', price: '£250', claimed: true },
-		{ title: 'Morning break', price: '£250', claimed: true },
-		{ title: 'Afternoon break', price: '£250', claimed: true }
-	];
+	interface SponsorSection {
+		heading: string;
+		intro?: string;
+		options: SponsorOption[];
+	}
 
-	let extraOptions: Item[] = [
+	const sections: SponsorSection[] = [
 		{
-			title: 'Dedicated speaker slot',
-			price: '£300',
-			claimed: false,
-			description: `We'll allocate a dedicated slot for your speaker to present a relevant topic`
+			heading: 'Packages',
+			options: [
+				{
+					title: 'Supporter',
+					price: '£600',
+					features: [
+						'Your logo on our website',
+						'Your logo on the opening & closing slides',
+						"We'll thank you on our social media"
+					]
+				},
+				{
+					title: 'Exhibitor',
+					price: '£1700',
+					preamble: 'Everything in Supporter tier, plus:',
+					features: [
+						'A sponsor stand on the day',
+						'Custom promotional posts from our social media accounts',
+						'Anything else we can do.. chat to us!'
+					]
+				}
+			]
 		},
 		{
-			title: 'T-shirts',
-			price: '£400',
-			claimed: true,
-			description: `We'll print your company name/logo on our t-shirts, worn by the staff and speakers.`
+			heading: 'Refreshments',
+			intro: 'With your company name and logo displayed alongside.',
+			options: [
+				{ title: 'Breakfast', price: '£250', claimed: true },
+				{ title: 'Morning break', price: '£250', claimed: true },
+				{ title: 'Afternoon break', price: '£250', claimed: true }
+			]
+		},
+		{
+			heading: 'Extras',
+			options: [
+				{
+					title: 'Dedicated speaker slot',
+					price: '£300',
+					description:
+						"We'll allocate a dedicated slot for your speaker to present a relevant topic"
+				},
+				{
+					title: 'T-shirts',
+					price: '£400',
+					claimed: true,
+					description:
+						"We'll print your company name/logo on our t-shirts, worn by the staff and speakers."
+				}
+			]
 		}
 	];
 
 	pageTitle.set('Sponsorship');
 </script>
 
-{#snippet displayItems(items: Item[])}
-	{#each items as item}
-		<div class="primary-bg option-small boop-effect" class:claimed={item.claimed}>
-			<h3>{item.title}</h3>
-			{#if item.description}
-				<span class="item-description">{item.description}</span>
-			{/if}
-			{#if item.claimed}
-				<strong>This item has been sponsored</strong>
-			{:else}
-				<span class="price">{item.price}</span>
-			{/if}
-		</div>
-	{/each}
+{#snippet displayOption(option: SponsorOption)}
+	<div
+		class="flex flex-1 flex-col p-5 rounded-4xl text-center
+			{option.features ? 'bg-(--quinary-color)' : option.claimed ? 'bg-gray-300' : 'primary-bg'}
+			{option.features ? '' : 'justify-center'}">
+		<h3>{option.title}</h3>
+		{#if option.preamble}<p>{option.preamble}</p>{/if}
+		{#if option.description}<span class="italic">{option.description}</span>{/if}
+		{#if option.features}
+			<ul class="grow list-disc pl-5 text-left">
+				{#each option.features as feature}
+					<li>{feature}</li>
+				{/each}
+			</ul>
+		{/if}
+		{#if option.claimed}
+			<strong>This item has been sponsored</strong>
+		{:else}
+			<span class="text-2xl font-bold">{option.price}</span>
+		{/if}
+	</div>
 {/snippet}
 
 <div class="secondary-bg">
@@ -63,44 +111,21 @@
 		</p>
 	</div>
 </div>
+
 <div class="tertiary-bg">
 	<div class="section">
-		<h2>Packages</h2>
-		<div class="options-container">
-			<div class="primary-bg option boop-effect">
-				<h3>Supporter</h3>
-				<ul>
-					<li>Your logo on our website</li>
-					<li>Your logo on the opening & closing slides</li>
-					<li>We'll thank you on our social media</li>
-				</ul>
-				<span class="price">£600</span>
+		{#each sections as section}
+			<h2>{section.heading}</h2>
+			{#if section.intro}<p>{section.intro}</p>{/if}
+			<div class="flex flex-col gap-5 lg:flex-row lg:items-stretch">
+				{#each section.options as option}
+					{@render displayOption(option)}
+				{/each}
 			</div>
-			<div class="primary-bg option boop-effect">
-				<h3>Exhibitor</h3>
-				Everything in Supporter tier, plus:
-				<ul>
-					<li>A sponsor stand on the day</li>
-					<li>Custom promotional posts from our social media accounts</li>
-					<li>Anything else we can do.. chat to us!</li>
-				</ul>
-				<span class="price">£1700</span>
-			</div>
-		</div>
-
-		<h2>Refreshments</h2>
-		<p>With your company name and logo displayed alongside.</p>
-		<div class="options-container options-container-small">
-			{@render displayItems(refreshmentPackages)}
-		</div>
-
-		<h2>Extras</h2>
-		<div class="options-container extra-options">
-			{@render displayItems(extraOptions)}
-		</div>
+		{/each}
 
 		<p>As well as supporting the community, sponsorship offers:</p>
-		<ul>
+		<ul class="list-disc pl-5">
 			<li>The opportunity to talk to the exact people you want to recruit or sell to.</li>
 			<li>
 				Love from the attendees! Everyone appreciates that without sponsors, these events can't
@@ -112,84 +137,3 @@
 		</ul>
 	</div>
 </div>
-
-<style>
-	.options-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		margin: 50px 0;
-		gap: 20px;
-	}
-
-	.options-container-small {
-		justify-content: space-evenly;
-		gap: 10px;
-	}
-
-	.option {
-		padding: 20px;
-		min-height: 250px;
-		max-width: 300px;
-		border-radius: 30px;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		background-color: var(--quinary-color);
-	}
-
-	.option-small {
-		padding: 20px;
-		min-width: 150px;
-		max-width: 300px;
-		border-radius: 50px;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.option-small h3 {
-		margin: 5px;
-	}
-
-	.option ul {
-		flex-grow: 1;
-	}
-
-	.option li {
-		text-align: left;
-	}
-
-	.price {
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin: 5px;
-	}
-
-	.claimed {
-		background-color: lightgrey;
-	}
-
-	.item-description {
-		font-style: italic;
-	}
-
-	strong {
-		font-weight: bold;
-		margin: 5px;
-	}
-
-	@media (min-width: 992px) {
-		.options-container {
-			flex-direction: row;
-			align-items: stretch;
-		}
-	}
-
-	.extra-options {
-		justify-content: flex-start;
-	}
-</style>
