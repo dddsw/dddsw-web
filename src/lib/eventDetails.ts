@@ -5,6 +5,8 @@ export const sessionizeJsonApiUrl = 'https://sessionize.com/api/v2/5mpx9tl7';
 export const sessionizeEmbeddedCodeApiUrl = 'https://sessionize.com/api/v2/rp6vdsbs';
 export const sessionizePublicCallForPapersUrl = `https://sessionize.com/ddd-south-west-${eventYear}/`;
 
+export const showSponsors = true;
+
 export const votingUrl =
 	'https://docs.google.com/forms/d/e/1FAIpQLSdI__OzLl1DEsJ3vzIfRadW4mkyv1XJz-so5H85Shcni5Gd_A/viewform';
 export const ticketTailorUrl = 'https://buytickets.at/dddsouthwest/2148747/r/dddsw-website';

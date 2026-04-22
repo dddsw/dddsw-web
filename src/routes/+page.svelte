@@ -4,13 +4,12 @@
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
 	import Timeline from '$lib/Timeline.svelte';
+	import { showSponsors } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
 	pageTitle.set('DDD South West');
-
-	let showSponsors = true;
 
 	let keyPoints: KeyPoint[] = [
 		{
