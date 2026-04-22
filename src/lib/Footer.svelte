@@ -6,12 +6,10 @@
 	let { isHomepage }: Props = $props();
 </script>
 
-<footer class="container">
+<footer>
 	{#if !isHomepage}
-		<div class="quaternary-bg">
-			<div class="text-center">
-				<h2>By the community, for the community</h2>
-			</div>
+		<div class="quaternary-bg text-center m-0 px-3 py-5">
+			<h2>By the community, for the community</h2>
 		</div>
 	{/if}
 	<div class="footer primary-bg">
@@ -90,10 +88,6 @@
 
 	.icon:hover {
 		color: white;
-	}
-
-	h2 {
-		padding: 0 10px;
 	}
 
 	/* Media query for mobile screens */
