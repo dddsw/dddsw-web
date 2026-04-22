@@ -32,6 +32,14 @@
 			order: 2
 		},
 		{
+			name: 'ClearBank',
+			href: 'https://clear.bank/',
+			src: '../images/sponsors/ClearBank logo.png',
+			confirmed: false,
+			tier: 'exhibitor',
+			order: 2
+		},
+		{
 			name: 'Umbraco CMS',
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
