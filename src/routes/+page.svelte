@@ -4,6 +4,9 @@
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
 	import Timeline from '$lib/Timeline.svelte';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
 
 	pageTitle.set('DDD South West');
 
@@ -32,6 +35,13 @@
 		}
 	];
 </script>
+
+<div class="tertiary-bg">
+	<div class="section">
+		<h2>Our 2026 Speakers</h2>
+		<div>{@html data.sessionizeSpeakerWallCode}</div>
+	</div>
+</div>
 
 {#if showSponsors}
 	<Sponsors />
