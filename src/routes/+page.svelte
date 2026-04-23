@@ -36,34 +36,30 @@
 </script>
 
 <div class="secondary-bg">
-	<div class="section">
-		<p>
-			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
-			the community, for the community. We are dedicated to providing a safe and welcoming
-			conference experience for everyone.
-		</p>
-		<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
-	</div>
-</div>
-
-<div class="tertiary-bg">
 	<CallToActions {keyPoints} />
-</div>
 
-<div class="tertiary-bg">
-	<div class="section">
-		<h2>Our {eventYear} Speakers</h2>
-		<div>{@html data.sessionizeSpeakerWallCode}</div>
+	<div class="tertiary-bg">
+		<div class="section">
+			<h2>Our {eventYear} Speakers</h2>
+			<div>{@html data.sessionizeSpeakerWallCode}</div>
+		</div>
 	</div>
-</div>
-
-{#if showSponsors}
-	<div class="secondary-bg">
+	{#if showSponsors}
 		<Sponsors />
-	</div>
-{/if}
+	{/if}
 
-<div class="tertiary-bg">
+	<div class="tertiary-bg">
+		<div class="section">
+			<p>
+				DDD South West is an inclusive, non-profit, volunteer driven developer conference organised
+				by the community, for the community. We are dedicated to providing a safe and welcoming
+				conference experience for everyone.
+			</p>
+			<p>
+				Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
+			</p>
+		</div>
+	</div>
 	<div class="section">
 		<Timeline />
 	</div>
