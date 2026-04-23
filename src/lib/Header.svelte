@@ -26,22 +26,24 @@
 			<!-- For a11y purposes, the alt text on the image is the destination of the link - see https://www.w3.org/WAI/tutorials/images/functional/-->
 			<img src="images/the_mighty_cow_white.svg" alt="DDD South West home" class="logo" />
 		</a>
-		{#if isHomepage}
-			<div>
-				<h1 class="long-name">DDD South West {eventYear}</h1>
-				<h1 class="short-name">DDD SW '{eventYearTwoDigit}</h1>
+		<div class="ml-9 my-5">
+			{#if isHomepage}
+				<h1 class="max-md:hidden text-4xl font-bold">DDD South West {eventYear}</h1>
+				<h1 class="md:hidden text-4xl font-bold">DDD SW '{eventYearTwoDigit}</h1>
 				{#if eventDate}
-					<h2 class="event-date">{eventDate} @ The Engine Shed, Bristol</h2>
+					<h2 class="event-date">
+						{eventDate} @ The Engine Shed, Bristol
+					</h2>
 				{/if}
 				{#if currentUpdate}
-					<p>
+					<p class="my-5">
 						{@html currentUpdate}
 					</p>
 				{/if}
-			</div>
-		{:else}
-			<h1>{$pageTitle}</h1>
-		{/if}
+			{:else}
+				<h1 class="text-3xl font-bold">{$pageTitle}</h1>
+			{/if}
+		</div>
 		<Navbar />
 	</div>
 </header>
@@ -63,24 +65,13 @@
 		font-family: 'Roboto';
 	}
 
-	.long-name {
-		display: none;
-	}
-
 	.logo-link {
 		display: none;
-	}
-
-	h1,
-	h2,
-	p {
-		padding-left: 30px;
 	}
 
 	.event-date {
 		margin: 0;
 		font-family: 'Roboto';
-		font-size: 1.25rem;
 	}
 
 	@media (min-width: 576px) {
@@ -88,14 +79,6 @@
 			justify-content: space-between;
 			flex-direction: row;
 			text-align: center;
-		}
-
-		.short-name {
-			display: none;
-		}
-
-		.long-name {
-			display: inline;
 		}
 	}
 
@@ -114,14 +97,6 @@
 	@media (min-width: 992px) {
 		.logo {
 			max-width: 300px;
-		}
-
-		h1 {
-			font-size: 2.5rem;
-		}
-
-		.event-date {
-			font-size: 1.5rem;
 		}
 	}
 </style>
