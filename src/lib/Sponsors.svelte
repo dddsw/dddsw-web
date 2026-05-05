@@ -45,7 +45,7 @@
 			src: '../images/sponsors/umbraco.png',
 			confirmed: true,
 			tier: 'exhibitor',
-			order: 1
+			order: 5
 		},
 		{
 			name: 'Rock Solid Knowledge',
