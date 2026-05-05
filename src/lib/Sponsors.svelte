@@ -35,7 +35,7 @@
 			name: 'ClearBank',
 			href: 'https://clear.bank/',
 			src: '../images/sponsors/ClearBank logo.png',
-			confirmed: false,
+			confirmed: true,
 			tier: 'exhibitor',
 			order: 2
 		},
