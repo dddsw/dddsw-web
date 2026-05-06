@@ -1,5 +1,4 @@
-@layer theme, base, components, utilities;
-@import 'tailwindcss/utilities.css' layer(utilities);
+@import 'tailwindcss';
 
 @font-face {
 	font-family: Roboto;
@@ -28,15 +27,13 @@ html {
 
 /* BUILDING BLOCKS */
 
-.container {
-	display: flex;
-	flex-direction: column;
-}
-
 .section {
 	width: 90%;
 	margin: auto;
-	padding-bottom: 10px;
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
 @media (min-width: 768px) {
@@ -48,7 +45,7 @@ html {
 @media (min-width: 1800px) {
 	.section {
 		width: 50%;
-		padding-bottom: 20px;
+		padding: 30px 0;
 	}
 }
 
@@ -72,13 +69,25 @@ html {
 
 /* TYPOGRAPHY */
 
-@media (min-width: 1400px) {
-	p {
-		font-size: 1.25rem;
+@layer base {
+	h2 {
+		@apply text-2xl font-bold;
 	}
 
-	ul {
-		font-size: 1.25rem;
+	h3 {
+		@apply text-xl font-semibold;
+	}
+
+	h4 {
+		@apply text-lg font-semibold;
+	}
+
+	a {
+		@apply text-blue-700 underline;
+	}
+
+	p {
+		@apply text-base;
 	}
 }
 

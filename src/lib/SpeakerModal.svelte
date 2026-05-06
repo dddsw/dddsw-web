@@ -50,7 +50,7 @@
 
 <div class="modal" role="dialog" aria-modal="true" bind:this={modal}>
 	{@render children?.()}
-	<button onclick={close} class="modal-button">Close</button>
+	<button onclick={close} class="modal-button text-2xl">Close</button>
 </div>
 
 <style>
@@ -86,7 +86,6 @@
 		color: black;
 		padding: 10px;
 		border: none;
-		font-size: 1.5rem;
 	}
 
 	.modal-button:hover {

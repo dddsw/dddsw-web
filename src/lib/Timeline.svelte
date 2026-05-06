@@ -30,8 +30,8 @@
 					circle
 				{/if}
 			</span>
-			<p>{item.milestone.formattedDate}</p>
-			<p>{item.description}</p>
+			<p class="text-xs">{item.milestone.formattedDate}</p>
+			<p class="text-xs">{item.description}</p>
 		</span>
 	{/each}
 </div>
@@ -45,12 +45,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
-	}
-
-	.timeline p {
-		font-size: 0.75rem;
-		margin: 0;
-		font-weight: bold;
 	}
 
 	.timeline-item p:first-of-type {

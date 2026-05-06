@@ -4,17 +4,19 @@
 	import type { KeyPoint } from '../types/KeyPoint.type';
 	import { pageTitle } from '../stores.js';
 	import Timeline from '$lib/Timeline.svelte';
+	import { eventYear, showSponsors } from '$lib/eventDetails';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
 
 	pageTitle.set('DDD South West');
-
-	let showSponsors = true;
 
 	let keyPoints: KeyPoint[] = [
 		{
 			title: 'For developers',
 			icon: 'code',
-			paragraph: `Developers are at the heart of DDD South West. 
-		We love to learn and share their ideas with others. You'll meet like minded peers, 
+			paragraph: `Developers are at the heart of DDD South West.
+		We love to learn and share their ideas with others. You'll meet like minded peers,
 		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
 		},
 		{
@@ -33,26 +35,31 @@
 	];
 </script>
 
-{#if showSponsors}
-	<Sponsors />
-{/if}
-
-<div class={showSponsors ? 'tertiary-bg' : 'secondary-bg'}>
-	<CallToActions {keyPoints} />
-</div>
-
-<div class="quaternary-bg">
-	<div class="section">
-		<p>
-			DDD South West is an inclusive, non-profit, volunteer driven developer conference organised by
-			the community, for the community. We are dedicated to providing a safe and welcoming
-			conference experience for everyone.
-		</p>
-		<p>Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.</p>
-	</div>
-</div>
-
 <div class="secondary-bg">
+	<CallToActions {keyPoints} />
+
+	<div class="tertiary-bg">
+		<div class="section">
+			<h2>Our {eventYear} Speakers</h2>
+			<div>{@html data.sessionizeSpeakerWallCode}</div>
+		</div>
+	</div>
+	{#if showSponsors}
+		<Sponsors />
+	{/if}
+
+	<div class="tertiary-bg">
+		<div class="section">
+			<p>
+				DDD South West is an inclusive, non-profit, volunteer driven developer conference organised
+				by the community, for the community. We are dedicated to providing a safe and welcoming
+				conference experience for everyone.
+			</p>
+			<p>
+				Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
+			</p>
+		</div>
+	</div>
 	<div class="section">
 		<Timeline />
 	</div>

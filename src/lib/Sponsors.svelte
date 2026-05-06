@@ -45,7 +45,7 @@
 			src: '../images/sponsors/umbraco.png',
 			confirmed: true,
 			tier: 'exhibitor',
-			order: 1
+			order: 5
 		},
 		{
 			name: 'Rock Solid Knowledge',
@@ -163,15 +163,16 @@
 
 {#snippet sponsorList(title: string, tier: string)}
 	{#if sponsorsByTier(tier).length > 0}
-		<section class={tier}>
+		<section>
 			<h2>{title}</h2>
-			<ul class="sponsor-logos">
+			<ul class="flex list-none gap-5 justify-evenly items-center flex-wrap">
 				{#each sponsorsByTier(tier) as sponsor}
-					<li>
+					<li class="basis-2/3 m-2 {tier === 'exhibitor' ? 'md:basis-1/4' : 'md:basis-1/5'}">
 						<a
 							href={addTrackingParams(sponsor.href)}
 							target="_blank"
-							aria-label="Visit {sponsor.name} website">
+							aria-label="Visit {sponsor.name} website"
+							class="w-full">
 							<img src={sponsor.src} alt="{sponsor.name} logo" aria-hidden="false" />
 						</a>
 					</li>
@@ -185,22 +186,3 @@
 	{@render sponsorList(`With thanks to our ${eventYear} Exhibitors:`, 'exhibitor')}
 	{@render sponsorList('And our Supporters:', 'supporter')}
 </div>
-
-<style>
-	.sponsor-logos {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 20px;
-
-		li {
-			list-style-type: none;
-		}
-
-		img {
-			max-height: 160px;
-			max-width: 160px;
-		}
-	}
-</style>
