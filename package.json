@@ -45,6 +45,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@panzoom/panzoom": "^4.6.0"
+		"@panzoom/panzoom": "^4.6.0",
+		"daisyui": "^5.5.19"
 	}
 }

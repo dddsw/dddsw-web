@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+@plugin "daisyui" {
+	root: '#daisy';
+}
+
 @font-face {
 	font-family: Roboto;
 	src: url('/Good Times Rg.otf');

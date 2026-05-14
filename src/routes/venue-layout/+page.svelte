@@ -108,119 +108,48 @@
 
 		document.getElementById(room.elementIds.fill)!.classList.toggle('selected-room');
 		document.getElementById(room.elementIds.pathToRoom)!.classList.toggle('display-path');
-		document
-			.getElementById(room.elementIds.buttonForRoom)!
-			.classList.toggle('track-button-selected');
+		document.getElementById(room.elementIds.buttonForRoom)!.toggle();
 
 		room.isSelected = !room.isSelected;
 	}
 </script>
 
-<div class="section">
-	<div class="map-wrapper">
-		<div class="zoom-button-container">
-			<button id="zoom-in" class="zoom-button">+</button>
-			<button id="zoom-out" class="zoom-button">-</button>
+<div class="section" data-theme="light">
+	<div class="card h-[70vh] overflow-hidden rounded-3xl border border-black/10 shadow-sm">
+		<!-- Zoom controls -->
+		<div class="flex flex-none justify-end gap-1 px-3 pt-3">
+			<button id="zoom-out" class="btn btn-circle btn-sm btn-soft text-2xl">−</button>
+			<button id="zoom-in" class="btn btn-circle btn-sm btn-soft text-2xl">+</button>
 		</div>
-		<div class="map">
+		<!-- Map (flex-1 + min-h-0 lets it shrink within the 70vh card) -->
+		<div class="flex min-h-0 flex-1 items-center justify-center overflow-hidden">
 			<EngineShed />
 		</div>
 		<div class="track-button-container">
-			<button
-				id="track-1-button"
-				class="track-button"
-				onclick={() => toggleRoomByName('The Junction')}>Track 1</button>
-			<button
-				id="track-2-button"
-				class="track-button"
-				onclick={() => toggleRoomByName("Brunel's Boardroom")}>Track 2</button>
+			<button id="track-1-button" class="btn" onclick={() => toggleRoomByName('The Junction')}
+				>Track 1</button>
+			<button id="track-2-button" class="btn" onclick={() => toggleRoomByName("Brunel's Boardroom")}
+				>Track 2</button>
 			<button
 				id="track-3-button"
-				class="track-button"
+				class="btn"
 				onclick={() => toggleRoomByName("Brunel's Breakout room")}>Track 3</button>
-			<button
-				id="track-4-button"
-				class="track-button"
-				onclick={() => toggleRoomByName('The Clock tower')}>Track 4</button>
+			<button id="track-4-button" class="btn" onclick={() => toggleRoomByName('The Clock tower')}
+				>Track 4</button>
 		</div>
 	</div>
 </div>
 
 <style>
-	.zoom-button-container {
-		align-items: center;
-		display: flex;
-		justify-content: end;
-		width: 100%;
-		z-index: 100;
-	}
-	.zoom-button {
-		background-color: white;
-		border-color: var(--contrast-color);
-		border-radius: 25px;
-		border-style: solid;
-		border-width: 3px;
-		display: flex;
-		font-family: 'Poppins', serif;
-		font-size: 50px;
-		height: 40px;
-		justify-content: center;
-		line-height: 35px;
-		margin: 5px;
-		width: 40px;
-	}
-
-	.track-button-container {
-		align-items: center;
-		display: flex;
-		justify-content: space-evenly;
-		width: 100%;
-		z-index: 100;
-	}
-	.track-button {
-		background-color: white;
-		border-color: var(--primary-color);
-		border-radius: 25px;
-		border-style: solid;
-		border-width: 5px;
-		flex: 1;
-		font-family: 'Poppins', serif;
-		height: 50px;
-		line-height: 25px;
-		margin: 5px;
-		padding: 5px;
-	}
-
-	.map-wrapper {
-		align-items: center;
-		border-color: black;
-		border-radius: 25px;
-		border-style: solid;
-		border-width: 1px;
-		display: flex;
-		flex-direction: column;
-		height: 70vh;
-		justify-content: space-between;
-		margin: 20px 0px;
-		overflow: hidden;
-	}
-	.map {
-		min-height: 0;
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		width: 100%;
-	}
-
-	/* Using global because these classes are applied via JS and don't 
+	/* Using global because these classes are applied via JS and don't
 	 * want these styles to be marked as unused and stripped out */
 	:global .display-path {
 		display: inline !important;
 	}
 	:global .selected-room {
-		fill: #fbffbe !important;
+		fill: var(--color-primary) !important;
 	}
 	:global .track-button-selected {
-		background-color: #fbffbe !important;
+		background-color: var(--color-primary) !important;
 	}
 </style>
