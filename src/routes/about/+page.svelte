@@ -23,12 +23,6 @@
 
 	let teamMembers = [
 		{
-			name: 'Lorraine Pearce',
-			imageName: 'lorraine.jpg',
-			email: 'lorrainepearce@dddsouthwest.com',
-			linkedIn: 'lorraine-pearce-688aba8'
-		},
-		{
 			name: 'Russell Day',
 			imageName: 'russ.jpg',
 			email: 'russell.day@dddsouthwest.com',
