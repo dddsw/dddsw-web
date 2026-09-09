@@ -17,6 +17,8 @@
 		options: SponsorOption[];
 	}
 
+	const showPrices = false;
+
 	const sections: SponsorSection[] = [
 		{
 			heading: 'Packages',
@@ -46,9 +48,9 @@
 			heading: 'Refreshments',
 			intro: 'With your company name and logo displayed alongside.',
 			options: [
-				{ title: 'Breakfast', price: '£250', claimed: true },
-				{ title: 'Morning break', price: '£250', claimed: true },
-				{ title: 'Afternoon break', price: '£250', claimed: true }
+				{ title: 'Breakfast', price: '£250', claimed: false },
+				{ title: 'Morning break', price: '£250', claimed: false },
+				{ title: 'Afternoon break', price: '£250', claimed: false }
 			]
 		},
 		{
@@ -63,7 +65,7 @@
 				{
 					title: 'T-shirts',
 					price: '£400',
-					claimed: true,
+					claimed: false,
 					description:
 						"We'll print your company name/logo on our t-shirts, worn by the staff and speakers."
 				}
@@ -91,9 +93,7 @@
 		{/if}
 		{#if option.claimed}
 			<strong>This item has been sponsored</strong>
-		{:else}
-			<span class="text-2xl font-bold">{option.price}</span>
-		{/if}
+		{:else if showPrices}<span class="text-2xl font-bold">{option.price}</span>{/if}
 	</div>
 {/snippet}
 

@@ -6,6 +6,7 @@
 	import Timeline from '$lib/Timeline.svelte';
 	import { eventYear, showSponsors } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
+	import { get, Milestone } from '$lib/milestones';
 
 	let { data }: PageProps = $props();
 
@@ -38,12 +39,14 @@
 <div class="secondary-bg">
 	<CallToActions {keyPoints} />
 
-	<div class="tertiary-bg">
-		<div class="section">
-			<h2>Our {eventYear} Speakers</h2>
-			<div>{@html data.sessionizeSpeakerWallCode}</div>
+	{#if get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened}
+		<div class="tertiary-bg">
+			<div class="section">
+				<h2>Our {eventYear} Speakers</h2>
+				<div>{@html data.sessionizeSpeakerWallCode}</div>
+			</div>
 		</div>
-	</div>
+	{/if}
 	{#if showSponsors}
 		<Sponsors />
 	{/if}
@@ -60,7 +63,9 @@
 			</p>
 		</div>
 	</div>
-	<div class="section">
-		<Timeline />
-	</div>
+	{#if get(Milestone.SetADate)?.hasHappened}
+		<div class="section">
+			<Timeline />
+		</div>
+	{/if}
 </div>
