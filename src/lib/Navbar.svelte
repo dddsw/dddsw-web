@@ -14,8 +14,8 @@
 		{ text: 'Home', href: '/', show: true },
 		{ text: 'About', href: '/about', show: true },
 		{ text: 'Sponsorship', href: '/sponsorship', show: true },
-		{ text: 'Event Venue', href: '/venue', show: true },
-		{ text: 'Room map', href: '/venue-layout', show: true },
+		{ text: 'Event Venue', href: '/venue', show: false },
+		{ text: 'Room map', href: '/venue-layout', show: false },
 		{
 			text: 'Sessions',
 			href: '/sessions',
@@ -29,7 +29,12 @@
 			href: '/schedule',
 			show: get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened
 		},
-		{ text: 'Pocket DDD', href: pocketdddUrl, show: get(Milestone.TheActualEventDay)?.hasHappened },
+		{
+			text: 'Pocket DDD',
+			href: pocketdddUrl,
+			show:
+				get(Milestone.TheActualEventDay)?.hasHappened && get(Milestone.ConkedOut)?.hasNotHappened
+		},
 		{ text: 'Privacy Policy', href: '/privacy-policy', show: true },
 		{ text: 'Code of Conduct', href: '/code-of-conduct', show: true }
 	];
