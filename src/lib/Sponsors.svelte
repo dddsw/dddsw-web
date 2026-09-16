@@ -19,7 +19,7 @@
 			name: 'SECCL',
 			href: 'https://seccl.tech/',
 			src: '../images/sponsors/seccl.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 1
 		},
@@ -27,7 +27,7 @@
 			name: 'UK Hydrographic Office',
 			href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
 			src: '../images/sponsors/UKHO.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 2
 		},
@@ -35,7 +35,7 @@
 			name: 'ClearBank',
 			href: 'https://clear.bank/',
 			src: '../images/sponsors/ClearBank logo.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 2
 		},
@@ -43,7 +43,7 @@
 			name: 'Umbraco CMS',
 			href: 'https://umbraco.com/',
 			src: '../images/sponsors/umbraco.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 5
 		},
@@ -51,7 +51,7 @@
 			name: 'Rock Solid Knowledge',
 			href: 'https://www.rocksolidknowledge.com/',
 			src: '../images/sponsors/rocksolid.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'exhibitor',
 			order: 1
 		},
@@ -75,7 +75,7 @@
 			name: 'Flagstone',
 			href: 'https://www.flagstoneim.com/',
 			src: '../images/sponsors/flagstone.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'supporter',
 			order: 2
 		},
@@ -91,7 +91,7 @@
 			name: 'NDC Conferences',
 			href: 'https://ndcconferences.com/',
 			src: '../images/sponsors/ndc.png',
-			confirmed: true,
+			confirmed: false,
 			tier: 'supporter',
 			order: 1
 		},
