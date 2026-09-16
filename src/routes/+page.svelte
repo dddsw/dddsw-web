@@ -12,6 +12,30 @@
 
 	pageTitle.set('DDD South West');
 
+	const planningAsks = [
+		{
+			icon: 'location_on',
+			title: 'Venue',
+			paragraph: `We're looking for a new venue to host DDD South West 2027. If you know of a space
+				that could work, email us at
+				<a href="mailto:management@dddsouthwest.com" class="emphasis">management@dddsouthwest.com</a>.`
+		},
+		{
+			icon: 'group_add',
+			title: 'Committee',
+			paragraph: `We're looking for new committee members and volunteers to help organise the event. If you'd like
+				to get involved, email us at
+				<a href="mailto:management@dddsouthwest.com" class="emphasis">management@dddsouthwest.com</a>.`
+		},
+		{
+			icon: 'storefront',
+			title: 'Sponsorship',
+			paragraph: `DDD South West is entirely funded by sponsorship. If you or your company would
+				like to support the 2027 event, get in touch at
+				<a href="mailto:sponsorship@dddsouthwest.com" class="emphasis">sponsorship@dddsouthwest.com</a>.`
+		}
+	];
+
 	let keyPoints: KeyPoint[] = [
 		{
 			title: 'For developers',
@@ -37,7 +61,29 @@
 </script>
 
 <div class="secondary-bg">
-	<CallToActions {keyPoints} />
+	<div class="section">
+		<h2 class="text-center text-3xl md:text-4xl">Help us plan DDD South West 2027</h2>
+		<p class="text-center text-lg">
+			We're in the early stages of planning our next event and need your help!
+		</p>
+		<div
+			class="flex divide-y lg:divide-y-0 lg:divide-x divide-gray-200 flex-col self-center lg:flex-row">
+			{#each planningAsks as ask}
+				<div class="flex flex-col p-2">
+					<span
+						class="place-self-center material-symbols-outlined text-[2.5rem] text-(--primary-color)">
+						{ask.icon}
+					</span>
+					<h3 class="place-self-center m-0">{ask.title}</h3>
+					<p class="m-0 leading-relaxed">{@html ask.paragraph}</p>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	{#if false}
+		<CallToActions {keyPoints} />
+	{/if}
 
 	{#if get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened}
 		<div class="tertiary-bg">

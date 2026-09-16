@@ -63,7 +63,7 @@ export function get(doneThing: Milestone): MilestoneDetails | undefined {
 }
 
 const milestones = new Map([
-	[Milestone.StartPlanning, new MilestoneDetails(Status.Done)],
+	[Milestone.StartPlanning, new MilestoneDetails(Status.NotYet)],
 	[Milestone.SetADate, new MilestoneDetails(Status.NotYet)],
 	[Milestone.OpenCallForSpeakers, new MilestoneDetails(Status.NotYet)],
 	[Milestone.CloseCallForSpeakers, new MilestoneDetails(Status.NotYet)],
