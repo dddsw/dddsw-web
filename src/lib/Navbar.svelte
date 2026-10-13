@@ -21,8 +21,7 @@
 			href: '/sessions',
 			show:
 				(get(Milestone.OpenSessionVoting)?.hasHappened &&
-					get(Milestone.CloseSessionVoting)?.hasNotHappened) ||
-				get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened
+					get(Milestone.CloseSessionVoting)?.hasNotHappened)
 		},
 		{
 			text: 'Schedule',
