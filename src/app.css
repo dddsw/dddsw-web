@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import './dddsw-theme.css';
+
+@import '@fontsource-variable/fredoka';
+@import '@fontsource-variable/nunito';
+
+/* Dark mode is toggled with a `dark` class on <html> (see ThemeToggle and app.html). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
 	font-family: Roboto;
 	src: url('/Good Times Rg.otf');
