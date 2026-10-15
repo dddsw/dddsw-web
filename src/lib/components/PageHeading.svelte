@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { event } from '$lib/eventDetails';
+	import { event } from '#lib/eventDetails.ts';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';
 

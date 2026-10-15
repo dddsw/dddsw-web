@@ -4,8 +4,8 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { Dialog, Portal } from '@skeletonlabs/skeleton-svelte';
-	import { Milestone, get } from '$lib/milestones';
-	import { eventYear, votingUrl } from '$lib/eventDetails.js';
+	import { Milestone, get } from '#lib/milestones.ts';
+	import { eventYear, votingUrl } from '#lib/eventDetails.ts';
 
 	let sessions: Session[] = page.data.sessions;
 	let speakers: Speaker[] = page.data.speakers;

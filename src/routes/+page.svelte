@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Container from '$lib/components/Container.svelte';
-	import Cow from '$lib/components/Cow.svelte';
-	import Countdown from '$lib/components/Countdown.svelte';
-	import EventFacts from '$lib/components/EventFacts.svelte';
-	import Timeline from '$lib/components/Timeline.svelte';
-	import SponsorLogos from '$lib/components/SponsorLogos.svelte';
-	import { sponsors } from '$lib/content/sponsors';
-	import { event, showSponsors } from '$lib/eventDetails';
-	import { preview } from '$lib/featured.svelte';
-	import { currentUpdate } from '$lib/latestUpdate';
-	import { scheduleShown } from '$lib/navigation';
+	import Container from '#lib/components/Container.svelte';
+	import Cow from '#lib/components/Cow.svelte';
+	import Countdown from '#lib/components/Countdown.svelte';
+	import EventFacts from '#lib/components/EventFacts.svelte';
+	import Timeline from '#lib/components/Timeline.svelte';
+	import SponsorLogos from '#lib/components/SponsorLogos.svelte';
+	import { sponsors } from '#lib/content/sponsors.ts';
+	import { event, showSponsors } from '#lib/eventDetails.ts';
+	import { preview } from '#lib/featured.svelte.ts';
+	import { currentUpdate } from '#lib/latestUpdate.ts';
+	import { scheduleShown } from '#lib/navigation.ts';
 
 	const allCards = [
 		{

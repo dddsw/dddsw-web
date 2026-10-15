@@ -1,4 +1,4 @@
-import { event } from '$lib/eventDetails';
+import { event } from '#lib/eventDetails.ts';
 import type { PageLoad } from './$types';
 
 /** Heading shown in the banner by the (content) layout. */

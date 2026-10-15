@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Prose from '$lib/components/Prose.svelte';
-	import { event } from '$lib/eventDetails';
+	import Prose from '#lib/components/Prose.svelte';
+	import { event } from '#lib/eventDetails.ts';
 
 	// Anonymous report form (Microsoft Forms).
 	const anonymousReportUrl = 'https://forms.office.com/e/ZDSiDR6Tyg';

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { event } from '$lib/eventDetails';
+	import { event } from '#lib/eventDetails.ts';
 	import { page } from '$app/state';
-	import Cow from '$lib/components/Cow.svelte';
+	import Cow from '#lib/components/Cow.svelte';
 </script>
 
 <svelte:head><title>{page.status} · {event.shortName} {event.year}</title></svelte:head>

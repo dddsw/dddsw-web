@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
-	import ComingSoon from '$lib/components/ComingSoon.svelte';
-	import Cow from '$lib/components/Cow.svelte';
+	import ComingSoon from '#lib/components/ComingSoon.svelte';
+	import Cow from '#lib/components/Cow.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();

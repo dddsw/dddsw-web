@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { principles } from '$lib/content/principles';
+	import { principles } from '#lib/content/principles.ts';
 </script>
 
 <section aria-labelledby="ddd-way" class="space-y-6">

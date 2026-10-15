@@ -2,7 +2,7 @@
 	import * as microphone from '@fortawesome/free-solid-svg-icons/faMicrophone';
 	import * as ticket from '@fortawesome/free-solid-svg-icons/faTicket';
 	import * as vote from '@fortawesome/free-solid-svg-icons/faCheckToSlot';
-	import type { Featured } from '$lib/featured';
+	import type { Featured } from '#lib/featured.ts';
 
 	let {
 		featured,

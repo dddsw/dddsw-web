@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { replaceState } from '$app/navigation';
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
-	import Cow from '$lib/components/Cow.svelte';
-	import { pastEvents } from '$lib/content/pastEvents';
+	import Cow from '#lib/components/Cow.svelte';
+	import { pastEvents } from '#lib/content/pastEvents.ts';
 
 	let year = $state(String(pastEvents[0].year));
 

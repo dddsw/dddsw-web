@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { sessionizeJsonApiUrl } from '$lib/eventDetails.js';
-import { Milestone, get } from '$lib/milestones';
+import { sessionizeJsonApiUrl } from '#lib/eventDetails.ts';
+import { Milestone, get } from '#lib/milestones.ts';
 import type { Session } from '../../types/Session.type.js';
 import type { Speaker } from '../../types/Speaker.type.js';
 

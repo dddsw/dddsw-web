@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { event } from '$lib/eventDetails';
-	import { sponsors, sponsorUrl } from '$lib/content/sponsors';
+	import { event } from '#lib/eventDetails.ts';
+	import { sponsors, sponsorUrl } from '#lib/content/sponsors.ts';
 </script>
 
 <ul class="grid grid-cols-2 items-center gap-4 sm:grid-cols-3 lg:grid-cols-5">

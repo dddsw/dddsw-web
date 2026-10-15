@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import { event } from '$lib/eventDetails';
-	import { initPreview, preview } from '$lib/featured.svelte';
-	import { resolveFeatured } from '$lib/featured';
-	import { visibleNav } from '$lib/navigation';
+	import { event } from '#lib/eventDetails.ts';
+	import { initPreview, preview } from '#lib/featured.svelte.ts';
+	import { resolveFeatured } from '#lib/featured.ts';
+	import { visibleNav } from '#lib/navigation.ts';
 	import { Popover, Portal } from '@skeletonlabs/skeleton-svelte';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';

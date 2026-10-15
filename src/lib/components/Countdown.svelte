@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { countdownLabel, daysUntil, eventDate } from '$lib/event';
+	import { countdownLabel, daysUntil, eventDate } from '#lib/event.ts';
 
 	// Rendered at build time with the build date, then refreshed on the client.
 	const date = eventDate();

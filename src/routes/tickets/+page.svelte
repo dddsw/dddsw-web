@@ -1,7 +1,7 @@
 <script lang="ts">
-	import ComingSoon from '$lib/components/ComingSoon.svelte';
-	import EventFacts from '$lib/components/EventFacts.svelte';
-	import { event, links } from '$lib/eventDetails';
+	import ComingSoon from '#lib/components/ComingSoon.svelte';
+	import EventFacts from '#lib/components/EventFacts.svelte';
+	import { event, links } from '#lib/eventDetails.ts';
 </script>
 
 <EventFacts />

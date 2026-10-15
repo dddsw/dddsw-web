@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Prose from '$lib/components/Prose.svelte';
-	import { event } from '$lib/eventDetails';
+	import Prose from '#lib/components/Prose.svelte';
+	import { event } from '#lib/eventDetails.ts';
 
 	const contents = [
 		{ id: 'contact-details', label: 'Contact details' },

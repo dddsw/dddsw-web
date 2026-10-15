@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Timeline from '$lib/components/Timeline.svelte';
-	import { links } from '$lib/eventDetails';
-	import { callForPapersStatus } from '$lib/timeline';
+	import Timeline from '#lib/components/Timeline.svelte';
+	import { links } from '#lib/eventDetails.ts';
+	import { callForPapersStatus } from '#lib/timeline.ts';
 
 	const status = callForPapersStatus();
 

@@ -55,9 +55,10 @@ Make sure to run the lint/format commands, and the Playwright tests! :)
 
 ### Structure of the app
 
-The site is SvelteKit 2 and Svelte 5, styled with [Skeleton](https://www.skeleton.dev/) v5 on Tailwind 4, and deployed to Cloudflare.
+The site is SvelteKit 3 and Svelte 5, styled with [Skeleton](https://www.skeleton.dev/) v5 on Tailwind 4, and deployed to Cloudflare.
 
 - Pages live under `src/routes`. A page is a `+page.svelte` in a folder named after its route.
+- Imports from `src/lib` use the `#lib/...` alias with the file extension, e.g. `#lib/eventDetails.ts`.
 - Components live under `src/lib/components`. TypeScript types for the Sessionize sessions page live under `src/types`.
 - Content lives under `src/lib/content`: the team, principles, sponsors and past events.
 - Brand colours and fonts live in `src/dddsw-theme.css` (primary 500 is `#ff9930`; text on orange is charcoal for contrast). Global styles are in `src/app.css`.

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import EventFacts from '$lib/components/EventFacts.svelte';
-	import { event } from '$lib/eventDetails';
-	import { venueLabel } from '$lib/event';
+	import EventFacts from '#lib/components/EventFacts.svelte';
+	import { event } from '#lib/eventDetails.ts';
+	import { venueLabel } from '#lib/event.ts';
 </script>
 
 <EventFacts />

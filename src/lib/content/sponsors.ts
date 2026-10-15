@@ -1,4 +1,4 @@
-import { eventYear } from '$lib/eventDetails';
+import { eventYear } from '#lib/eventDetails.ts';
 
 export interface SponsorOption {
 	title: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { event } from '$lib/eventDetails';
-	import { dateLabel, eventDate, venueLabel } from '$lib/event';
+	import { event } from '#lib/eventDetails.ts';
+	import { dateLabel, eventDate, venueLabel } from '#lib/event.ts';
 </script>
 
 <dl class="grid gap-4 sm:grid-cols-2">

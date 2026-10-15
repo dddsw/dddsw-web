@@ -2,12 +2,12 @@
 	import '../app.css';
 	import { page } from '$app/state';
 	import type { LayoutProps } from './$types';
-	import Container from '$lib/components/Container.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import PageHeading from '$lib/components/PageHeading.svelte';
-	import { event } from '$lib/eventDetails';
-	import { toaster } from '$lib/toaster';
+	import Container from '#lib/components/Container.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import PageHeading from '#lib/components/PageHeading.svelte';
+	import { event } from '#lib/eventDetails.ts';
+	import { toaster } from '#lib/toaster.ts';
 	import { Toast } from '@skeletonlabs/skeleton-svelte';
 
 	let { children }: LayoutProps = $props();

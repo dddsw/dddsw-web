@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { event, social } from '$lib/eventDetails';
-	import { preview } from '$lib/featured.svelte';
-	import { moreLinks, visibleNav } from '$lib/navigation';
+	import { event, social } from '#lib/eventDetails.ts';
+	import { preview } from '#lib/featured.svelte.ts';
+	import { moreLinks, visibleNav } from '#lib/navigation.ts';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';
 	import SocialIcon from './SocialIcon.svelte';

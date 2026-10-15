@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { event, showSponsorPrices } from '$lib/eventDetails';
-	import SponsorLogos from '$lib/components/SponsorLogos.svelte';
-	import { toaster } from '$lib/toaster';
-	import { bossEmail, sponsorReasons, sponsorSections, sponsors } from '$lib/content/sponsors';
+	import { event, showSponsorPrices } from '#lib/eventDetails.ts';
+	import SponsorLogos from '#lib/components/SponsorLogos.svelte';
+	import { toaster } from '#lib/toaster.ts';
+	import { bossEmail, sponsorReasons, sponsorSections, sponsors } from '#lib/content/sponsors.ts';
 
 	const email = bossEmail(event.sponsorshipEmail, `${event.siteUrl}/sponsors`);
 

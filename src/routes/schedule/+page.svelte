@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ComingSoon from '$lib/components/ComingSoon.svelte';
-	import { event } from '$lib/eventDetails';
+	import ComingSoon from '#lib/components/ComingSoon.svelte';
+	import { event } from '#lib/eventDetails.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();

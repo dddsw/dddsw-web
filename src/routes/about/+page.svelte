@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
-	import Principles from '$lib/components/Principles.svelte';
-	import SocialIcon from '$lib/components/SocialIcon.svelte';
-	import { event } from '$lib/eventDetails';
-	import { getInvolved, team } from '$lib/content/team';
-	import { pastEvents } from '$lib/content/pastEvents';
+	import Principles from '#lib/components/Principles.svelte';
+	import SocialIcon from '#lib/components/SocialIcon.svelte';
+	import { event } from '#lib/eventDetails.ts';
+	import { getInvolved, team } from '#lib/content/team.ts';
+	import { pastEvents } from '#lib/content/pastEvents.ts';
 
 	/** Everyone who appears on a past committee, with the years they were listed. */
 	const pastCommittee = Object.entries(

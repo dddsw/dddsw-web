@@ -1,4 +1,4 @@
-import { Milestone, get } from '$lib/milestones';
+import { Milestone, get } from '#lib/milestones.ts';
 import {
 	eventYear,
 	pocketdddUrl,
@@ -6,7 +6,7 @@ import {
 	social,
 	ticketTailorUrl,
 	votingUrl
-} from '$lib/eventDetails';
+} from '#lib/eventDetails.ts';
 
 const linkedIn = `<a href="${social.linkedIn}" target="_blank" rel="noopener">LinkedIn</a>`;
 
