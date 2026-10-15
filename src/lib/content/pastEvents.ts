@@ -69,6 +69,13 @@ export const pastEvents: PastEvent[] = [
 		],
 		date: '2026-05-16',
 		venue: 'Engine Shed, Bristol',
+		committee: [
+			{ name: 'Lorraine Pearce' },
+			{ name: 'Russell Day' },
+			{ name: 'Stuart Lang' },
+			{ name: 'Carl Sargunar' },
+			{ name: 'Sara Gowen' }
+		],
 		summary: 'Held at Engine Shed, right next to Bristol Temple Meads station.',
 		talks: [
 			{ speaker: 'Steven Read', title: 'Architecting for Observability' },
@@ -159,6 +166,13 @@ export const pastEvents: PastEvent[] = [
 		],
 		date: '2025-04-26',
 		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		committee: [
+			{ name: 'Lorraine Pearce' },
+			{ name: 'Russell Day' },
+			{ name: 'Stuart Lang' },
+			{ name: 'Carl Sargunar' },
+			{ name: 'Sara Gowen' }
+		],
 		summary: 'Back at Engine Shed, with exhibitors and supporters.',
 		talks: [
 			{ speaker: 'Steve Temple', title: 'Advanced Debugging' },
@@ -267,6 +281,14 @@ export const pastEvents: PastEvent[] = [
 		],
 		date: '2024-04-27',
 		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		committee: [
+			{ name: 'Lorraine Pearce' },
+			{ name: 'Hannah Price' },
+			{ name: 'Russell Day' },
+			{ name: 'Stuart Lang' },
+			{ name: 'Carl Sargunar' },
+			{ name: 'Sara Gowen' }
+		],
 		summary: 'Our second year at Engine Shed.',
 		talks: [
 			{ speaker: 'Kevlin Henney', title: '#FAIL' },
@@ -343,6 +365,14 @@ export const pastEvents: PastEvent[] = [
 		],
 		date: '2023-04-29',
 		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		committee: [
+			{ name: 'Lorraine Pearce' },
+			{ name: 'Martyn Fewtrell' },
+			{ name: 'Joseph Woodward' },
+			{ name: 'Hannah Price' },
+			{ name: 'Russell Day' },
+			{ name: 'Stuart Lang' }
+		],
 		summary: 'A return to Engine Shed on a Saturday in April, after the 2022 event.',
 		note: "The programme was loaded from Sessionize and wasn't captured by the Internet Archive, so we don't have the list of talks and speakers yet."
 	},

@@ -77,7 +77,8 @@
 	<h3 class="h4">Past committee members</h3>
 	<p class="max-w-2xl">
 		Thank you to everyone who has helped organise the conference. Years show when someone was listed
-		on the team page we could find in the archive, so the list is not complete.
+		on the team page: from the archive for 2022 and earlier, so that part is not complete, and from
+		this website's history for 2023 onwards.
 	</p>
 	<ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 		{#each pastCommittee as person (person.name)}
