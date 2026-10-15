@@ -18,16 +18,13 @@ export enum Milestone {
 	ConkedOut
 }
 
-/** A calendar date written as YYYY-MM-DD, e.g. `2027-06-12`. */
-export type IsoDate = `${number}-${number}-${number}`;
-
 const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
+
+const MS_PER_DAY = 86_400_000;
 
 export class MilestoneDetails {
 	private status: Status;
 	private targetDate?: Date;
-	/** The date as given (YYYY-MM-DD), or undefined while it is still to be confirmed. */
-	readonly isoDate?: IsoDate;
 
 	get hasHappened(): boolean {
 		if (this.status === Status.JustYouWait)
@@ -44,15 +41,20 @@ export class MilestoneDetails {
 		return dateFormatter.format(this.targetDate);
 	}
 
-	/** A milestone that is waiting on a date (`JustYouWait`) must be given one. */
-	constructor(status: Status.Done | Status.NotYet, date?: IsoDate);
-	constructor(status: Status.JustYouWait, date: IsoDate);
-	constructor(status: Status, date?: IsoDate) {
+	constructor(status: Status.Done | Status.NotYet);
+	constructor(status: Status, date: string);
+	constructor(status: Status, date?: string) {
 		this.status = status;
 		if (date) {
-			this.isoDate = date;
 			this.targetDate = new Date(`${date}T00:00:00Z`);
 		}
+	}
+
+	/** Whole days from `now` until the date (UTC midnight); negative once passed, undefined with no date. */
+	daysUntil(now: Date = new Date()): number | undefined {
+		if (!this.targetDate) return undefined;
+		const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+		return Math.round((this.targetDate.getTime() - today) / MS_PER_DAY);
 	}
 
 	willBeHappeningSoon(): boolean {
@@ -73,6 +75,18 @@ export function get(doneThing: Milestone): MilestoneDetails {
 export type HasHappened = (milestone: Milestone) => boolean;
 
 export const hasHappened: HasHappened = (milestone) => get(milestone).hasHappened;
+
+/**
+ * Whole days from `now` until the milestone's date (UTC midnight); negative once passed, and
+ * undefined while the milestone has no date. `lookup` is injectable for tests.
+ */
+export function daysUntil(
+	milestone: Milestone,
+	now: Date = new Date(),
+	lookup: (milestone: Milestone) => MilestoneDetails = get
+): number | undefined {
+	return lookup(milestone).daysUntil(now);
+}
 
 export type OpenStatus = 'not-open' | 'open' | 'closed';
 

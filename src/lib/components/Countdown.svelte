@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { countdownLabel, daysUntil, eventDate } from '#lib/event.ts';
+	import { countdownLabel } from '#lib/event.ts';
+	import { daysUntil, Milestone } from '#lib/milestones.ts';
 
 	// Rendered at build time with the build date, then refreshed on the client.
-	const date = eventDate();
-	let days = $state(date ? daysUntil(date) : null);
+	let days = $state(daysUntil(Milestone.TheActualEventDay) ?? null);
 
 	onMount(() => {
-		if (date) days = daysUntil(date);
+		days = daysUntil(Milestone.TheActualEventDay) ?? null;
 	});
 </script>
 

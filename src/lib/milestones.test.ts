@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
 	callForPapersStatus,
+	daysUntil,
 	getTimeline,
 	Milestone,
 	MilestoneDetails,
@@ -9,12 +10,26 @@ import {
 	windowStatus
 } from './milestones';
 
-describe('MilestoneDetails', () => {
-	it('exposes the date it was given as isoDate', () => {
-		expect(new MilestoneDetails(Status.JustYouWait, '2030-06-15').isoDate).toBe('2030-06-15');
-		expect(new MilestoneDetails(Status.NotYet).isoDate).toBeUndefined();
-	});
+describe('daysUntil', () => {
+	const withDate = (date?: string) => () =>
+		date ? new MilestoneDetails(Status.JustYouWait, date) : new MilestoneDetails(Status.NotYet);
+	const day = Milestone.TheActualEventDay;
 
+	it('counts whole days ignoring time of day', () => {
+		const lookup = withDate('2030-06-15');
+		expect(daysUntil(day, new Date('2030-06-05T23:59:00Z'), lookup)).toBe(10);
+	});
+	it('is zero on the day and negative afterwards', () => {
+		const lookup = withDate('2030-06-15');
+		expect(daysUntil(day, new Date('2030-06-15T09:00:00Z'), lookup)).toBe(0);
+		expect(daysUntil(day, new Date('2030-06-17T09:00:00Z'), lookup)).toBe(-2);
+	});
+	it('is undefined when the milestone has no date', () => {
+		expect(daysUntil(day, new Date(), withDate())).toBeUndefined();
+	});
+});
+
+describe('MilestoneDetails', () => {
 	describe('constructor', () => {
 		describe('without date', () => {
 			describe('Status.Done', () => {
@@ -176,22 +191,22 @@ describe('MilestoneDetails', () => {
 		});
 
 		describe('when the milestone has not happened yet', () => {
-			it('returns true when targetDate is tomorrow', () => {
+			it('returns true when the date is tomorrow', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-03-26');
 				expect(m.willBeHappeningSoon()).toBe(true);
 			});
 
-			it('returns true when targetDate is just inside the one-month boundary', () => {
+			it('returns true when the date is just inside the one-month boundary', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-04-24');
 				expect(m.willBeHappeningSoon()).toBe(true);
 			});
 
-			it('returns false when targetDate is just outside the one-month boundary', () => {
+			it('returns false when the date is just outside the one-month boundary', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-05-01');
 				expect(m.willBeHappeningSoon()).toBe(false);
 			});
 
-			it('returns false when targetDate is far in the future', () => {
+			it('returns false when the date is far in the future', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2099-12-31');
 				expect(m.willBeHappeningSoon()).toBe(false);
 			});
