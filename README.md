@@ -84,7 +84,45 @@ Everything time-sensitive is driven by `src/lib/milestones.ts`. Marking a milest
 
 Date and venue show as "To be confirmed" until they are set.
 
-To see the hidden states before they happen, add `?preview=` to any address (it is remembered for the browser tab): `tickets`, `voting`, `cfp` (the featured button), `none`, `schedule` (the Schedule and Speakers links), or `off` to go back to the real milestones. Combine with commas, e.g. `?preview=voting,schedule`.
+#### Featured header button
+
+One button in the header follows the current milestone, and is absent when nothing is open (`src/lib/featured.ts`, built on `src/lib/timeline.ts`):
+
+| Button           | Page               | Open from                                          | Until                      |
+| ---------------- | ------------------ | -------------------------------------------------- | -------------------------- |
+| Submit a talk    | `/call-for-papers` | "Call for speakers opens" (`OpenCallForSpeakers`)  | "Call for speakers closes" |
+| Vote on sessions | `/session-voting`  | "Session voting opens" (`OpenSessionVoting`)       | "Session voting closes"    |
+| Tickets          | `/tickets`         | "Schedule announced and ticket registration opens" | "Day of the event!"        |
+
+If windows overlap, the later milestone wins (tickets, then voting, then the call for papers). These three pages are not in the main nav, but they stay reachable by URL and from the footer. Set `ticketTailorUrl` and `votingUrl` in `src/lib/eventDetails.ts` when their registration and voting forms exist.
+
+#### Hidden until announced
+
+| Nav item | Page        | Shown from                                         |
+| -------- | ----------- | -------------------------------------------------- |
+| Schedule | `/schedule` | "Schedule announced and ticket registration opens" |
+| Speakers | `/speakers` | the same milestone (announced together)            |
+
+Until then they are left out of the nav and the home page, but the pages stay reachable by URL. They always show while tickets are open, since tickets open with the announcement.
+
+#### Previewing for testing
+
+Add one of these to the end of any address to view things that are hidden or closed. Values combine with commas, for example `?preview=voting,schedule`.
+
+| Add to any address  | Effect                                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `?preview=tickets`  | Shows the **Tickets** featured button, and the **Schedule** and **Speakers** links (tickets are never open without them) |
+| `?preview=voting`   | Shows the **Vote on sessions** featured button                                                                           |
+| `?preview=cfp`      | Shows the **Submit a talk** featured button                                                                              |
+| `?preview=none`     | Shows no featured button (the "nothing open" state)                                                                      |
+| `?preview=schedule` | Shows the **Schedule** and **Speakers** links in the nav and the home page                                               |
+| `?preview=speakers` | Same as `?preview=schedule`                                                                                              |
+| `?preview=off`      | Clears the preview and goes back to the real milestones                                                                  |
+
+- A preview is remembered for the rest of the browser tab, so you can click around.
+- A previewed featured button has a dashed outline, so it is never mistaken for the real thing.
+- If several featured values are given, the first one wins.
+- A preview only changes what is linked. To see a page's open state, change its milestone in `src/lib/milestones.ts`.
 
 ### Page layout
 
@@ -95,7 +133,32 @@ Every page except the home page and error pages gets an orange heading banner an
 export const load = () => ({ title: 'My page', lead: 'A short introduction.' });
 ```
 
-A page with its own full-width design returns `bare: true` instead (the home page does).
+Width and spacing live in `src/lib/components/Container.svelte` (one place for the whole site). A page with its own full-width design opts out by returning `bare: true` from `load`, as the home page does. Error pages are bare automatically.
+
+### Buttons and hover colours
+
+Keep every button, tab and toggle consistent:
+
+- Use Skeleton presets only (`preset-filled-*`, `preset-outlined-*`, `preset-tonal`), never hand-picked colours.
+- Hover is a **contrasting colour**, never a brightness change. Skeleton's built-in brightness hover is switched off globally in `src/app.css`, so each control sets its own.
+- Always pair `hover:` with `focus-visible:` so keyboard users get the same change.
+- Native `<button>`s, tabs and the dark-mode switch need `cursor-pointer` (Tailwind 4 uses the arrow); links already show the hand.
+
+| Control                                                                 | Resting                          | Hover and keyboard focus                                                                                                               |
+| ----------------------------------------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Primary action (Tickets page, Copy email, Sessionize, 404, dialogs)     | `btn preset-filled-primary-500`  | `preset-filled-surface-950-50` (navy; white in dark mode)                                                                              |
+| Hero ticket button (navy)                                               | `preset-filled-surface-950-50`   | `preset-filled-surface-50-950` (white; navy in dark mode)                                                                              |
+| Header featured button (`FeaturedLink`: navy, white in dark mode, icon) | `preset-filled-surface-950-50`   | `preset-filled-primary-500` (orange), because white would vanish on the white header                                                   |
+| Outlined hero secondary button                                          | `preset-outlined-surface-950-50` | `preset-filled-surface-50-950` (white; navy in dark mode), the inverse of the hero ticket button beside it so the two never look alike |
+| Outlined About year buttons                                             | `preset-outlined-primary-500`    | `preset-filled-surface-950-50`                                                                                                         |
+| Tonal (Menu button, unselected year tabs, speaker buttons)              | `btn preset-tonal`               | `preset-filled-surface-950-50`                                                                                                         |
+| Selected year tab                                                       | `preset-filled-primary-500`      | no change, and the arrow cursor                                                                                                        |
+| Dark-mode switch                                                        | Skeleton's track colours         | off: `preset-filled-primary-500`; on: `preset-filled-surface-500` (keeps the white thumb visible)                                      |
+| Toast close button                                                      | Skeleton default                 | `preset-filled-surface-950-50`                                                                                                         |
+| Header logo link                                                        | plain (cow + wordmark)           | `preset-filled-surface-950-50` pill; the wordmark swaps to `text-surface-50-950` via `group-hover:`                                    |
+| Header nav links                                                        | plain                            | hover: `preset-filled-surface-950-50`; current page: `preset-filled-primary-500` (no hover change)                                     |
+
+The idea: orange is the resting "action" colour, and hovering flips to the high-contrast navy (white in dark mode). A new button picks the row above that matches its resting style.
 
 ### Tests
 
