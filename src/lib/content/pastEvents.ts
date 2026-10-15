@@ -534,7 +534,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2017,
 		title: 'DDD South West 7',
 		archiveUrl: 'https://web.archive.org/web/20171223185535/http://www.dddsouthwest.com:80/',
-		logo: '/images/past/logos/2014.jpg',
+		logo: '/images/past/logos/2017.png',
 		sponsors: [
 			{ name: 'Just Eat', url: 'https://www.just-eat.co.uk/' },
 			{ name: 'iO Associates', url: 'https://www.ioassociates.co.uk/' },
