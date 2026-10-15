@@ -878,13 +878,34 @@ export const pastEvents: PastEvent[] = [
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
-			{ name: 'Red Gate', url: 'https://www.red-gate.com/' }
+			{ name: 'Red Gate', url: 'https://www.red-gate.com/' },
+			{ name: 'DevExpress', url: 'https://www.devexpress.com/' },
+			{ name: 'Black Marble', url: 'https://www.blackmarble.com/' }
 		],
 		date: '2010-06-05',
 		venue:
 			'University of the West of England (UWE), Frenchay Campus, Coldharbour Lane, Bristol BS16 1QY',
-		summary: 'The first 250 tickets went in five hours, so capacity was raised to 330.',
-		note: "We couldn't find the final agenda in the archive."
+		summary:
+			'The first 250 tickets went in five hours, so capacity was raised to 330. Three talk tracks plus an alternative track of discussions, a balloon debate, planning poker and a workshop.',
+		talks: [
+			{ speaker: 'Richard Costall', title: 'Silverlight 3' },
+			{ speaker: 'Ben Hall', title: 'Embracing a new world – dynamic languages and .Net' },
+			{ speaker: 'John Price', title: 'A PC in the living Room – Enter Vista Media Center' },
+			{ speaker: 'Chris Hay', title: 'Introduction to Windows Azure' },
+			{ speaker: 'George Adamson', title: 'Get Going With jQuery' },
+			{ speaker: 'Kris Athi', title: 'Introduction to Video Game Development with XNA' },
+			{ speaker: 'Steve Sanderson', title: 'Real-world MVC architecture' },
+			{
+				speaker: 'Gary Short',
+				title: 'Everything you Wanted to Know About Refactoring but Were Afraid to Ask'
+			},
+			{ speaker: 'Richard Fennell', title: 'What is Scrum?' },
+			{ speaker: 'Guy Smith-Ferrier', title: 'What’s New In C# 4?' },
+			{ speaker: 'Chris Hay', title: 'ASP.NET Front End Performance' },
+			{ speaker: 'Marc Gravell', title: 'Express Yourself' },
+			{ speaker: 'Ben Hall', title: 'Creating extendable applications using MEF' },
+			{ speaker: 'Jimmy Skowronski', title: 'Real World Interoperability With WCF' }
+		]
 	},
 	{
 		year: 2009,
