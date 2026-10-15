@@ -854,7 +854,11 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Coldharbour Systems' },
 			{ name: 'Syncfusion', url: 'https://www.syncfusion.com/' },
 			{ name: 'TekPub' },
-			{ name: 'Telerik', url: 'https://www.telerik.com/' }
+			{ name: 'Telerik', url: 'https://www.telerik.com/' },
+			{ name: 'WebTech' },
+			{ name: 'Avanade', url: 'https://www.avanade.com/en-gb' },
+			{ name: 'PC Talk' },
+			{ name: 'eGroup' }
 		],
 		committee: [
 			{ name: 'Martyn Fewtrell', role: 'Registration' },
@@ -867,8 +871,50 @@ export const pastEvents: PastEvent[] = [
 		venue:
 			'University of the West of England (UWE), Frenchay Campus, Coldharbour Lane, Bristol BS16 1QY',
 		summary:
-			'Sessions chosen by public vote. Recordings included talks from Gary Short, Mark Rendle, Phil Collins and Ross Scott ("How I made Pocket DDD").',
-		note: "We couldn't find the final agenda in the archive."
+			'Sessions chosen by public vote, across four tracks plus a Getting Started track. Recordings included talks from Gary Short, Mark Rendle, Phil Collins and Ross Scott ("How I made Pocket DDD").',
+		talks: [
+			{ speaker: 'Mark Rendle', title: 'Minimalist Software Development' },
+			{ speaker: 'Paul Stack', title: 'SpecFlow - functional testing made easy' },
+			{ speaker: 'Nathan Gloyn', title: 'Kanban? what is it and how can it help?' },
+			{ speaker: 'Jimmy Skowronski', title: 'Coding for PowerShell' },
+			{ speaker: 'Rick Spence', title: 'Getting Started With C#' },
+			{ speaker: 'Rob Ashton', title: 'Steps to reduce the friction in ASP.NET MVC' },
+			{
+				speaker: 'George Adamson',
+				title:
+					"jQuery Templates: Now it's a doddle to simplify your ajax and render data client-side"
+			},
+			{ speaker: 'Chris Alcock', title: 'NuGet - sweet but not edible' },
+			{ speaker: 'John Price', title: 'Computer, earl grey tea, hot' },
+			{ speaker: 'Richard Parker', title: 'Getting Started With The .NET Framework' },
+			{ speaker: 'Richard Dalton', title: 'The Missing Link - Pushing Through The Pain Of TDD' },
+			{ speaker: 'Chris Canal', title: 'Advanced Asp.Net Mvc 3' },
+			{ speaker: 'Richard Costall', title: 'Silverlight Beyond the Browser' },
+			{ speaker: 'John McLoughlin', title: 'Intro to Windows Workflow Foundation 4' },
+			{ speaker: 'Steve Sanderson', title: 'Getting Started With ASP.NET MVC' },
+			{ speaker: 'Richard Campbell', title: 'Why Web Performance Matters' },
+			{
+				speaker: 'Colin Mackay',
+				title: 'Parallel... Parallelise... Pallar... Doing stuff at the same time in .NET 4.0'
+			},
+			{
+				speaker: 'Andrew Westgarth',
+				title: 'Delivering High Quality Live and On-Demand Video to Multiple Devices'
+			},
+			{ speaker: 'Kris Athi', title: 'Developing Windows Phone 7 Applications Using Silverlight' },
+			{ speaker: 'Steve Hallam', title: 'Getting Started With Visual Studio' },
+			{
+				speaker: 'Chris Hay',
+				title: 'Building seriously scalable websites with ASP.NET with and without Windows'
+			},
+			{
+				speaker: 'Phil Collins',
+				title: 'Rewriting software is the single worst mistake you can make - apparently'
+			},
+			{ speaker: 'Ross Scott', title: "This Android's Life" },
+			{ speaker: 'Marc Gravell', title: 'Every Byte Counts - saving bandwidth with protobuf' },
+			{ speaker: 'David Ringsell', title: 'Getting Started With Windows Presentation Foundation' }
+		]
 	},
 	{
 		year: 2010,
