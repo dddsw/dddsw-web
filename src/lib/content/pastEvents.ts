@@ -602,9 +602,8 @@ export const pastEvents: PastEvent[] = [
 				title: 'Layers, Abstractions & Spaghetti Code: Revisiting the Onion Architecture'
 			},
 			{
-				speaker: 'Andrew Chaa',
-				title:
-					'Securing ASP.NET Core APIs with Custom Authentication Middleware and IP Restriction Middleware'
+				speaker: 'Adam Ralph',
+				title: 'Getting the first PR into .NET, and Other Tales From An Open Source Contributor'
 			},
 			{ speaker: 'Ian Russell', title: 'Functional Programming in C#' }
 		]
@@ -663,7 +662,7 @@ export const pastEvents: PastEvent[] = [
 			{ speaker: 'Matteo Emili', title: 'How to get the grip on Git, my experience' },
 			{ speaker: 'Anthony Brown', title: 'Building applications with Akka.Net' },
 			{ speaker: 'Sam Elamin', title: 'Monoliths to Microservices. A Journey' },
-			{ speaker: 'Phil Bottomley', title: 'ES6 - Using future java script today' },
+			{ speaker: 'Phil Bottomley', title: 'ES6 - Using future JavaScript today' },
 			{
 				speaker: 'David Ringsell',
 				title: 'An introduction to MVC including the benefits and the design pattern'
