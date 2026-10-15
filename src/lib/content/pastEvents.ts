@@ -76,7 +76,7 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Carl Sargunar' },
 			{ name: 'Sara Gowen' }
 		],
-		summary: 'Held at Engine Shed, right next to Bristol Temple Meads station.',
+		summary: 'Our last year at Engine Shed.',
 		talks: [
 			{ speaker: 'Steven Read', title: 'Architecting for Observability' },
 			{ speaker: 'Andrew Clymer', title: 'Passkeys in ASP.NET Core 10' },
