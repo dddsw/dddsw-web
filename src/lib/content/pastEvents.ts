@@ -68,7 +68,7 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Flagstone', url: 'https://www.flagstoneim.com/' }
 		],
 		date: '2026-05-16',
-		venue: 'Engine Shed, Bristol',
+		venue: 'Engine Shed, Station Approach, Temple Meads, Bristol, BS1 6QH',
 		committee: [
 			{ name: 'Lorraine Pearce' },
 			{ name: 'Russell Day' },
@@ -165,7 +165,7 @@ export const pastEvents: PastEvent[] = [
 			}
 		],
 		date: '2025-04-26',
-		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		venue: 'Engine Shed, Station Approach, Temple Meads, Bristol, BS1 6QH',
 		committee: [
 			{ name: 'Lorraine Pearce' },
 			{ name: 'Russell Day' },
@@ -280,7 +280,7 @@ export const pastEvents: PastEvent[] = [
 			}
 		],
 		date: '2024-04-27',
-		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		venue: 'Engine Shed, Station Approach, Temple Meads, Bristol, BS1 6QH',
 		committee: [
 			{ name: 'Lorraine Pearce' },
 			{ name: 'Hannah Price' },
@@ -289,7 +289,7 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Carl Sargunar' },
 			{ name: 'Sara Gowen' }
 		],
-		summary: 'Our second year at Engine Shed.',
+		summary: 'Our third year at Engine Shed.',
 		talks: [
 			{ speaker: 'Kevlin Henney', title: '#FAIL' },
 			{
@@ -364,7 +364,7 @@ export const pastEvents: PastEvent[] = [
 			}
 		],
 		date: '2023-04-29',
-		venue: 'Engine Shed, Station Approach, Bristol BS1 6QH',
+		venue: 'Engine Shed, Station Approach, Temple Meads, Bristol, BS1 6QH',
 		committee: [
 			{ name: 'Lorraine Pearce' },
 			{ name: 'Martyn Fewtrell' },
@@ -407,7 +407,7 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Stuart Lang' }
 		],
 		date: '2022-06-25',
-		venue: 'Engine Shed, Temple Meads, Bristol BS1 6QH',
+		venue: 'Engine Shed, Station Approach, Temple Meads, Bristol, BS1 6QH',
 		summary:
 			'Our first event at Engine Shed, four tracks of talks plus MiniHack sessions and lunchtime lightning talks.',
 		note: 'From the draft schedule published before the event, so late changes may not be reflected.',
