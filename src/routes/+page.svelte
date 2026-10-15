@@ -2,7 +2,7 @@
 	import CallToActions from '$lib/CallToActions.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
-	import Timeline from '$lib/Timeline.svelte';
+	import Timeline from '$lib/components/Timeline.svelte';
 	import { eventYear, showSponsors } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
 	import { get, Milestone } from '$lib/milestones';
