@@ -1,120 +1,168 @@
 <script lang="ts">
-	import CallToActions from '$lib/CallToActions.svelte';
-	import Sponsors from '$lib/Sponsors.svelte';
-	import type { KeyPoint } from '../types/KeyPoint.type';
+	import Container from '$lib/components/Container.svelte';
+	import Cow from '$lib/components/Cow.svelte';
+	import Countdown from '$lib/components/Countdown.svelte';
+	import EventFacts from '$lib/components/EventFacts.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
-	import { eventYear, showSponsors } from '$lib/eventDetails';
-	import type { PageProps } from './$types';
-	import { get, Milestone } from '$lib/milestones';
+	import Sponsors from '$lib/Sponsors.svelte';
+	import { event, showSponsors } from '$lib/eventDetails';
+	import { preview } from '$lib/featured.svelte';
 	import { currentUpdate } from '$lib/latestUpdate';
+	import { scheduleShown } from '$lib/navigation';
 
-	let { data }: PageProps = $props();
-
-	const planningAsks = [
+	const allCards = [
 		{
-			icon: 'location_on',
-			title: 'Venue',
-			paragraph: `We're looking for a new venue to host DDD South West 2027. If you know of a space
-				that could work, email us at
-				<a href="mailto:management@dddsouthwest.com" class="emphasis">management@dddsouthwest.com</a>.`
+			href: '/schedule',
+			gate: 'schedule',
+			title: 'See the schedule',
+			body: 'A day of talks from developers like you.',
+			emoji: '🗓️'
 		},
 		{
-			icon: 'group_add',
-			title: 'Committee',
-			paragraph: `We're looking for new committee members and volunteers to help organise the event. If you'd like
-				to get involved, email us at
-				<a href="mailto:management@dddsouthwest.com" class="emphasis">management@dddsouthwest.com</a>.`
+			href: '/speakers',
+			gate: 'schedule',
+			title: 'Meet the speakers',
+			body: 'The brilliant people sharing their knowledge.',
+			emoji: '🧑‍💻'
 		},
 		{
-			icon: 'storefront',
-			title: 'Sponsorship',
-			paragraph: `DDD South West is entirely funded by sponsorship. If you or your company would
-				like to support the 2027 event, get in touch at
-				<a href="mailto:sponsorship@dddsouthwest.com" class="emphasis">sponsorship@dddsouthwest.com</a>.`
+			href: '/call-for-papers',
+			title: 'Speak at DDDSW',
+			body: 'First-timers and old hands welcome. Find out how to speak.',
+			emoji: '🎤'
+		},
+		{
+			href: '/sponsorship',
+			title: 'Sponsor us',
+			body: 'DDDSW is entirely funded by sponsorship. Put your company in front of the South West dev community.',
+			emoji: '🤝'
 		}
 	];
 
-	let keyPoints: KeyPoint[] = [
+	// The schedule and speakers cards wait for the announcement, like the nav links.
+	const cards = $derived(
+		allCards.filter((card) => card.gate !== 'schedule' || scheduleShown(preview))
+	);
+
+	const planningAsks = [
 		{
-			title: 'For developers',
-			icon: 'code',
-			paragraph: `Developers are at the heart of DDD South West.
-		We love to learn and share their ideas with others. You'll meet like minded peers,
-		make new friends and connections, and feel part of our friendly community where everyone is welcome.`
+			emoji: '📍',
+			title: 'Venue',
+			body: `We're looking for a new venue to host ${event.shortName} ${event.year}. If you know of a space that could work, email us at`,
+			email: event.contactEmail
 		},
 		{
-			title: 'For speakers',
-			icon: 'diversity_1',
-			paragraph: `Our events are a fantastic place to get your name out there as a speaker. Whether you're a
-				professional or a first-timer, you will be made to feel welcome and supported.`
-		},
-		{
-			title: 'For sponsors',
-			icon: 'storefront',
-			paragraph: `DDD South West would not be possible without the help from our generous sponsors. If you're
-				interested in supporting the tech community and getting access to exactly the people you
-				need for your technical roles please <a href="/sponsorship">consider sponsoring us.</a>`
+			emoji: '👥',
+			title: 'Committee',
+			body: `We're looking for new committee members and volunteers to help organise the event. If you'd like to get involved, email us at`,
+			email: event.contactEmail
 		}
 	];
 </script>
 
-<div class="secondary-bg">
-	{#if currentUpdate}
-		<div class="section">
-			<p>{@html currentUpdate}</p>
+<svelte:head>
+	<title>{event.name} · {event.shortName} {event.year}</title>
+</svelte:head>
+
+<section class="bg-primary-500 text-surface-950">
+	<Container class="grid items-center gap-8 py-14 md:grid-cols-[1.3fr_1fr] md:py-24">
+		<div class="space-y-6">
+			<h1 class="h1 leading-[1.05] md:text-7xl">
+				Developer!<br />Developer!<br />Developer!
+				<span class="block text-surface-50 [text-shadow:0_3px_0_var(--color-surface-950)]"
+					>South West</span>
+			</h1>
+			<p class="max-w-xl text-xl">
+				{event.tagline}. Talks, hallway chats and a day out with your herd.
+			</p>
+			<div class="flex flex-wrap gap-3">
+				<a
+					href="/tickets"
+					class="btn preset-filled-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
+					>Get your free ticket</a>
+				<a
+					href="/sponsorship"
+					class="btn preset-outlined-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
+					>Convince your boss to sponsor us</a>
+			</div>
 		</div>
+		<div class="flex justify-center">
+			<Cow
+				title="The DDDSW cow"
+				class="wobble w-full max-w-md text-white drop-shadow-[0_8px_0_var(--color-surface-950)]" />
+		</div>
+	</Container>
+</section>
+
+<Container class="space-y-16 pt-12">
+	<section class="space-y-6">
+		<EventFacts />
+		<Countdown />
+	</section>
+
+	{#if currentUpdate}
+		<section class="card tint-orange p-6" aria-label="Latest update">
+			<p class="max-w-3xl text-lg">{@html currentUpdate}</p>
+		</section>
 	{/if}
-	<div class="section">
-		<h2 class="text-center text-3xl md:text-4xl">Help us plan DDD South West 2027</h2>
-		<p class="text-center text-lg">
-			We're in the early stages of planning our next event and need your help!
+
+	<section class="space-y-3" aria-labelledby="expect">
+		<h2 id="expect" class="h2">What to expect</h2>
+		<p class="max-w-3xl text-lg">
+			{event.shortName} is an annual, free, one-day technical conference organised by developers for developers.
+			It's a day of learning, discussing, contributing and being part of the developer community in the
+			South West. Our goal is to provide free technical education, the chance to mix with peers, and the
+			opportunity to make and develop relationships in the community.
 		</p>
-		<div
-			class="flex divide-y lg:divide-y-0 lg:divide-x divide-gray-200 flex-col self-center lg:flex-row">
-			{#each planningAsks as ask}
-				<div class="flex flex-col p-2">
-					<span
-						class="place-self-center material-symbols-outlined text-[2.5rem] text-(--primary-color)">
-						{ask.icon}
-					</span>
-					<h3 class="place-self-center m-0">{ask.title}</h3>
-					<p class="m-0 leading-relaxed">{@html ask.paragraph}</p>
+	</section>
+
+	<section
+		class="grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-6"
+		aria-labelledby="get-involved">
+		<h2 id="get-involved" class="col-span-full h2">Join the herd</h2>
+		{#each cards as card (card.href)}
+			<div
+				class="relative space-y-2 card preset-filled-surface-100-900 p-6 transition focus-within:tint-orange hover:tint-orange">
+				<span class="text-4xl" aria-hidden="true">{card.emoji}</span>
+				<h3 class="h4">
+					<!-- Stretched link: the title is the visible, underlined link and the whole card is clickable. -->
+					<a href={card.href} class="after:absolute after:inset-0">{card.title}</a>
+				</h3>
+				<p>{card.body}</p>
+			</div>
+		{/each}
+	</section>
+
+	<section class="space-y-6" aria-labelledby="help-plan">
+		<div class="space-y-2">
+			<h2 id="help-plan" class="h2">Help us plan {event.shortName} {event.year}</h2>
+			<p class="max-w-3xl text-lg">
+				We're in the early stages of planning our next event and need your help!
+			</p>
+		</div>
+		<div class="grid gap-6 md:grid-cols-2">
+			{#each planningAsks as ask (ask.title)}
+				<div class="space-y-2 card preset-filled-surface-100-900 p-6">
+					<span class="text-4xl" aria-hidden="true">{ask.emoji}</span>
+					<h3 class="h4">{ask.title}</h3>
+					<p>{ask.body} <a href="mailto:{ask.email}">{ask.email}</a>.</p>
 				</div>
 			{/each}
 		</div>
-	</div>
+	</section>
 
-	{#if false}
-		<CallToActions {keyPoints} />
-	{/if}
-
-	{#if get(Milestone.AnnounceScheduleAndOpenTicketRegistration)?.hasHappened}
-		<div class="tertiary-bg">
-			<div class="section">
-				<h2>Our {eventYear} Speakers</h2>
-				<div>{@html data.sessionizeSpeakerWallCode}</div>
-			</div>
-		</div>
-	{/if}
 	{#if showSponsors}
 		<Sponsors />
 	{/if}
 
-	<div class="tertiary-bg">
-		<div class="section">
-			<p>
-				DDD South West is an inclusive, non-profit, volunteer driven developer conference organised
-				by the community, for the community. We are dedicated to providing a safe and welcoming
-				conference experience for everyone.
-			</p>
-			<p>
-				Please refer to our <a href="/code-of-conduct">Code of Conduct</a> for more information.
-			</p>
-		</div>
-	</div>
-	{#if get(Milestone.SetADate)?.hasHappened}
-		<div class="section">
-			<Timeline />
-		</div>
-	{/if}
-</div>
+	<Timeline />
+
+	<section class="space-y-2" aria-label="Our community">
+		<p class="max-w-3xl">
+			{event.shortName} is an inclusive, non-profit, volunteer-driven developer conference organised by
+			the community, for the community. We are dedicated to providing a safe and welcoming conference
+			experience for everyone. Please read our
+			<a href="/code-of-conduct">code of conduct</a> for more information.
+		</p>
+	</section>
+</Container>
