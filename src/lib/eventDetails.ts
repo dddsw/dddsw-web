@@ -16,6 +16,8 @@ export const event = {
 	shortName: 'DDDSW',
 	tagline: 'A friendly, community-run conference for software developers',
 	year: eventYear,
+	/** Leave a field null until announced: the site shows "To be confirmed". */
+	venue: { name: null, city: null } as { name: string | null; city: string | null },
 	contactEmail: 'management@dddsouthwest.com',
 	sponsorshipEmail: 'sponsorship@dddsouthwest.com',
 	/** Public address of the site, used where we need a full link. No trailing slash. */
@@ -26,3 +28,11 @@ export const social = {
 	bluesky: 'https://bsky.app/profile/dddsouthwest.com',
 	linkedIn: 'https://www.linkedin.com/company/ddd-south-west/'
 } as const;
+
+export const links = {
+	/** Registration URL for free tickets (DDDSW is free). Empty shows a "not available yet" state. */
+	tickets: ticketTailorUrl,
+	callForPapers: sessionizePublicCallForPapersUrl,
+	/** Session voting form URL. Empty until voting opens. */
+	voting: votingUrl
+};

@@ -23,6 +23,8 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
 export class MilestoneDetails {
 	private status: Status;
 	private targetDate?: Date;
+	/** The date as given (YYYY-MM-DD), or undefined while it is still to be confirmed. */
+	readonly isoDate?: string;
 
 	get hasHappened(): boolean {
 		if (this.status === Status.JustYouWait)
@@ -44,6 +46,7 @@ export class MilestoneDetails {
 	constructor(status: Status, date?: string) {
 		this.status = status;
 		if (date) {
+			this.isoDate = date;
 			this.targetDate = new Date(`${date}T00:00:00Z`);
 		}
 	}

@@ -2,6 +2,11 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { MilestoneDetails, Status } from './milestones';
 
 describe('MilestoneDetails', () => {
+	it('exposes the date it was given as isoDate', () => {
+		expect(new MilestoneDetails(Status.JustYouWait, '2030-06-15').isoDate).toBe('2030-06-15');
+		expect(new MilestoneDetails(Status.NotYet).isoDate).toBeUndefined();
+	});
+
 	describe('constructor', () => {
 		describe('without date', () => {
 			describe('Status.Done', () => {
