@@ -48,21 +48,6 @@
 
 	// The ticket button waits for tickets to open, like the Tickets button in the header.
 	const ticketsOpen = $derived(resolveFeatured(preview.featured)?.id === 'tickets');
-
-	const planningAsks = [
-		{
-			emoji: '📍',
-			title: 'Venue',
-			body: `We're looking for a new venue to host ${event.shortName} ${event.year}. If you know of a space that could work, email us at`,
-			email: event.contactEmail
-		},
-		{
-			emoji: '👥',
-			title: 'Committee',
-			body: `We're looking for new committee members and volunteers to help organise the event. If you'd like to get involved, email us at`,
-			email: event.contactEmail
-		}
-	];
 </script>
 
 <svelte:head>
@@ -142,24 +127,6 @@
 				<p>{card.body}</p>
 			</div>
 		{/each}
-	</section>
-
-	<section class="space-y-6" aria-labelledby="help-plan">
-		<div class="space-y-2">
-			<h2 id="help-plan" class="h2">Help us plan {event.shortName} {event.year}</h2>
-			<p class="max-w-3xl text-lg">
-				We're in the early stages of planning our next event and need your help!
-			</p>
-		</div>
-		<div class="grid gap-6 md:grid-cols-2">
-			{#each planningAsks as ask (ask.title)}
-				<div class="space-y-2 card preset-filled-surface-100-900 p-6">
-					<span class="text-4xl" aria-hidden="true">{ask.emoji}</span>
-					<h3 class="h4">{ask.title}</h3>
-					<p>{ask.body} <a href="mailto:{ask.email}">{ask.email}</a>.</p>
-				</div>
-			{/each}
-		</div>
 	</section>
 
 	{#if showSponsors && sponsors.length}
