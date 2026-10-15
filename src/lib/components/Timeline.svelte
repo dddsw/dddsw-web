@@ -1,8 +1,26 @@
 <script lang="ts">
 	import { event } from '#lib/eventDetails.ts';
-	import { getTimeline } from '#lib/milestones.ts';
+	import { get, hasHappened, Milestone } from '#lib/milestones.ts';
 
-	const timeline = getTimeline();
+	/** The key milestones shown on the "road to the event" timeline, in order. */
+	const timelineMilestones: readonly { label: string; milestone: Milestone }[] = [
+		{ label: 'Planning kicks off', milestone: Milestone.StartPlanning },
+		{ label: 'Call for speakers opens', milestone: Milestone.OpenCallForSpeakers },
+		{ label: 'Call for speakers closes', milestone: Milestone.CloseCallForSpeakers },
+		{ label: 'Session voting opens', milestone: Milestone.OpenSessionVoting },
+		{ label: 'Session voting closes', milestone: Milestone.CloseSessionVoting },
+		{
+			label: 'Schedule announced and ticket registration opens',
+			milestone: Milestone.AnnounceScheduleAndOpenTicketRegistration
+		},
+		{ label: 'Day of the event!', milestone: Milestone.TheActualEventDay }
+	];
+
+	const timeline = timelineMilestones.map(({ label, milestone }) => ({
+		label,
+		date: get(milestone).formattedDate,
+		done: hasHappened(milestone)
+	}));
 </script>
 
 <section aria-labelledby="timeline" class="space-y-4">

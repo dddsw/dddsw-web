@@ -2,7 +2,6 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
 	callForPapersStatus,
 	daysUntil,
-	getTimeline,
 	Milestone,
 	MilestoneDetails,
 	Status,
@@ -251,21 +250,5 @@ describe('windowStatus', () => {
 	it('gives the call for papers and voting their own windows', () => {
 		expect(callForPapersStatus(happened(Milestone.OpenCallForSpeakers))).toBe('open');
 		expect(votingStatus(happened(Milestone.OpenCallForSpeakers))).toBe('not-open');
-	});
-});
-
-describe('getTimeline', () => {
-	it('lists the milestones in order, with a plain boolean done flag', () => {
-		const timeline = getTimeline();
-		expect(timeline.map((item) => item.label)).toEqual([
-			'Planning kicks off',
-			'Call for speakers opens',
-			'Call for speakers closes',
-			'Session voting opens',
-			'Session voting closes',
-			'Schedule announced and ticket registration opens',
-			'Day of the event!'
-		]);
-		expect(timeline.every((item) => typeof item.done === 'boolean')).toBe(true);
 	});
 });

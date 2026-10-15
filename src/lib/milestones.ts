@@ -109,35 +109,6 @@ export const callForPapersStatus = (happened: HasHappened = hasHappened): OpenSt
 export const votingStatus = (happened: HasHappened = hasHappened): OpenStatus =>
 	windowStatus(Milestone.OpenSessionVoting, Milestone.CloseSessionVoting, happened);
 
-export interface TimelineItem {
-	label: string;
-	/** The date, already formatted for display. Undefined while it is still to be confirmed. */
-	date?: string;
-	done: boolean;
-}
-
-/** The key milestones shown on the "road to the event" timeline, in order. */
-const timelineMilestones: readonly { label: string; milestone: Milestone }[] = [
-	{ label: 'Planning kicks off', milestone: Milestone.StartPlanning },
-	{ label: 'Call for speakers opens', milestone: Milestone.OpenCallForSpeakers },
-	{ label: 'Call for speakers closes', milestone: Milestone.CloseCallForSpeakers },
-	{ label: 'Session voting opens', milestone: Milestone.OpenSessionVoting },
-	{ label: 'Session voting closes', milestone: Milestone.CloseSessionVoting },
-	{
-		label: 'Schedule announced and ticket registration opens',
-		milestone: Milestone.AnnounceScheduleAndOpenTicketRegistration
-	},
-	{ label: 'Day of the event!', milestone: Milestone.TheActualEventDay }
-];
-
-export function getTimeline(): TimelineItem[] {
-	return timelineMilestones.map(({ label, milestone }) => ({
-		label,
-		date: get(milestone).formattedDate,
-		done: hasHappened(milestone)
-	}));
-}
-
 /** Every milestone must be listed here: the compiler rejects a missing one. */
 const milestones: Record<Milestone, MilestoneDetails> = {
 	[Milestone.StartPlanning]: new MilestoneDetails(Status.Done),
