@@ -679,7 +679,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2014,
 		title: 'DDD South West 5',
 		archiveUrl: 'https://web.archive.org/web/20141219082521/http://www.dddsouthwest.com/',
-		logo: '/images/past/logos/2014.jpg',
+		logo: '/images/past/logos/2014-south-west-5.png',
 		sponsors: [
 			{ name: 'Grey Matter', url: 'https://www.greymatter.com/' },
 			{ name: 'Scott Logic', url: 'https://www.scottlogic.com/' },
