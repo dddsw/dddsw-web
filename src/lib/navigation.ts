@@ -17,7 +17,7 @@ export interface NavItem {
 const noPreview: PreviewState = { featured: null, schedule: false };
 
 /**
- * Whether to show links to the schedule. It appears once the schedule is announced, and always
+ * Whether to show links to the schedule and speakers, which are announced together. It appears once the schedule is announced, and always
  * while tickets are open. A testing preview can reveal it early: `?preview=schedule`, and
  * `?preview=tickets` too, because tickets are never open without the schedule being out.
  */
@@ -44,6 +44,7 @@ export function visibleNav(
 
 	const nav: (NavItem | false | undefined)[] = [
 		scheduleShown(preview, items) && { href: '/schedule', label: 'Schedule' },
+		scheduleShown(preview, items) && { href: '/speakers', label: 'Speakers' },
 		sessionsShown && { href: '/sessions', label: 'Sessions' },
 		{ href: '/about', label: 'About' },
 		{ href: '/sponsorship', label: 'Sponsorship' },

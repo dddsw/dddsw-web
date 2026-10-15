@@ -1,41 +1,45 @@
 <script lang="ts">
+	import ComingSoon from '$lib/components/ComingSoon.svelte';
+	import { event } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+	const sessions = $derived(data.programme.sessions);
+	const isPlaceholder = $derived(data.programme.isPlaceholder);
 
-	const showBanner = false;
+	const time = (iso: string | null) =>
+		iso
+			? new Intl.DateTimeFormat('en-GB', {
+					hour: '2-digit',
+					minute: '2-digit',
+					timeZone: 'UTC'
+				}).format(new Date(`${iso}Z`))
+			: '';
 </script>
 
-{#if showBanner}
-	<div class="tertiary-bg">
-		<div class="section">
-			<p>
-				To bookmark sessions, submit feedback and enter the prize draw,
-				<a href="https://pocket2026.dddsouthwest.com/" class="emphasis">check out Pocket DDD</a>.
-			</p>
-			<p>
-				Can't find a room? <a href="/venue-layout" class="emphasis"
-					>See a room map of the Engine shed here
-				</a>.
-			</p>
-		</div>
-	</div>
-{/if}
-
-<div class="secondary-bg">
-	<div id="schedule">{@html data.sessionizeScheduleCode}</div>
+{#if isPlaceholder || sessions.length === 0}
+	<ComingSoon title="Programme to be announced" withTimeline>
+		<p>
+			The schedule will appear here once talks are selected. Want to see your name here? <a
+				href="/call-for-papers">Find out about speaking</a
+			>.
+		</p>
+		<p>Still to be confirmed: {event.shortName} {event.year} date and venue.</p>
+	</ComingSoon>
+{:else}
+	<ol class="space-y-4">
+		{#each sessions as s (s.id)}
+			<li
+				class="card {s.isService
+					? 'preset-tonal-surface'
+					: 'preset-filled-surface-100-900'} space-y-1 p-5">
+				<p class="font-semibold text-secondary-700-300">
+					{time(s.startsAt)}{s.endsAt ? ` – ${time(s.endsAt)}` : ''}{s.room ? ` · ${s.room}` : ''}
+				</p>
+				<h2 class="h5">{s.title}</h2>
+				{#if s.speakerNames.length}<p>{s.speakerNames.join(', ')}</p>{/if}
+			</li>
+		{/each}
+	</ol>
 	<p class="text-center">Please note the schedule is subject to change.</p>
-</div>
-
-<style>
-	#schedule {
-		width: 80%;
-		margin: auto;
-	}
-
-	@media (min-width: 768px) {
-		#schedule {
-			width: 75%;
-		}
-	}
-</style>
+{/if}

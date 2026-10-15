@@ -15,17 +15,22 @@ const preview = (overrides: Partial<PreviewState> = {}): PreviewState => ({
 const hrefs = (items: readonly { href: string }[]) => items.map((item) => item.href);
 
 describe('visibleNav', () => {
-	it('hides the schedule before it is announced', () => {
-		expect(hrefs(visibleNav(preview(), timelineWith(false)))).not.toContain('/schedule');
+	it('hides the schedule and speakers before they are announced', () => {
+		const shown = hrefs(visibleNav(preview(), timelineWith(false)));
+		expect(shown).not.toContain('/schedule');
+		expect(shown).not.toContain('/speakers');
 	});
-	it('shows it once announced, and after the day of the event', () => {
-		expect(hrefs(visibleNav(preview(), timelineWith(true)))).toContain('/schedule');
-		expect(hrefs(visibleNav(preview(), timelineWith(true, true)))).toContain('/schedule');
+	it('shows both once announced, and after the day of the event', () => {
+		for (const items of [timelineWith(true), timelineWith(true, true)]) {
+			const shown = hrefs(visibleNav(preview(), items));
+			expect(shown).toContain('/schedule');
+			expect(shown).toContain('/speakers');
+		}
 	});
-	it('shows it when previewing the schedule, even before it is announced', () => {
-		expect(hrefs(visibleNav(preview({ schedule: true }), timelineWith(false)))).toContain(
-			'/schedule'
-		);
+	it('shows both when previewing the schedule, even before they are announced', () => {
+		const shown = hrefs(visibleNav(preview({ schedule: true }), timelineWith(false)));
+		expect(shown).toContain('/schedule');
+		expect(shown).toContain('/speakers');
 	});
 	it('always keeps About and Sponsorship', () => {
 		expect(hrefs(visibleNav(preview(), timelineWith(false)))).toEqual(
