@@ -55,37 +55,46 @@ Make sure to run the lint/format commands, and the Playwright tests! :)
 
 ### Structure of the app
 
-- Pages live under `src\routes`.
-- Components live under `src\lib`.
-- The app uses a shared layout, found in `src\routes\+layout.svelte`. The shared layout consists of the header, footer, and a `<slot />` in the middle which projects the content from the pages.
-- Pages/routes are signified by creating a file called `+page.svelte`, and the route is taken from it's folder path. For example the homepage (route '/') is the first `+page.svelte` child under the `routes` folder, the about page (route '/about') is the `+page.svelte` under the `routes\about` folder.
-- Typescript types live under `src\types`.
-- Any shared app state lives in the `stores.js` file.
-- Static assets (global css and images) live under the `static` folder.
-- The Svelte components contain the Typescript (`<script>`), CSS (`<style>`), and Markup (`<div> etc.`).
-- For the content pages, the page title is set via a store. Just import the pageTitle store and call `pageTitle.set('Sponsorship');`.
+The site is SvelteKit 2 and Svelte 5, styled with [Skeleton](https://www.skeleton.dev/) v5 on Tailwind 4, and deployed to Cloudflare.
 
-### CSS classes
+- Pages live under `src/routes`. A page is a `+page.svelte` in a folder named after its route.
+- Components live under `src/lib/components`. TypeScript types for the Sessionize sessions page live under `src/types`.
+- Content lives under `src/lib/content`: the team, principles, sponsors and past events.
+- Brand colours and fonts live in `src/dddsw-theme.css` (primary 500 is `#ff9930`; text on orange is charcoal for contrast). Global styles are in `src/app.css`.
+- Light and dark mode are toggled with a `dark` class on `<html>`, set by the toggle in the header and remembered in the browser.
 
-Global styles live under `static\global.css`. All other styles live in the Svelte component in the `<style>` tag.
+### Updating the site
 
-There are some shared classes which can be reused across the content pages:
+| What                                           | Where                                                                                                 |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Event year, contact emails, venue, ticket link | `src/lib/eventDetails.ts`                                                                             |
+| Dates and what has happened so far             | `src/lib/milestones.ts`                                                                               |
+| Schedule, speakers and sessions                | Set `sessionizeJsonApiUrl` in `src/lib/eventDetails.ts`; the schedule and speakers pages then fill in |
+| Team, sponsors, past events                    | `src/lib/content/*.ts`                                                                                |
+| Which links appear in the main nav             | `src/lib/navigation.ts`                                                                               |
 
-Background colour classes to set the sections to the predefined colours:
+### How the site follows the milestones
 
-```html
-<div class="primary-bg">...</div>
+Everything time-sensitive is driven by `src/lib/milestones.ts`. Marking a milestone as done, or giving it a date that has passed, changes the site:
+
+- The home page "latest update" message (`src/lib/latestUpdate.ts`) and the timeline update.
+- The **Schedule** and **Speakers** links appear in the nav once the schedule is announced.
+- A **featured button** appears in the header while tickets, session voting or the call for papers is open.
+
+Date and venue show as "To be confirmed" until they are set.
+
+To see the hidden states before they happen, add `?preview=` to any address (it is remembered for the browser tab): `tickets`, `voting`, `cfp` (the featured button), `none`, `schedule` (the Schedule and Speakers links), or `off` to go back to the real milestones. Combine with commas, e.g. `?preview=voting,schedule`.
+
+### Page layout
+
+Every page except the home page and error pages gets an orange heading banner and the standard content width from `src/routes/+layout.svelte`, so a page only contains its own content. Give it a heading by returning a `title` (and optionally a `lead`) from its `load` function:
+
+```ts
+// +page.ts
+export const load = () => ({ title: 'My page', lead: 'A short introduction.' });
 ```
 
-`.section` to provide a basic responsive section:
-
-```html
-<div class="secondary-bg">
-	<div class="section">
-		<!-- add content here -->
-	</div>
-</div>
-```
+A page with its own full-width design returns `bare: true` instead (the home page does).
 
 ### Tests
 
