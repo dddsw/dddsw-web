@@ -7,6 +7,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import PageHeading from '$lib/components/PageHeading.svelte';
 	import { event } from '$lib/eventDetails';
+	import { toaster } from '$lib/toaster';
+	import { Toast } from '@skeletonlabs/skeleton-svelte';
 
 	let { children }: LayoutProps = $props();
 
@@ -43,3 +45,16 @@
 	{/if}
 </main>
 <Footer />
+
+<Toast.Group {toaster}>
+	{#snippet children(toast)}
+		<Toast {toast}>
+			<Toast.Message>
+				<Toast.Title>{toast.title}</Toast.Title>
+				<Toast.Description>{toast.description}</Toast.Description>
+			</Toast.Message>
+			<Toast.CloseTrigger
+				class="hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50" />
+		</Toast>
+	{/snippet}
+</Toast.Group>

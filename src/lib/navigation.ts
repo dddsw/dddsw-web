@@ -47,7 +47,7 @@ export function visibleNav(
 		scheduleShown(preview, items) && { href: '/speakers', label: 'Speakers' },
 		sessionsShown && { href: '/sessions', label: 'Sessions' },
 		{ href: '/about', label: 'About' },
-		{ href: '/sponsorship', label: 'Sponsorship' },
+		{ href: '/sponsors', label: 'Sponsors' },
 		eventIsOn && { href: pocketdddUrl, label: 'Pocket DDD' }
 	];
 	return nav.filter((item): item is NavItem => Boolean(item));

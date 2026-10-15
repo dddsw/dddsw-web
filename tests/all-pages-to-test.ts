@@ -1,7 +1,7 @@
 export const pagesToTest: [pageName: string, path: string][] = [
 	['Home', '/'],
 	['About', 'about'],
-	['Sponsorship', 'sponsorship'],
+	['Sponsors', 'sponsors'],
 	['Venue', 'venue'],
 	['Code of conduct', 'code-of-conduct'],
 	['Code of conduct (internal)', 'code-of-conduct/internal'],

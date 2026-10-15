@@ -17,7 +17,7 @@ test.describe('Navigation', () => {
 			await page.waitForLoadState('networkidle');
 		});
 
-		const routes = ['about', 'sponsorship'];
+		const routes = ['about', 'sponsors'];
 		for (const route of routes) {
 			test(`Can navigate to ${route} page via the nav bar`, async ({ page }) => {
 				// Click the nav link

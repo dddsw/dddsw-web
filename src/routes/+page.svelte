@@ -4,7 +4,8 @@
 	import Countdown from '$lib/components/Countdown.svelte';
 	import EventFacts from '$lib/components/EventFacts.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
-	import Sponsors from '$lib/Sponsors.svelte';
+	import SponsorLogos from '$lib/components/SponsorLogos.svelte';
+	import { sponsors } from '$lib/content/sponsors';
 	import { event, showSponsors } from '$lib/eventDetails';
 	import { preview } from '$lib/featured.svelte';
 	import { currentUpdate } from '$lib/latestUpdate';
@@ -32,7 +33,7 @@
 			emoji: '🎤'
 		},
 		{
-			href: '/sponsorship',
+			href: '/sponsors',
 			title: 'Sponsor us',
 			body: 'DDDSW is entirely funded by sponsorship. Put your company in front of the South West dev community.',
 			emoji: '🤝'
@@ -81,7 +82,7 @@
 					class="btn preset-filled-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
 					>Get your free ticket</a>
 				<a
-					href="/sponsorship"
+					href="/sponsors"
 					class="btn preset-outlined-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
 					>Convince your boss to sponsor us</a>
 			</div>
@@ -151,8 +152,11 @@
 		</div>
 	</section>
 
-	{#if showSponsors}
-		<Sponsors />
+	{#if showSponsors && sponsors.length}
+		<section class="space-y-6" aria-labelledby="thanks">
+			<h2 id="thanks" class="h2">With thanks to our {event.year} sponsors</h2>
+			<SponsorLogos />
+		</section>
 	{/if}
 
 	<Timeline />

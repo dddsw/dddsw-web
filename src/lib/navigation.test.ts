@@ -32,9 +32,9 @@ describe('visibleNav', () => {
 		expect(shown).toContain('/schedule');
 		expect(shown).toContain('/speakers');
 	});
-	it('always keeps About and Sponsorship', () => {
+	it('always keeps About and Sponsors', () => {
 		expect(hrefs(visibleNav(preview(), timelineWith(false)))).toEqual(
-			expect.arrayContaining(['/about', '/sponsorship'])
+			expect.arrayContaining(['/about', '/sponsors'])
 		);
 	});
 });
