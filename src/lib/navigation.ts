@@ -49,7 +49,7 @@ export function visibleNav(
 		{ href: '/venue', label: 'Venue' },
 		{ href: '/past-events', label: 'Past events' },
 		{ href: '/about', label: 'About' },
-		{ href: '/sponsors', label: 'Sponsors' },
+		{ href: '/sponsorship', label: 'Sponsorship' },
 		eventIsOn && { href: pocketdddUrl, label: 'Pocket DDD' }
 	];
 	return nav.filter((item): item is NavItem => Boolean(item));

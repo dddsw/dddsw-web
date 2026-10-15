@@ -33,7 +33,7 @@
 			emoji: '🎤'
 		},
 		{
-			href: '/sponsors',
+			href: '/sponsorship',
 			title: 'Sponsor us',
 			body: 'DDDSW is entirely funded by sponsorship. Put your company in front of the South West dev community.',
 			emoji: '🤝'
@@ -82,7 +82,7 @@
 					class="btn preset-filled-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
 					>Get your free ticket</a>
 				<a
-					href="/sponsors"
+					href="/sponsorship"
 					class="btn preset-outlined-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
 					>Convince your boss to sponsor us</a>
 			</div>

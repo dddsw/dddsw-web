@@ -22,7 +22,7 @@
 		<p>
 			{event.shortName} is free because sponsors cover the costs, so the more sponsorship we get, the
 			more tickets we can make available. Know a company that could help?
-			<a href="/sponsors#convince-your-boss">Here's an email you can send them</a>.
+			<a href="/sponsorship#convince-your-boss">Here's an email you can send them</a>.
 		</p>
 	</ComingSoon>
 {/if}

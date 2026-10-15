@@ -4,7 +4,7 @@
 	import { toaster } from '#lib/toaster.ts';
 	import { bossEmail, sponsorReasons, sponsorSections, sponsors } from '#lib/content/sponsors.ts';
 
-	const email = bossEmail(event.sponsorshipEmail, `${event.siteUrl}/sponsors`);
+	const email = bossEmail(event.sponsorshipEmail, `${event.siteUrl}/sponsorship`);
 
 	async function copy() {
 		try {
@@ -66,14 +66,6 @@
 		</ul>
 	</section>
 {/each}
-
-<div>
-	<a
-		href="mailto:{event.sponsorshipEmail}"
-		class="btn preset-filled-primary-500 no-underline btn-lg hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
-		Talk to us about sponsoring
-	</a>
-</div>
 
 <section aria-labelledby="thanks" class="space-y-6">
 	<h2 id="thanks" class="h2">

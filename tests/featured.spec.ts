@@ -67,13 +67,8 @@ test('date and venue show as to be confirmed', async ({ page }) => {
 	await expect(page.getByText('To be confirmed')).toHaveCount(2);
 });
 
-test('/sponsorship redirects to /sponsors', async ({ page }) => {
-	await page.goto('/sponsorship');
-	await expect(page).toHaveURL(/\/sponsors$/);
-});
-
 test('sponsor page offers the boss email', async ({ page }) => {
-	await page.goto('/sponsors');
+	await page.goto('/sponsorship');
 	await expect(page.getByRole('button', { name: 'Copy email' })).toBeVisible();
 });
 

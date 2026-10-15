@@ -45,7 +45,7 @@ test.describe('Navbar', () => {
 
 		test('Clicking a nav link closes the menu', async () => {
 			await header.menuButton.click();
-			await header.getNavLinkTo('sponsors', header.mobileNav).click();
+			await header.getNavLinkTo('sponsorship', header.mobileNav).click();
 
 			await expect(header.mobileNav).toBeHidden();
 		});
