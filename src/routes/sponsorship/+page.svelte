@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { eventYear } from '$lib/eventDetails.js';
-	import { pageTitle } from '../../stores.js';
 
 	interface SponsorOption {
 		title: string;
@@ -72,8 +71,6 @@
 			]
 		}
 	];
-
-	pageTitle.set('Sponsorship');
 </script>
 
 {#snippet displayOption(option: SponsorOption)}

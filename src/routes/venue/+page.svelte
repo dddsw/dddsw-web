@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { pageTitle } from '../../stores.js';
-	pageTitle.set('The 2026 Venue');
 </script>
 
 <div class="secondary-bg">

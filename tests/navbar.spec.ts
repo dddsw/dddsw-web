@@ -5,7 +5,6 @@ test.describe('Navbar', () => {
 	let header: Header;
 
 	test.beforeEach(async ({ page }) => {
-		// Go to about page (to avoid carousel weirdness)
 		await page.goto('/about');
 
 		//Ensure everything has loaded to prevent flakiness
@@ -14,65 +13,47 @@ test.describe('Navbar', () => {
 		header = new Header(page);
 	});
 
-	test('Clicking nav button displays nav links dropdown', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
+	test.describe('on a wide screen', () => {
+		test('Shows the nav links in the header instead of a menu', async () => {
+			await expect(header.mainNav).toBeVisible();
+			await expect(header.menuButton).toBeHidden();
+		});
 
-		await expect(header.navDropDown).toBeVisible();
+		test('Marks the current page', async () => {
+			await expect(header.getNavLinkTo('about')).toHaveAttribute('aria-current', 'page');
+		});
 	});
 
-	test('Clicking nav button closes nav links dropdown', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
+	test.describe('on a phone', () => {
+		test.beforeEach(async ({ page }) => {
+			await page.setViewportSize(devices['iPhone SE'].viewport);
+		});
 
-		// Click nav drop down again
-		await header.navDropDownButton.click();
+		test('Hides the nav links until the menu is opened', async () => {
+			await expect(header.mainNav).toBeHidden();
+			await header.menuButton.click();
 
-		await expect(header.navDropDown).toBeHidden();
-	});
+			await expect(header.mobileNav).toBeVisible();
+		});
 
-	test('Clicking nav link closes nav links dropdown', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
+		test('Clicking the menu button again closes the menu', async () => {
+			await header.menuButton.click();
+			await header.menuButton.click();
 
-		// Click a nav link
-		await header.getNavLinkTo('sponsorship').click();
+			await expect(header.mobileNav).toBeHidden();
+		});
 
-		await expect(header.navDropDown).toBeHidden();
-	});
+		test('Clicking a nav link closes the menu', async () => {
+			await header.menuButton.click();
+			await header.getNavLinkTo('sponsorship', header.mobileNav).click();
 
-	test('Clicking logo closes nav links dropdown', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
+			await expect(header.mobileNav).toBeHidden();
+		});
 
-		// Click logo
-		await header.logo.click();
+		test('Clicking logo does not open the menu', async () => {
+			await header.logo.click();
 
-		await expect(header.navDropDown).toBeHidden();
-	});
-
-	test('Clicking logo does not open nav links dropdown', async () => {
-		// Click logo
-		await header.logo.click();
-
-		await expect(header.navDropDown).toBeHidden();
-	});
-
-	test('Displays down arrow icon in unexpanded state', async () => {
-		await expect(header.navDropDownButton).toContainText('expand_more');
-	});
-
-	test('Displays up arrow icon in expanded state', async () => {
-		// Click nav drop down
-		await header.navDropDownButton.click();
-
-		await expect(header.navDropDownButton).toContainText('expand_less');
-	});
-
-	test('Does not show button text in smaller screens', async ({ page }) => {
-		// Set to mobile view
-		await page.setViewportSize(devices['iPhone SE'].viewport);
-
-		await expect(page.locator('.nav-button-text')).toBeHidden();
+			await expect(header.mobileNav).toBeHidden();
+		});
 	});
 });

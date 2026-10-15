@@ -11,5 +11,5 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
 	const sessionizeScheduleCode = await scheduleRsp.text();
 
-	return { sessionizeScheduleCode };
+	return { title: 'Schedule', sessionizeScheduleCode };
 };

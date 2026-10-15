@@ -2,15 +2,13 @@
 	import CallToActions from '$lib/CallToActions.svelte';
 	import Sponsors from '$lib/Sponsors.svelte';
 	import type { KeyPoint } from '../types/KeyPoint.type';
-	import { pageTitle } from '../stores.js';
 	import Timeline from '$lib/Timeline.svelte';
 	import { eventYear, showSponsors } from '$lib/eventDetails';
 	import type { PageProps } from './$types';
 	import { get, Milestone } from '$lib/milestones';
+	import { currentUpdate } from '$lib/latestUpdate';
 
 	let { data }: PageProps = $props();
-
-	pageTitle.set('DDD South West');
 
 	const planningAsks = [
 		{
@@ -61,6 +59,11 @@
 </script>
 
 <div class="secondary-bg">
+	{#if currentUpdate}
+		<div class="section">
+			<p>{@html currentUpdate}</p>
+		</div>
+	{/if}
 	<div class="section">
 		<h2 class="text-center text-3xl md:text-4xl">Help us plan DDD South West 2027</h2>
 		<p class="text-center text-lg">

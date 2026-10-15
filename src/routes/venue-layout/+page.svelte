@@ -2,11 +2,8 @@
 
 <script lang="ts">
 	import EngineShed from './EngineShed.svelte';
-	import { pageTitle } from '../../stores.js';
 	import * as Panzoom from '@panzoom/panzoom';
 	import { onMount } from 'svelte';
-
-	pageTitle.set('Engine Shed room layout');
 
 	type Room = {
 		name: string;

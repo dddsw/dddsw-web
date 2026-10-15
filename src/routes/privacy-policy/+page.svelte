@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { pageTitle } from '../../stores.js';
-	pageTitle.set('Privacy Policy');
 </script>
 
 <div class="secondary-bg">

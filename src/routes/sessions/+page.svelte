@@ -3,11 +3,9 @@
 	import type { Session } from '../../types/Session.type.js';
 	import type { Speaker } from '../../types/Speaker.type.js';
 	import { onMount } from 'svelte';
-	import { pageTitle } from '../../stores.js';
 	import { page } from '$app/state';
 	import { Milestone, get } from '$lib/milestones';
 	import { eventYear, votingUrl } from '$lib/eventDetails.js';
-	pageTitle.set('Sessions');
 
 	let sessions: Session[] = page.data.sessions;
 	let speakers: Speaker[] = page.data.speakers;

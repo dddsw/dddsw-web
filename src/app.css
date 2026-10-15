@@ -17,12 +17,81 @@
 
 body {
 	margin: 0;
-	font-family: 'Poppins', serif;
 	height: 100%;
 }
 
 html {
 	height: 100%;
+	color-scheme: light;
+}
+html.dark {
+	color-scheme: dark;
+}
+
+/*
+ * Links: Skeleton only styles anchors that carry its `anchor` class, so apply it to every
+ * plain link. They are always coloured AND underlined (never colour or hover alone), and
+ * buttons keep their own look. In the base layer so utilities such as `no-underline` still win.
+ */
+@layer base {
+	a:not(.btn) {
+		@apply anchor;
+	}
+
+	/* The header keeps its original plain look: no link colour or underline, even on hover. */
+	header a:not(.btn),
+	header a:not(.btn):hover,
+	header a:not(.btn):active,
+	header a:not(.btn):focus {
+		color: inherit;
+		text-decoration-line: none;
+	}
+}
+
+/*
+ * Skeleton's buttons and tabs hover by changing brightness. We use contrasting colours instead
+ * (set per control with hover:preset-*), so switch the brightness change off everywhere.
+ */
+.btn:not(:disabled):hover,
+.btn-icon:not(:disabled):hover,
+[data-scope='tabs'][data-part='trigger']:not(:disabled):hover {
+	filter: none;
+}
+
+/* Keyboard focus: a two-tone ring that stays visible on any background. */
+:focus-visible {
+	outline: 3px solid var(--color-surface-950);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 5px var(--color-surface-50);
+}
+
+/* Long email addresses must wrap inside cards and narrow columns instead of overflowing. */
+a[href^='mailto:'] {
+	overflow-wrap: anywhere;
+}
+
+/* A bright, clean orange tint for highlight cards (no muddy dark-orange in dark mode). */
+@utility tint-orange {
+	background-color: light-dark(var(--color-primary-100), var(--color-surface-900));
+	color: light-dark(var(--color-surface-950), var(--color-surface-50));
+	border: 1px solid light-dark(var(--color-primary-300), var(--color-primary-500));
+}
+
+.wobble:hover {
+	animation: wobble 0.6s ease-in-out;
+}
+@keyframes wobble {
+	25% {
+		transform: rotate(-4deg);
+	}
+	75% {
+		transform: rotate(4deg);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.wobble:hover {
+		animation: none;
+	}
 }
 
 /* GLOBAL COLOUR PALETTE */
@@ -92,10 +161,6 @@ html {
 		@apply text-lg font-semibold;
 	}
 
-	a {
-		@apply text-blue-700 underline;
-	}
-
 	p {
 		@apply text-base;
 	}
@@ -107,20 +172,6 @@ html {
 
 .emphasis {
 	font-weight: bold;
-}
-
-/* OVERRIDES */
-
-.unset {
-	all: unset;
-}
-
-/* A11Y FOCUS */
-
-.unset:focus-visible,
-:focus-visible {
-	outline: 3px solid var(--contrast-color);
-	box-shadow: 0 0 0 6px var(--secondary-color);
 }
 
 /* ANIMATIONS */

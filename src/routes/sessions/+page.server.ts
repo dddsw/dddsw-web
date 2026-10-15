@@ -36,6 +36,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 	const speakers = (await speakersRsp.json()) as Speaker[];
 
 	return {
+		title: 'Sessions',
 		sessions,
 		speakers
 	};

@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { pageTitle } from '../../stores.js';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	pageTitle.set('Schedule');
 	const showBanner = false;
 </script>
 
