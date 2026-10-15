@@ -1,5 +1,4 @@
 export const eventYear = 2027;
-export const eventYearTwoDigit = eventYear - 2000;
 
 export const sessionizeJsonApiUrl = ''; //'https://sessionize.com/api/v2/5mpx9tl7';
 export const sessionizePublicCallForPapersUrl = `https://sessionize.com/ddd-south-west-${eventYear}/`;
