@@ -34,8 +34,6 @@ export interface PastEvent {
 	archiveUrl?: string;
 	/** Path to the event's logo under static/. When missing, the page shows our cow as a placeholder. */
 	logo?: string;
-	/** True when the logo image is a wide banner with the mark in the centre, so it should be cropped to the middle. */
-	logoIsWideBanner?: boolean;
 	sponsors?: Sponsor[];
 	committee?: CommitteeMember[];
 	/** Speakers with a short bio, for years where we don't have talk titles. */
@@ -747,7 +745,6 @@ export const pastEvents: PastEvent[] = [
 		title: 'DDD South West 4',
 		archiveUrl: 'https://web.archive.org/web/20131029074007/http://www.dddsouthwest.com:80/',
 		logo: '/images/past/logos/2012.png',
-		logoIsWideBanner: true,
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
@@ -780,7 +777,6 @@ export const pastEvents: PastEvent[] = [
 		title: 'DDD South West 3',
 		archiveUrl: 'https://web.archive.org/web/20110918064256/http://www.dddsouthwest.com/',
 		logo: '/images/past/logos/2011.png',
-		logoIsWideBanner: true,
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
@@ -813,7 +809,6 @@ export const pastEvents: PastEvent[] = [
 		title: 'DDD South West 2',
 		archiveUrl: 'https://web.archive.org/web/20101230152045/http://www.dddsouthwest.com/',
 		logo: '/images/past/logos/2010.png',
-		logoIsWideBanner: true,
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },

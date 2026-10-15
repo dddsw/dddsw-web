@@ -62,18 +62,13 @@
 							<h3 class="h3">{e.title}</h3>
 						</div>
 						{#if e.logo}
-							<!-- Wide banners fill a fixed-width box; other logos get a box that hugs them, so the padding is even all round. -->
+							<!-- The box hugs the logo, so the padding is even all round. -->
 							<div
-								class={[
-									'flex h-28 items-center justify-center overflow-hidden rounded-container bg-white p-2',
-									e.logoIsWideBanner ? 'w-56' : 'w-fit max-w-56'
-								]}>
+								class="flex h-28 w-fit max-w-56 items-center justify-center overflow-hidden rounded-container bg-white p-2">
 								<img
 									src={e.logo}
 									alt="{e.title} logo"
-									class={e.logoIsWideBanner
-										? 'h-full w-full object-cover object-center'
-										: 'h-full w-auto max-w-full object-contain'} />
+									class="h-full w-auto max-w-full object-contain" />
 							</div>
 						{:else}
 							<Cow class="h-24 w-auto text-primary-500" title="{e.title} logo" />
