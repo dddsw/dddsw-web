@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { event } from '$lib/eventDetails';
+	import { initPreview, preview } from '$lib/featured.svelte';
+	import { resolveFeatured } from '$lib/featured';
 	import { visibleNav } from '$lib/navigation';
 	import { Popover, Portal } from '@skeletonlabs/skeleton-svelte';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import FeaturedLink from './FeaturedLink.svelte';
 
 	// Nav highlights: the current page is a solid orange pill (like the selected year tab); hovering
 	// any other link flips it to the standard contrasting navy (white in dark mode).
@@ -14,7 +18,13 @@
 
 	let menuOpen = $state(false);
 
-	const navItems = $derived(visibleNav());
+	// The featured button follows the current milestone (tickets, session voting or the call for
+	// papers) and is absent when none is open. `?preview=tickets|voting|cfp|none|off` overrides it
+	// for testing.
+	onMount(initPreview);
+	const featured = $derived(resolveFeatured(preview.featured));
+	const navItems = $derived(visibleNav(preview));
+	const isPreview = $derived(preview.featured !== null);
 
 	function isCurrent(href: string) {
 		return page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
@@ -53,6 +63,9 @@
 					{item.label}
 				</a>
 			{/each}
+			{#if featured}
+				<FeaturedLink {featured} preview={isPreview} class="ml-2 px-6 py-3" />
+			{/if}
 		</nav>
 
 		<div class="flex shrink-0 items-center gap-2">
@@ -82,6 +95,13 @@
 											{item.label}
 										</a>
 									{/each}
+									{#if featured}
+										<FeaturedLink
+											{featured}
+											preview={isPreview}
+											class="mt-1 px-6 py-3"
+											onclick={closeMenu} />
+									{/if}
 								</nav>
 							</Popover.Content>
 						</Popover.Positioner>
