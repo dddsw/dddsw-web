@@ -801,8 +801,10 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
 			{ name: 'eDevelopment' },
 			{ name: 'PlanetRecruit' },
+			{ name: 'Grey Matter', url: 'https://www.greymatter.com/' },
 			{ name: 'Gibraltar Software', url: 'https://onloupe.com/' },
 			{ name: "O'Reilly Media", url: 'https://www.oreilly.com/' },
+			{ name: 'Wrox' },
 			{ name: 'Pluralsight', url: 'https://www.pluralsight.com/' },
 			{ name: 'Syncfusion', url: 'https://www.syncfusion.com/' },
 			{ name: 'DevExpress', url: 'https://www.devexpress.com/' },
@@ -817,11 +819,24 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'TypeMock', url: 'https://www.typemock.com/' },
 			{ name: 'Telerik', url: 'https://www.telerik.com/' }
 		],
+		committee: [
+			{ name: 'Martyn Fewtrell', role: 'Website, onsite registration' },
+			{ name: 'Chris Myhill', role: 'Location manager, printing' },
+			{ name: 'Ross Scott', role: 'Catering, Friday and Saturday dinners' },
+			{ name: 'Rachel Clements', role: 'Speaker and room monitor manager' },
+			{ name: 'Rob Bracken', role: 'Balloon debate, getting started' },
+			{ name: 'Jose Simas', role: 'Graphics' },
+			{ name: 'Guy Smith-Ferrier', role: 'Sponsorship' }
+		],
 		date: '2012-05-26',
 		venue:
 			'University of the West of England (UWE), Frenchay Campus, Coldharbour Lane, Bristol BS16 1QY',
 		summary: 'Back at UWE, with sessions chosen by public vote.',
-		note: "We couldn't find the final agenda in the archive."
+		note: "We don't have the full agenda. These are the only talks we know of, sessions that replaced earlier planned ones.",
+		talks: [
+			{ speaker: 'Sebastien Lambla', title: 'Web Caching 101' },
+			{ speaker: 'Benjamin Howarth', title: 'Thoughts and Experiments on Umbraco' }
+		]
 	},
 	{
 		year: 2011,
