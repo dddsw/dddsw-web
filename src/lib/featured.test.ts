@@ -1,85 +1,65 @@
 import { describe, expect, it } from 'vitest';
-import type { TimelineItem } from './timeline';
-import {
-	currentFeatured,
-	featured,
-	parsePreview,
-	parsePreviewState,
-	resolveFeatured
-} from './featured';
+import { Milestone } from './milestones';
+import { currentFeatured, featured, parsePreviewState, resolveFeatured } from './featured';
 
-const ids = [
-	'cfp-opens',
-	'cfp-closes',
-	'voting-opens',
-	'voting-closes',
-	'schedule',
-	'event-day'
-] as const;
-/** A timeline where only the given milestones are done. */
-const timelineWith = (...done: (typeof ids)[number][]): TimelineItem[] =>
-	ids.map((id) => ({ id, label: id, done: done.includes(id) }));
+/** A `hasHappened` where only the given milestones have happened. */
+const happened =
+	(...done: Milestone[]) =>
+	(milestone: Milestone) =>
+		done.includes(milestone);
+
+const { OpenCallForSpeakers, CloseCallForSpeakers, OpenSessionVoting, CloseSessionVoting } =
+	Milestone;
+const { AnnounceScheduleAndOpenTicketRegistration: AnnounceSchedule, TheActualEventDay } =
+	Milestone;
 
 describe('currentFeatured', () => {
 	it('is null while nothing is open', () => {
-		expect(currentFeatured(timelineWith())).toBeNull();
+		expect(currentFeatured(happened())).toBeNull();
 	});
 	it('features the call for papers while it is open', () => {
-		expect(currentFeatured(timelineWith('cfp-opens'))).toBe(featured.cfp);
+		expect(currentFeatured(happened(OpenCallForSpeakers))).toBe(featured.cfp);
 	});
 	it('features nothing between the call closing and voting opening', () => {
-		expect(currentFeatured(timelineWith('cfp-opens', 'cfp-closes'))).toBeNull();
+		expect(currentFeatured(happened(OpenCallForSpeakers, CloseCallForSpeakers))).toBeNull();
 	});
 	it('features session voting while it is open', () => {
-		expect(currentFeatured(timelineWith('cfp-opens', 'cfp-closes', 'voting-opens'))).toBe(
-			featured.voting
-		);
+		expect(
+			currentFeatured(happened(OpenCallForSpeakers, CloseCallForSpeakers, OpenSessionVoting))
+		).toBe(featured.voting);
 	});
 	it('features tickets once registration opens, and drops them on the day of the event', () => {
-		const open = timelineWith(
-			'cfp-opens',
-			'cfp-closes',
-			'voting-opens',
-			'voting-closes',
-			'schedule'
-		);
-		expect(currentFeatured(open)).toBe(featured.tickets);
-		expect(currentFeatured(timelineWith(...ids))).toBeNull();
+		const beforeTheEvent = [
+			OpenCallForSpeakers,
+			CloseCallForSpeakers,
+			OpenSessionVoting,
+			CloseSessionVoting,
+			AnnounceSchedule
+		];
+		expect(currentFeatured(happened(...beforeTheEvent))).toBe(featured.tickets);
+		expect(currentFeatured(happened(...beforeTheEvent, TheActualEventDay))).toBeNull();
 	});
 	it('prefers the later milestone when windows overlap', () => {
-		expect(currentFeatured(timelineWith('cfp-opens', 'voting-opens'))).toBe(featured.voting);
-		expect(currentFeatured(timelineWith('cfp-opens', 'voting-opens', 'schedule'))).toBe(
-			featured.tickets
-		);
+		expect(currentFeatured(happened(OpenCallForSpeakers, OpenSessionVoting))).toBe(featured.voting);
+		expect(
+			currentFeatured(happened(OpenCallForSpeakers, OpenSessionVoting, AnnounceSchedule))
+		).toBe(featured.tickets);
 	});
-});
-
-describe('parsePreview', () => {
-	it('accepts the featured ids, none and off, ignoring case and spaces', () => {
-		expect(parsePreview('tickets')).toBe('tickets');
-		expect(parsePreview(' VOTING ')).toBe('voting');
-		expect(parsePreview('cfp')).toBe('cfp');
-		expect(parsePreview('none')).toBe('none');
-		expect(parsePreview('off')).toBe('off');
-	});
-	it('ignores anything else', () => {
-		expect(parsePreview('bogus')).toBeNull();
-		expect(parsePreview('')).toBeNull();
-		expect(parsePreview(null)).toBeNull();
-		expect(parsePreview(undefined)).toBeNull();
+	it('uses the real milestones by default', () => {
+		expect(currentFeatured()).toBeNull();
 	});
 });
 
 describe('resolveFeatured', () => {
 	it('uses the real timeline without a preview', () => {
-		expect(resolveFeatured(null, timelineWith('cfp-opens'))).toBe(featured.cfp);
-		expect(resolveFeatured(null, timelineWith())).toBeNull();
+		expect(resolveFeatured(null, happened(OpenCallForSpeakers))).toBe(featured.cfp);
+		expect(resolveFeatured(null, happened())).toBeNull();
 	});
 	it('shows the previewed button even when its milestone is closed', () => {
-		expect(resolveFeatured('tickets', timelineWith())).toBe(featured.tickets);
+		expect(resolveFeatured('tickets', happened())).toBe(featured.tickets);
 	});
 	it('hides the button for the "none" preview even when something is open', () => {
-		expect(resolveFeatured('none', timelineWith('cfp-opens'))).toBeNull();
+		expect(resolveFeatured('none', happened(OpenCallForSpeakers))).toBeNull();
 	});
 });
 
@@ -99,6 +79,12 @@ describe('parsePreviewState', () => {
 		expect(parsePreviewState('bogus')).toBeNull();
 		expect(parsePreviewState('')).toBeNull();
 		expect(parsePreviewState(null)).toBeNull();
+	});
+	it('accepts none, ignoring case and spaces', () => {
+		expect(parsePreviewState(' NONE ')).toEqual({ featured: 'none', schedule: false });
+	});
+	it('ignores names that only exist on Object.prototype', () => {
+		expect(parsePreviewState('constructor')).toBeNull();
 	});
 	it('takes the first featured id when several are given', () => {
 		expect(parsePreviewState('cfp,tickets')).toEqual({ featured: 'cfp', schedule: false });

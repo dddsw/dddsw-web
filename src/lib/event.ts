@@ -1,16 +1,16 @@
 import { event } from './eventDetails';
-import { get, Milestone } from './milestones';
+import { get, Milestone, type IsoDate } from './milestones';
 
 const MS_PER_DAY = 86_400_000;
 
 /** Whole days from `now` until the ISO date (UTC midnight); negative once passed. */
-export function daysUntil(isoDate: string, now: Date = new Date()): number {
+export function daysUntil(isoDate: IsoDate, now: Date = new Date()): number {
 	const target = Date.parse(`${isoDate}T00:00:00Z`);
 	const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 	return Math.round((target - today) / MS_PER_DAY);
 }
 
-export function formatEventDate(isoDate: string): string {
+export function formatEventDate(isoDate: IsoDate): string {
 	return new Intl.DateTimeFormat('en-GB', {
 		weekday: 'long',
 		day: 'numeric',
@@ -30,12 +30,12 @@ export function countdownLabel(days: number): string {
 export const TBC = 'To be confirmed';
 
 /** The date of the event (ISO), once it has been set as a milestone in milestones.ts. */
-export function eventDate(): string | undefined {
-	return get(Milestone.TheActualEventDay)?.isoDate;
+export function eventDate(): IsoDate | undefined {
+	return get(Milestone.TheActualEventDay).isoDate;
 }
 
 /** The event date, or "To be confirmed" until one is announced. */
-export function dateLabel(isoDate: string | undefined | null = eventDate()): string {
+export function dateLabel(isoDate: IsoDate | undefined | null = eventDate()): string {
 	return isoDate ? formatEventDate(isoDate) : TBC;
 }
 

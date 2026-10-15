@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { links } from '#lib/eventDetails.ts';
-	import { votingStatus } from '#lib/timeline.ts';
+	import { votingStatus } from '#lib/milestones.ts';
 
 	const status = votingStatus();
 </script>

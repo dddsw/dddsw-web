@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { event } from '#lib/eventDetails.ts';
-	import { getTimeline } from '#lib/timeline.ts';
+	import { getTimeline } from '#lib/milestones.ts';
 
 	const timeline = getTimeline();
 </script>
