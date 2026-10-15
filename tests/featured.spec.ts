@@ -42,6 +42,18 @@ test.describe('featured header button', () => {
 	});
 });
 
+test.describe('home page ticket button', () => {
+	test('is hidden until tickets are open', async ({ page }) => {
+		await page.goto('/');
+		await expect(page.getByRole('link', { name: 'Get your free ticket' })).toHaveCount(0);
+	});
+
+	test('?preview=tickets shows it', async ({ page }) => {
+		await page.goto('/?preview=tickets');
+		await expect(page.getByRole('link', { name: 'Get your free ticket' })).toBeVisible();
+	});
+});
+
 test.describe('schedule and speakers links', () => {
 	test('are hidden until announced, but the pages still load', async ({ page }) => {
 		await page.goto('/');
@@ -65,6 +77,13 @@ test.describe('schedule and speakers links', () => {
 test('date and venue show as to be confirmed', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.getByText('To be confirmed', { exact: true })).toHaveCount(2);
+});
+
+test('the hero button goes straight to the boss email', async ({ page }) => {
+	await page.goto('/');
+	await page.getByRole('link', { name: 'Convince your boss to sponsor us' }).click();
+	await expect(page).toHaveURL(/\/sponsorship#convince-your-boss$/);
+	await expect(page.getByRole('heading', { name: 'Convince your boss' })).toBeInViewport();
 });
 
 test('sponsor page offers the boss email', async ({ page }) => {

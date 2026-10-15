@@ -8,6 +8,7 @@
 	import { sponsors } from '#lib/content/sponsors.ts';
 	import { event, showSponsors } from '#lib/eventDetails.ts';
 	import { preview } from '#lib/featured.svelte.ts';
+	import { resolveFeatured } from '#lib/featured.ts';
 	import { currentUpdate } from '#lib/latestUpdate.ts';
 	import { scheduleShown } from '#lib/navigation.ts';
 
@@ -45,6 +46,9 @@
 		allCards.filter((card) => card.gate !== 'schedule' || scheduleShown(preview))
 	);
 
+	// The ticket button waits for tickets to open, like the Tickets button in the header.
+	const ticketsOpen = $derived(resolveFeatured(preview.featured)?.id === 'tickets');
+
 	const planningAsks = [
 		{
 			emoji: '📍',
@@ -78,14 +82,19 @@
 				{event.tagline}. Talks, hallway chats and a day out with your herd.
 			</p>
 			<div class="flex flex-wrap gap-3">
+				{#if ticketsOpen}
+					<a
+						href="/tickets"
+						class="btn preset-filled-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
+						>Get your free ticket</a>
+				{/if}
+				<!-- Solid when it is the only button; outlined beside the ticket button, so the two never look alike. -->
 				<a
-					href="/tickets"
-					class="btn preset-filled-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
-					>Get your free ticket</a>
-				<a
-					href="/sponsorship"
-					class="btn preset-outlined-surface-950-50 no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950"
-					>Convince your boss to sponsor us</a>
+					href="/sponsorship#convince-your-boss"
+					class={[
+						'btn no-underline btn-lg hover:preset-filled-surface-50-950 focus-visible:preset-filled-surface-50-950',
+						ticketsOpen ? 'preset-outlined-surface-950-50' : 'preset-filled-surface-950-50'
+					]}>Convince your boss to sponsor us</a>
 			</div>
 		</div>
 		<div class="flex justify-center">

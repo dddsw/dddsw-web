@@ -84,7 +84,10 @@
 	{/if}
 </section>
 
-<section id="convince-your-boss" aria-labelledby="boss" class="space-y-5 card tint-orange p-8">
+<section
+	id="convince-your-boss"
+	aria-labelledby="boss"
+	class="scroll-mt-24 space-y-5 card tint-orange p-8">
 	<h2 id="boss" class="h2">Convince your boss</h2>
 	<p class="max-w-2xl">
 		Love {event.shortName} and want your company to get involved? Send this to whoever signs off on budgets.
