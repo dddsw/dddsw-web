@@ -70,7 +70,8 @@
 		<div class="space-y-6">
 			<h1 class="h1 leading-[1.05] md:text-7xl">
 				Developer!<br />Developer!<br />Developer!
-				<span class="block text-surface-50 [text-shadow:0_3px_0_var(--color-surface-950)]"
+				<span
+					class="block text-surface-50 [-webkit-text-stroke:0.03em_var(--color-surface-950)] [paint-order:stroke_fill] [text-shadow:0_3px_0_var(--color-surface-950)]"
 					>South West</span>
 			</h1>
 			<p class="max-w-xl text-xl">

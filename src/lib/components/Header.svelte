@@ -40,14 +40,14 @@
 	<Container class="flex items-center justify-between gap-4 py-3">
 		<a
 			href="/"
-			class="group -mx-2 flex shrink-0 items-center gap-3 rounded-base px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
-			aria-label="{event.shortName} home">
+			class="group -mx-2 flex shrink-0 items-center gap-3 rounded-base px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
 			<Cow class="wobble h-10 w-auto text-primary-500" />
 			<span
 				class="font-heading text-2xl font-semibold tracking-tight text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
-				{event.shortName}<span
+				{event.shortName}<span class="sr-only">{' '}</span><span
 					class="text-secondary-700-300 group-hover:text-inherit group-focus-visible:text-inherit">
-					{event.year}</span>
+					{event.year}</span
+				><span class="sr-only"> home</span>
 			</span>
 		</a>
 

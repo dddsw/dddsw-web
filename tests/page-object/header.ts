@@ -12,7 +12,7 @@ export class Header {
 		this.mainNav = page.getByRole('navigation', { name: 'Main' });
 		this.menuButton = page.getByRole('button', { name: 'Menu' });
 		this.mobileNav = page.getByRole('navigation', { name: 'Mobile' });
-		this.logo = page.getByRole('link', { name: 'DDDSW home' });
+		this.logo = page.getByRole('link', { name: 'DDDSW 2027 home' });
 	}
 
 	getNavLinkTo(route: string, nav: Locator = this.mainNav): Locator {

@@ -64,7 +64,7 @@ test.describe('schedule and speakers links', () => {
 
 test('date and venue show as to be confirmed', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.getByText('To be confirmed')).toHaveCount(2);
+	await expect(page.getByText('To be confirmed', { exact: true })).toHaveCount(2);
 });
 
 test('sponsor page offers the boss email', async ({ page }) => {
@@ -75,6 +75,7 @@ test('sponsor page offers the boss email', async ({ page }) => {
 test('theme toggle switches and remembers dark mode', async ({ page }) => {
 	await page.emulateMedia({ colorScheme: 'light' });
 	await page.goto('/');
+	await page.waitForLoadState('networkidle');
 	await page.locator('[data-scope="switch"][data-part="control"]').click();
 	await expect(page.locator('html')).toHaveClass(/dark/);
 	await page.reload();
