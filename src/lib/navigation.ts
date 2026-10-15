@@ -47,6 +47,7 @@ export function visibleNav(
 		scheduleShown(preview, items) && { href: '/speakers', label: 'Speakers' },
 		sessionsShown && { href: '/sessions', label: 'Sessions' },
 		{ href: '/venue', label: 'Venue' },
+		{ href: '/past-events', label: 'Past events' },
 		{ href: '/about', label: 'About' },
 		{ href: '/sponsors', label: 'Sponsors' },
 		eventIsOn && { href: pocketdddUrl, label: 'Pocket DDD' }
