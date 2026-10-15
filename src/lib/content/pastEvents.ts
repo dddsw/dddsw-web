@@ -523,10 +523,61 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'NDC London', url: 'https://ndc-london.com/' },
 			{ name: 'Scott Logic', url: 'https://www.scottlogic.com/' }
 		],
+		committee: [{ name: 'Rob Bracken' }, { name: 'Ross Scott' }],
 		date: '2018-04-21',
 		venue: 'Redcliffe Sixth Form Centre, Redcliff Hill, Bristol BS1 6RB',
 		summary: 'Held at the Redcliffe Sixth Form Centre.',
-		note: "The archive only kept the homepage for this year, so we couldn't find the talks or speakers."
+		talks: [
+			{ speaker: 'Callum Whyte', title: 'From monolithic monster to majestic microservice app' },
+			{ speaker: 'Andy Clarke', title: 'Unity 101 for C# Developers' },
+			{ speaker: 'Ian Russell', title: 'Outside-In TDD' },
+			{
+				speaker: 'Viv Richards',
+				title: 'Spot the difference: automating visual regression testing'
+			},
+			{ speaker: 'Sean Farmar', title: 'SOA lessons learnt (OR Microservices done better)' },
+			{
+				speaker: 'Joseph Woodward',
+				title: 'Patterns and Practices for Building a Better Web API Architecture'
+			},
+			{ speaker: 'Steve Gordon', title: 'Docker for .NET Developers' },
+			{ speaker: 'Dan Clarke', title: 'Developer Productivity!' },
+			{ speaker: "Richard 'Rippo' Wilde", title: 'Headless UI testing with Chrome and Puppeteer' },
+			{ speaker: 'Lizzie Darville', title: 'Legacy systems in your head, and why they matter' },
+			{ speaker: 'Shahid Iqbal', title: 'Kubernetes for .NET developers' },
+			{ speaker: 'Andrew Chaa', title: 'Bitcoin, C#, and Lambda' },
+			{ speaker: 'James World', title: 'Git Deep Dive' },
+			{ speaker: 'Gary Short', title: 'Using AI to Beat the Bookies' },
+			{
+				speaker: 'Joel Hammond-Turner',
+				title: 'Azure In Action - CosmosDB, Functions and ServiceBus in Perfect Harmony'
+			},
+			{ speaker: 'Yan Cui', title: 'Serverless design patterns' },
+			{ speaker: 'Ismail Mayat', title: 'Teaching an old dog new tricks' },
+			{ speaker: 'Anthony Dang', title: "What's that smell?" },
+			{
+				speaker: 'James Broome',
+				title: 'Analysing flight data in real time using Cosmos DB, Azure Functions and Power BI'
+			},
+			{
+				speaker: 'Galiya Warrier',
+				title: 'Breaking The Common Myths Around Artificial Intelligence'
+			},
+			{
+				speaker: 'Liam Westley',
+				title: 'Give it a REST - Tips for designing and consuming public APIs'
+			},
+			{ speaker: 'Gary Fleming', title: 'APIs on the Scale of Decades' },
+			{ speaker: 'Ed Yau', title: 'Machine Learning for Developers' },
+			{
+				speaker: 'Jess Panni',
+				title: 'Lessons learned - ingesting, securing and processing 200 million messages a day'
+			},
+			{
+				speaker: 'Nathan Gloyn',
+				title: "Microservices - What I've learned after a year building systems"
+			}
+		]
 	},
 	{
 		year: 2017,
