@@ -20,6 +20,8 @@ export enum Milestone {
 
 const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
 
+const MS_PER_DAY = 86_400_000;
+
 export class MilestoneDetails {
 	private status: Status;
 	private targetDate?: Date;
@@ -48,6 +50,13 @@ export class MilestoneDetails {
 		}
 	}
 
+	/** Whole days from `now` until the date (UTC midnight); negative once passed, undefined with no date. */
+	daysUntil(now: Date = new Date()): number | undefined {
+		if (!this.targetDate) return undefined;
+		const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+		return Math.round((this.targetDate.getTime() - today) / MS_PER_DAY);
+	}
+
 	willBeHappeningSoon(): boolean {
 		if (!this.targetDate || this.hasHappened) return false;
 
@@ -58,20 +67,59 @@ export class MilestoneDetails {
 	}
 }
 
-export function get(doneThing: Milestone): MilestoneDetails | undefined {
-	return milestones.get(doneThing);
+export function get(doneThing: Milestone): MilestoneDetails {
+	return milestones[doneThing];
 }
 
-const milestones = new Map([
-	[Milestone.StartPlanning, new MilestoneDetails(Status.NotYet)],
-	[Milestone.SetADate, new MilestoneDetails(Status.NotYet)],
-	[Milestone.OpenCallForSpeakers, new MilestoneDetails(Status.NotYet)],
-	[Milestone.CloseCallForSpeakers, new MilestoneDetails(Status.NotYet)],
-	[Milestone.OpenSessionVoting, new MilestoneDetails(Status.NotYet)],
-	[Milestone.CloseSessionVoting, new MilestoneDetails(Status.NotYet)],
-	[Milestone.AnnounceScheduleAndOpenTicketRegistration, new MilestoneDetails(Status.NotYet)],
-	[Milestone.SoldOut, new MilestoneDetails(Status.NotYet)],
-	[Milestone.FoundMoreTickets, new MilestoneDetails(Status.NotYet)],
-	[Milestone.TheActualEventDay, new MilestoneDetails(Status.NotYet)],
-	[Milestone.ConkedOut, new MilestoneDetails(Status.NotYet)]
-]);
+/** Whether a milestone has happened. Injectable so logic built on milestones can be tested without real dates. */
+export type HasHappened = (milestone: Milestone) => boolean;
+
+export const hasHappened: HasHappened = (milestone) => get(milestone).hasHappened;
+
+/**
+ * Whole days from `now` until the milestone's date (UTC midnight); negative once passed, and
+ * undefined while the milestone has no date. `lookup` is injectable for tests.
+ */
+export function daysUntil(
+	milestone: Milestone,
+	now: Date = new Date(),
+	lookup: (milestone: Milestone) => MilestoneDetails = get
+): number | undefined {
+	return lookup(milestone).daysUntil(now);
+}
+
+export type OpenStatus = 'not-open' | 'open' | 'closed';
+
+/** A window is open from its "opens" milestone until its "closes" milestone. */
+export function windowStatus(
+	opens: Milestone,
+	closes: Milestone,
+	happened: HasHappened = hasHappened
+): OpenStatus {
+	if (happened(closes)) return 'closed';
+	if (happened(opens)) return 'open';
+	return 'not-open';
+}
+
+/** Whether people can submit talks right now. */
+export const callForPapersStatus = (happened: HasHappened = hasHappened): OpenStatus =>
+	windowStatus(Milestone.OpenCallForSpeakers, Milestone.CloseCallForSpeakers, happened);
+
+/** Whether session voting is open. */
+export const votingStatus = (happened: HasHappened = hasHappened): OpenStatus =>
+	windowStatus(Milestone.OpenSessionVoting, Milestone.CloseSessionVoting, happened);
+
+/** Every milestone must be listed here: the compiler rejects a missing one. */
+const milestones: Record<Milestone, MilestoneDetails> = {
+	[Milestone.StartPlanning]: new MilestoneDetails(Status.Done),
+	[Milestone.SetADate]: new MilestoneDetails(Status.NotYet),
+	[Milestone.OpenCallForSpeakers]: new MilestoneDetails(Status.NotYet),
+	[Milestone.CloseCallForSpeakers]: new MilestoneDetails(Status.NotYet),
+	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.NotYet),
+	[Milestone.CloseSessionVoting]: new MilestoneDetails(Status.NotYet),
+	[Milestone.AnnounceScheduleAndOpenTicketRegistration]: new MilestoneDetails(Status.NotYet),
+	[Milestone.SoldOut]: new MilestoneDetails(Status.NotYet),
+	[Milestone.FoundMoreTickets]: new MilestoneDetails(Status.NotYet),
+	[Milestone.TheActualEventDay]: new MilestoneDetails(Status.NotYet),
+	[Milestone.ConkedOut]: new MilestoneDetails(Status.NotYet)
+};

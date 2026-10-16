@@ -1,9 +1,19 @@
-// See https://kit.svelte.dev/docs/types#app
+// See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
-// and what to do when importing types
-declare namespace App {
-	// interface Locals {}
-	// interface PageData {}
-	// interface PageError {}
-	// interface Platform {}
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		interface PageData {
+			/** Heading shown in the banner by the (content) layout. */
+			title?: string;
+			lead?: string;
+			/** Set to true to opt out of the standard page layout (banner + container) in the root layout. */
+			bare?: boolean;
+		}
+		// interface PageState {}
+		// interface Platform {}
+	}
 }
+
+export {};

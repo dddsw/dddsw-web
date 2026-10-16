@@ -1,139 +1,106 @@
 <script lang="ts">
-	import { eventYear } from '$lib/eventDetails.js';
-	import { pageTitle } from '../../stores.js';
+	import { event, showSponsorPrices } from '#lib/eventDetails.ts';
+	import SponsorLogos from '#lib/components/SponsorLogos.svelte';
+	import { toaster } from '#lib/toaster.ts';
+	import { bossEmail, sponsorReasons, sponsorSections, sponsors } from '#lib/content/sponsors.ts';
 
-	interface SponsorOption {
-		title: string;
-		price: string;
-		claimed?: boolean;
-		description?: string;
-		preamble?: string;
-		features?: string[];
-	}
+	const email = bossEmail(event.sponsorshipEmail, `${event.siteUrl}/sponsorship`);
 
-	interface SponsorSection {
-		heading: string;
-		intro?: string;
-		options: SponsorOption[];
-	}
-
-	const showPrices = false;
-
-	const sections: SponsorSection[] = [
-		{
-			heading: 'Packages',
-			options: [
-				{
-					title: 'Supporter',
-					price: '£600',
-					features: [
-						'Your logo on our website',
-						'Your logo on the opening & closing slides',
-						"We'll thank you on our social media"
-					]
-				},
-				{
-					title: 'Exhibitor',
-					price: '£1700',
-					preamble: 'Everything in Supporter tier, plus:',
-					features: [
-						'A sponsor stand on the day',
-						'Custom promotional posts from our social media accounts',
-						'Anything else we can do.. chat to us!'
-					]
-				}
-			]
-		},
-		{
-			heading: 'Refreshments',
-			intro: 'With your company name and logo displayed alongside.',
-			options: [
-				{ title: 'Breakfast', price: '£250', claimed: false },
-				{ title: 'Morning break', price: '£250', claimed: false },
-				{ title: 'Afternoon break', price: '£250', claimed: false }
-			]
-		},
-		{
-			heading: 'Extras',
-			options: [
-				{
-					title: 'Dedicated speaker slot',
-					price: '£300',
-					description:
-						"We'll allocate a dedicated slot for your speaker to present a relevant topic"
-				},
-				{
-					title: 'T-shirts',
-					price: '£400',
-					claimed: false,
-					description:
-						"We'll print your company name/logo on our t-shirts, worn by the staff and speakers."
-				}
-			]
+	async function copy() {
+		try {
+			await navigator.clipboard.writeText(`Subject: ${email.subject}\n\n${email.body}`);
+			toaster.success({ title: 'Copied', description: 'The email is on your clipboard.' });
+		} catch {
+			toaster.error({
+				title: "Couldn't copy",
+				description: 'Please select the text and copy it manually.'
+			});
 		}
-	];
-
-	pageTitle.set('Sponsorship');
+	}
 </script>
 
-{#snippet displayOption(option: SponsorOption)}
-	<div
-		class="flex flex-1 flex-col p-5 rounded-4xl text-center
-			{option.features ? 'bg-(--quinary-color)' : option.claimed ? 'bg-gray-300' : 'primary-bg'}
-			{option.features ? '' : 'justify-center'}">
-		<h3>{option.title}</h3>
-		{#if option.preamble}<p>{option.preamble}</p>{/if}
-		{#if option.description}<span class="italic">{option.description}</span>{/if}
-		{#if option.features}
-			<ul class="grow list-disc pl-5 text-left">
-				{#each option.features as feature}
-					<li>{feature}</li>
-				{/each}
-			</ul>
-		{/if}
-		{#if option.claimed}
-			<strong>This item has been sponsored</strong>
-		{:else if showPrices}<span class="text-2xl font-bold">{option.price}</span>{/if}
-	</div>
-{/snippet}
-
-<div class="secondary-bg">
-	<div class="section">
-		<h2>Sponsorship opportunities</h2>
-		<p>
-			Our event is entirely funded by sponsorship and would not be possible without our wonderful
-			sponsors.
-		</p>
-		<p>
-			We are looking for sponsors for DDD South West {eventYear}. If you or your company would like
-			to become a sponsor please <a href="mailto:sponsorship@dddsouthwest.com">email us.</a>
-			We have various options available, or we can arrange a custom package for you.
-		</p>
-	</div>
-</div>
-
-<div class="tertiary-bg">
-	<div class="section">
-		{#each sections as section}
-			<h2>{section.heading}</h2>
-			{#if section.intro}<p>{section.intro}</p>{/if}
-			<div class="flex flex-col gap-5 lg:flex-row lg:items-stretch">
-				{#each section.options as option}
-					{@render displayOption(option)}
-				{/each}
-			</div>
+<section aria-labelledby="why" class="space-y-6">
+	<h2 id="why" class="h2">Sponsorship opportunities</h2>
+	<p class="max-w-3xl">
+		We're looking for sponsors for {event.shortName}
+		{event.year}. If you or your company would like to become a sponsor, please
+		<a href="mailto:{event.sponsorshipEmail}">email us</a>. We have various options available, or we
+		can arrange a custom package for you.
+	</p>
+	<p>As well as supporting the community, sponsorship offers:</p>
+	<ul class="grid gap-6 md:grid-cols-3">
+		{#each sponsorReasons as reason (reason.title)}
+			<li class="space-y-2 card preset-filled-surface-100-900 p-6">
+				<h3 class="h5">{reason.title}</h3>
+				<p>{reason.body}</p>
+			</li>
 		{/each}
+	</ul>
+</section>
 
-		<p>As well as supporting the community, sponsorship offers:</p>
-		<ul class="list-disc pl-5">
-			<li>The opportunity to talk to the exact people you want to recruit or sell to.</li>
-			<li>
-				Love from the attendees! Everyone appreciates that without sponsors, these events can't
-				happen.
-			</li>
-			<li>
-				Love from the team! We will go out of our way to praise you before, on, and after the day.
-			</li>
+{#each sponsorSections as section (section.heading)}
+	<section aria-labelledby="sec-{section.heading}" class="space-y-6">
+		<h2 id="sec-{section.heading}" class="h2">{section.heading}</h2>
+		{#if section.intro}<p>{section.intro}</p>{/if}
+		<ul class="grid gap-6 {section.options.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}">
+			{#each section.options as option (option.title)}
+				<li
+					class="space-y-3 card p-6 {option.features
+						? 'preset-outlined-primary-500'
+						: 'preset-filled-surface-100-900'}">
+					<h3 class="h4">{option.title}</h3>
+					{#if option.preamble}<p>{option.preamble}</p>{/if}
+					{#if option.description}<p class="italic">{option.description}</p>{/if}
+					{#if option.features}
+						<ul class="list-inside list-disc space-y-1">
+							{#each option.features as feature (feature)}<li>{feature}</li>{/each}
+						</ul>
+					{/if}
+					{#if option.claimed}
+						<p class="font-semibold">This item has been sponsored</p>
+					{:else if showSponsorPrices}
+						<p class="text-2xl font-bold">{option.price}</p>
+					{/if}
+				</li>
+			{/each}
 		</ul>
+	</section>
+{/each}
+
+<section aria-labelledby="thanks" class="space-y-6">
+	<h2 id="thanks" class="h2">
+		{sponsors.length ? `With thanks to our ${event.year} sponsors` : `Our ${event.year} sponsors`}
+	</h2>
+	{#if sponsors.length}
+		<SponsorLogos />
+	{:else}
+		<div class="space-y-3 card tint-orange p-6">
+			<p class="max-w-3xl text-lg">
+				Sponsors for {event.year} haven't been announced yet. Your logo could be the first one in the
+				field.
+			</p>
+			<a href="mailto:{event.sponsorshipEmail}">{event.sponsorshipEmail}</a>
+		</div>
+	{/if}
+</section>
+
+<section
+	id="convince-your-boss"
+	aria-labelledby="boss"
+	class="scroll-mt-24 space-y-5 card tint-orange p-8">
+	<h2 id="boss" class="h2">Convince your boss</h2>
+	<p class="max-w-2xl">
+		Love {event.shortName} and want your company to get involved? Send this to whoever signs off on budgets.
+		Edit it to make it yours.
+	</p>
+	<div class="space-y-3 card bg-surface-50-950 p-5">
+		<p><strong>Subject:</strong> {email.subject}</p>
+		<pre class="font-base text-base whitespace-pre-wrap">{email.body}</pre>
 	</div>
-</div>
+	<div class="flex flex-wrap items-center gap-3">
+		<button
+			type="button"
+			class="btn preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+			onclick={copy}>Copy email</button>
+	</div>
+</section>

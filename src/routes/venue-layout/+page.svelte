@@ -2,11 +2,8 @@
 
 <script lang="ts">
 	import EngineShed from './EngineShed.svelte';
-	import { pageTitle } from '../../stores.js';
 	import * as Panzoom from '@panzoom/panzoom';
 	import { onMount } from 'svelte';
-
-	pageTitle.set('Engine Shed room layout');
 
 	type Room = {
 		name: string;
@@ -116,7 +113,7 @@
 	}
 </script>
 
-<div class="section">
+<div>
 	<div class="map-wrapper">
 		<div class="zoom-button-container">
 			<button id="zoom-in" class="zoom-button">+</button>
@@ -155,13 +152,13 @@
 		z-index: 100;
 	}
 	.zoom-button {
-		background-color: white;
-		border-color: var(--contrast-color);
+		background-color: var(--color-surface-50);
+		color: var(--color-surface-950);
+		border-color: var(--color-secondary-500);
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 3px;
 		display: flex;
-		font-family: 'Poppins', serif;
 		font-size: 50px;
 		height: 40px;
 		justify-content: center;
@@ -178,13 +175,13 @@
 		z-index: 100;
 	}
 	.track-button {
-		background-color: white;
-		border-color: var(--primary-color);
+		background-color: var(--color-surface-50);
+		color: var(--color-surface-950);
+		border-color: var(--color-primary-500);
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 5px;
 		flex: 1;
-		font-family: 'Poppins', serif;
 		height: 50px;
 		line-height: 25px;
 		margin: 5px;
@@ -193,7 +190,7 @@
 
 	.map-wrapper {
 		align-items: center;
-		border-color: black;
+		border-color: var(--color-surface-950);
 		border-radius: 25px;
 		border-style: solid;
 		border-width: 1px;

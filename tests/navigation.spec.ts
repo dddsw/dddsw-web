@@ -17,12 +17,9 @@ test.describe('Navigation', () => {
 			await page.waitForLoadState('networkidle');
 		});
 
-		const routes = ['about', 'sponsorship', 'code-of-conduct'];
+		const routes = ['about', 'sponsorship'];
 		for (const route of routes) {
 			test(`Can navigate to ${route} page via the nav bar`, async ({ page }) => {
-				// Click nav drop down
-				await header.navDropDownButton.click();
-
 				// Click the nav link
 				await header.getNavLinkTo(route).click();
 
@@ -39,20 +36,6 @@ test.describe('Navigation', () => {
 
 		// Click logo
 		await header.logo.click();
-
-		await expect(page).toHaveURL('http://127.0.0.1:5173/');
-	});
-
-	test('Can navigate to Home from content page via the nav bar', async ({ page }) => {
-		// Go to about page
-		await page.goto('/about');
-		//Ensure everything has loaded to prevent flakiness
-		await page.waitForLoadState('networkidle');
-
-		// Click nav drop down
-		await header.navDropDownButton.click();
-		// Click nav link to home
-		await header.getNavLinkTo('').click();
 
 		await expect(page).toHaveURL('http://127.0.0.1:5173/');
 	});
