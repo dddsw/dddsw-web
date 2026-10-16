@@ -10,6 +10,9 @@
 
 	// White icons on the dark footer, orange on hover.
 	const footerLink = 'text-surface-50! hover:text-primary-400!';
+
+	// The year the page is served, not the event year: the site is updated all year round.
+	const copyrightYear = new Date().getFullYear();
 </script>
 
 <footer class="mt-24 bg-surface-950 text-surface-50">
@@ -64,7 +67,7 @@
 		</nav>
 	</Container>
 	<p class="border-t border-surface-800 px-4 py-4 text-center text-sm text-surface-400">
-		&copy; {event.year}
+		&copy; {copyrightYear}
 		{event.shortName}. An inclusive, non-profit, volunteer-run conference. No cows were harmed in
 		the making of this website.
 	</p>

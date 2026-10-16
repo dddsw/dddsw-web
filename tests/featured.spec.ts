@@ -91,6 +91,11 @@ test('sponsor page offers the boss email', async ({ page }) => {
 	await expect(page.getByRole('button', { name: 'Copy email' })).toBeVisible();
 });
 
+test('the copyright line uses the current year, not the event year', async ({ page }) => {
+	await page.goto('/');
+	await expect(page.locator('footer')).toContainText(`© ${new Date().getFullYear()}`);
+});
+
 test('theme toggle switches and remembers dark mode', async ({ page }) => {
 	await page.emulateMedia({ colorScheme: 'light' });
 	await page.goto('/');
