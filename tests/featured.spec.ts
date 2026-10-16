@@ -96,6 +96,23 @@ test('the copyright line uses the current year, not the event year', async ({ pa
 	await expect(page.locator('footer')).toContainText(`© ${new Date().getFullYear()}`);
 });
 
+test.describe('meta description', () => {
+	const description = (page: import('@playwright/test').Page) =>
+		page.locator('meta[name="description"]').getAttribute('content');
+
+	test("uses the page's own lead", async ({ page }) => {
+		await page.goto('/venue');
+		expect(await description(page)).toBe(
+			'Where to find us, how to get there and what to expect when you arrive.'
+		);
+	});
+
+	test('falls back to the general description on the home page', async ({ page }) => {
+		await page.goto('/');
+		expect(await description(page)).toContain('A friendly, community-run conference');
+	});
+});
+
 test('theme toggle switches and remembers dark mode', async ({ page }) => {
 	await page.emulateMedia({ colorScheme: 'light' });
 	await page.goto('/');

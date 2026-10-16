@@ -15,11 +15,18 @@
 	// Pages with their own full-width design (the home page, error pages) opt out of the
 	// standard layout: the home page by returning `bare: true` from its `load` function.
 	const bare = $derived(page.data.bare === true || page.error !== null);
+
+	// Each page's own `lead` is the best summary of it for search results. Pages without one (and
+	// the home and error pages) use the general description of the event.
+	const defaultDescription = `${event.name} (${event.shortName}) — ${event.tagline}.`;
+	const description = $derived(
+		page.error === null ? (page.data.lead ?? defaultDescription) : defaultDescription
+	);
 </script>
 
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-	<meta name="description" content="{event.name} ({event.shortName}) — {event.tagline}." />
+	<meta name="description" content={description} />
 	<meta name="theme-color" content="#ff9930" />
 </svelte:head>
 
