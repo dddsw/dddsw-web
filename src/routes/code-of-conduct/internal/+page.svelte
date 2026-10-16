@@ -30,7 +30,7 @@
 	<p>
 		When taking a report from someone experiencing harassment you should record what they say and
 		reassure them they are being taken seriously, but avoid making specific promises about what
-		actions the organizers will take. Ask for any other information if the reporter has not
+		actions the organisers will take. Ask for any other information if the reporter has not
 		volunteered it (such as time, place) but do not pressure them to provide it if they are
 		reluctant. Even if the report lacks important details such as the identity of the person taking
 		the harassing actions, it should still be recorded and passed along to the appropriate staff
