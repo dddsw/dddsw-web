@@ -10,6 +10,7 @@
 	import { preview } from '#lib/featured.svelte.ts';
 	import { resolveFeatured } from '#lib/featured.ts';
 	import { currentUpdate } from '#lib/latestUpdate.ts';
+	import { callForPapersStatus } from '#lib/milestones.ts';
 	import { scheduleShown } from '#lib/navigation.ts';
 
 	const allCards = [
@@ -29,6 +30,7 @@
 		},
 		{
 			href: '/call-for-papers',
+			gate: 'cfp',
 			title: 'Speak at DDDSW',
 			body: 'First-timers and old hands welcome. Find out how to speak.',
 			emoji: '🎤'
@@ -41,9 +43,14 @@
 		}
 	];
 
-	// The schedule and speakers cards wait for the announcement, like the nav links.
+	// The schedule and speakers cards wait for the announcement, like the nav links, and the call
+	// for papers card goes once the call has closed.
 	const cards = $derived(
-		allCards.filter((card) => card.gate !== 'schedule' || scheduleShown(preview))
+		allCards.filter((card) => {
+			if (card.gate === 'schedule') return scheduleShown(preview);
+			if (card.gate === 'cfp') return callForPapersStatus() !== 'closed';
+			return true;
+		})
 	);
 
 	// The ticket button waits for tickets to open, like the Tickets button in the header.
