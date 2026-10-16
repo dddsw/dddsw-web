@@ -15,7 +15,8 @@
 	const copyrightYear = new Date().getFullYear();
 </script>
 
-<footer class="mt-24 bg-surface-950 text-surface-50">
+<footer
+	class="mt-24 bg-surface-950 text-surface-50 dark:border-t dark:border-surface-700 dark:bg-surface-900">
 	<Container class="grid gap-10 py-12 md:grid-cols-[1.5fr_1fr_1fr]">
 		<div class="space-y-4">
 			<Cow class="h-16 w-auto text-primary-500" />
@@ -66,7 +67,8 @@
 			</ul>
 		</nav>
 	</Container>
-	<p class="border-t border-surface-800 px-4 py-4 text-center text-sm text-surface-400">
+	<p
+		class="border-t border-surface-800 px-4 dark:border-surface-700 py-4 text-center text-sm text-surface-400">
 		&copy; {copyrightYear}
 		{event.shortName}. An inclusive, non-profit, volunteer-run conference. No cows were harmed in
 		the making of this website.
