@@ -53,7 +53,8 @@
 		</Tabs.List>
 		{#each pastEvents as e (e.year)}
 			<Tabs.Content value={String(e.year)} class="mt-8 space-y-10">
-				<header class="space-y-6 card bg-surface-950 p-6 text-surface-50 md:p-10">
+				<header
+					class="space-y-6 card bg-surface-950 p-6 text-surface-50 md:p-10 dark:border dark:border-surface-700 dark:bg-surface-900">
 					<div class="flex flex-wrap items-center justify-between gap-6">
 						<div class="space-y-2">
 							<p class="font-heading text-6xl leading-none text-primary-400 md:text-8xl">
