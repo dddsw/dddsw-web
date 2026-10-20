@@ -55,7 +55,7 @@ export const getInvolved: GetInvolved[] = [
 	{
 		emoji: '🎤',
 		title: 'Speak at our event',
-		body: 'We aim for a broad range of talks and would love to include topics such as mental health, neurodiversity and inclusivity in tech. Lightning talk submissions are very welcome too.'
+		body: "Got something to share? First-timer or old hand, a full session or a quick lightning talk, we want to hear it. Not sure your idea is ready? We'll help you work it up."
 	},
 	{
 		emoji: '🙋',
