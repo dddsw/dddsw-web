@@ -95,7 +95,7 @@
 	</p>
 	<div class="space-y-3 card bg-surface-50-950 p-5">
 		<p><strong>Subject:</strong> {email.subject}</p>
-		<pre class="font-base text-base whitespace-pre-wrap">{email.body}</pre>
+		<pre class="font-base text-base whitespace-pre-wrap [overflow-wrap:anywhere]">{email.body}</pre>
 	</div>
 	<div class="flex flex-wrap items-center gap-3">
 		<button

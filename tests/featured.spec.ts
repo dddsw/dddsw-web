@@ -86,6 +86,20 @@ test('the hero button goes straight to the boss email', async ({ page }) => {
 	await expect(page.getByRole('heading', { name: 'Convince your boss' })).toBeInViewport();
 });
 
+test('the boss email wraps inside its box on a narrow screen', async ({ page }) => {
+	await page.setViewportSize({ width: 320, height: 800 });
+	await page.goto('/sponsorship');
+	const email = page.locator('#convince-your-boss pre');
+	const box = await email.evaluate((pre) => ({
+		scroll: pre.scrollWidth,
+		client: pre.clientWidth,
+		right: pre.getBoundingClientRect().right,
+		parentRight: pre.parentElement!.getBoundingClientRect().right
+	}));
+	expect(box.scroll).toBeLessThanOrEqual(box.client);
+	expect(box.right).toBeLessThanOrEqual(box.parentRight);
+});
+
 test('sponsor page offers the boss email', async ({ page }) => {
 	await page.goto('/sponsorship');
 	await expect(page.getByRole('button', { name: 'Copy email' })).toBeVisible();
