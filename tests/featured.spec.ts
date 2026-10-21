@@ -74,10 +74,11 @@ test.describe('schedule and speakers links', () => {
 	});
 });
 
-test('the date is shown and the venue is still to be confirmed', async ({ page }) => {
+test('the date and venue are shown', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.getByText('Saturday 24th April 2027', { exact: true }).first()).toBeVisible();
-	await expect(page.getByText('To be confirmed', { exact: true })).toHaveCount(1);
+	await expect(page.getByText('Sloane Robinson Building, Bristol').first()).toBeVisible();
+	await expect(page.getByText('To be confirmed', { exact: true })).toHaveCount(0);
 });
 
 test('the hero button goes straight to the boss email', async ({ page }) => {

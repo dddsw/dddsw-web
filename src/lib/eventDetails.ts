@@ -18,7 +18,19 @@ export const event = {
 	tagline: 'A friendly, community-run conference for software developers',
 	year: eventYear,
 	/** Leave a field null until announced: the site shows "To be confirmed". */
-	venue: { name: null, city: null } as { name: string | null; city: string | null },
+	venue: {
+		name: 'Sloane Robinson Building',
+		city: 'Bristol',
+		address:
+			'University of Bristol, Temple Quarter Enterprise Campus, Cattle Market Road, Bristol, BS1 6AZ',
+		venuesUrl:
+			'https://www.bristol.ac.uk/venues/meetings/temple-quarter-enterprise-campus-the-sloane-robinson/'
+	} as {
+		name: string | null;
+		city: string | null;
+		address?: string;
+		venuesUrl?: string;
+	},
 	contactEmail: 'management@dddsouthwest.com',
 	sponsorshipEmail: 'sponsorship@dddsouthwest.com',
 	/** Public address of the site, used where we need a full link. No trailing slash. */
