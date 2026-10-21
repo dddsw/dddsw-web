@@ -150,7 +150,7 @@
 				{#if e.speakers}
 					<section class="space-y-4" aria-label="Speakers">
 						<h4 class="h4">
-							Speakers <span class="text-surface-500">({e.speakers.length})</span>
+							Speakers <span class="text-surface-700-300">({e.speakers.length})</span>
 						</h4>
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							{#each e.speakers as speaker (speaker.name)}
@@ -167,7 +167,7 @@
 				{#if e.talks}
 					<section class="space-y-4" aria-label="Talks and speakers">
 						<h4 class="h4">
-							Talks and speakers <span class="text-surface-500">({e.talks.length})</span>
+							Talks and speakers <span class="text-surface-700-300">({e.talks.length})</span>
 						</h4>
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							{#each e.talks as talk (talk.speaker + talk.title)}
