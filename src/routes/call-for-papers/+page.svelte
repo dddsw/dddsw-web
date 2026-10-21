@@ -12,7 +12,7 @@
 		},
 		{
 			title: 'A broad range of topics',
-			body: "If it helps developers, it fits. We'd love to include topics such as mental health, neurodiversity and inclusivity in tech. Lightning talks are very welcome too."
+			body: 'Technical deep dives, career lessons, tools, teams and wellbeing: if developers would find it useful, we want to hear about it.'
 		},
 		{
 			title: 'The community votes',
