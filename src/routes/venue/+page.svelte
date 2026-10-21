@@ -21,6 +21,39 @@
 		}
 	}
 
+	const hotels = [
+		{
+			name: 'ibis Bristol Temple Meads Quay',
+			where: 'Avon Street',
+			href: 'https://all.accor.com/hotel/6593/index.en.shtml'
+		},
+		{
+			name: 'Holiday Inn Express Bristol City Centre',
+			where: 'opposite Temple Meads station',
+			href: 'https://www.ihg.com/holidayinnexpress/hotels/gb/en/bristol/brsct/hoteldetail'
+		},
+		{
+			name: 'Leonardo Hotel Bristol City',
+			where: 'Temple Way',
+			href: 'https://www.leonardo-hotels.com/bristol/leonardo-hotel-bristol-city'
+		},
+		{
+			name: 'Novotel Bristol Centre',
+			where: 'Victoria Street',
+			href: 'https://all.accor.com/hotel/5622/index.en.shtml'
+		},
+		{
+			name: 'Hilton Garden Inn Bristol City Centre',
+			where: 'Temple Way',
+			href: 'https://www.hilton.com/en/hotels/brsccgi-hilton-garden-inn-bristol-city-centre/'
+		},
+		{
+			name: 'DoubleTree by Hilton Bristol City Centre',
+			where: 'Redcliffe Way',
+			href: 'https://www.hilton.com/en/hotels/brsrwdi-doubletree-bristol-city-centre/'
+		}
+	];
+
 	const photos = [
 		{
 			file: 'exterior',
@@ -250,6 +283,38 @@
 				href="https://www.bristol.ac.uk/study/temple-quarter-enterprise-campus/about-the-building"
 				>about the building</a> page.
 		</p>
+		<h3 class="h4">Food and drink</h3>
+		<p>
+			We'll provide breakfast, lunch and two tea breaks, all included with your free ticket. Please
+			tell us about any dietary requirements when you book your ticket.
+		</p>
+		<p>
+			The building also has a canteen and vending machines if you want something extra. These aren't
+			included, so you'll need to pay for anything you buy there.
+		</p>
+		<h3 class="h4">Quiet spaces and cosy nooks</h3>
+		<p>
+			As well as the main rooms, there is plenty of quiet space and there are cosy nooks dotted
+			around the building if you need a break.
+		</p>
+		<h3 class="h4">After the conference</h3>
+		<p>
+			Some of us usually head to the pub afterwards, normally the
+			<a href="https://www.lefthandedgiant.com/">Left Handed Giant Brewpub</a>
+			in the Compressor Building at Finzels Reach (Hawkins Lane, BS1 6EU). It's about a 15 minute walk
+			from the venue, along the river. You're very welcome to join us, and we'll share more details on
+			the day.
+		</p>
+		<h3 class="h4">Where to stay</h3>
+		<p>
+			These hotels are all about 10 to 15 minutes' walk from the venue. They're suggestions only, so
+			check prices, availability and exact distances with the hotel or on a map.
+		</p>
+		<ul class="list-disc space-y-1 pl-6">
+			{#each hotels as hotel (hotel.name)}
+				<li><a href={hotel.href}>{hotel.name}</a>, {hotel.where}</li>
+			{/each}
+		</ul>
 	{:else}
 		<p>
 			The venue for {event.shortName}
