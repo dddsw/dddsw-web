@@ -11,7 +11,13 @@ const happened =
 
 const { AnnounceScheduleAndOpenTicketRegistration: AnnounceSchedule, TheActualEventDay } =
 	Milestone;
-const { OpenSessionVoting, CloseSessionVoting, ConkedOut } = Milestone;
+const {
+	OpenCallForSpeakers,
+	CloseCallForSpeakers,
+	OpenSessionVoting,
+	CloseSessionVoting,
+	ConkedOut
+} = Milestone;
 const preview = (overrides: Partial<PreviewState> = {}): PreviewState => ({
 	featured: null,
 	schedule: false,
@@ -54,6 +60,13 @@ describe('visibleNav', () => {
 		expect(pocket(AnnounceSchedule)).toBe(false);
 		expect(pocket(TheActualEventDay)).toBe(true);
 		expect(pocket(TheActualEventDay, ConkedOut)).toBe(false);
+	});
+	it('shows Become a speaker until the call for papers closes', () => {
+		const becomeASpeaker = (...done: Milestone[]) =>
+			hrefs(visibleNav(preview(), happened(...done))).includes('/become-a-speaker');
+		expect(becomeASpeaker()).toBe(true);
+		expect(becomeASpeaker(OpenCallForSpeakers)).toBe(true);
+		expect(becomeASpeaker(OpenCallForSpeakers, CloseCallForSpeakers)).toBe(false);
 	});
 	it('always keeps About and Sponsorship', () => {
 		expect(hrefs(visibleNav(preview(), happened()))).toEqual(

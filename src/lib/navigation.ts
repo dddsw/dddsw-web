@@ -1,4 +1,5 @@
 import {
+	callForPapersStatus,
 	hasHappened as milestoneHasHappened,
 	Milestone,
 	votingStatus,
@@ -37,6 +38,7 @@ export function visibleNav(
 	hasHappened: HasHappened = milestoneHasHappened
 ): NavItem[] {
 	const votingOpen = votingStatus(hasHappened) === 'open';
+	const callForPapersClosed = callForPapersStatus(hasHappened) === 'closed';
 	const sessionsShown =
 		votingOpen || hasHappened(Milestone.AnnounceScheduleAndOpenTicketRegistration);
 	const scheduleVisible = scheduleShown(preview, hasHappened);
@@ -46,6 +48,7 @@ export function visibleNav(
 		scheduleVisible && { href: '/schedule', label: 'Schedule' },
 		scheduleVisible && { href: '/speakers', label: 'Speakers' },
 		sessionsShown && { href: '/sessions', label: 'Sessions' },
+		!callForPapersClosed && { href: '/become-a-speaker', label: 'Become a speaker' },
 		{ href: '/venue', label: 'Venue' },
 		{ href: '/past-events', label: 'Past events' },
 		{ href: '/about', label: 'About' },
@@ -59,7 +62,6 @@ export function visibleNav(
 export const moreLinks: NavItem[] = [
 	{ href: '/code-of-conduct', label: 'Code of conduct' },
 	{ href: '/privacy-policy', label: 'Privacy policy' },
-	{ href: '/become-a-speaker', label: 'Become a speaker' },
 	{ href: '/call-for-papers', label: 'Call for papers' },
 	{ href: '/session-voting', label: 'Session voting' },
 	{ href: '/tickets', label: 'Tickets' }
