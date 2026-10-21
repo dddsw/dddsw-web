@@ -20,7 +20,7 @@
 	<ComingSoon title="Programme to be announced" withTimeline>
 		<p>
 			The schedule will appear here once talks are selected. Want to see your name here? <a
-				href="/call-for-papers">Find out about speaking</a
+				href="/become-a-speaker">Find out about speaking</a
 			>.
 		</p>
 	</ComingSoon>

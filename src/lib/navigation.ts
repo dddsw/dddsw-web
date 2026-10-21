@@ -59,6 +59,7 @@ export function visibleNav(
 export const moreLinks: NavItem[] = [
 	{ href: '/code-of-conduct', label: 'Code of conduct' },
 	{ href: '/privacy-policy', label: 'Privacy policy' },
+	{ href: '/become-a-speaker', label: 'Become a speaker' },
 	{ href: '/call-for-papers', label: 'Call for papers' },
 	{ href: '/session-voting', label: 'Session voting' },
 	{ href: '/tickets', label: 'Tickets' }

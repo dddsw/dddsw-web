@@ -29,6 +29,9 @@
 		</div>
 	{/each}
 </div>
+<p>
+	New to speaking? <a href="/become-a-speaker">Read how to become a speaker and what to expect.</a>
+</p>
 <div class="space-y-4 card tint-orange p-8 text-center">
 	{#if status === 'open'}
 		<h2 class="h3">Submit your talk</h2>

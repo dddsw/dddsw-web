@@ -13,7 +13,7 @@
 	<ComingSoon title="Speakers to be announced" withTimeline>
 		<p>
 			Our line-up will be revealed here. Fancy a moo-ment in the spotlight? <a
-				href="/call-for-papers">Find out about speaking</a
+				href="/become-a-speaker">Find out about speaking</a
 			>.
 		</p>
 	</ComingSoon>
