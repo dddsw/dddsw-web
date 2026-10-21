@@ -141,7 +141,9 @@
 				autoplayStop: 'Stop slideshow'
 			}}>
 			<Carousel.Control class="relative">
-				<Carousel.ItemGroup>
+				<Carousel.ItemGroup
+					tabindex={0}
+					class="rounded-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-700-300">
 					{#each photos as photo, index (photo.file)}
 						<Carousel.Item {index}>
 							<figure class="space-y-2">
