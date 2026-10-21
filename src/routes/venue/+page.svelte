@@ -161,6 +161,95 @@
 				{/each}
 			</Carousel.IndicatorGroup>
 		</Carousel>
+		<h3 class="h4">Getting here</h3>
+		<p>
+			The campus is pedestrianised and sits right next to Bristol Temple Meads, so we recommend
+			arriving by public transport, bike or on foot.
+		</p>
+		<figure class="space-y-2">
+			<img
+				src="/images/venue/temple-meads-new-exit.jpg"
+				alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
+				width="1600"
+				height="1200"
+				loading="lazy"
+				class="w-full max-w-xl rounded-container" />
+			<figcaption class="text-sm">
+				The Sloane Robinson Building, seen through the new exit from Bristol Temple Meads
+			</figcaption>
+		</figure>
+		<ul class="list-disc space-y-1 pl-6">
+			<li>
+				<strong>Train:</strong> leave Bristol Temple Meads by the
+				<strong class="text-secondary-700-300">new exit in the subway</strong>. The Sloane Robinson
+				Building is
+				<strong class="text-secondary-700-300">directly outside the exit</strong>, on University
+				Square, and the route is step-free. You need a ticket to go through the station.
+			</li>
+			<li>
+				<strong>Bus:</strong> the First Bus number 8 stops beside the campus.
+			</li>
+			<li>
+				<strong>Park and ride:</strong> the 9 (from Brislington and Portway) stops at T1 on Temple Gate,
+				about 5 minutes' walk. The m2 (from Long Ashton) stops at T2, about 10 minutes' walk.
+			</li>
+			<li>
+				<strong>Ferry and bike:</strong> the campus is connected to the Temple Quay ferry landing by the
+				floating harbour foot and cycleway.
+			</li>
+			<li>
+				<strong>Car:</strong> there is no general parking at the campus, only a drop-off and pick-up
+				area outside the main building (10 minute limit). Bristol has a
+				<a
+					href="https://www.bristol.gov.uk/residents/streets-travel/bristols-caz/charges-and-vehicle-checker"
+					>Clean Air Zone</a
+				>, so check whether your vehicle will be charged. There are public car parks nearby:
+				<ul class="list-[circle] space-y-1 pl-6">
+					<li>
+						<a href="https://www.bristol.gov.uk/parking/temple-gate-long-stay-car-park"
+							>Temple Gate</a> (Bristol City Council), about 7 minutes' walk
+					</li>
+					<li>
+						<a href="https://apcoa.co.uk/parking-in/bristol/bristol-temple-meads/">Temple Meads</a> (station
+						car park), about 8 minutes' walk
+					</li>
+					<li>
+						<a
+							href="https://www.bristol.gov.uk/residents/parking/where-to-park-in-bristol/portwall-lane-long-stay-car-park"
+							>Portwall Lane</a> (Bristol City Council), about 12 minutes' walk
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="text-sm">
+			Travel details are from the University of Bristol's <a
+				href="https://www.bristol.ac.uk/maps/how-to-get-here/">how to get here</a>
+			and
+			<a
+				href="https://www.bristol.ac.uk/maps/car-parking/temple-quarter-enterprise-campus/visitor-parking/"
+				>visitor parking</a> pages. Check them for timetables, prices and updates.
+		</p>
+		<h3 class="h4">Accessibility</h3>
+		<p>The Sloane Robinson Building has been designed to be accessible and inclusive. It has:</p>
+		<ul class="list-disc space-y-1 pl-6">
+			<li>a step-free entrance at ground level, and a step-free route from the station</li>
+			<li>9 passenger lifts and wide corridors for wheelchair users to pass and turn</li>
+			<li>hearing enhancement systems</li>
+			<li>
+				an accessible and ambulant toilet at every toilet location, plus a Changing Places facility
+				and a family room
+			</li>
+			<li>gender-neutral toilets on every floor above the ground floor</li>
+			<li>
+				Blue Badge parking, which can be arranged in advance: please let us know when you book your
+				ticket
+			</li>
+		</ul>
+		<p class="text-sm">
+			Building details are from the University of Bristol's <a
+				href="https://www.bristol.ac.uk/study/temple-quarter-enterprise-campus/about-the-building"
+				>about the building</a> page.
+		</p>
 	{:else}
 		<p>
 			The venue for {event.shortName}
