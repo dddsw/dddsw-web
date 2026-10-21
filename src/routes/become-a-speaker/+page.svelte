@@ -2,13 +2,6 @@
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { event } from '#lib/eventDetails.ts';
 	import { callForPapersStatus } from '#lib/milestones.ts';
-
-	const perks = [
-		'A speakers dinner the night before: a chance to meet your fellow speakers, who are all really friendly.',
-		'A quiet area where you can prepare on the day.',
-		'Room monitors who keep time so you can focus on your talk, and who will tell the committee about any technical problems or medical emergencies.',
-		'Lots of appreciation from attendees and organisers alike. DDDSW only happens because speakers generously give their time.'
-	];
 </script>
 
 <section class="space-y-4">
@@ -43,12 +36,37 @@
 </section>
 
 <section class="space-y-4">
-	<h2 class="h3">What speakers get</h2>
-	<ul class="list-disc space-y-1 pl-6">
-		{#each perks as perk (perk)}
-			<li>{perk}</li>
-		{/each}
-	</ul>
+	<h2 class="h3">The night before</h2>
+	<p class="max-w-2xl">
+		We hold a speakers dinner the night before, which is a chance to meet your fellow speakers, who
+		are all really friendly.
+	</p>
+</section>
+
+<section class="space-y-4">
+	<h2 class="h3">On the day</h2>
+	<p class="max-w-2xl">
+		There's a quiet area where you can prepare before your talk. Room monitors keep time, so you can
+		focus on what you're saying, and they'll tell the committee about any technical problems or
+		medical emergencies.
+	</p>
+</section>
+
+<section class="space-y-4">
+	<h2 class="h3">Appreciation</h2>
+	<p class="max-w-2xl">
+		DDDSW only happens because speakers generously give their time, and we never forget that.
+		Attendees come to learn from you, and you'll get lots of appreciation from them and from us
+		organisers alike.
+	</p>
+	<p class="max-w-2xl">
+		Whether it's your first talk or your fiftieth, you'll be warmly welcomed and thanked for sharing
+		what you know.
+	</p>
+</section>
+
+<section class="space-y-4">
+	<h2 class="h3">Expenses</h2>
 	<p class="max-w-2xl">
 		DDDSW is a free, non-profit conference run by volunteers, so unfortunately we can't cover
 		speakers' expenses. Please bear that in mind when planning your trip.
