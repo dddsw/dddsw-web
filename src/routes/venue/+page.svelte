@@ -58,14 +58,8 @@
 		{
 			file: 'exterior',
 			alt: 'The Sloane Robinson Building from above',
-			title: 'Your first view',
+			title: 'The outside',
 			text: 'The Sloane Robinson Building, right next to Temple Meads.'
-		},
-		{
-			file: 'stairs',
-			alt: 'The staircase inside the Sloane Robinson Building',
-			title: 'Take the scenic route',
-			text: "A big, bright atrium with a staircase you can't miss."
 		},
 		{
 			file: 'cafe',
@@ -74,16 +68,22 @@
 			text: "This is the entrance where we'll meet you when you arrive."
 		},
 		{
+			file: 'stairs',
+			alt: 'The staircase inside the Sloane Robinson Building',
+			title: 'The atrium',
+			text: 'A big, bright atrium with a striking yellow staircase. There are lifts too.'
+		},
+		{
 			file: 'round-lecture-theatre',
 			alt: 'The Bill Brown Forum in the Sloane Robinson Building',
 			title: 'The Bill Brown Forum',
-			text: 'One of our four talk rooms: a 300-seat lecture theatre in the round.'
+			text: 'One of our four session rooms: a 300-seat lecture theatre in the round.'
 		},
 		{
 			file: 'meeting-room',
 			alt: 'A meeting room with a display screen, tables and chairs, and large windows',
-			title: 'Room to talk',
-			text: 'Light, airy meeting rooms with views out over Bristol.'
+			title: 'Another room',
+			text: 'A light, airy room with views out over Bristol, where more sessions will take place.'
 		},
 		{
 			file: 'terrace-studio',
