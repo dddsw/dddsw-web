@@ -77,8 +77,9 @@
 	<h3 class="h4">Past committee members</h3>
 	<p class="max-w-2xl">
 		Thank you to everyone who has helped organise the conference! The years show when each person
-		was listed on our team page. We've pieced together the years before 2023 from web archives, so a
-		few names may be missing. If you spot a gap, we'd love a pull request on
+		was listed on our team page. Years before 2023 come from web archives, so some names may be
+		missing, and we've assumed anyone listed before and after a gap was on the committee in between.
+		If you spot a mistake, we'd love a pull request on
 		<a href="https://github.com/dddsw/dddsw-web" rel="noopener">our GitHub repository</a>.
 	</p>
 	<ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

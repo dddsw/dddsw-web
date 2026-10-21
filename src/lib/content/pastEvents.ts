@@ -450,6 +450,8 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'NDC London', url: 'https://ndc-london.com/' },
 			{ name: 'Scott Logic', url: 'https://www.scottlogic.com/' }
 		],
+		// Assumed: each was listed on the committee before and after this year.
+		committee: [{ name: 'Martyn Fewtrell' }, { name: 'Stuart Lang' }, { name: 'Joseph Woodward' }],
 		date: '2019-04-27',
 		venue: 'Redcliffe Sixth Form Centre, Redcliff Hill, Bristol BS1 6RB',
 		summary: 'Five tracks, including a Women in Technology panel sponsored by Landmark.',
@@ -523,7 +525,14 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'NDC London', url: 'https://ndc-london.com/' },
 			{ name: 'Scott Logic', url: 'https://www.scottlogic.com/' }
 		],
-		committee: [{ name: 'Rob Bracken' }, { name: 'Ross Scott' }],
+		committee: [
+			{ name: 'Rob Bracken' },
+			// Martyn Fewtrell, Stuart Lang and Joseph Woodward are assumed: listed before and after this year.
+			{ name: 'Martyn Fewtrell' },
+			{ name: 'Stuart Lang' },
+			{ name: 'Ross Scott' },
+			{ name: 'Joseph Woodward' }
+		],
 		date: '2018-04-21',
 		venue: 'Redcliffe Sixth Form Centre, Redcliff Hill, Bristol BS1 6RB',
 		summary: 'Held at the Redcliffe Sixth Form Centre.',
@@ -927,6 +936,14 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Red Gate', url: 'https://www.red-gate.com/' },
 			{ name: 'DevExpress', url: 'https://www.devexpress.com/' },
 			{ name: 'Black Marble', url: 'https://www.blackmarble.com/' }
+		],
+		// Assumed: each was listed on the committee before and after this year.
+		committee: [
+			{ name: 'Martyn Fewtrell' },
+			{ name: 'Chris Myhill' },
+			{ name: 'Ross Scott' },
+			{ name: 'Jose Simas' },
+			{ name: 'Guy Smith-Ferrier' }
 		],
 		date: '2010-06-05',
 		venue:
