@@ -14,15 +14,27 @@ test.beforeEach(({ page }) => {
 	]);
 });
 
+const colourModes = ['light', 'dark'] as const;
+
 for (const [pageName, path] of pagesToTest) {
 	for (const [deviceName, deviceViewport] of devicesToTest) {
-		test(`${pageName} page a11y checks on ${deviceName}`, async ({ page }) => {
-			await page.setViewportSize(devices[deviceViewport].viewport);
+		for (const colourMode of colourModes) {
+			test(`${pageName} page a11y checks on ${deviceName} in ${colourMode} mode`, async ({
+				page
+			}) => {
+				await page.setViewportSize(devices[deviceViewport].viewport);
+				await page.emulateMedia({ colorScheme: colourMode });
 
-			await page.goto(path);
+				await page.goto(path);
 
-			await reportAccessibilityViolations();
-		});
+				// Make sure the page really is in the mode under test, so a dark pass can't silently run in light.
+				await expect(page.locator('html')).toHaveClass(
+					colourMode === 'dark' ? /dark/ : /^(?!.*dark)/
+				);
+
+				await reportAccessibilityViolations();
+			});
+		}
 	}
 }
 

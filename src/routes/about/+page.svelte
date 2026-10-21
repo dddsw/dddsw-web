@@ -1,154 +1,119 @@
 <script lang="ts">
-	import CallToActions from '$lib/CallToActions.svelte';
-	import type { KeyPoint } from '../../types/KeyPoint.type';
-	import { pageTitle } from '../../stores.js';
+	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+	import Principles from '#lib/components/Principles.svelte';
+	import SocialIcon from '#lib/components/SocialIcon.svelte';
+	import { event } from '#lib/eventDetails.ts';
+	import { getInvolved, team } from '#lib/content/team.ts';
+	import { pastEvents } from '#lib/content/pastEvents.ts';
 
-	let keyPoints: KeyPoint[] = [
-		{
-			title: 'Spread the word',
-			icon: 'campaign',
-			paragraph: `Sharing our social media posts will help us reach new attendees, speakers, and potential sponsors. Our event is funded solely on sponsorship so any sharing is appreciated by the team.`
-		},
-		{
-			title: 'Speak at our event',
-			icon: 'record_voice_over',
-			paragraph: `We're looking for people to speak at our event! We aim to offer a broad range of talks in our schedule and we'd love to include topics such as mental health, neurodiversity, and inclusivity in tech. Lightning talk submissions are also very welcome.`
-		},
-		{
-			title: 'Help us on the day',
-			icon: 'volunteer_activism',
-			paragraph: `With the increasing popularity of our event we may need extra help on the day. Keep an eye on our LinkedIn feed for volunteering opportunities or email us at <a href="mailto:management@dddsouthwest.com">management@dddsouthwest.com</a>.`
-		}
-	];
+	/** Everyone who appears on a past committee, with the years they were listed. */
+	const pastCommittee = Object.entries(
+		[...pastEvents]
+			.reverse()
+			.flatMap((e) => (e.committee ?? []).map((m) => ({ name: m.name, year: e.year })))
+			.reduce<Record<string, number[]>>(
+				(acc, { name, year }) => ({ ...acc, [name]: [...(acc[name] ?? []), year] }),
+				{}
+			)
+	).map(([name, years]) => ({ name, years }));
 
-	let teamMembers = [
-		{
-			name: 'Lorraine Pearce',
-			imageName: 'lorraine.jpg',
-			email: 'lorrainepearce@dddsouthwest.com',
-			linkedIn: 'lorraine-pearce-688aba8'
-		},
-		{
-			name: 'Russell Day',
-			imageName: 'russ.jpg',
-			email: 'russell.day@dddsouthwest.com',
-			linkedIn: 'russellday'
-		},
-		{
-			name: 'Stuart Lang',
-			imageName: 'stu.jpg',
-			email: 'stuartlang@dddsouthwest.com'
-		},
-		{
-			name: 'Carl Sargunar',
-			imageName: 'carl.jpg',
-			email: 'carlsargunar@dddsouthwest.com',
-			bsky: 'carlcod.es',
-			linkedIn: 'carl-sargunar-63b5814'
-		},
-		{
-			name: 'Sara Gowen',
-			imageName: 'sara.jpg',
-			email: 'saragowen@dddsouthwest.com',
-			linkedIn: 'sara-gowen-27404734'
-		}
-	];
-
-	pageTitle.set('About');
+	const initials = (name: string) =>
+		name
+			.split(' ')
+			.map((part) => part[0])
+			.join('');
 </script>
 
-<div class="secondary-bg">
-	<div class="section">
-		<h2>What to expect</h2>
-		<p>
-			DDD South West is an annual free one day technical conference organised by developers for
-			developers. It is a day of learning, discussing, contributing and being part of the developer
-			community in the South West. Our goal is to provide free technical education, the opportunity
-			to mix with peers and to make and develop relationships in the developer community.
-		</p>
-	</div>
-</div>
+<Principles />
 
-<div class="tertiary-bg">
-	<div class="section team-section">
-		<h2>Meet the team</h2>
-		<p>
-			DDD South West is brought to you by a small team of volunteers. Please feel free to get in
-			touch with us if you have any questions or ideas.
-		</p>
+<section id="team" aria-labelledby="meet" class="space-y-6">
+	<h2 id="meet" class="h2">Meet the farmhands</h2>
+	<p class="max-w-2xl">
+		{event.shortName} is brought to you by a small team of volunteers. Please feel free to get in touch
+		with us if you have any questions or ideas.
+	</p>
+	<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+		{#each team as member (member.name)}
+			<li
+				class="flex flex-col items-center gap-3 card preset-filled-surface-100-900 p-6 text-center">
+				<Avatar class="wobble size-28 ring-4 ring-primary-500">
+					<Avatar.Image src="/images/team/{member.photo}" alt="" />
+					<Avatar.Fallback>{initials(member.name)}</Avatar.Fallback>
+				</Avatar>
+				<h3 class="h5">{member.name}</h3>
+				<ul class="flex flex-wrap justify-center gap-4">
+					{#if member.linkedIn}
+						<li>
+							<SocialIcon
+								name="linkedin"
+								href="https://www.linkedin.com/in/{member.linkedIn}"
+								label="{member.name} on LinkedIn" />
+						</li>
+					{/if}
+					{#if member.bluesky}
+						<li>
+							<SocialIcon
+								name="bluesky"
+								href="https://bsky.app/profile/{member.bluesky}"
+								label="{member.name} on Bluesky" />
+						</li>
+					{/if}
+					<li>
+						<SocialIcon name="email" href="mailto:{member.email}" label="Email {member.name}" />
+					</li>
+				</ul>
+			</li>
+		{/each}
+	</ul>
+</section>
 
-		<div class="team-container">
-			{#each teamMembers as member}
-				<div class="member-container">
-					<img src="../images/team/{member.imageName}" alt={member.name} class="boop-effect" />
-					<span>{member.name}</span>
-					<span>
-						{#if member.bsky}
-							<a href="https://bsky.app/profile/{member.bsky}" target="_blank">
-								<i class="fa-brands fa-bluesky fa-2x icon" title="{member.name} BlueSky"></i>
-							</a>
-						{/if}
-						{#if member.linkedIn}
-							<a href="https://www.linkedin.com/in/{member.linkedIn}" target="_blank">
-								<i class="fa-brands fa-linkedin fa-2x icon" title="{member.name} LinkedIn"></i>
-							</a>
-						{/if}
-						<a href="mailto:{member.email}">
-							<i class="fa-regular fa-envelope fa-2x icon" title="{member.name} email"></i>
-						</a>
-					</span>
-				</div>
-			{/each}
-		</div>
-	</div>
-</div>
+<section aria-labelledby="history" class="space-y-6">
+	<h2 id="history" class="h2">Our history</h2>
+	<p class="max-w-2xl">
+		{event.shortName} has been connecting developers in the South West since 2009. Browse
+		<a href="/past-events">our past events</a>
+		to find out more.
+	</p>
+	<h3 class="h4">Past committee members</h3>
+	<p class="max-w-2xl">
+		Thank you to everyone who has helped organise the conference! The years show when each person
+		was listed on our team page. Years before 2023 come from web archives, so some names may be
+		missing, and we've assumed anyone listed before and after a gap was on the committee in between.
+		If you spot a mistake, we'd love a pull request on
+		<a href="https://github.com/dddsw/dddsw-web" rel="noopener">our GitHub repository</a>.
+	</p>
+	<ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+		{#each pastCommittee as person (person.name)}
+			<li class="space-y-2 card preset-filled-surface-100-900 px-4 py-3">
+				<span class="block font-semibold">{person.name}</span>
+				<!-- Links to that year's tab on the past events page, styled as buttons -->
+				<span class="flex flex-wrap gap-2">
+					{#each person.years as year (year)}
+						<a
+							href="/past-events#{year}"
+							class="btn preset-outlined-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+							aria-label="{person.name}, {year} event">{year}</a>
+					{/each}
+				</span>
+			</li>
+		{/each}
+	</ul>
+</section>
 
-<div class="secondary-bg">
-	<div class="section">
-		<h2>Get involved</h2>
-		<p>DDD South West is a community event and there are several ways you can get involved:</p>
-	</div>
-
-	<CallToActions {keyPoints} />
-</div>
-
-<style>
-	.team-container {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 30px;
-		justify-content: center;
-		margin: auto;
-		padding: 20px 0px;
-	}
-
-	.team-container img {
-		border-radius: 50%;
-		max-width: 150px;
-	}
-
-	.member-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 5px;
-	}
-
-	.team-section {
-		flex-grow: 1;
-	}
-
-	.icon {
-		color: black;
-	}
-
-	.icon:hover {
-		color: var(--primary-color);
-	}
-
-	@media (min-width: 992px) {
-		.team-container {
-			width: 75%;
-		}
-	}
-</style>
+<section aria-labelledby="involved" class="space-y-6">
+	<h2 id="involved" class="h2">Get involved</h2>
+	<p class="max-w-2xl">
+		{event.shortName} is a community event and there are several ways you can get involved. We're also
+		looking for new committee members: email
+		<a href="mailto:{event.contactEmail}">{event.contactEmail}</a>.
+	</p>
+	<ul class="grid gap-6 md:grid-cols-3">
+		{#each getInvolved as item (item.title)}
+			<li class="space-y-2 card tint-orange p-6">
+				<span class="text-4xl" aria-hidden="true">{item.emoji}</span>
+				<h3 class="h5">{item.title}</h3>
+				<p>{item.body}</p>
+			</li>
+		{/each}
+	</ul>
+</section>

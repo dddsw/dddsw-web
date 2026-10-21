@@ -28,6 +28,12 @@ export default [
 		}
 	},
 	{
+		files: ['**/*.svelte.ts', '**/*.svelte.js'],
+		languageOptions: {
+			parser: tseslint.parser
+		}
+	},
+	{
 		files: ['**/*.svelte', '*.svelte'],
 
 		languageOptions: {

@@ -1,16 +1,14 @@
-import { Milestone, get } from '$lib/milestones';
+import { Milestone, get } from '#lib/milestones.ts';
 import {
 	eventYear,
 	pocketdddUrl,
 	sessionizePublicCallForPapersUrl,
+	social,
 	ticketTailorUrl,
 	votingUrl
-} from '$lib/eventDetails';
+} from '#lib/eventDetails.ts';
 
-const linkedInIcon = `<a href="https://www.linkedin.com/company/ddd-south-west/" target="_blank">
-							<i class="fa-brands fa-linkedin fa-lg" title="DDD South West LinkedIn" aria-hidden="true"></i>
-							<span class="fa-sr-only">DDD South West LinkedIn</span>
-						</a>`;
+const linkedIn = `<a href="${social.linkedIn}" target="_blank" rel="noopener">LinkedIn</a>`;
 
 export let currentUpdate: string | undefined;
 
@@ -18,19 +16,19 @@ if (get(Milestone.StartPlanning)?.hasHappened)
 	currentUpdate = `DDD South West ${eventYear} planning has begun! More info coming soon 😎`;
 
 if (get(Milestone.SetADate)?.hasHappened)
-	currentUpdate = `DDD South West is coming... save the date! See you on the <strong class="emphasis">${get(Milestone.TheActualEventDay)?.formattedDate}</strong>`;
+	currentUpdate = `DDD South West is coming... save the date! See you on the <strong>${get(Milestone.TheActualEventDay)?.fullDate}</strong>`;
 
 if (get(Milestone.OpenCallForSpeakers)?.willBeHappeningSoon())
 	currentUpdate = `Watch this space.... call for speakers is opening on ${get(Milestone.OpenCallForSpeakers)!.formattedDate}.`;
 
 if (get(Milestone.OpenCallForSpeakers)?.hasHappened)
-	currentUpdate = `Call for speakers is <strong class="emphasis">open until ${get(Milestone.CloseCallForSpeakers)!.formattedDate}</strong>.
+	currentUpdate = `Call for speakers is <strong>open until ${get(Milestone.CloseCallForSpeakers)!.formattedDate}</strong>.
 		    We are a friendly developers conference and welcome papers from speakers both old and new.
 		    So whether you have an established talk you'd like to bring to Bristol or an idea you'd like help developing,
 		    <a href="${sessionizePublicCallForPapersUrl}">submit your talk now</a>.`;
 
 if (get(Milestone.CloseCallForSpeakers)?.hasHappened)
-	currentUpdate = `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedInIcon}`;
+	currentUpdate = `Call for speakers is now closed. Session voting will be opening soon, watch this space or follow us on ${linkedIn}`;
 
 if (get(Milestone.OpenSessionVoting)?.hasHappened)
 	currentUpdate = `Session voting is now open! Take a look and <a href="${votingUrl}" target="_blank">vote for your favourites here</a>.<br>Voting will close on ${get(Milestone.CloseSessionVoting)!.formattedDate}.`;

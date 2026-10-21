@@ -1,5 +1,32 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { MilestoneDetails, Status } from './milestones';
+import {
+	callForPapersStatus,
+	daysUntil,
+	Milestone,
+	MilestoneDetails,
+	Status,
+	votingStatus,
+	windowStatus
+} from './milestones';
+
+describe('daysUntil', () => {
+	const withDate = (date?: string) => () =>
+		date ? new MilestoneDetails(Status.JustYouWait, date) : new MilestoneDetails(Status.NotYet);
+	const day = Milestone.TheActualEventDay;
+
+	it('counts whole days ignoring time of day', () => {
+		const lookup = withDate('2030-06-15');
+		expect(daysUntil(day, new Date('2030-06-05T23:59:00Z'), lookup)).toBe(10);
+	});
+	it('is zero on the day and negative afterwards', () => {
+		const lookup = withDate('2030-06-15');
+		expect(daysUntil(day, new Date('2030-06-15T09:00:00Z'), lookup)).toBe(0);
+		expect(daysUntil(day, new Date('2030-06-17T09:00:00Z'), lookup)).toBe(-2);
+	});
+	it('is undefined when the milestone has no date', () => {
+		expect(daysUntil(day, new Date(), withDate())).toBeUndefined();
+	});
+});
 
 describe('MilestoneDetails', () => {
 	describe('constructor', () => {
@@ -163,22 +190,22 @@ describe('MilestoneDetails', () => {
 		});
 
 		describe('when the milestone has not happened yet', () => {
-			it('returns true when targetDate is tomorrow', () => {
+			it('returns true when the date is tomorrow', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-03-26');
 				expect(m.willBeHappeningSoon()).toBe(true);
 			});
 
-			it('returns true when targetDate is just inside the one-month boundary', () => {
+			it('returns true when the date is just inside the one-month boundary', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-04-24');
 				expect(m.willBeHappeningSoon()).toBe(true);
 			});
 
-			it('returns false when targetDate is just outside the one-month boundary', () => {
+			it('returns false when the date is just outside the one-month boundary', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2026-05-01');
 				expect(m.willBeHappeningSoon()).toBe(false);
 			});
 
-			it('returns false when targetDate is far in the future', () => {
+			it('returns false when the date is far in the future', () => {
 				const m = new MilestoneDetails(Status.NotYet, '2099-12-31');
 				expect(m.willBeHappeningSoon()).toBe(false);
 			});
@@ -193,5 +220,51 @@ describe('MilestoneDetails', () => {
 				expect(m.willBeHappeningSoon()).toBe(false);
 			});
 		});
+	});
+});
+
+describe('windowStatus', () => {
+	const happened =
+		(...done: Milestone[]) =>
+		(milestone: Milestone) =>
+			done.includes(milestone);
+	const { OpenSessionVoting, CloseSessionVoting } = Milestone;
+
+	it('is not open before the opening milestone', () => {
+		expect(windowStatus(OpenSessionVoting, CloseSessionVoting, happened())).toBe('not-open');
+	});
+	it('is open once it has opened and not yet closed', () => {
+		expect(windowStatus(OpenSessionVoting, CloseSessionVoting, happened(OpenSessionVoting))).toBe(
+			'open'
+		);
+	});
+	it('is closed once the closing milestone has happened', () => {
+		expect(
+			windowStatus(
+				OpenSessionVoting,
+				CloseSessionVoting,
+				happened(OpenSessionVoting, CloseSessionVoting)
+			)
+		).toBe('closed');
+	});
+	it('gives the call for papers and voting their own windows', () => {
+		expect(callForPapersStatus(happened(Milestone.OpenCallForSpeakers))).toBe('open');
+		expect(votingStatus(happened(Milestone.OpenCallForSpeakers))).toBe('not-open');
+	});
+});
+
+describe('fullDate', () => {
+	it.each([
+		['2027-04-24', 'Saturday 24th April 2027'],
+		['2027-04-01', 'Thursday 1st April 2027'],
+		['2027-04-02', 'Friday 2nd April 2027'],
+		['2027-04-03', 'Saturday 3rd April 2027'],
+		['2027-04-11', 'Sunday 11th April 2027'],
+		['2027-04-22', 'Thursday 22nd April 2027']
+	])('formats %s', (iso, expected) => {
+		expect(new MilestoneDetails(Status.JustYouWait, iso).fullDate).toBe(expected);
+	});
+	it('is undefined without a date', () => {
+		expect(new MilestoneDetails(Status.NotYet).fullDate).toBeUndefined();
 	});
 });
