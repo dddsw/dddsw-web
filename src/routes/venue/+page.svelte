@@ -168,10 +168,10 @@
 		</p>
 		<figure class="space-y-2">
 			<img
-				src="/images/venue/temple-meads-new-exit.jpg"
+				src="/images/venue/temple-meads-new-exit.webp"
 				alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
-				width="1600"
-				height="1200"
+				width="2000"
+				height="1500"
 				loading="lazy"
 				class="w-full max-w-xl rounded-container" />
 			<figcaption class="text-sm">
