@@ -252,3 +252,19 @@ describe('windowStatus', () => {
 		expect(votingStatus(happened(Milestone.OpenCallForSpeakers))).toBe('not-open');
 	});
 });
+
+describe('fullDate', () => {
+	it.each([
+		['2027-04-24', 'Saturday 24th April 2027'],
+		['2027-04-01', 'Thursday 1st April 2027'],
+		['2027-04-02', 'Friday 2nd April 2027'],
+		['2027-04-03', 'Saturday 3rd April 2027'],
+		['2027-04-11', 'Sunday 11th April 2027'],
+		['2027-04-22', 'Thursday 22nd April 2027']
+	])('formats %s', (iso, expected) => {
+		expect(new MilestoneDetails(Status.JustYouWait, iso).fullDate).toBe(expected);
+	});
+	it('is undefined without a date', () => {
+		expect(new MilestoneDetails(Status.NotYet).fullDate).toBeUndefined();
+	});
+});

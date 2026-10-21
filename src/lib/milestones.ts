@@ -20,6 +20,18 @@ export enum Milestone {
 
 const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
 
+const weekdayFormatter = new Intl.DateTimeFormat('en-GB', { weekday: 'long', timeZone: 'UTC' });
+const monthYearFormatter = new Intl.DateTimeFormat('en-GB', {
+	month: 'long',
+	year: 'numeric',
+	timeZone: 'UTC'
+});
+
+function ordinal(day: number): string {
+	if (day >= 11 && day <= 13) return `${day}th`;
+	return `${day}${({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[day % 10] ?? 'th'}`;
+}
+
 const MS_PER_DAY = 86_400_000;
 
 export class MilestoneDetails {
@@ -39,6 +51,13 @@ export class MilestoneDetails {
 	get formattedDate(): string | undefined {
 		if (!this.targetDate) return undefined;
 		return dateFormatter.format(this.targetDate);
+	}
+
+	/** Weekday, ordinal day, month and year, e.g. "Saturday 24th April 2027". */
+	get fullDate(): string | undefined {
+		if (!this.targetDate) return undefined;
+		const d = this.targetDate;
+		return `${weekdayFormatter.format(d)} ${ordinal(d.getUTCDate())} ${monthYearFormatter.format(d)}`;
 	}
 
 	constructor(status: Status.Done | Status.NotYet);
@@ -112,7 +131,7 @@ export const votingStatus = (happened: HasHappened = hasHappened): OpenStatus =>
 /** Every milestone must be listed here: the compiler rejects a missing one. */
 const milestones: Record<Milestone, MilestoneDetails> = {
 	[Milestone.StartPlanning]: new MilestoneDetails(Status.Done),
-	[Milestone.SetADate]: new MilestoneDetails(Status.NotYet),
+	[Milestone.SetADate]: new MilestoneDetails(Status.Done),
 	[Milestone.OpenCallForSpeakers]: new MilestoneDetails(Status.NotYet),
 	[Milestone.CloseCallForSpeakers]: new MilestoneDetails(Status.NotYet),
 	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.NotYet),
@@ -120,6 +139,6 @@ const milestones: Record<Milestone, MilestoneDetails> = {
 	[Milestone.AnnounceScheduleAndOpenTicketRegistration]: new MilestoneDetails(Status.NotYet),
 	[Milestone.SoldOut]: new MilestoneDetails(Status.NotYet),
 	[Milestone.FoundMoreTickets]: new MilestoneDetails(Status.NotYet),
-	[Milestone.TheActualEventDay]: new MilestoneDetails(Status.NotYet),
-	[Milestone.ConkedOut]: new MilestoneDetails(Status.NotYet)
+	[Milestone.TheActualEventDay]: new MilestoneDetails(Status.JustYouWait, '2027-04-24'),
+	[Milestone.ConkedOut]: new MilestoneDetails(Status.JustYouWait, '2027-04-25')
 };

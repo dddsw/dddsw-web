@@ -16,7 +16,9 @@ describe('dateLabel', () => {
 		expect(dateLabel(new MilestoneDetails(Status.NotYet))).toBe('To be confirmed');
 	});
 	it('formats a confirmed date', () => {
-		expect(dateLabel(new MilestoneDetails(Status.JustYouWait, '2030-06-15'))).toBe('15 June 2030');
+		expect(dateLabel(new MilestoneDetails(Status.JustYouWait, '2030-06-15'))).toBe(
+			'Saturday 15th June 2030'
+		);
 	});
 });
 

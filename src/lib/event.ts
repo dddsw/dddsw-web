@@ -12,7 +12,7 @@ export const TBC = 'To be confirmed';
 
 /** The event date, or "To be confirmed" until one is announced. */
 export function dateLabel(eventDay: MilestoneDetails = get(Milestone.TheActualEventDay)): string {
-	return eventDay.formattedDate ?? TBC;
+	return eventDay.fullDate ?? TBC;
 }
 
 /** The venue (and city), or "To be confirmed" until announced. */

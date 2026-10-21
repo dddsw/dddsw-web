@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ComingSoon from '#lib/components/ComingSoon.svelte';
-	import { event } from '#lib/eventDetails.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,7 +23,6 @@
 				href="/call-for-papers">Find out about speaking</a
 			>.
 		</p>
-		<p>Still to be confirmed: {event.shortName} {event.year} date and venue.</p>
 	</ComingSoon>
 {:else}
 	<ol class="space-y-4">

@@ -16,7 +16,7 @@ if (get(Milestone.StartPlanning)?.hasHappened)
 	currentUpdate = `DDD South West ${eventYear} planning has begun! More info coming soon 😎`;
 
 if (get(Milestone.SetADate)?.hasHappened)
-	currentUpdate = `DDD South West is coming... save the date! See you on the <strong>${get(Milestone.TheActualEventDay)?.formattedDate}</strong>`;
+	currentUpdate = `DDD South West is coming... save the date! See you on the <strong>${get(Milestone.TheActualEventDay)?.fullDate}</strong>`;
 
 if (get(Milestone.OpenCallForSpeakers)?.willBeHappeningSoon())
 	currentUpdate = `Watch this space.... call for speakers is opening on ${get(Milestone.OpenCallForSpeakers)!.formattedDate}.`;
