@@ -6,6 +6,7 @@
 	const perks = [
 		'A speakers dinner the night before: a chance to meet your fellow speakers, who are all really friendly.',
 		'A quiet area where you can prepare on the day.',
+		'Room monitors who keep time so you can focus on your talk, and who will tell the committee about any technical problems or medical emergencies.',
 		'Lots of appreciation from attendees and organisers alike. DDDSW only happens because speakers generously give their time.'
 	];
 </script>
