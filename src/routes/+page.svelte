@@ -121,13 +121,19 @@
 		<h2 id="get-involved" class="col-span-full h2">Join the herd</h2>
 		{#each cards as card (card.href)}
 			<div
-				class="relative space-y-2 card preset-filled-surface-100-900 p-6 transition focus-within:tint-orange hover:tint-orange">
+				class="group relative flex cursor-pointer flex-col gap-2 card border border-transparent preset-filled-surface-100-900 p-6 transition hover:tint-orange has-focus-visible:tint-orange has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-secondary-700-300">
 				<span class="text-4xl" aria-hidden="true">{card.emoji}</span>
 				<h3 class="h4">
-					<!-- Stretched link: the title is the visible, underlined link and the whole card is clickable. -->
-					<a href={card.href} class="after:absolute after:inset-0">{card.title}</a>
+					<!-- Stretched link: the whole card is the link, with the title as its accessible name. -->
+					<a href={card.href} class="no-underline after:absolute after:inset-0">{card.title}</a>
 				</h3>
 				<p>{card.body}</p>
+				<!-- Decorative cue that the card is a link; it nudges along on hover unless reduced motion is on. -->
+				<p
+					aria-hidden="true"
+					class="mt-auto pt-2 text-2xl text-secondary-700-300 transition-transform motion-safe:group-hover:translate-x-1 motion-safe:group-has-focus-visible:translate-x-1">
+					→
+				</p>
 			</div>
 		{/each}
 	</section>
