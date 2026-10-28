@@ -16,57 +16,7 @@ export interface SponsorSection {
 	options: SponsorOption[];
 }
 
-export const sponsorSections: SponsorSection[] = [
-	{
-		heading: 'Packages',
-		options: [
-			{
-				title: 'Supporter',
-				price: '£600',
-				features: [
-					'Your logo on our website',
-					'Your logo on the opening and closing slides',
-					"We'll thank you on our social media"
-				]
-			},
-			{
-				title: 'Exhibitor',
-				price: '£1700',
-				preamble: 'Everything in Supporter, plus:',
-				features: [
-					'A sponsor stand on the day',
-					'Custom promotional posts from our social media accounts',
-					'Anything else we can do... chat to us!'
-				]
-			}
-		]
-	},
-	{
-		heading: 'Refreshments',
-		intro: 'With your company name and logo displayed alongside.',
-		options: [
-			{ title: 'Breakfast', price: '£250' },
-			{ title: 'Morning break', price: '£250' },
-			{ title: 'Afternoon break', price: '£250' }
-		]
-	},
-	{
-		heading: 'Extras',
-		options: [
-			{
-				title: 'Dedicated speaker slot',
-				price: '£300',
-				description: "We'll allocate a dedicated slot for your speaker to present a relevant topic."
-			},
-			{
-				title: 'T-shirts',
-				price: '£400',
-				description:
-					"We'll print your company name or logo on our t-shirts, worn by staff and speakers."
-			}
-		]
-	}
-];
+export const sponsorSections: SponsorSection[] = [];
 
 export const sponsorReasons = [
 	{
