@@ -268,3 +268,12 @@ describe('fullDate', () => {
 		expect(new MilestoneDetails(Status.NotYet).fullDate).toBeUndefined();
 	});
 });
+
+describe('isoDate', () => {
+	it('is the date as YYYY-MM-DD', () => {
+		expect(new MilestoneDetails(Status.JustYouWait, '2027-04-24').isoDate).toBe('2027-04-24');
+	});
+	it('is undefined with no date', () => {
+		expect(new MilestoneDetails(Status.NotYet).isoDate).toBeUndefined();
+	});
+});

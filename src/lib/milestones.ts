@@ -53,6 +53,11 @@ export class MilestoneDetails {
 		return dateFormatter.format(this.targetDate);
 	}
 
+	/** The date as YYYY-MM-DD, or undefined with no date. */
+	get isoDate(): string | undefined {
+		return this.targetDate?.toISOString().slice(0, 10);
+	}
+
 	/** Weekday, ordinal day, month and year, e.g. "Saturday 24th April 2027". */
 	get fullDate(): string | undefined {
 		if (!this.targetDate) return undefined;
