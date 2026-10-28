@@ -1,13 +1,45 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import EventFacts from '#lib/components/EventFacts.svelte';
 	import { event } from '#lib/eventDetails.ts';
-	import { Carousel } from '@skeletonlabs/skeleton-svelte';
+	import { Carousel, Tabs } from '@skeletonlabs/skeleton-svelte';
 	import * as chevronLeft from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 	import * as chevronRight from '@fortawesome/free-solid-svg-icons/faChevronRight';
 
 	const addressLines = $derived(
 		[event.venue.name, ...(event.venue.address?.split(', ') ?? [])].filter(Boolean) as string[]
 	);
+
+	const travelModes = [
+		{ name: 'Train', emoji: '🚆' },
+		{ name: 'Car', emoji: '🚗' },
+		{ name: 'Bus', emoji: '🚌' },
+		{ name: 'Ferry and bike', emoji: '⛴️' }
+	];
+
+	// The travel tabs scroll sideways on narrow screens. Fade whichever edge has more tabs beyond it
+	// so it is clear there is more to scroll to.
+	let tabsWrap = $state<HTMLElement>();
+	let fade = $state({ left: false, right: false });
+	const tabsMask = $derived(
+		`linear-gradient(to right, ${fade.left ? 'transparent' : 'black'}, black 2rem, black calc(100% - 2rem), ${fade.right ? 'transparent' : 'black'})`
+	);
+
+	function updateFade() {
+		const list = tabsWrap?.querySelector('[role="tablist"]');
+		if (!list) return;
+		fade = {
+			left: list.scrollLeft > 1,
+			right: list.scrollLeft + list.clientWidth < list.scrollWidth - 1
+		};
+	}
+
+	onMount(() => {
+		updateFade();
+		const observer = new ResizeObserver(updateFade);
+		if (tabsWrap) observer.observe(tabsWrap);
+		return () => observer.disconnect();
+	});
 
 	let copied = $state(false);
 
@@ -201,45 +233,53 @@
 			The campus is pedestrianised and sits right next to Bristol Temple Meads, so we recommend
 			arriving by public transport, bike or on foot.
 		</p>
-		<figure class="space-y-2">
-			<img
-				src="/images/venue/temple-meads-new-exit.webp"
-				alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
-				width="2000"
-				height="1500"
-				loading="lazy"
-				class="w-full max-w-xl rounded-container" />
-			<figcaption class="text-sm">
-				The Sloane Robinson Building, seen through the new exit from Bristol Temple Meads
-			</figcaption>
-		</figure>
-		<ul class="list-disc space-y-1 pl-6">
-			<li>
-				<strong>Train:</strong> leave Bristol Temple Meads by the
-				<strong class="text-secondary-700-300">new exit in the subway</strong>. The Sloane Robinson
-				Building is
-				<strong class="text-secondary-700-300">directly outside the exit</strong>, on University
-				Square, and the route is step-free. You need a ticket to go through the station.
-			</li>
-			<li>
-				<strong>Bus:</strong> the First Bus number 8 stops beside the campus.
-			</li>
-			<li>
-				<strong>Park and ride:</strong> the 9 (from Brislington and Portway) stops at T1 on Temple Gate,
-				about 5 minutes' walk. The m2 (from Long Ashton) stops at T2, about 10 minutes' walk.
-			</li>
-			<li>
-				<strong>Ferry and bike:</strong> the campus is connected to the Temple Quay ferry landing by the
-				floating harbour foot and cycleway.
-			</li>
-			<li>
-				<strong>Car:</strong> there is no general parking at the campus, only a drop-off and pick-up
-				area outside the main building (10 minute limit). Bristol has a
-				<a
-					href="https://www.bristol.gov.uk/residents/streets-travel/bristols-caz/charges-and-vehicle-checker"
-					>Clean Air Zone</a
-				>, so check whether your vehicle will be charged. There are public car parks nearby:
-				<ul class="list-[circle] space-y-1 pl-6">
+		<Tabs
+			defaultValue={travelModes[0].name}
+			class="rounded-container border border-surface-200-800 bg-surface-100-900 p-4 md:p-6">
+			<div bind:this={tabsWrap} onscrollcapture={updateFade} style:mask-image={tabsMask}>
+				<Tabs.List class="overflow-x-auto">
+					{#each travelModes as mode (mode.name)}
+						<Tabs.Trigger value={mode.name} class="shrink-0 whitespace-nowrap">
+							<span aria-hidden="true">{mode.emoji}</span>
+							{mode.name}
+						</Tabs.Trigger>
+					{/each}
+					<Tabs.Indicator />
+				</Tabs.List>
+			</div>
+			<Tabs.Content value="Train" class="mt-4 flex flex-col gap-3 md:flow-root">
+				<figure class="order-last space-y-2 md:float-right md:order-none md:mb-1 md:ml-4 md:w-64">
+					<img
+						src="/images/venue/temple-meads-new-exit.webp"
+						alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
+						width="2000"
+						height="1500"
+						loading="lazy"
+						class="aspect-video w-full rounded-container object-cover" />
+					<figcaption class="text-sm">
+						The Sloane Robinson Building, seen through the new exit from Bristol Temple Meads
+					</figcaption>
+				</figure>
+				<p>
+					Leave Bristol Temple Meads by the
+					<strong class="text-secondary-700-300">new exit in the subway</strong>. The Sloane
+					Robinson Building is
+					<strong class="text-secondary-700-300">directly outside the exit</strong>, on University
+					Square, and the route is step-free. You need a ticket to go through the station.
+				</p>
+			</Tabs.Content>
+			<Tabs.Content value="Car" class="mt-4 space-y-2">
+				<p>
+					The campus has no general parking, but Blue Badge parking can be arranged in advance if
+					you tell us when you book your ticket. There is also a drop-off and pick-up area outside
+					the main building, with a 10 minute limit.
+				</p>
+				<p>
+					<strong>Park and ride:</strong> the 9 (from Brislington and Portway) stops at T1 on Temple Gate,
+					about 5 minutes' walk away. The m2 (from Long Ashton) stops at T2, about 10 minutes' walk away.
+				</p>
+				<p><strong>Public car parks nearby:</strong></p>
+				<ul class="list-disc space-y-1 pl-6">
 					<li>
 						<a href="https://www.bristol.gov.uk/parking/temple-gate-long-stay-car-park"
 							>Temple Gate</a> (Bristol City Council), about 7 minutes' walk
@@ -254,8 +294,29 @@
 							>Portwall Lane</a> (Bristol City Council), about 12 minutes' walk
 					</li>
 				</ul>
-			</li>
-		</ul>
+				<p>
+					Bristol has a
+					<a
+						href="https://www.bristol.gov.uk/residents/streets-travel/bristols-caz/charges-and-vehicle-checker"
+						>Clean Air Zone</a
+					>, so check whether your vehicle will be charged.
+				</p>
+			</Tabs.Content>
+			<Tabs.Content value="Bus" class="mt-4">
+				<p>
+					The First Bus number 8 stops beside the campus. See the
+					<a
+						href="https://www.firstbus.co.uk/bristol-bath-and-west/plan-journey/timetables?service=8-BS&day=sa"
+						>number 8 Saturday timetable</a> on the First Bus website.
+				</p>
+			</Tabs.Content>
+			<Tabs.Content value="Ferry and bike" class="mt-4">
+				<p>
+					The campus is connected to the Temple Quay ferry landing by the floating harbour foot and
+					cycleway.
+				</p>
+			</Tabs.Content>
+		</Tabs>
 		<p class="text-sm">
 			Travel details are from the University of Bristol's <a
 				href="https://www.bristol.ac.uk/maps/how-to-get-here/">how to get here</a>
