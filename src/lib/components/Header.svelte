@@ -37,13 +37,13 @@
 
 <header
 	class="sticky top-0 z-30 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
-	<Container class="flex items-center justify-between gap-4 py-3">
+	<Container class="flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
 			href="/"
-			class="group -mx-2 flex shrink-0 items-center gap-3 rounded-base px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
+			class="group -mx-2 flex shrink-0 items-center gap-2 rounded-base sm:gap-3 px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
 			<Cow class="wobble h-10 w-auto text-primary-500" />
 			<span
-				class="font-heading text-2xl font-semibold tracking-tight text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
+				class="font-heading text-xl font-semibold tracking-tight sm:text-2xl text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
 				{event.shortName}<span class="sr-only">{' '}</span><span
 					class="text-secondary-700-300 group-hover:text-inherit group-focus-visible:text-inherit">
 					{event.year}</span
