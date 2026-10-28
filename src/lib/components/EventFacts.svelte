@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { event } from '#lib/eventDetails.ts';
 	import { dateLabel, TBC, venueLabel } from '#lib/event.ts';
 	import { get, Milestone } from '#lib/milestones.ts';
@@ -27,5 +28,12 @@
 				: 'text-primary-400'}">
 			{venueLabel()}
 		</dd>
+		<!-- The venue page already shows these details, so it doesn't link to itself. -->
+		{#if page.url.pathname !== '/venue'}
+			<a
+				href="/venue"
+				class="mt-2 inline-block text-surface-50! underline-offset-4 hover:text-primary-400! focus-visible:text-primary-400!"
+				>Venue details and how to get here</a>
+		{/if}
 	</div>
 </dl>
