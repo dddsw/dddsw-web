@@ -22,11 +22,12 @@
 	A track of steps. It starts with a solid orange blob, then each milestone: done ones are orange
 	with a tick, the next one is ringed, the rest are plain. The line fills as milestones are reached.
 -->
-<ol aria-label="Seat milestones" class="grid grid-cols-5">
+<ol aria-label="Seat milestones" class="grid grid-cols-7">
 	<li class="relative flex flex-col items-center gap-2 text-center">
 		<span aria-hidden="true" class="relative size-10 rounded-full bg-primary-500"></span>
-		<span class="font-heading text-xl font-semibold">Starting out</span>
-		<span class="text-sm">{seatMilestonesReached === 0 ? "We're here" : 'Done'}</span>
+		<span class="font-heading text-sm font-semibold sm:text-xl"
+			><span class="sm:hidden">Start</span><span class="hidden sm:inline">Starting out</span></span>
+		<span class="text-xs sm:text-sm">{seatMilestonesReached === 0 ? "We're here" : 'Done'}</span>
 	</li>
 	{#each seatMilestones as milestone, index (milestone.seats)}
 		<li class="relative flex flex-col items-center gap-2 text-center">
@@ -54,9 +55,15 @@
 					</svg>
 				{/if}
 			</span>
-			<span class="font-heading text-xl font-semibold">{milestone.seats} seats</span>
-			<span class="text-sm {index === seatMilestonesReached ? 'font-semibold' : ''}"
-				>{status(index)}</span>
+			<span class="flex flex-col items-center leading-tight">
+				<span class="font-heading text-xl font-semibold">{milestone.seats}</span>
+				<span class="text-xs sm:text-sm">seats</span>
+			</span>
+			<span
+				class="text-xs sm:text-sm {index === seatMilestonesReached ? 'font-semibold' : ''} {index >
+				seatMilestonesReached
+					? 'max-sm:sr-only'
+					: ''}">{status(index)}</span>
 		</li>
 	{/each}
 </ol>

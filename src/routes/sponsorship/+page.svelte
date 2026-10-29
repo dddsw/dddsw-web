@@ -1,9 +1,18 @@
 <script lang="ts">
-	import { chipInUrl, event, showSponsorPrices } from '#lib/eventDetails.ts';
+	import { chipInUrl, event } from '#lib/eventDetails.ts';
+	import Cow from '#lib/components/Cow.svelte';
 	import SeatMilestones from '#lib/components/SeatMilestones.svelte';
+	import SponsorCard from '#lib/components/SponsorCard.svelte';
 	import SponsorLogos from '#lib/components/SponsorLogos.svelte';
 	import { toaster } from '#lib/toaster.ts';
-	import { bossEmail, sponsorReasons, sponsorSections, sponsors } from '#lib/content/sponsors.ts';
+	import {
+		bossEmail,
+		sponsorIntro,
+		sponsorPath,
+		sponsorReasons,
+		sponsors,
+		sponsorSupporterExtras
+	} from '#lib/content/sponsors.ts';
 
 	const email = bossEmail(event.sponsorshipEmail, `${event.siteUrl}/sponsorship`);
 
@@ -40,51 +49,66 @@
 	</ul>
 </section>
 
-{#each sponsorSections as section (section.heading)}
-	<section aria-labelledby="sec-{section.heading}" class="space-y-6">
-		<h2 id="sec-{section.heading}" class="h2">{section.heading}</h2>
-		{#if section.intro}<p>{section.intro}</p>{/if}
-		<ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{#each section.options as option (option.title)}
-				<li
-					class="space-y-3 card p-6 {option.featured
-						? 'preset-outlined-primary-500'
-						: 'preset-filled-surface-100-900'}">
-					<h3 class="h4">{option.title}</h3>
-					{#if option.preamble}<p>{option.preamble}</p>{/if}
-					{#if option.description}<p class="italic">{option.description}</p>{/if}
-					{#if option.features}
-						<ul class="list-inside list-disc space-y-1">
-							{#each option.features as feature (feature)}<li>{feature}</li>{/each}
-						</ul>
-					{/if}
-					{#if option.slots}
-						<ul class="space-y-1">
-							{#each option.slots as slot (slot.name)}
-								<li
-									class="flex items-baseline justify-between gap-4 border-t border-surface-300-700 pt-1">
-									<span class="font-semibold">{slot.name}</span>
-									{#if slot.claimed}
-										<span class="font-semibold">Sponsored</span>
-									{:else if showSponsorPrices}
-										<span class="text-xl font-bold">{slot.price}</span>
-									{/if}
-								</li>
-							{/each}
-						</ul>
-					{:else if option.claimed}
-						<p class="font-semibold">This item has been sponsored</p>
-					{:else if showSponsorPrices && option.price}
-						<p class="text-2xl font-bold">{option.price}</p>
-					{/if}
-					{#if option.availability && !option.claimed}
-						<p class="text-sm">{option.availability}</p>
-					{/if}
-				</li>
+<section aria-labelledby="ways" class="space-y-6">
+	<h2 id="ways" class="h2">Ways to sponsor</h2>
+	<p class="max-w-3xl">{sponsorIntro}</p>
+
+	<!-- The main path: each step builds on the one before. The arrows are decoration. -->
+	<ol
+		aria-label="Sponsorship packages, from the smallest step up"
+		class="grid gap-12 lg:grid-cols-4 lg:gap-10">
+		{#each sponsorPath as option, index (option.title)}
+			<SponsorCard
+				{option}
+				level={Math.min(index, 3) as 0 | 1 | 2 | 3}
+				reserveNote
+				class="relative">
+				{#if index === sponsorPath.length - 1}
+					<Cow class="wobble absolute right-5 bottom-5 h-10 w-auto text-primary-600" />
+				{/if}
+				{#if index < sponsorPath.length - 1}
+					<span
+						aria-hidden="true"
+						class="absolute -bottom-10 left-1/2 -translate-x-1/2 rotate-90 text-surface-950-50 lg:top-1/2 lg:-right-9 lg:bottom-auto lg:left-auto lg:translate-x-0 lg:-translate-y-1/2 lg:rotate-0">
+						<svg
+							viewBox="0 0 24 24"
+							class="size-8"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="3">
+							<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</span>
+				{/if}
+			</SponsorCard>
+		{/each}
+	</ol>
+
+	<!-- A line down from the Supporter column (second of four) to the branch below. -->
+	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-4 lg:gap-10">
+		<div></div>
+		<div class="flex flex-col items-center text-surface-950-50">
+			<span class="h-6 w-1 bg-current"></span>
+			<svg
+				viewBox="0 0 24 24"
+				class="-mt-2 size-8"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="3">
+				<path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</div>
+	</div>
+
+	<div class="space-y-4 rounded-container border-2 border-dashed border-surface-500 p-4 md:p-6">
+		<p class="font-semibold">Or start from Supporter and add one of these:</p>
+		<ul class="grid gap-6 md:grid-cols-3">
+			{#each sponsorSupporterExtras as option (option.title)}
+				<SponsorCard {option} />
 			{/each}
 		</ul>
-	</section>
-{/each}
+	</div>
+</section>
 
 <section aria-labelledby="chip-in" class="space-y-4 card tint-orange p-6">
 	<h2 id="chip-in" class="h3">Want to chip in?</h2>
@@ -101,6 +125,9 @@
 			href={chipInUrl}
 			class="btn preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
 			>Chip in</a>
+	{:else}
+		<!-- Shown until the Stripe payment link is set in eventDetails.ts. -->
+		<button type="button" class="btn preset-tonal" disabled>Chip in: coming soon</button>
 	{/if}
 </section>
 

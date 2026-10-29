@@ -8,7 +8,10 @@ export const showSponsors = true;
 /** Package prices are kept in the content and can be hidden publicly. */
 export const showSponsorPrices = true;
 
-/** Where individuals can chip in. Empty hides the button until the payment link exists. */
+/**
+ * Stripe payment link where individuals can chip in (set once it's configured). While empty, the
+ * button on the Sponsorship page is disabled and says "coming soon".
+ */
 export const chipInUrl = '';
 
 export const votingUrl = ''; //	'https://docs.google.com/forms/d/e/1FAIpQLSdI__OzLl1DEsJ3vzIfRadW4mkyv1XJz-so5H85Shcni5Gd_A/viewform';
