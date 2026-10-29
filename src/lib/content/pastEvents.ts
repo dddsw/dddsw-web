@@ -372,7 +372,47 @@ export const pastEvents: PastEvent[] = [
 			{ name: 'Stuart Lang' }
 		],
 		summary: 'A return to Engine Shed on a Saturday in April, after the 2022 event.',
-		note: "The programme was loaded from Sessionize and wasn't captured by the Internet Archive, so we don't have the list of talks and speakers yet."
+		talks: [
+			{ speaker: 'Matt Hunt', title: 'Cleaning your “Big Ball of Mud” with CQS' },
+			{
+				speaker: 'Huw Jeffries',
+				title:
+					'Migrating a cloud native bank away from shared credentials – lessons learnt in technical migrations'
+			},
+			{ speaker: 'Ian Cooper', title: 'Being Staff Plus' },
+			{ speaker: 'Murthy Upadhyayula', title: 'Maths + Code = Art' },
+			{ speaker: 'Molly Painter', title: 'SOLID Principles in 5 Nightmares' },
+			{ speaker: 'Eli Holderness', title: 'User testing in production: how to run a public beta' },
+			{
+				speaker: 'Adam Jones',
+				title: 'Teabags, Muddy Knees and Imposter syndrome: Atypical careers in tech'
+			},
+			{ speaker: 'Gary Short', title: 'A Day In The Life of A Data Scientist' },
+			{
+				speaker: 'Ian Griffiths',
+				title: 'High Performance JSON Serialization with Code Generation on C# 11 and .NET 7.0'
+			},
+			{ speaker: 'Sneha Ramesh', title: 'Developer Ethics - why is it important ?' },
+			{ speaker: 'Richard Jackson', title: '.NET, Azure & Umbraco: The First Twelve Months' },
+			{ speaker: 'Poornima Nayar', title: 'gRPC in .NET: Basics and More' },
+			{ speaker: 'Sean Farmar', title: 'Using DDD To Decompose Your Monolith' },
+			{
+				speaker: 'James World and Gareth James',
+				title: 'Designing and building an event sourcing system using .NET, CosmosDb and Elastic'
+			},
+			{
+				speaker: 'Jennifer D. Daniel',
+				title: 'Unlocking Diversity: Empowering Men as Allies in Advancing Women in Tech'
+			},
+			{ speaker: 'Dee Bolt', title: 'Decentralized Identity. Your identity, your control' },
+			{ speaker: 'Dylan Beattie', title: "There's No Such Thing As Plain Text" },
+			{ speaker: 'Kevin Smith', title: 'Everything You Need to Know About Configuration in .NET' },
+			{ speaker: 'Ross Scott', title: 'Blazor state management' },
+			{
+				speaker: 'Martin Costello',
+				title: 'Automating Monthly .NET Patching with GitHub Actions and dotnet-outdated'
+			}
+		]
 	},
 	{
 		year: 2022,
