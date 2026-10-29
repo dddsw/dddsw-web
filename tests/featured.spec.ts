@@ -77,7 +77,9 @@ test.describe('schedule and speakers links', () => {
 test('the date and venue are shown', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.getByText('Saturday 24th April 2027', { exact: true }).first()).toBeVisible();
-	await expect(page.getByText('Sloane Robinson Building, Bristol').first()).toBeVisible();
+	await expect(
+		page.getByText('Sloane Robinson Building, University of Bristol').first()
+	).toBeVisible();
 	await expect(page.getByText('To be confirmed', { exact: true })).toHaveCount(0);
 });
 
