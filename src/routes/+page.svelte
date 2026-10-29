@@ -85,10 +85,14 @@
 					]}>Convince your boss to sponsor us</a>
 			</div>
 		</div>
-		<div class="flex justify-center">
-			<Cow
-				title="The DDDSW cow"
-				class="wobble w-full max-w-md text-white drop-shadow-[0_8px_0_var(--color-surface-950)]" />
+		<div class="mx-auto flex w-full max-w-md flex-col">
+			<Countdown />
+			<!-- Mirrored so the cow faces the headline. The flip is on this wrapper because the wobble animation sets the cow's own transform. -->
+			<div class="-scale-x-100">
+				<Cow
+					title="The DDDSW cow"
+					class="wobble w-full text-white drop-shadow-[0_8px_0_var(--color-surface-950)]" />
+			</div>
 		</div>
 	</Container>
 </section>
@@ -96,7 +100,6 @@
 <Container class="space-y-16 pt-12">
 	<section class="space-y-6">
 		<EventFacts />
-		<Countdown />
 	</section>
 
 	{#if currentUpdate}
