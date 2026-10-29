@@ -109,17 +109,19 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 ];
 
 /**
- * Seat milestones, shown without any money figures. `reached` is the label once a milestone is
+ * Attendee milestones, shown without any money figures. `reached` is the label once a milestone is
  * secured. Raise `seatMilestonesReached` as each one is: those are shown as done and the next one
  * is highlighted. Set `seatProgressToNext` to fill part of the line towards the next milestone.
+ * `weight` is how much of the bar a milestone takes up, in proportion to the sponsorship it needs:
+ * the first 150 attendees cost about four times as much as each further 50.
  */
 export const seatMilestones = [
-	{ seats: 150, reached: 'Venue secured' },
-	{ seats: 200, reached: 'Reached' },
-	{ seats: 250, reached: 'Reached' },
-	{ seats: 300, reached: 'Reached' },
-	{ seats: 350, reached: 'Reached' },
-	{ seats: 400, reached: 'Full house' }
+	{ seats: 150, weight: 4, reached: 'Venue secured' },
+	{ seats: 200, weight: 1, reached: 'Reached' },
+	{ seats: 250, weight: 1, reached: 'Reached' },
+	{ seats: 300, weight: 1, reached: 'Reached' },
+	{ seats: 350, weight: 1, reached: 'Reached' },
+	{ seats: 400, weight: 1, reached: 'Full house' }
 ];
 export const seatMilestonesReached = 0;
 /** How far along the line to the next milestone we are, from 0 to 100 (percent). */

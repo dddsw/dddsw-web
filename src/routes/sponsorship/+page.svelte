@@ -37,7 +37,6 @@
 		a sponsor, please <a href="mailto:{event.sponsorshipEmail}">email us</a> and we'll agree a package
 		with you. We can also arrange a custom one.
 	</p>
-	<SeatMilestones />
 	<p>As well as supporting the community, sponsorship offers:</p>
 	<ul class="grid gap-6 md:grid-cols-3">
 		{#each sponsorReasons as reason (reason.title)}
@@ -109,6 +108,11 @@
 			{/each}
 		</ul>
 	</div>
+</section>
+
+<section aria-labelledby="attendees" class="space-y-6">
+	<h2 id="attendees" class="h2">The more we raise, the more people can come</h2>
+	<SeatMilestones />
 </section>
 
 <section aria-labelledby="support" class="space-y-4 card tint-orange p-6">

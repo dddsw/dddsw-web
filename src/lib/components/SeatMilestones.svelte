@@ -5,65 +5,107 @@
 		seatProgressToNext
 	} from '#lib/content/sponsors.ts';
 
-	/** How full the line leading into a milestone is, as a percentage. */
-	function fill(index: number) {
-		if (index < seatMilestonesReached) return 100;
-		if (index > seatMilestonesReached) return 0;
-		return Math.min(100, Math.max(0, seatProgressToNext));
-	}
+	const totalWeight = seatMilestones.reduce((sum, m) => sum + m.weight, 0);
 
-	function status(index: number) {
-		if (index < seatMilestonesReached) return seatMilestones[index].reached;
-		return index === seatMilestonesReached ? 'Next milestone' : 'Coming up';
-	}
+	/** Where each milestone sits along the bar, as a percentage. Wider gaps mean more to raise. */
+	const positions = seatMilestones.map(
+		(_, index) =>
+			(seatMilestones.slice(0, index + 1).reduce((sum, m) => sum + m.weight, 0) / totalWeight) * 100
+	);
+
+	/** How far along the bar we are, including part of the way to the next milestone. */
+	const securedPosition = (() => {
+		const before = seatMilestonesReached > 0 ? positions[seatMilestonesReached - 1] : 0;
+		const next = positions[seatMilestonesReached] ?? before;
+		return before + ((next - before) * Math.min(100, Math.max(0, seatProgressToNext))) / 100;
+	})();
+
+	/** The attendees secured so far, for assistive technology. */
+	const securedSeats = (() => {
+		const before = seatMilestonesReached > 0 ? seatMilestones[seatMilestonesReached - 1].seats : 0;
+		const next = seatMilestones[seatMilestonesReached]?.seats ?? before;
+		return before + ((next - before) * Math.min(100, Math.max(0, seatProgressToNext))) / 100;
+	})();
 </script>
 
 <!--
-	A track of steps. It starts with a solid orange blob, then each milestone: done ones are orange
-	with a tick, the next one is ringed, the rest are plain. The line fills as milestones are reached.
+	One bar from no attendees to a full house. The first 150 are the minimum to hold the event, so that
+	part is marked apart from the attendees after it. The bar fills as sponsorship comes in, and the
+	milestones are labelled along it.
 -->
-<ol aria-label="Seat milestones" class="grid grid-cols-7">
-	<li class="relative flex flex-col items-center gap-2 text-center">
-		<span aria-hidden="true" class="relative size-10 rounded-full bg-primary-500"></span>
-		<span class="font-heading text-sm font-semibold sm:text-xl"
-			><span class="sm:hidden">Start</span><span class="hidden sm:inline">Starting out</span></span>
-		<span class="text-xs sm:text-sm">{seatMilestonesReached === 0 ? "We're here" : 'Done'}</span>
-	</li>
-	{#each seatMilestones as milestone, index (milestone.seats)}
-		<li class="relative flex flex-col items-center gap-2 text-center">
+<div class="space-y-3">
+	<!-- Room either side so the first and last labels can centre on their ticks and the bar sits evenly. -->
+	<div class="space-y-3 px-5 sm:px-6">
+		<div aria-hidden="true" class="relative h-8 text-xs font-semibold sm:h-9 sm:text-sm">
+			<p
+				class="absolute top-0 left-0 border-t-4 border-primary-500 pt-1"
+				style:width="{positions[0]}%">
+				Needed to run
+			</p>
+			<p
+				class="absolute top-0 right-0 border-t-4 border-dashed border-surface-400-600 pt-1"
+				style:width="{100 - positions[0]}%">
+				Room for more people
+			</p>
+		</div>
+
+		<div
+			role="progressbar"
+			aria-label="Attendees secured"
+			aria-valuemin={0}
+			aria-valuemax={seatMilestones[seatMilestones.length - 1].seats}
+			aria-valuenow={securedSeats}
+			class="relative h-8 rounded-full bg-surface-300-700">
+			<div class="h-full rounded-full bg-primary-500" style:width="{securedPosition}%"></div>
+			<div
+				aria-hidden="true"
+				class="absolute inset-y-0 w-1 -translate-x-1/2 bg-surface-50-950"
+				style:left="{positions[0]}%">
+			</div>
+			<!-- Where we are now: a knob on the bar, with a label on whichever side has room. -->
 			<span
 				aria-hidden="true"
-				class="absolute top-5 right-1/2 h-1.5 w-full -translate-y-1/2 overflow-hidden bg-surface-300-700">
-				<span class="block h-full bg-primary-500" style:width="{fill(index)}%"></span>
-			</span>
+				class="absolute top-0 size-8 -translate-x-1/2 rounded-full border-4 border-surface-950-50 bg-primary-500"
+				style:left="clamp(1rem, {securedPosition}%, calc(100% - 1rem))"></span>
 			<span
 				aria-hidden="true"
-				class="relative flex size-10 items-center justify-center rounded-full text-lg font-bold {index <
-				seatMilestonesReached
-					? 'bg-primary-500 text-surface-950'
-					: index === seatMilestonesReached
-						? 'border-4 border-primary-500 bg-surface-50-950'
-						: 'border-2 border-surface-300-700 bg-surface-50-950'}">
-				{#if index < seatMilestonesReached}
-					<svg
-						viewBox="0 0 20 20"
-						class="size-5"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="3">
-						<path d="M4 10.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				{/if}
+				class="absolute top-1/2 -translate-y-1/2 text-xs font-semibold whitespace-nowrap text-surface-950-50 sm:text-sm {securedPosition >
+				60
+					? 'text-right'
+					: ''}"
+				style:left={securedPosition > 60
+					? undefined
+					: `calc(max(${securedPosition}%, 1rem) + 1.5rem)`}
+				style:right={securedPosition > 60 ? `calc(${100 - securedPosition}% + 1.5rem)` : undefined}>
+				We're here
 			</span>
-			<span class="flex flex-col items-center leading-tight">
-				<span class="font-heading text-xl font-semibold">{milestone.seats}</span>
-				<span class="text-xs sm:text-sm">seats</span>
-			</span>
-			<span
-				class="text-xs sm:text-sm {index === seatMilestonesReached ? 'font-semibold' : ''} {index >
-				seatMilestonesReached
-					? 'max-sm:sr-only'
-					: ''}">{status(index)}</span>
-		</li>
-	{/each}
-</ol>
+		</div>
+
+		<ol aria-label="Attendee milestones" class="relative h-24 sm:h-28">
+			<li aria-hidden="true" class="absolute top-3 left-0 text-sm font-semibold sm:hidden">
+				Attendees:
+			</li>
+			{#each seatMilestones as milestone, index (milestone.seats)}
+				<li
+					class="absolute top-0 flex -translate-x-1/2 flex-col items-center text-center leading-tight"
+					style:left="{positions[index]}%">
+					<span aria-hidden="true" class="mb-1 h-2 w-0.5 bg-surface-950-50"></span>
+					<span class="font-heading text-sm font-semibold sm:text-xl">{milestone.seats}</span>
+					<span class="text-xs max-sm:sr-only sm:text-sm">attendees</span>
+					{#if index < seatMilestonesReached}
+						<span class="mt-1 text-xs font-semibold sm:text-sm">{milestone.reached}</span>
+					{:else if index === 0}
+						<span class="mt-1 w-24 text-xs font-semibold sm:w-32 sm:text-sm"
+							>Minimum for the venue</span>
+					{/if}
+				</li>
+			{/each}
+		</ol>
+	</div>
+
+	<p class="max-w-3xl text-sm sm:text-base">
+		Every year our tickets go quickly and we have a large waiting list. This year the
+		<a href="/venue">Sloane Robinson building</a> gives us more room than ever, so every bit of sponsorship
+		helps us let more people in.
+	</p>
+</div>
