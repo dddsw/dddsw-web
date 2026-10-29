@@ -15,10 +15,17 @@ export function dateLabel(eventDay: MilestoneDetails = get(Milestone.TheActualEv
 	return eventDay.fullDate ?? TBC;
 }
 
-/** The venue (and city), or "To be confirmed" until announced. */
+/**
+ * The venue, with the institution it belongs to and the city, or "To be confirmed" until announced.
+ * The city is left out when a part of the label already names it.
+ */
 export function venueLabel(
-	venue: { name: string | null; city: string | null } = event.venue
+	venue: { name: string | null; city: string | null; institution?: string } = event.venue
 ): string {
-	const parts = [venue.name, venue.city].filter(Boolean);
+	const parts = [venue.name, venue.institution].filter(Boolean) as string[];
+	const cityNamed = venue.city
+		? parts.some((part) => part.toLowerCase().includes(venue.city!.toLowerCase()))
+		: false;
+	if (venue.city && !cityNamed) parts.push(venue.city);
 	return parts.length ? parts.join(', ') : TBC;
 }

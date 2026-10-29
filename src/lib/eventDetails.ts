@@ -20,6 +20,7 @@ export const event = {
 	/** Leave a field null until announced: the site shows "To be confirmed". */
 	venue: {
 		name: 'Sloane Robinson Building',
+		institution: 'University of Bristol',
 		city: 'Bristol',
 		address:
 			'University of Bristol, Temple Quarter Enterprise Campus, Cattle Market Road, Bristol, BS1 6AZ',
@@ -27,6 +28,8 @@ export const event = {
 			'https://www.bristol.ac.uk/venues/meetings/temple-quarter-enterprise-campus-the-sloane-robinson/'
 	} as {
 		name: string | null;
+		/** The organisation the venue belongs to, shown after the name. */
+		institution?: string;
 		city: string | null;
 		address?: string;
 		venuesUrl?: string;

@@ -30,4 +30,18 @@ describe('venueLabel', () => {
 		expect(venueLabel({ name: 'The Hall', city: 'Bristol' })).toBe('The Hall, Bristol');
 		expect(venueLabel({ name: null, city: 'Bristol' })).toBe('Bristol');
 	});
+	it('adds the institution after the name', () => {
+		expect(venueLabel({ name: 'The Hall', institution: 'City College', city: 'Leeds' })).toBe(
+			'The Hall, City College, Leeds'
+		);
+	});
+	it('leaves out the city when the institution already names it', () => {
+		expect(
+			venueLabel({
+				name: 'Sloane Robinson Building',
+				institution: 'University of Bristol',
+				city: 'Bristol'
+			})
+		).toBe('Sloane Robinson Building, University of Bristol');
+	});
 });
