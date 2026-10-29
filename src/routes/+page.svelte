@@ -103,7 +103,8 @@
 	</section>
 
 	{#if currentUpdate}
-		<section class="card tint-orange p-6" aria-label="Latest update">
+		<!-- Closer to its neighbours than the page's usual section spacing. -->
+		<section class="-mt-8 mb-8 card tint-orange p-6" aria-label="Latest update">
 			<p class="max-w-3xl text-lg">{@html currentUpdate}</p>
 		</section>
 	{/if}
