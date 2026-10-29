@@ -21,9 +21,9 @@
 	// Each step up the main path looks richer than the one before.
 	const levelStyles = [
 		'border-2 border-transparent preset-filled-surface-100-900',
-		'border-2 border-transparent border-t-4 border-t-primary-300 preset-filled-surface-100-900',
-		'tint-orange border-2! border-primary-500! shadow-[0_5px_0_var(--color-primary-500)]',
-		'border-2 border-primary-400 bg-primary-200 shadow-[0_7px_0_var(--color-primary-600)] dark:border-primary-500 dark:bg-surface-900 dark:shadow-[0_7px_0_var(--color-primary-500)]'
+		'border-2 border-transparent border-t-4 border-t-primary-300 preset-filled-surface-100-900 dark:border-t-primary-600',
+		'tint-orange border-2! border-primary-500! shadow-[0_5px_0_var(--color-primary-500)] dark:border-primary-600! dark:bg-surface-900! dark:shadow-[0_5px_0_var(--color-primary-800)]',
+		'border-2 border-primary-400 bg-primary-200 shadow-[0_7px_0_var(--color-primary-600)] dark:border-primary-500 dark:bg-surface-800 dark:shadow-[0_7px_0_var(--color-primary-600)]'
 	];
 </script>
 
@@ -32,7 +32,12 @@
 		{#if option.emoji}<span aria-hidden="true">{option.emoji}</span>{/if}
 		{option.title}
 	</h3>
-	{#if option.preamble}<p>{option.preamble}</p>{/if}
+	{#if option.preamble}
+		<p
+			class="w-fit rounded-base bg-surface-950/10 px-2 py-1 text-sm font-semibold dark:bg-surface-50/15">
+			{option.preamble}
+		</p>
+	{/if}
 	{#if option.description}<p class="italic">{option.description}</p>{/if}
 	{#if option.features}
 		<ul class="list-inside list-disc space-y-1">

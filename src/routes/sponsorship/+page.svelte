@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { chipInUrl, event } from '#lib/eventDetails.ts';
+	import { giveUrl, event } from '#lib/eventDetails.ts';
 	import Cow from '#lib/components/Cow.svelte';
 	import SeatMilestones from '#lib/components/SeatMilestones.svelte';
 	import SponsorCard from '#lib/components/SponsorCard.svelte';
@@ -64,7 +64,8 @@
 				reserveNote
 				class="relative">
 				{#if index === sponsorPath.length - 1}
-					<Cow class="wobble absolute right-5 bottom-5 h-10 w-auto text-primary-600" />
+					<Cow
+						class="wobble absolute right-5 bottom-5 h-10 w-auto text-primary-600 dark:text-primary-600" />
 				{/if}
 				{#if index < sponsorPath.length - 1}
 					<span
@@ -110,24 +111,28 @@
 	</div>
 </section>
 
-<section aria-labelledby="chip-in" class="space-y-4 card tint-orange p-6">
-	<h2 id="chip-in" class="h3">Want to chip in?</h2>
+<section aria-labelledby="support" class="space-y-4 card tint-orange p-6">
+	<h2 id="support" class="h3">If you'd like to support {event.shortName}</h2>
 	<p class="max-w-3xl">
-		We're really grateful for anything you can give, big or small. It helps keep {event.shortName} free
-		for everyone.
+		{event.shortName} is free for everyone, and our sponsors keep it that way. But some of you have asked
+		how you can contribute, so here's a way to do it. Thank you!
 	</p>
 	<p class="max-w-3xl">
-		It's a thank-you to the community rather than a ticket: tickets are always free, and chipping in
-		doesn't get you one.
+		Giving doesn't get you a ticket or priority: tickets are free and open to everyone.
 	</p>
-	{#if chipInUrl}
+	<p class="max-w-3xl text-sm">
+		Giving on behalf of a company?
+		<a href="mailto:{event.sponsorshipEmail}">Email us about sponsorship</a>.
+	</p>
+	{#if giveUrl}
 		<a
-			href={chipInUrl}
+			href={giveUrl}
 			class="btn preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
-			>Chip in</a>
+			>Support {event.shortName}</a>
 	{:else}
 		<!-- Shown until the Stripe payment link is set in eventDetails.ts. -->
-		<button type="button" class="btn preset-tonal" disabled>Chip in: coming soon</button>
+		<button type="button" class="btn preset-tonal" disabled
+			>Support {event.shortName}: coming soon</button>
 	{/if}
 </section>
 

@@ -81,7 +81,7 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		title: 'Food and drink partner',
 		emoji: '🍽️',
 		preamble: inSupporter,
-		features: ['Your name and logo alongside the one you choose'],
+		features: ['Your name and logo alongside your sponsored food and drink'],
 		slots: [
 			{ name: 'Breakfast', price: '£800' },
 			{ name: 'Morning break', price: '£800' },
@@ -95,7 +95,10 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		price: '£1,000',
 		preamble: inSupporter,
 		// Draft: the benefit still to be agreed.
-		features: ['Your name announced with the prizes']
+		features: [
+			'Your name read out when the prizes are announced',
+			'Be part of the moment everyone waits for all day'
+		]
 	},
 	{
 		title: 'Speaker dinner partner',
