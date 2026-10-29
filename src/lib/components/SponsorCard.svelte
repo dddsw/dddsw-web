@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { showSponsorPrices } from '#lib/eventDetails.ts';
+	import { event, showSponsorPrices } from '#lib/eventDetails.ts';
 	import type { SponsorOption } from '#lib/content/sponsors.ts';
 
 	let {
@@ -67,6 +67,13 @@
 			{#if option.availability || reserveNote}
 				<p class="min-h-5 text-sm">{option.availability}</p>
 			{/if}
+		{/if}
+		{#if !option.claimed}
+			<a
+				href="mailto:{event.sponsorshipEmail}?subject=Sponsoring {event.shortName} {event.year}: {option.title}"
+				aria-label="Sponsor as {option.title}"
+				class="btn mt-4 preset-filled-surface-950-50 hover:preset-filled-primary-500 focus-visible:preset-filled-primary-500"
+				>Sponsor this</a>
 		{/if}
 	</div>
 	{@render children?.()}

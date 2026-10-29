@@ -61,10 +61,15 @@
 				{option}
 				level={Math.min(index, 3) as 0 | 1 | 2 | 3}
 				reserveNote
-				class="relative">
+				class="relative isolate">
 				{#if index === sponsorPath.length - 1}
-					<Cow
-						class="wobble absolute right-5 bottom-5 h-10 w-auto text-primary-600 dark:text-primary-600" />
+					<!-- A faint cow behind the content. Clipped here so the arrows can still overhang the card. -->
+					<div
+						aria-hidden="true"
+						class="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]">
+						<Cow
+							class="wobble absolute -right-3 -bottom-2 h-28 w-auto text-primary-600 opacity-30" />
+					</div>
 				{/if}
 				{#if index < sponsorPath.length - 1}
 					<span
