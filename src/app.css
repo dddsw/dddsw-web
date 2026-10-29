@@ -1,130 +1,84 @@
 @import 'tailwindcss';
 
-@font-face {
-	font-family: Roboto;
-	src: url('/Good Times Rg.otf');
-}
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import './dddsw-theme.css';
 
-body {
-	margin: 0;
-	font-family: 'Poppins', serif;
-	height: 100%;
-}
+@import '@fontsource-variable/fredoka';
+@import '@fontsource-variable/nunito';
+
+/* Dark mode is toggled with a `dark` class on <html> (see ThemeToggle and app.html). */
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
-	height: 100%;
+	color-scheme: light;
+}
+html.dark {
+	color-scheme: dark;
 }
 
-/* GLOBAL COLOUR PALETTE */
-:root {
-	--primary-color: #ff9930;
-	--secondary-color: white;
-	--tertiary-color: #eaeaea;
-	--quaternary-color: #96c6ca;
-	--quinary-color: #ffc13a;
-	--contrast-color: #3096ff;
-}
-
-/* BUILDING BLOCKS */
-
-.section {
-	width: 90%;
-	margin: auto;
-	padding: 20px 0;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-}
-
-@media (min-width: 768px) {
-	.section {
-		width: 70%;
-	}
-}
-
-@media (min-width: 1800px) {
-	.section {
-		width: 50%;
-		padding: 30px 0;
-	}
-}
-
-/* BG COLOUR  */
-
-.primary-bg {
-	background-color: var(--primary-color);
-}
-
-.secondary-bg {
-	background-color: var(--secondary-color);
-}
-
-.tertiary-bg {
-	background-color: var(--tertiary-color);
-}
-
-.quaternary-bg {
-	background-color: var(--quaternary-color);
-}
-
-/* TYPOGRAPHY */
-
+/*
+ * Links: Skeleton only styles anchors that carry its `anchor` class, so apply it to every
+ * plain link. They are always coloured AND underlined (never colour or hover alone), and
+ * buttons keep their own look. In the base layer so utilities such as `no-underline` still win.
+ */
 @layer base {
-	h2 {
-		@apply text-2xl font-bold;
+	a:not(.btn) {
+		@apply anchor;
 	}
 
-	h3 {
-		@apply text-xl font-semibold;
-	}
-
-	h4 {
-		@apply text-lg font-semibold;
-	}
-
-	a {
-		@apply text-blue-700 underline;
-	}
-
-	p {
-		@apply text-base;
+	/* The header keeps its original plain look: no link colour or underline, even on hover. */
+	header a:not(.btn),
+	header a:not(.btn):hover,
+	header a:not(.btn):active,
+	header a:not(.btn):focus {
+		color: inherit;
+		text-decoration-line: none;
 	}
 }
 
-.text-center {
-	text-align: center;
+/*
+ * Skeleton's buttons and tabs hover by changing brightness. We use contrasting colours instead
+ * (set per control with hover:preset-*), so switch the brightness change off everywhere.
+ */
+.btn:not(:disabled):hover,
+.btn-icon:not(:disabled):hover,
+[data-scope='tabs'][data-part='trigger']:not(:disabled):hover {
+	filter: none;
 }
 
-.emphasis {
-	font-weight: bold;
-}
-
-/* OVERRIDES */
-
-.unset {
-	all: unset;
-}
-
-/* A11Y FOCUS */
-
-.unset:focus-visible,
+/* Keyboard focus: a two-tone ring that stays visible on any background. */
 :focus-visible {
-	outline: 3px solid var(--contrast-color);
-	box-shadow: 0 0 0 6px var(--secondary-color);
+	outline: 3px solid var(--color-surface-950);
+	outline-offset: 2px;
+	box-shadow: 0 0 0 5px var(--color-surface-50);
 }
 
-/* ANIMATIONS */
-
-.boop-effect {
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.2s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
+/* Long email addresses must wrap inside cards and narrow columns instead of overflowing. */
+a[href^='mailto:'] {
+	overflow-wrap: anywhere;
 }
 
-.boop-effect:hover {
-	-webkit-transform: scale(0.9);
-	transform: scale(0.9);
+/* A bright, clean orange tint for highlight cards (no muddy dark-orange in dark mode). */
+@utility tint-orange {
+	background-color: light-dark(var(--color-primary-100), var(--color-surface-900));
+	color: light-dark(var(--color-surface-950), var(--color-surface-50));
+	border: 1px solid light-dark(var(--color-primary-300), var(--color-primary-500));
+}
+
+.wobble:hover {
+	animation: wobble 0.6s ease-in-out;
+}
+@keyframes wobble {
+	25% {
+		transform: rotate(-4deg);
+	}
+	75% {
+		transform: rotate(4deg);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.wobble:hover {
+		animation: none;
+	}
 }

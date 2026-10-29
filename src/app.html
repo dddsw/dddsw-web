@@ -1,18 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dddsw">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins" />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-		<script src="https://kit.fontawesome.com/741ff43b36.js" crossorigin="anonymous"></script>
-		<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			// Apply the saved (or OS) colour mode before first paint to avoid a flash.
+			try {
+				var saved = localStorage.getItem('mode');
+				var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+				document.documentElement.classList.toggle('dark', dark);
+			} catch (e) {}
+		</script>
 		%sveltekit.head%
 	</head>
 
-	<body>
-		<div>%sveltekit.body%</div>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
