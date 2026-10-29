@@ -82,7 +82,7 @@
 		</div>
 
 		<ol aria-label="Attendee milestones" class="relative h-24 sm:h-28">
-			<li aria-hidden="true" class="absolute top-3 left-0 text-sm font-semibold sm:hidden">
+			<li aria-hidden="true" class="absolute top-3 left-0 text-sm font-semibold sm:top-4 lg:hidden">
 				Attendees:
 			</li>
 			{#each seatMilestones as milestone, index (milestone.seats)}
@@ -91,7 +91,7 @@
 					style:left="{positions[index]}%">
 					<span aria-hidden="true" class="mb-1 h-2 w-0.5 bg-surface-950-50"></span>
 					<span class="font-heading text-sm font-semibold sm:text-xl">{milestone.seats}</span>
-					<span class="text-xs max-sm:sr-only sm:text-sm">attendees</span>
+					<span class="text-xs max-lg:sr-only lg:text-sm">attendees</span>
 					{#if index < seatMilestonesReached}
 						<span class="mt-1 text-xs font-semibold sm:text-sm">{milestone.reached}</span>
 					{:else if index === 0}
