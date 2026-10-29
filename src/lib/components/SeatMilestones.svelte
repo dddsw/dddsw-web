@@ -20,6 +20,9 @@
 		return before + ((next - before) * Math.min(100, Math.max(0, seatProgressToNext))) / 100;
 	})();
 
+	/** Once there is enough fill, the label sits on it, so it never runs into the divider ahead. */
+	const onFill = securedPosition > 25;
+
 	/** The attendees secured so far, for assistive technology. */
 	const securedSeats = (() => {
 		const before = seatMilestonesReached > 0 ? seatMilestones[seatMilestonesReached - 1].seats : 0;
@@ -65,18 +68,15 @@
 			<!-- Where we are now: a knob on the bar, with a label on whichever side has room. -->
 			<span
 				aria-hidden="true"
-				class="absolute top-0 size-8 -translate-x-1/2 rounded-full border-4 border-surface-950-50 bg-primary-500"
-				style:left="clamp(1rem, {securedPosition}%, calc(100% - 1rem))"></span>
+				class="absolute top-1/2 size-11 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600 shadow-md"
+				style:left="clamp(1.375rem, {securedPosition}%, calc(100% - 1.375rem))"></span>
 			<span
 				aria-hidden="true"
-				class="absolute top-1/2 -translate-y-1/2 text-xs font-semibold whitespace-nowrap text-surface-950-50 sm:text-sm {securedPosition >
-				60
-					? 'text-right'
-					: ''}"
-				style:left={securedPosition > 60
-					? undefined
-					: `calc(max(${securedPosition}%, 1rem) + 1.5rem)`}
-				style:right={securedPosition > 60 ? `calc(${100 - securedPosition}% + 1.5rem)` : undefined}>
+				class="absolute top-1/2 -translate-y-1/2 text-xs font-semibold whitespace-nowrap sm:text-sm {onFill
+					? 'text-right text-surface-950'
+					: 'text-surface-950-50'}"
+				style:left={onFill ? undefined : `calc(max(${securedPosition}%, 1.375rem) + 2rem)`}
+				style:right={onFill ? `calc(${100 - securedPosition}% + 2rem)` : undefined}>
 				We're here
 			</span>
 		</div>
