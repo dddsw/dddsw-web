@@ -1,22 +1,131 @@
 import { eventYear } from '#lib/eventDetails.ts';
 
+export interface SponsorSlot {
+	name: string;
+	price: string;
+	/** Set when this slot has already been taken for the current year. */
+	claimed?: boolean;
+}
+
 export interface SponsorOption {
 	title: string;
-	price: string;
+	/** A small emoji shown before the title. */
+	emoji?: string;
+	/** Omit when the option is priced per slot instead. */
+	price?: string;
 	preamble?: string;
 	description?: string;
 	features?: string[];
+	/** Separately priced choices within one card, such as the meals. */
+	slots?: SponsorSlot[];
+	/** Shown beside the price, for example how many of this option are available. */
+	availability?: string;
 	/** Set when this item has already been taken for the current year. */
 	claimed?: boolean;
 }
 
-export interface SponsorSection {
-	heading: string;
-	intro?: string;
-	options: SponsorOption[];
-}
+const inSupporter = 'Everything in Supporter, plus:';
 
-export const sponsorSections: SponsorSection[] = [];
+/** Introduces the options on the Sponsorship page. */
+export const sponsorIntro =
+	"Here's what you can get involved with, and what you get in return. Not sure what suits you? Drop us a line and we'll help you choose.";
+
+/** The main path, from the smallest step up. Each card builds on the one before. */
+export const sponsorPath: SponsorOption[] = [
+	{
+		title: 'Friend',
+		emoji: '👋',
+		price: '£200',
+		features: ['Your name and link on our sponsors page', 'Thanks in a group social media post']
+	},
+	{
+		title: 'Supporter',
+		emoji: '⭐',
+		price: '£700',
+		features: [
+			'Your logo on our website',
+			'Your logo on the opening and closing slides',
+			"We'll thank you on our social media",
+			'Your logo on the t-shirt'
+		]
+	},
+	{
+		title: 'Exhibitor',
+		emoji: '🎪',
+		availability: '10 available',
+		price: '£2,000',
+		preamble: inSupporter,
+		features: [
+			'A sponsor stand on the day',
+			'Custom promotional posts from our social media accounts',
+			'A large, prominent logo on the t-shirt',
+			'Anything else we can do... chat to us!'
+		]
+	},
+	{
+		title: 'Room partner',
+		emoji: '🎤',
+		price: '£2,500',
+		availability: '4 available',
+		preamble: 'Everything in Exhibitor, plus:',
+		features: [
+			"Your logo beside that talks room's sessions on the schedule",
+			'Space in your talks room for marketing material you provide, such as a banner or flyers on the seats'
+		]
+	}
+];
+
+/** Branch off Supporter: everything in Supporter, plus one more thing. */
+export const sponsorSupporterExtras: SponsorOption[] = [
+	{
+		title: 'Food and drink partner',
+		emoji: '🍽️',
+		preamble: inSupporter,
+		features: ['Your name and logo alongside your sponsored food and drink'],
+		slots: [
+			{ name: 'Breakfast', price: '£800' },
+			{ name: 'Morning break', price: '£800' },
+			{ name: 'Afternoon break', price: '£800' },
+			{ name: 'Lunch', price: '£1,000' }
+		]
+	},
+	{
+		title: 'Prize draw partner',
+		emoji: '🎁',
+		price: '£1,000',
+		preamble: inSupporter,
+		features: [
+			'Your name read out when the prizes are announced',
+			'Be part of the moment everyone waits for all day'
+		]
+	},
+	{
+		title: 'Speaker dinner partner',
+		emoji: '🥂',
+		price: '£1,500',
+		preamble: inSupporter,
+		features: ['Thanks at the speaker dinner', 'An invitation for two to the speaker dinner']
+	}
+];
+
+/**
+ * Attendee milestones, shown without any money figures. `reached` is the label once a milestone is
+ * secured. Raise `seatMilestonesReached` as each one is: those are shown as done and the next one
+ * is highlighted. Set `seatProgressToNext` to fill part of the line towards the next milestone.
+ * `weight` is how much of the bar a milestone takes up, in proportion to the sponsorship it needs:
+ * the first 150 attendees cost about four times as much as each further 50.
+ */
+export const seatMilestones = [
+	{ seats: 150, weight: 4, reached: 'Venue secured' },
+	{ seats: 200, weight: 1, reached: 'Reached' },
+	{ seats: 250, weight: 1, reached: 'Reached' },
+	{ seats: 300, weight: 1, reached: 'Reached' },
+	{ seats: 350, weight: 1, reached: 'Reached' },
+	{ seats: 400, weight: 1, reached: 'Full house' }
+];
+export const seatMilestonesReached = 0;
+/** How far along the line to the next milestone we are, from 0 to 100 (percent). */
+export const seatProgressToNext = 0;
 
 export const sponsorReasons = [
 	{
