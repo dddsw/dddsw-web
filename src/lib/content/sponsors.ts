@@ -69,8 +69,8 @@ export const sponsorPath: SponsorOption[] = [
 		availability: '4 available',
 		preamble: 'Everything in Exhibitor, plus:',
 		features: [
-			'Your marketing material in your talks room',
-			"Your logo on that talks room's slide between sessions"
+			"Your logo beside that talks room's sessions on the schedule",
+			'Space in your talks room for marketing material you provide, such as a banner or flyers on the seats'
 		]
 	}
 ];
