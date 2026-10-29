@@ -94,7 +94,6 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		emoji: '🎁',
 		price: '£1,000',
 		preamble: inSupporter,
-		// Draft: the benefit still to be agreed.
 		features: [
 			'Your name read out when the prizes are announced',
 			'Be part of the moment everyone waits for all day'
@@ -105,7 +104,6 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		emoji: '🥂',
 		price: '£1,500',
 		preamble: inSupporter,
-		// Draft: the benefit still to be agreed.
 		features: ['Thanks at the speaker dinner', 'An invitation for two to the speaker dinner']
 	}
 ];
