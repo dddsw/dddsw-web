@@ -103,7 +103,7 @@
 	</div>
 
 	<div class="space-y-4 rounded-container border-2 border-dashed border-surface-500 p-4 md:p-6">
-		<p class="font-semibold">Addons, available after you've picked a tier above</p>
+		<p class="font-semibold">Add-ons, available after you've picked a tier above</p>
 		<ul class="grid gap-6 md:grid-cols-3">
 			{#each sponsorSupporterExtras as option (option.title)}
 				<SponsorCard {option} />
