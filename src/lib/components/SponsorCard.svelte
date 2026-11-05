@@ -71,7 +71,7 @@
 		{#if !option.claimed}
 			<a
 				href="mailto:{event.sponsorshipEmail}?subject=Sponsoring {event.shortName} {event.year}: {option.title}"
-				aria-label="Sponsor as {option.title}"
+				aria-label="Sponsor this: {option.title}"
 				class="btn mt-4 preset-filled-surface-950-50 hover:preset-filled-primary-500 focus-visible:preset-filled-primary-500"
 				>Sponsor this</a>
 		{/if}
