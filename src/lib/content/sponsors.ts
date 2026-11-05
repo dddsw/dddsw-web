@@ -71,9 +71,9 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		emoji: '🍽️',
 		features: ['Your name and logo alongside your sponsored food and drink'],
 		slots: [
-			{ name: 'Breakfast', price: '£250' },
-			{ name: 'Morning break', price: '£250' },
-			{ name: 'Afternoon break', price: '£250' },
+			{ name: 'Breakfast', price: '£300' },
+			{ name: 'Morning break', price: '£300' },
+			{ name: 'Afternoon break', price: '£300' },
 			{ name: 'Lunch', price: '£1,000' }
 		]
 	},
