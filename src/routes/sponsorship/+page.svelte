@@ -85,24 +85,25 @@
 		{/each}
 	</ol>
 
-	<!-- A line down from the Supporter column (second of three) to the branch below. -->
+	<!-- A line down from each tier to the add-ons below. -->
 	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-3 lg:gap-10">
-		<div></div>
-		<div class="flex flex-col items-center text-surface-950-50">
-			<span class="h-6 w-1 bg-current"></span>
-			<svg
-				viewBox="0 0 24 24"
-				class="-mt-2 size-8"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="3">
-				<path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
-			</svg>
-		</div>
+		{#each sponsorPath as option (option.title)}
+			<div class="flex flex-col items-center text-surface-950-50">
+				<span class="h-6 w-1 bg-current"></span>
+				<svg
+					viewBox="0 0 24 24"
+					class="-mt-2 size-8"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="3">
+					<path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</div>
+		{/each}
 	</div>
 
 	<div class="space-y-4 rounded-container border-2 border-dashed border-surface-500 p-4 md:p-6">
-		<p class="font-semibold">Or start from Supporter and add one of these:</p>
+		<p class="font-semibold">Addons, available after you've picked a tier above</p>
 		<ul class="grid gap-6 md:grid-cols-3">
 			{#each sponsorSupporterExtras as option (option.title)}
 				<SponsorCard {option} />

@@ -64,12 +64,11 @@ export const sponsorPath: SponsorOption[] = [
 	}
 ];
 
-/** Branch off Supporter: everything in Supporter, plus one more thing. */
+/** Add-ons, available once a tier on the main path has been picked. */
 export const sponsorSupporterExtras: SponsorOption[] = [
 	{
 		title: 'Food and drink partner',
 		emoji: '🍽️',
-		preamble: inSupporter,
 		features: ['Your name and logo alongside your sponsored food and drink'],
 		slots: [
 			{ name: 'Breakfast', price: '£250' },
@@ -82,14 +81,12 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		title: 'Speaker slot',
 		emoji: '🎙️',
 		price: '£1,000',
-		preamble: inSupporter,
 		features: ['A guaranteed speaker slot at the event']
 	},
 	{
 		title: 'Speaker dinner partner',
 		emoji: '🥂',
 		price: '£1,500',
-		preamble: inSupporter,
 		features: ['Thanks at the speaker dinner', 'An invitation for two to the speaker dinner']
 	}
 ];
