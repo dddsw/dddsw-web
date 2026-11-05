@@ -21,7 +21,7 @@
 	// Each step up the main path looks richer than the one before.
 	const levelStyles = [
 		'border-2 border-transparent preset-filled-surface-100-900',
-		'border-2 border-transparent border-t-4 border-t-primary-300 preset-filled-surface-100-900 dark:border-t-primary-600',
+		'border-2 border-transparent border-y-4 border-y-primary-300 preset-filled-surface-100-900 dark:border-y-primary-600',
 		'tint-orange border-2! border-primary-500! shadow-[0_5px_0_var(--color-primary-500)] dark:border-primary-600! dark:bg-surface-900! dark:shadow-[0_5px_0_var(--color-primary-800)]',
 		'border-2 border-primary-400 bg-primary-200 shadow-[0_7px_0_var(--color-primary-600)] dark:border-primary-500 dark:bg-surface-800 dark:shadow-[0_7px_0_var(--color-primary-600)]'
 	];
