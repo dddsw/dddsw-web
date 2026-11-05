@@ -5,8 +5,14 @@ export const sessionizePublicCallForPapersUrl = `https://sessionize.com/ddd-sout
 
 export const showSponsors = true;
 
-/** Package prices are kept in the content but hidden publicly. */
-export const showSponsorPrices = false;
+/** Package prices are kept in the content and can be hidden publicly. */
+export const showSponsorPrices = true;
+
+/**
+ * Stripe payment link where individuals can give (set once it's configured). While empty, the
+ * button on the Sponsorship page is disabled and says "coming soon".
+ */
+export const giveUrl = '';
 
 export const votingUrl = ''; //	'https://docs.google.com/forms/d/e/1FAIpQLSdI__OzLl1DEsJ3vzIfRadW4mkyv1XJz-so5H85Shcni5Gd_A/viewform';
 export const ticketTailorUrl = ''; //'https://buytickets.at/dddsouthwest/2148747/r/dddsw-website';
