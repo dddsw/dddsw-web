@@ -61,17 +61,6 @@ export const sponsorPath: SponsorOption[] = [
 			'A large, prominent logo on the t-shirt',
 			'Anything else we can do... chat to us!'
 		]
-	},
-	{
-		title: 'Room partner',
-		emoji: '🎤',
-		price: '£2,500',
-		availability: '4 available',
-		preamble: 'Everything in Exhibitor, plus:',
-		features: [
-			"Your logo beside that talks room's sessions on the schedule",
-			'Space in your talks room for marketing material you provide, such as a banner or flyers on the seats'
-		]
 	}
 ];
 
@@ -83,21 +72,18 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		preamble: inSupporter,
 		features: ['Your name and logo alongside your sponsored food and drink'],
 		slots: [
-			{ name: 'Breakfast', price: '£800' },
-			{ name: 'Morning break', price: '£800' },
-			{ name: 'Afternoon break', price: '£800' },
+			{ name: 'Breakfast', price: '£250' },
+			{ name: 'Morning break', price: '£250' },
+			{ name: 'Afternoon break', price: '£250' },
 			{ name: 'Lunch', price: '£1,000' }
 		]
 	},
 	{
-		title: 'Prize draw partner',
-		emoji: '🎁',
+		title: 'Speaker slot',
+		emoji: '🎙️',
 		price: '£1,000',
 		preamble: inSupporter,
-		features: [
-			'Your name read out when the prizes are announced',
-			'Be part of the moment everyone waits for all day'
-		]
+		features: ['A guaranteed speaker slot at the event']
 	},
 	{
 		title: 'Speaker dinner partner',

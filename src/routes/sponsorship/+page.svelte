@@ -55,13 +55,9 @@
 	<!-- The main path: each step builds on the one before. The arrows are decoration. -->
 	<ol
 		aria-label="Sponsorship packages, from the smallest step up"
-		class="grid gap-12 lg:grid-cols-4 lg:gap-10">
+		class="grid gap-12 lg:grid-cols-3 lg:gap-10">
 		{#each sponsorPath as option, index (option.title)}
-			<SponsorCard
-				{option}
-				level={Math.min(index, 3) as 0 | 1 | 2 | 3}
-				reserveNote
-				class="relative isolate">
+			<SponsorCard {option} level={(index + 1) as 1 | 2 | 3} reserveNote class="relative isolate">
 				{#if index === sponsorPath.length - 1}
 					<!-- A faint cow behind the content. Clipped here so the arrows can still overhang the card. -->
 					<div
@@ -89,8 +85,8 @@
 		{/each}
 	</ol>
 
-	<!-- A line down from the Supporter column (second of four) to the branch below. -->
-	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-4 lg:gap-10">
+	<!-- A line down from the Supporter column (second of three) to the branch below. -->
+	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-3 lg:gap-10">
 		<div></div>
 		<div class="flex flex-col items-center text-surface-950-50">
 			<span class="h-6 w-1 bg-current"></span>
