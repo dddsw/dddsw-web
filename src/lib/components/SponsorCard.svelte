@@ -40,7 +40,7 @@
 	{/if}
 	{#if option.description}<p class="italic">{option.description}</p>{/if}
 	{#if option.features}
-		<ul class="list-inside list-disc space-y-1">
+		<ul class="list-disc space-y-1 pl-6">
 			{#each option.features as feature (feature)}<li>{feature}</li>{/each}
 		</ul>
 	{/if}

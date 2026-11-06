@@ -25,7 +25,7 @@
 		at the discretion of the conference organisers.
 	</p>
 	<p>Harassment includes, but is not limited to:</p>
-	<ul class="list-inside list-disc space-y-1">
+	<ul class="list-disc space-y-1 pl-6">
 		<li>
 			Verbal comments that reinforce social structures of domination related to gender, gender
 			identity and expression, sexual orientation, disability, physical appearance, body size, race,
