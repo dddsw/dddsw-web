@@ -35,7 +35,7 @@ export const sponsorPath: SponsorOption[] = [
 	{
 		title: 'Friend',
 		emoji: '👋',
-		price: '£200',
+		price: '£300',
 		features: ['Your name and link on our sponsors page', 'Thanks in a group social media post']
 	},
 	{
@@ -71,9 +71,9 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		emoji: '🍽️',
 		features: ['Your name and logo alongside your sponsored food and drink'],
 		slots: [
-			{ name: 'Breakfast', price: '£300' },
-			{ name: 'Morning break', price: '£300' },
-			{ name: 'Afternoon break', price: '£300' },
+			{ name: 'Breakfast', price: '£200' },
+			{ name: 'Morning break', price: '£200' },
+			{ name: 'Afternoon break', price: '£200' },
 			{ name: 'Lunch', price: '£1,000' }
 		]
 	},
