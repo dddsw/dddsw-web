@@ -20,61 +20,73 @@
 
 	// Each step up the main path looks richer than the one before.
 	const levelStyles = [
-		'border-2 border-transparent preset-filled-surface-100-900',
+		'border border-surface-400-600 preset-filled-surface-100-900',
 		'border-2 border-transparent border-y-4 border-y-primary-300 preset-filled-surface-100-900 dark:border-y-primary-600',
 		'tint-orange border-2! border-primary-500! shadow-[0_5px_0_var(--color-primary-500)] dark:border-primary-600! dark:bg-surface-900! dark:shadow-[0_5px_0_var(--color-primary-800)]',
 		'border-2 border-primary-400 bg-primary-200 shadow-[0_7px_0_var(--color-primary-600)] dark:border-primary-500 dark:bg-surface-800 dark:shadow-[0_7px_0_var(--color-primary-600)]'
 	];
+	// Stretch the header over whichever borders are transparent, so no pale edge shows around it.
+	const headerBleed = ['', '-mx-0.5', '', ''];
 </script>
 
-<li class={['flex flex-col gap-3 card p-6', levelStyles[level], className]}>
-	<h3 class="h4">
-		{#if option.emoji}<span aria-hidden="true">{option.emoji}</span>{/if}
-		{option.title}
+<!-- Spans two rows of the parent grid via subgrid, so headers stay level when a title wraps. -->
+<li class={['row-span-2 grid grid-rows-subgrid gap-y-0 card', levelStyles[level], className]}>
+	<!-- Always dark, in both modes, because pale emoji get lost on the light card backgrounds. -->
+	<h3
+		class={[
+			'h4 flex items-center rounded-t-[inherit] bg-surface-950 px-6 py-3 text-surface-50',
+			headerBleed[level]
+		]}>
+		<span>
+			{#if option.emoji}<span aria-hidden="true">{option.emoji}</span>{/if}
+			{option.title}
+		</span>
 	</h3>
-	{#if option.preamble}
-		<p
-			class="w-fit rounded-base bg-surface-950/10 px-2 py-1 text-sm font-semibold dark:bg-surface-50/15">
-			{option.preamble}
-		</p>
-	{/if}
-	{#if option.description}<p class="italic">{option.description}</p>{/if}
-	{#if option.features}
-		<ul class="list-disc space-y-1 pl-6">
-			{#each option.features as feature (feature)}<li>{feature}</li>{/each}
-		</ul>
-	{/if}
-	<!-- Pushed to the bottom so prices line up across cards of different heights. -->
-	<div class="mt-auto pt-3">
-		{#if option.slots}
-			<ul class="space-y-1">
-				{#each option.slots as slot (slot.name)}
-					<li
-						class="flex items-baseline justify-between gap-4 border-t border-surface-300-700 pt-1">
-						<span class="font-semibold">{slot.name}</span>
-						{#if slot.claimed}
-							<span class="font-semibold">Sponsored</span>
-						{:else if showSponsorPrices}
-							<span class="text-xl font-bold">{slot.price}</span>
-						{/if}
-					</li>
-				{/each}
+	<div class="flex flex-col gap-3 p-6">
+		{#if option.preamble}
+			<p
+				class="w-fit rounded-base bg-surface-950/10 px-2 py-1 text-sm font-semibold dark:bg-surface-50/15">
+				{option.preamble}
+			</p>
+		{/if}
+		{#if option.description}<p class="italic">{option.description}</p>{/if}
+		{#if option.features}
+			<ul class="list-disc space-y-1 pl-6">
+				{#each option.features as feature (feature)}<li>{feature}</li>{/each}
 			</ul>
-		{:else if option.claimed}
-			<p class="font-semibold">This item has been sponsored</p>
-		{:else if showSponsorPrices && option.price}
-			<p class="text-2xl font-bold">{option.price}</p>
-			{#if option.availability || reserveNote}
-				<p class="min-h-5 text-sm">{option.availability}</p>
+		{/if}
+		<!-- Pushed to the bottom so prices line up across cards of different heights. -->
+		<div class="mt-auto pt-3">
+			{#if option.slots}
+				<ul class="space-y-1">
+					{#each option.slots as slot (slot.name)}
+						<li
+							class="flex items-baseline justify-between gap-4 border-t border-surface-300-700 pt-1">
+							<span class="font-semibold">{slot.name}</span>
+							{#if slot.claimed}
+								<span class="font-semibold">Sponsored</span>
+							{:else if showSponsorPrices}
+								<span class="text-xl font-bold">{slot.price}</span>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			{:else if option.claimed}
+				<p class="font-semibold">This item has been sponsored</p>
+			{:else if showSponsorPrices && option.price}
+				<p class="text-2xl font-bold">{option.price}</p>
+				{#if option.availability || reserveNote}
+					<p class="min-h-5 text-sm">{option.availability}</p>
+				{/if}
 			{/if}
-		{/if}
-		{#if !option.claimed}
-			<a
-				href="mailto:{event.sponsorshipEmail}?subject=Sponsoring {event.shortName} {event.year}: {option.title}"
-				aria-label="Sponsor this: {option.title}"
-				class="btn mt-4 preset-filled-surface-950-50 hover:preset-filled-primary-500 focus-visible:preset-filled-primary-500"
-				>Sponsor this</a>
-		{/if}
+			{#if !option.claimed}
+				<a
+					href="mailto:{event.sponsorshipEmail}?subject=Sponsoring {event.shortName} {event.year}: {option.title}"
+					aria-label="Sponsor this: {option.title}"
+					class="btn mt-4 preset-filled-surface-950-50 hover:preset-filled-primary-500 focus-visible:preset-filled-primary-500"
+					>Sponsor this</a>
+			{/if}
+		</div>
 	</div>
 	{@render children?.()}
 </li>
