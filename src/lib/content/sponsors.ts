@@ -88,7 +88,7 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		]
 	},
 	{
-		title: 'Speaker dinner partner',
+		title: 'Speaker dinner',
 		emoji: '🥂',
 		price: '£1,500',
 		features: [
