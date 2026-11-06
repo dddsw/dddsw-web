@@ -9,7 +9,7 @@
 		violates the conference's anti-harassment policy. Warnings should be reported to conference
 		committee members as soon as practical. The report should include:
 	</p>
-	<ul class="list-inside list-disc space-y-1">
+	<ul class="list-disc space-y-1 pl-6">
 		<li>Identifying information (name/badge number) of the participant</li>
 		<li>The time you issued the warning</li>
 		<li>The behaviour that was in violation</li>
@@ -46,7 +46,7 @@
 		reasons they deem sufficient. However, here are some general guidelines for when a participant
 		should be expelled:
 	</p>
-	<ul class="list-inside list-disc space-y-1">
+	<ul class="list-disc space-y-1 pl-6">
 		<li>A second offence resulting in a warning from staff</li>
 		<li>Continuing to harass after any "No" or "Stop" instruction</li>
 		<li>A pattern of harassing behaviour, with or without warnings</li>

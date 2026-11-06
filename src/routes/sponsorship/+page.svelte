@@ -96,8 +96,8 @@
 
 	<div class="space-y-4 rounded-container border-2 border-dashed border-surface-500 p-4 md:p-6">
 		<p class="font-semibold">
-			Add-ons, available after you've picked a tier above. Pick one after you've picked a tier to
-			give us a little extra support!
+			Add-ons, available after you've picked a tier above. Pick one to give us a little extra
+			support!
 		</p>
 		<ul class="grid gap-6 md:grid-cols-3">
 			{#each sponsorSupporterExtras as option (option.title)}

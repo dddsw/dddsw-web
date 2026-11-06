@@ -18,7 +18,7 @@
 		share your information with third parties.
 	</p>
 	<nav aria-label="On this page">
-		<ul class="list-inside list-disc space-y-1">
+		<ul class="list-disc space-y-1 pl-6">
 			{#each contents as item (item.id)}
 				<li><a href="#{item.id}">{item.label}</a></li>
 			{/each}
@@ -30,7 +30,7 @@
 
 	<h2 id="what-information" class="h3">What information we collect, use, and why</h2>
 	<p>We collect or use the following personal information to provide updates and share news:</p>
-	<ul class="list-inside list-disc space-y-1">
+	<ul class="list-disc space-y-1 pl-6">
 		<li>Names</li>
 		<li>Email address</li>
 	</ul>
@@ -38,7 +38,7 @@
 		We additionally collected the following information for anonymised metrics, to support and for
 		reporting on our community:
 	</p>
-	<ul class="list-inside list-disc space-y-1">
+	<ul class="list-disc space-y-1 pl-6">
 		<li>Gender</li>
 		<li>Accessibility needs</li>
 		<li>Dietary needs</li>
