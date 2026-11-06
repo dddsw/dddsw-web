@@ -92,10 +92,8 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		emoji: '🥂',
 		price: '£1,500',
 		features: [
-			'Thanks at the speaker dinner',
 			'An invitation for two to the speaker dinner, held the night before DDDSW',
-			'Spend time with industry influencers',
-			'Only available with the exhibitor tier'
+			'Only available with the supporter or exhibitor tier'
 		]
 	}
 ];
