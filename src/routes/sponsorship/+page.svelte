@@ -52,10 +52,17 @@
 	<h2 id="ways" class="h2">Ways to sponsor</h2>
 	<p class="max-w-3xl">{sponsorIntro}</p>
 
+	<!-- One arrow for the whole section, rotated where it needs to point down. -->
+	{#snippet arrow()}
+		<svg viewBox="0 0 36 24" class="h-8 w-12" fill="none" stroke="currentColor" stroke-width="3">
+			<path d="M2 12h32M27 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	{/snippet}
+
 	<!-- The main path: each step builds on the one before. The arrows are decoration. -->
 	<ol
 		aria-label="Sponsorship packages, from the smallest step up"
-		class="grid gap-12 lg:grid-cols-3 lg:gap-10">
+		class="grid gap-16 lg:grid-cols-3">
 		{#each sponsorPath as option, index (option.title)}
 			<SponsorCard {option} level={(index + 1) as 1 | 2 | 3} reserveNote class="relative isolate">
 				{#if index === sponsorPath.length - 1}
@@ -70,15 +77,8 @@
 				{#if index < sponsorPath.length - 1}
 					<span
 						aria-hidden="true"
-						class="absolute -bottom-10 left-1/2 -translate-x-1/2 rotate-90 text-surface-950-50 lg:top-1/2 lg:-right-9 lg:bottom-auto lg:left-auto lg:translate-x-0 lg:-translate-y-1/2 lg:rotate-0">
-						<svg
-							viewBox="0 0 24 24"
-							class="size-8"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="3">
-							<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
+						class="absolute -bottom-13 left-1/2 -translate-x-1/2 rotate-90 text-surface-950-50 lg:top-1/2 lg:-right-14.5 lg:bottom-auto lg:left-auto lg:translate-x-0 lg:-translate-y-1/2 lg:rotate-0">
+						{@render arrow()}
 					</span>
 				{/if}
 			</SponsorCard>
@@ -86,24 +86,19 @@
 	</ol>
 
 	<!-- A line down from each tier to the add-ons below. -->
-	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-3 lg:gap-10">
+	<div aria-hidden="true" class="hidden lg:grid lg:grid-cols-3 lg:gap-16">
 		{#each sponsorPath as option (option.title)}
-			<div class="flex flex-col items-center text-surface-950-50">
-				<span class="h-6 w-1 bg-current"></span>
-				<svg
-					viewBox="0 0 24 24"
-					class="-mt-2 size-8"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="3">
-					<path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
+			<div class="flex h-12 items-center justify-center text-surface-950-50">
+				<span class="rotate-90">{@render arrow()}</span>
 			</div>
 		{/each}
 	</div>
 
 	<div class="space-y-4 rounded-container border-2 border-dashed border-surface-500 p-4 md:p-6">
-		<p class="font-semibold">Add-ons, available after you've picked a tier above</p>
+		<p class="font-semibold">
+			Add-ons, available after you've picked a tier above. Pick one after you've picked a tier to
+			give us a little extra support!
+		</p>
 		<ul class="grid gap-6 md:grid-cols-3">
 			{#each sponsorSupporterExtras as option (option.title)}
 				<SponsorCard {option} />

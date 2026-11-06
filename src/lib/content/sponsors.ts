@@ -81,13 +81,22 @@ export const sponsorSupporterExtras: SponsorOption[] = [
 		title: 'Speaker slot',
 		emoji: '🎙️',
 		price: '£1,000',
-		features: ['A guaranteed speaker slot at the event']
+		features: [
+			'A guaranteed speaker slot at the event',
+			'Either a full or half length slot, whichever is your preference',
+			'Your speaker and talk promoted on our website and social media'
+		]
 	},
 	{
 		title: 'Speaker dinner partner',
 		emoji: '🥂',
-		price: '£1,500',
-		features: ['Thanks at the speaker dinner', 'An invitation for two to the speaker dinner']
+		price: '£1,200',
+		features: [
+			'Thanks at the speaker dinner',
+			'An invitation for two to the speaker dinner, held the night before DDDSW',
+			'Spend time with industry influencers',
+			'Only avialable with the exhibitor tier'
+		]
 	}
 ];
 
