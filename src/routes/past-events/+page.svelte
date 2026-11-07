@@ -101,7 +101,7 @@
 						<a href={e.archiveUrl} rel="noopener" class="underline"
 							>See the {e.year} website in the Internet Archive</a>
 					{/if}
-					{#if e.url}<a href={e.url} rel="noopener">Find out more</a>{/if}
+					{#if e.url}<a href={e.url} rel="noopener">More about {e.title}</a>{/if}
 				</header>
 
 				{#if e.sponsors || e.committee}

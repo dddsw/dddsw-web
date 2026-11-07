@@ -81,7 +81,7 @@
 	Skip to content
 </a>
 <Header />
-<main id="main">
+<main id="main" tabindex="-1">
 	{#if bare}
 		{@render children()}
 	{:else}

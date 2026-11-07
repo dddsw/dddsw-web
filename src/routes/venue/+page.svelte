@@ -220,11 +220,12 @@
 					</svg>
 				</Carousel.NextTrigger>
 			</Carousel.Control>
-			<Carousel.IndicatorGroup class="flex justify-center gap-2">
+			<!-- Each dot sits in a 24px button (the padding is clear), so it is easy to hit. -->
+			<Carousel.IndicatorGroup class="flex justify-center">
 				{#each photos as photo, index (photo.file)}
 					<Carousel.Indicator
 						{index}
-						class="size-3 rounded-full bg-surface-600-400 data-current:w-6 data-current:bg-secondary-700-300" />
+						class="size-6 cursor-pointer rounded-full border-0 bg-surface-600-400 bg-clip-content p-1.5 data-current:w-9 data-current:bg-secondary-700-300" />
 				{/each}
 			</Carousel.IndicatorGroup>
 		</Carousel>
