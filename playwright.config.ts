@@ -32,7 +32,10 @@ export default defineConfig({
 		command: `npm run dev -- --port ${port} --strictPort`,
 		url: baseURL,
 		// Never reuse a server: one already on this port could belong to another checkout.
-		reuseExistingServer: false
+		reuseExistingServer: false,
+		// The first page of a fresh dev server encodes every image in src/lib/assets/images (about a
+		// minute, longer on CI) unless node_modules/.cache/imagetools already has them.
+		timeout: 300_000
 	},
 	use: {
 		baseURL,

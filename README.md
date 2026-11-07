@@ -188,4 +188,4 @@ To commit but skip pre-commit hooks, run `git commit -m "my amazing commit messa
 
 ### Images
 
-Put images in `src/lib/assets/images` (not `static/`) and show them with `<enhanced:img src={picture('folder/file.jpg')} />` (see `src/lib/images.ts`). The build turns each one into AVIF, WebP and a JPEG/PNG fallback at the widths it's needed, with `width`/`height` set. Add photos at full size and give them a `sizes` attribute. Save logos and avatars at about twice the size they're shown.
+Put images in `src/lib/assets/images` (not `static/`) and show them with `<enhanced:img src={picture('folder/file.jpg')} />` (see `src/lib/images.ts`). The build turns each one into AVIF, WebP and a JPEG/PNG fallback at the widths it's needed, with `width`/`height` set. Add photos at full size and give them a `sizes` attribute. Save logos and avatars at about twice the size they're shown. The first page a fresh dev server shows takes a minute or so while it makes every image; they're cached in `node_modules/.cache/imagetools` after that.
