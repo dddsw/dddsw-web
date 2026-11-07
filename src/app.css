@@ -14,9 +14,10 @@ html {
 	color-scheme: light;
 	/*
 	 * Keep anything scrolled to (in-page links, and controls reached with Tab) clear of the
-	 * sticky header, so it is never hidden behind it.
+	 * sticky header, so it is never hidden behind it. The header sets --header-height as it
+	 * resizes, because its nav can wrap onto a second line.
 	 */
-	scroll-padding-top: 5rem;
+	scroll-padding-top: calc(var(--header-height, 4.5rem) + 0.5rem);
 }
 html.dark {
 	color-scheme: dark;

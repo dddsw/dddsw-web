@@ -30,12 +30,21 @@
 		return page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
 	}
 
+	// Shared with app.css's scroll-padding-top, so scrolled-to content clears the header even when
+	// the nav wraps onto a second line.
+	let headerHeight = $state(0);
+	$effect(() => {
+		if (headerHeight)
+			document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+	});
+
 	function closeMenu() {
 		menuOpen = false;
 	}
 </script>
 
 <header
+	bind:clientHeight={headerHeight}
 	class="sticky top-0 z-30 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
 	<Container class="flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
