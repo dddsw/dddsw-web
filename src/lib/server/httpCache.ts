@@ -14,13 +14,8 @@ function isCacheableType(contentType: string | null): boolean {
 	return !!contentType && /^(text\/html|application\/json)\b/.test(contentType);
 }
 
-/**
- * SvelteKit already hashes each page into a strong ETag, but Cloudflare drops strong ETags when it
- * compresses a response, so production never sent one. A weak ETag survives compression (the bytes
- * change, the meaning doesn't). Responses without one (page data) get a hash of their body.
- */
-async function weakEtag(existing: string | null, body: ArrayBuffer): Promise<string> {
-	if (existing) return existing.startsWith('W/') ? existing : `W/${existing}`;
+/** A weak ETag from a hash of the body, for responses SvelteKit didn't tag (page data). */
+async function hashEtag(body: ArrayBuffer): Promise<string> {
 	const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', body));
 	const hex = Array.from(digest.subarray(0, 16), (b) => b.toString(16).padStart(2, '0')).join('');
 	return `W/"${hex}"`;
@@ -44,14 +39,28 @@ export async function withPageCaching(request: Request, response: Response): Pro
 	}
 	if (response.headers.has('cache-control')) return response;
 
-	const body = await response.arrayBuffer();
-	const etag = await weakEtag(response.headers.get('etag'), body);
+	// SvelteKit already hashes each page into a strong ETag, but Cloudflare drops strong ETags when
+	// it compresses a response, so production never sent one. A weak ETag survives compression (the
+	// bytes change, the meaning doesn't). Reusing SvelteKit's tag means the body can stream through
+	// untouched; only untagged responses are read, to hash them.
+	const existing = response.headers.get('etag');
+	let body: BodyInit | null = response.body;
+	let etag: string;
+	if (existing) {
+		etag = existing.startsWith('W/') ? existing : `W/${existing}`;
+	} else {
+		const bytes = await response.arrayBuffer();
+		body = bytes;
+		etag = await hashEtag(bytes);
+	}
+
 	const headers = new Headers(response.headers);
 	headers.set('cache-control', pageCacheControl);
 	headers.set('etag', etag);
 	headers.append('vary', 'Accept-Encoding');
 
 	if (matches(request.headers.get('if-none-match'), etag)) {
+		if (body === response.body) await response.body?.cancel();
 		headers.delete('content-length');
 		headers.delete('content-type');
 		return new Response(null, { status: 304, headers });

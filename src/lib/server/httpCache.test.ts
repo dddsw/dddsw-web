@@ -34,6 +34,22 @@ describe('withPageCaching', () => {
 		expect(again.status).toBe(304);
 	});
 
+	it("streams a page SvelteKit tagged through without reading it, and doesn't read it for a 304", async () => {
+		const stream = () => new Blob(['<p>Hi</p>']).stream();
+		const tagged = new Response(stream(), {
+			headers: { 'content-type': 'text/html', etag: '"abc"' }
+		});
+		const res = await withPageCaching(get(), tagged);
+		expect(res.body).toBe(tagged.body);
+		expect(await res.text()).toBe('<p>Hi</p>');
+
+		const unchanged = new Response(stream(), {
+			headers: { 'content-type': 'text/html', etag: '"abc"' }
+		});
+		const notModified = await withPageCaching(get({ 'if-none-match': 'W/"abc"' }), unchanged);
+		expect(notModified.status).toBe(304);
+	});
+
 	it('answers a matching If-None-Match with an empty 304', async () => {
 		const etag = (await withPageCaching(get(), page())).headers.get('etag')!;
 		// Cloudflare may hand the tag back in either form, so both must match.
