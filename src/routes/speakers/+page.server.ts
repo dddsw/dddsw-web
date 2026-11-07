@@ -1,5 +1,5 @@
 import { loadProgramme } from '#lib/sessionize.ts';
-import { programmeIsEmpty } from '#lib/seo.ts';
+import { speakersAreEmpty } from '#lib/seo.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch }) => {
@@ -8,6 +8,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		title: 'Speakers',
 		lead: 'The brilliant people sharing their knowledge.',
 		programme,
-		noindex: programmeIsEmpty(programme)
+		noindex: speakersAreEmpty(programme)
 	};
 };

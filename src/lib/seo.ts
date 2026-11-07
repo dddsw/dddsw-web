@@ -21,8 +21,15 @@ const alwaysListed = [
 	'/venue'
 ];
 
-/** Listed only once the programme is published: until then they only say "to be announced". */
-const programmeRoutes = ['/schedule', '/speakers', '/sessions'];
+/**
+ * Listed only once there's something to show: until then they only say "to be announced". Each
+ * page goes by the content it renders.
+ */
+const programmeRoutes: Record<string, (programme: Programme) => boolean> = {
+	'/schedule': sessionsAreEmpty,
+	'/sessions': sessionsAreEmpty,
+	'/speakers': speakersAreEmpty
+};
 
 /**
  * Pages kept out of search results (`noindex`) and the sitemap. They are still public: the
@@ -31,16 +38,24 @@ const programmeRoutes = ['/schedule', '/speakers', '/sessions'];
 export const unlistedRoutes = ['/code-of-conduct/internal', '/venue-layout'];
 
 /** Every route the sitemap knows about, for the drift check in `seo.test.ts`. */
-export const knownRoutes = [...alwaysListed, ...programmeRoutes, ...unlistedRoutes];
+export const knownRoutes = [...alwaysListed, ...Object.keys(programmeRoutes), ...unlistedRoutes];
 
-/** Whether a programme page is only a "to be announced" placeholder, so not worth indexing. */
-export function programmeIsEmpty(programme: Programme): boolean {
+/** Whether the schedule and sessions pages only say "to be announced", so aren't worth indexing. */
+export function sessionsAreEmpty(programme: Programme): boolean {
 	return programme.isPlaceholder || programme.sessions.length === 0;
+}
+
+/** Whether the speakers page only says "to be announced", so isn't worth indexing. */
+export function speakersAreEmpty(programme: Programme): boolean {
+	return programme.isPlaceholder || programme.speakers.length === 0;
 }
 
 /** The canonical URLs for the sitemap: indexable pages only. */
 export function sitemapUrls(programme: Programme): string[] {
-	const paths = programmeIsEmpty(programme) ? alwaysListed : [...alwaysListed, ...programmeRoutes];
+	const shown = Object.entries(programmeRoutes)
+		.filter(([, isEmpty]) => !isEmpty(programme))
+		.map(([path]) => path);
+	const paths = [...alwaysListed, ...shown];
 	return paths.map((path) => `${event.siteUrl}${path}`);
 }
 

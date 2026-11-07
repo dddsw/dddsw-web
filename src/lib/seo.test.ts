@@ -30,6 +30,18 @@ describe('sitemap', () => {
 		expect(sitemapUrls(publishedProgramme)).toContain('https://dddsouthwest.com/schedule');
 	});
 
+	it('lists each programme page by its own content', () => {
+		const urls = sitemapUrls(publishedProgramme);
+		expect(urls).toContain('https://dddsouthwest.com/schedule');
+		expect(urls).not.toContain('https://dddsouthwest.com/speakers');
+
+		const withSpeakers = sitemapUrls({
+			...publishedProgramme,
+			speakers: [{ id: 's' } as Programme['speakers'][number]]
+		});
+		expect(withSpeakers).toContain('https://dddsouthwest.com/speakers');
+	});
+
 	it('never lists the unlisted pages', () => {
 		expect(sitemapUrls(publishedProgramme)).not.toContain(
 			'https://dddsouthwest.com/code-of-conduct/internal'
