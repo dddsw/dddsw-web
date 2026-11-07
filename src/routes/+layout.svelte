@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
+	import { onNavigate } from '$app/navigation';
+	import { navigationTransition } from '#lib/viewTransitions.ts';
 	import type { LayoutProps } from './$types';
 	import Container from '#lib/components/Container.svelte';
 	import Header from '#lib/components/Header.svelte';
@@ -17,6 +19,8 @@
 	import nunitoLatin from '@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2?url';
 
 	let { children }: LayoutProps = $props();
+
+	onNavigate(navigationTransition);
 
 	// Pages with their own full-width design (the home page, error pages) opt out of the
 	// standard layout: the home page by returning `bare: true` from its `load` function.
