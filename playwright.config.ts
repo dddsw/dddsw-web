@@ -1,13 +1,41 @@
+import { createServer } from 'node:net';
 import { defineConfig, devices } from '@playwright/test';
+
+// Each run starts its own dev server on its own port, so test runs from several
+// worktrees (or alongside a `npm run dev` on 5173) never share a server.
+// Set PLAYWRIGHT_PORT to pin the port; otherwise a free one is picked. It is stored
+// in the environment so Playwright's worker processes, which reload this config,
+// see the same port.
+process.env.PLAYWRIGHT_PORT ??= String(await findFreePort());
+const port = Number(process.env.PLAYWRIGHT_PORT);
+const baseURL = `http://127.0.0.1:${port}/`;
+
+function findFreePort(): Promise<number> {
+	return new Promise((resolve, reject) => {
+		const server = createServer();
+		server.unref();
+		server.on('error', reject);
+		server.listen(0, '127.0.0.1', () => {
+			const address = server.address();
+			server.close(() =>
+				address && typeof address === 'object'
+					? resolve(address.port)
+					: reject(new Error('Could not find a free port'))
+			);
+		});
+	});
+}
 
 export default defineConfig({
 	webServer: {
-		command: 'npm run dev',
-		url: 'http://127.0.0.1:5173',
-		reuseExistingServer: !process.env.CI
+		// --strictPort: fail loudly rather than drift to another port.
+		command: `npm run dev -- --port ${port} --strictPort`,
+		url: baseURL,
+		// Never reuse a server: one already on this port could belong to another checkout.
+		reuseExistingServer: false
 	},
 	use: {
-		baseURL: 'http://127.0.0.1:5173/',
+		baseURL,
 		...devices['Desktop Chrome']
 	},
 

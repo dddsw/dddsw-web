@@ -19,16 +19,16 @@ test.describe('Navigation', () => {
 
 		const routes = ['about', 'sponsorship'];
 		for (const route of routes) {
-			test(`Can navigate to ${route} page via the nav bar`, async ({ page }) => {
+			test(`Can navigate to ${route} page via the nav bar`, async ({ page, baseURL }) => {
 				// Click the nav link
 				await header.getNavLinkTo(route).click();
 
-				await expect(page).toHaveURL(`http://127.0.0.1:5173/${route}`);
+				await expect(page).toHaveURL(new URL(route, baseURL).href);
 			});
 		}
 	});
 
-	test('Can navigate to Home from content page by clicking logo', async ({ page }) => {
+	test('Can navigate to Home from content page by clicking logo', async ({ page, baseURL }) => {
 		// Go to about page
 		await page.goto('/about');
 		//Ensure everything has loaded to prevent flakiness
@@ -37,6 +37,6 @@ test.describe('Navigation', () => {
 		// Click logo
 		await header.logo.click();
 
-		await expect(page).toHaveURL('http://127.0.0.1:5173/');
+		await expect(page).toHaveURL(new URL('/', baseURL).href);
 	});
 });
