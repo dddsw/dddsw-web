@@ -26,6 +26,11 @@ export interface Programme {
 	speakers: Speaker[];
 	/** True when no live data is available and we are showing a stand-in. */
 	isPlaceholder: boolean;
+	/**
+	 * True when Sessionize is configured but couldn't be reached, so the stand-in may be hiding a
+	 * published programme. Search indexing leaves such pages as they were (see `seo.ts`).
+	 */
+	isUnavailable?: boolean;
 }
 
 /** Shown until Sessionize is configured, so the pages never break the build. */
@@ -80,6 +85,6 @@ export async function loadProgramme(
 		return mapProgramme(await res.json());
 	} catch (err) {
 		console.warn('[sessionize] Falling back to placeholder programme:', err);
-		return placeholderProgramme;
+		return { ...placeholderProgramme, isUnavailable: true };
 	}
 }

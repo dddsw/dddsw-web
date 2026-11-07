@@ -30,6 +30,12 @@ describe('sitemap', () => {
 		expect(sitemapUrls(publishedProgramme)).toContain('https://dddsouthwest.com/schedule');
 	});
 
+	it('keeps the programme pages listed while Sessionize is unreachable', () => {
+		const urls = sitemapUrls({ ...placeholderProgramme, isUnavailable: true });
+		expect(urls).toContain('https://dddsouthwest.com/schedule');
+		expect(urls).toContain('https://dddsouthwest.com/speakers');
+	});
+
 	it('lists each programme page by its own content', () => {
 		const urls = sitemapUrls(publishedProgramme);
 		expect(urls).toContain('https://dddsouthwest.com/schedule');

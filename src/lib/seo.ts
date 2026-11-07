@@ -40,13 +40,19 @@ export const unlistedRoutes = ['/code-of-conduct/internal', '/venue-layout'];
 /** Every route the sitemap knows about, for the drift check in `seo.test.ts`. */
 export const knownRoutes = [...alwaysListed, ...Object.keys(programmeRoutes), ...unlistedRoutes];
 
-/** Whether the schedule and sessions pages only say "to be announced", so aren't worth indexing. */
+/**
+ * Whether the schedule and sessions pages only say "to be announced", so aren't worth indexing.
+ * A Sessionize outage isn't "empty": it mustn't deindex a published programme, so those pages stay
+ * indexed and in the sitemap until Sessionize is back.
+ */
 export function sessionsAreEmpty(programme: Programme): boolean {
+	if (programme.isUnavailable) return false;
 	return programme.isPlaceholder || programme.sessions.length === 0;
 }
 
-/** Whether the speakers page only says "to be announced", so isn't worth indexing. */
+/** Whether the speakers page only says "to be announced", like `sessionsAreEmpty`. */
 export function speakersAreEmpty(programme: Programme): boolean {
+	if (programme.isUnavailable) return false;
 	return programme.isPlaceholder || programme.speakers.length === 0;
 }
 

@@ -76,6 +76,7 @@ describe('loadProgramme', () => {
 			'https://sessionize.com/api/v2/abc'
 		);
 		expect(p.isPlaceholder).toBe(true);
+		expect(p.isUnavailable).toBe(true);
 		expect(warn).toHaveBeenCalled();
 		warn.mockRestore();
 	});
@@ -87,6 +88,7 @@ describe('loadProgramme', () => {
 			'https://sessionize.com/api/v2/abc'
 		);
 		expect(p.isPlaceholder).toBe(true);
+		expect(p.isUnavailable).toBe(true);
 		warn.mockRestore();
 	});
 	it('maps a successful response', async () => {
