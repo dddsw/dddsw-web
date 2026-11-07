@@ -1,0 +1,8 @@
+# Cloudflare Pages headers for static files (pages get theirs from src/hooks.server.ts).
+# Only dddsouthwest.com is indexed: the pages.dev hosts, including every preview deployment,
+# serve the same files and are kept out of search results.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

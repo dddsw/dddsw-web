@@ -7,6 +7,7 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import PageHeading from '#lib/components/PageHeading.svelte';
 	import { event } from '#lib/eventDetails.ts';
+	import { unlistedRoutes } from '#lib/seo.ts';
 	import { socialCard } from '#lib/socialCard.ts';
 	import { toaster } from '#lib/toaster.ts';
 	import { Toast } from '@skeletonlabs/skeleton-svelte';
@@ -36,6 +37,12 @@
 	// Error pages have none, so they never claim to be the page that failed.
 	const canonical = $derived(page.error === null ? `${event.siteUrl}${page.url.pathname}` : null);
 	const socialImage = `${event.siteUrl}${socialCard.path}`;
+
+	// Kept out of search results: pages we don't list (see `seo.ts`), and pages whose `load` says
+	// they have nothing to show yet (`noindex: true`), so a "to be announced" page isn't indexed.
+	const noindex = $derived(
+		unlistedRoutes.includes(page.url.pathname) || page.data.noindex === true
+	);
 </script>
 
 <svelte:head>
@@ -59,7 +66,7 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={socialImage} />
-	<meta name="robots" content="max-image-preview:large" />
+	<meta name="robots" content={noindex ? 'noindex' : 'max-image-preview:large'} />
 
 	<link rel="icon" href="/favicon.ico" sizes="32x32" />
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
