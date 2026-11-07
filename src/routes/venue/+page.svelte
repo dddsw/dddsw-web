@@ -221,15 +221,16 @@
 					</svg>
 				</Carousel.NextTrigger>
 			</Carousel.Control>
-			<Carousel.IndicatorGroup class="flex justify-center gap-2">
+			<!-- Each dot sits in a 24px button (the padding is clear), so it is easy to hit. -->
+			<Carousel.IndicatorGroup class="flex justify-center">
 				{#each photos as photo, index (photo.file)}
 					<Carousel.Indicator
 						{index}
-						class="size-3 rounded-full bg-surface-600-400 data-current:w-6 data-current:bg-secondary-700-300" />
+						class="size-6 cursor-pointer rounded-full border-0 bg-surface-600-400 bg-clip-content p-1.5 data-current:w-9 data-current:bg-secondary-700-300" />
 				{/each}
 			</Carousel.IndicatorGroup>
 		</Carousel>
-		<h3 class="h4">Getting here</h3>
+		<h2 class="h4">Getting here</h2>
 		<p>
 			The campus is pedestrianised and sits right next to Bristol Temple Meads, so we recommend
 			arriving by public transport, bike or on foot.
@@ -325,7 +326,7 @@
 				href="https://www.bristol.ac.uk/maps/car-parking/temple-quarter-enterprise-campus/visitor-parking/"
 				>visitor parking</a> pages. Check them for timetables, prices and updates.
 		</p>
-		<h3 class="h4">Accessibility</h3>
+		<h2 class="h4">Accessibility</h2>
 		<p>The Sloane Robinson Building has been designed to be accessible and inclusive. It has:</p>
 		<ul class="list-disc space-y-1 pl-6">
 			<li>a step-free entrance at ground level, and a step-free route from the station</li>
@@ -346,7 +347,7 @@
 				href="https://www.bristol.ac.uk/study/temple-quarter-enterprise-campus/about-the-building"
 				>about the building</a> page.
 		</p>
-		<h3 class="h4">Food and drink</h3>
+		<h2 class="h4">Food and drink</h2>
 		<p>
 			We'll provide breakfast, lunch and two tea breaks, all included with your free ticket. Please
 			tell us about any dietary requirements when you book your ticket.
@@ -355,12 +356,12 @@
 			The building also has a canteen and vending machines if you want something extra. These aren't
 			included, so you'll need to pay for anything you buy there.
 		</p>
-		<h3 class="h4">Quiet spaces and cosy nooks</h3>
+		<h2 class="h4">Quiet spaces and cosy nooks</h2>
 		<p>
 			As well as the main rooms, there is plenty of quiet space and there are cosy nooks dotted
 			around the building if you need a break.
 		</p>
-		<h3 class="h4">After the conference</h3>
+		<h2 class="h4">After the conference</h2>
 		<p>
 			Some of us usually head to the pub afterwards, normally the
 			<a href="https://www.lefthandedgiant.com/">Left Handed Giant Brewpub</a>
@@ -368,7 +369,7 @@
 			from the venue, along the river. You're very welcome to join us, and we'll share more details on
 			the day.
 		</p>
-		<h3 class="h4">Where to stay</h3>
+		<h2 class="h4">Where to stay</h2>
 		<p>
 			These hotels are all about 10 to 15 minutes' walk from the venue. They're suggestions only, so
 			check prices, availability and exact distances with the hotel or on a map.
