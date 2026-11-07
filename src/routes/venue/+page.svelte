@@ -180,11 +180,12 @@
 						<Carousel.Item {index}>
 							<figure class="space-y-2">
 								<img
-									src="/images/venue/sloane-robinson-{photo.file}.jpg"
+									src="/images/venue/sloane-robinson-{photo.file}.webp"
 									alt={photo.alt}
 									width="1081"
 									height="607"
 									loading={index === 0 ? 'eager' : 'lazy'}
+									fetchpriority={index === 0 ? 'high' : 'auto'}
 									class="aspect-video w-full rounded-container object-cover" />
 								<figcaption class="space-y-1 px-1">
 									<span class="block font-heading text-xl text-secondary-700-300"
@@ -252,8 +253,8 @@
 					<img
 						src="/images/venue/temple-meads-new-exit.webp"
 						alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
-						width="2000"
-						height="1500"
+						width="800"
+						height="600"
 						loading="lazy"
 						class="aspect-video w-full rounded-container object-cover" />
 					<figcaption class="text-sm">

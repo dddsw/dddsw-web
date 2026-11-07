@@ -12,6 +12,8 @@
 
 html {
 	color-scheme: light;
+	/* Keep room for the scrollbar, so the page doesn't shift sideways when it appears or a dialog locks scrolling. */
+	scrollbar-gutter: stable;
 }
 html.dark {
 	color-scheme: dark;

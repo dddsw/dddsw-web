@@ -10,31 +10,31 @@ export interface TeamMember {
 export const team: TeamMember[] = [
 	{
 		name: 'Lorraine Pearce',
-		photo: 'lorraine.jpg',
+		photo: 'lorraine.webp',
 		email: 'lorrainepearce@dddsouthwest.com',
 		linkedIn: 'lorraine-pearce-688aba8'
 	},
 	{
 		name: 'Russell Day',
-		photo: 'russ.jpg',
+		photo: 'russ.webp',
 		email: 'russell.day@dddsouthwest.com',
 		linkedIn: 'russellday'
 	},
 	{
 		name: 'Stuart Lang',
-		photo: 'stu.jpg',
+		photo: 'stu.webp',
 		email: 'stuartlang@dddsouthwest.com'
 	},
 	{
 		name: 'Carl Sargunar',
-		photo: 'carl.jpg',
+		photo: 'carl.webp',
 		email: 'carlsargunar@dddsouthwest.com',
 		linkedIn: 'carl-sargunar-63b5814',
 		bluesky: 'carlcod.es'
 	},
 	{
 		name: 'Sara Gowen',
-		photo: 'sara.jpg',
+		photo: 'sara.webp',
 		email: 'saragowen@dddsouthwest.com',
 		linkedIn: 'sara-gowen-27404734'
 	}

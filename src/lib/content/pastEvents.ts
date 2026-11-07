@@ -233,31 +233,31 @@ export const pastEvents: PastEvent[] = [
 		archiveUrl: 'https://web.archive.org/web/20241006092157/https://dddsouthwest.com/',
 		photos: [
 			{
-				src: '/images/past/2024-1.jpg',
+				src: '/images/past/2024-1.webp',
 				alt: 'Attendees chatting around sponsor stands in the exhibition area.'
 			},
 			{
-				src: '/images/past/2024-4.jpg',
+				src: '/images/past/2024-4.webp',
 				alt: 'A speaker presenting to the audience in Track 1, with attendees on orange tiered seating.'
 			},
 			{
-				src: '/images/past/2024-3.jpg',
+				src: '/images/past/2024-3.webp',
 				alt: 'A crew member introducing a session to a packed room.'
 			},
 			{
-				src: '/images/past/2024-2.jpg',
+				src: '/images/past/2024-2.webp',
 				alt: 'A smiling, full audience on tiered seating waiting for a talk.'
 			},
 			{
-				src: '/images/past/2024-6.jpg',
+				src: '/images/past/2024-6.webp',
 				alt: 'Attendees queuing for the lunch buffet.'
 			},
 			{
-				src: '/images/past/2024-5.jpg',
+				src: '/images/past/2024-5.webp',
 				alt: 'Attendees listening to a session in a wood-panelled room.'
 			},
 			{
-				src: '/images/past/2024-7.jpg',
+				src: '/images/past/2024-7.webp',
 				alt: 'A panel of speakers wearing DDDSW t-shirts and lanyards on stage.'
 			}
 		],
@@ -632,7 +632,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2017,
 		title: 'DDD South West 7',
 		archiveUrl: 'https://web.archive.org/web/20171223185535/http://www.dddsouthwest.com:80/',
-		logo: '/images/past/logos/2017.png',
+		logo: '/images/past/logos/2017.webp',
 		sponsors: [
 			{ name: 'Just Eat', url: 'https://www.just-eat.co.uk/' },
 			{ name: 'iO Associates', url: 'https://www.ioassociates.co.uk/' },
@@ -710,7 +710,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2015,
 		title: 'DDD South West 6',
 		archiveUrl: 'https://web.archive.org/web/20161209072744/http://www.dddsouthwest.com:80/',
-		logo: '/images/past/logos/2015.png',
+		logo: '/images/past/logos/2015.webp',
 		sponsors: [
 			{ name: 'Just Eat', url: 'https://www.just-eat.co.uk/' },
 			{ name: 'Equal Experts', url: 'https://www.equalexperts.com/' },
@@ -776,7 +776,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2014,
 		title: 'DDD South West 5',
 		archiveUrl: 'https://web.archive.org/web/20141219082521/http://www.dddsouthwest.com/',
-		logo: '/images/past/logos/2014-south-west-5.png',
+		logo: '/images/past/logos/2014-south-west-5.webp',
 		sponsors: [
 			{ name: 'Grey Matter', url: 'https://www.greymatter.com/' },
 			{ name: 'Scott Logic', url: 'https://www.scottlogic.com/' },
@@ -844,7 +844,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2012,
 		title: 'DDD South West 4',
 		archiveUrl: 'https://web.archive.org/web/20131029074007/http://www.dddsouthwest.com:80/',
-		logo: '/images/past/logos/2012.png',
+		logo: '/images/past/logos/2012.webp',
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
@@ -891,7 +891,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2011,
 		title: 'DDD South West 3',
 		archiveUrl: 'https://web.archive.org/web/20110918064256/http://www.dddsouthwest.com/',
-		logo: '/images/past/logos/2011.png',
+		logo: '/images/past/logos/2011.webp',
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },
@@ -969,7 +969,7 @@ export const pastEvents: PastEvent[] = [
 		year: 2010,
 		title: 'DDD South West 2',
 		archiveUrl: 'https://web.archive.org/web/20101230152045/http://www.dddsouthwest.com/',
-		logo: '/images/past/logos/2010.png',
+		logo: '/images/past/logos/2010.webp',
 		sponsors: [
 			{ name: 'University of the West of England (UWE)', url: 'https://www.uwe.ac.uk/' },
 			{ name: 'Microsoft', url: 'https://www.microsoft.com/en-gb/' },

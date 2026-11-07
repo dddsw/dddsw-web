@@ -190,6 +190,8 @@
 									<img
 										src={photo.src}
 										alt={photo.alt}
+										width="1200"
+										height="800"
 										loading="lazy"
 										class="h-full w-full rounded-container object-cover" />
 								</li>
