@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import EventFacts from '#lib/components/EventFacts.svelte';
 	import { event } from '#lib/eventDetails.ts';
+	import { picture } from '#lib/images.ts';
 	import { Carousel, Tabs } from '@skeletonlabs/skeleton-svelte';
 	import * as chevronLeft from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 	import * as chevronRight from '@fortawesome/free-solid-svg-icons/faChevronRight';
@@ -178,15 +179,15 @@
 					class="rounded-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-700-300">
 					{#each photos as photo, index (photo.file)}
 						<Carousel.Item {index}>
-							<figure class="space-y-2">
-								<img
-									src="/images/venue/sloane-robinson-{photo.file}.jpg"
+							<figure>
+								<enhanced:img
+									src={picture(`venue/sloane-robinson-${photo.file}.jpg`)}
+									sizes="(min-width: 72rem) 70rem, 100vw"
 									alt={photo.alt}
-									width="1081"
-									height="607"
 									loading={index === 0 ? 'eager' : 'lazy'}
+									fetchpriority={index === 0 ? 'high' : 'auto'}
 									class="aspect-video w-full rounded-container object-cover" />
-								<figcaption class="space-y-1 px-1">
+								<figcaption class="mt-2 space-y-1 px-1">
 									<span class="block font-heading text-xl text-secondary-700-300"
 										>{photo.title}</span>
 									<span class="block">{photo.text}</span>
@@ -249,15 +250,14 @@
 				</Tabs.List>
 			</div>
 			<Tabs.Content value="Train" class="mt-4 flex flex-col gap-3 md:flow-root">
-				<figure class="order-last space-y-2 md:float-right md:order-none md:mb-1 md:ml-4 md:w-64">
-					<img
-						src="/images/venue/temple-meads-new-exit.webp"
+				<figure class="order-last md:float-right md:order-none md:mb-1 md:ml-4 md:w-64">
+					<enhanced:img
+						src={picture('venue/temple-meads-new-exit.webp')}
+						sizes="(min-width: 48rem) 16rem, 100vw"
 						alt="Ticket gates at the new exit from Bristol Temple Meads, with 'Way out' signs pointing to the University of Bristol and the campus visible through the glass doors"
-						width="2000"
-						height="1500"
 						loading="lazy"
 						class="aspect-video w-full rounded-container object-cover" />
-					<figcaption class="text-sm">
+					<figcaption class="mt-2 text-sm">
 						The Sloane Robinson Building, seen through the new exit from Bristol Temple Meads
 					</figcaption>
 				</figure>

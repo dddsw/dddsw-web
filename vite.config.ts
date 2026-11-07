@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import adapter from '@sveltejs/adapter-cloudflare';
+import { enhancedImages } from '@sveltejs/enhanced-img';
 import dns from 'dns';
 import tailwindcss from '@tailwindcss/vite';
 import type { Plugin } from 'vite';
@@ -37,7 +38,7 @@ function socialCardImage(): Plugin {
 }
 
 const config = defineConfig({
-	plugins: [tailwindcss(), sveltekit({ adapter: adapter() }), socialCardImage()],
+	plugins: [tailwindcss(), enhancedImages(), sveltekit({ adapter: adapter() }), socialCardImage()],
 	test: {
 		include: ['src/**/*.test.ts']
 	}

@@ -11,6 +11,10 @@
 	import { socialCard } from '#lib/socialCard.ts';
 	import { toaster } from '#lib/toaster.ts';
 	import { Toast } from '@skeletonlabs/skeleton-svelte';
+	// The Latin faces style the text on every first screen (headings in Fredoka, body in Nunito).
+	// Preloading them starts the download alongside the stylesheet instead of after it.
+	import fredokaLatin from '@fontsource-variable/fredoka/files/fredoka-latin-wght-normal.woff2?url';
+	import nunitoLatin from '@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2?url';
 
 	let { children }: LayoutProps = $props();
 
@@ -47,6 +51,8 @@
 
 <svelte:head>
 	<title>{title}</title>
+	<link rel="preload" href={fredokaLatin} as="font" type="font/woff2" crossorigin="anonymous" />
+	<link rel="preload" href={nunitoLatin} as="font" type="font/woff2" crossorigin="anonymous" />
 	<meta name="description" content={description} />
 	{#if canonical}
 		<link rel="canonical" href={canonical} />

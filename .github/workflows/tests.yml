@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 5
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.64.1@sha256:7852dc5a7d72f5fe458a597d690f6c42fbc8e9e26ddfa95f8e6ef552558d9bbf
@@ -19,6 +19,14 @@ jobs:
           node-version-file: '.node-version'
       - name: Install dependencies
         run: npm ci
+      # The images enhanced-img makes from src/lib/assets/images. Without them the dev server's
+      # first page takes minutes, as it encodes every image; after npm ci, which clears node_modules.
+      - name: Restore generated images
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: node_modules/.cache/imagetools
+          key: imagetools-${{ hashFiles('src/lib/assets/images/**', 'package-lock.json') }}
+          restore-keys: imagetools-
       - name: Run unit tests
         run: npm run test:unit
       - name: Run Playwright tests

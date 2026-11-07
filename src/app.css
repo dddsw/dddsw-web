@@ -12,6 +12,8 @@
 
 html {
 	color-scheme: light;
+	/* Keep room for the scrollbar, so the page doesn't shift sideways when it appears or a dialog locks scrolling. */
+	scrollbar-gutter: stable;
 	/*
 	 * Keep anything scrolled to (in-page links, and controls reached with Tab) clear of the
 	 * sticky header, so it is never hidden behind it. The header sets --header-height as it
@@ -29,6 +31,11 @@ html.dark {
  * buttons keep their own look. In the base layer so utilities such as `no-underline` still win.
  */
 @layer base {
+	/* <enhanced:img> wraps each image in a <picture>; let the <img> lay out as if it weren't. */
+	picture {
+		display: contents;
+	}
+
 	/* Short, heading-like text wraps into even lines rather than leaving one word on its own. */
 	h1,
 	h2,

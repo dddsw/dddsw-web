@@ -135,14 +135,14 @@ export const sponsorReasons = [
 export interface Sponsor {
 	name: string;
 	href: string;
-	/** Filename in static/images/sponsors */
+	/** Filename in src/lib/assets/images/sponsors */
 	logo: string;
 	tier: 'exhibitor' | 'supporter' | 'refreshments';
 }
 
 /**
  * Sponsors confirmed for the current year. Only paying sponsors for this year appear on
- * the site. Add the logo to static/images/sponsors and a new entry here once confirmed.
+ * the site. Add the logo to src/lib/assets/images/sponsors and a new entry here once confirmed.
  */
 export const sponsors: Sponsor[] = [];
 
@@ -150,80 +150,85 @@ export const sponsors: Sponsor[] = [];
  * Previous sponsors, kept so they can be reinstated quickly. This list is NOT shown on the site.
  *
  * To feature one again once they've sponsored the current year, move their entry from
- * `sponsorArchive` into `sponsors` above (their logo is already in static/images/sponsors/).
+ * `sponsorArchive` into `sponsors` above (their logo is already in src/lib/assets/images/sponsors/).
  */
 export const sponsorArchive: Sponsor[] = [
-	{ name: 'SECCL', href: 'https://seccl.tech/', logo: 'seccl.png', tier: 'exhibitor' },
+	{ name: 'SECCL', href: 'https://seccl.tech/', logo: 'seccl.webp', tier: 'exhibitor' },
 	{
 		name: 'Rock Solid Knowledge',
 		href: 'https://www.rocksolidknowledge.com/',
-		logo: 'rocksolid.png',
+		logo: 'rocksolid.webp',
 		tier: 'exhibitor'
 	},
 	{
 		name: 'UK Hydrographic Office',
 		href: 'https://www.gov.uk/government/organisations/uk-hydrographic-office',
-		logo: 'UKHO.png',
+		logo: 'UKHO.webp',
 		tier: 'exhibitor'
 	},
-	{ name: 'ClearBank', href: 'https://clear.bank/', logo: 'ClearBank logo.png', tier: 'exhibitor' },
+	{
+		name: 'ClearBank',
+		href: 'https://clear.bank/',
+		logo: 'clearbank.webp',
+		tier: 'exhibitor'
+	},
 	{
 		name: 'iO Associates',
 		href: 'https://www.ioassociates.co.uk/',
-		logo: 'io.png',
+		logo: 'io.webp',
 		tier: 'exhibitor'
 	},
 	{
 		name: 'Howden',
 		href: 'https://www.howdengroup.com/uk-en',
-		logo: 'howden.png',
+		logo: 'howden.webp',
 		tier: 'exhibitor'
 	},
-	{ name: 'Umbraco CMS', href: 'https://umbraco.com/', logo: 'umbraco.png', tier: 'exhibitor' },
+	{ name: 'Umbraco CMS', href: 'https://umbraco.com/', logo: 'umbraco.webp', tier: 'exhibitor' },
 	{
 		name: 'NDC Conferences',
 		href: 'https://ndcconferences.com/',
-		logo: 'ndc.png',
+		logo: 'ndc.webp',
 		tier: 'supporter'
 	},
 	{
 		name: 'Flagstone',
 		href: 'https://www.flagstoneim.com/',
-		logo: 'flagstone.png',
+		logo: 'flagstone.webp',
 		tier: 'supporter'
 	},
 	{
 		name: 'JetBrains',
 		href: 'https://www.jetbrains.com/',
-		logo: 'jetbrains.png',
+		logo: 'jetbrains.webp',
 		tier: 'supporter'
 	},
 	{
 		name: 'Avanade',
 		href: 'https://www.avanade.com/en-gb',
-		logo: 'avanade.png',
+		logo: 'avanade.webp',
 		tier: 'refreshments'
 	},
 	{
 		name: 'ALD Automotive',
 		href: 'https://www.aldautomotive.com/',
-		logo: 'ald.png',
+		logo: 'ald.webp',
 		tier: 'refreshments'
 	},
 	{
 		name: 'Elastic Mint',
 		href: 'https://www.elasticmint.com/',
-		logo: 'elasticmint.png',
+		logo: 'elasticmint.webp',
 		tier: 'refreshments'
 	},
-	{ name: 'BJSS', href: 'https://www.bjss.com/', logo: 'bjss.jpg', tier: 'refreshments' },
+	{ name: 'BJSS', href: 'https://www.bjss.com/', logo: 'bjss.webp', tier: 'refreshments' },
 	{
 		name: 'Just Eat Takeaway.com',
 		href: 'https://careers.justeattakeaway.com/global/en/c/tech-product-jobs',
-		logo: 'justeat.png',
+		logo: 'justeat.webp',
 		tier: 'refreshments'
 	},
-	{ name: 'dxw', href: 'https://www.dxw.com/', logo: 'dxw.png', tier: 'refreshments' }
+	{ name: 'dxw', href: 'https://www.dxw.com/', logo: 'dxw.webp', tier: 'refreshments' }
 ];
 
 /** Links to sponsors carry tracking parameters so they can see traffic from DDDSW. */

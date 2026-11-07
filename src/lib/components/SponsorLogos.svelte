@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { event } from '#lib/eventDetails.ts';
 	import { sponsors, sponsorUrl } from '#lib/content/sponsors.ts';
+	import { picture } from '#lib/images.ts';
 </script>
 
 <ul class="grid grid-cols-2 items-center gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -11,8 +12,8 @@
 				rel="noopener"
 				aria-label="Visit {sponsor.name} website"
 				class="flex h-full w-full items-center justify-center">
-				<img
-					src="/images/sponsors/{sponsor.logo}"
+				<enhanced:img
+					src={picture(`sponsors/${sponsor.logo}`)}
 					alt="{sponsor.name} logo"
 					loading="lazy"
 					class="max-h-full max-w-full object-contain" />
