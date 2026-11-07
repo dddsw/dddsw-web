@@ -1,15 +1,16 @@
 import type { Handle } from '@sveltejs/kit/hooks';
 import { event as eventDetails } from '#lib/eventDetails.ts';
 
-const publicHost = new URL(eventDetails.siteUrl).host;
+const publicHost = new URL(eventDetails.siteUrl).hostname;
+const localHosts = new Set(['localhost', '127.0.0.1', '[::1]']);
 
 /**
  * Only the public address is indexed: Cloudflare's `*.pages.dev` hosts (production and every
  * preview deployment) serve the same pages, so they tell search engines to stay away, for HTML
  * and non-HTML responses alike. `localhost` is left alone so local runs match production.
  */
-function isStagingHost(host: string): boolean {
-	return host !== publicHost && !host.startsWith('localhost') && !host.startsWith('127.0.0.1');
+function isStagingHost(hostname: string): boolean {
+	return hostname !== publicHost && !localHosts.has(hostname);
 }
 
 function isPagePath(pathname: string): boolean {
@@ -17,7 +18,7 @@ function isPagePath(pathname: string): boolean {
 }
 
 export const handle: Handle = async ({ event, resolve }) => {
-	const { pathname, host } = event.url;
+	const { pathname, hostname } = event.url;
 
 	// One public spelling per page: an uppercase page URL moves permanently to its lowercase form.
 	// Files (anything with an extension, and the build's `/_app/` assets) keep their own case.
@@ -28,6 +29,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	const response = await resolve(event);
-	if (isStagingHost(host)) response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+	if (isStagingHost(hostname)) response.headers.set('X-Robots-Tag', 'noindex, nofollow');
 	return response;
 };
