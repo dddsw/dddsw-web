@@ -1,10 +1,7 @@
 <script lang="ts">
-	import { event } from '#lib/eventDetails.ts';
 	import { page } from '$app/state';
 	import Cow from '#lib/components/Cow.svelte';
 </script>
-
-<svelte:head><title>{page.status} · {event.shortName} {event.year}</title></svelte:head>
 
 <div class="mx-auto flex max-w-xl flex-col items-center gap-6 px-4 py-24 text-center">
 	<Cow class="h-24 w-auto text-primary-500" />
