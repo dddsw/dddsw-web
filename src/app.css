@@ -131,11 +131,15 @@ main:focus {
 	[data-scope='switch'][data-part='thumb'] {
 		border: 1px solid;
 	}
-	/* The current page and the selected tab are a filled pill normally: mark them with Highlight. */
+	/*
+	 * The current page and the selected tab are a filled pill normally: mark them with a thick
+	 * underline instead. Not an outline, so the focus ring still shows on them.
+	 */
 	[aria-current='page'],
 	[data-scope='tabs'][data-part='trigger'][data-selected] {
-		outline: 2px solid Highlight;
-		outline-offset: -2px;
+		text-decoration-line: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 6px;
 	}
 	[data-scope='tabs'][data-part='indicator'] {
 		forced-color-adjust: none;
