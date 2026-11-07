@@ -186,13 +186,17 @@
 					<section class="space-y-4" aria-label="Photos from {e.year}">
 						<h4 class="h4">Photos</h4>
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+							<!--
+								`sizes` follows the grid: one column, then two (the first photo spanning both),
+								then three from lg (the first spanning two) within the 72rem container.
+							-->
 							{#each e.photos as photo, i (photo.src)}
 								<li class={i === 0 ? 'sm:col-span-2' : ''}>
 									<enhanced:img
 										src={picture(photo.src)}
 										sizes={i === 0
-											? '(min-width: 72rem) 46rem, (min-width: 40rem) 66vw, 100vw'
-											: '(min-width: 72rem) 23rem, (min-width: 40rem) 33vw, 100vw'}
+											? '(min-width: 72rem) 46rem, (min-width: 64rem) 66vw, 100vw'
+											: '(min-width: 72rem) 23rem, (min-width: 64rem) 33vw, (min-width: 40rem) 50vw, 100vw'}
 										alt={photo.alt}
 										loading="lazy"
 										class="h-full w-full rounded-container object-cover" />
