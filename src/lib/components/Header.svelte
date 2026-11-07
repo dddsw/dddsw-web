@@ -30,12 +30,21 @@
 		return page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
 	}
 
+	// Shared with app.css's scroll-padding-top, so scrolled-to content clears the header even when
+	// the nav wraps onto a second line.
+	let headerHeight = $state(0);
+	$effect(() => {
+		if (headerHeight)
+			document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+	});
+
 	function closeMenu() {
 		menuOpen = false;
 	}
 </script>
 
 <header
+	bind:clientHeight={headerHeight}
 	class="sticky top-0 z-30 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
 	<Container class="flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
@@ -51,21 +60,27 @@
 			</span>
 		</a>
 
-		<nav aria-label="Main" class="hidden flex-wrap items-center justify-center gap-1 md:flex">
-			{#each navItems as item (item.href)}
-				<a
-					href={item.href}
-					class={[
-						'rounded-base px-3 py-2 font-semibold whitespace-nowrap no-underline',
-						isCurrent(item.href) ? CURRENT : HOVER
-					]}
-					aria-current={isCurrent(item.href) ? 'page' : undefined}>
-					{item.label}
-				</a>
-			{/each}
-			{#if featured}
-				<FeaturedLink {featured} preview={isPreview} class="ml-2 px-6 py-3" />
-			{/if}
+		<nav aria-label="Main" class="hidden md:block">
+			<ul class="flex flex-wrap items-center justify-center gap-1">
+				{#each navItems as item (item.href)}
+					<li>
+						<a
+							href={item.href}
+							class={[
+								'block rounded-base px-3 py-2 font-semibold whitespace-nowrap no-underline',
+								isCurrent(item.href) ? CURRENT : HOVER
+							]}
+							aria-current={isCurrent(item.href) ? 'page' : undefined}>
+							{item.label}
+						</a>
+					</li>
+				{/each}
+				{#if featured}
+					<li class="ml-2">
+						<FeaturedLink {featured} preview={isPreview} class="px-6 py-3" />
+					</li>
+				{/if}
+			</ul>
 		</nav>
 
 		<div class="flex shrink-0 items-center gap-2">
@@ -82,26 +97,32 @@
 						<Popover.Positioner class="z-50!">
 							<Popover.Content
 								class="w-56 rounded-container border border-surface-200-800 bg-surface-50-950 p-3 shadow-xl">
-								<nav aria-label="Mobile" class="flex flex-col gap-1">
-									{#each navItems as item (item.href)}
-										<a
-											href={item.href}
-											class={[
-												'rounded-base px-3 py-2 font-semibold no-underline',
-												isCurrent(item.href) ? CURRENT : `text-inherit ${HOVER}`
-											]}
-											aria-current={isCurrent(item.href) ? 'page' : undefined}
-											onclick={closeMenu}>
-											{item.label}
-										</a>
-									{/each}
-									{#if featured}
-										<FeaturedLink
-											{featured}
-											preview={isPreview}
-											class="mt-1 px-6 py-3"
-											onclick={closeMenu} />
-									{/if}
+								<nav aria-label="Mobile">
+									<ul class="flex flex-col gap-1">
+										{#each navItems as item (item.href)}
+											<li>
+												<a
+													href={item.href}
+													class={[
+														'block rounded-base px-3 py-2 font-semibold no-underline',
+														isCurrent(item.href) ? CURRENT : `text-inherit ${HOVER}`
+													]}
+													aria-current={isCurrent(item.href) ? 'page' : undefined}
+													onclick={closeMenu}>
+													{item.label}
+												</a>
+											</li>
+										{/each}
+										{#if featured}
+											<li class="mt-1">
+												<FeaturedLink
+													{featured}
+													preview={isPreview}
+													class="w-full px-6 py-3"
+													onclick={closeMenu} />
+											</li>
+										{/if}
+									</ul>
 								</nav>
 							</Popover.Content>
 						</Popover.Positioner>

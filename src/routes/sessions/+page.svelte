@@ -55,7 +55,7 @@
 		{#if showAllProposedSessions && get(Milestone.OpenSessionVoting)?.hasHappened && get(Milestone.CloseSessionVoting)?.hasNotHappened}
 			<p class="card tint-orange p-4">
 				Voting is open now, take a look and <a href={votingUrl} target="_blank" rel="noopener"
-					>vote for your favourites here</a
+					>vote for your favourites</a
 				>. Voting will close on {get(Milestone.CloseSessionVoting)!.formattedDate}.
 			</p>
 		{/if}
