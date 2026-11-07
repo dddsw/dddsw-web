@@ -63,9 +63,9 @@
 	{@html structuredData}
 </svelte:head>
 
-<section class="bg-primary-500 text-surface-950">
+<section class="vt-banner bg-primary-500 text-surface-950">
 	<Container class="grid items-center gap-8 py-14 md:grid-cols-[1.3fr_1fr] md:py-24">
-		<div class="space-y-6">
+		<div class="vt-heading space-y-6">
 			<h1 class="h1 leading-[1.05] md:text-7xl">
 				Developer!<br />Developer!<br />Developer!
 				<span
@@ -94,10 +94,12 @@
 		<div class="mx-auto flex w-full max-w-md flex-col">
 			<Countdown />
 			<!-- Mirrored so the cow faces the headline. The flip is on this wrapper because the wobble animation sets the cow's own transform. -->
-			<div class="-scale-x-100">
-				<Cow
-					title="The DDDSW cow"
-					class="wobble w-full text-white drop-shadow-[0_8px_0_var(--color-surface-950)]" />
+			<div class="vt-hero-cow">
+				<div class="-scale-x-100">
+					<Cow
+						title="The DDDSW cow"
+						class="wobble w-full text-white drop-shadow-[0_8px_0_var(--color-surface-950)]" />
+				</div>
 			</div>
 		</div>
 	</Container>

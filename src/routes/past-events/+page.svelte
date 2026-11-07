@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { flushSync, onMount } from 'svelte';
+	import { tabTransition } from '#lib/viewTransitions.ts';
 	import { replaceState } from '$app/navigation';
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 	import Cow from '#lib/components/Cow.svelte';
@@ -18,7 +19,8 @@
 	}
 
 	function onTabChange(value: string) {
-		year = value;
+		const index = (y: string) => pastEvents.findIndex((e) => String(e.year) === y);
+		tabTransition(index(year), index(value), () => flushSync(() => (year = value)));
 		replaceState(`#${value}`, {});
 	}
 
@@ -53,7 +55,7 @@
 			{/each}
 		</Tabs.List>
 		{#each pastEvents as e (e.year)}
-			<Tabs.Content value={String(e.year)} class="mt-8 space-y-10">
+			<Tabs.Content value={String(e.year)} class="vt-tab-panel mt-8 space-y-10">
 				<header
 					class="space-y-6 card bg-surface-950 p-6 text-surface-50 md:p-10 dark:border dark:border-surface-700 dark:bg-surface-900">
 					<div class="flex flex-wrap items-center justify-between gap-6">

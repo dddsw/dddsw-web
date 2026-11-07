@@ -1,0 +1,286 @@
+/*
+ * View transitions. See src/lib/viewTransitions.ts for when they run.
+ *
+ * Names only exist while a transition is captured (`html[data-vt=<kind>]`). Timings: the old page
+ * gets out of the way fast (120ms), the new one settles in just behind it, and shared elements
+ * (header pill, banner, cow) move over 300ms. That is a touch over the performance spec's
+ * 150–250ms guide: we tried both, and the slightly relaxed pace read better for the sliding pill
+ * and banner. Nothing waits on it: the new page is already in place underneath.
+ */
+
+:root {
+	--vt-out-dur: 120ms;
+	--vt-in-dur: 235ms;
+	--vt-in-delay: 65ms;
+	--vt-move-dur: 300ms;
+	--vt-ease-out: cubic-bezier(0.2, 0, 0, 1);
+	--vt-ease-in: cubic-bezier(0.4, 0, 1, 1);
+	--vt-dx: 0;
+	--vt-dy: 0;
+}
+
+/* Full page loads (no client-side router) get a plain, quick crossfade. */
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
+@keyframes vt-out {
+	to {
+		opacity: 0;
+		transform: translate(calc(var(--vt-dx) * -16px), 0);
+	}
+}
+@keyframes vt-in {
+	from {
+		opacity: 0;
+		transform: translate(calc(var(--vt-dx) * 32px), calc(var(--vt-dy) * 12px));
+	}
+}
+@keyframes vt-pop-in {
+	from {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+@keyframes vt-pop-out {
+	to {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+/* The cow turns round mid-flight: edge-on at the halfway point, where the two images swap. */
+@keyframes vt-turn-out {
+	50% {
+		transform: rotateY(90deg);
+		opacity: 1;
+	}
+	50.1%,
+	100% {
+		transform: rotateY(90deg);
+		opacity: 0;
+	}
+}
+@keyframes vt-turn-in {
+	0%,
+	49.9% {
+		transform: rotateY(-90deg);
+		opacity: 0;
+	}
+	50% {
+		transform: rotateY(-90deg);
+		opacity: 1;
+	}
+}
+
+html[data-vt]::view-transition-group(*) {
+	animation-duration: var(--vt-move-dur);
+	animation-timing-function: var(--vt-ease-out);
+}
+
+/* ---------- Page navigation ---------- */
+
+/* The header never moves: its background, the current-page pill and its contents stack on top. */
+html[data-vt='nav'] .vt-header-bg {
+	view-transition-name: site-header-bg;
+}
+html[data-vt='nav'] .vt-header {
+	view-transition-name: site-header;
+}
+html[data-vt='nav'] .vt-pill {
+	view-transition-name: nav-pill;
+}
+html[data-vt='nav']::view-transition-group(site-header-bg) {
+	z-index: 50;
+}
+html[data-vt='nav']::view-transition-group(nav-pill) {
+	z-index: 51;
+}
+html[data-vt='nav']::view-transition-group(site-header) {
+	z-index: 52;
+}
+/*
+ * Moving between two links, the pill is drawn by the group itself: a real rounded box whose size
+ * animates, rather than a snapshot being stretched (which would squash its corners).
+ */
+html[data-vt='nav'][data-vt-pill-morph]::view-transition-group(nav-pill) {
+	background-color: var(--color-primary-500);
+	border-radius: var(--radius-base);
+}
+html[data-vt='nav'][data-vt-pill-morph]::view-transition-image-pair(nav-pill) {
+	display: none;
+}
+
+/*
+ * The link the pill leaves and the one it heads to sit above it, and swap their text colour as
+ * the pill actually leaves or covers them (not across the whole transition), so the text is never
+ * dark-on-dark or lost against the pill. The clicked link's hover box isn't captured at all, so
+ * it is never seen behind the arriving pill.
+ */
+html[data-vt='nav'] [data-vt-link='to']:not([aria-current]) {
+	background-color: transparent !important;
+	color: inherit !important;
+}
+html[data-vt='nav'] [data-vt-link='from'] {
+	view-transition-name: nav-from;
+}
+html[data-vt='nav'] [data-vt-link='to'] {
+	view-transition-name: nav-to;
+}
+html[data-vt='nav']::view-transition-group(nav-from),
+html[data-vt='nav']::view-transition-group(nav-to) {
+	z-index: 53;
+}
+html[data-vt='nav']::view-transition-old(nav-from) {
+	animation: vt-swap-out-early var(--vt-move-dur) linear both;
+}
+html[data-vt='nav']::view-transition-new(nav-from) {
+	animation: vt-swap-in-early var(--vt-move-dur) linear both;
+}
+html[data-vt='nav']::view-transition-old(nav-to) {
+	animation: vt-swap-out-late var(--vt-move-dur) linear both;
+}
+html[data-vt='nav']::view-transition-new(nav-to) {
+	animation: vt-swap-in-late var(--vt-move-dur) linear both;
+}
+/* Early: as the pill pulls away (it moves fastest at the start). Late: as it covers the link. */
+@keyframes vt-swap-out-early {
+	0%,
+	3% {
+		opacity: 1;
+	}
+	15%,
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes vt-swap-in-early {
+	0%,
+	3% {
+		opacity: 0;
+	}
+	15%,
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes vt-swap-out-late {
+	0%,
+	40% {
+		opacity: 1;
+	}
+	60%,
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes vt-swap-in-late {
+	0%,
+	40% {
+		opacity: 0;
+	}
+	60%,
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Arriving on, or leaving, a page that isn't in the nav: the pill grows in or shrinks away. */
+html[data-vt='nav']::view-transition-new(nav-pill):only-child {
+	animation: vt-pop-in var(--vt-in-dur) var(--vt-ease-out) both;
+}
+html[data-vt='nav']::view-transition-old(nav-pill):only-child {
+	animation: vt-pop-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+
+/*
+ * The page itself: out quickly, then in from the side the pill moved towards (or rising, for
+ * pages outside the nav), set by --vt-dx/--vt-dy.
+ */
+html[data-vt='nav']::view-transition-old(root) {
+	animation: vt-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+html[data-vt='nav']::view-transition-new(root) {
+	animation: vt-in var(--vt-in-dur) var(--vt-ease-out) var(--vt-in-delay) both;
+}
+
+/* The orange banner stays put and only changes height; its words are swapped like the content. */
+html[data-vt='nav']:not([data-vt-banner-hidden]) {
+	.vt-banner {
+		view-transition-name: page-banner;
+	}
+	.vt-heading {
+		view-transition-name: page-heading;
+	}
+	.vt-banner-cow,
+	.vt-hero-cow {
+		view-transition-name: banner-cow;
+	}
+}
+/*
+ * Between two banners, the orange box is drawn by the group itself, so its height slides from one
+ * to the other. (Snapshots keep their own height and would only crossfade between the two.)
+ */
+html[data-vt='nav'][data-vt-banner-morph]::view-transition-group(page-banner) {
+	background-color: var(--color-primary-500);
+}
+html[data-vt='nav'][data-vt-banner-morph]::view-transition-image-pair(page-banner) {
+	display: none;
+}
+/* Text is never stretched: each snapshot keeps its own size, pinned to the top left. */
+html[data-vt='nav']::view-transition-old(page-heading),
+html[data-vt='nav']::view-transition-new(page-heading) {
+	inline-size: auto;
+	block-size: auto;
+}
+html[data-vt='nav']::view-transition-old(page-heading) {
+	animation: vt-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+html[data-vt='nav']::view-transition-new(page-heading) {
+	animation: vt-in var(--vt-in-dur) var(--vt-ease-out) var(--vt-in-delay) both;
+}
+/* A banner only one side can see (e.g. back to a page restored mid-scroll) leaves as fast as the page. */
+html[data-vt='nav']::view-transition-old(page-banner):only-child,
+html[data-vt='nav']::view-transition-old(banner-cow):only-child {
+	animation: vt-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+html[data-vt='nav']::view-transition-new(page-banner):only-child {
+	animation: vt-in var(--vt-in-dur) var(--vt-ease-out) var(--vt-in-delay) both;
+}
+/* Home ↔ page: the hero cow flies to the banner corner and turns to face the other way. */
+html[data-vt='nav'][data-vt-home]::view-transition-old(banner-cow) {
+	animation: vt-turn-out var(--vt-move-dur) linear both;
+}
+html[data-vt='nav'][data-vt-home]::view-transition-new(banner-cow) {
+	animation: vt-turn-in var(--vt-move-dur) linear both;
+}
+
+/* ---------- Past events tabs ---------- */
+
+html[data-vt='tabs'] .vt-tab-panel:not([hidden]) {
+	view-transition-name: tab-panel;
+}
+html[data-vt='tabs']::view-transition-old(tab-panel) {
+	animation: vt-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+html[data-vt='tabs']::view-transition-new(tab-panel) {
+	animation: vt-in var(--vt-in-dur) var(--vt-ease-out) var(--vt-in-delay) both;
+}
+
+/* ---------- Colour mode: the new mode is revealed by a circle (animated from script). ---------- */
+
+html[data-vt='theme']::view-transition-old(root),
+html[data-vt='theme']::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+
+/* Reduced motion: no transition at all, not just a shorter one. */
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}

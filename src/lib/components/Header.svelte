@@ -43,10 +43,13 @@
 	}
 </script>
 
-<header
-	bind:clientHeight={headerHeight}
-	class="sticky top-0 z-30 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
-	<Container class="flex items-center justify-between gap-2 py-3 sm:gap-4">
+<header bind:clientHeight={headerHeight} class="sticky top-0 z-30">
+	<!-- The background is its own layer so view transitions can keep it still under the moving pill. -->
+	<div
+		aria-hidden="true"
+		class="vt-header-bg absolute inset-0 -z-10 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
+	</div>
+	<Container class="vt-header flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
 			href="/"
 			class="group -mx-2 flex shrink-0 items-center gap-2 rounded-base sm:gap-3 px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
@@ -67,10 +70,16 @@
 						<a
 							href={item.href}
 							class={[
-								'block rounded-base px-3 py-2 font-semibold whitespace-nowrap no-underline',
-								isCurrent(item.href) ? CURRENT : HOVER
+								'relative isolate block rounded-base px-3 py-2 font-semibold whitespace-nowrap no-underline',
+								isCurrent(item.href) ? `${CURRENT} bg-transparent!` : HOVER
 							]}
 							aria-current={isCurrent(item.href) ? 'page' : undefined}>
+							<!-- The orange pill is its own element so it can slide between links. -->
+							{#if isCurrent(item.href)}
+								<span
+									aria-hidden="true"
+									class="vt-pill absolute inset-0 -z-10 rounded-base bg-primary-500"></span>
+							{/if}
 							{item.label}
 						</a>
 					</li>
