@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { event } from '#lib/eventDetails.ts';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';
 
 	let { title, lead }: { title: string; lead?: string } = $props();
 </script>
-
-<svelte:head>
-	<title>{title} · {event.shortName} {event.year}</title>
-</svelte:head>
 
 <section class="relative overflow-hidden bg-primary-500 text-surface-950">
 	<!-- Tablet: peeks in from the right edge (nose clipped). Desktop: sits fully visible, aligned with the content's right edge. -->

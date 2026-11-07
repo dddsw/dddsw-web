@@ -15,6 +15,7 @@ yarn.lock
 *.png
 *.jpg
 *.webp
+*.ico
 *.svg
 .*ignore
 .node-version

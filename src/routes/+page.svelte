@@ -53,10 +53,6 @@
 	const ticketsOpen = $derived(resolveFeatured(preview.featured)?.id === 'tickets');
 </script>
 
-<svelte:head>
-	<title>{event.name} · {event.shortName} {event.year}</title>
-</svelte:head>
-
 <section class="bg-primary-500 text-surface-950">
 	<Container class="grid items-center gap-8 py-14 md:grid-cols-[1.3fr_1fr] md:py-24">
 		<div class="space-y-6">

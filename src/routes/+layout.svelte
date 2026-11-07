@@ -22,11 +22,50 @@
 	const description = $derived(
 		page.error === null ? (page.data.lead ?? defaultDescription) : defaultDescription
 	);
+
+	// The page's own name first, then the site's. The home page has no `title` and uses the full name.
+	const suffix = `${event.shortName} ${event.year}`;
+	const title = $derived(
+		page.error !== null
+			? `${page.status} · ${suffix}`
+			: `${page.data.title ?? event.name} · ${suffix}`
+	);
+
+	// The one public address of each page: the apex host, no trailing slash, no query string.
+	// Error pages have none, so they never claim to be the page that failed.
+	const canonical = $derived(page.error === null ? `${event.siteUrl}${page.url.pathname}` : null);
+	const socialImage = `${event.siteUrl}/og-image.png`;
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	<title>{title}</title>
 	<meta name="description" content={description} />
+	{#if canonical}
+		<link rel="canonical" href={canonical} />
+		<meta property="og:url" content={canonical} />
+	{/if}
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content={event.name} />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={socialImage} />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="675" />
+	<meta
+		property="og:image:alt"
+		content="Developer! Developer! Developer! South West: a friendly, community-run conference for software developers in Bristol." />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={socialImage} />
+	<meta name="robots" content="max-image-preview:large" />
+
+	<link rel="icon" href="/favicon.ico" sizes="32x32" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 	<meta name="theme-color" content="#ff9930" />
 </svelte:head>
 
