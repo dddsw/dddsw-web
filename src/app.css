@@ -12,6 +12,11 @@
 
 html {
 	color-scheme: light;
+	/*
+	 * Keep anything scrolled to (in-page links, and controls reached with Tab) clear of the
+	 * sticky header, so it is never hidden behind it.
+	 */
+	scroll-padding-top: 5rem;
 }
 html.dark {
 	color-scheme: dark;
@@ -57,8 +62,12 @@ html.dark {
 	filter: none;
 }
 
-/* Keyboard focus: a two-tone ring that stays visible on any background. */
-:focus-visible {
+/*
+ * Keyboard focus: a two-tone ring that stays visible on any background. Skeleton's switch focuses
+ * a visually hidden checkbox, so its visible track takes the ring instead.
+ */
+:focus-visible,
+[data-scope='switch'][data-part='root']:has(input:focus-visible) [data-part='control'] {
 	outline: 3px solid var(--color-surface-950);
 	outline-offset: 2px;
 	box-shadow: 0 0 0 5px var(--color-surface-50);
@@ -76,6 +85,12 @@ a[href^='mailto:'] {
 	border: 1px solid light-dark(var(--color-primary-300), var(--color-primary-500));
 }
 
+/* The skip link moves focus to <main>, which needs no ring of its own. */
+main:focus {
+	outline: none;
+	box-shadow: none;
+}
+
 .wobble:hover {
 	animation: wobble 0.6s ease-in-out;
 }
@@ -87,8 +102,50 @@ a[href^='mailto:'] {
 		transform: rotate(4deg);
 	}
 }
+/*
+ * Reduced motion: stop animations, transitions and smooth scrolling everywhere, including inside
+ * Skeleton's components, rather than relying on every component to remember `motion-safe:`.
+ */
 @media (prefers-reduced-motion: reduce) {
-	.wobble:hover {
-		animation: none;
+	*,
+	::before,
+	::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/*
+ * Forced colours (Windows contrast themes): the browser swaps our colours for the user's and drops
+ * backgrounds and shadows, so restore the edges and states that only a background was showing.
+ */
+@media (forced-colors: active) {
+	/* Buttons, button-styled links and the dark mode switch keep a visible edge. */
+	.btn,
+	.btn-icon,
+	.chip,
+	[data-scope='switch'][data-part='control'],
+	[data-scope='switch'][data-part='thumb'] {
+		border: 1px solid;
+	}
+	/* The current page and the selected tab are a filled pill normally: mark them with Highlight. */
+	[aria-current='page'],
+	[data-scope='tabs'][data-part='trigger'][data-selected] {
+		outline: 2px solid Highlight;
+		outline-offset: -2px;
+	}
+	[data-scope='tabs'][data-part='indicator'] {
+		forced-color-adjust: none;
+		background-color: Highlight;
+	}
+	/* The colour of these is the information, so keep a system colour on them. */
+	.forced-fill {
+		forced-color-adjust: none;
+		background-color: Highlight;
+	}
+	.forced-track {
+		border: 1px solid CanvasText;
 	}
 }

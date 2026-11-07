@@ -58,8 +58,9 @@
 			aria-valuemin={0}
 			aria-valuemax={seatMilestones[seatMilestones.length - 1].seats}
 			aria-valuenow={securedSeats}
-			class="relative h-8 rounded-full bg-surface-300-700">
-			<div class="h-full rounded-full bg-primary-500" style:width="{securedPosition}%"></div>
+			class="forced-track relative h-8 rounded-full bg-surface-300-700">
+			<div class="forced-fill h-full rounded-full bg-primary-500" style:width="{securedPosition}%">
+			</div>
 			<div
 				aria-hidden="true"
 				class="absolute inset-y-0 w-1 -translate-x-1/2 bg-surface-50-950"
@@ -68,7 +69,7 @@
 			<!-- Where we are now: a knob on the bar, with a label on whichever side has room. -->
 			<span
 				aria-hidden="true"
-				class="absolute top-1/2 size-11 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600 shadow-md"
+				class="forced-fill absolute top-1/2 size-11 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600 shadow-md"
 				style:left="clamp(1.375rem, {securedPosition}%, calc(100% - 1.375rem))"></span>
 			<span
 				aria-hidden="true"
