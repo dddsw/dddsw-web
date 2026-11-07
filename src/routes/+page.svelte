@@ -11,6 +11,7 @@
 	import { resolveFeatured } from '#lib/featured.ts';
 	import { currentUpdate } from '#lib/latestUpdate.ts';
 	import { scheduleShown } from '#lib/navigation.ts';
+	import { homeStructuredData, jsonLd } from '#lib/seo.ts';
 
 	const allCards = [
 		{
@@ -51,7 +52,16 @@
 
 	// The ticket button waits for tickets to open, like the Tickets button in the header.
 	const ticketsOpen = $derived(resolveFeatured(preview.featured)?.id === 'tickets');
+
+	// Split so the closing tag doesn't end this component's own <script> block.
+	const structuredData =
+		`<script type="application/ld+json">${jsonLd(homeStructuredData())}</` + 'script>';
 </script>
+
+<svelte:head>
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -- our own data, with `<` escaped by jsonLd -->
+	{@html structuredData}
+</svelte:head>
 
 <section class="bg-primary-500 text-surface-950">
 	<Container class="grid items-center gap-8 py-14 md:grid-cols-[1.3fr_1fr] md:py-24">

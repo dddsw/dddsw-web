@@ -131,6 +131,41 @@ test.describe('meta description', () => {
 	});
 });
 
+test.describe('search engines', () => {
+	const robots = (page: import('@playwright/test').Page) =>
+		page.locator('meta[name="robots"]').getAttribute('content');
+
+	test('index public pages', async ({ page }) => {
+		await page.goto('/venue');
+		expect(await robots(page)).not.toContain('noindex');
+	});
+
+	test('skip unlisted pages', async ({ page }) => {
+		await page.goto('/code-of-conduct/internal');
+		expect(await robots(page)).toBe('noindex');
+	});
+
+	test('skip programme pages until the programme is out', async ({ page }) => {
+		await page.goto('/schedule');
+		expect(await robots(page)).toBe('noindex');
+	});
+
+	test('find the sitemap from robots.txt', async ({ request }) => {
+		expect(await (await request.get('/robots.txt')).text()).toContain(
+			'Sitemap: https://dddsouthwest.com/sitemap.xml'
+		);
+		const sitemap = await request.get('/sitemap.xml');
+		expect(sitemap.headers()['content-type']).toContain('application/xml');
+		expect(await sitemap.text()).toContain('<loc>https://dddsouthwest.com/venue</loc>');
+	});
+
+	test('move uppercase URLs to lowercase', async ({ request }) => {
+		const response = await request.get('/Venue', { maxRedirects: 0 });
+		expect(response.status()).toBe(301);
+		expect(response.headers()['location']).toBe('/venue');
+	});
+});
+
 test('theme toggle switches and remembers dark mode', async ({ page }) => {
 	await page.emulateMedia({ colorScheme: 'light' });
 	await page.goto('/');
