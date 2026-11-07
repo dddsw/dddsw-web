@@ -38,9 +38,12 @@
 			<li
 				class="flex flex-col items-center gap-3 card preset-filled-surface-100-900 p-6 text-center">
 				<Avatar class="wobble size-28 ring-4 ring-primary-500">
-					<!-- Avatar renders its own <img>, so it gets the AVIF sizes as a srcset. -->
+					<!--
+						Avatar renders its own <img>, which can't pick a format the way <picture> does,
+						so it gets the WebP sizes: every current browser decodes WebP, not all do AVIF.
+					-->
 					{@const photo = picture(`team/${member.photo}`)}
-					<Avatar.Image src={photo.img.src} srcset={photo.sources.avif} alt="" />
+					<Avatar.Image src={photo.img.src} srcset={photo.sources.webp} alt="" />
 					<Avatar.Fallback>{initials(member.name)}</Avatar.Fallback>
 				</Avatar>
 				<h3 class="h5">{member.name}</h3>
