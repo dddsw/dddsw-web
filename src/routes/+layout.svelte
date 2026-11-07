@@ -7,6 +7,7 @@
 	import Footer from '#lib/components/Footer.svelte';
 	import PageHeading from '#lib/components/PageHeading.svelte';
 	import { event } from '#lib/eventDetails.ts';
+	import { socialCard } from '#lib/socialCard.ts';
 	import { toaster } from '#lib/toaster.ts';
 	import { Toast } from '@skeletonlabs/skeleton-svelte';
 
@@ -34,7 +35,7 @@
 	// The one public address of each page: the apex host, no trailing slash, no query string.
 	// Error pages have none, so they never claim to be the page that failed.
 	const canonical = $derived(page.error === null ? `${event.siteUrl}${page.url.pathname}` : null);
-	const socialImage = `${event.siteUrl}/og-image.png`;
+	const socialImage = `${event.siteUrl}${socialCard.path}`;
 </script>
 
 <svelte:head>
@@ -51,11 +52,9 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={socialImage} />
 	<meta property="og:image:type" content="image/png" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="675" />
-	<meta
-		property="og:image:alt"
-		content="Developer! Developer! Developer! South West: a friendly, community-run conference for software developers in Bristol." />
+	<meta property="og:image:width" content={String(socialCard.width)} />
+	<meta property="og:image:height" content={String(socialCard.height)} />
+	<meta property="og:image:alt" content={socialCard.alt} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
