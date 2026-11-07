@@ -74,7 +74,7 @@
 			<span
 				aria-hidden="true"
 				class="absolute top-1/2 -translate-y-1/2 text-xs font-semibold whitespace-nowrap sm:text-sm {onFill
-					? 'text-right text-surface-950'
+					? 'forced-on-fill text-right text-surface-950'
 					: 'text-surface-950-50'}"
 				style:left={onFill ? undefined : `calc(max(${securedPosition}%, 1.375rem) + 2rem)`}
 				style:right={onFill ? `calc(${100 - securedPosition}% + 2rem)` : undefined}>

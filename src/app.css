@@ -150,6 +150,11 @@ main:focus {
 		forced-color-adjust: none;
 		background-color: Highlight;
 	}
+	/* Text sitting on a Highlight fill. */
+	.forced-on-fill {
+		forced-color-adjust: none;
+		color: HighlightText;
+	}
 	.forced-track {
 		border: 1px solid CanvasText;
 	}
