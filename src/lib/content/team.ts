@@ -1,6 +1,6 @@
 export interface TeamMember {
 	name: string;
-	/** Filename in static/images/team */
+	/** Filename in src/lib/assets/images/team */
 	photo: string;
 	email: string;
 	linkedIn?: string;

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+	import { picture } from '#lib/images.ts';
 	import Principles from '#lib/components/Principles.svelte';
 	import SocialIcon from '#lib/components/SocialIcon.svelte';
 	import { event } from '#lib/eventDetails.ts';
@@ -37,7 +38,9 @@
 			<li
 				class="flex flex-col items-center gap-3 card preset-filled-surface-100-900 p-6 text-center">
 				<Avatar class="wobble size-28 ring-4 ring-primary-500">
-					<Avatar.Image src="/images/team/{member.photo}" alt="" />
+					<!-- Avatar renders its own <img>, so it gets the AVIF sizes as a srcset. -->
+					{@const photo = picture(`team/${member.photo}`)}
+					<Avatar.Image src={photo.img.src} srcset={photo.sources.avif} alt="" />
 					<Avatar.Fallback>{initials(member.name)}</Avatar.Fallback>
 				</Avatar>
 				<h3 class="h5">{member.name}</h3>

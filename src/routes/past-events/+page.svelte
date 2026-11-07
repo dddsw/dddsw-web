@@ -4,6 +4,7 @@
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 	import Cow from '#lib/components/Cow.svelte';
 	import { pastEvents } from '#lib/content/pastEvents.ts';
+	import { picture } from '#lib/images.ts';
 
 	let year = $state(String(pastEvents[0].year));
 
@@ -66,8 +67,8 @@
 							<!-- The box hugs the logo, so the padding is even all round. -->
 							<div
 								class="flex h-28 w-fit max-w-56 items-center justify-center overflow-hidden rounded-container bg-white p-2">
-								<img
-									src={e.logo}
+								<enhanced:img
+									src={picture(e.logo)}
 									alt="{e.title} logo"
 									class="h-full w-auto max-w-full object-contain" />
 							</div>
@@ -187,11 +188,12 @@
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							{#each e.photos as photo, i (photo.src)}
 								<li class={i === 0 ? 'sm:col-span-2' : ''}>
-									<img
-										src={photo.src}
+									<enhanced:img
+										src={picture(photo.src)}
+										sizes={i === 0
+											? '(min-width: 72rem) 46rem, (min-width: 40rem) 66vw, 100vw'
+											: '(min-width: 72rem) 23rem, (min-width: 40rem) 33vw, 100vw'}
 										alt={photo.alt}
-										width="1200"
-										height="800"
 										loading="lazy"
 										class="h-full w-full rounded-container object-cover" />
 								</li>

@@ -135,14 +135,14 @@ export const sponsorReasons = [
 export interface Sponsor {
 	name: string;
 	href: string;
-	/** Filename in static/images/sponsors */
+	/** Filename in src/lib/assets/images/sponsors */
 	logo: string;
 	tier: 'exhibitor' | 'supporter' | 'refreshments';
 }
 
 /**
  * Sponsors confirmed for the current year. Only paying sponsors for this year appear on
- * the site. Add the logo to static/images/sponsors and a new entry here once confirmed.
+ * the site. Add the logo to src/lib/assets/images/sponsors and a new entry here once confirmed.
  */
 export const sponsors: Sponsor[] = [];
 
@@ -150,7 +150,7 @@ export const sponsors: Sponsor[] = [];
  * Previous sponsors, kept so they can be reinstated quickly. This list is NOT shown on the site.
  *
  * To feature one again once they've sponsored the current year, move their entry from
- * `sponsorArchive` into `sponsors` above (their logo is already in static/images/sponsors/).
+ * `sponsorArchive` into `sponsors` above (their logo is already in src/lib/assets/images/sponsors/).
  */
 export const sponsorArchive: Sponsor[] = [
 	{ name: 'SECCL', href: 'https://seccl.tech/', logo: 'seccl.webp', tier: 'exhibitor' },
@@ -169,7 +169,7 @@ export const sponsorArchive: Sponsor[] = [
 	{
 		name: 'ClearBank',
 		href: 'https://clear.bank/',
-		logo: 'ClearBank logo.webp',
+		logo: 'clearbank.webp',
 		tier: 'exhibitor'
 	},
 	{

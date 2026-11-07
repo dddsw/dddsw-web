@@ -25,6 +25,11 @@ html.dark {
  * buttons keep their own look. In the base layer so utilities such as `no-underline` still win.
  */
 @layer base {
+	/* <enhanced:img> wraps each image in a <picture>; let the <img> lay out as if it weren't. */
+	picture {
+		display: contents;
+	}
+
 	/* Short, heading-like text wraps into even lines rather than leaving one word on its own. */
 	h1,
 	h2,
