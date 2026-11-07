@@ -43,6 +43,8 @@ npm run test:ui
 
 You can also run them via the Playwright VS Code extension.
 
+Each test run starts its own dev server on a free port, so it never reuses a dev server you already have running (for example on 5173, or one from another git worktree), and runs from several worktrees can happen at the same time. To pin the port, set `PLAYWRIGHT_PORT` (e.g. `PLAYWRIGHT_PORT=5180 npm run test`); the run fails if that port is already in use.
+
 ### Visual comparison tests
 
 The tests generate page previews in different device sizes and test to ensure that they haven't changed. The screenshots are saved under `tests\__screenshots__`. and can be regenerated with `npm run test:update-screenshots`.
