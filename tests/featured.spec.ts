@@ -164,6 +164,14 @@ test.describe('search engines', () => {
 		expect(response.status()).toBe(301);
 		expect(response.headers()['location']).toBe('/venue');
 	});
+
+	test('keep the lowercase redirect on this site', async ({ request, baseURL }) => {
+		// Built by hand: a relative `//EXAMPLE.COM` would be read as another host.
+		const url = `${new URL(baseURL!).origin}//EXAMPLE.COM/About`;
+		const response = await request.get(url, { maxRedirects: 0 });
+		expect(response.status()).toBe(301);
+		expect(response.headers()['location']).toBe('/example.com/about');
+	});
 });
 
 test('theme toggle switches and remembers dark mode', async ({ page }) => {

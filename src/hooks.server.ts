@@ -22,10 +22,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 	// One public spelling per page: an uppercase page URL moves permanently to its lowercase form.
 	// Files (anything with an extension, and the build's `/_app/` assets) keep their own case.
 	if (pathname !== pathname.toLowerCase() && isPagePath(pathname)) {
-		return new Response(null, {
-			status: 301,
-			headers: { Location: pathname.toLowerCase() + event.url.search }
-		});
+		// Collapse leading slashes so `//EXAMPLE.COM` can't become a redirect to another host.
+		const location = `/${pathname.toLowerCase().replace(/^\/+/, '')}${event.url.search}`;
+		return new Response(null, { status: 301, headers: { Location: location } });
 	}
 
 	const response = await resolve(event);
