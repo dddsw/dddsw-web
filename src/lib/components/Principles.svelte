@@ -14,8 +14,10 @@
 	<ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 		{#each principles as p (p.title)}
 			<li class="space-y-2 card tint-orange p-6">
-				<span class="text-4xl" aria-hidden="true">{p.emoji}</span>
-				<h3 class="h5">{p.title}</h3>
+				<h3 class="flex items-center gap-2 h5">
+					<span class="text-2xl" aria-hidden="true">{p.emoji}</span>
+					{p.title}
+				</h3>
 				<p>{p.body}</p>
 			</li>
 		{/each}

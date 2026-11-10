@@ -134,8 +134,8 @@
 		{#each cards as card (card.href)}
 			<div
 				class="group relative flex cursor-pointer flex-col gap-2 card border border-transparent preset-filled-surface-100-900 p-6 transition hover:tint-orange has-focus-visible:tint-orange has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-secondary-700-300">
-				<span class="text-4xl" aria-hidden="true">{card.emoji}</span>
-				<h3 class="h4">
+				<h3 class="flex items-center gap-2 h4">
+					<span class="text-2xl" aria-hidden="true">{card.emoji}</span>
 					<!-- Stretched link: the whole card is the link, with the title as its accessible name. -->
 					<a href={card.href} class="no-underline after:absolute after:inset-0">{card.title}</a>
 				</h3>

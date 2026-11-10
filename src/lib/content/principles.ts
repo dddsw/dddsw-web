@@ -26,7 +26,7 @@ export const principles: Principle[] = [
 	},
 	{
 		emoji: '🗳️',
-		title: 'A democratic agenda',
+		title: 'Democratic agenda',
 		body: 'The community helps choose the sessions, so the programme is what attendees actually want to see.'
 	}
 ];
