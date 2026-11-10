@@ -17,6 +17,8 @@ export interface SocialAsset {
 	use: string;
 	width: number;
 	height: number;
+	/** Whether the event name and year, as in the site header, sit under the cow. */
+	wordmark?: boolean;
 }
 
 export const schemes: { id: Scheme; label: string }[] = [
@@ -32,6 +34,15 @@ export const socialAssets: SocialAsset[] = [
 		use: 'Bluesky, LinkedIn, Facebook and X. The cow stays clear of the circle crop.',
 		width: 1080,
 		height: 1080
+	},
+	{
+		id: 'profile-picture-name',
+		kind: 'avatar',
+		label: 'Profile picture with name',
+		use: 'The same, with the event name and year under the cow, as in the site header.',
+		width: 1080,
+		height: 1080,
+		wordmark: true
 	},
 	{
 		id: 'linkedin-banner',
