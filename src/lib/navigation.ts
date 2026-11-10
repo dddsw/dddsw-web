@@ -64,5 +64,6 @@ export const moreLinks: NavItem[] = [
 	{ href: '/privacy-policy', label: 'Privacy policy' },
 	{ href: '/call-for-papers', label: 'Call for papers' },
 	{ href: '/session-voting', label: 'Session voting' },
-	{ href: '/tickets', label: 'Tickets' }
+	{ href: '/tickets', label: 'Tickets' },
+	{ href: '/media-assets', label: 'Media Assets' }
 ];
