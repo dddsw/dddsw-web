@@ -15,7 +15,8 @@
 		"lint:fix:all": "eslint --fix . & prettier --write .",
 		"lint:fix:staged": "npx lint-staged",
 		"prepare": "husky && svelte-kit sync",
-		"test:unit": "vitest run"
+		"test:unit": "vitest run",
+		"generate:social-assets": "node scripts/generate-social-assets.ts"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "4.14.0",
