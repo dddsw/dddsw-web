@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { event } from '#lib/eventDetails.ts';
 	import { toaster } from '#lib/toaster.ts';
 	import {
@@ -36,10 +37,14 @@
 		{ title: 'Icons', items: mediaDownloads.icons }
 	];
 
-	/** Puts the full address of a file (with our domain) on the clipboard, for pasting into a post. */
+	// The public address, except when running locally, so the copied URLs can be tried out there.
+	const localHosts = ['localhost', '127.0.0.1', '[::1]'];
+	const origin = $derived(localHosts.includes(page.url.hostname) ? page.url.origin : event.siteUrl);
+
+	/** Puts the full address of a file on the clipboard, for pasting into a post. */
 	async function copyUrl(path: string) {
 		try {
-			await navigator.clipboard.writeText(`${event.siteUrl}${path}`);
+			await navigator.clipboard.writeText(`${origin}${path}`);
 			toaster.success({ title: 'Copied', description: 'The image URL is on your clipboard.' });
 		} catch {
 			toaster.error({
