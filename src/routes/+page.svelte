@@ -143,7 +143,7 @@
 				<!-- Decorative cue that the card is a link; it nudges along on hover unless reduced motion is on. -->
 				<p
 					aria-hidden="true"
-					class="mt-auto pt-2 text-2xl text-secondary-700-300 transition-transform motion-safe:group-hover:translate-x-1 motion-safe:group-has-focus-visible:translate-x-1">
+					class="pointer-events-none mt-auto pt-2 text-2xl text-secondary-700-300 transition-transform motion-safe:group-hover:translate-x-1 motion-safe:group-has-focus-visible:translate-x-1">
 					→
 				</p>
 			</div>
