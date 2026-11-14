@@ -7,10 +7,16 @@
 
 	/**
 	 * A cow peeking in from the bottom-left corner with a "we don't track you" bubble. Closing it
-	 * (or following its link) is remembered in this browser, so it only says hello once.
+	 * (or following its link) is remembered in this browser, so it's then gone for good. Left alone,
+	 * it wanders off after 30 seconds and comes back 15 minutes later, round and round.
 	 */
 
 	const dismissedKey = 'privacyCowDismissed';
+	// When the cow may next appear after wandering off; kept so a reload doesn't bring it straight back.
+	const snoozedUntilKey = 'privacyCowSnoozedUntil';
+	const firstDelay = 1200;
+	const visibleFor = 30 * 1000;
+	const snoozeFor = 15 * 60 * 1000;
 
 	// The front of the cow (head, neck, chest and front legs) shows; the rest is drawn too, but sits
 	// off the left of the screen, so the entrance's overshoot never reveals a cut-off cow.
@@ -42,6 +48,8 @@
 
 	let pointer: { x: number; y: number } | null = null;
 	let idleTimer: ReturnType<typeof setTimeout> | undefined;
+	let cycleTimer: ReturnType<typeof setTimeout> | undefined;
+	let speakTimer: ReturnType<typeof setTimeout> | undefined;
 	let frame = 0;
 
 	/** Where each pupil wants to be: towards the pointer, or hanging down when there isn't one. */
@@ -104,6 +112,8 @@
 	function dismiss() {
 		open = false;
 		shown = false;
+		clearTimeout(cycleTimer);
+		clearTimeout(speakTimer);
 		try {
 			localStorage.setItem(dismissedKey, '1');
 		} catch {
@@ -111,28 +121,48 @@
 		}
 	}
 
+	/** Slide in and speak, then wander off again after a while. */
+	function arrive() {
+		shown = true;
+		// The pupils lag behind as the cow slides in from the left, then swing about as it stops.
+		for (const eye of eyes) {
+			eye.x = -reach;
+			eye.y = 0;
+		}
+		wake();
+		speakTimer = setTimeout(() => (open = true), duration(800));
+		cycleTimer = setTimeout(leave, visibleFor);
+	}
+
+	/** Not dismissed, just bored: hide for a while, then come back. */
+	function leave() {
+		open = false;
+		shown = false;
+		clearTimeout(speakTimer);
+		try {
+			localStorage.setItem(snoozedUntilKey, String(Date.now() + snoozeFor));
+		} catch {
+			// No storage: the timer below still brings it back during this visit.
+		}
+		cycleTimer = setTimeout(arrive, snoozeFor);
+	}
+
 	onMount(() => {
+		let delay = firstDelay;
 		try {
 			if (localStorage.getItem(dismissedKey)) return;
+			const snoozedUntil = Number(localStorage.getItem(snoozedUntilKey));
+			if (snoozedUntil) delay = Math.max(firstDelay, snoozedUntil - Date.now());
 		} catch {
 			// No storage: show it, it just can't be remembered as closed.
 		}
 		reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		const arrive = setTimeout(() => {
-			shown = true;
-			// The pupils lag behind as the cow slides in from the left, then swing about as it stops.
-			for (const eye of eyes) {
-				eye.x = -reach;
-				eye.y = 0;
-			}
-			wake();
-		}, 1200);
-		const speak = setTimeout(() => (open = true), 1200 + duration(800));
+		cycleTimer = setTimeout(arrive, delay);
 
 		return () => {
-			clearTimeout(arrive);
-			clearTimeout(speak);
+			clearTimeout(cycleTimer);
+			clearTimeout(speakTimer);
 			clearTimeout(idleTimer);
 			cancelAnimationFrame(frame);
 		};

@@ -35,6 +35,31 @@ test.describe('Privacy cow', () => {
 		await expect(cow).toHaveCount(0);
 	});
 
+	test('wanders off after 30 seconds and comes back 15 minutes later', async ({ page }) => {
+		await page.clock.install();
+		await page.goto('/about');
+		const cow = page.getByRole('complementary', { name: 'Privacy' });
+		await page.clock.runFor(2000);
+		await expect(cow).toBeVisible();
+
+		await page.clock.runFor(30_000);
+		await expect(cow).toHaveCount(0);
+
+		// Still away after a reload partway through its break.
+		await page.clock.runFor(5 * 60_000);
+		await page.reload();
+		await page.clock.runFor(2000);
+		await expect(cow).toHaveCount(0);
+
+		await page.clock.runFor(10 * 60_000);
+		await expect(cow).toBeVisible();
+		await expect(page.locator('#privacy-cow-bubble')).toContainText("We don't track you!");
+
+		// And round again.
+		await page.clock.runFor(30_000);
+		await expect(cow).toHaveCount(0);
+	});
+
 	test('stays away on the privacy policy itself', async ({ page }) => {
 		await page.goto('/privacy-policy');
 		await page.waitForTimeout(2500);
