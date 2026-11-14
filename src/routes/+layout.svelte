@@ -7,6 +7,7 @@
 	import Container from '#lib/components/Container.svelte';
 	import Header from '#lib/components/Header.svelte';
 	import Footer from '#lib/components/Footer.svelte';
+	import PrivacyCow from '#lib/components/PrivacyCow.svelte';
 	import PageHeading from '#lib/components/PageHeading.svelte';
 	import { event } from '#lib/eventDetails.ts';
 	import { unlistedRoutes } from '#lib/seo.ts';
@@ -115,6 +116,7 @@
 	{/if}
 </main>
 <Footer />
+<PrivacyCow />
 
 <Toast.Group {toaster}>
 	{#snippet children(toast)}

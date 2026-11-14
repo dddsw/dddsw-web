@@ -30,7 +30,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return new Response(null, { status: 301, headers: { Location: location } });
 	}
 
-	const analytics = analyticsFor(hostname, publicHost);
+	const analytics = analyticsFor(
+		hostname,
+		publicHost,
+		import.meta.env.VITE_GOATCOUNTER_ANY_HOST === '1'
+	);
 	const response = await resolve(event, {
 		transformPageChunk: ({ html }) => html.replace(analyticsPlaceholder, analytics)
 	});

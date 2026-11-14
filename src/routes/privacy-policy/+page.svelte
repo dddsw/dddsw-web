@@ -89,8 +89,9 @@
 		used.
 	</p>
 	<p>
-		This website does not set any cookies. It stores only your light or dark mode choice in your
-		browser, so the site looks the same next time you visit. This never leaves your device.
+		This website does not set any cookies. It only stores two small settings in your browser: your
+		light or dark mode choice, so the site looks the same next time you visit, and whether you have
+		closed our "we don't track you" cow. These never leave your device.
 	</p>
 
 	<h2 id="complaints" class="h3">How to complain</h2>
