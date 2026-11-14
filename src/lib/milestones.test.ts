@@ -269,6 +269,22 @@ describe('fullDate', () => {
 	});
 });
 
+describe('date with a time', () => {
+	it('has not happened until that time, and shows the UK date', () => {
+		vi.useFakeTimers();
+		try {
+			const m = new MilestoneDetails(Status.JustYouWait, '2027-01-31T23:59:00Z');
+			vi.setSystemTime(new Date('2027-01-31T23:58:00Z'));
+			expect(m.hasHappened).toBe(false);
+			vi.setSystemTime(new Date('2027-01-31T23:59:01Z'));
+			expect(m.hasHappened).toBe(true);
+			expect(m.formattedDate).toBe('31 January 2027');
+		} finally {
+			vi.useRealTimers();
+		}
+	});
+});
+
 describe('isoDate', () => {
 	it('is the date as YYYY-MM-DD', () => {
 		expect(new MilestoneDetails(Status.JustYouWait, '2027-04-24').isoDate).toBe('2027-04-24');

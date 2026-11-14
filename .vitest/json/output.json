@@ -1,0 +1,622 @@
+{
+	"numTotalTestSuites": 22,
+	"numPassedTestSuites": 20,
+	"numFailedTestSuites": 2,
+	"numPendingTestSuites": 0,
+	"numTotalTests": 46,
+	"numPassedTests": 45,
+	"numFailedTests": 1,
+	"numPendingTests": 0,
+	"numTodoTests": 0,
+	"snapshot": {
+		"added": 0,
+		"failure": false,
+		"filesAdded": 0,
+		"filesRemoved": 0,
+		"filesRemovedList": [],
+		"filesUnmatched": 0,
+		"filesUpdated": 0,
+		"matched": 0,
+		"total": 0,
+		"unchecked": 0,
+		"uncheckedKeysByFile": [],
+		"unmatched": 0,
+		"updated": 0,
+		"didUpdate": false
+	},
+	"startTime": 1794695970156,
+	"success": false,
+	"testResults": [
+		{
+			"assertionResults": [
+				{
+					"ancestorTitles": ["daysUntil"],
+					"fullName": "daysUntil counts whole days ignoring time of day",
+					"status": "passed",
+					"title": "counts whole days ignoring time of day",
+					"duration": 0.8313750000000013,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["daysUntil"],
+					"fullName": "daysUntil is zero on the day and negative afterwards",
+					"status": "passed",
+					"title": "is zero on the day and negative afterwards",
+					"duration": 0.1664999999999992,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["daysUntil"],
+					"fullName": "daysUntil is undefined when the milestone has no date",
+					"status": "passed",
+					"title": "is undefined when the milestone has no date",
+					"duration": 0.06562499999999716,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor without date Status.Done sets hasHappened to true",
+					"status": "passed",
+					"title": "sets hasHappened to true",
+					"duration": 0.12612500000000182,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor without date Status.Done sets hasNotHappened to false",
+					"status": "passed",
+					"title": "sets hasNotHappened to false",
+					"duration": 0.0608750000000029,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor without date Status.Done leaves formattedDate undefined",
+					"status": "passed",
+					"title": "leaves formattedDate undefined",
+					"duration": 0.05216700000000429,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor without date Status.NotYet sets hasHappened to false",
+					"status": "passed",
+					"title": "sets hasHappened to false",
+					"duration": 0.04633400000000165,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor without date Status.NotYet sets hasNotHappened to true",
+					"status": "passed",
+					"title": "sets hasNotHappened to true",
+					"duration": 0.042958999999996195,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "without date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor without date Status.NotYet leaves formattedDate undefined",
+					"status": "passed",
+					"title": "leaves formattedDate undefined",
+					"duration": 0.14216600000000312,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor with date Status.Done sets hasHappened to true",
+					"status": "passed",
+					"title": "sets hasHappened to true",
+					"duration": 0.14441700000000424,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor with date Status.Done sets hasNotHappened to false",
+					"status": "passed",
+					"title": "sets hasNotHappened to false",
+					"duration": 0.09441699999999997,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.Done"],
+					"fullName": "MilestoneDetails constructor with date Status.Done sets formattedDate in en-GB long format",
+					"status": "passed",
+					"title": "sets formattedDate in en-GB long format",
+					"duration": 0.06929199999999724,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor with date Status.NotYet sets hasHappened to false",
+					"status": "passed",
+					"title": "sets hasHappened to false",
+					"duration": 0.10066599999999681,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor with date Status.NotYet sets hasNotHappened to true",
+					"status": "passed",
+					"title": "sets hasNotHappened to true",
+					"duration": 0.07550000000000523,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "constructor", "with date", "Status.NotYet"],
+					"fullName": "MilestoneDetails constructor with date Status.NotYet sets formattedDate in en-GB long format",
+					"status": "passed",
+					"title": "sets formattedDate in en-GB long format",
+					"duration": 0.04795900000000586,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"with a past date"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait with a past date sets hasHappened to true",
+					"status": "passed",
+					"title": "sets hasHappened to true",
+					"duration": 0.16037500000000193,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"with a past date"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait with a past date sets hasNotHappened to false",
+					"status": "passed",
+					"title": "sets hasNotHappened to false",
+					"duration": 0.04666699999999935,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"with a past date"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait with a past date sets formattedDate in en-GB long format",
+					"status": "passed",
+					"title": "sets formattedDate in en-GB long format",
+					"duration": 0.03466600000000142,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"with a future date"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait with a future date sets hasHappened to false",
+					"status": "passed",
+					"title": "sets hasHappened to false",
+					"duration": 0.02912500000000051,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"with a future date"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait with a future date sets hasNotHappened to true",
+					"status": "passed",
+					"title": "sets hasNotHappened to true",
+					"duration": 0.031500000000001194,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"flips at UTC midnight"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait flips at UTC midnight has not happened one ms before UTC midnight",
+					"status": "passed",
+					"title": "has not happened one ms before UTC midnight",
+					"duration": 0.6272919999999971,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"constructor",
+						"with date",
+						"Status.JustYouWait",
+						"flips at UTC midnight"
+					],
+					"fullName": "MilestoneDetails constructor with date Status.JustYouWait flips at UTC midnight has happened one ms after UTC midnight",
+					"status": "passed",
+					"title": "has happened one ms after UTC midnight",
+					"duration": 0.07404099999999403,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "willBeHappeningSoon()", "without date"],
+					"fullName": "MilestoneDetails willBeHappeningSoon() without date returns false for Status.Done",
+					"status": "passed",
+					"title": "returns false for Status.Done",
+					"duration": 0.23579200000000355,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["MilestoneDetails", "willBeHappeningSoon()", "without date"],
+					"fullName": "MilestoneDetails willBeHappeningSoon() without date returns false for Status.NotYet",
+					"status": "passed",
+					"title": "returns false for Status.NotYet",
+					"duration": 0.10591700000000515,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has already happened"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has already happened returns false for Status.Done with date",
+					"status": "passed",
+					"title": "returns false for Status.Done with date",
+					"duration": 0.09850000000000136,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has already happened"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has already happened returns false for Status.JustYouWait with a past date",
+					"status": "passed",
+					"title": "returns false for Status.JustYouWait with a past date",
+					"duration": 0.11683299999999974,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns true when the date is tomorrow",
+					"status": "passed",
+					"title": "returns true when the date is tomorrow",
+					"duration": 0.15316699999999628,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns true when the date is just inside the one-month boundary",
+					"status": "passed",
+					"title": "returns true when the date is just inside the one-month boundary",
+					"duration": 0.08041699999999707,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns false when the date is just outside the one-month boundary",
+					"status": "passed",
+					"title": "returns false when the date is just outside the one-month boundary",
+					"duration": 0.21954200000000412,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns false when the date is far in the future",
+					"status": "passed",
+					"title": "returns false when the date is far in the future",
+					"duration": 0.11404100000000028,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns true for Status.JustYouWait within one month",
+					"status": "passed",
+					"title": "returns true for Status.JustYouWait within one month",
+					"duration": 0.1196249999999992,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": [
+						"MilestoneDetails",
+						"willBeHappeningSoon()",
+						"when the milestone has not happened yet"
+					],
+					"fullName": "MilestoneDetails willBeHappeningSoon() when the milestone has not happened yet returns false for Status.JustYouWait beyond one month",
+					"status": "passed",
+					"title": "returns false for Status.JustYouWait beyond one month",
+					"duration": 0.5360419999999948,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["windowStatus"],
+					"fullName": "windowStatus is not open before the opening milestone",
+					"status": "passed",
+					"title": "is not open before the opening milestone",
+					"duration": 0.054249999999996135,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["windowStatus"],
+					"fullName": "windowStatus is open once it has opened and not yet closed",
+					"status": "passed",
+					"title": "is open once it has opened and not yet closed",
+					"duration": 0.02804100000000176,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["windowStatus"],
+					"fullName": "windowStatus is closed once the closing milestone has happened",
+					"status": "passed",
+					"title": "is closed once the closing milestone has happened",
+					"duration": 0.023209000000008473,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["windowStatus"],
+					"fullName": "windowStatus gives the call for papers and voting their own windows",
+					"status": "passed",
+					"title": "gives the call for papers and voting their own windows",
+					"duration": 0.038875000000004434,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-24",
+					"status": "passed",
+					"title": "formats 2027-04-24",
+					"duration": 0.05499999999999261,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-01",
+					"status": "passed",
+					"title": "formats 2027-04-01",
+					"duration": 0.023209000000008473,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-02",
+					"status": "passed",
+					"title": "formats 2027-04-02",
+					"duration": 0.030083000000004745,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-03",
+					"status": "passed",
+					"title": "formats 2027-04-03",
+					"duration": 0.026707999999999288,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-11",
+					"status": "passed",
+					"title": "formats 2027-04-11",
+					"duration": 0.01762499999999534,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate formats 2027-04-22",
+					"status": "passed",
+					"title": "formats 2027-04-22",
+					"duration": 0.01691700000000651,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["fullDate"],
+					"fullName": "fullDate is undefined without a date",
+					"status": "passed",
+					"title": "is undefined without a date",
+					"duration": 0.02025000000000432,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["date with a time"],
+					"fullName": "date with a time has not happened until that time, and shows the UK date",
+					"status": "failed",
+					"title": "has not happened until that time, and shows the UK date",
+					"duration": 2.5960000000000036,
+					"failureMessages": [
+						"AssertionError: expected false to be true // Object.is equality\n    at /Users/carl/work/dddsw/dddsw-web/src/lib/milestones.test.ts:280:26\n    at file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:1632:35\n    at file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:26\n    at file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3338:20\n    at new Promise (<anonymous>)\n    at runWithCancel (file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3333:10)\n    at file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3318:20\n    at new Promise (<anonymous>)\n    at runWithTimeout (file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3276:10)\n    at file:///Users/carl/work/dddsw/dddsw-web/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:3922:64"
+					],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["isoDate"],
+					"fullName": "isoDate is the date as YYYY-MM-DD",
+					"status": "passed",
+					"title": "is the date as YYYY-MM-DD",
+					"duration": 0.11804200000000264,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				},
+				{
+					"ancestorTitles": ["isoDate"],
+					"fullName": "isoDate is undefined with no date",
+					"status": "passed",
+					"title": "is undefined with no date",
+					"duration": 0.02599999999999625,
+					"failureMessages": [],
+					"meta": {},
+					"tags": [],
+					"benchmarks": []
+				}
+			],
+			"startTime": 1794695970231,
+			"endTime": 1794695970239.1182,
+			"status": "failed",
+			"message": "",
+			"name": "/Users/carl/work/dddsw/dddsw-web/src/lib/milestones.test.ts"
+		}
+	]
+}
