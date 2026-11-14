@@ -8,7 +8,8 @@
 	/**
 	 * A cow peeking in from the bottom-left corner with a "we don't track you" bubble. Closing it
 	 * (or following its link) is remembered in this browser, so it's then gone for good. Left alone,
-	 * it wanders off after 30 seconds and comes back 15 minutes later, round and round.
+	 * it wanders off after 30 seconds and comes back 15 minutes later, round and round. Either way it
+	 * says "K, Bye!" on its way out.
 	 */
 
 	const dismissedKey = 'privacyCowDismissed';
@@ -17,6 +18,8 @@
 	const firstDelay = 1200;
 	const visibleFor = 30 * 1000;
 	const snoozeFor = 15 * 60 * 1000;
+	const byeFor = 1000;
+	const bubbleOut = 350;
 
 	// The front of the cow (head, neck, chest and front legs) shows; the rest is drawn too, but sits
 	// off the left of the screen, so the entrance's overshoot never reveals a cut-off cow.
@@ -40,10 +43,15 @@
 
 	let shown = $state(false);
 	let open = $state(false);
+	// Saying goodbye: the main bubble has gone, a "K, Bye!" one is up, and the cow is about to leave.
+	let leaving = $state(false);
+	let bye = $state(false);
 	let reducedMotion = $state(false);
 	let svg: SVGSVGElement | undefined = $state();
 
 	const onPrivacyPage = $derived(page.url.pathname === '/privacy-policy');
+	// Following the bubble's link lands on the privacy policy; the cow stays to say goodbye there.
+	const visible = $derived(shown && (!onPrivacyPage || leaving));
 	const duration = (ms: number) => (reducedMotion ? 0 : ms);
 
 	let pointer: { x: number; y: number } | null = null;
@@ -109,16 +117,31 @@
 		wake();
 	}
 
-	function dismiss() {
-		open = false;
-		shown = false;
+	/** Close the bubble, say "K, Bye!" for a moment, then the cow and that bubble go together. */
+	function sayBye(then: () => void) {
 		clearTimeout(cycleTimer);
 		clearTimeout(speakTimer);
+		leaving = true;
+		open = false;
+		cycleTimer = setTimeout(() => {
+			bye = true;
+			cycleTimer = setTimeout(() => {
+				shown = false;
+				bye = false;
+				leaving = false;
+				then();
+			}, byeFor);
+		}, duration(bubbleOut));
+	}
+
+	function dismiss() {
+		if (leaving) return;
 		try {
 			localStorage.setItem(dismissedKey, '1');
 		} catch {
 			// Storage can be unavailable (private mode); it's then only gone for this visit.
 		}
+		sayBye(() => {});
 	}
 
 	/** Slide in and speak, then wander off again after a while. */
@@ -136,15 +159,20 @@
 
 	/** Not dismissed, just bored: hide for a while, then come back. */
 	function leave() {
-		open = false;
-		shown = false;
-		clearTimeout(speakTimer);
 		try {
 			localStorage.setItem(snoozedUntilKey, String(Date.now() + snoozeFor));
 		} catch {
 			// No storage: the timer below still brings it back during this visit.
 		}
-		cycleTimer = setTimeout(arrive, snoozeFor);
+		const comeBack = () => (cycleTimer = setTimeout(arrive, snoozeFor));
+		if (onPrivacyPage) {
+			// It isn't on screen here, so there's no one to say goodbye to.
+			shown = false;
+			open = false;
+			comeBack();
+		} else {
+			sayBye(comeBack);
+		}
 	}
 
 	onMount(() => {
@@ -171,7 +199,7 @@
 
 <svelte:window onpointermove={onPointerMove} />
 
-{#if shown && !onPrivacyPage}
+{#if visible}
 	<aside
 		class="privacy-cow fixed bottom-0 left-0 z-40"
 		aria-label="Privacy"
@@ -183,7 +211,9 @@
 			aria-expanded={open}
 			aria-controls="privacy-cow-bubble"
 			aria-label="We don't track you"
-			onclick={() => (open = !open)}>
+			onclick={() => {
+				if (!leaving) open = !open;
+			}}>
 			<svg
 				bind:this={svg}
 				{viewBox}
@@ -217,7 +247,7 @@
 			<div
 				id="privacy-cow-bubble"
 				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-max rounded-container border border-surface-950 dark:border-surface-50 preset-filled-surface-50-950 dark:bg-surface-800 p-4 pr-9 shadow-xl"
-				transition:scale={{ start: 0.5, duration: duration(350), easing: backOut }}>
+				transition:scale={{ start: 0.5, duration: duration(bubbleOut), easing: backOut }}>
 				<p class="h5 leading-tight whitespace-nowrap">We don't track you!</p>
 				<p class="mt-1 text-sm">
 					<a href="/privacy-policy#analytics-cookies" class="anchor" onclick={dismiss}
@@ -230,6 +260,15 @@
 					onclick={dismiss}>
 					<span aria-hidden="true" class="text-lg leading-none">×</span>
 				</button>
+			</div>
+		{/if}
+
+		{#if bye}
+			<div
+				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-max rounded-container border border-surface-950 dark:border-surface-50 preset-filled-surface-50-950 dark:bg-surface-800 px-4 py-3 shadow-xl"
+				role="status"
+				transition:scale={{ start: 0.5, duration: duration(bubbleOut), easing: backOut }}>
+				<p class="h5 leading-tight whitespace-nowrap">K, Bye!</p>
 			</div>
 		{/if}
 	</aside>

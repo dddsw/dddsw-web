@@ -27,6 +27,8 @@ test.describe('Privacy cow', () => {
 		await page.goto('/about');
 		await page.locator('#privacy-cow-bubble').getByRole('button', { name: 'Close' }).click();
 		const cow = page.getByRole('complementary', { name: 'Privacy' });
+		await expect(page.locator('#privacy-cow-bubble')).toHaveCount(0);
+		await expect(cow.getByRole('status')).toHaveText('K, Bye!');
 		await expect(cow).toHaveCount(0);
 
 		await page.reload();
@@ -43,6 +45,9 @@ test.describe('Privacy cow', () => {
 		await expect(cow).toBeVisible();
 
 		await page.clock.runFor(30_000);
+		await expect(page.locator('#privacy-cow-bubble')).toHaveCount(0);
+		await expect(cow.getByRole('status')).toHaveText('K, Bye!');
+		await page.clock.runFor(2000);
 		await expect(cow).toHaveCount(0);
 
 		// Still away after a reload partway through its break.
@@ -56,7 +61,21 @@ test.describe('Privacy cow', () => {
 		await expect(page.locator('#privacy-cow-bubble')).toContainText("We don't track you!");
 
 		// And round again.
-		await page.clock.runFor(30_000);
+		await page.clock.runFor(32_000);
+		await expect(cow).toHaveCount(0);
+	});
+
+	test('following the link says goodbye on the privacy policy, then stays away', async ({
+		page
+	}) => {
+		await page.goto('/about');
+		await page
+			.locator('#privacy-cow-bubble')
+			.getByRole('link', { name: 'Find out more here' })
+			.click();
+		await expect(page).toHaveURL(/\/privacy-policy/);
+		const cow = page.getByRole('complementary', { name: 'Privacy' });
+		await expect(cow.getByRole('status')).toHaveText('K, Bye!');
 		await expect(cow).toHaveCount(0);
 	});
 
