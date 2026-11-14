@@ -186,7 +186,7 @@
 		{#if open}
 			<div
 				id="privacy-cow-bubble"
-				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-max rounded-container border border-surface-950 preset-filled-surface-50-950 dark:bg-surface-800 p-4 pr-9 shadow-xl"
+				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-max rounded-container border border-surface-950 dark:border-surface-50 preset-filled-surface-50-950 dark:bg-surface-800 p-4 pr-9 shadow-xl"
 				transition:scale={{ start: 0.5, duration: duration(350), easing: backOut }}>
 				<p class="h5 leading-tight whitespace-nowrap">We don't track you!</p>
 				<p class="mt-1 text-sm">
