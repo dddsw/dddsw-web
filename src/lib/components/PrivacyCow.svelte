@@ -12,10 +12,14 @@
 
 	const dismissedKey = 'privacyCowDismissed';
 
-	// Only the front of the cow (head, neck, chest and front legs): the cut edge sits on the screen edge.
+	// The front of the cow (head, neck, chest and front legs) shows; the rest is drawn too, but sits
+	// off the left of the screen, so the entrance's overshoot never reveals a cut-off cow.
+	const cowWidth = 1080;
 	const cropX = 470;
-	const cropWidth = 1080 - cropX;
-	const viewBox = `${cropX} 0 ${cropWidth} 593`;
+	const cropWidth = cowWidth - cropX;
+	const viewBox = `0 0 ${cowWidth} 593`;
+	// The whole cow, sized so its visible front fills the button and the back hangs off to the left.
+	const svgStyle = `width: ${(cowWidth / cropWidth) * 100}%; margin-left: -${(cropX / cropWidth) * 100}%;`;
 
 	const eyeRadius = 40;
 	const pupilRadius = 19;
@@ -44,8 +48,8 @@
 	function targetFor(eye: Eye): { x: number; y: number } {
 		if (!pointer || !svg) return { x: 0, y: reach };
 		const rect = svg.getBoundingClientRect();
-		const unit = rect.width / cropWidth;
-		const dx = pointer.x - (rect.left + (eye.cx - cropX) * unit);
+		const unit = rect.width / cowWidth;
+		const dx = pointer.x - (rect.left + eye.cx * unit);
 		const dy = pointer.y - (rect.top + eye.cy * unit);
 		const distance = Math.hypot(dx, dy) || 1;
 		const pull = reach * Math.min(1, distance / 80);
@@ -150,8 +154,22 @@
 			aria-controls="privacy-cow-bubble"
 			aria-label="We don't track you"
 			onclick={() => (open = !open)}>
-			<svg bind:this={svg} {viewBox} class="block h-auto w-full" aria-hidden="true">
-				<path d={cowPath} class="fill-primary-500" />
+			<svg
+				bind:this={svg}
+				{viewBox}
+				class="block h-auto max-w-none overflow-visible"
+				style={svgStyle}
+				aria-hidden="true">
+				<!-- A thin dark outline, so the cow still shows against orange (e.g. the home page hero).
+					Drawn under the fill, so only its outer half (1px) shows and the cow keeps its size; the
+					SVG overflows so the outline above the horn, at the very top of the drawing, isn't clipped. -->
+				<path
+					d={cowPath}
+					class="fill-primary-500 stroke-surface-950"
+					stroke-width="2"
+					stroke-linejoin="round"
+					paint-order="stroke"
+					vector-effect="non-scaling-stroke" />
 				{#each eyes as eye, i (i)}
 					<circle
 						cx={eye.cx}
@@ -168,9 +186,9 @@
 		{#if open}
 			<div
 				id="privacy-cow-bubble"
-				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-52 rounded-container border-2 border-primary-500 preset-filled-surface-50-950 p-4 pr-9 shadow-xl sm:w-60"
+				class="bubble absolute bottom-[62%] left-[calc(100%-0.25rem)] w-max rounded-container border border-surface-950 preset-filled-surface-50-950 dark:bg-surface-800 p-4 pr-9 shadow-xl"
 				transition:scale={{ start: 0.5, duration: duration(350), easing: backOut }}>
-				<p class="h5 leading-tight">We don't track you!</p>
+				<p class="h5 leading-tight whitespace-nowrap">We don't track you!</p>
 				<p class="mt-1 text-sm">
 					<a href="/privacy-policy#analytics-cookies" class="anchor" onclick={dismiss}
 						>Find out more here</a>
