@@ -8,6 +8,7 @@
 		{ id: 'lawful-bases', label: 'Lawful bases and data protection rights' },
 		{ id: 'personal-information-source', label: 'Where we get personal information from' },
 		{ id: 'retention', label: 'How long we keep information' },
+		{ id: 'analytics-cookies', label: 'Website analytics and cookies' },
 		{ id: 'complaints', label: 'How to complain' }
 	];
 </script>
@@ -73,6 +74,23 @@
 		Our primary use for your personal information is for our newsletter, which is sent out for
 		informational purposes. Until you unsubscribe or request deletion, we will keep your personal
 		information.
+	</p>
+
+	<h2 id="analytics-cookies" class="h3">Website analytics and cookies</h2>
+	<p>
+		We use <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a> to count visits to
+		this website, so we can see which pages are useful and how people find us. GoatCounter does not
+		use cookies or store anything in your browser, does not track you across other websites, and
+		does not store your IP address. We only see totals, such as page views, referring websites,
+		browsers, screen sizes and countries. You can read
+		<a href="https://www.goatcounter.com/help/privacy" rel="noopener"
+			>GoatCounter's privacy policy</a
+		>. Our lawful basis for this is our legitimate interest in understanding how our website is
+		used.
+	</p>
+	<p>
+		This website does not set any cookies. It stores only your light or dark mode choice in your
+		browser, so the site looks the same next time you visit. This never leaves your device.
 	</p>
 
 	<h2 id="complaints" class="h3">How to complain</h2>

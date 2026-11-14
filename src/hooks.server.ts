@@ -1,6 +1,7 @@
 import type { Handle } from '@sveltejs/kit/hooks';
 import { event as eventDetails } from '#lib/eventDetails.ts';
 import { withPageCaching } from '#lib/server/httpCache.ts';
+import { analyticsFor, analyticsPlaceholder } from '#lib/server/analytics.ts';
 
 const publicHost = new URL(eventDetails.siteUrl).hostname;
 const localHosts = new Set(['localhost', '127.0.0.1', '[::1]']);
@@ -29,7 +30,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 		return new Response(null, { status: 301, headers: { Location: location } });
 	}
 
-	const response = await resolve(event);
+	const analytics = analyticsFor(hostname, publicHost);
+	const response = await resolve(event, {
+		transformPageChunk: ({ html }) => html.replace(analyticsPlaceholder, analytics)
+	});
 	if (isStagingHost(hostname)) response.headers.set('X-Robots-Tag', 'noindex, nofollow');
 	return withPageCaching(event.request, response);
 };

@@ -14,6 +14,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		/** Set by GoatCounter's count.js (loaded in app.html) once it has loaded. */
+		goatcounter?: { count: (vars?: { path?: string; title?: string }) => void };
+	}
 }
 
 export {};
