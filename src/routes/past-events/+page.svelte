@@ -2,12 +2,15 @@
 	import { flushSync, onMount } from 'svelte';
 	import { tabTransition } from '#lib/viewTransitions.ts';
 	import { replaceState } from '$app/navigation';
-	import { Tabs } from '@skeletonlabs/skeleton-svelte';
+	import { Dialog, Portal, Tabs } from '@skeletonlabs/skeleton-svelte';
 	import Cow from '#lib/components/Cow.svelte';
-	import { pastEvents } from '#lib/content/pastEvents.ts';
+	import { pastEvents, type Talk } from '#lib/content/pastEvents.ts';
 	import { picture } from '#lib/images.ts';
 
 	let year = $state(String(pastEvents[0].year));
+
+	// The talk whose description is open in the "More info" dialog.
+	let openTalk: (Talk & { year: number }) | undefined = $state();
 
 	// Deep links like /past-events#2011 open that year's tab. The hash is kept in sync as people
 	// switch tabs, so the address bar can always be shared.
@@ -177,7 +180,16 @@
 								<li
 									class="flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5">
 									<span class="font-semibold">{talk.title}</span>
-									<span class="text-sm font-semibold text-secondary-700-300">{talk.speaker}</span>
+									<div class="flex items-center justify-between gap-3">
+										<span class="text-sm font-semibold text-secondary-700-300">{talk.speaker}</span>
+										{#if talk.description}
+											<button
+												type="button"
+												class="btn shrink-0 cursor-pointer preset-tonal-primary btn-sm hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+												aria-label="More info about {talk.title}"
+												onclick={() => (openTalk = { ...talk, year: e.year })}>More info</button>
+										{/if}
+									</div>
 								</li>
 							{/each}
 						</ul>
@@ -211,3 +223,22 @@
 		{/each}
 	</Tabs>
 </section>
+
+<Dialog open={!!openTalk} onOpenChange={(details) => !details.open && (openTalk = undefined)}>
+	<Portal>
+		<Dialog.Backdrop class="fixed inset-0 z-40 bg-surface-950/60" />
+		<Dialog.Positioner class="fixed inset-0 z-50 flex items-center justify-center p-4">
+			<Dialog.Content
+				class="max-h-full w-full max-w-2xl space-y-4 overflow-y-auto card bg-surface-50-950 p-6 shadow-xl dark:border dark:border-surface-500">
+				<Dialog.Title class="h3">{openTalk?.title}</Dialog.Title>
+				<p class="font-semibold text-secondary-700-300">
+					{openTalk?.speaker} · DDD South West {openTalk?.year}
+				</p>
+				<Dialog.Description class="whitespace-pre-wrap">{openTalk?.description}</Dialog.Description>
+				<Dialog.CloseTrigger
+					class="btn cursor-pointer preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+					>Close</Dialog.CloseTrigger>
+			</Dialog.Content>
+		</Dialog.Positioner>
+	</Portal>
+</Dialog>
