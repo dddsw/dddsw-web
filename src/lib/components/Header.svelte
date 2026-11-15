@@ -49,13 +49,14 @@
 		aria-hidden="true"
 		class="vt-header-bg absolute inset-0 -z-10 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
 	</div>
+	<!-- max-[359px]: sizes keep the header within the narrowest phones (320px) without scrolling sideways. -->
 	<Container class="vt-header flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
 			href="/"
 			class="group -mx-2 flex shrink-0 items-center gap-2 rounded-base sm:gap-3 px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
-			<Cow class="wobble h-10 w-auto text-primary-500" />
+			<Cow class="wobble h-10 w-auto text-primary-500 max-[359px]:h-8" />
 			<span
-				class="font-heading text-xl font-semibold tracking-tight sm:text-2xl text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
+				class="font-heading text-xl font-semibold tracking-tight max-[359px]:text-lg sm:text-2xl text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
 				{event.shortName}<span class="sr-only">{' '}</span><span
 					class="text-secondary-700-300 group-hover:text-inherit group-focus-visible:text-inherit">
 					{event.year}</span
@@ -100,7 +101,7 @@
 					onOpenChange={(details) => (menuOpen = details.open)}
 					positioning={{ placement: 'bottom-end' }}>
 					<Popover.Trigger
-						class="btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+						class="btn cursor-pointer preset-tonal max-[359px]:btn-sm hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
 						>Menu</Popover.Trigger>
 					<Portal>
 						<Popover.Positioner class="z-50!">

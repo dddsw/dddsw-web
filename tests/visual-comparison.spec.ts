@@ -9,7 +9,7 @@ for (const [pageName, path] of pagesToTest) {
 	for (const [deviceName, deviceViewport] of devicesToTest) {
 		test(`${pageName} page has no visual changes on ${deviceName}}`, async ({ page }) => {
 			//Set viewport
-			page.setViewportSize(devices[deviceViewport].viewport);
+			await page.setViewportSize(devices[deviceViewport].viewport);
 
 			// Go to page
 			await page.goto(path);
