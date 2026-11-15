@@ -1,12 +1,13 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { onNavigate } from '$app/navigation';
+	import { afterNavigate, onNavigate } from '$app/navigation';
 	import { navigationTransition } from '#lib/viewTransitions.ts';
 	import type { LayoutProps } from './$types';
 	import Container from '#lib/components/Container.svelte';
 	import Header from '#lib/components/Header.svelte';
 	import Footer from '#lib/components/Footer.svelte';
+	import PrivacyCow from '#lib/components/PrivacyCow.svelte';
 	import PageHeading from '#lib/components/PageHeading.svelte';
 	import { event } from '#lib/eventDetails.ts';
 	import { unlistedRoutes } from '#lib/seo.ts';
@@ -21,6 +22,14 @@
 	let { children }: LayoutProps = $props();
 
 	onNavigate(navigationTransition);
+
+	// GoatCounter counts the first page load itself (its script is only added on the public host,
+	// see analytics.ts). In-app navigations don't reload the page, so count each one here; without
+	// the script this does nothing. Skipping 'enter' (the first load) avoids counting it twice.
+	afterNavigate(({ type, to }) => {
+		if (type === 'enter' || !to) return;
+		window.goatcounter?.count({ path: to.url.pathname + to.url.search });
+	});
 
 	// Pages with their own full-width design (the home page, error pages) opt out of the
 	// standard layout: the home page by returning `bare: true` from its `load` function.
@@ -107,6 +116,7 @@
 	{/if}
 </main>
 <Footer />
+<PrivacyCow />
 
 <Toast.Group {toaster}>
 	{#snippet children(toast)}

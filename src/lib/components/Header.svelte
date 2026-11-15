@@ -53,9 +53,9 @@
 		<a
 			href="/"
 			class="group -mx-2 flex shrink-0 items-center gap-2 rounded-base sm:gap-3 px-2 py-1 no-underline hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50">
-			<Cow class="wobble h-10 w-auto text-primary-500" />
+			<Cow class="wobble h-10 w-auto text-primary-500 max-[359px]:h-8" />
 			<span
-				class="font-heading text-xl font-semibold tracking-tight sm:text-2xl text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
+				class="font-heading text-xl font-semibold tracking-tight max-[359px]:text-lg sm:text-2xl text-surface-950-50 group-hover:text-surface-50-950 group-focus-visible:text-surface-50-950">
 				{event.shortName}<span class="sr-only">{' '}</span><span
 					class="text-secondary-700-300 group-hover:text-inherit group-focus-visible:text-inherit">
 					{event.year}</span

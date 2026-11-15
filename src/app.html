@@ -12,7 +12,8 @@
 				document.documentElement.classList.toggle('dark', dark);
 			} catch (e) {}
 		</script>
-		%sveltekit.head%
+		<!-- GoatCounter on the public address only, filled in by hooks.server.ts (see analytics.ts). -->
+		%analytics% %sveltekit.head%
 	</head>
 
 	<body data-sveltekit-preload-data="hover">

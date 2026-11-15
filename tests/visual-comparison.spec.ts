@@ -11,6 +11,9 @@ for (const [pageName, path] of pagesToTest) {
 			//Set viewport
 			page.setViewportSize(devices[deviceViewport].viewport);
 
+			// The privacy cow arrives on a timer, so keep it out of screenshots (it has its own tests)
+			await page.addInitScript(() => localStorage.setItem('privacyCowDismissed', '1'));
+
 			// Go to page
 			await page.goto(path);
 
