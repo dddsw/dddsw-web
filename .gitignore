@@ -11,3 +11,7 @@ node_modules
 .idea
 /test-results
 playwright-report
+.temp/ddd-south-west-2023-cfs flattened accepted sessions - exported 2026-11-14.xlsx
+.temp/ddd-south-west-2024 flattened accepted sessions - exported 2026-11-14.xlsx
+.temp/ddd-south-west-2025 flattened accepted sessions - exported 2026-11-14.xlsx
+.temp/ddd-south-west-2026 flattened accepted sessions - exported 2026-11-14.xlsx
