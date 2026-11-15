@@ -5,12 +5,14 @@
 	import { Dialog, Portal, Tabs } from '@skeletonlabs/skeleton-svelte';
 	import Cow from '#lib/components/Cow.svelte';
 	import { pastEvents, type Talk } from '#lib/content/pastEvents.ts';
+	import { pastSpeakers } from '#lib/content/pastSpeakers.ts';
 	import { picture } from '#lib/images.ts';
 
 	let year = $state(String(pastEvents[0].year));
 
 	// The talk whose description is open in the "More info" dialog.
 	let openTalk: (Talk & { year: number }) | undefined = $state();
+	let openSpeakers = $derived((openTalk?.speakerIds ?? []).map((id) => pastSpeakers[id]));
 
 	// Deep links like /past-events#2011 open that year's tab. The hash is kept in sync as people
 	// switch tabs, so the address bar can always be shared.
@@ -235,6 +237,31 @@
 					{openTalk?.speaker} · DDD South West {openTalk?.year}
 				</p>
 				<Dialog.Description class="whitespace-pre-wrap">{openTalk?.description}</Dialog.Description>
+				{#each openSpeakers as speaker (speaker.name)}
+					<section
+						class="space-y-3 border-t border-surface-300-700 pt-4"
+						aria-label="About {speaker.name}">
+						<div class="flex items-center gap-4">
+							{#if speaker.photo}
+								<div class="size-20 shrink-0 overflow-hidden rounded-full">
+									<enhanced:img
+										src={picture(speaker.photo)}
+										alt=""
+										class="size-full object-cover" />
+								</div>
+							{/if}
+							<div>
+								<h4 class="h5">{speaker.name}</h4>
+								{#if speaker.tagline}
+									<p class="text-sm font-semibold text-secondary-700-300">{speaker.tagline}</p>
+								{/if}
+							</div>
+						</div>
+						{#if speaker.bio}
+							<p class="whitespace-pre-wrap">{speaker.bio}</p>
+						{/if}
+					</section>
+				{/each}
 				<Dialog.CloseTrigger
 					class="btn cursor-pointer preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
 					>Close</Dialog.CloseTrigger>
