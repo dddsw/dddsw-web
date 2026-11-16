@@ -8,6 +8,13 @@
 	import Cow from '#lib/components/Cow.svelte';
 	import { pastEvents, talkSlug, type Talk } from '#lib/content/pastEvents.ts';
 	import { pastSpeakers } from '#lib/content/pastSpeakers.ts';
+	import {
+		directoryHref,
+		initials,
+		speakerIdFor,
+		taglineAt,
+		talkSpeakers
+	} from '#lib/content/speakerDirectory.ts';
 	import { picture } from '#lib/images.ts';
 	import { toaster } from '#lib/toaster.ts';
 
@@ -15,7 +22,14 @@
 
 	// The talk whose description is open in the "More info" dialog.
 	let openTalk: (Talk & { year: number }) | undefined = $state();
-	let openSpeakers = $derived((openTalk?.speakerIds ?? []).map((id) => pastSpeakers[id]));
+	let openSpeakers = $derived(
+		(openTalk?.speakerIds ?? []).map((id) => ({
+			id,
+			...pastSpeakers[id],
+			// What they did when they gave this talk, not necessarily now.
+			tagline: taglineAt(openTalk!, id)
+		}))
+	);
 
 	// Deep links like /past-events#2011 open that year's tab, and /past-events#2025/advanced-debugging
 	// also opens that talk's details. The hash is kept in sync as people switch tabs and open talks,
@@ -71,11 +85,6 @@
 		} catch {
 			toaster.error({ title: "Couldn't copy", description: 'Copy the link from the address bar.' });
 		}
-	}
-
-	function initials(name: string): string {
-		const words = name.split(/\s+/);
-		return (words[0][0] + (words.length > 1 ? words.at(-1)![0] : '')).toUpperCase();
 	}
 
 	onMount(() => {
@@ -267,7 +276,7 @@
 									<div class="flex items-end justify-between gap-3">
 										{#if talk.speakerIds?.length}
 											<ul class="min-w-0 space-y-2">
-												{#each talk.speakerIds.map((id) => pastSpeakers[id]) as speaker (speaker.name)}
+												{#each talk.speakerIds.map( (id) => ({ id, ...pastSpeakers[id], tagline: taglineAt(talk, id) }) ) as speaker (speaker.id)}
 													<li class="flex items-center gap-3">
 														{#if speaker.photo}
 															<div class="size-10 shrink-0 overflow-hidden rounded-full">
@@ -283,9 +292,12 @@
 																aria-hidden="true">{initials(speaker.name)}</span>
 														{/if}
 														<div class="min-w-0">
-															<p class="text-sm font-semibold text-secondary-700-300">
+															<a
+																href={directoryHref(speaker.id)}
+																class="text-sm font-semibold text-secondary-700-300"
+																title="All talks by {speaker.name}">
 																{speaker.name}
-															</p>
+															</a>
 															{#if speaker.tagline}
 																<p
 																	class="line-clamp-2 text-xs text-surface-700-300"
@@ -297,6 +309,11 @@
 													</li>
 												{/each}
 											</ul>
+										{:else if talkSpeakers(talk).length}
+											<a
+												href={directoryHref(speakerIdFor(talk.speaker))}
+												class="text-sm font-semibold text-secondary-700-300"
+												title="All talks by {talk.speaker}">{talk.speaker}</a>
 										{:else}
 											<span class="text-sm font-semibold text-secondary-700-300"
 												>{talk.speaker}</span>
@@ -392,6 +409,8 @@
 							{/if}
 							<div>
 								<h4 class="h5">{speaker.name}</h4>
+								<a href={directoryHref(speaker.id)} class="anchor text-sm"
+									>All talks by {speaker.name}</a>
 								{#if speaker.tagline}
 									<p class="text-sm font-semibold text-secondary-700-300">{speaker.tagline}</p>
 								{/if}

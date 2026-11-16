@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { event, social } from '#lib/eventDetails.ts';
 	import { preview } from '#lib/featured.svelte.ts';
-	import { moreLinks, visibleNav } from '#lib/navigation.ts';
+	import { exploreLinks, moreLinks, visibleNav } from '#lib/navigation.ts';
 	import Container from './Container.svelte';
 	import Cow from './Cow.svelte';
 	import SocialIcon from './SocialIcon.svelte';
 
-	const navItems = $derived(visibleNav(preview));
+	const navItems = $derived([...visibleNav(preview), ...exploreLinks]);
 
 	// White icons on the dark footer, orange on hover.
 	const footerLink = 'text-surface-50! hover:text-primary-400!';

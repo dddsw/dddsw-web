@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { PreviewState } from './featured';
-import { scheduleShown, visibleNav } from './navigation';
+import { exploreLinks, scheduleShown, visibleNav } from './navigation';
 import { Milestone } from './milestones';
 
 /** A `hasHappened` where only the given milestones have happened. */
@@ -85,5 +85,12 @@ describe('scheduleShown', () => {
 	});
 	it('is not revealed by previewing voting', () => {
 		expect(scheduleShown(preview({ featured: 'voting' }), happened())).toBe(false);
+	});
+});
+
+describe('exploreLinks', () => {
+	it('keeps the speaker directory out of the header nav', () => {
+		expect(hrefs(exploreLinks)).toContain('/speaker-directory');
+		expect(hrefs(visibleNav(preview(), happened()))).not.toContain('/speaker-directory');
 	});
 });

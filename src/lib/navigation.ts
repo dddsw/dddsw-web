@@ -58,6 +58,9 @@ export function visibleNav(
 	return nav.filter((item): item is NavItem => item !== false);
 }
 
+/** Shown in the footer under the main nav's links, in the Explore column, but not in the header. */
+export const exploreLinks: NavItem[] = [{ href: '/speaker-directory', label: 'Speaker directory' }];
+
 /** Links shown in the footer in addition to the main nav. */
 export const moreLinks: NavItem[] = [
 	{ href: '/code-of-conduct', label: 'Code of conduct' },

@@ -5,6 +5,11 @@ export interface Talk {
 	description?: string;
 	/** Keys into `pastSpeakers`, for the speakers' photos and bios. */
 	speakerIds?: string[];
+	/**
+	 * What the speakers said they did at the time, by id, where it's not what their profile in
+	 * `pastSpeakers` says (that's from the most recent year they spoke, and people change jobs).
+	 */
+	speakerTaglines?: Record<string, string>;
 }
 
 /**
@@ -356,6 +361,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Jacqui Read',
 				title: 'Surviving Complexity Through Software Design',
 				speakerIds: ['jacqui-read'],
+				speakerTaglines: { 'jacqui-read': 'Author of Communication Patterns' },
 				description:
 					"There has never been more pressure on software developers. Dealing with multiple tech stacks, devops pipelines, observability, and more. Add to that the pressure to deliver working software quickly and regularly and we end up with software that doesn't meet expectations and cannot be easily changed. But with so much else on their minds, when do teams think about design and architecture?\n\nAt The Ministry of Software Design we have been looking at how teams can incrementally own their design, and own their architecture, despite the complexity they are working with. Join this session to see how you can manage the complexity of your software design to create software that is evolvable and meets both user and business needs."
 			},
@@ -420,6 +426,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Joe Glombek',
 				title: 'Why am I being such a git about best practices?',
 				speakerIds: ['joe-glombek'],
+				speakerTaglines: { 'joe-glombek': 'Senior .NET developer and lover of adventure' },
 				description:
 					"Are your git repos a dumping ground for code? I'm really fussy about how people use git - and that's a good thing. We'll take a look at branching strategies, the importance of commit messages and how often should you commit, anyway? Let's investigate how, with 5 simple tips, we can turn a code dump into a glorious archive of software and how this can save time, frustration and money."
 			},
@@ -434,6 +441,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Carly Richmond',
 				title: 'How to Destroy a DevOps Engineer',
 				speakerIds: ['carly-richmond'],
+				speakerTaglines: { 'carly-richmond': 'Developer Advocate & Manager @ Elastic' },
 				description:
 					"Abstract\n\nRetaining Software Developers is a significant challenge for teams. According to the Infragistics Reveal Survey, 37.5% of respondents expected difficulty in finding developers in 2023. To retain talent, it's essential to understand factors that lead to dissatisfaction.\n\nJoin me as I discuss antipatterns in management, development, testing and monitoring patterns that can stop you retaining awesome DevOps engineers.\n\nOutline\n\nI’ll cover:\n\n- Alert volume evaluation, and how we alert bombardment leads to burnout and alert fatigue. I’ll also cover best practices for on-call rotation and BYOD usage to stop engineer burnout even when they’re not on call.\n- SLO and metric comparison across teams, and how comparing team metrics rather than improving metrics such as DORA over time for a single team breeds animosity and demoralises engineers.\n- Code reviews with jerkish or unhelpful comments, and the difference between radical candour through constructive feedback and pulling people down.\n- Tool overload, and how selecting a common toolbox reduces the need for context switching.\n- Flaky or poor testing, and how it builds mistrust and apathy in platform quality.\n- Constant work items and a lack of learning time, and how a lack of training opportunities and space to grow leaves engineers feeling stuck.\n- Lack of support for conference attendance and speaking, and how community connections help engineers grow and learn."
 			},
@@ -441,6 +449,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Andrew Poole',
 				title: 'How to fall in love with automated tests!',
 				speakerIds: ['andrew-poole'],
+				speakerTaglines: { 'andrew-poole': 'Senior Software Engineer @ ClearBank' },
 				description:
 					"This session is in two parts:\n1) How to get the maximum mileage from a minimal number of tests - end-to-end component tests\n2) Integration Tests - how to not hate them and also sort out your local dev experience!\n\nPart 1 Introduces, explains and demonstrates an approach to automated testing which covers as much of the surface area of your codebase as possible.\n\nImagine a unit test where the 'unit' is actually multiple executables! A single test can cover the whole happy path flow of a complex piece of orchestration, from API handlers, service bus handlers, database calls etc all in-memory, fast and with a nice fluent developer experience!\n\nBecause everything including the Program.cs and startup code are covered we can spot configuration and IoC issues which are hard to test with more traditional methods. I include a method of mocking and asserting against Azure Service Bus\n\nPart 2 discusses the usual issues with integration tests and how they expose the issues with running an app locally. It shows some strategies for fixing some of those issues and actually making integration tests useful, mainly leaving the thing you are testing in a running state on your machine. This is a achieved by means of a script to set up local configuration without having to remember not to check env secrets into appsettings.dev files. Also using Fixtures which do things like setting up queues, topics and subscriptions.\n\nThe aim of both parts of this talk is to have a repo which when pulled down onto a fresh machine, builds first time, component tests pass first time, then having run the script and the app, the the integration tests pass first time, after which you can push F5 and have it all run with almost no time or effort!"
 			},
@@ -449,6 +458,10 @@ export const pastEvents: PastEvent[] = [
 				title:
 					'Rethinking Website Carbon Calculators: Alternative Ways to Measure Digital Emissions',
 				speakerIds: ['rachel-breeze'],
+				speakerTaglines: {
+					'rachel-breeze':
+						'Back End Development Team Lead, Umbraco and .NET Developer at Nexer Digital'
+				},
 				description:
 					"Website carbon calculators are widely used for estimating the environmental impact of websites. While they’re a helpful starting point, they often rely on general assumptions and incomplete data, which can lead to oversimplified or inaccurate results. Are they really telling the full story?\n\nIn this talk, we’ll take a closer look at the limitations of these tools—such as their reliance on averages for energy usage, lack of context about server efficiency, and ignoring how users actually interact with sites.  We’ll explore practical alternatives and ways of reducing your website's carbon footprint."
 			},
@@ -504,6 +517,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Lotte Pitcher',
 				title: 'Successfully Navigating Open Source Waters',
 				speakerIds: ['lotte-pitcher'],
+				speakerTaglines: { 'lotte-pitcher': 'Microsoft MVP | Developer Advocate at Umbraco' },
 				description:
 					'Diving into the open source world - whether as a consumer, contributor, or maintainer - can feel like navigating uncharted waters. How do you choose the right projects? What are the unspoken rules of engagement? How can you contribute effectively and build meaningful connections?\n\nIn this session we’ll go beyond the code to explore essential topics like licensing, governance, community dynamics and collaboration best practices.  We’ll review some popular open source projects to find inspiration in their successes and learn lessons from their challenges.\n\nWith over ten years of community contributions to the open source .NET CMS Umbraco, and now as a member of their Developer Relations team - Lotte knows the challenges of building a commercially viable product and a sustainable community, while still giving code away for free. Whether you’re a maintainer or a user of open source software, you’ll leave this session with actionable ideas on how to better navigate the open source waters -  because there’s much more to it than just “dotnet add package”!'
 			}
@@ -575,6 +589,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Kevlin Henney',
 				title: '#FAIL',
 				speakerIds: ['kevlin-henney'],
+				speakerTaglines: { 'kevlin-henney': 'Programming · Practice · People' },
 				description:
 					"Software doesn't always work out. Looking at the number of software failure screens in public places or that we encounter daily on the web or our mobile phones, it sometimes seems that software developers and organisations are the most significant creators of guerrilla installation art around the planet.\n\nWhat happens when software fails? We regard it as a normal and personal inconvenience when apps crash or servers become unavailable, but what are the implications beyond the individual user? Is software reliability simply a business decision or does it have economic, social and cultural consequences? What are the moral and practical implications for software developers? And when we talk of 'systems', are we part of the 'system'?\n\nIn this talk we will explore examples of failures in software and its application, the details of how they came about, and how such failures affect us at different scales, from user to society, from code to product management. Software failures can be entertaining or disastrous. They can also be instructive — there's a lot we can learn."
 			},
@@ -659,6 +674,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Joe Glombek',
 				title: "Celibrate you're misteaks",
 				speakerIds: ['joe-glombek'],
+				speakerTaglines: { 'joe-glombek': 'Senior .NET developer and lover of adventure' },
 				description:
 					"\"Everyone makes mistakes.\" We've heard it time and again. But there's always that nagging voice inside our heads telling us to hide it away somewhere. But why be ashamed?! Besides, this can lead to more mistakes in the future. We'll take a look at some of my mistakes and even look at some extreme cases where mistakes can cost lives.\n\nAs well as looking at how hiding mistakes can be damaging to our confidence as well as to our work, we'll discuss how and when to talk about our mistakes along with success stories and how highlighting past mistakes can help save time, effort, and - most importantly - shame as individuals, teams, and as a community."
 			},
@@ -680,6 +696,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Danielle Dias',
 				title: 'Shifting Left with Burp Suite: A Lightning Approach to Endpoint Testing',
 				speakerIds: ['danielle-dias'],
+				speakerTaglines: { 'danielle-dias': 'Software Engineer' },
 				description:
 					'In the ever-evolving landscape of cybersecurity, securing endpoints remains a critical challenge. Despite current strategies and practices, attackers continue to find new ways to exploit vulnerabilities. This highlights the need for a proactive "shift-left" strategy to detect and address threats early in development. Companies face vulnerability to attacks when they lack awareness and understanding of security testing tools like Burp Suite, a comprehensive web application testing tool, especially in the early stages. The talk will give an overview of Burp Suite features, with practical demonstrations. You will gain insights into attackers\' exploits and understand testing basics.'
 			},
@@ -695,6 +712,9 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Rachel Breeze',
 				title: 'Debugging: More than breakpoints and log analysis',
 				speakerIds: ['rachel-breeze'],
+				speakerTaglines: {
+					'rachel-breeze': 'Squad Lead, Umbraco and .NET Developer at Nexer Digital'
+				},
 				description:
 					'Debugging is a cornerstone of software development, and understanding its role is pivotal for building robust applications.\nIn this talk, we explore  strategies to help debug our applications. Our journey takes us through the debugging tools offered by C#, SQL Server Management Studio, and the Azure Portal.'
 			},
@@ -702,6 +722,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Andrew Poole',
 				title: 'Fluent Method Chaining in C#',
 				speakerIds: ['andrew-poole'],
+				speakerTaglines: { 'andrew-poole': 'Senior Software Engineer @ ClearBank' },
 				description:
 					'What if there was a way to declaratively describe a chain or flow of async methods, which could be used when handling API requests or messages from a service bus queue or actually anywhere?\nRecently, while refactoring a growing piece of business logic, we found a way to achieve this. The logical conclusion is that related flows can be described in one place, in a single piece of orchestration, which is very easy to understand, navigate and debug. The flows are self documenting and with some thought, even readable by product owners and business analysts etc.'
 			},
@@ -779,6 +800,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Matt Hunt',
 				title: 'Cleaning your “Big Ball of Mud” with CQS',
 				speakerIds: ['matt-hunt'],
+				speakerTaglines: { 'matt-hunt': '.NET Developer' },
 				description:
 					'Having worked as a contract developer for many years Matt has had the pleasure of seeing a lot of systems, built using many different patterns and architectures. One thing they all had in common though was that, more often than not, over time the codebase would degrade into a "Big Ball of Mud". The Command Query Separation pattern can help keep code maintainable, easy to test and help you conform to SOLID principles. In this talk, we will discuss what CQS is, its benefits and how it differs from CQRS.'
 			},
@@ -808,6 +830,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Molly Painter',
 				title: 'SOLID Principles in 5 Nightmares',
 				speakerIds: ['molly-painter'],
+				speakerTaglines: { 'molly-painter': 'Senior Developer at Müller Dairy' },
 				description:
 					"The 5 SOLID principles - popularised by \"Uncle\" Bob Martin in some of his highly influential books on Object Orientated Software development - are rarely cited directly but they are nevertheless at the heart of a lot of the thinking that goes into modern software development.\n\nThese principles have been around in some form or other ever since the 1980s, but continue to be just as relevant today as they were then.\n\nIn this talk, we're going to look at each of the 5 SOLID principles, these being:\n\n* Single Dependency Principle\n* Open/Close Principle\n* Liskov Substitution Principle\n* Interface Segregation Principle\n* Dependency Inversion Principle\n\nSee what he did there with the names?\n\nWe'll look at each in turn, with the help of some slightly imaginative examples taken from a popular SF franchise.  What are they, what nightmare scenarios can occur if they aren't followed, and how they can subsequently be applied."
 			},
@@ -857,6 +880,9 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Poornima Nayar',
 				title: 'gRPC in .NET: Basics and More',
 				speakerIds: ['poornima-nayar'],
+				speakerTaglines: {
+					'poornima-nayar': 'Freelance .NET Developer, Microsoft MVP, Umbraco MVP'
+				},
 				description:
 					"gRPC is Google's implementation of RPC. With .NET Core 3.0, gRPC has become a first-class support in .NET.\n\nIn my session, we will look at what gRPC is, and how to both create a gRPC service and consume it. We will also discuss the four modes or methods of gRPC, versioning and also talk about options when it comes to hosting gRPC services."
 			},
@@ -892,6 +918,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Dylan Beattie',
 				title: "There's No Such Thing As Plain Text",
 				speakerIds: ['dylan-beattie'],
+				speakerTaglines: { 'dylan-beattie': 'The one in the hat.' },
 				description:
 					'Software is complicated. Machine learning, microservice architectures, message queues... every few months there\'s another revolutionary idea to consider, another framework to learn. And underneath so many of these amazing ideas and abstractions is text. When you work in software, you spend your life working with text. Some of those text files are source code, some are configuration files, some of them are documentation. Editors, revision control systems, programming languages - everything from C# and HTML to Git and VS Code is based on the idea of "plain text files". But... what if I told you there\'s no such thing?\n\nWhen we say something is a "plain text file", we\'re relying on a huge number of assumptions - about operating systems, editors, file formats, language, culture, history... and, most of the time, that\'s OK. But when it goes wrong, "plain text" can lead to some of the weirdest bugs you\'ve ever seen... why is there Chinese in the event logs? Why is the city of Aarhus in the wrong place? And why does Magnus Mårtensson always have trouble getting into the USA?  Join Dylan Beattie for a fascinating look into the hidden world of text files - from the history of mechanical teletypes to encodings, collations and code pages. We\'ll look at some memorable bugs, some golden rules for working with plain text - and we\'ll even find out the story behind the mysterious phrase "pike matchbox" and what it has do with driving in the Soviet Union.'
 			},
@@ -906,6 +933,7 @@ export const pastEvents: PastEvent[] = [
 				speaker: 'Ross Scott',
 				title: 'Blazor state management',
 				speakerIds: ['ross-scott'],
+				speakerTaglines: { 'ross-scott': 'Senior Software Engineer @ ClearBank' },
 				description:
 					"We've all seen the Blazor demos and it looks great!\nI've been working on client side apps since .net 1.0 and it's been painful. However, we now have mature, robust frameworks like Angular & React, so Blazor is very much on the back foot.\n\nIt doesn't have the mature ecosystem of other frameworks, so this makes it hard to find best practices, robust architectures and production ready solutions.\n\nI made some bad choices on how to deal with state when I started. So in this session I will take you on an accelerated journey of making mistakes, iterating, learning, and ultimately heading in the right direction."
 			},

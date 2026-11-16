@@ -24,6 +24,8 @@ for (const [pageName, path] of pagesToTest) {
 			await expect(page).toHaveScreenshot(`${pageName}-${deviceName}.png`, {
 				fullPage: true,
 				mask: locatorsToIgnore,
+				// Long pages (like the speaker directory) can take more than the default 5s to capture twice
+				timeout: 15_000,
 				maxDiffPixelRatio: 0.01 //experimenting to find right value, increase if tests fail on neglibible rendering change
 			});
 		});

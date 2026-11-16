@@ -16,6 +16,7 @@ const alwaysListed = [
 	'/past-events',
 	'/privacy-policy',
 	'/session-voting',
+	'/speaker-directory',
 	'/sponsorship',
 	'/tickets',
 	'/venue'
