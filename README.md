@@ -66,66 +66,19 @@ The site is SvelteKit 3 and Svelte 5, styled with [Skeleton](https://www.skeleto
 - Brand colours and fonts live in `src/dddsw-theme.css` (primary 500 is `#ff9930`; text on orange is charcoal for contrast). Global styles are in `src/app.css`.
 - Light and dark mode are toggled with a `dark` class on `<html>`, set by the toggle in the header and remembered in the browser.
 
-### Updating the site
+### Managing the site
 
-| What                                           | Where                                                                                                 |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Event year, contact emails, venue, ticket link | `src/lib/eventDetails.ts`                                                                             |
-| Dates and what has happened so far             | `src/lib/milestones.ts`                                                                               |
-| Schedule, speakers and sessions                | Set `sessionizeJsonApiUrl` in `src/lib/eventDetails.ts`; the schedule and speakers pages then fill in |
-| Team, sponsors, past events                    | `src/lib/content/*.ts`                                                                                |
-| Past years' talks and speakers                 | `npm run import:past-year` (see [docs/importing-past-years.md](docs/importing-past-years.md))         |
-| Which links appear in the main nav             | `src/lib/navigation.ts`                                                                               |
+[docs/managing-the-site.md](docs/managing-the-site.md) covers running the site through the year: what shows and hides at each stage, the switches that turn things on and off, previewing a state with `?preview=`, and the scripts (including importing a past year's talks and speakers).
 
-### How the site follows the milestones
-
-Everything time-sensitive is driven by `src/lib/milestones.ts`. Marking a milestone as done, or giving it a date that has passed, changes the site:
-
-- The home page "latest update" message (`src/lib/latestUpdate.ts`) and the timeline update.
-- The **Schedule** and **Speakers** links appear in the nav once the schedule is announced.
-- A **featured button** appears in the header while tickets, session voting or the call for papers is open.
-
-Date and venue show as "To be confirmed" until they are set.
-
-#### Featured header button
-
-One button in the header follows the current milestone, and is absent when nothing is open (`src/lib/featured.ts`, built on `src/lib/timeline.ts`):
-
-| Button           | Page               | Open from                                          | Until                      |
-| ---------------- | ------------------ | -------------------------------------------------- | -------------------------- |
-| Submit a talk    | `/call-for-papers` | "Call for speakers opens" (`OpenCallForSpeakers`)  | "Call for speakers closes" |
-| Vote on sessions | `/session-voting`  | "Session voting opens" (`OpenSessionVoting`)       | "Session voting closes"    |
-| Tickets          | `/tickets`         | "Schedule announced and ticket registration opens" | "Day of the event!"        |
-
-If windows overlap, the later milestone wins (tickets, then voting, then the call for papers). These three pages are not in the main nav, but they stay reachable by URL and from the footer. Set `ticketTailorUrl` and `votingUrl` in `src/lib/eventDetails.ts` when their registration and voting forms exist.
-
-#### Hidden until announced
-
-| Nav item | Page        | Shown from                                         |
-| -------- | ----------- | -------------------------------------------------- |
-| Schedule | `/schedule` | "Schedule announced and ticket registration opens" |
-| Speakers | `/speakers` | the same milestone (announced together)            |
-
-Until then they are left out of the nav and the home page, but the pages stay reachable by URL. They always show while tickets are open, since tickets open with the announcement.
-
-#### Previewing for testing
-
-Add one of these to the end of any address to view things that are hidden or closed. Values combine with commas, for example `?preview=voting,schedule`.
-
-| Add to any address  | Effect                                                                                                                   |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `?preview=tickets`  | Shows the **Tickets** featured button, and the **Schedule** and **Speakers** links (tickets are never open without them) |
-| `?preview=voting`   | Shows the **Vote on sessions** featured button                                                                           |
-| `?preview=cfp`      | Shows the **Submit a talk** featured button                                                                              |
-| `?preview=none`     | Shows no featured button (the "nothing open" state)                                                                      |
-| `?preview=schedule` | Shows the **Schedule** and **Speakers** links in the nav and the home page                                               |
-| `?preview=speakers` | Same as `?preview=schedule`                                                                                              |
-| `?preview=off`      | Clears the preview and goes back to the real milestones                                                                  |
-
-- A preview is remembered for the rest of the browser tab, so you can click around.
-- A previewed featured button has a dashed outline, so it is never mistaken for the real thing.
-- If several featured values are given, the first one wins.
-- A preview only changes what is linked. To see a page's open state, change its milestone in `src/lib/milestones.ts`.
+| What                                     | Where                                                                                         |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Event year, contact emails, venue, links | `src/lib/eventDetails.ts`                                                                     |
+| Dates, and what has happened so far      | `src/lib/milestones.ts`                                                                       |
+| Schedule, speakers and sessions          | Set `sessionizeJsonApiUrl` in `src/lib/eventDetails.ts`                                       |
+| Sponsors and the attendee progress bar   | `src/lib/content/sponsors.ts`                                                                 |
+| Team, past events                        | `src/lib/content/*.ts`                                                                        |
+| Past years' talks and speakers           | `npm run import:past-year` (see [docs/importing-past-years.md](docs/importing-past-years.md)) |
+| Which links appear in the main nav       | `src/lib/navigation.ts`                                                                       |
 
 ### Page layout
 
@@ -171,10 +124,7 @@ If adding or changing a link in the nav, ensure it is add/changed in `tests\navi
 
 ### Pre-commit hooks
 
-> [!IMPORTANT]
-> Playwright tests are run on pre-commit hooks and will fail if Playwright is not installed. See [running the tests](#running-the-tests) for info on how to set up Playwright
-
-Pre-commit hooks are managed by [Husky](https://typicode.github.io/husky/get-started.html) and will be run whenever you make a commit. If they fail then the commit will be aborted and you will see an error.
+Pre-commit hooks are managed by [Husky](https://typicode.github.io/husky/get-started.html) and will be run whenever you make a commit. They run ESLint and Prettier on the staged files, then the unit tests (`npm run test:unit`). The Playwright tests run on each pull request instead. If they fail then the commit will be aborted and you will see an error.
 
 To run pre-commit hooks without committing, stage all your changes and then execute the `.husky/pre-commit` file.
 
@@ -184,8 +134,8 @@ To commit but skip pre-commit hooks, run `git commit -m "my amazing commit messa
 
 #### It works fine locally but doesn't deploy
 
-- Check that the `@sveltejs/adapter-auto` package is up to date
-- Check that the Node version is LTS
+- Check that the `@sveltejs/adapter-cloudflare` package is up to date
+- Check that the Node version matches `.node-version`
 
 ### Images
 
