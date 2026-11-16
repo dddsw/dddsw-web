@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { flushSync, onMount } from 'svelte';
-	import { tabTransition } from '#lib/viewTransitions.ts';
+	import { flushSync, onMount, tick } from 'svelte';
+	import { tabTransition, talkTransition } from '#lib/viewTransitions.ts';
 	import { replaceState } from '$app/navigation';
 	import { Dialog, Portal, Tabs } from '@skeletonlabs/skeleton-svelte';
 	import * as bookmark from '@fortawesome/free-solid-svg-icons/faBookmark';
+	import * as xmark from '@fortawesome/free-solid-svg-icons/faXmark';
 	import Cow from '#lib/components/Cow.svelte';
 	import { pastEvents, talkSlug, type Talk } from '#lib/content/pastEvents.ts';
 	import { pastSpeakers } from '#lib/content/pastSpeakers.ts';
@@ -31,18 +32,30 @@
 	}
 
 	function onTabChange(value: string) {
-		const index = (y: string) => pastEvents.findIndex((e) => String(e.year) === y);
-		tabTransition(index(year), index(value), () => flushSync(() => (year = value)));
+		const trigger = (y: string) => document.querySelector(`[data-year-tab="${y}"]`);
+		tabTransition(trigger(year), trigger(value), () => flushSync(() => (year = value)));
 		replaceState(`#${value}`, {});
 	}
 
+	/** The card a talk's dialog grows out of, and shrinks back into. */
+	const talkCard = (talk: Talk, talkYear: number) =>
+		document.querySelector(`[data-talk="${CSS.escape(`${talkYear}/${talkSlug(talk.title)}`)}"]`);
+
 	function showTalk(talk: Talk, talkYear: number) {
-		openTalk = { ...talk, year: talkYear };
+		talkTransition(talkCard(talk, talkYear), true, async () => {
+			flushSync(() => (openTalk = { ...talk, year: talkYear }));
+			// The dialog's contents mount a tick after it is told to open.
+			await tick();
+		});
 		replaceState(`#${talkYear}/${talkSlug(talk.title)}`, {});
 	}
 
 	function closeTalk() {
-		openTalk = undefined;
+		if (!openTalk) return;
+		talkTransition(talkCard(openTalk, openTalk.year), false, async () => {
+			flushSync(() => (openTalk = undefined));
+			await tick();
+		});
 		replaceState(`#${year}`, {});
 	}
 
@@ -110,7 +123,14 @@
 			{#each pastEvents as e (e.year)}
 				<Tabs.Trigger
 					value={String(e.year)}
-					class="btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 data-[selected]:cursor-default data-[selected]:preset-filled-primary-500 data-[selected]:hover:preset-filled-primary-500">
+					data-year-tab={e.year}
+					class="relative isolate btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 data-[selected]:cursor-default data-[selected]:preset-filled-primary-500 data-[selected]:bg-transparent! data-[selected]:hover:preset-filled-primary-500">
+					<!-- The orange pill is its own element so it can slide between years. -->
+					{#if year === String(e.year)}
+						<span
+							aria-hidden="true"
+							class="vt-tab-pill absolute inset-0 -z-10 rounded-base bg-primary-500"></span>
+					{/if}
 					<span id={String(e.year)}>{e.year}</span>
 				</Tabs.Trigger>
 			{/each}
@@ -236,6 +256,7 @@
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							{#each e.talks as talk (talk.speaker + talk.title)}
 								<li
+									data-talk="{e.year}/{talkSlug(talk.title)}"
 									class="flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5">
 									<div class="flex items-start justify-between gap-3">
 										<span class="font-semibold">{talk.title}</span>
@@ -322,13 +343,36 @@
 	</Tabs>
 </section>
 
-<Dialog open={!!openTalk} onOpenChange={(details) => !details.open && closeTalk()}>
+<Dialog
+	open={!!openTalk}
+	onOpenChange={(details) => !details.open && closeTalk()}
+	initialFocusEl={() => document.querySelector('.vt-talk-dialog [data-part="close-trigger"]')}>
 	<Portal>
 		<Dialog.Backdrop class="fixed inset-0 z-40 bg-surface-950/60" />
 		<Dialog.Positioner class="fixed inset-0 z-50 flex items-center justify-center p-4">
 			<Dialog.Content
-				class="max-h-full w-full max-w-2xl space-y-4 overflow-y-auto card bg-surface-50-950 p-6 shadow-xl dark:border dark:border-surface-500">
-				<Dialog.Title class="h3">{openTalk?.title}</Dialog.Title>
+				class="vt-talk-dialog max-h-full w-full max-w-2xl space-y-4 overflow-y-auto card bg-surface-50-950 p-6 shadow-xl dark:border dark:border-surface-500">
+				<div class="flex items-start justify-between gap-4">
+					<Dialog.Title class="h3">{openTalk?.title}</Dialog.Title>
+					<div class="flex shrink-0 items-center gap-2">
+						{#if openTalk}{@render bookmarkButton(openTalk, openTalk.year)}{/if}
+						<Dialog.CloseTrigger
+							class="btn-icon cursor-pointer rounded-full preset-tonal hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+							aria-label="Close"
+							aria-keyshortcuts="Escape"
+							title="Close (Esc)">
+							<svg
+								viewBox="0 0 {xmark.width} {xmark.height}"
+								fill="currentColor"
+								aria-hidden="true"
+								focusable="false"
+								class="size-4"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d={xmark.svgPathData} />
+							</svg>
+						</Dialog.CloseTrigger>
+					</div>
+				</div>
 				<p class="font-semibold text-secondary-700-300">
 					{openTalk?.speaker} · DDD South West {openTalk?.year}
 				</p>
@@ -358,12 +402,10 @@
 						{/if}
 					</section>
 				{/each}
-				<div class="flex items-center justify-between gap-2">
-					<Dialog.CloseTrigger
-						class="btn cursor-pointer preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
-						>Close</Dialog.CloseTrigger>
-					{#if openTalk}{@render bookmarkButton(openTalk, openTalk.year)}{/if}
-				</div>
+				<!-- Touch screens have no Esc key, and tapping outside is the norm there. -->
+				<p class="hidden text-sm text-surface-700-300 pointer-fine:block">
+					Press <kbd class="kbd">Esc</kbd> or click outside to close.
+				</p>
 			</Dialog.Content>
 		</Dialog.Positioner>
 	</Portal>

@@ -94,7 +94,7 @@ html[data-vt='nav'] .vt-pill {
 html[data-vt='nav']::view-transition-group(site-header-bg) {
 	z-index: 50;
 }
-html[data-vt='nav']::view-transition-group(nav-pill) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-group(nav-pill) {
 	z-index: 51;
 }
 html[data-vt='nav']::view-transition-group(site-header) {
@@ -103,12 +103,15 @@ html[data-vt='nav']::view-transition-group(site-header) {
 /*
  * Moving between two links, the pill is drawn by the group itself: a real rounded box whose size
  * animates, rather than a snapshot being stretched (which would squash its corners).
+ * The selected past-events year has the same pill (see "Past events tabs" below).
  */
-html[data-vt='nav'][data-vt-pill-morph]::view-transition-group(nav-pill) {
+html:is([data-vt='nav'], [data-vt='tabs'])[data-vt-pill-morph]::view-transition-group(nav-pill) {
 	background-color: var(--color-primary-500);
 	border-radius: var(--radius-base);
 }
-html[data-vt='nav'][data-vt-pill-morph]::view-transition-image-pair(nav-pill) {
+html:is([data-vt='nav'], [data-vt='tabs'])[data-vt-pill-morph]::view-transition-image-pair(
+		nav-pill
+	) {
 	display: none;
 }
 
@@ -122,26 +125,26 @@ html[data-vt='nav'] [data-vt-link='to']:not([aria-current]) {
 	background-color: transparent !important;
 	color: inherit !important;
 }
-html[data-vt='nav'] [data-vt-link='from'] {
+html:is([data-vt='nav'], [data-vt='tabs']) [data-vt-link='from'] {
 	view-transition-name: nav-from;
 }
-html[data-vt='nav'] [data-vt-link='to'] {
+html:is([data-vt='nav'], [data-vt='tabs']) [data-vt-link='to'] {
 	view-transition-name: nav-to;
 }
-html[data-vt='nav']::view-transition-group(nav-from),
-html[data-vt='nav']::view-transition-group(nav-to) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-group(nav-from),
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-group(nav-to) {
 	z-index: 53;
 }
-html[data-vt='nav']::view-transition-old(nav-from) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-old(nav-from) {
 	animation: vt-swap-out-early var(--vt-move-dur) linear both;
 }
-html[data-vt='nav']::view-transition-new(nav-from) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-new(nav-from) {
 	animation: vt-swap-in-early var(--vt-move-dur) linear both;
 }
-html[data-vt='nav']::view-transition-old(nav-to) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-old(nav-to) {
 	animation: vt-swap-out-late var(--vt-move-dur) linear both;
 }
-html[data-vt='nav']::view-transition-new(nav-to) {
+html:is([data-vt='nav'], [data-vt='tabs'])::view-transition-new(nav-to) {
 	animation: vt-swap-in-late var(--vt-move-dur) linear both;
 }
 /* Early: as the pill pulls away (it moves fastest at the start). Late: as it covers the link. */
@@ -258,6 +261,22 @@ html[data-vt='nav'][data-vt-home]::view-transition-new(banner-cow) {
 
 /* ---------- Past events tabs ---------- */
 
+/*
+ * The selected year's pill slides to the chosen year, like the header's (sharing its rules above).
+ * The chosen year's hover look is swapped back to its resting look, so only the pill covers it.
+ */
+html[data-vt='tabs'] .vt-tab-pill {
+	view-transition-name: nav-pill;
+}
+html[data-vt='tabs'] [data-vt-link='to']:not([aria-selected='true']) {
+	background-color: color-mix(
+		in oklab,
+		light-dark(var(--color-surface-950), var(--color-surface-50)) 10%,
+		transparent
+	) !important;
+	color: var(--color-surface-950-50) !important;
+}
+
 html[data-vt='tabs'] .vt-tab-panel:not([hidden]) {
 	view-transition-name: tab-panel;
 }
@@ -266,6 +285,69 @@ html[data-vt='tabs']::view-transition-old(tab-panel) {
 }
 html[data-vt='tabs']::view-transition-new(tab-panel) {
 	animation: vt-in var(--vt-in-dur) var(--vt-ease-out) var(--vt-in-delay) both;
+}
+
+/* ---------- Past events: a talk's card grows into its dialog ---------- */
+
+html[data-vt='talk'] [data-vt-talk],
+html[data-vt='talk'] .vt-talk-dialog {
+	view-transition-name: talk;
+}
+/*
+ * Like a container transform: the box is drawn by the group (in the dialog's colour) and resizes,
+ * while the card's and the dialog's contents keep their own size, pinned to the top left, and swap
+ * over early in the move. So no text is ever stretched.
+ */
+html[data-vt='talk'][data-vt-talk-morph]::view-transition-group(talk) {
+	background-color: var(--color-surface-50-950);
+	border-radius: var(--radius-container);
+	overflow: clip;
+}
+html[data-vt='talk'][data-vt-talk-morph]::view-transition-old(talk),
+html[data-vt='talk'][data-vt-talk-morph]::view-transition-new(talk) {
+	inline-size: auto;
+	block-size: auto;
+}
+html[data-vt='talk'][data-vt-talk-morph]::view-transition-old(talk) {
+	animation: vt-content-out var(--vt-move-dur) linear both;
+}
+html[data-vt='talk'][data-vt-talk-morph]::view-transition-new(talk) {
+	animation: vt-content-in var(--vt-move-dur) linear both;
+}
+@keyframes vt-content-out {
+	30%,
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes vt-content-in {
+	0%,
+	15% {
+		opacity: 0;
+	}
+	55%,
+	100% {
+		opacity: 1;
+	}
+}
+/* With no card in view to grow from, the dialog rises in (and sinks out) by itself. */
+html[data-vt='talk']::view-transition-new(talk):only-child {
+	animation: vt-dialog-in var(--vt-in-dur) var(--vt-ease-out) both;
+}
+html[data-vt='talk']::view-transition-old(talk):only-child {
+	animation: vt-dialog-out var(--vt-out-dur) var(--vt-ease-in) both;
+}
+@keyframes vt-dialog-in {
+	from {
+		opacity: 0;
+		transform: translateY(12px) scale(0.96);
+	}
+}
+@keyframes vt-dialog-out {
+	to {
+		opacity: 0;
+		transform: scale(0.96);
+	}
 }
 
 /* ---------- Colour mode: the new mode is revealed by a circle (animated from script). ---------- */

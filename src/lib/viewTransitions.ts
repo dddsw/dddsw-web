@@ -3,7 +3,7 @@ import type { onNavigate } from '$app/navigation';
 type OnNavigate = Parameters<typeof onNavigate>[0];
 
 /**
- * View transitions between pages, the colour mode and the past-events tabs.
+ * View transitions between pages, the colour mode, the past-events tabs and talk dialogs.
  *
  * Elements only carry a `view-transition-name` while a transition is being captured: the names
  * live in view-transitions.css behind `html[data-vt=<kind>]`, and this module sets that
@@ -13,7 +13,7 @@ type OnNavigate = Parameters<typeof onNavigate>[0];
  * None run when reduced motion is requested, or where the browser has no view transitions.
  */
 
-type Kind = 'nav' | 'theme' | 'tabs';
+type Kind = 'nav' | 'theme' | 'tabs' | 'talk';
 
 /** Left-to-right order of the pages in the header, so content can slide the way the pill moves. */
 const spatialOrder = [
@@ -63,8 +63,11 @@ function startTransition(
 		delete html.dataset.vtBannerMorph;
 		delete html.dataset.vtHome;
 		delete html.dataset.vtPillMorph;
-		for (const link of document.querySelectorAll('[data-vt-link]'))
-			link.removeAttribute('data-vt-link');
+		delete html.dataset.vtTalkMorph;
+		for (const el of document.querySelectorAll('[data-vt-link], [data-vt-talk]')) {
+			el.removeAttribute('data-vt-link');
+			el.removeAttribute('data-vt-talk');
+		}
 	});
 	return transition.updateCallbackDone;
 }
@@ -84,20 +87,29 @@ function markBannerVisibility() {
 }
 
 /**
- * The two nav links the pill moves between get their own layers, so each one's text changes colour
- * as the pill leaves or arrives (not across the whole transition), and the clicked link's hover
- * box is left out of the snapshot, so it is never seen behind the arriving pill.
+ * The two links (or tabs) a pill moves between get their own layers, so each one's text changes
+ * colour as the pill leaves or arrives (not across the whole transition), and the clicked one's
+ * hover box is left out of the snapshot, so it is never seen behind the arriving pill.
  */
-function markNavLinks(from: string, to: string) {
-	const link = (path: string) =>
-		document.querySelector(`nav[aria-label="Main"] a[href="${CSS.escape(path)}"]`);
-	const fromLink = link(from);
-	const toLink = link(to);
+function markPillLinks(fromLink: Element | null, toLink: Element | null) {
 	fromLink?.setAttribute('data-vt-link', 'from');
 	toLink?.setAttribute('data-vt-link', 'to');
 	// Only a pill moving between two links is drawn as a live box; one appearing or leaving
 	// (a page outside the nav) keeps its snapshot so it can grow or shrink.
 	if (fromLink && toLink) root().dataset.vtPillMorph = '';
+}
+
+function markNavLinks(from: string, to: string) {
+	const link = (path: string) =>
+		document.querySelector(`nav[aria-label="Main"] a[href="${CSS.escape(path)}"]`);
+	markPillLinks(link(from), link(to));
+}
+
+/** Whether any of the element is on screen, below the sticky header. */
+function inView(el: Element): boolean {
+	const rect = el.getBoundingClientRect();
+	const headerHeight = document.querySelector('header')?.getBoundingClientRect().bottom ?? 0;
+	return rect.bottom > headerHeight && rect.top < innerHeight && rect.height > 0;
 }
 
 function direction(from: string, to: string): number {
@@ -135,14 +147,46 @@ export const navigationTransition: OnNavigate = (navigation) => {
 	});
 };
 
-/** Moves incoming tab content in from the side of the tab that was chosen. */
-export function tabTransition(fromIndex: number, toIndex: number, update: () => void) {
-	if (!transitionsEnabled() || fromIndex === toIndex) {
+/**
+ * Slides the selected tab's pill from the old tab to the new one, and moves the incoming tab
+ * content in from that side. `from` and `to` are the two tab triggers.
+ */
+export function tabTransition(from: Element | null, to: Element | null, update: () => void) {
+	if (!transitionsEnabled() || !from || !to || from === to) {
 		update();
 		return;
 	}
-	setMotion(toIndex > fromIndex ? 1 : -1, 0);
+	const forwards = from.compareDocumentPosition(to) & Node.DOCUMENT_POSITION_FOLLOWING;
+	setMotion(forwards ? 1 : -1, 0);
+	markPillLinks(from, to);
 	startTransition('tabs', update);
+}
+
+/**
+ * Opens a talk's details by growing its card into the dialog, or closes them by shrinking the
+ * dialog back into the card. A card that is out of view isn't shared: the dialog then simply
+ * fades and scales in or out by itself.
+ *
+ * `update` opens or closes the dialog; it may be async when the dialog renders a tick later.
+ */
+export function talkTransition(
+	card: Element | null,
+	opening: boolean,
+	update: () => void | Promise<void>
+) {
+	if (!transitionsEnabled()) {
+		void update();
+		return;
+	}
+	const shared = card && inView(card) ? card : null;
+	if (shared) root().dataset.vtTalkMorph = '';
+	// Only one element may hold the name at a time: the card while the dialog is closed.
+	if (opening) shared?.setAttribute('data-vt-talk', '');
+	startTransition('talk', async () => {
+		if (opening) shared?.removeAttribute('data-vt-talk');
+		await update();
+		if (!opening) shared?.setAttribute('data-vt-talk', '');
+	});
 }
 
 /** Switches the colour mode as a circle growing out of the switch that was pressed. */
