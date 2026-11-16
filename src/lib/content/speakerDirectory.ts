@@ -1,5 +1,6 @@
 import { pastEvents, talkSlug, type PastEvent, type Talk } from './pastEvents.ts';
 import { pastSpeakers, type PastSpeaker } from './pastSpeakers.ts';
+import aliases from './past/aliases.json';
 
 export interface DirectoryTalk {
 	year: number;
@@ -23,16 +24,10 @@ export interface DirectorySpeaker {
 }
 
 /**
- * Older talks only have the speaker's name, and some people went by a different one in other
- * years. These point the other names at one person's id, so their talks are listed together.
+ * Other names people have gone by, pointing at the id they're known by, so all their talks are listed
+ * together. Shared with the past year importer (see docs/importing-past-years.md).
  */
-const sameSpeaker: Record<string, string> = {
-	'Anna Wykes': 'anna-maria-wykes',
-	'Andrew Chaa': 'youngho-andrew-chaa',
-	'Colin Mackay': 'colin-angus-mackay',
-	'Stu Lang': 'stuart-lang',
-	"Richard 'Rippo' Wilde": 'richard-wilde'
-};
+const sameSpeaker: Record<string, string> = aliases;
 
 /** Talk "speakers" that aren't a person. */
 const notPeople = new Set(['Panel']);

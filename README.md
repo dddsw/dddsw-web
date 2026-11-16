@@ -74,6 +74,7 @@ The site is SvelteKit 3 and Svelte 5, styled with [Skeleton](https://www.skeleto
 | Dates and what has happened so far             | `src/lib/milestones.ts`                                                                               |
 | Schedule, speakers and sessions                | Set `sessionizeJsonApiUrl` in `src/lib/eventDetails.ts`; the schedule and speakers pages then fill in |
 | Team, sponsors, past events                    | `src/lib/content/*.ts`                                                                                |
+| Past years' talks and speakers                 | `npm run import:past-year` (see [docs/importing-past-years.md](docs/importing-past-years.md))         |
 | Which links appear in the main nav             | `src/lib/navigation.ts`                                                                               |
 
 ### How the site follows the milestones

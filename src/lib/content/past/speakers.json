@@ -3,407 +3,475 @@
 		"name": "Aaron Green",
 		"tagline": "Umbraco Contributor and Consultant @ iO Associates",
 		"bio": "For as long as I can remember, I’ve been obsessed with communication, performance, willpower, discipline, mindset, resilience, and self-improvement—but why?\n\nGrowing up with ADHD and Autism, I faced my fair share of challenges. Coming from a chaotic home life, I often felt like I was behind the curve. School was a struggle—I couldn’t keep up with homework, I had trouble focusing, I was bullied, and I felt out of step with everyone around me.\n\nAs a teenager, I decided to tackle my first problem: communication. I wanted to connect better, build confidence, and speak with impact. I consumed everything I could on the topic and, through years of practice, turned communication into my greatest strength—something that now underpins my career and allows me to help people every day.\n\nAs I entered adulthood, I realized I wasn’t prepared for life’s bigger challenges—struggles with discipline, motivation, and willpower. So I began the slow process of solving these problems, bit by bit. Along the way, I learned how much we can actually change about ourselves when we take a deliberate approach.\n\nI’m not here to claim I have all the answers, because I don’t. I’m not a finished product, and I doubt I ever will be. But I’ve come far enough to believe in the value of sharing what I’ve learned. I care deeply about helping others—whether that’s through better, more empathetic communication, or simply showing that struggles with focus, willpower, and discipline can be worked on and improved.\n\nUltimately, I’m passionate about optimism and hope—about the belief that things can get better. My wish is that by sharing my experiences and insights, I might help someone else feel a little less alone and a little more capable of facing life’s challenges head-on.",
-		"photo": "past-speakers/aaron-green.png"
+		"photo": "past-speakers/aaron-green.png",
+		"year": 2025
 	},
 	"adam-jones": {
 		"name": "Adam Jones",
 		"tagline": "CTO at Seccl",
 		"bio": "Adam is the CTO of Seccl, who build technology that helps more people to invest, and invest well. Their engineering allows forward-thinking firms to remove the hassle, lower the cost and improve the overall experience of investing – empowering more people to invest and be treated well.\n\nAdam has an extensive background in fintech covering pensions, investments and financial advice. He previously founded and grew a fintech business focused on investment research tooling (Ada Fintech), and was the CTO of Redington where he developed their next generation of technology tools. Prior to joining Redington, he was Head of Innovation for Altus Consulting.",
-		"photo": "past-speakers/adam-jones.jpg"
+		"photo": "past-speakers/adam-jones.jpg",
+		"year": 2023
 	},
 	"adrian-banks": {
 		"name": "Adrian Banks",
 		"tagline": "Lead Software Engineer at Redgate",
 		"bio": "Adrian Banks is a Lead Software Engineer at Redgate Software. He has over 25 years of experience in the software industry, from developing code to leading teams.\n\nNearly 10 years ago he was cajoled into sketchnoting some talks at a conference, and having seen its benefits has been doing it since - amassing over 200 sketchnotes so far.",
-		"photo": "past-speakers/adrian-banks.jpg"
+		"photo": "past-speakers/adrian-banks.jpg",
+		"year": 2026
 	},
 	"andrew-clymer": {
 		"name": "Andrew Clymer",
 		"tagline": "Co-Founder, Managing Director at Rock Solid Knowledge",
 		"bio": "Andy has programmed professionally in various languages, including 6502 assemblers, C, C++, Java and C#. He’s a co-founder at Rock Solid Knowledge, where he’s responsible for managing the Identity and Access Management Division, and growing the company’s product portfolio utilising a range of technologies including web, mobile and Umbraco CMS.\n\nOver the years Andy has trained thousands of software developers, spoken at dozens of technical conferences, and is the co-author of Pro Asynchronous Programming with .NET, published by Apress.",
-		"photo": "past-speakers/andrew-clymer.jpg"
+		"photo": "past-speakers/andrew-clymer.jpg",
+		"year": 2026
 	},
 	"andrew-poole": {
 		"name": "Andrew Poole",
 		"tagline": "Senior Backend Engineer @ Flagstone",
 		"bio": "Andrew Poole has been writing code for a living since 2005, most recently as a Senior Backend Engineer at Flagstone, and ClearBank before that. He loves solving problems, design and architecture, communicating ideas and the incredible creativity of software engineering. He’s interested in event sourcing, immutable architecture and distributed systems. He also enjoy mentoring others and building great team culture. He has previously been a successful team lead, but what really drives him is striving to write elegant, intentional code which is easy to understand and maintain. He absolutely loves C# and only really dabbles in other languages in order to write better C#. Outside of work Andrew is a husband and father of 2 who enjoys making music, especially playing bass guitar and making things in his shed.",
-		"photo": "past-speakers/andrew-poole.jpg"
+		"photo": "past-speakers/andrew-poole.jpg",
+		"year": 2026
 	},
 	"anita-squires": {
 		"name": "Anita Squires",
 		"tagline": "Automated Tester at BJSS",
 		"bio": "Anita has always been interested in computers from an early age; very early on, her dad gifted her a ZX spectrum. However, it took until she was later in her career to actually move directly into a coding career by becoming an automated tester.  Before that, she spent many years working in a support role in various financial technology institutes, working closely with analysts, developers and testers, noticing the lack of young women in the space.\nOutside of her day job, she has focused on trying to encourage more young women into technology roles with the Dell Stem Apire Mentoring program.",
-		"photo": "past-speakers/anita-squires.png"
+		"photo": "past-speakers/anita-squires.png",
+		"year": 2025
 	},
 	"anna-maria-wykes": {
 		"name": "Anna-Maria Wykes",
 		"tagline": "Microsoft AI MVP | Data & AI RSA (Resident Solution Architect) and Consultant",
 		"bio": "Anna is a veteran software and data engineer as well as a Microsoft AI MVP, boasting over 17 years of experience. She has undertaken various projects, including real-time analytics with Scala and Kafka, constructing Data Lakes with Spark, and applying engineering to Data Science. Anna currently serves as a RSA (Resident Solution Architect)  and consultant, contributing to the development of Databricks and Neueda's data engineering and AI practice. With a genuine passion for data, she endeavors to bridge the gap between Software Development and Data Science. Anna's other areas of interest include DevOps (DataOps, MLOps, LLMOps), Agile methodologies, and organizing or participating in local Code Clubs.",
-		"photo": "past-speakers/anna-maria-wykes.jpg"
+		"photo": "past-speakers/anna-maria-wykes.jpg",
+		"year": 2024
 	},
 	"carly-richmond": {
 		"name": "Carly Richmond",
 		"tagline": "Developer Advocate Lead @ Elastic",
 		"bio": "Carly is Developer Advocate Lead at Elastic, based in London, UK. Before joining Elastic in 2022, she spent over 10 years working as a technologist at a large investment bank, specialising in front-end web development and agility. She is a UI developer, who occasionally dabbles in writing backend services, a speaker and a regular blogger.\n\nShe enjoys cooking, photography, drinking tea, and chasing after her young son in her spare time.",
-		"photo": "past-speakers/carly-richmond.jpg"
+		"photo": "past-speakers/carly-richmond.jpg",
+		"year": 2026
 	},
 	"chaithali-shashikanth-kundapur": {
 		"name": "Chaithali Shashikanth Kundapur",
 		"tagline": "Curious AI Bird",
 		"bio": "I’m an AI/ML Engineer who works on building and deploying production-grade AI and LLM systems. I’m especially interested in making AI systems reliable, trustworthy, and usable in the real world, and I enjoy sharing practical lessons from building AI beyond demos and hype.",
-		"photo": "past-speakers/chaithali-shashikanth-kundapur.jpg"
+		"photo": "past-speakers/chaithali-shashikanth-kundapur.jpg",
+		"year": 2026
 	},
 	"charles-rea": {
 		"name": "Charles Rea",
 		"tagline": "Staff Engineer - Auth0 by Okta",
 		"bio": "Charles is a Staff Engineer & Technical Lead at Auth0 by Okta, responsible for the core OAuth 2.0 and OIDC implementations that are at the heart of Auth0. He loves the opportunities to expose these complex security topics to developers in an approachable way; whilst balancing the challenges of scaling our core services to handle billions of login transactions per month.",
-		"photo": "past-speakers/charles-rea.jpg"
+		"photo": "past-speakers/charles-rea.jpg",
+		"year": 2024
 	},
 	"clifford-agius": {
 		"name": "Clifford Agius",
 		"tagline": "Freelance Developer that just so happens to fly an Airbus A320 around the Europe.",
 		"bio": "Clifford Agius, Freelance .NET Developer and also blogs from time to time, is currently a three-time Developer Technologies & IoT MVP, specialising in Xamarin/.NET MAUI and IoT. By day, an airline pilot flying Airbus A320 aircraft around Europe and when not doing that, Clifford freelances as a .NET developer. An active member of the .NET community, he is a regular speaker at conferences and meet-ups around the world.\n\nClifford graduated as an engineer from the Ford Technical Training Centre in 1995. After 11 years as an electrical/mechanical engineer working with Robotics and PLC Programming, he trained to become an Airline Pilot in 2001. Clifford became a Microsoft Valued Professional (MVP) in 2020.",
-		"photo": "past-speakers/clifford-agius.jpg"
+		"photo": "past-speakers/clifford-agius.jpg",
+		"year": 2025
 	},
 	"dan-abel": {
 		"name": "Dan Abel",
 		"tagline": "Senior Staff Engineer",
 		"bio": "Dan has spent more than 30 years as a software engineer and technical leader, learning better ways to ship and get feedback the team needs.\n\nHe's been the Dev in Ops teams, built new paved paths, guided engineering groups to better security, and trained folk in Agile engineering.\n\nHe uses his experience in people and coaching to lead and guide teams, strengthen technical excellence and grow technical leadership.",
-		"photo": "past-speakers/dan-abel.jpg"
+		"photo": "past-speakers/dan-abel.jpg",
+		"year": 2026
 	},
 	"danielle-dias": {
 		"name": "Danielle Dias",
 		"tagline": "Senior Software Engineer",
 		"bio": "I’m a Software Engineer, currently working with .NET. I have worked as a QA, Automation Tester and Full-Stack Developer, across the education, FinTech, and automotive industries.",
-		"photo": "past-speakers/danielle-dias.jpg"
+		"photo": "past-speakers/danielle-dias.jpg",
+		"year": 2025
 	},
 	"dee-bolt": {
 		"name": "Dee Bolt",
 		"tagline": "External Identity & IAM Consultant",
 		"bio": "I have been in the External Identity and Access Management space since 2020, helping clients architect and implement their Identity solutions and keeping their application secure.\n\nPrior to the identity ecosystem, I was a development consultant in travel and tourism (mainly C#) and a software and database analyst for a training company. My main skillset is around system architecture, identity, C#, and SQL.\n\nOther community contributions include the Azure Technical Contributor Program and Microsoft sponsored Identity discord channel.",
-		"photo": "past-speakers/dee-bolt.jpg"
+		"photo": "past-speakers/dee-bolt.jpg",
+		"year": 2024
 	},
 	"dylan-beattie": {
 		"name": "Dylan Beattie",
 		"tagline": "Creator of the Rockstar programming language",
 		"bio": "Dylan Beattie is an independent consultant who has been building data-driven web applications since the 1990s. He’s managed teams, taught workshops, and worked on everything from tiny standalone websites to complex distributed systems. He’s a Microsoft MVP, and he regularly speaks at conferences and user groups all over the world.\n\nDylan is the creator of the Rockstar programming language, and the founder, vocalist and lead guitarist with The Linebreakers, the world's greatest nerd comedy classic rock disco alt punk covers band.",
-		"photo": "past-speakers/dylan-beattie.jpg"
+		"photo": "past-speakers/dylan-beattie.jpg",
+		"year": 2025
 	},
 	"eli-holderness": {
 		"name": "Eli Holderness",
 		"tagline": "Developer Advocate at Scaleway",
 		"bio": "Eli has been in tech for 6 years, working in industries ranging from telecoms to biotech to analog circuit design; now, they're doing developer advocacy at Scaleway and yelling at the cloud. In their spare time, they like to play video games, knit and sew, and hang out with their cat.",
-		"photo": "past-speakers/eli-holderness.png"
+		"photo": "past-speakers/eli-holderness.png",
+		"year": 2023
 	},
 	"elizabeth-hanson": {
 		"name": "Elizabeth Hanson",
 		"tagline": "Head of Data Engineering at DeepL",
 		"bio": "Elizabeth Hanson, based in Bath, UK, is the Head of Engineering, Data at DeepL. She focuses on building and scaling data teams that provide reliable, self-service analytics and ensure technical investment aligns with business outcomes. For several years, she has led data and engineering teams, including her previous roles as Director of Engineering at BenchSci and as Technology Manager and then Senior Technology Manager at Just-Eat Takeaway.com.",
-		"photo": "past-speakers/elizabeth-hanson.jpg"
+		"photo": "past-speakers/elizabeth-hanson.jpg",
+		"year": 2026
 	},
 	"gareth-james": {
 		"name": "Gareth James",
 		"tagline": "Software Architect at Imburse (a Duck Creek Technologies company)",
 		"bio": "A software engineer of 20+ years; currently working with .NET and Azure for Imburse (a Duck Creek Technologies company).",
-		"photo": "past-speakers/gareth-james.jpg"
+		"photo": "past-speakers/gareth-james.jpg",
+		"year": 2023
 	},
 	"gary-ewan-park": {
 		"name": "Gary Ewan Park",
 		"tagline": "Gary Ewan Park works full time on Chocolatey CLI, the package manager for Windows.",
 		"bio": "Gary Ewan Park has over 10 years experience working as a developer on technologies such as ASP.NET, Windows Forms, WPF, SharePoint, Silverlight, and many others. Throughout his career, Gary has always looked to see how things can be automated, using the mantra that if you do the same thing more than twice, it is time for automation. In 2017 he was awarded a Microsoft MVP in Developer Technologies, and in 2021 he was awarded a GitHub Star. His day job has him working for Chocolatey Software, Inc.\n\nIn his spare time, Gary contributes to a number of Open Source projects including Chocolatey, Boxstarter, Cake, Cake-Contrib, GitVersion, and GitReleaseManager.",
-		"photo": "past-speakers/gary-ewan-park.jpg"
+		"photo": "past-speakers/gary-ewan-park.jpg",
+		"year": 2025
 	},
 	"gary-short": {
 		"name": "Gary Short",
 		"tagline": "I predict the future.",
 		"bio": "Gary Short is the founder of Darach.ai an AI/ML modelling company that allows you to make better business decisions by predicting the future.",
-		"photo": "past-speakers/gary-short.jpg"
+		"photo": "past-speakers/gary-short.jpg",
+		"year": 2023
 	},
 	"george-bell": {
 		"name": "George Bell",
 		"tagline": "Senior Software Engineer at Made Tech and DigiLocal Volunteer",
 		"bio": "George is a Senior Software Engineer at Made Tech. He's been a software engineer for 6 years, working with both .NET and Ruby. He is also a volunteer for DigiLocal, a Bristol based charity that works to give marginalised young people the opportunity to discover and develop their digital talents.",
-		"photo": "past-speakers/george-bell.jpg"
+		"photo": "past-speakers/george-bell.jpg",
+		"year": 2025
 	},
 	"huw-jeffries": {
 		"name": "Huw Jeffries",
 		"tagline": "Clear Bank Security Engineering Team Lead",
 		"bio": "After 20 years in the software industry, I made the jump into the exciting world of Security Engineering. I’ve led various large-scale transformation projects in this space, reducing the risk of cyber-attacks through least privilege access and removal of static credentials. My background in software allows me to work sympathetically with developers, reducing security friction and removing barriers to productivity. It also enables me to build the trust and collaboration needed to drive organisational change. I am a Microsoft Certified Azure Security Engineer (and Certified Azure Developer) and Security Engineering Team Lead at Clear Bank.",
-		"photo": "past-speakers/huw-jeffries.jpg"
+		"photo": "past-speakers/huw-jeffries.jpg",
+		"year": 2023
 	},
 	"ian-cooper": {
 		"name": "Ian Cooper",
 		"tagline": "Coding architect, pierced, bearded, tattooed",
 		"bio": "Polyglot Coding Architect in London, founder of #ldnug, speaker, tabletop gamer, geek. Tattooed, pierced, and bearded. The 'guv' on @BrighterCommand",
-		"photo": "past-speakers/ian-cooper.jpg"
+		"photo": "past-speakers/ian-cooper.jpg",
+		"year": 2023
 	},
 	"ian-griffiths": {
 		"name": "Ian Griffiths",
 		"tagline": "endjin technical fellow",
 		"bio": "Ian started using computers when he was six. He has worked in various aspects of computing, including computer networking, embedded real-time systems, broadcast television systems, medical imaging, and all forms of cloud computing. He is a Technical Fellow at endjin, You can follow him on Twitter via @idg10",
-		"photo": "past-speakers/ian-griffiths.jpg"
+		"photo": "past-speakers/ian-griffiths.jpg",
+		"year": 2023
 	},
 	"jacqui-read": {
 		"name": "Jacqui Read",
 		"tagline": "Chief Architect, Author of Communication Patterns",
 		"bio": "Jacqui Read is an internationally-recognised architect, and author of Communication Patterns: A Guide for Developers and Architects. She specialises in advising organisations on software design and architecture, helping to determine direction in complex environments. Jacqui teaches public and private training courses, and is a keynote speaker at international conferences, covering topics such as software design, architecture practices, and technical communication.\n\nHer professional interests include collaborative modelling, knowledge management, Domain-Driven Design, sociotechnical architecture, and modernising enterprise architecture practices. Her website is https://jacquiread.com.",
-		"photo": "past-speakers/jacqui-read.jpg"
+		"photo": "past-speakers/jacqui-read.jpg",
+		"year": 2026
 	},
 	"james-gaisford": {
 		"name": "James Gaisford",
 		"tagline": "Software Development Manager",
 		"bio": "James Gaisford is an experienced developer, technologist, and team lead with a passion for helping teams deliver securely and ethically. With over 20 years of experience, James has successfully led teams of software developers on a diverse range of projects, from innovative startups to large-scale enterprise solutions. When not geeking out, James enjoys volunteering in his local community through parkrun and as a school governor.",
-		"photo": "past-speakers/james-gaisford.png"
+		"photo": "past-speakers/james-gaisford.png",
+		"year": 2025
 	},
 	"james-world": {
 		"name": "James World",
 		"tagline": "Lead Systems Architect at Imburse Payments",
 		"bio": "The best place to find out more about my professional experience is on LinkedIn at https://linkd.in/james-world .\n\nI have been a professional developer for over 25 years. I spent 10 years at Microsoft as an Application Development Consultant, covering the formative years of .NET where I helped many customers through their .NET adoption and ran the UK Microsoft ADC Performance and Scalability Labs.\n\nSince then, I have been a contract consultant and Azure/.NET Solution Architect working on cloud hosted distributed applications. I currently am the lead systems architect at fintech company Imburse Payments.",
-		"photo": "past-speakers/james-world.jpg"
+		"photo": "past-speakers/james-world.jpg",
+		"year": 2023
 	},
 	"jennifer-d-daniel": {
 		"name": "Jennifer D. Daniel",
 		"tagline": "PhD Researcher, University of bristol",
 		"bio": "Jennifer is a PhD candidate in Innovation and Entrepreneurship at the University of Bristol. She is dedicated to understanding the factors that contribute to the success of women in technology entrepreneurship, with the ultimate goal of shaping better policies and practices for the transformation of developing economies.",
-		"photo": "past-speakers/jennifer-d-daniel.jpg"
+		"photo": "past-speakers/jennifer-d-daniel.jpg",
+		"year": 2024
 	},
 	"joe-glombek": {
 		"name": "Joe Glombek",
 		"tagline": "Senior .NET Developer, Umbraco MVP",
 		"bio": "Joe is a senior .NET developer who's passionate about open technologies and tech community. He’s an Umbraco Certified Master and MVP who's been working with .NET, Umbraco and Azure in various digital agencies for the past decade.\n\nTalk to him about open web technologies, accessibility, community-building and Umbraco!",
-		"photo": "past-speakers/joe-glombek.jpg"
+		"photo": "past-speakers/joe-glombek.jpg",
+		"year": 2026
 	},
 	"john-kilmister": {
 		"name": "John Kilmister",
 		"tagline": "Azure Software Architect",
 		"bio": "John Kilmister is an Azure MVP, software engineer, and architect that enjoys exploring new technologies to solve real-world problems. With a background in e-commerce companies, he currently works as a software architect at a multinational company, working with teams on a range of Azure-based applications.",
-		"photo": "past-speakers/john-kilmister.jpg"
+		"photo": "past-speakers/john-kilmister.jpg",
+		"year": 2026
 	},
 	"kathleen-dollard": {
 		"name": "Kathleen Dollard",
 		"tagline": "C# Connoisseur",
 		"bio": "Kathleen loves to code and loves to teach and talk about code. She’s written tons of articles, a book, and spoken at numerous conferences around the world. After 8 years on the .NET team, including as the .NET Languages PM guiding C#, F# and VB, Kathleen is focusing on speaking and teaching, about C#, .NET, code generation and life in tech. She's always ready to help developers take the next step in exploring the wonderful world we call code.",
-		"photo": "past-speakers/kathleen-dollard.jpg"
+		"photo": "past-speakers/kathleen-dollard.jpg",
+		"year": 2026
 	},
 	"kevin-smith": {
 		"name": "Kevin Smith",
 		"tagline": "Coder",
 		"bio": "Kevin Smith is an accomplished Principal Software Engineer and technology enthusiast with a strong background in a wide range of technologies. He has been recognized as a Microsoft MVP and MongoDB Champion for his expertise and contributions to the industry.\n\nIn his day-to-day work, Kevin focuses on the development of .NET and TypeScript applications, leveraging AWS and Azure Cloud Services to build robust and scalable solutions for his clients. He brings a wealth of experience and expertise to every project he works on, delivering outstanding results and exceeding expectations.\n\nBeyond his work as a software engineer, Kevin is heavily involved in the technology community. He runs three community groups, including dotnet York and dotnetsheff in the North of England, as well as a virtual hackathon group called MiniHack. He is passionate about sharing his knowledge and expertise with others, regularly speaking at user groups and conferences and contributing to the open-source community.",
-		"photo": "past-speakers/kevin-smith.jpg"
+		"photo": "past-speakers/kevin-smith.jpg",
+		"year": 2025
 	},
 	"kevlin-henney": {
 		"name": "Kevlin Henney",
 		"tagline": "Thought Provoker",
 		"bio": "Kevlin is an independent consultant, trainer, speaker and writer. His development interests and work with companies covers programming, practice and people. He is a contributor to the Modern Software Engineering YouTube channel and has written for many publications, including The Register and the O'Reilly Radar. Kevlin is also co-author of two volumes in the Pattern-Oriented Software Architecture series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should Know.",
-		"photo": "past-speakers/kevlin-henney.jpg"
+		"photo": "past-speakers/kevlin-henney.jpg",
+		"year": 2026
 	},
 	"laura-gates": {
 		"name": "Laura Gates",
 		"tagline": "Performance researcher and engineer studying the presence, attention and perceived agency that underlie how humans work with technical systems",
 		"bio": "Laura Gates is a software engineer, researcher and consultant whose work sits at the intersection of human agency and complex systems. Her background in performance and puppetry research gives her a distinctive lens on software design and human-computer interaction.\n\nShe has applied this thinking practically: building and commercialising Obwob, a feedback and impact PWA, and developing a methodology for grounded, TDD-led AI-assisted development using Claude Code. Her approach treats AI tools not as shortcuts but as surfaces that can deepen engineering discipline when properly structured.\n\nLaura advises on human-centred AI integration with a consistent focus: preserving developer agency, authorship and flow in environments where humans increasingly share work with non-human systems.",
-		"photo": "past-speakers/laura-gates.jpg"
+		"photo": "past-speakers/laura-gates.jpg",
+		"year": 2026
 	},
 	"lizzie-darville": {
 		"name": "Lizzie Darville",
 		"tagline": "Scrum master and performance psychology graduate",
 		"bio": "I’ve worked in software development teams for the best part of a decade, primarily as a scrum master, and in that time I have been fascinated by the human side of things - how people interact, communicate, and collaborate. To further my knowledge about what makes us tick and how to get the best out of ourselves (and put the lockdowns to good use!), I embarked on a part-time performance psychology MSc in 2020, graduating in Dec 2023. Now I am keen to share my knowledge and push for psychologically informed workplaces within the software industry.",
-		"photo": "past-speakers/lizzie-darville.png"
+		"photo": "past-speakers/lizzie-darville.png",
+		"year": 2024
 	},
 	"lorraine-pearce": {
 		"name": "Lorraine Pearce",
 		"tagline": "Director of Engineering at Seccl",
 		"bio": "It's simple...\nHave the best time,\nLook after each other,\nDon't be a d*ck!",
-		"photo": "past-speakers/lorraine-pearce.png"
+		"photo": "past-speakers/lorraine-pearce.png",
+		"year": 2026
 	},
 	"lotte-pitcher": {
 		"name": "Lotte Pitcher",
 		"tagline": "Head of Developer Relations at Umbraco | Microsoft MVP",
 		"bio": "Lotte Pitcher has been building websites with Microsoft technologies for longer than she cares to remember. She ran a web development agency in London but is now Head of the Developer Relations team at Umbraco, where she helps maintain a successful open-source project while engaging with its dedicated global community.\n\nAs a Microsoft MVP and a long-time open-source contributor, Lotte organises meetups, hackathons and conferences, speaks at events and releases software. She is a passionate advocate for active participation in tech communities and aims to create inclusive, safe and welcoming spaces - both in-person and virtual - where everyone can learn, collaborate and thrive.",
-		"photo": "past-speakers/lotte-pitcher.jpg"
+		"photo": "past-speakers/lotte-pitcher.jpg",
+		"year": 2026
 	},
 	"marc-denman": {
 		"name": "Marc Denman",
 		"tagline": "Lead DevOps Engineer @ Neighbourly",
 		"bio": "A DevOps engineer in the South West, with over a decade of experience across software engineering, cloud infrastructure, and helping teams work better. Currently leading the DevOps team at Neighbourly, a Bristol-based tech company, where he focuses on building reliable systems in Azure and embedding good engineering practices across the organisation.",
-		"photo": "past-speakers/marc-denman.jpg"
+		"photo": "past-speakers/marc-denman.jpg",
+		"year": 2026
 	},
 	"marin-niehues": {
 		"name": "Marin Niehues",
 		"tagline": "Founder & Principal Consultant",
 		"bio": "Marin Niehues is an independent consultant with a track record of over 20 client projects and two startups of his own. He works with VC-backed scaleups and DAX40 companies alike, advising on organizational design, operational performance, and management structures that actually scale.\n\nIn the past three years, Marin has been a featured speaker at conferences in more than ten countries across three continents - including repeated invitations from Google and Microsoft.",
-		"photo": "past-speakers/marin-niehues.jpg"
+		"photo": "past-speakers/marin-niehues.jpg",
+		"year": 2026
 	},
 	"martin-costello": {
 		"name": "Martin Costello",
 		"tagline": ".NET developer, tester and Microsoft MVP",
 		"bio": "My name is Martin, and I'm a software developer and tester based in London. I'm currently a Principal Engineer at Just Eat Takeaway.com.\n\nI've been working in software development since 2006. My experience is primarily with C# and ASP.NET and related technologies, as well Cloud infrastructure on Azure and AWS.\n\nI've also been a Microsoft MVP in Developer Technologies since 2019.",
-		"photo": "past-speakers/martin-costello.jpg"
+		"photo": "past-speakers/martin-costello.jpg",
+		"year": 2023
 	},
 	"matheus-guimaraes": {
 		"name": "Matheus Guimaraes",
 		"tagline": "International speaker focused on microservices, distributed systems, and cloud architecture. Senior Developer Advocate at AWS.",
 		"bio": "Matheus Guimaraes (@codingmatheus) is a microservices and .NET specialist focused on building scalable, cloud-native systems and helping teams move software into production with confidence.\n\nAn international keynote speaker with over 25 years in tech, he has worked across the industry as a developer, architect, CTO, and tech co-founder. His experience spans modernizing legacy platforms, designing distributed systems, and guiding organizations through large-scale technical transformation.\n\nHis work is shaped by deep hands-on experience with cloud platforms, particularly AWS, designing production-grade distributed systems at scale.\n\nToday, he shares his experience through talks, blogs, videos, and open demos, helping developers and teams design better systems and grow their technical confidence.\n\nOutside of work, he’s a gamer, swimmer, musician, and a firm believer in the intersection of creativity and engineering.",
-		"photo": "past-speakers/matheus-guimaraes.jpg"
+		"photo": "past-speakers/matheus-guimaraes.jpg",
+		"year": 2026
 	},
 	"matt-hunt": {
 		"name": "Matt Hunt",
 		"tagline": ".NET Developer, Speaker",
 		"bio": "Matt has nearly 20 experience in software development starting way back when VB 5 and Classic ASP were his bread and butter. He has a history of working in the finance and services industry and is skilled in C#, Azure, DevOps, Distributed Systems, Microservices Architecture and Agile Methodologies. After having worked as a contractor for many years Matt has now fulfilled his dream and is working for a startup FinTech company in Wales hopefully building the next big thing.",
-		"photo": "past-speakers/matt-hunt.png"
+		"photo": "past-speakers/matt-hunt.png",
+		"year": 2024
 	},
 	"matt-lacey": {
 		"name": "Matt Lacey",
 		"tagline": "Independent developer and author",
 		"bio": "Matt Lacey is an independent development consultant who focuses on helping developers to create better software. He’s an author, Microsoft MVP, and contributor to multiple open-source projects.\nHaving worked in companies of all sizes, and in a variety of different industries, he has used more languages and technologies than he can count. Matt brings this breadth of experience to present a viewpoint that considers technology, business, and design.",
-		"photo": "past-speakers/matt-lacey.jpg"
+		"photo": "past-speakers/matt-lacey.jpg",
+		"year": 2024
 	},
 	"molly-painter": {
 		"name": "Molly Painter",
 		"tagline": "Senior Developer at Müller Dairy | Microsoft MVP | O'Reilly Author",
 		"bio": "I've been working as a .NET developer for over 16 years now in a variety of industries including government, retail and manufacturing. But I've been hacking around with computer code since I was old enough to read my Dad's copy of the ZX Spectrum BASIC coders manual.\n\nI've been speaking about Functional C# at various user groups and conferences around the UK, USA,  Europe and Australia and am particularly interested in seeing just how far we can push C# without breaking it.\n\nIn 2023 I released my first technical book: \"Functional Programming with C#\", published by O'Reilly Media.\n\nWhen I'm not coding, or running after my two small children, I have been known to enjoy the classic series of Doctor Who, Fighting Fantasy Gamebooks, Cryptic Crosswords, and rather more coffee than is probably good for me.",
-		"photo": "past-speakers/molly-painter.jpg"
+		"photo": "past-speakers/molly-painter.jpg",
+		"year": 2024
 	},
 	"murthy-upadhyayula": {
 		"name": "Murthy Upadhyayula",
 		"tagline": "Freelance Unreal Engine Technical Artist",
 		"bio": "As an MI developer at Phoenix Group, and a part-time Freelance Unreal Engine Technical Artist, I am fortunate to have the opportunity to gain a variety of experiences in the technical space. My day job mostly includes working with PL/SQL, ODI, Azure DevOps, and JIRA. My part time work for Armada Content LLC gives me the opportunity to delve into Unreal Engine, creating content that includes animations, 3D modelling and texturing, and procedural asset generation using a variety of DCC software (Blender, Houdini, and Zbrush to name a few).\n\nI enjoy games and films, and to add more fuel to this passion, I teamed up with my six year old to start a YouTube Channel titled \"Living Room Filmmaker\" where I bring all my skills and hobbies in one place by making short movie scenes right from our living room.",
-		"photo": "past-speakers/murthy-upadhyayula.png"
+		"photo": "past-speakers/murthy-upadhyayula.png",
+		"year": 2023
 	},
 	"nacho-escrig": {
 		"name": "Nacho Escrig",
 		"tagline": "Software developer at Rock Solid Knowledge",
-		"bio": "I work at Rock Solid Knowledge, building security products and delivering single sign-on solutions."
+		"bio": "I work at Rock Solid Knowledge, building security products and delivering single sign-on solutions.",
+		"year": 2026
 	},
 	"nurhak-kaya": {
 		"name": "Nurhak Kaya",
 		"tagline": "Solution Architect, Umbraco MVP, Umbraco Certified Master, Blogger, Speaker",
 		"bio": "My name is Nurhak Kaya. I am a Solution Architect at Wattle in Bristol, UK. I'm an Umbraco MVP, a Certified Umbraco Master and a Microsoft Certified Professional.\n\nI've been architecting and developing apps since 2010 and have had a chance to work with many different tech stacks.\n\nI'm an active Umbraco community member and contribute to Umbraco CMS by working on issues, answering Umbraco forum or StackOverflow questions, writing articles, speaking at events, or organising events like umBristol meetups.",
-		"photo": "past-speakers/nurhak-kaya.jpg"
+		"photo": "past-speakers/nurhak-kaya.jpg",
+		"year": 2025
 	},
 	"paul-michaels": {
 		"name": "Paul Michaels",
 		"tagline": "Head of Technology at HX Travel",
 		"bio": "Paul Michaels is a Microsoft MVP and a Head of Technology, working across Azure and AWS. He's been programming professionally since 1997, and likes finding neat solutions to problems.",
-		"photo": "past-speakers/paul-michaels.jpg"
+		"photo": "past-speakers/paul-michaels.jpg",
+		"year": 2026
 	},
 	"poornima-nayar": {
 		"name": "Poornima Nayar",
 		"tagline": ".NET Developer, Microsoft MVP, Umbraco MVP",
 		"bio": "Poornima is a .Net developer with over 10 years of experience in .Net and Umbraco. She is passionate about learning new technologies and keeping herself up-to-date with the latest developments in technology. Outside her work, Poornima enjoys music and is undergoing training in Indian Classical music. Based in Langley, UK she mothers a little girl and spends her spare time reading, cooking and watching movies.",
-		"photo": "past-speakers/poornima-nayar.jpg"
+		"photo": "past-speakers/poornima-nayar.jpg",
+		"year": 2024
 	},
 	"rachel-breeze": {
 		"name": "Rachel Breeze",
 		"tagline": "Development Practice Lead,  Nexer Digital",
 		"bio": "Rachel is a 2x Microsoft MVP for .NET and Web Development; she is also a 6x Umbraco MVP. Rachel has been a developer for over 25 years, working in the Microsoft .Net stack. She is passionate about accessibility,  supporting and encouraging future developers.  She also drinks copious amounts of tea.",
-		"photo": "past-speakers/rachel-breeze.jpg"
+		"photo": "past-speakers/rachel-breeze.jpg",
+		"year": 2026
 	},
 	"rich-woollcott": {
 		"name": "Rich Woollcott",
 		"tagline": "Software Engineer & AI-First Development | Appmilla",
 		"bio": "Rich has been working as a software engineer professionally since 1997, across desktop, embedded, mobile, and backend apps and APIs. Over the last year he's been going deep on AI-first development — building an automated development pipeline and wrestling with the question of how to engineer with AI rather than just prompt it. He's speaking at DDD Southwest for the first time after attending for several years and decided it was time to stop being a spectator.",
-		"photo": "past-speakers/rich-woollcott.png"
+		"photo": "past-speakers/rich-woollcott.png",
+		"year": 2026
 	},
 	"richard-fennell": {
 		"name": "Richard Fennell",
 		"tagline": "Microsoft MVP",
 		"bio": "Richard is the Chief Technology Officer (CTO) of the Black Marble Ltd a Microsoft Gold Partner based in the North of England. Black Marble specialises in DevOps consultancy and bespoke development usually on Microsoft platforms\n\nAs CTO he is responsible for the delivery of systems and tools to allow Black Marble, and their clients, to deliver solutions efficiently. All Black Mable’s development activity is underpinned by Azure DevOps tools and an agile process model.\n\nHe is a MVP for Developer Tools (nee Visual Studio ALM, nee Team System), an ALM Ranger, a Fellow of the British Computer Society (FBCS) and a Chartered Engineer (CEng)",
-		"photo": "past-speakers/richard-fennell.jpg"
+		"photo": "past-speakers/richard-fennell.jpg",
+		"year": 2026
 	},
 	"richard-jackson": {
 		"name": "Richard Jackson",
 		"tagline": "Cloud Software Engineer Intern at Nightingale HQ",
 		"bio": "Rich is a musician and software developer based in Cardiff, UK.\nHe releases music, commits code and plays Blood Bowl under the name “jacksorjacksor”.",
-		"photo": "past-speakers/richard-jackson.jpg"
+		"photo": "past-speakers/richard-jackson.jpg",
+		"year": 2024
 	},
 	"richard-saville": {
 		"name": "Richard Saville",
 		"tagline": "Head of Architecture at LMS and smart data advocate for the property industry",
 		"bio": "Richard is Head of Architecture at LMS, a prop-tech company providing the data and services that connects lenders, conveyancers, brokers, and other parties involved in UK property transactions.\n\nHe has over 15 years of experience in software engineering, starting as a full stack developer before moving into system design and enterprise architecture within regulated industries.\n\nRichard was previously involved in a startup focused on using Open Banking data and behavioural analysis to improve money management and demonstrate creditworthiness. He has participated in multiple Smart Data initiatives including the FCA's Smart Data Accelerator and regulator sandbox, along with the OPDA’s Property Data Trust Framework.",
-		"photo": "past-speakers/richard-saville.jpg"
+		"photo": "past-speakers/richard-saville.jpg",
+		"year": 2026
 	},
 	"roger-barreto": {
 		"name": "Roger Barreto",
 		"tagline": "Microsoft, Semantic Kernel Core Team Expert",
 		"bio": "22 years of software engineering experience.\nWorked in many different industries leveraging the potentials of IT including Software, Infrastructure, Architecture and Data Analysis.\n\nCurrently working for Microsoft Semantic Kernel Open Source SDK project for AI.",
-		"photo": "past-speakers/roger-barreto.jpg"
+		"photo": "past-speakers/roger-barreto.jpg",
+		"year": 2025
 	},
 	"ross-scott": {
 		"name": "Ross Scott",
 		"tagline": "Engineering Manager @ ClearBank",
 		"bio": "Ross Scott started off as an aerospace engineer, got bored and moved into software development, working on engine health monitoring on the eurofighter. This gave a good grounding in safety and mission critical systems.\n\nA couple of years ago he moved into being an Engineering Manager @ ClearBank and is enjoying the new challenges.",
-		"photo": "past-speakers/ross-scott.jpg"
+		"photo": "past-speakers/ross-scott.jpg",
+		"year": 2026
 	},
 	"samson-nwizugbe": {
 		"name": "Samson Nwizugbe",
 		"tagline": "Software Engineer - Volkswagen Financial Services",
 		"bio": "Samson Nwizugbe is a commercially aware software engineer with years of experience solving business challenges across various sectors using the .NET ecosystem. He is passionate about architectural patterns that promote longevity and adaptability in software, including Clean Architecture, Domain-Driven Design, event-driven systems, and decoupled messaging.",
-		"photo": "past-speakers/samson-nwizugbe.jpg"
+		"photo": "past-speakers/samson-nwizugbe.jpg",
+		"year": 2026
 	},
 	"samuel-nebeolisa": {
 		"name": "Samuel Nebeolisa",
 		"tagline": "Lufthansa Digital Hangar Senior Software Engineer",
 		"bio": "Samuel Nebeolisa is a seasoned Software Engineer with over 8 years working experience. Currently working for Lufthansa Digital Hangar. He is so passionate about software architecture and programming. Nevertheless, he is first a Linguist and Polyglot, before planting his feet deep into computer science. He also has interest in Human Computer Interaction.",
-		"photo": "past-speakers/samuel-nebeolisa.jpg"
+		"photo": "past-speakers/samuel-nebeolisa.jpg",
+		"year": 2024
 	},
 	"sara-gowen": {
 		"name": "Sara Gowen",
 		"tagline": "Passionate about quality in software",
 		"bio": "Sara Gowen is a Senior Software Developer at dxw, an employee-owned digital consultancy that designs and builds digital public services used across the UK public and third sectors. At dxw she works on multidisciplinary teams delivering user-centred services that improve how people interact with government and public organisations.\n\nWith a background in software engineering and public-sector digital delivery, Sara focuses on building reliable, accessible systems and collaborating closely with designers, researchers, and delivery specialists to solve real user problems. She is passionate about improving how teams build software, sharing knowledge with the wider tech community, and contributing to projects that make a positive impact on society.",
-		"photo": "past-speakers/sara-gowen.jpg"
+		"photo": "past-speakers/sara-gowen.jpg",
+		"year": 2026
 	},
 	"scott-james": {
 		"name": "Scott James",
 		"tagline": "UKHO - Lead Engineer",
 		"bio": "Engineer at the UKHO, technology stack being Azure Cloud with a focus on Azure YAML Pipelines alongside Terraform.",
-		"photo": "past-speakers/scott-james.jpg"
+		"photo": "past-speakers/scott-james.jpg",
+		"year": 2025
 	},
 	"sean-farmar": {
 		"name": "Sean Farmar",
 		"tagline": "Distributed Systems Expert",
 		"bio": "With over 25 years of experience, Sean Farmar specializes in providing simple solutions for complex business requirements applying SOA and distributed computing principles inspired by Udi Dahan.\n\nSean runs Bosca Software Solutions Ltd. a boutique consulting company providing management and technical consulting related to product software engineering, custom project delivery, and training.",
-		"photo": "past-speakers/sean-farmar.jpg"
+		"photo": "past-speakers/sean-farmar.jpg",
+		"year": 2025
 	},
 	"sneha-ramesh": {
 		"name": "Sneha Ramesh",
 		"tagline": "Software engineer -BJSS",
 		"bio": "Graduate software engineer at BJSS.  Graduated from University of Bristol with Masters in Data Science. Interested to talk more about technology, innovation and creativity.",
-		"photo": "past-speakers/sneha-ramesh.png"
+		"photo": "past-speakers/sneha-ramesh.png",
+		"year": 2023
 	},
 	"steve-temple": {
 		"name": "Steve Temple",
 		"tagline": "Technical Director at Gibe, C# developer, Open Source Contributor and 4x Umbraco MVP",
 		"bio": "I have been developing software since 1996, I am a 4x Umbraco MVP and Co-owner and Technical Director of Umbraco Gold Partner Gibe Digital",
-		"photo": "past-speakers/steve-temple.jpg"
+		"photo": "past-speakers/steve-temple.jpg",
+		"year": 2025
 	},
 	"steven-read": {
 		"name": "Steven Read",
 		"tagline": "Software Architect @ The Ministry of Software Design",
 		"bio": "Steve works with clients modernising and transforming their IT estate, helping teams on enterprise, solution and technical architecture topics. This can range from proof of concepts and data engineering all the way up to business process discovery, transformation initiatives, and legacy migration strategy. Steve is an active blogger and an organiser at Domain-Driven Design London, a socio-technical & systems architecture community.",
-		"photo": "past-speakers/steven-read.jpg"
+		"photo": "past-speakers/steven-read.jpg",
+		"year": 2026
 	},
 	"stuart-caborn": {
 		"name": "Stuart Caborn",
 		"tagline": "Distinguished Engineer at loveholidays",
 		"bio": "Stuart is a Distinguished Engineer at loveholidays, where he leads the Boost team helping engineering teams navigate complex technical and organisational decisions. He is fascinated by how company structures, ways of working, system designs, and AI shape each other. Recently he’s been collaborating with platform tech teams, exploring what makes AI work at the team level and how those patterns scale across technology.",
-		"photo": "past-speakers/stuart-caborn.jpg"
+		"photo": "past-speakers/stuart-caborn.jpg",
+		"year": 2026
 	},
 	"stuart-lang": {
 		"name": "Stuart Lang",
 		"tagline": "I am a software engineer passionate about F#, C# and .NET. I love attending and helping run community tech events, and contributing to open source.",
 		"bio": "I am a software engineer passionate about F#, C# and .NET. I love attending and helping run community tech events, and contributing to open source.",
-		"photo": "past-speakers/stuart-lang.jpg"
+		"photo": "past-speakers/stuart-lang.jpg",
+		"year": 2025
 	},
 	"vijay-patel": {
 		"name": "Vijay Patel",
 		"tagline": "Envivo Consulting | Principal Consultant",
 		"bio": "Vijay Patel is the Principal Consultant of Envivo Consulting, a boutique software consultancy specialising in Rapid Prototyping and Domain Driven Design.\n\nWith over 25 years of experience, including 15 years helping Formula 1 teams, Vijay helps businesses streamline their operations, using strategies that accelerate project design and development.",
-		"photo": "past-speakers/vijay-patel.jpg"
+		"photo": "past-speakers/vijay-patel.jpg",
+		"year": 2025
 	},
 	"youngho-andrew-chaa": {
 		"name": "Youngho Andrew Chaa",
 		"tagline": "Full Stack Software Engineer at Starling Bank",
 		"bio": "A software engineer who's interested in trying out many different things.",
-		"photo": "past-speakers/youngho-andrew-chaa.jpg"
+		"photo": "past-speakers/youngho-andrew-chaa.jpg",
+		"year": 2024
 	}
 }

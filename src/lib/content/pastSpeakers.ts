@@ -6,6 +6,11 @@ export interface PastSpeaker {
 	bio?: string;
 	/** Relative to src/lib/assets/images. */
 	photo?: string;
+	/**
+	 * The most recent year they spoke, which the tagline, bio and photo are from. The importer uses
+	 * it to tell a newer year (update the profile) from an older one (leave it).
+	 */
+	year: number;
 }
 
 /**

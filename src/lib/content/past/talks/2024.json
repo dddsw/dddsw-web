@@ -3,9 +3,7 @@
 		"speaker": "Kevlin Henney",
 		"title": "#FAIL",
 		"speakerIds": ["kevlin-henney"],
-		"speakerTaglines": {
-			"kevlin-henney": "Programming · Practice · People"
-		},
+		"speakerTaglines": { "kevlin-henney": "Programming · Practice · People" },
 		"description": "Software doesn't always work out. Looking at the number of software failure screens in public places or that we encounter daily on the web or our mobile phones, it sometimes seems that software developers and organisations are the most significant creators of guerrilla installation art around the planet.\n\nWhat happens when software fails? We regard it as a normal and personal inconvenience when apps crash or servers become unavailable, but what are the implications beyond the individual user? Is software reliability simply a business decision or does it have economic, social and cultural consequences? What are the moral and practical implications for software developers? And when we talk of 'systems', are we part of the 'system'?\n\nIn this talk we will explore examples of failures in software and its application, the details of how they came about, and how such failures affect us at different scales, from user to society, from code to product management. Software failures can be entertaining or disastrous. They can also be instructive — there's a lot we can learn."
 	},
 	{
@@ -27,6 +25,12 @@
 		"description": "I've had a passion for MongoDB since the first release of version 1. It's packed with features and is the most popular general-purpose document database out there. In this talk, we'll cover the reasons why we'd use MongoDB over traditional relational databases, and the many ways we can access and interact with our data within a .NET application."
 	},
 	{
+		"speaker": "Anna-Maria Wykes",
+		"title": "OpenAI vs Azure OpenAI",
+		"speakerIds": ["anna-maria-wykes"],
+		"description": "Have you been asked by your employer to start exploring AI, especially LLMs (Large Language Models)? How could it help your business? How to use ChatGPT? Do you want to better understand AI tooling that will allow you to generate and interpret images? Such as DALL·E and CLIP? Whatever your journey, more and more of us want to better understand OpenAI and what it can offer us.\n\nWhether your thirst for understanding of OpenAI is a result of your day job, or simply a growing interest, the suite of tools available within OpenAI is invaluable. However, how suitable is it to start using these tools professionally? If you are asking yourself this question you are not alone. One of the most common questions emerging from the industry is “What is the difference between OpenAI and Azure OpenAI?”\n\nIn this session, we will look at the differences between OpenAI (including ChatGPT Free, Plus and Enterprise) and Azure OpenAI. We’ll look at when best to use each offering, with direct comparisons including security, reliability, training, and support.\n\nBy the end of this session, you will have a better understanding of the different serving offerings for OpenAI and have more confidence in when to use each one."
+	},
+	{
 		"speaker": "Aaron Green",
 		"title": "Confident Communication for Developers (And Why It Matters).",
 		"speakerIds": ["aaron-green"],
@@ -39,22 +43,10 @@
 		"description": "You may have worked with OAuth 2.0 and OpenID Connect for your authorization and authentication requirements - but would you llike to learn the high-security extensions used in sensitive sectors such as banking and healthcare?\n\nIn this talk, we'll explore modern developments that can be used to provide additional layers of security in OAuth. We'll see how to improve client authentication security; how to prevent malicious use of leaked or stolen access tokens; and how integrity protection prevents unauthorized tampering with our authorization requests.\n\nWe'll use this as a chance to dig into core OAuth concepts and explore under the hood - no up-front in-depth knowledge of the OAuth specification required to understand these concepts!\n\nYou'll leave with a deeper insight to the inner workings of Oauth 2.0; and know a whole list of new acronyms, from PAR and JAR, through to DPoP and FAPI!"
 	},
 	{
-		"speaker": "Anna-Maria Wykes",
-		"title": "OpenAI vs Azure OpenAI",
-		"speakerIds": ["anna-maria-wykes"],
-		"description": "Have you been asked by your employer to start exploring AI, especially LLMs (Large Language Models)? How could it help your business? How to use ChatGPT? Do you want to better understand AI tooling that will allow you to generate and interpret images? Such as DALL·E and CLIP? Whatever your journey, more and more of us want to better understand OpenAI and what it can offer us.\n\nWhether your thirst for understanding of OpenAI is a result of your day job, or simply a growing interest, the suite of tools available within OpenAI is invaluable. However, how suitable is it to start using these tools professionally? If you are asking yourself this question you are not alone. One of the most common questions emerging from the industry is “What is the difference between OpenAI and Azure OpenAI?”\n\nIn this session, we will look at the differences between OpenAI (including ChatGPT Free, Plus and Enterprise) and Azure OpenAI. We’ll look at when best to use each offering, with direct comparisons including security, reliability, training, and support.\n\nBy the end of this session, you will have a better understanding of the different serving offerings for OpenAI and have more confidence in when to use each one."
-	},
-	{
 		"speaker": "Youngho Andrew Chaa",
 		"title": "Unleash Your Inner Trader: Create & Back-Test Strategies with Python & JavaScript",
 		"speakerIds": ["youngho-andrew-chaa"],
 		"description": "Unleash Your Inner Trader: Create & Back-Test Strategies with Python & JavaScript\n\nIf I say, \"Ever wondered how traders predict market movements and make profitable decisions? This talk unlocks the secrets!\", I would be lying ...\n\nFirst, traders don't try to predict market movements. It's more of a probability game. Secondly, this talk will only scratch the surface, yet could be a helpful introduction.\n\nNo prior experience will be needed. We'll delve into the basic concepts of trading, equipping you with the knowledge to understand market dynamics and identify potential opportunities.\n\nGet hands-on: Buckle up as we embark on a coding journey! We'll write Python and JavaScript code to back-test these strategies, putting theory into practice and simulating real-world-like scenarios."
-	},
-	{
-		"speaker": "Richard Jackson",
-		"title": ".NET, Azure & Umbraco: The Second Twelve Months",
-		"speakerIds": ["richard-jackson"],
-		"description": "The sequel to last year's \".NET, Azure & Umbraco: The First Twelve Months\", this is talk gives an insight into the difficult second year, the \"Not quite new, still don't know what I'm doing\" phase of being a software engineer.\n\nThis autobiographical account of the past year aims to provide advice, guidance and perspective from someone navigating through the tech world, with a genuine focus to be \"less ego, more information\".\n\nLast year's DDD saw me give my first conference talk, and since then I've become an international public speaker. Last year I was still an MSc. Computing student, this year I'm a graduate. Last year I didn't understand dependency injection, this year I still don't understand dependency injection, but I use it more often!\n\nAll that is to say, a lot has changed, and I'd like to tell you about it.\n\nJoin me as I share my learnings, triumphs and failings in an informative and constructive manner, aimed to help both those following a similar career path and to give a refreshed perspective to those who have known these experiences all to well."
 	},
 	{
 		"speaker": "Jennifer D. Daniel",
@@ -63,24 +55,35 @@
 		"description": "In this session, I'll delve into the essential components of creating and sustaining a thriving tech ecosystem. From innovation hubs to supportive infrastructure, I'll explore the key elements that contribute to an above-average environment for technological advancement. I'll also shine a spotlight on the crucial role that women play in driving innovation and entrepreneurship within these ecosystems. From fostering diversity to promoting inclusivity, I'll discuss how empowering women in tech is not just a moral imperative but also a strategic advantage for building robust and dynamic tech communities."
 	},
 	{
-		"speaker": "Anna-Maria Wykes",
-		"title": "How to Run Code Clubs for Neurodiverse Children",
-		"speakerIds": ["anna-maria-wykes"],
-		"description": "Code Clubs offer an amazing opportunity to introduce our next generation to coding, with simple brightly colored drag-and-drop tooling to get them started, we are successfully inspiring many to join the tech industry.\n\nHowever, what about those children who do not feel comfortable walking into an unfamiliar setting, surrounded by strangers, in a very noisy environment? What about those who wouldn’t even think a career in tech would be suited to them? What I am describing is often the neurodiverse children, those with Autism, ADHD, Dyslexia, Dyscalculia. To them a typical Code Club environment can be very intimidating, and sadly, this is effectively excluding a large group of talented young people, many of whom have great potential to work in tech.\n\nCode Clubs are invaluable, and are definitely doing a great job to attract children from different minorities into the industry, but unfortunately, not necessarily those who are neurodiverse. When this became apparent to me, I joined forces with a local Code Club, and a charity for children with special needs, and together we have set up a monthly Code Club that offers a safe, comfortable environment for neurodiverse children.\n\nIn this session I want to talk you through my journey setting up a Code Club for neurodiverse children, what I found worked, and what doesn’t. I hope that from this session you will be inspired to follow the same path I have, using your amazing tech experience to empower some of the most vulnerable children, enabling them to become inspired not just by coding, but the tech industry itself."
-	},
-	{
 		"speaker": "Lizzie Darville",
 		"title": "It's not us, it's them! What the software industry can learn from group psychology",
 		"speakerIds": ["lizzie-darville"],
 		"description": "Ever celebrated with your team when a high stakes release is finally out of the door? Or gathered for tabletop gaming sessions with a group of like-minded people from the office? The ties that bind us as groups are strong, and have multiple benefits. However, our many, varied social groupings can have a downside, and understanding the psychology of groups is as important in the workplace as in other areas of our lives. This talk covers learnings from performance and social psychology to understand the positives (and negatives) of team working."
 	},
 	{
+		"speaker": "Anna-Maria Wykes",
+		"title": "How to Run Code Clubs for Neurodiverse Children",
+		"speakerIds": ["anna-maria-wykes"],
+		"description": "Code Clubs offer an amazing opportunity to introduce our next generation to coding, with simple brightly colored drag-and-drop tooling to get them started, we are successfully inspiring many to join the tech industry.\n\nHowever, what about those children who do not feel comfortable walking into an unfamiliar setting, surrounded by strangers, in a very noisy environment? What about those who wouldn’t even think a career in tech would be suited to them? What I am describing is often the neurodiverse children, those with Autism, ADHD, Dyslexia, Dyscalculia. To them a typical Code Club environment can be very intimidating, and sadly, this is effectively excluding a large group of talented young people, many of whom have great potential to work in tech.\n\nCode Clubs are invaluable, and are definitely doing a great job to attract children from different minorities into the industry, but unfortunately, not necessarily those who are neurodiverse. When this became apparent to me, I joined forces with a local Code Club, and a charity for children with special needs, and together we have set up a monthly Code Club that offers a safe, comfortable environment for neurodiverse children.\n\nIn this session I want to talk you through my journey setting up a Code Club for neurodiverse children, what I found worked, and what doesn’t. I hope that from this session you will be inspired to follow the same path I have, using your amazing tech experience to empower some of the most vulnerable children, enabling them to become inspired not just by coding, but the tech industry itself."
+	},
+	{
+		"speaker": "Richard Jackson",
+		"title": ".NET, Azure & Umbraco: The Second Twelve Months",
+		"speakerIds": ["richard-jackson"],
+		"description": "The sequel to last year's \".NET, Azure & Umbraco: The First Twelve Months\", this is talk gives an insight into the difficult second year, the \"Not quite new, still don't know what I'm doing\" phase of being a software engineer.\n\nThis autobiographical account of the past year aims to provide advice, guidance and perspective from someone navigating through the tech world, with a genuine focus to be \"less ego, more information\".\n\nLast year's DDD saw me give my first conference talk, and since then I've become an international public speaker. Last year I was still an MSc. Computing student, this year I'm a graduate. Last year I didn't understand dependency injection, this year I still don't understand dependency injection, but I use it more often!\n\nAll that is to say, a lot has changed, and I'd like to tell you about it.\n\nJoin me as I share my learnings, triumphs and failings in an informative and constructive manner, aimed to help both those following a similar career path and to give a refreshed perspective to those who have known these experiences all to well."
+	},
+	{
+		"speaker": "Danielle Dias",
+		"title": "Shifting Left with Burp Suite: A Lightning Approach to Endpoint Testing",
+		"speakerIds": ["danielle-dias"],
+		"speakerTaglines": { "danielle-dias": "Software Engineer" },
+		"description": "In the ever-evolving landscape of cybersecurity, securing endpoints remains a critical challenge. Despite current strategies and practices, attackers continue to find new ways to exploit vulnerabilities. This highlights the need for a proactive \"shift-left\" strategy to detect and address threats early in development. Companies face vulnerability to attacks when they lack awareness and understanding of security testing tools like Burp Suite, a comprehensive web application testing tool, especially in the early stages. The talk will give an overview of Burp Suite features, with practical demonstrations. You will gain insights into attackers' exploits and understand testing basics."
+	},
+	{
 		"speaker": "Joe Glombek",
 		"title": "Celibrate you're misteaks",
 		"speakerIds": ["joe-glombek"],
-		"speakerTaglines": {
-			"joe-glombek": "Senior .NET developer and lover of adventure"
-		},
+		"speakerTaglines": { "joe-glombek": "Senior .NET developer and lover of adventure" },
 		"description": "\"Everyone makes mistakes.\" We've heard it time and again. But there's always that nagging voice inside our heads telling us to hide it away somewhere. But why be ashamed?! Besides, this can lead to more mistakes in the future. We'll take a look at some of my mistakes and even look at some extreme cases where mistakes can cost lives.\n\nAs well as looking at how hiding mistakes can be damaging to our confidence as well as to our work, we'll discuss how and when to talk about our mistakes along with success stories and how highlighting past mistakes can help save time, effort, and - most importantly - shame as individuals, teams, and as a community."
 	},
 	{
@@ -96,21 +99,6 @@
 		"description": "Having been contracting for many years Matt has experienced the culture and working practices both good and bad in many different companies and teams. Often he has found that many of the developers aren't motivated or are generally unhappy with their working environment and culture.\n\nWhile this isn't always the case, one thing is for sure, unhappy developers are not productive developers. From his experience, Matt has come up with 3 areas to expand upon and develop to create a place in which developers are more likely to be happy and thrive. Educate, Enthuse and Empower.\n\nThis talk goes into depth on each of those areas looking at what might happen if they are not addressed and with ideas on how to achieve each."
 	},
 	{
-		"speaker": "Danielle Dias",
-		"title": "Shifting Left with Burp Suite: A Lightning Approach to Endpoint Testing",
-		"speakerIds": ["danielle-dias"],
-		"speakerTaglines": {
-			"danielle-dias": "Software Engineer"
-		},
-		"description": "In the ever-evolving landscape of cybersecurity, securing endpoints remains a critical challenge. Despite current strategies and practices, attackers continue to find new ways to exploit vulnerabilities. This highlights the need for a proactive \"shift-left\" strategy to detect and address threats early in development. Companies face vulnerability to attacks when they lack awareness and understanding of security testing tools like Burp Suite, a comprehensive web application testing tool, especially in the early stages. The talk will give an overview of Burp Suite features, with practical demonstrations. You will gain insights into attackers' exploits and understand testing basics."
-	},
-	{
-		"speaker": "Nurhak Kaya",
-		"title": "A Software Developer's Guide to Designing Better Software Apps: Key Strategies and Best Practices",
-		"speakerIds": ["nurhak-kaya"],
-		"description": "The most fundamental problem in computer science is how to take a complex problem and divide it up into pieces that can be solved independently.\n\nThis is a central design task that Software Developers face every day, and the success of software applications depends on the careful application of design principles that prioritize efficiency, maintainability, and user satisfaction.\n\nIn this talk, I'll explore key design principles that can guide developers in creating better software solutions, like modular design and abstraction, tactical vs. strategic programming, complexity & consistency of software design, defining errors, designing for performance, modifying existing code, exception handling as well as things like documenting software and writing better comments."
-	},
-	{
 		"speaker": "Rachel Breeze",
 		"title": "Debugging: More than breakpoints and log analysis",
 		"speakerIds": ["rachel-breeze"],
@@ -120,13 +108,10 @@
 		"description": "Debugging is a cornerstone of software development, and understanding its role is pivotal for building robust applications.\nIn this talk, we explore  strategies to help debug our applications. Our journey takes us through the debugging tools offered by C#, SQL Server Management Studio, and the Azure Portal."
 	},
 	{
-		"speaker": "Andrew Poole",
-		"title": "Fluent Method Chaining in C#",
-		"speakerIds": ["andrew-poole"],
-		"speakerTaglines": {
-			"andrew-poole": "Senior Software Engineer @ ClearBank"
-		},
-		"description": "What if there was a way to declaratively describe a chain or flow of async methods, which could be used when handling API requests or messages from a service bus queue or actually anywhere?\nRecently, while refactoring a growing piece of business logic, we found a way to achieve this. The logical conclusion is that related flows can be described in one place, in a single piece of orchestration, which is very easy to understand, navigate and debug. The flows are self documenting and with some thought, even readable by product owners and business analysts etc."
+		"speaker": "Nurhak Kaya",
+		"title": "A Software Developer's Guide to Designing Better Software Apps: Key Strategies and Best Practices",
+		"speakerIds": ["nurhak-kaya"],
+		"description": "The most fundamental problem in computer science is how to take a complex problem and divide it up into pieces that can be solved independently.\n\nThis is a central design task that Software Developers face every day, and the success of software applications depends on the careful application of design principles that prioritize efficiency, maintainability, and user satisfaction.\n\nIn this talk, I'll explore key design principles that can guide developers in creating better software solutions, like modular design and abstraction, tactical vs. strategic programming, complexity & consistency of software design, defining errors, designing for performance, modifying existing code, exception handling as well as things like documenting software and writing better comments."
 	},
 	{
 		"speaker": "Molly Painter",
@@ -135,16 +120,17 @@
 		"description": "Functional Programming is becoming increasingly popular and relevant with each year that goes by.  With so much discussion around languages such as F#, Haskell and Erlang, it can seem as though getting started with Functional programming would mean first learning a whole new syntax...but what if it didn't?\n\nMost .NET developers are familiar with the use of Linq, and basic constructs such as IEnumerable, Func delegates, arrow functions and ternary expressions, but did you know that you can use all of this to implement some of the most powerful patterns and techniques from the world of functional programming?\n\nThis talk will demonstrate how, using only familiar features available in out-of-the-box C#, to write Functional code that is:\n\n* More robust\n* Easier to read\n* Easier to maintain\n\nAs well as these benefits, Functional code is a great enabler for the use of concurrency with Async functions and Serverless applications with technologies such as Azure Functions.\n\nThis talk might be of interest to anyone looking into moving to a new platform, or in improving the scalability of an existing application, or even just interested in seeing what Functional Programming is all about, but all within the comfort of a familiar language.\n\nWe might even attempt the impossible, and explain what a Monad is!"
 	},
 	{
+		"speaker": "Andrew Poole",
+		"title": "Fluent Method Chaining in C#",
+		"speakerIds": ["andrew-poole"],
+		"speakerTaglines": { "andrew-poole": "Senior Software Engineer @ ClearBank" },
+		"description": "What if there was a way to declaratively describe a chain or flow of async methods, which could be used when handling API requests or messages from a service bus queue or actually anywhere?\nRecently, while refactoring a growing piece of business logic, we found a way to achieve this. The logical conclusion is that related flows can be described in one place, in a single piece of orchestration, which is very easy to understand, navigate and debug. The flows are self documenting and with some thought, even readable by product owners and business analysts etc."
+	},
+	{
 		"speaker": "Matt Lacey",
 		"title": "Documentation, Testing, and the Future of Software Development",
 		"speakerIds": ["matt-lacey"],
 		"description": "There's probably nothing most developers like less than writing documentation and tests. Despite good and bad reasons for this, the growth of AI and the changing landscape of software development mean they are becoming increasingly indispensable for developers aiming to build high-quality, reliable, and scalable software.\nWhat you should consider as \"documentation\" and \"testing\" will also surprise you as it covers much more than you think.\nThrough real-world examples and practical insights, this session highlights how investing in documentation and testing streamlines collaboration, enhances efficiency, improves software reliability, and ultimately leads to more satisfied developers, users, and businesses."
-	},
-	{
-		"speaker": "Poornima Nayar",
-		"title": "REST, gRPC, GraphQL or Asynchronous Messaging",
-		"speakerIds": ["poornima-nayar"],
-		"description": "Be it any industry, applications need to talk to each other. So, developers often build bridges – Application Programming Interfaces (API) – to allow one system to communicate with another.\n\nREST, gRPC, GraphQL and Asynchronous Messaging are all patterns of communication between distributed systems. What are the core concepts behind these patterns? Do you know what problems they try to address? What about the use cases? Join my session to find out the answers to these questions!"
 	},
 	{
 		"speaker": "Dee Bolt",
@@ -157,5 +143,11 @@
 		"title": "Why DevOps and Microservices are a great fit?",
 		"speakerIds": ["sean-farmar"],
 		"description": "You want to do DevOps and move fast using continuous delivery but your architecture is holding you back. In this talk, we will look at how a microservices architecture is essential to make DevOps and CI/CD successful.\n\nWe all want to get out of the rot of traditional SDLC, waterfall, big ball of mud...\nWe want to be faster, more flexible, providing more value upfront, WINNING 🙂, have short feedback loops, be able to work in small cross-functional teams.\n\nTo do that we want to be able to do continues delivery and continues deployment which leads us to what is described in the DevOps handbook...\n\nTo do that:\nYou should be able to reliably (tested, secure….)\nDeploy small units of work to production (reduce the risk in deploying new code to production (roll forward, blue-green ))\nHave many teams work in parallel autonomously across the system functions (business).\nDecrease lead time of features and bug fixes to production.\n\nThis is all well and good but when we try to get there we keep getting pulled back by our architecture.\n\nWhen we look at successful DevOps transformations we see that architecture is one of the significant factors of success.\n\nIn this talk, we will cover Identifying boundaries, monolith decomposition and bounded contexts and how we can build better microservices so our DevOps will be a win 🙂."
+	},
+	{
+		"speaker": "Poornima Nayar",
+		"title": "REST, gRPC, GraphQL or Asynchronous Messaging",
+		"speakerIds": ["poornima-nayar"],
+		"description": "Be it any industry, applications need to talk to each other. So, developers often build bridges – Application Programming Interfaces (API) – to allow one system to communicate with another.\n\nREST, gRPC, GraphQL and Asynchronous Messaging are all patterns of communication between distributed systems. What are the core concepts behind these patterns? Do you know what problems they try to address? What about the use cases? Join my session to find out the answers to these questions!"
 	}
 ]

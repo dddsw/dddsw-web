@@ -3,9 +3,7 @@
 		"speaker": "Matt Hunt",
 		"title": "Cleaning your “Big Ball of Mud” with CQS",
 		"speakerIds": ["matt-hunt"],
-		"speakerTaglines": {
-			"matt-hunt": ".NET Developer"
-		},
+		"speakerTaglines": { "matt-hunt": ".NET Developer" },
 		"description": "Having worked as a contract developer for many years Matt has had the pleasure of seeing a lot of systems, built using many different patterns and architectures. One thing they all had in common though was that, more often than not, over time the codebase would degrade into a \"Big Ball of Mud\". The Command Query Separation pattern can help keep code maintainable, easy to test and help you conform to SOLID principles. In this talk, we will discuss what CQS is, its benefits and how it differs from CQRS."
 	},
 	{
@@ -30,9 +28,7 @@
 		"speaker": "Molly Painter",
 		"title": "SOLID Principles in 5 Nightmares",
 		"speakerIds": ["molly-painter"],
-		"speakerTaglines": {
-			"molly-painter": "Senior Developer at Müller Dairy"
-		},
+		"speakerTaglines": { "molly-painter": "Senior Developer at Müller Dairy" },
 		"description": "The 5 SOLID principles - popularised by \"Uncle\" Bob Martin in some of his highly influential books on Object Orientated Software development - are rarely cited directly but they are nevertheless at the heart of a lot of the thinking that goes into modern software development.\n\nThese principles have been around in some form or other ever since the 1980s, but continue to be just as relevant today as they were then.\n\nIn this talk, we're going to look at each of the 5 SOLID principles, these being:\n\n* Single Dependency Principle\n* Open/Close Principle\n* Liskov Substitution Principle\n* Interface Segregation Principle\n* Dependency Inversion Principle\n\nSee what he did there with the names?\n\nWe'll look at each in turn, with the help of some slightly imaginative examples taken from a popular SF franchise.  What are they, what nightmare scenarios can occur if they aren't followed, and how they can subsequently be applied."
 	},
 	{
@@ -75,9 +71,7 @@
 		"speaker": "Poornima Nayar",
 		"title": "gRPC in .NET: Basics and More",
 		"speakerIds": ["poornima-nayar"],
-		"speakerTaglines": {
-			"poornima-nayar": "Freelance .NET Developer, Microsoft MVP, Umbraco MVP"
-		},
+		"speakerTaglines": { "poornima-nayar": "Freelance .NET Developer, Microsoft MVP, Umbraco MVP" },
 		"description": "gRPC is Google's implementation of RPC. With .NET Core 3.0, gRPC has become a first-class support in .NET.\n\nIn my session, we will look at what gRPC is, and how to both create a gRPC service and consume it. We will also discuss the four modes or methods of gRPC, versioning and also talk about options when it comes to hosting gRPC services."
 	},
 	{
@@ -108,9 +102,7 @@
 		"speaker": "Dylan Beattie",
 		"title": "There's No Such Thing As Plain Text",
 		"speakerIds": ["dylan-beattie"],
-		"speakerTaglines": {
-			"dylan-beattie": "The one in the hat."
-		},
+		"speakerTaglines": { "dylan-beattie": "The one in the hat." },
 		"description": "Software is complicated. Machine learning, microservice architectures, message queues... every few months there's another revolutionary idea to consider, another framework to learn. And underneath so many of these amazing ideas and abstractions is text. When you work in software, you spend your life working with text. Some of those text files are source code, some are configuration files, some of them are documentation. Editors, revision control systems, programming languages - everything from C# and HTML to Git and VS Code is based on the idea of \"plain text files\". But... what if I told you there's no such thing?\n\nWhen we say something is a \"plain text file\", we're relying on a huge number of assumptions - about operating systems, editors, file formats, language, culture, history... and, most of the time, that's OK. But when it goes wrong, \"plain text\" can lead to some of the weirdest bugs you've ever seen... why is there Chinese in the event logs? Why is the city of Aarhus in the wrong place? And why does Magnus Mårtensson always have trouble getting into the USA?  Join Dylan Beattie for a fascinating look into the hidden world of text files - from the history of mechanical teletypes to encodings, collations and code pages. We'll look at some memorable bugs, some golden rules for working with plain text - and we'll even find out the story behind the mysterious phrase \"pike matchbox\" and what it has do with driving in the Soviet Union."
 	},
 	{
@@ -123,9 +115,7 @@
 		"speaker": "Ross Scott",
 		"title": "Blazor state management",
 		"speakerIds": ["ross-scott"],
-		"speakerTaglines": {
-			"ross-scott": "Senior Software Engineer @ ClearBank"
-		},
+		"speakerTaglines": { "ross-scott": "Senior Software Engineer @ ClearBank" },
 		"description": "We've all seen the Blazor demos and it looks great!\nI've been working on client side apps since .net 1.0 and it's been painful. However, we now have mature, robust frameworks like Angular & React, so Blazor is very much on the back foot.\n\nIt doesn't have the mature ecosystem of other frameworks, so this makes it hard to find best practices, robust architectures and production ready solutions.\n\nI made some bad choices on how to deal with state when I started. So in this session I will take you on an accelerated journey of making mistakes, iterating, learning, and ultimately heading in the right direction."
 	},
 	{

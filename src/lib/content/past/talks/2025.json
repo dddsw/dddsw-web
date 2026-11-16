@@ -1,5 +1,12 @@
 [
 	{
+		"speaker": "Jacqui Read",
+		"title": "Surviving Complexity Through Software Design",
+		"speakerIds": ["jacqui-read"],
+		"speakerTaglines": { "jacqui-read": "Author of Communication Patterns" },
+		"description": "There has never been more pressure on software developers. Dealing with multiple tech stacks, devops pipelines, observability, and more. Add to that the pressure to deliver working software quickly and regularly and we end up with software that doesn't meet expectations and cannot be easily changed. But with so much else on their minds, when do teams think about design and architecture?\n\nAt The Ministry of Software Design we have been looking at how teams can incrementally own their design, and own their architecture, despite the complexity they are working with. Join this session to see how you can manage the complexity of your software design to create software that is evolvable and meets both user and business needs."
+	},
+	{
 		"speaker": "Steve Temple",
 		"title": "Advanced Debugging",
 		"speakerIds": ["steve-temple"],
@@ -18,31 +25,10 @@
 		"description": "I believe we’re living through a breakdown in communication. As polarization grows, it’s become all too easy to dismiss those who disagree with us as ignorant, stupid, or even evil. Social media and echo chambers amplify this divide, but history shows us where this road can lead—like Athens in the Peloponnesian War, where populism and mistrust fractured a thriving society.\n\nIn this talk, I’ll explore how we got here, how assumptions and biases shape our interactions, and how we can start to bridge the divide. By understanding the dynamics of connection, listening with curiosity, and challenging our echo chambers, we can foster better conversations—ones that lead to stronger teams, healthier workplaces, and richer relationships.\n\nThese ideas have changed how I work, how I live, and how I connect with people. My hope is that they can do the same for you. Together, we can build better dialogues that improve our lives and maybe, in some small way, the world."
 	},
 	{
-		"speaker": "Jacqui Read",
-		"title": "Surviving Complexity Through Software Design",
-		"speakerIds": ["jacqui-read"],
-		"speakerTaglines": {
-			"jacqui-read": "Author of Communication Patterns"
-		},
-		"description": "There has never been more pressure on software developers. Dealing with multiple tech stacks, devops pipelines, observability, and more. Add to that the pressure to deliver working software quickly and regularly and we end up with software that doesn't meet expectations and cannot be easily changed. But with so much else on their minds, when do teams think about design and architecture?\n\nAt The Ministry of Software Design we have been looking at how teams can incrementally own their design, and own their architecture, despite the complexity they are working with. Join this session to see how you can manage the complexity of your software design to create software that is evolvable and meets both user and business needs."
-	},
-	{
-		"speaker": "James Gaisford",
-		"title": "Building with Integrity: Embracing Ethical Web Development",
-		"speakerIds": ["james-gaisford"],
-		"description": "The Dark Web. Crypto. Twitter. The web has evolved significantly since Tim Berners-Lee's original vision of a free and open web that connects us all. Over time, it has become clear that the web can be used in ways that subvert its original mission or even cause harm.\n\nIn this talk, we will explore the W3C's recently released Ethical Web Principles statement. You will be reminded of what the web should be and how we can build our applications in line with these principles. As developers and technologists, it's crucial to consider the consequences of our work as we continue to advance the web. By the end of this talk, you'll be reminded of the web's true potential and leave with some clear actions to help you shape a more ethical web."
-	},
-	{
 		"speaker": "Steven Read",
 		"title": "Modern Software Architecture Review Best Practices",
 		"speakerIds": ["steven-read"],
 		"description": "Software Architecture reviews is a topic that rarely gets discussed at conferences, and equally rarely covered in books and blog posts. Writing and presenting your first review is a rite of passage for an architect; you never know when you may be in a situation where one is needed.\n\nIn this talk you will see how a modern architecture review is performed. We aren't talking about word documents that will never again see the light of day, we are talking about creating reusable knowledge management artefacts that the team will build on going forward. Think of it as a spring clean for software architecture.\n\nDon't think you'll ever need to complete one? They are a useful exercise while on-boarding in a new team and learning a new product.\n\nHave you run a well-architected framework review? You will be surprised at the differences."
-	},
-	{
-		"speaker": "Nurhak Kaya",
-		"title": "Practical Guide to Unlocking Accessibility of Websites",
-		"speakerIds": ["nurhak-kaya"],
-		"description": "In this hands-on session, we’ll dive into using powerful tools like WAVE to identify and address accessibility issues on your website. Learn how to use these tools to spot common barriers, from missing alt text to improper heading structure, and take actionable steps to improve your site’s accessibility. We’ll cover the basics of accessibility testing, how to interpret WAVE reports, and prioritize fixes to make sure your website is inclusive for all users. Whether you’re just starting out or looking to streamline your accessibility workflow, this session will provide practical guidance you can apply right away."
 	},
 	{
 		"speaker": "George Bell",
@@ -51,10 +37,29 @@
 		"description": "Last year, I attended the NASA Space Apps Challenge here in Bristol. But rather than coding, I was there with a local charity called DigiLocal that helps marginalised young people develop digital skills. I spent the weekend mentoring a team of young people as they worked on their submission. This lightning talk will go over the things you learn by mentoring at a Hackathon, the challenges you face and the reasons why you should consider it."
 	},
 	{
+		"speaker": "James Gaisford",
+		"title": "Building with Integrity: Embracing Ethical Web Development",
+		"speakerIds": ["james-gaisford"],
+		"description": "The Dark Web. Crypto. Twitter. The web has evolved significantly since Tim Berners-Lee's original vision of a free and open web that connects us all. Over time, it has become clear that the web can be used in ways that subvert its original mission or even cause harm.\n\nIn this talk, we will explore the W3C's recently released Ethical Web Principles statement. You will be reminded of what the web should be and how we can build our applications in line with these principles. As developers and technologists, it's crucial to consider the consequences of our work as we continue to advance the web. By the end of this talk, you'll be reminded of the web's true potential and leave with some clear actions to help you shape a more ethical web."
+	},
+	{
+		"speaker": "Nurhak Kaya",
+		"title": "Practical Guide to Unlocking Accessibility of Websites",
+		"speakerIds": ["nurhak-kaya"],
+		"description": "In this hands-on session, we’ll dive into using powerful tools like WAVE to identify and address accessibility issues on your website. Learn how to use these tools to spot common barriers, from missing alt text to improper heading structure, and take actionable steps to improve your site’s accessibility. We’ll cover the basics of accessibility testing, how to interpret WAVE reports, and prioritize fixes to make sure your website is inclusive for all users. Whether you’re just starting out or looking to streamline your accessibility workflow, this session will provide practical guidance you can apply right away."
+	},
+	{
 		"speaker": "Scott James",
 		"title": "AzDO YAML Pipelines; bits and bobs",
 		"speakerIds": ["scott-james"],
 		"description": "A short hodgepodge of what the UKHO is up to and tips & tricks on building pipelines."
+	},
+	{
+		"speaker": "Joe Glombek",
+		"title": "Why am I being such a git about best practices?",
+		"speakerIds": ["joe-glombek"],
+		"speakerTaglines": { "joe-glombek": "Senior .NET developer and lover of adventure" },
+		"description": "Are your git repos a dumping ground for code? I'm really fussy about how people use git - and that's a good thing. We'll take a look at branching strategies, the importance of commit messages and how often should you commit, anyway? Let's investigate how, with 5 simple tips, we can turn a code dump into a glorious archive of software and how this can save time, frustration and money."
 	},
 	{
 		"speaker": "Danielle Dias",
@@ -75,36 +80,16 @@
 		"description": "Abstract:\nJoin this engaging and practical session designed to take participants on a journey from the foundational concepts of Semantic Kernel to its cutting-edge applications. We’ll start with the basics—core components and principles—and dive deeper as we code together. You’ll gain hands-on experience exploring exciting topics such as Small Language Models, Local Models, Plugins, AI Safety, Prompt Templating, and Multi-Modality. Discover how Semantic Kernel enables seamless integration of functionalities like chat completion, image and audio generation, and even executing local code with AI models.\n\nThis session will also showcase how to leverage OpenAPI to extend the power of Semantic Kernel, simplifying complex tasks while maintaining robust AI safety and performance. Whether you're a beginner or looking to deepen your understanding, this talk will equip you with practical insights and actionable skills for using Semantic Kernel in innovative ways."
 	},
 	{
-		"speaker": "Joe Glombek",
-		"title": "Why am I being such a git about best practices?",
-		"speakerIds": ["joe-glombek"],
-		"speakerTaglines": {
-			"joe-glombek": "Senior .NET developer and lover of adventure"
-		},
-		"description": "Are your git repos a dumping ground for code? I'm really fussy about how people use git - and that's a good thing. We'll take a look at branching strategies, the importance of commit messages and how often should you commit, anyway? Let's investigate how, with 5 simple tips, we can turn a code dump into a glorious archive of software and how this can save time, frustration and money."
-	},
-	{
 		"speaker": "John Kilmister",
 		"title": "A Developers Guide to Getting the Most out of Containers",
 		"speakerIds": ["john-kilmister"],
 		"description": "Containers seem to be everywhere however are we getting the most out of them during the development lifecycle?\n\nIn this session, we will cover container basics before looking at the best practices for creating and tagging containers, examine how we can use dev containers to enhance our workflow, and examine test containers."
 	},
 	{
-		"speaker": "Carly Richmond",
-		"title": "How to Destroy a DevOps Engineer",
-		"speakerIds": ["carly-richmond"],
-		"speakerTaglines": {
-			"carly-richmond": "Developer Advocate & Manager @ Elastic"
-		},
-		"description": "Abstract\n\nRetaining Software Developers is a significant challenge for teams. According to the Infragistics Reveal Survey, 37.5% of respondents expected difficulty in finding developers in 2023. To retain talent, it's essential to understand factors that lead to dissatisfaction.\n\nJoin me as I discuss antipatterns in management, development, testing and monitoring patterns that can stop you retaining awesome DevOps engineers.\n\nOutline\n\nI’ll cover:\n\n- Alert volume evaluation, and how we alert bombardment leads to burnout and alert fatigue. I’ll also cover best practices for on-call rotation and BYOD usage to stop engineer burnout even when they’re not on call.\n- SLO and metric comparison across teams, and how comparing team metrics rather than improving metrics such as DORA over time for a single team breeds animosity and demoralises engineers.\n- Code reviews with jerkish or unhelpful comments, and the difference between radical candour through constructive feedback and pulling people down.\n- Tool overload, and how selecting a common toolbox reduces the need for context switching.\n- Flaky or poor testing, and how it builds mistrust and apathy in platform quality.\n- Constant work items and a lack of learning time, and how a lack of training opportunities and space to grow leaves engineers feeling stuck.\n- Lack of support for conference attendance and speaking, and how community connections help engineers grow and learn."
-	},
-	{
 		"speaker": "Andrew Poole",
 		"title": "How to fall in love with automated tests!",
 		"speakerIds": ["andrew-poole"],
-		"speakerTaglines": {
-			"andrew-poole": "Senior Software Engineer @ ClearBank"
-		},
+		"speakerTaglines": { "andrew-poole": "Senior Software Engineer @ ClearBank" },
 		"description": "This session is in two parts:\n1) How to get the maximum mileage from a minimal number of tests - end-to-end component tests\n2) Integration Tests - how to not hate them and also sort out your local dev experience!\n\nPart 1 Introduces, explains and demonstrates an approach to automated testing which covers as much of the surface area of your codebase as possible.\n\nImagine a unit test where the 'unit' is actually multiple executables! A single test can cover the whole happy path flow of a complex piece of orchestration, from API handlers, service bus handlers, database calls etc all in-memory, fast and with a nice fluent developer experience!\n\nBecause everything including the Program.cs and startup code are covered we can spot configuration and IoC issues which are hard to test with more traditional methods. I include a method of mocking and asserting against Azure Service Bus\n\nPart 2 discusses the usual issues with integration tests and how they expose the issues with running an app locally. It shows some strategies for fixing some of those issues and actually making integration tests useful, mainly leaving the thing you are testing in a running state on your machine. This is a achieved by means of a script to set up local configuration without having to remember not to check env secrets into appsettings.dev files. Also using Fixtures which do things like setting up queues, topics and subscriptions.\n\nThe aim of both parts of this talk is to have a repo which when pulled down onto a fresh machine, builds first time, component tests pass first time, then having run the script and the app, the the integration tests pass first time, after which you can push F5 and have it all run with almost no time or effort!"
 	},
 	{
@@ -115,6 +100,19 @@
 			"rachel-breeze": "Back End Development Team Lead, Umbraco and .NET Developer at Nexer Digital"
 		},
 		"description": "Website carbon calculators are widely used for estimating the environmental impact of websites. While they’re a helpful starting point, they often rely on general assumptions and incomplete data, which can lead to oversimplified or inaccurate results. Are they really telling the full story?\n\nIn this talk, we’ll take a closer look at the limitations of these tools—such as their reliance on averages for energy usage, lack of context about server efficiency, and ignoring how users actually interact with sites.  We’ll explore practical alternatives and ways of reducing your website's carbon footprint."
+	},
+	{
+		"speaker": "Carly Richmond",
+		"title": "How to Destroy a DevOps Engineer",
+		"speakerIds": ["carly-richmond"],
+		"speakerTaglines": { "carly-richmond": "Developer Advocate & Manager @ Elastic" },
+		"description": "Abstract\n\nRetaining Software Developers is a significant challenge for teams. According to the Infragistics Reveal Survey, 37.5% of respondents expected difficulty in finding developers in 2023. To retain talent, it's essential to understand factors that lead to dissatisfaction.\n\nJoin me as I discuss antipatterns in management, development, testing and monitoring patterns that can stop you retaining awesome DevOps engineers.\n\nOutline\n\nI’ll cover:\n\n- Alert volume evaluation, and how we alert bombardment leads to burnout and alert fatigue. I’ll also cover best practices for on-call rotation and BYOD usage to stop engineer burnout even when they’re not on call.\n- SLO and metric comparison across teams, and how comparing team metrics rather than improving metrics such as DORA over time for a single team breeds animosity and demoralises engineers.\n- Code reviews with jerkish or unhelpful comments, and the difference between radical candour through constructive feedback and pulling people down.\n- Tool overload, and how selecting a common toolbox reduces the need for context switching.\n- Flaky or poor testing, and how it builds mistrust and apathy in platform quality.\n- Constant work items and a lack of learning time, and how a lack of training opportunities and space to grow leaves engineers feeling stuck.\n- Lack of support for conference attendance and speaking, and how community connections help engineers grow and learn."
+	},
+	{
+		"speaker": "Sean Farmar",
+		"title": "Understanding The Business Problem",
+		"speakerIds": ["sean-farmar"],
+		"description": "One pattern I see again and again in software projects is related to the interaction between the business and the developers.\n\nThere are a few aspects to this, but one of the challenging ones is focusing on the solution instead of the problem the business is trying to solve, and this is done by both the business and the developers.\n\nAnother aspect is how well we, as developers, understand the business domain, mostly if we want to engage in Domain Driven Design.\n\nIn this talk, I will try to explain why it is so important to understand the business domain and the business problem we are trying to solve."
 	},
 	{
 		"speaker": "Dylan Beattie",
@@ -135,22 +133,10 @@
 		"description": "Users don't always tell you what they really need.\nAnd whiteboard sketches don't always make sense to everyone.\nRapid Prototypes help to get everyone on the same page,\nAnd to find answers to complicated problems.\n\nI'll walk through a real-life scenario in the world of \"Drug Testing In The Olympics\".\n\nThe talk will explain a real operational problem, describe what the Users wanted, and how we discovered what they *really needed*.\n\nWe'll use diagrams, UML and C# code to explore as we go.\n\nThis technique is inspired by \"Model Exploration Whirlpool\" in the Domain Driven Design community (the other DDD!)."
 	},
 	{
-		"speaker": "Sean Farmar",
-		"title": "Understanding The Business Problem",
-		"speakerIds": ["sean-farmar"],
-		"description": "One pattern I see again and again in software projects is related to the interaction between the business and the developers.\n\nThere are a few aspects to this, but one of the challenging ones is focusing on the solution instead of the problem the business is trying to solve, and this is done by both the business and the developers.\n\nAnother aspect is how well we, as developers, understand the business domain, mostly if we want to engage in Domain Driven Design.\n\nIn this talk, I will try to explain why it is so important to understand the business domain and the business problem we are trying to solve."
-	},
-	{
 		"speaker": "Kevlin Henney",
 		"title": "Adventures in Spacetime",
 		"speakerIds": ["kevlin-henney"],
 		"description": "Developers often find themselves caught in the crossfire of web calls, databases, microservices and other remote interactions. In battling all the infrastructure, platforms, middleware and frameworks their architecture has amassed, plus the legacy of code they may have inherited, they often don't have the chance to take a step back and consider the fundamental nature of distributed systems — fundamentals that limit what is possible and shape everything from the user experience to the breadth of architecture and the detail of code.\n\nThis is not a talk about APIs, SDKs, middleware or specific architectural styles, but a view of the fundamentals from the perspective of history, physics, code and entertainment. This talk takes in causality, clocks, relativity, CAP theorem, the fallacies of distributed computing and more!"
-	},
-	{
-		"speaker": "Clifford Agius",
-		"title": "Could a Co-Pilot be an Aircraft Co-Pilot",
-		"speakerIds": ["clifford-agius"],
-		"description": "Welcome aboard, fellow travelers!\n\nIn this talk, we’re strapping on our metaphorical aviator goggles and diving into the cockpit to explore the fascinating world of AI Co-Pilots and could they and more importantly should they be used in a real world flight deck?\n\nBuckle up, because this flight is about to get bumpy—in a purely intellectual turbulence kind of way.\n\nUsing aircraft incidents and accidents we will see if an AI Co-Pilot would have saved the day... If you have a fear of flying maybe skip this one but I will say before you run out that none of the accidents are fatal so nothing to be scared of....\n\nYou don't need to be an AI specialist or even know anything about it, as we are just exploring the decisions pilots have to make in very limited timescales with limited information and throwing in some human factors to spice it up a bit. These are all good skills you can use in any decision making at work.\n\nThe aim of this session is to hopefully show you that AI can help but should we use it?\n\nYou will walk away knowing a bit about AI and have some fun geeking out on aviation."
 	},
 	{
 		"speaker": "Gary Ewan Park",
@@ -162,9 +148,13 @@
 		"speaker": "Lotte Pitcher",
 		"title": "Successfully Navigating Open Source Waters",
 		"speakerIds": ["lotte-pitcher"],
-		"speakerTaglines": {
-			"lotte-pitcher": "Microsoft MVP | Developer Advocate at Umbraco"
-		},
+		"speakerTaglines": { "lotte-pitcher": "Microsoft MVP | Developer Advocate at Umbraco" },
 		"description": "Diving into the open source world - whether as a consumer, contributor, or maintainer - can feel like navigating uncharted waters. How do you choose the right projects? What are the unspoken rules of engagement? How can you contribute effectively and build meaningful connections?\n\nIn this session we’ll go beyond the code to explore essential topics like licensing, governance, community dynamics and collaboration best practices.  We’ll review some popular open source projects to find inspiration in their successes and learn lessons from their challenges.\n\nWith over ten years of community contributions to the open source .NET CMS Umbraco, and now as a member of their Developer Relations team - Lotte knows the challenges of building a commercially viable product and a sustainable community, while still giving code away for free. Whether you’re a maintainer or a user of open source software, you’ll leave this session with actionable ideas on how to better navigate the open source waters -  because there’s much more to it than just “dotnet add package”!"
+	},
+	{
+		"speaker": "Clifford Agius",
+		"title": "Could a Co-Pilot be an Aircraft Co-Pilot",
+		"speakerIds": ["clifford-agius"],
+		"description": "Welcome aboard, fellow travelers!\n\nIn this talk, we’re strapping on our metaphorical aviator goggles and diving into the cockpit to explore the fascinating world of AI Co-Pilots and could they and more importantly should they be used in a real world flight deck?\n\nBuckle up, because this flight is about to get bumpy—in a purely intellectual turbulence kind of way.\n\nUsing aircraft incidents and accidents we will see if an AI Co-Pilot would have saved the day... If you have a fear of flying maybe skip this one but I will say before you run out that none of the accidents are fatal so nothing to be scared of....\n\nYou don't need to be an AI specialist or even know anything about it, as we are just exploring the decisions pilots have to make in very limited timescales with limited information and throwing in some human factors to spice it up a bit. These are all good skills you can use in any decision making at work.\n\nThe aim of this session is to hopefully show you that AI can help but should we use it?\n\nYou will walk away knowing a bit about AI and have some fun geeking out on aviation."
 	}
 ]

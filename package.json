@@ -16,7 +16,8 @@
 		"lint:fix:staged": "npx lint-staged",
 		"prepare": "husky && svelte-kit sync",
 		"test:unit": "vitest run",
-		"generate:social-assets": "node scripts/generate-social-assets.ts"
+		"generate:social-assets": "node scripts/generate-social-assets.ts",
+		"import:past-year": "node scripts/import-past-year.ts"
 	},
 	"devDependencies": {
 		"@axe-core/playwright": "4.14.0",
