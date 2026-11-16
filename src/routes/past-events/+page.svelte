@@ -268,7 +268,21 @@
 									data-talk="{e.year}/{talkSlug(talk.title)}"
 									class="flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5">
 									<div class="flex items-start justify-between gap-3">
-										<span class="font-semibold">{talk.title}</span>
+										{#if talk.description}
+											<a
+												href="#{e.year}/{talkSlug(talk.title)}"
+												class="font-semibold"
+												onclick={(event) => {
+													// Open it with the card's transition rather than via the hash change,
+													// unless it's being opened in a new tab or window.
+													if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+														return;
+													event.preventDefault();
+													showTalk(talk, e.year);
+												}}>{talk.title}</a>
+										{:else}
+											<span class="font-semibold">{talk.title}</span>
+										{/if}
 										{#if talk.description}
 											{@render bookmarkButton(talk, e.year, 'size-8 -mt-1 -mr-1')}
 										{/if}
