@@ -1,0 +1,90 @@
+[
+	{
+		"speaker": "Mark Rendle",
+		"title": "Docker Strangelove, or, How I Defenestrated ASP.NET"
+	},
+	{
+		"speaker": "Ben Emmett",
+		"title": "Everything you need to know about .NET memory"
+	},
+	{
+		"speaker": "Sean Farmar",
+		"title": "Why Service Oriented Architecture?"
+	},
+	{
+		"speaker": "Ceri Shaw",
+		"title": "Taming the Bug Mountain"
+	},
+	{
+		"speaker": "Matt Ellis",
+		"title": ".NETCore Blimey!"
+	},
+	{
+		"speaker": "Ian Russell",
+		"title": "Introduction to CQRS and Event Sourcing"
+	},
+	{
+		"speaker": "Nathan Gloyn",
+		"title": "No Backend"
+	},
+	{
+		"speaker": "Richard Dalton",
+		"title": "Burnout"
+	},
+	{
+		"speaker": "Russell Forster",
+		"title": "Agile about Agile"
+	},
+	{
+		"speaker": "Dave Mateer",
+		"title": "30,000,000+ songs! Explore your favourite music with Spotify's JSON Web API, MVC5, Dapper and OAuth2"
+	},
+	{
+		"speaker": "Joel Hammond-Turner",
+		"title": "Logging and Monitoring - How to keep DevOps happy"
+	},
+	{
+		"speaker": "Liam Westley",
+		"title": "What is the point of … Microsoft?"
+	},
+	{
+		"speaker": "Barbara Fusinska",
+		"title": "Analysing GitHub commits with R and Azure"
+	},
+	{
+		"speaker": "Peter Major",
+		"title": "Native mobile cross-platform with Xamarin.Forms and C#"
+	},
+	{
+		"speaker": "Mathew McLoughlin",
+		"title": "Omnisharp: .NET sans Microsoft"
+	},
+	{
+		"speaker": "Mauro Servienti",
+		"title": "Designing distributed, scalable and reliable systems using NServiceBus"
+	},
+	{
+		"speaker": "Matteo Emili",
+		"title": "How to get the grip on Git, my experience"
+	},
+	{
+		"speaker": "Anthony Brown",
+		"title": "Building applications with Akka.Net"
+	},
+	{
+		"speaker": "Sam Elamin",
+		"title": "Monoliths to Microservices. A Journey"
+	},
+	{
+		"speaker": "Phil Bottomley",
+		"title": "ES6 - Using future JavaScript today"
+	},
+	{
+		"speaker": "David Ringsell",
+		"title": "An introduction to MVC including the benefits and the design pattern"
+	},
+	{
+		"speaker": "Gary Short",
+		"title": "Walk Through of a Recent European Space Agency Project in Predictive Analytics and Machine Vision"
+	}
+]

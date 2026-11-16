@@ -1,0 +1,102 @@
+[
+	{
+		"speaker": "Rabeb Othmani",
+		"title": "Managing the Conversation Flow within a Bot"
+	},
+	{
+		"speaker": "Ian Johnson",
+		"title": "A Monolith of Microservices"
+	},
+	{
+		"speaker": "Callum Whyte",
+		"title": "Securing the web with AI"
+	},
+	{
+		"speaker": "Ben Arroyo",
+		"title": "Nailing down distributed workflows with microservices"
+	},
+	{
+		"speaker": "Tomasz Bartoszewski",
+		"title": "Saving the World with IoT"
+	},
+	{
+		"speaker": "Jon Hilton",
+		"title": "Simplify your code and focus on your features with ASP.NET Core and MediatR"
+	},
+	{
+		"speaker": "Matteo Emili",
+		"title": "Am I doing deployments right? Advanced deployment patterns in practice"
+	},
+	{
+		"speaker": "Steve Gordon",
+		"title": "Turbocharged: Writing High-Performance C# and .NET Code"
+	},
+	{
+		"speaker": "Alex McAuliffe",
+		"title": "Falling down holes for beginners: Getting started in open source"
+	},
+	{
+		"speaker": "Ceri Newton",
+		"title": "Oops! I did it again... (The increasing complexity of responsibility)"
+	},
+	{
+		"speaker": "Stuart Lang",
+		"title": "Build an ASP.NET Core Web App with F#? You must be having a Giraffe!"
+	},
+	{
+		"speaker": "Ashley Poole",
+		"title": "Treating Your Infrastructure As Code: Terraform 101"
+	},
+	{
+		"speaker": "Michal Poreba",
+		"title": "Docker and the Microsoft Stack"
+	},
+	{
+		"speaker": "Joel Hammond-Turner",
+		"title": "You're the Tech Lead - *you* fix it!"
+	},
+	{
+		"speaker": "John Stovin",
+		"title": "GraphQL and Dapper : The quick route to flexible and efficient mobile APIs"
+	},
+	{
+		"speaker": "Joseph Woodward",
+		"title": "Improving System Resiliency via Chaos Engineering"
+	},
+	{
+		"speaker": "Viv Richards",
+		"title": "Better the 'dev tool' you know"
+	},
+	{
+		"speaker": "Shahid Iqbal",
+		"title": "Solving microservices challenges on the Kubernetes platform"
+	},
+	{
+		"speaker": "Frans Lytzen",
+		"title": "C# Async Deep Dive"
+	},
+	{
+		"speaker": "Panel",
+		"title": "When is the shift coming? Women in Technology, Panel Session"
+	},
+	{
+		"speaker": "Chester Burbidge",
+		"title": "F#ll stack development"
+	},
+	{
+		"speaker": "Dan Clarke",
+		"title": "Kubernetes, Raspberry Pis, and more!"
+	},
+	{
+		"speaker": "Luce Carter",
+		"title": "Zero to Mobile Hero - Intro to Xamarin, Cognitive Services and Azure DevOps"
+	},
+	{
+		"speaker": "Mark Rendle",
+		"title": "DiagnosticSourcery 101"
+	},
+	{
+		"speaker": "Andrew Chaa",
+		"title": "No More DTOs, Services, and Managers in your code. Let Objects have meaningful behaviours"
+	}
+]

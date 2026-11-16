@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { pastEvents, talkSlug } from './pastEvents.ts';
+import { pastEvents, talkSlug, talksByYear } from './pastEvents.ts';
 import { pastSpeakers } from './pastSpeakers.ts';
 
 describe('talkSlug', () => {
@@ -30,5 +30,22 @@ describe('past speakers', () => {
 	it('every speaker a talk refers to exists', () => {
 		const ids = pastEvents.flatMap((e) => (e.talks ?? []).flatMap((t) => t.speakerIds ?? []));
 		expect(ids.filter((id) => !pastSpeakers[id])).toEqual([]);
+	});
+});
+
+describe('talks data files', () => {
+	it('belong to a past event', () => {
+		const years = pastEvents.map((e) => e.year);
+		expect(
+			Object.keys(talksByYear)
+				.map(Number)
+				.filter((y) => !years.includes(y))
+		).toEqual([]);
+	});
+
+	it('are shown on their event', () => {
+		for (const [year, talks] of Object.entries(talksByYear)) {
+			expect(pastEvents.find((e) => e.year === Number(year))!.talks).toBe(talks);
+		}
 	});
 });

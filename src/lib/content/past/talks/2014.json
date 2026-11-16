@@ -1,0 +1,82 @@
+[
+	{
+		"speaker": "Steve Sanderson",
+		"title": "Architecting large Single Page Applications with Knockout.js"
+	},
+	{
+		"speaker": "Phil Collins",
+		"title": "Continuous Integration, in an hour, on a shoestring"
+	},
+	{
+		"speaker": "David Ringsell",
+		"title": "Introduction to development with ASP.Net MVC 5"
+	},
+	{
+		"speaker": "Pete Smith",
+		"title": "It doesn't work that way in enterprise"
+	},
+	{
+		"speaker": "Stephen Askew",
+		"title": "Federated Identity - enabling single sign-on across all your apps and systems"
+	},
+	{
+		"speaker": "Ashic Mahtab",
+		"title": "Complexity => Simplicity"
+	},
+	{
+		"speaker": "Dave Mateer",
+		"title": "7 Top Tips - A full stack ASP.NET MVC5 EF6 Testable application"
+	},
+	{
+		"speaker": "Marc Gravell",
+		"title": "Redis cluster - everything you need to know"
+	},
+	{
+		"speaker": "Martin Thornalley",
+		"title": "Real-time geospatial visualisation with SignalR and OpenLayers"
+	},
+	{
+		"speaker": "Colin Angus Mackay",
+		"title": "Introduction to S.O.L.I.D"
+	},
+	{
+		"speaker": "Phil Trelford",
+		"title": "F# Eye for the C# Guy"
+	},
+	{
+		"speaker": "Chris Canal",
+		"title": "Super charging your JavaScript development experience"
+	},
+	{
+		"speaker": "Gary Short",
+		"title": "Hadoop and Big Data for Microsoft Developers"
+	},
+	{
+		"speaker": "Ian Russell",
+		"title": "Software Craftsmanship: Raising the bar, elitist or just snake oil?"
+	},
+	{
+		"speaker": "Mathew McLoughlin",
+		"title": "An Introduction to Nancy"
+	},
+	{
+		"speaker": "George Adamson",
+		"title": "Designing for mobile (AKA Designing for Everything)"
+	},
+	{
+		"speaker": "James Crowley",
+		"title": "10 things I learnt about web application security being pen tested by banks"
+	},
+	{
+		"speaker": "Stephen Ball",
+		"title": "Top 5 mistakes Enterprise developers make when going mobile"
+	},
+	{
+		"speaker": "Mauro Servienti",
+		"title": "A gentle introduction to AngularJS"
+	},
+	{
+		"speaker": "Andy Gibson",
+		"title": "Writing better CSS with LESS"
+	}
+]

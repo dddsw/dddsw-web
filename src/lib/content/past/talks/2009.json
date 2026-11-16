@@ -1,0 +1,38 @@
+[
+	{
+		"speaker": "Gary Short",
+		"title": "Everything you Wanted to Know About Refactoring but Were Afraid to Ask"
+	},
+	{
+		"speaker": "Ben Hall",
+		"title": "Creating extendable applications using MEF"
+	},
+	{
+		"speaker": "Chris Hay",
+		"title": "Introduction to Windows Azure"
+	},
+	{
+		"speaker": "Steve Sanderson",
+		"title": "Real-world MVC architecture"
+	},
+	{
+		"speaker": "Richard Fennell",
+		"title": "What is Scrum?"
+	},
+	{
+		"speaker": "Robert Hogg",
+		"title": "Oslo and the future Microsoft Modelling platform"
+	},
+	{
+		"speaker": "Dave McMahon",
+		"title": "A Quantum of Computing"
+	},
+	{
+		"speaker": "Richard Costall",
+		"title": "Silverlight Top 10 Nuggets"
+	},
+	{
+		"speaker": "Guy Smith-Ferrier",
+		"title": "What's New In C# 4 ?"
+	}
+]

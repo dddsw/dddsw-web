@@ -1,0 +1,74 @@
+[
+	{
+		"speaker": "Steve Collins",
+		"title": "The Source Code Generation Game"
+	},
+	{
+		"speaker": "Steve Gordon",
+		"title": "The New Elasticsearch .NET Client: Getting Started and Behind the Scenes"
+	},
+	{
+		"speaker": "Anna Wykes",
+		"title": "Mastering MLOps in Azure"
+	},
+	{
+		"speaker": "Joshan Mahmud",
+		"title": "Automated Azure Dashboards Generation"
+	},
+	{
+		"speaker": "Kevin Smith",
+		"title": ".NET Minimal APIs"
+	},
+	{
+		"speaker": "Carl Sargunar",
+		"title": "Docker is a gateway Drug - .NET Everywhere"
+	},
+	{
+		"speaker": "Callum Whyte",
+		"title": "Scaling your .NET app with Azure"
+	},
+	{
+		"speaker": "Amy Lobe",
+		"title": "Workshop: how to run user experience testing"
+	},
+	{
+		"speaker": "Phil Simpson",
+		"title": "Azure Cognitive Services – AI for everyone!"
+	},
+	{
+		"speaker": "Ian Cooper",
+		"title": "At Least Once"
+	},
+	{
+		"speaker": "Callum Linington",
+		"title": "DDD, The Value Of ValueOf"
+	},
+	{
+		"speaker": "Gary Short",
+		"title": "Data Scientists, Making Sh!t up Since 1974"
+	},
+	{
+		"speaker": "Craig Jones",
+		"title": "Why premature optimisation is the root of all evil"
+	},
+	{
+		"speaker": "Sebastian Coles",
+		"title": "Force Multipliers in Software Security"
+	},
+	{
+		"speaker": "Chris Sainty",
+		"title": "Building next generation web apps with Blazor"
+	},
+	{
+		"speaker": "Sean Farmar",
+		"title": "DevOps and Microservices Better Together"
+	},
+	{
+		"speaker": "Lee Englestone",
+		"title": "Augmented Reality for iOS using Xamarin, ARKit, C# and .NET"
+	},
+	{
+		"speaker": "Ryan Yates",
+		"title": "Mental Health: It's Time to Talk (the post pandemic revision)"
+	}
+]

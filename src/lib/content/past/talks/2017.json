@@ -1,0 +1,90 @@
+[
+	{
+		"speaker": "Adam Ralph",
+		"title": "What is .NET Standard?"
+	},
+	{
+		"speaker": "Ashley Poole",
+		"title": "Docker For Beginners"
+	},
+	{
+		"speaker": "Robin Minto",
+		"title": "XSS: Don't die of ignorance"
+	},
+	{
+		"speaker": "Ian Cooper",
+		"title": "12-Factor Apps in .NET"
+	},
+	{
+		"speaker": "Joe Stead",
+		"title": ".NET Core in the real world"
+	},
+	{
+		"speaker": "Kevin Smith",
+		"title": "Microservices with Azure Service Fabric"
+	},
+	{
+		"speaker": "Chester Burbidge",
+		"title": "Separation of concerns in DevOps"
+	},
+	{
+		"speaker": "Richard Wilde",
+		"title": "Developer UI Testing made easy before you commit to source!"
+	},
+	{
+		"speaker": "Ed Courtenay",
+		"title": "Growing configurable software with Expression<T>"
+	},
+	{
+		"speaker": "Christos Matskas",
+		"title": "Going serverless with Azure Functions, the rebel service"
+	},
+	{
+		"speaker": "Dave Lewis",
+		"title": "Learning to love HATEOAS"
+	},
+	{
+		"speaker": "Sandeep Singh",
+		"title": "JavaScript Services: Building Single Page Applications with ASP.NET Core"
+	},
+	{
+		"speaker": "Nathan Gloyn",
+		"title": "You keep using the word agile, I do not think it means what you think it means"
+	},
+	{
+		"speaker": "Benjamin Paul",
+		"title": "Beyond the basics of chatbots"
+	},
+	{
+		"speaker": "Joseph Woodward",
+		"title": "ASP.NET Core Razor Deep Dive"
+	},
+	{
+		"speaker": "Dave Mateer",
+		"title": "Fun with the Twitter Stream API - ELK Stack, RabbitMQ, Serilog and High Performance SQL"
+	},
+	{
+		"speaker": "Joel Hammond-Turner",
+		"title": "Service Discovery with Consul.io for the .NET developer"
+	},
+	{
+		"speaker": "Mauro Servienti",
+		"title": "Designing a UI for Microservices"
+	},
+	{
+		"speaker": "Elton Stoneman",
+		"title": "Modernizing Legacy .NET Apps with Docker"
+	},
+	{
+		"speaker": "Naeem Sarfraz",
+		"title": "Layers, Abstractions & Spaghetti Code: Revisiting the Onion Architecture"
+	},
+	{
+		"speaker": "Adam Ralph",
+		"title": "Getting the first PR into .NET, and Other Tales From An Open Source Contributor"
+	},
+	{
+		"speaker": "Ian Russell",
+		"title": "Functional Programming in C#"
+	}
+]

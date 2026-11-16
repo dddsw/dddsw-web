@@ -1,0 +1,176 @@
+[
+	{
+		"speaker": "Steven Read",
+		"title": "Architecting for Observability",
+		"speakerIds": ["steven-read"],
+		"description": "Observability is a buzz-word where we hear a lot about the buzz, but less about the trade-offs and limitations. To succeed in this topic you need boots on the ground experience, going beyond product specs and aspirations to having integration experience and understanding limitations.\n\nYou will learn from the perspective of an adopting enterprise, breaking from the typical perspective of a vendor or advocate. These are things that will affect your adoption, learned through experience.\n\nWe look at the design and adoption of modern observability in enterprise systems, covering high-level socio-technical landscapes, as well as tactical considerations and work-arounds. Warts and all. Complexities made clear."
+	},
+	{
+		"speaker": "Andrew Clymer",
+		"title": "Passkeys in ASP.NET Core 10",
+		"speakerIds": ["andrew-clymer"],
+		"description": "Password-driven breaches, increased support costs, and frustrated users. Passkeys—standards based WebAuthn/FIDO2 credentials backed by public key cryptography and biometrics—deliver MFA level security with a one tap experience. But most of the time, people only discuss why to use passkeys, not how. That's why in this session, we'll add passkey authentication to an  ASP.NET Core web application running on .NET 10. You'll get a concise primer on how WebAuthn works (registration vs. authentication ceremonies, challenges, attestation, and assertions) and then see it implemented end to end. We'll integrate with ASP.NET Core Identity and we'll also cover rollout and UX strategy.\nYou'll leave with clear practical guidance to ship secure, delightful, passwordless sign in on .NET 10."
+	},
+	{
+		"speaker": "Adrian Banks",
+		"title": "Sketchnoting 101: Think, learn, and remember through visual notes",
+		"speakerIds": ["adrian-banks"],
+		"description": "Sketchnotes incorporate words, colour, simple drawings, and structures to create visual notes that are more memorable than plain textual scribbles. Sketchnoting conference talks aids retention of information, improves focus during the talk, and increases recall afterwards.\n\nThis session will give an introduction on the benefits of sketchnoting, advice on how to get started, and provide some useful tools and techniques. There'll also be some hands-on practice to help create your first sketchnote using simple exercises that even the self-proclaimed \"artistically challenged\" can easily do."
+	},
+	{
+		"speaker": "Andrew Poole",
+		"title": "Software engineering is dead. Long live Software engineering! Surviving and thriving in the new era",
+		"speakerIds": ["andrew-poole"],
+		"description": "Software engineering has changed. Models and tooling have passed a threshold, it's simultaneously painful and exhilarating, our roles in the process are changing. There is a lot to deal with: the emotional responses of our own personal Kübler-Ross change processes, the huge amount of noise, options, marketing hype, the explosion of innovation and how on earth to keep up with the eye-watering pace of change! Incredible productivity gains are possible and increasingly expected in the boardroom, but resources are not infinite, we must consider the environmental impact. We're also expected to ensure quality while moving towards a world where we won't be able to review every line of code. We need to come to terms with the redefinition of the value that we add.\n\nIn this hopefully positive and optimistic talk, Andrew will share some practical advice on how to shift the mindset, what new things are important to understand, how to spot the things which will likely last and some pointers on how to get started, using real world apps and demos probably using Brady Gaster's Squad, Aspire and Aspire tests."
+	},
+	{
+		"speaker": "Rich Woollcott",
+		"title": "2026: The Year of the Software Factory",
+		"speakerIds": ["rich-woollcott"],
+		"description": "Andrej Karpathy coined \"vibe coding\" in February 2025. By early 2026, he'd already abandoned the term — replacing it with \"agentic engineering.\" That pivot tells you everything about where we are right now.\n\nThe vibe coding hangover is real. Senior engineers are reporting \"development hell\" in maintaining AI-generated codebases. Security researchers are finding vulnerabilities at scale. And the tools driving it — Claude Flow, GasTown, Cursor — are optimised for the first 80%, then leave you stranded at the plateau.\n\nThere's a quieter revolution happening in parallel: the return of the Software Factory. Not a new concept, but one that AI finally makes achievable for individual developers and small teams. A repeatable, structured process with structured inputs that lead to verifiable outputs. Simon Willison calls the most advanced version of this \"The Dark Factory\" — where engineers stop writing code and start building the systems that build the code.\n\nIn this talk, I'll look at where vibe coding tools sit relative to a software factory approach — the trade-offs in control, quality, and cost. We'll cover why the vendor lock-in risk from platform-first AI tooling is under-appreciated, and why demand outstripping GPU supply makes provider independence a strategic necessity, not just a preference.\n\nYou'll come away with a clearer mental model for where AI-assisted development is actually heading — and some practical framing for how to position yourself in it. The AI is the engine. You're still the engineer.\n\n~20 minutes of ideas and examples, followed by open discussion."
+	},
+	{
+		"speaker": "Chaithali Shashikanth Kundapur",
+		"title": "Building AI Systems You Can Actually Trust",
+		"speakerIds": ["chaithali-shashikanth-kundapur"],
+		"description": "As AI systems move from demos into real products, trust becomes more important than raw accuracy. In this talk, I’ll share lessons from building and deploying production AI and LLM-based systems—where things didn’t always behave as expected. We’ll look at what “trust” really means in practice, common failure modes in modern AI systems, and practical techniques for improving reliability, transparency, and confidence in AI-driven decisions. This talk focuses less on hype and more on real-world patterns that help teams build AI systems users can actually rely on."
+	},
+	{
+		"speaker": "Carly Richmond",
+		"title": "Crafting Intelligent Agents with Context Engineering",
+		"speakerIds": ["carly-richmond"],
+		"description": "We've all heard about prompt engineering. But now with the emergence of context engineering you may be scratching your head about what the difference is. The reality is that to build reliable agents, we need to use all tools in our context toolbox to ensure they provide accurate responses in the correct format.\n\nLet's dive into the world of context engineering, and understand the elements of context that we can tune and tweak to build more reliable AI agents and associated systems."
+	},
+	{
+		"speaker": "Dan Abel",
+		"title": "The Way of the Tech Lead",
+		"speakerIds": ["dan-abel"],
+		"description": "You're expected to lead, but also to do. To delegate, but stay in the details. To have answers, but create space for others to find them. Nobody hands you a manual. Most of us figure it out by getting it wrong first.\n\nThe Tao Te Ching points to something useful. About knowing when to act, how to act, and when stillness is the more powerful choice. Finding the grain and the shape, and working with it rather than against it.\n\nThat's easier said than done when you're new to leadership, or when you're in it and still finding your feet.\n\nThis talk shares six lessons gathered from many years leading tech teams and mentoring tech leads through the same hard moments you're navigating now. Real stories. Hard-won thinking. Nothing theoretical.\n\nYou won't leave with a manual. But you might leave with a better map."
+	},
+	{
+		"speaker": "Lorraine Pearce",
+		"title": "Be the Glue: How small contributions build strong communities",
+		"speakerIds": ["lorraine-pearce"],
+		"description": "The tech ecosystem runs on more than code.\n\nIt runs on the people who organise meetups, mentor newcomers, answer questions, share knowledge and build spaces where others can learn.\n\nThese contributions often start the same way: someone notices a gap and decides to do something about it.\n\nIn this talk I’ll share personal stories of volunteering and community building, and how those experiences changed the way I think and operate. From running support groups to starting coding clubs, working with the homeless and participating in developer communities, each experience reinforced the same lesson:\n\nSmall actions create the glue that holds communities together.\n\nThis talk explores why those contributions matter, how they translate directly into stronger teams and better engineering cultures, and why you don’t need permission to start making a difference."
+	},
+	{
+		"speaker": "Elizabeth Hanson",
+		"title": "From question to insight: Using Claude to access data and make smarter decisions.",
+		"speakerIds": ["elizabeth-hanson"],
+		"description": "You’ve heard it a hundred times: “We need to be more data-driven.” But between finding the right tables, writing the query, and turning rows into a decision, data often feels like a detour—something that belongs in a ticket queue or a separate team. What if you could go from “I need to understand X” to “Here’s what the data says” in the same place you already think and work?\n\nThis talk is about using Claude in Cursor, Claude Code, or your IDE as a data copilot. Not to replace analysts or dashboards, but to put you in the driver’s seat when you have a question: find the right data, query it safely, and turn results into something you can act on, without leaving your notes, your project folder, or your flow.\n\nWe’ll walk through the full loop. Start with a plain-language ask (“Show me usage by connection type over the last two weeks”) and see how Claude can explore your catalog, suggest or write SQL, and return formatted results. We’ll look at connecting Claude to your data stack (e.g. Databricks via MCP) so queries run where your data lives. We’ll talk about when to speak in natural language and when to paste or reference a saved query—and how to get every run documented so one-off explorations become repeatable, auditable analyses. Along the way, you’ll pick up concrete habits: one-sentence context, reusing saved queries, and asking for the next question so each answer leads to a better decision.\n\nThe goal isn’t to turn everyone into a data engineer. It’s to make “data-driven” something you do in the course of your day—faster, clearer, and with the intelligence of a partner who can find the data and help you use it."
+	},
+	{
+		"speaker": "Laura Gates",
+		"title": "Grounding AI in Engineering Principles: TDD with Claude Code",
+		"speakerIds": ["laura-gates"],
+		"description": "AI coding assistants can help you move fast, but moving fast without principles produces code you can't maintain, test or reason about. This talk presents a methodology for grounding AI tools in Test-Driven Development so that you're genuinely expanding your skillset rather than outsourcing your understanding.\n\nI'll draw on my experience refactoring a progressive web app using Claude Desktop and Claude Code, grounded in Harry Percival's Test-Driven Development with Python. The process was iterative: I worked through the book myself, then used my research skills to have Claude summarise and extract key TDD principles, which I fed back into CLAUDE.md and reference documents for Claude Code. Each iteration refined both my understanding and the AI's effectiveness – the grounding documents improved as my own grasp of TDD deepened, and the AI produced better code as its reference materials became more precise.\n\nThe core problem this addresses is one most developers using AI assistants will recognise: the tool generates code quickly, but without disciplined testing practices, the results are brittle, poorly tested and difficult to extend. Without TDD grounding, AI assistants write tests after the fact that merely confirm the code they just generated, tests that test nothing meaningful. By establishing clear TDD principles in the AI's reference documents, you create a collaborative workflow where the AI follows red-green-refactor with genuine discipline, and where you learn TDD deeply through the process of articulating its principles for the machine.\n\nAttendees will leave with a practical framework for creating effective grounding documents for AI coding tools, an understanding of how TDD translates into AI-assisted workflows, and – perhaps most valuably – a methodology for using AI tools that makes you a better engineer rather than a more dependent one. The approach extends to other engineering practices; I'll briefly note how I applied the same methodology to hexagonal architecture, but TDD will be the main focus."
+	},
+	{
+		"speaker": "Samson Nwizugbe",
+		"title": "Microsoft Agent Framework: Reliable Agentic Orchestration in .Net",
+		"speakerIds": ["samson-nwizugbe"],
+		"description": "Businesses are increasingly adopting AI-driven systems to automate decisions, coordinate processes, and operate at a scale beyond manual execution. As agentic behavior is introduced into software, the challenge shifts from capability to control: how to orchestrate intelligent components without sacrificing reliability, clarity, or long-term maintainability.\n\nThis talk examines practical orchestration patterns for agentic workflows in the .NET ecosystem, from simple manual coordination with structured outputs to agent-as-tool models, executor-led orchestration, fully agentic workflows, and Durable Task–based approaches. It focuses on the trade-offs each pattern introduces, helping teams design AI-enabled systems that remain understandable, resilient, and aligned with real business needs."
+	},
+	{
+		"speaker": "Joe Glombek",
+		"title": "Developers, Assemble! Community is Your Team’s Superpower",
+		"speakerIds": ["joe-glombek"],
+		"description": "What happens when your team spends work time eating pizza and hanging out with other techies? Surprisingly, they don’t just come back with stickers. They come back with ideas, solutions to problems, and a renewed enthusiasm for the work in front of them.\n\nThe .NET community is strong, with meetups across the globe hosting experts who love sharing their knowledge. For businesses, these events are an incredibly cost‑effective way to keep teams engaged and learning. While conferences or formal training can swallow days of time and thousands in cash, a local meetup costs little more than a couple of hours and a bus fare — yet often delivers insights that save development time, reduce risk, keep technical debt in check and help teams adopt new technologies sooner while avoiding outdated approaches and reinventing the wheel.\n\nIn this lightning talk, Joe shares what he’s learned as an organiser of the Bristol Umbraco Meetup — one of the longest‑running and best‑attended groups in the community.\n\nIf you want a stronger tech team and bulletproof projects, helping them engage with the community might just be the highest-value superpower you can give them."
+	},
+	{
+		"speaker": "Kathleen Dollard",
+		"title": "Modern C# (2026 version)",
+		"speakerIds": ["kathleen-dollard"],
+		"description": "The last few years have introduced many new features to C# that enhance your application by improving performance and better expressing your team’s intent. These features work together to create code that reduces ceremony to draw attention to important aspects of your code. In this talk you’ll watch code evolve into and learn how simple it can be to update your own code – or to write new code in an updated manner."
+	},
+	{
+		"speaker": "Lotte Pitcher",
+		"title": "Open Source Software in the Age of AI",
+		"speakerIds": ["lotte-pitcher"],
+		"description": "AI coding assistants are transforming how we write code, and they’re changing the open-source ecosystem in the process.\n\nIn this session, we’ll explore when (and why) AI will want to add a dependency on a library, and when it will recommend generating its own code. Then we'll look at ways that you can control that decision process so your agents don't waste time and tokens going in directions you don't want.\n\nWe'll also look at how AI both helps and hinders OSS projects, from GitHub features to the flood of AI-generated pull requests overwhelming maintainers and supply chain attacks exploiting the ecosystem's trust model. Whether you're maxing out your AI allowance every day or just starting out with AI tools, you’ll leave with a deeper understanding of how AI is changing the balance between writing, reusing, and sustaining open source software."
+	},
+	{
+		"speaker": "Paul Michaels",
+		"title": "Playing With AI Locally",
+		"speakerIds": ["paul-michaels"],
+		"description": "In this session, we’ll step back from hype and explore what’s really happening when you run a language model locally. We’ll look at how modern LLM runtimes expose simple HTTP endpoints, what “tokens in, tokens out” actually means, and why interacting with a model from C# is far less mysterious than it sounds.\n\nFrom there, we’ll examine the architectural shift from “chatbot” to system component.  What is an MCP (Model Context Protocol) server?  Why would you build one? And how can a language model act as a decision engine that selects structured tools while your .NET application remains firmly in control?"
+	},
+	{
+		"speaker": "Nacho Escrig",
+		"title": "Security in the Model Context Protocol",
+		"speakerIds": ["nacho-escrig"],
+		"description": "This talk will explore security considerations when implementing the Model Context Protocol (MCP). I will review authentication and authorization approaches, including OAuth-based options, and discuss practical design decisions for protecting sensitive data. The presentation will also cover techniques such as using elicitation to securely pass secret information to tools and services, along with other best practices for building safer MCP integrations."
+	},
+	{
+		"speaker": "Rachel Breeze",
+		"title": "AI Is Here: PRs Are Dead, Long Live PRs",
+		"speakerIds": ["rachel-breeze"],
+		"description": "Pull requests have become the default way for teams to collaborate, review code, and maintain high quality. But when static analysis and AI can review changes in seconds, it’s worth asking what we actually expect a PR to do.\n\nIs it a quality gate? A way to share knowledge across the team? An audit trail of how the codebase evolves?\n\nIn this talk, we'll take a look at what pull requests are really for and how they might need to change as automated analysis and AI become part of the delivery pipeline. The goal isn’t to replace PRs, but to rethink how we use them so they still add value rather than becoming a ceremony."
+	},
+	{
+		"speaker": "John Kilmister",
+		"title": "From Developer to Architect, The Career Path Nobody Explained",
+		"speakerIds": ["john-kilmister"],
+		"description": "I always liked the idea of being a software architect, but had no idea what that actually meant. After several years in the role across three very different organisations, I’ve learned that “architect” is less a title and more a collection of technical skills, responsibilities, personas, and leadership behaviours. In this talk, I will explore what software architects really do, useful tools, how the role differs from team leads and solution architects, and why “everyone is an architect” doesn’t remove the need for dedicated technical leadership."
+	},
+	{
+		"speaker": "Kevlin Henney",
+		"title": "Principle Misunderstandings",
+		"speakerIds": ["kevlin-henney"],
+		"description": "For developers who want to improve their art there's no shortage of published, promoted and proclaimed principles they can choose from to shape their style and craft their code. Whether it's the alphabet soup of SOLID principles or old school classics like Information Hiding and the Separation of Concerns, there's a lot of advice out there. Some of it even makes sense. And some of it is well supported. But a lot of principles are misunderstood, misapplied or simply mistaken.\n\nIn this talk we'll take a look at (and take down) a few principles, highlighting the real lessons we can apply to our code — lessons supported by sound rationale rather than just strong opinions."
+	},
+	{
+		"speaker": "Ross Scott",
+		"title": "We're all doomed!",
+		"speakerIds": ["ross-scott"],
+		"description": "I've recently read the book \"If anyone builds it, everyone dies\" - the case against superintelligent AI. I think this is a really interesting subject and worthy of a good debate.\nSo to begin with, I'll present that case why we should be concerned, and then we will have plenty of time to discuss and debate the subject."
+	},
+	{
+		"speaker": "Stuart Caborn",
+		"title": "Do We Really Need a New Playbook for AI?",
+		"speakerIds": ["stuart-caborn"],
+		"description": "loveholidays has been scaling AI-assisted development, with code committed with AI assistants now accounting for nearly 70% of our output.\n\nIn the same period, our code health has improved every quarter and deployments to production are up over 20% year-on-year. The challenge for our engineers was to maintain and improve quality while increasing productivity through AI-based innovation.\n\nA year into our journey, we are finding that our existing engineering principles hold but the practices need adapting. This session will explore what it means for a codebase, team, and function to be \"AI-Ready\", structured around three areas of practice: guardrails, process, and knowledge. We'll examine how each area has evolved under agentic development, and the tension between established approaches and the adaptations we see emerging.\n\nWe will share the patterns our teams are using to make AI-assisted development work at scale: code health guardrails embedded in the agentic loop, build pipeline optimisations that prevent CI/CD from becoming the bottleneck, and approaches to encoding organisational knowledge into agent skills and data products that reduce guesswork and rework."
+	},
+	{
+		"speaker": "Sara Gowen",
+		"title": "Productivity hacks for clutterbrained devs",
+		"speakerIds": ["sara-gowen"],
+		"description": "An honest and friendly session where I'll share some techniques I often use to focus on issues and get devving done.\n\n*disclaimer - these techniques are good but I'm still a clutterbrained dev. If you have tricks of your own then I'd love to hear about them!"
+	},
+	{
+		"speaker": "Marc Denman",
+		"title": "Protocols, .NET & AI: A developer's guide to the bits worth betting on",
+		"speakerIds": ["marc-denman"],
+		"description": "For the past several years, the AI ecosystem has been moving faster than anyone can keep up with. It has felt like every vendor, research lab and framework has been pulling in a different direction, trying to stake a claim in the gold rush. However, green shoots of genuine standardisation are starting to take hold around common protocols. These are areas developers can invest time in without worrying whether the concepts will be obsolete next week.\n\nIn this talk we'll take a flying tour of the protocols shaping the AI landscape, covering MCP, A2A, AG-UI, ACP, Agent Skills and more. Throughout the session, we'll use the Microsoft Agent Framework to see how these protocols come together in C#. By the end of the session, you'll have a clear map of the landscape and the practical knowledge to start building AI solutions that are composable and ready for wherever the ecosystem heads next."
+	},
+	{
+		"speaker": "Marin Niehues",
+		"title": "Unf*ck your mind: How to finally build something great again",
+		"speakerIds": ["marin-niehues"],
+		"description": "Let’s be honest: your mind is f*cked. Overloaded, overstimulated and drowning in an endless to-do list. Everything needed to be done yesterday, you’re pulled in a hundred directions and somewhere along the way, you forgot what actually matters.\n\nWe’re bombarded with notifications, meetings, and meaningless busywork. AI is making it worse spitting out endless streams of generic, forgettable content. We move faster and produce more, but are we actually creating anything worth remembering?\n\nThe result? Mediocre, half-assed outcomes. Not just in your work, but everywhere in your company, with your customers, in your career. We’re all stuck in this cycle, rushing to meet deadlines we didn’t set, for work that isn’t great, while convincing ourselves that speed equals value.\n\nThis session is about breaking that cycle. It’s about unf*cking your mind so you can focus on what actually matters and finally build something you’re proud of and that matters to you - and to others."
+	},
+	{
+		"speaker": "Richard Saville",
+		"title": "Beyond open banking: making dumb data smart.",
+		"speakerIds": ["richard-saville"],
+		"description": "Most data in our digital world is not actually very smart. It often exists as static files, PDFs, or siloed API responses that must be repeatedly requested, checked, and interpreted. Even in regulated industries where trust and verification matter, data rarely has the ability to prove anything about itself.\n\nThis talk explores how we move from dumb data to smart, verifiable data.\n\nStarting with a brief history of Smart Data initiatives such as Open Banking, we will look at how structured access to financial data began to transform regulated services and why access alone is not enough.\n\nFrom there we will explore what makes data “smart”, including identity, integrity, shared schemas, and verifiability. When these elements come together, data can move between systems carrying its own proof.\n\nWe will also examine how this approach supports automation and agentic systems by attaching verifiable evidence to decisions that are difficult to explain but must still be trusted and audited.\n\nThe session concludes with a practical demonstration showing how developers can start building systems where data proves things about itself."
+	},
+	{
+		"speaker": "Jacqui Read",
+		"title": "Design Patterns for Software Diagramming",
+		"speakerIds": ["jacqui-read"],
+		"description": "Understanding the software you are working on is crucial to successful software. To understand, you and your team must transfer knowledge to each other. Diagrams are key to this knowledge transfer, but effective diagraming is a skill you traditionally don't get taught. So how do you create effective diagrams and visuals?\n\nDesign patterns can be applied to your diagrams to guide you towards the goal of successful communication, and towards maximum inclusion for your audience.\n\nThe purpose of a diagram is to successfully communicate with the audience, which sounds deceptively simple. The communication design patterns you learn in this session will enable you to improve your diagramming: one of the most important methods of communication in software development.\n\nIn this session, you will discover a range of patterns and antipatterns you can apply to your work as soon as you get back to your desk."
+	},
+	{
+		"speaker": "Matheus Guimaraes",
+		"title": "When Should You Use an Agent? Architectural Trade-offs in Agentic Systems",
+		"speakerIds": ["matheus-guimaraes"],
+		"description": "With the rise of agent-based systems, many teams are experimenting with replacing traditional APIs and workflows with AI-driven agents. But not every problem benefits from an agent, and introducing them without architectural discipline can create more complexity than value.\n\nThis talk explores when agents actually make sense from a backend architecture perspective. We’ll compare APIs, workflows, and agents, and discuss how concepts like orchestration, state, and tool integration change when agents enter the picture.\n\nThe session focuses on architectural judgment rather than hype, helping teams understand where agents fit, where they don’t, and how to integrate them safely into existing systems using modern AWS services."
+	},
+	{
+		"speaker": "Richard Fennell",
+		"title": "Why don't people seem to be able to diagnose problems these days?",
+		"speakerIds": ["richard-fennell"],
+		"description": "Too often I see people banging their heads against a problem making no progress. They don't seem to have the fault diagnostic  skills to let them approach a problem in alternative ways\n\nIn this session I will discuss the options for problem solving approaches and techniques in our modern AI infatuated world.\n\nThis will be more of a patterns and practices session than one on tool and debugger tips."
+	}
+]
