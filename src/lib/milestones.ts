@@ -18,7 +18,11 @@ export enum Milestone {
 	ConkedOut
 }
 
-const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
+/** UK time, so a milestone at 23:59 shows its own day wherever the visitor is. */
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+	dateStyle: 'long',
+	timeZone: 'Europe/London'
+});
 
 const weekdayFormatter = new Intl.DateTimeFormat('en-GB', { weekday: 'long', timeZone: 'UTC' });
 const monthYearFormatter = new Intl.DateTimeFormat('en-GB', {
@@ -70,7 +74,8 @@ export class MilestoneDetails {
 	constructor(status: Status, date?: string) {
 		this.status = status;
 		if (date) {
-			this.targetDate = new Date(`${date}T00:00:00Z`);
+			// A bare YYYY-MM-DD means the start of that day (UTC); a full ISO date-time is used as given.
+			this.targetDate = new Date(date.includes('T') ? date : `${date}T00:00:00Z`);
 		}
 	}
 
@@ -137,11 +142,19 @@ export const votingStatus = (happened: HasHappened = hasHappened): OpenStatus =>
 const milestones: Record<Milestone, MilestoneDetails> = {
 	[Milestone.StartPlanning]: new MilestoneDetails(Status.Done),
 	[Milestone.SetADate]: new MilestoneDetails(Status.Done),
-	[Milestone.OpenCallForSpeakers]: new MilestoneDetails(Status.NotYet),
-	[Milestone.CloseCallForSpeakers]: new MilestoneDetails(Status.NotYet),
-	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.NotYet),
-	[Milestone.CloseSessionVoting]: new MilestoneDetails(Status.NotYet),
-	[Milestone.AnnounceScheduleAndOpenTicketRegistration]: new MilestoneDetails(Status.NotYet),
+	[Milestone.OpenCallForSpeakers]: new MilestoneDetails(Status.JustYouWait, '2027-01-01'),
+	// 23:59 UK time (GMT in January).
+	[Milestone.CloseCallForSpeakers]: new MilestoneDetails(
+		Status.JustYouWait,
+		'2027-01-31T23:59:00Z'
+	),
+	// Voting and the schedule open 10, 8 and 5 weeks before the event.
+	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-02-13'),
+	[Milestone.CloseSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-02-27'),
+	[Milestone.AnnounceScheduleAndOpenTicketRegistration]: new MilestoneDetails(
+		Status.JustYouWait,
+		'2027-03-20'
+	),
 	[Milestone.SoldOut]: new MilestoneDetails(Status.NotYet),
 	[Milestone.FoundMoreTickets]: new MilestoneDetails(Status.NotYet),
 	[Milestone.TheActualEventDay]: new MilestoneDetails(Status.JustYouWait, '2027-04-24'),

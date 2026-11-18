@@ -9,13 +9,31 @@ for (const [pageName, path] of pagesToTest) {
 	for (const [deviceName, deviceViewport] of devicesToTest) {
 		test(`${pageName} page has no visual changes on ${deviceName}}`, async ({ page }) => {
 			//Set viewport
-			page.setViewportSize(devices[deviceViewport].viewport);
+			await page.setViewportSize(devices[deviceViewport].viewport);
 
 			// The privacy cow arrives on a timer, so keep it out of screenshots (it has its own tests)
 			await page.addInitScript(() => localStorage.setItem('privacyCowDismissed', '1'));
 
 			// Go to page
 			await page.goto(path);
+
+			// A full-page screenshot doesn't scroll, so lazy images below the fold would never load.
+			// Load them all now and wait until every image has loaded and decoded.
+			await page.evaluate(async () => {
+				const images = Array.from(document.images);
+				for (const img of images) img.loading = 'eager';
+				await Promise.all(
+					images.map((img) =>
+						img.complete
+							? img.decode().catch(() => {})
+							: new Promise((resolve) => {
+									img.addEventListener('load', resolve, { once: true });
+									img.addEventListener('error', resolve, { once: true });
+								}).then(() => img.decode().catch(() => {}))
+					)
+				);
+			});
+			await page.waitForLoadState('networkidle');
 
 			// Don't capture these elements because they are external to our site and we expect them to change
 			const locatorsToIgnore = [page.locator('iframe')];

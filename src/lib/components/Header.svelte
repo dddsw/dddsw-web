@@ -49,6 +49,7 @@
 		aria-hidden="true"
 		class="vt-header-bg absolute inset-0 -z-10 border-b border-surface-200-800 bg-surface-50-950/90 backdrop-blur">
 	</div>
+	<!-- max-[359px]: sizes keep the header within the narrowest phones (320px) without scrolling sideways. -->
 	<Container class="vt-header flex items-center justify-between gap-2 py-3 sm:gap-4">
 		<a
 			href="/"
@@ -100,7 +101,7 @@
 					onOpenChange={(details) => (menuOpen = details.open)}
 					positioning={{ placement: 'bottom-end' }}>
 					<Popover.Trigger
-						class="btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+						class="btn cursor-pointer preset-tonal max-[359px]:btn-sm hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
 						>Menu</Popover.Trigger>
 					<Portal>
 						<Popover.Positioner class="z-50!">
