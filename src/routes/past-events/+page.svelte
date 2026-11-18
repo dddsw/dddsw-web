@@ -1,27 +1,81 @@
 <script lang="ts">
-	import { flushSync, onMount } from 'svelte';
-	import { tabTransition } from '#lib/viewTransitions.ts';
+	import { flushSync, onMount, tick } from 'svelte';
+	import { tabTransition, talkTransition } from '#lib/viewTransitions.ts';
 	import { replaceState } from '$app/navigation';
-	import { Tabs } from '@skeletonlabs/skeleton-svelte';
+	import { Dialog, Portal, Tabs } from '@skeletonlabs/skeleton-svelte';
+	import * as bookmark from '@fortawesome/free-solid-svg-icons/faBookmark';
+	import * as xmark from '@fortawesome/free-solid-svg-icons/faXmark';
 	import Cow from '#lib/components/Cow.svelte';
-	import { pastEvents } from '#lib/content/pastEvents.ts';
+	import { pastEvents, talkSlug, type Talk } from '#lib/content/pastEvents.ts';
+	import { pastSpeakers } from '#lib/content/pastSpeakers.ts';
 	import { picture } from '#lib/images.ts';
+	import { toaster } from '#lib/toaster.ts';
 
 	let year = $state(String(pastEvents[0].year));
 
-	// Deep links like /past-events#2011 open that year's tab. The hash is kept in sync as people
-	// switch tabs, so the address bar can always be shared.
+	// The talk whose description is open in the "More info" dialog.
+	let openTalk: (Talk & { year: number }) | undefined = $state();
+	let openSpeakers = $derived((openTalk?.speakerIds ?? []).map((id) => pastSpeakers[id]));
+
+	// Deep links like /past-events#2011 open that year's tab, and /past-events#2025/advanced-debugging
+	// also opens that talk's details. The hash is kept in sync as people switch tabs and open talks,
+	// so the address bar can always be shared.
 	const knownYears = new Set(pastEvents.map((e) => String(e.year)));
 
 	function selectFromHash() {
-		const fromHash = window.location.hash.slice(1);
-		if (knownYears.has(fromHash)) year = fromHash;
+		const [fromHash, slug] = decodeURIComponent(window.location.hash.slice(1)).split('/');
+		if (!knownYears.has(fromHash)) return;
+		year = fromHash;
+		const event = pastEvents.find((e) => String(e.year) === fromHash)!;
+		const talk = slug ? event.talks?.find((t) => talkSlug(t.title) === slug) : undefined;
+		openTalk = talk?.description ? { ...talk, year: event.year } : undefined;
 	}
 
 	function onTabChange(value: string) {
-		const index = (y: string) => pastEvents.findIndex((e) => String(e.year) === y);
-		tabTransition(index(year), index(value), () => flushSync(() => (year = value)));
+		const trigger = (y: string) => document.querySelector(`[data-year-tab="${y}"]`);
+		tabTransition(trigger(year), trigger(value), () => flushSync(() => (year = value)));
 		replaceState(`#${value}`, {});
+	}
+
+	/** The card a talk's dialog grows out of, and shrinks back into. */
+	const talkCard = (talk: Talk, talkYear: number) =>
+		document.querySelector(`[data-talk="${CSS.escape(`${talkYear}/${talkSlug(talk.title)}`)}"]`);
+
+	function showTalk(talk: Talk, talkYear: number) {
+		talkTransition(talkCard(talk, talkYear), true, async () => {
+			flushSync(() => (openTalk = { ...talk, year: talkYear }));
+			// The dialog's contents mount a tick after it is told to open.
+			await tick();
+		});
+		replaceState(`#${talkYear}/${talkSlug(talk.title)}`, {});
+	}
+
+	function closeTalk() {
+		if (!openTalk) return;
+		talkTransition(talkCard(openTalk, openTalk.year), false, async () => {
+			flushSync(() => (openTalk = undefined));
+			await tick();
+		});
+		replaceState(`#${year}`, {});
+	}
+
+	/** Copies the deep link to a talk, e.g. https://…/past-events#2025/advanced-debugging. */
+	async function copyTalkLink(talk: Talk, talkYear: number) {
+		const url = new URL(`#${talkYear}/${talkSlug(talk.title)}`, window.location.href);
+		try {
+			await navigator.clipboard.writeText(url.href);
+			toaster.success({
+				title: 'Copied',
+				description: 'The link to this talk is on your clipboard.'
+			});
+		} catch {
+			toaster.error({ title: "Couldn't copy", description: 'Copy the link from the address bar.' });
+		}
+	}
+
+	function initials(name: string): string {
+		const words = name.split(/\s+/);
+		return (words[0][0] + (words.length > 1 ? words.at(-1)![0] : '')).toUpperCase();
 	}
 
 	onMount(() => {
@@ -42,6 +96,26 @@
 	}
 </script>
 
+{#snippet bookmarkButton(talk: Talk, talkYear: number, size = '')}
+	<button
+		type="button"
+		class="btn-icon shrink-0 cursor-pointer rounded-full preset-tonal-primary hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50 {size}"
+		aria-label="Copy link to {talk.title}"
+		title="Copy link to this talk"
+		onclick={() => copyTalkLink(talk, talkYear)}>
+		<!-- Font Awesome Free icon (CC BY 4.0), inlined as an SVG path at build time. -->
+		<svg
+			viewBox="0 0 {bookmark.width} {bookmark.height}"
+			fill="currentColor"
+			aria-hidden="true"
+			focusable="false"
+			class="size-3.5"
+			xmlns="http://www.w3.org/2000/svg">
+			<path d={bookmark.svgPathData} />
+		</svg>
+	</button>
+{/snippet}
+
 <section aria-labelledby="events">
 	<h2 id="events" class="sr-only">Previous conferences</h2>
 	<Tabs value={year} onValueChange={(d) => onTabChange(d.value)}>
@@ -49,7 +123,14 @@
 			{#each pastEvents as e (e.year)}
 				<Tabs.Trigger
 					value={String(e.year)}
-					class="btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 data-[selected]:cursor-default data-[selected]:preset-filled-primary-500 data-[selected]:hover:preset-filled-primary-500">
+					data-year-tab={e.year}
+					class="relative isolate btn cursor-pointer preset-tonal hover:preset-filled-surface-950-50 data-[selected]:cursor-default data-[selected]:preset-filled-primary-500 data-[selected]:bg-transparent! data-[selected]:hover:preset-filled-primary-500">
+					<!-- The orange pill is its own element so it can slide between years. -->
+					{#if year === String(e.year)}
+						<span
+							aria-hidden="true"
+							class="vt-tab-pill absolute inset-0 -z-10 rounded-base bg-primary-500"></span>
+					{/if}
 					<span id={String(e.year)}>{e.year}</span>
 				</Tabs.Trigger>
 			{/each}
@@ -175,9 +256,59 @@
 						<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 							{#each e.talks as talk (talk.speaker + talk.title)}
 								<li
+									data-talk="{e.year}/{talkSlug(talk.title)}"
 									class="flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5">
-									<span class="font-semibold">{talk.title}</span>
-									<span class="text-sm font-semibold text-secondary-700-300">{talk.speaker}</span>
+									<div class="flex items-start justify-between gap-3">
+										<span class="font-semibold">{talk.title}</span>
+										{#if talk.description}
+											{@render bookmarkButton(talk, e.year, 'size-8 -mt-1 -mr-1')}
+										{/if}
+									</div>
+									<div class="flex items-end justify-between gap-3">
+										{#if talk.speakerIds?.length}
+											<ul class="min-w-0 space-y-2">
+												{#each talk.speakerIds.map((id) => pastSpeakers[id]) as speaker (speaker.name)}
+													<li class="flex items-center gap-3">
+														{#if speaker.photo}
+															<div class="size-10 shrink-0 overflow-hidden rounded-full">
+																<enhanced:img
+																	src={picture(speaker.photo)}
+																	alt=""
+																	loading="lazy"
+																	class="size-full object-cover" />
+															</div>
+														{:else}
+															<span
+																class="flex size-10 shrink-0 items-center justify-center rounded-full preset-tonal-primary text-xs font-semibold"
+																aria-hidden="true">{initials(speaker.name)}</span>
+														{/if}
+														<div class="min-w-0">
+															<p class="text-sm font-semibold text-secondary-700-300">
+																{speaker.name}
+															</p>
+															{#if speaker.tagline}
+																<p
+																	class="line-clamp-2 text-xs text-surface-700-300"
+																	title={speaker.tagline}>
+																	{speaker.tagline}
+																</p>
+															{/if}
+														</div>
+													</li>
+												{/each}
+											</ul>
+										{:else}
+											<span class="text-sm font-semibold text-secondary-700-300"
+												>{talk.speaker}</span>
+										{/if}
+										{#if talk.description}
+											<button
+												type="button"
+												class="btn shrink-0 cursor-pointer preset-tonal-primary btn-sm hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+												aria-label="More info about {talk.title}"
+												onclick={() => showTalk(talk, e.year)}>More info</button>
+										{/if}
+									</div>
 								</li>
 							{/each}
 						</ul>
@@ -211,3 +342,71 @@
 		{/each}
 	</Tabs>
 </section>
+
+<Dialog
+	open={!!openTalk}
+	onOpenChange={(details) => !details.open && closeTalk()}
+	initialFocusEl={() => document.querySelector('.vt-talk-dialog [data-part="close-trigger"]')}>
+	<Portal>
+		<Dialog.Backdrop class="fixed inset-0 z-40 bg-surface-950/60" />
+		<Dialog.Positioner class="fixed inset-0 z-50 flex items-center justify-center p-4">
+			<Dialog.Content
+				class="vt-talk-dialog max-h-full w-full max-w-2xl space-y-4 overflow-y-auto card bg-surface-50-950 p-6 shadow-xl dark:border dark:border-surface-500">
+				<div class="flex items-start justify-between gap-4">
+					<Dialog.Title class="h3">{openTalk?.title}</Dialog.Title>
+					<div class="flex shrink-0 items-center gap-2">
+						{#if openTalk}{@render bookmarkButton(openTalk, openTalk.year)}{/if}
+						<Dialog.CloseTrigger
+							class="btn-icon cursor-pointer rounded-full preset-tonal hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
+							aria-label="Close"
+							aria-keyshortcuts="Escape"
+							title="Close (Esc)">
+							<svg
+								viewBox="0 0 {xmark.width} {xmark.height}"
+								fill="currentColor"
+								aria-hidden="true"
+								focusable="false"
+								class="size-4"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d={xmark.svgPathData} />
+							</svg>
+						</Dialog.CloseTrigger>
+					</div>
+				</div>
+				<p class="font-semibold text-secondary-700-300">
+					{openTalk?.speaker} · DDD South West {openTalk?.year}
+				</p>
+				<Dialog.Description class="whitespace-pre-wrap">{openTalk?.description}</Dialog.Description>
+				{#each openSpeakers as speaker (speaker.name)}
+					<section
+						class="space-y-3 border-t border-surface-300-700 pt-4"
+						aria-label="About {speaker.name}">
+						<div class="flex items-center gap-4">
+							{#if speaker.photo}
+								<div class="size-20 shrink-0 overflow-hidden rounded-full">
+									<enhanced:img
+										src={picture(speaker.photo)}
+										alt=""
+										class="size-full object-cover" />
+								</div>
+							{/if}
+							<div>
+								<h4 class="h5">{speaker.name}</h4>
+								{#if speaker.tagline}
+									<p class="text-sm font-semibold text-secondary-700-300">{speaker.tagline}</p>
+								{/if}
+							</div>
+						</div>
+						{#if speaker.bio}
+							<p class="whitespace-pre-wrap">{speaker.bio}</p>
+						{/if}
+					</section>
+				{/each}
+				<!-- Touch screens have no Esc key, and tapping outside is the norm there. -->
+				<p class="hidden text-sm text-surface-700-300 pointer-fine:block">
+					Press <kbd class="kbd">Esc</kbd> or click outside to close.
+				</p>
+			</Dialog.Content>
+		</Dialog.Positioner>
+	</Portal>
+</Dialog>

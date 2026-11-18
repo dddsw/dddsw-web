@@ -27,7 +27,7 @@ const photos = import.meta.glob<Picture>(
  * (for 2x screens) and half of it (for 1x), so save them at twice the size they're shown.
  */
 const fixedSize = import.meta.glob<Picture>(
-	'./assets/images/{sponsors,past-logos,team}/**/*.{avif,gif,jpeg,jpg,png,webp}',
+	'./assets/images/{sponsors,past-logos,past-speakers,team}/**/*.{avif,gif,jpeg,jpg,png,webp}',
 	{ eager: true, query: { enhanced: true }, import: 'default' }
 );
 

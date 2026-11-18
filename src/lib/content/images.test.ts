@@ -4,6 +4,7 @@ import { join, relative } from 'node:path';
 import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 import { pastEvents } from './pastEvents.ts';
+import { pastSpeakers } from './pastSpeakers.ts';
 import { sponsorArchive, sponsors } from './sponsors.ts';
 import { team } from './team.ts';
 
@@ -21,7 +22,8 @@ describe('images', () => {
 		const referenced = [
 			...pastEvents.flatMap((e) => [e.logo, ...(e.photos ?? []).map((p) => p.src)]),
 			...[...sponsors, ...sponsorArchive].map((s) => `sponsors/${s.logo}`),
-			...team.map((m) => `team/${m.photo}`)
+			...team.map((m) => `team/${m.photo}`),
+			...Object.values(pastSpeakers).map((s) => s.photo)
 		].filter((src): src is string => !!src);
 		const missing = referenced.filter((src) => !existsSync(join(imagesDir, src)));
 		expect(missing).toEqual([]);
@@ -30,7 +32,7 @@ describe('images', () => {
 	// Logos and avatars are shown at one size, so the build only makes 1x and 2x copies of the file
 	// as it is: a 4000px logo would be served at 4000px. Save them at about twice their shown size.
 	it.each(
-		['sponsors', 'past-logos', 'team'].flatMap((folder) =>
+		['sponsors', 'past-logos', 'past-speakers', 'team'].flatMap((folder) =>
 			filesIn(join(imagesDir, folder)).map((f) => relative(imagesDir, f))
 		)
 	)('%s is at most 600px wide or tall', async (file) => {
