@@ -3,7 +3,7 @@
 	import { tabTransition, talkTransition } from '#lib/viewTransitions.ts';
 	import { replaceState } from '$app/navigation';
 	import { Dialog, Portal, Tabs } from '@skeletonlabs/skeleton-svelte';
-	import * as bookmark from '@fortawesome/free-solid-svg-icons/faBookmark';
+	import * as link from '@fortawesome/free-solid-svg-icons/faLink';
 	import * as xmark from '@fortawesome/free-solid-svg-icons/faXmark';
 	import Cow from '#lib/components/Cow.svelte';
 	import { pastEvents, talkSlug, type Talk } from '#lib/content/pastEvents.ts';
@@ -20,7 +20,7 @@
 
 	let year = $state(String(pastEvents[0].year));
 
-	// The talk whose description is open in the "More info" dialog.
+	// The talk whose description is open in the talk dialog.
 	let openTalk: (Talk & { year: number }) | undefined = $state();
 	let openSpeakers = $derived(
 		(openTalk?.speakerIds ?? []).map((id) => ({
@@ -105,22 +105,22 @@
 	}
 </script>
 
-{#snippet bookmarkButton(talk: Talk, talkYear: number, size = '')}
+{#snippet copyLinkButton(talk: Talk, talkYear: number, size = '')}
 	<button
 		type="button"
-		class="btn-icon shrink-0 cursor-pointer rounded-full preset-tonal-primary hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50 {size}"
+		class="btn-icon shrink-0 cursor-pointer rounded-full preset-filled-primary-500 hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50 {size}"
 		aria-label="Copy link to {talk.title}"
 		title="Copy link to this talk"
 		onclick={() => copyTalkLink(talk, talkYear)}>
 		<!-- Font Awesome Free icon (CC BY 4.0), inlined as an SVG path at build time. -->
 		<svg
-			viewBox="0 0 {bookmark.width} {bookmark.height}"
+			viewBox="0 0 {link.width} {link.height}"
 			fill="currentColor"
 			aria-hidden="true"
 			focusable="false"
 			class="size-3.5"
 			xmlns="http://www.w3.org/2000/svg">
-			<path d={bookmark.svgPathData} />
+			<path d={link.svgPathData} />
 		</svg>
 	</button>
 {/snippet}
@@ -266,12 +266,14 @@
 							{#each e.talks as talk (talk.speaker + talk.title)}
 								<li
 									data-talk="{e.year}/{talkSlug(talk.title)}"
-									class="flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5">
+									class="relative flex flex-col justify-between gap-3 card border-l-4 border-primary-500 preset-filled-surface-100-900 p-5 {talk.description
+										? 'transition hover:-translate-y-0.5 hover:shadow-lg motion-reduce:hover:translate-y-0'
+										: ''}">
 									<div class="flex items-start justify-between gap-3">
 										{#if talk.description}
 											<a
 												href="#{e.year}/{talkSlug(talk.title)}"
-												class="font-semibold"
+												class="font-semibold hover:decoration-[0.1em] after:absolute after:inset-0 after:content-['']"
 												onclick={(event) => {
 													// Open it with the card's transition rather than via the hash change,
 													// unless it's being opened in a new tab or window.
@@ -284,7 +286,7 @@
 											<span class="font-semibold">{talk.title}</span>
 										{/if}
 										{#if talk.description}
-											{@render bookmarkButton(talk, e.year, 'size-8 -mt-1 -mr-1')}
+											{@render copyLinkButton(talk, e.year, 'relative z-10 size-8 -mt-1 -mr-1')}
 										{/if}
 									</div>
 									<div class="flex items-end justify-between gap-3">
@@ -308,7 +310,7 @@
 														<div class="min-w-0">
 															<a
 																href={directoryHref(speaker.id)}
-																class="text-sm font-semibold text-secondary-700-300"
+																class="relative z-10 text-sm font-semibold text-secondary-700-300 hover:decoration-[0.1em]"
 																title="All talks by {speaker.name}">
 																{speaker.name}
 															</a>
@@ -326,18 +328,11 @@
 										{:else if talkSpeakers(talk).length}
 											<a
 												href={directoryHref(speakerIdFor(talk.speaker))}
-												class="text-sm font-semibold text-secondary-700-300"
+												class="relative z-10 text-sm font-semibold text-secondary-700-300 hover:decoration-[0.1em]"
 												title="All talks by {talk.speaker}">{talk.speaker}</a>
 										{:else}
 											<span class="text-sm font-semibold text-secondary-700-300"
 												>{talk.speaker}</span>
-										{/if}
-										{#if talk.description}
-											<button
-												type="button"
-												class="btn shrink-0 cursor-pointer preset-tonal-primary btn-sm hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
-												aria-label="More info about {talk.title}"
-												onclick={() => showTalk(talk, e.year)}>More info</button>
 										{/if}
 									</div>
 								</li>
@@ -386,7 +381,7 @@
 				<div class="flex items-start justify-between gap-4">
 					<Dialog.Title class="h3">{openTalk?.title}</Dialog.Title>
 					<div class="flex shrink-0 items-center gap-2">
-						{#if openTalk}{@render bookmarkButton(openTalk, openTalk.year)}{/if}
+						{#if openTalk}{@render copyLinkButton(openTalk, openTalk.year)}{/if}
 						<Dialog.CloseTrigger
 							class="btn-icon cursor-pointer rounded-full preset-tonal hover:preset-filled-surface-950-50 focus-visible:preset-filled-surface-950-50"
 							aria-label="Close"
