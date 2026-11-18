@@ -148,12 +148,12 @@ const milestones: Record<Milestone, MilestoneDetails> = {
 		Status.JustYouWait,
 		'2027-01-31T23:59:00Z'
 	),
-	// Voting and the schedule keep last year's spacing: 9, 7 and 4 weeks before the event.
-	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-02-20'),
-	[Milestone.CloseSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-03-06'),
+	// Voting and the schedule open 10, 8 and 5 weeks before the event.
+	[Milestone.OpenSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-02-13'),
+	[Milestone.CloseSessionVoting]: new MilestoneDetails(Status.JustYouWait, '2027-02-27'),
 	[Milestone.AnnounceScheduleAndOpenTicketRegistration]: new MilestoneDetails(
 		Status.JustYouWait,
-		'2027-03-27'
+		'2027-03-20'
 	),
 	[Milestone.SoldOut]: new MilestoneDetails(Status.NotYet),
 	[Milestone.FoundMoreTickets]: new MilestoneDetails(Status.NotYet),
