@@ -65,6 +65,8 @@ The site is SvelteKit 3 and Svelte 5, styled with [Skeleton](https://www.skeleto
 - Content lives under `src/lib/content`: the team, principles, sponsors and past events.
 - Brand colours and fonts live in `src/dddsw-theme.css` (primary 500 is `#ff9930`; text on orange is charcoal for contrast). Global styles are in `src/app.css`.
 - Light and dark mode are toggled with a `dark` class on `<html>`, set by the toggle in the header and remembered in the browser.
+- The **style guide** at `/style-guide` (`src/routes/style-guide`) shows one of every building block (colours, text, links, buttons, tabs, cards, dialogs, toasts and the brand pieces), with the classes to copy. A badge shows which colour mode the page is in, and each light/dark colour pair shows the shade it is using in that mode; flip the header switch to check the other. Use it and as the reference when building pages.
+- Some pages are public but **unlisted**: kept out of the nav, the sitemap and search results (`noindex`). They are listed in `unlistedRoutes` in `src/lib/seo.ts`: `/code-of-conduct/internal`, `/venue-layout`, `/media-assets` and `/style-guide`. A page can also return `noindex: true` from `load`, and add `nofollow: true` to ask search engines not to follow its links (the style guide does).
 
 ### Managing the site
 
@@ -116,9 +118,13 @@ Keep every button, tab and toggle consistent:
 
 The idea: orange is the resting "action" colour, and hovering flips to the high-contrast navy (white in dark mode). A new button picks the row above that matches its resting style.
 
+Every one of these is shown on the [style guide](#structure-of-the-app) (`/style-guide`). When you add or change a pattern, update the style guide in the same change, so it stays the reference.
+
 ### Tests
 
-When adding a new page, add the name and route to `tests\all-pages-to-test.ts` to enable automated accessibility and visual comparison tests.
+When adding a new page, add the name and route to `tests\all-pages-to-test.ts` to enable automated accessibility and visual comparison tests. Every page route must also be listed in `src/lib/seo.ts` (in the listed pages, or in `unlistedRoutes` if it shouldn't be in search results); `seo.test.ts` fails otherwise.
+
+The style guide is in the accessibility and visual comparison tests too, so a change to shared styles shows up in its screenshot as well as on the pages that use them.
 
 If adding or changing a link in the nav, ensure it is add/changed in `tests\navigation.spec.ts`.
 

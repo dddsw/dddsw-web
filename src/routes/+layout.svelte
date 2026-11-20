@@ -60,6 +60,15 @@
 	const noindex = $derived(
 		unlistedRoutes.includes(page.url.pathname) || page.data.noindex === true
 	);
+	// Pages that also ask search engines not to follow their links (`nofollow: true` from `load`),
+	// such as the style guide, whose sample links aren't real content.
+	const robots = $derived(
+		noindex
+			? page.data.nofollow === true
+				? 'noindex, nofollow'
+				: 'noindex'
+			: 'max-image-preview:large'
+	);
 </script>
 
 <svelte:head>
@@ -85,7 +94,7 @@
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={socialImage} />
-	<meta name="robots" content={noindex ? 'noindex' : 'max-image-preview:large'} />
+	<meta name="robots" content={robots} />
 
 	<link rel="icon" href="/favicon.ico" sizes="32x32" />
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />

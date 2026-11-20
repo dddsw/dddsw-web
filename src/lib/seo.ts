@@ -34,10 +34,16 @@ const programmeRoutes: Record<string, (programme: Programme) => boolean> = {
 
 /**
  * Pages kept out of search results (`noindex`) and the sitemap. They are still public: the
- * internal policy is for our volunteers, the room layout is for a previous venue, and the
- * social media assets are for people posting about us.
+ * internal policy is for our volunteers, the room layout is for a previous venue, the
+ * social media assets are for people posting about us, and the style guide is a reference for
+ * people building the site.
  */
-export const unlistedRoutes = ['/code-of-conduct/internal', '/venue-layout', '/media-assets'];
+export const unlistedRoutes = [
+	'/code-of-conduct/internal',
+	'/venue-layout',
+	'/media-assets',
+	'/style-guide'
+];
 
 /** Every route the sitemap knows about, for the drift check in `seo.test.ts`. */
 export const knownRoutes = [...alwaysListed, ...Object.keys(programmeRoutes), ...unlistedRoutes];

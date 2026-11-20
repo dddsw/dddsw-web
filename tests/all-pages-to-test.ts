@@ -13,5 +13,6 @@ export const pagesToTest: [pageName: string, path: string][] = [
 	['Speakers', 'speakers'],
 	['Code of conduct', 'code-of-conduct'],
 	['Code of conduct (internal)', 'code-of-conduct/internal'],
-	['Privacy Policy', 'privacy-policy']
+	['Privacy Policy', 'privacy-policy'],
+	['Style guide', 'style-guide']
 ];

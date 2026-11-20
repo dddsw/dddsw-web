@@ -10,6 +10,10 @@ declare global {
 			lead?: string;
 			/** Set to true to opt out of the standard page layout (banner + container) in the root layout. */
 			bare?: boolean;
+			/** Set to true to keep the page out of search results (unlisted routes get this anyway). */
+			noindex?: boolean;
+			/** Set to true to also ask search engines not to follow the page's links (only with noindex). */
+			nofollow?: boolean;
 		}
 		// interface PageState {}
 		// interface Platform {}
